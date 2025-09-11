@@ -1,32 +1,34 @@
 # The Aqool AI - Design Guidelines
 
 ## Design Approach
-**Reference-Based Approach**: Inspired by The Verge's modern news website design, focusing on clean typography, structured content hierarchy, and professional news presentation suitable for AI policy expertise.
+**Exact Replication**: Precisely matching The Verge's website design (https://www.theverge.com/tech) for news website layout, typography, colors, and component styling to create a professional tech journalism appearance.
 
 ## Core Design Elements
 
 ### A. Color Palette
-**Primary Colors:**
-- Dark Mode: Background 222 15% 8%, Text 0 0% 95%
-- Light Mode: Background 0 0% 98%, Text 222 15% 15%
-- Brand Accent: 210 85% 45% (Saudi-inspired blue for links and highlights)
+**Exact Verge Colors:**
+- Background: Pure white (#FFFFFF) in light mode
+- Primary text: Pure black (#000000) 
+- Secondary text: #666666 (medium gray)
+- Link color: #B266CC (purple/magenta for links)
+- Border color: #E5E5E5 (light gray borders)
 
 **Supporting Colors:**
-- Success/positive: 142 76% 36%
-- Warning/neutral: 45 93% 47%
-- Muted text: 215 16% 47%
+- Category badges: Various bright colors (#FF6B35, #4ECDC4, #45B7D1)
+- Hover states: Subtle gray (#F5F5F5)
+- Active states: Darker grays
 
 ### B. Typography
 **Font Families:**
-- Primary: Inter (headings and UI elements)
-- Body: System fonts (-apple-system, BlinkMacSystemFont, "Segoe UI")
+- Primary: __Polysans__, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI"
+- All text uses system fonts with specific font weights
 
-**Hierarchy:**
-- H1: 2.25rem (36px), font-weight 700
-- H2: 1.875rem (30px), font-weight 600  
-- H3: 1.5rem (24px), font-weight 600
-- Body: 1rem (16px), line-height 1.6
-- Small text: 0.875rem (14px)
+**Hierarchy (exact Verge sizing):**
+- Main headline: 2.5rem (40px), font-weight 700, line-height 1.1
+- Article titles: 1.25rem (20px), font-weight 600
+- Body text: 1rem (16px), line-height 1.5
+- Meta text: 0.875rem (14px), color #666
+- Category badges: 0.75rem (12px), uppercase, bold
 
 ### C. Layout System
 **Spacing Primitives:** Tailwind units of 2, 4, 6, 8, 12, 16
