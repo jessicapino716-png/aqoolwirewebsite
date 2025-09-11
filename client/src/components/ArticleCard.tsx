@@ -1,7 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import { Clock, User } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export interface Article {
   id: string;
@@ -9,131 +7,176 @@ export interface Article {
   excerpt: string;
   author: string;
   publishedAt: string;
-  readTime: string;
   category: string;
   imageUrl?: string;
   slug: string;
+  comments?: number;
 }
 
 interface ArticleCardProps {
   article: Article;
-  variant?: "featured" | "standard" | "compact";
+  variant?: "hero" | "featured" | "standard" | "list";
 }
 
 export default function ArticleCard({ article, variant = "standard" }: ArticleCardProps) {
-  if (variant === "featured") {
+  if (variant === "hero") {
     return (
-      <Card className="overflow-hidden hover-elevate group cursor-pointer" data-testid={`card-article-${article.id}`}>
+      <div className="group cursor-pointer" data-testid={`card-article-hero-${article.id}`}>
         <Link href={`/article/${article.slug}`}>
-          <div className="aspect-[16/9] overflow-hidden">
+          <div className="relative overflow-hidden rounded-lg">
             {article.imageUrl && (
               <img
                 src={article.imageUrl}
                 alt={article.title}
-                className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                data-testid={`img-article-${article.id}`}
+                className="w-full aspect-[16/9] object-cover"
+                data-testid={`img-article-hero-${article.id}`}
               />
             )}
           </div>
-          <CardContent className="p-6">
-            <div className="flex items-center gap-2 mb-3">
-              <Badge variant="secondary" data-testid={`badge-category-${article.id}`}>
-                {article.category}
-              </Badge>
-              <div className="flex items-center text-sm text-muted-foreground">
-                <Clock className="h-3 w-3 mr-1" />
-                <span data-testid={`text-readtime-${article.id}`}>{article.readTime}</span>
-              </div>
-            </div>
-            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors" data-testid={`text-title-${article.id}`}>
+          <div className="mt-4">
+            <h1 className="text-4xl font-bold leading-tight text-black group-hover:text-purple-600 transition-colors mb-3" data-testid={`text-title-hero-${article.id}`}>
               {article.title}
-            </h2>
-            <p className="text-muted-foreground mb-4 line-clamp-2" data-testid={`text-excerpt-${article.id}`}>
+            </h1>
+            <p className="text-gray-600 text-lg leading-relaxed mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
               {article.excerpt}
             </p>
-            <div className="flex items-center gap-2 text-sm">
-              <User className="h-4 w-4" />
-              <span data-testid={`text-author-${article.id}`}>{article.author}</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-muted-foreground" data-testid={`text-date-${article.id}`}>{article.publishedAt}</span>
+            <div className="flex items-center text-sm text-gray-500">
+              <span data-testid={`text-author-hero-${article.id}`}>{article.author}</span>
+              <span className="mx-2">•</span>
+              <span data-testid={`text-date-hero-${article.id}`}>{article.publishedAt}</span>
             </div>
-          </CardContent>
+          </div>
         </Link>
-      </Card>
+      </div>
     );
   }
 
-  if (variant === "compact") {
+  if (variant === "featured") {
     return (
-      <Card className="p-4 hover-elevate group cursor-pointer" data-testid={`card-article-compact-${article.id}`}>
+      <div className="group cursor-pointer" data-testid={`card-article-featured-${article.id}`}>
         <Link href={`/article/${article.slug}`}>
           <div className="flex gap-4">
             {article.imageUrl && (
-              <div className="flex-shrink-0 w-20 h-20 overflow-hidden rounded-md">
+              <div className="flex-shrink-0">
                 <img
                   src={article.imageUrl}
                   alt={article.title}
-                  className="w-full h-full object-cover"
-                  data-testid={`img-article-compact-${article.id}`}
+                  className="w-20 h-20 object-cover rounded"
+                  data-testid={`img-article-featured-${article.id}`}
                 />
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <Badge variant="secondary" className="mb-2" data-testid={`badge-category-compact-${article.id}`}>
-                {article.category}
-              </Badge>
-              <h3 className="font-semibold text-sm group-hover:text-primary transition-colors line-clamp-2" data-testid={`text-title-compact-${article.id}`}>
+              <div className="mb-1">
+                <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-orange-500 text-white rounded" data-testid={`badge-category-featured-${article.id}`}>
+                  {article.category}
+                </span>
+              </div>
+              <h2 className="text-xl font-bold text-black group-hover:text-purple-600 transition-colors mb-2 leading-tight" data-testid={`text-title-featured-${article.id}`}>
                 {article.title}
-              </h3>
-              <div className="flex items-center gap-2 text-xs text-muted-foreground mt-2">
-                <span data-testid={`text-author-compact-${article.id}`}>{article.author}</span>
-                <span>•</span>
-                <span data-testid={`text-date-compact-${article.id}`}>{article.publishedAt}</span>
+              </h2>
+              <p className="text-gray-600 text-sm mb-2 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
+                {article.excerpt}
+              </p>
+              <div className="flex items-center text-sm text-gray-500">
+                <span data-testid={`text-author-featured-${article.id}`}>{article.author}</span>
+                <span className="mx-1">•</span>
+                <span data-testid={`text-date-featured-${article.id}`}>{article.publishedAt}</span>
+                {article.comments && (
+                  <>
+                    <span className="mx-1">•</span>
+                    <MessageCircle className="h-3 w-3 mr-1" />
+                    <span data-testid={`text-comments-featured-${article.id}`}>{article.comments}</span>
+                  </>
+                )}
               </div>
             </div>
           </div>
         </Link>
-      </Card>
+      </div>
+    );
+  }
+
+  if (variant === "list") {
+    return (
+      <div className="group cursor-pointer py-4 border-b border-gray-200 last:border-b-0" data-testid={`card-article-list-${article.id}`}>
+        <Link href={`/article/${article.slug}`}>
+          <div className="flex gap-4">
+            {article.imageUrl && (
+              <div className="flex-shrink-0">
+                <img
+                  src={article.imageUrl}
+                  alt={article.title}
+                  className="w-16 h-16 object-cover rounded"
+                  data-testid={`img-article-list-${article.id}`}
+                />
+              </div>
+            )}
+            <div className="flex-1 min-w-0">
+              <div className="mb-1">
+                <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-teal-500 text-white rounded" data-testid={`badge-category-list-${article.id}`}>
+                  {article.category}
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold text-black group-hover:text-purple-600 transition-colors mb-1 leading-tight" data-testid={`text-title-list-${article.id}`}>
+                {article.title}
+              </h3>
+              <div className="flex items-center text-sm text-gray-500">
+                <span data-testid={`text-author-list-${article.id}`}>{article.author}</span>
+                <span className="mx-1">•</span>
+                <span data-testid={`text-date-list-${article.id}`}>{article.publishedAt}</span>
+                {article.comments && (
+                  <>
+                    <span className="mx-1">•</span>
+                    <MessageCircle className="h-3 w-3 mr-1" />
+                    <span data-testid={`text-comments-list-${article.id}`}>{article.comments}</span>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
     );
   }
 
   return (
-    <Card className="overflow-hidden hover-elevate group cursor-pointer" data-testid={`card-article-standard-${article.id}`}>
+    <div className="group cursor-pointer" data-testid={`card-article-standard-${article.id}`}>
       <Link href={`/article/${article.slug}`}>
         {article.imageUrl && (
-          <div className="aspect-[4/3] overflow-hidden">
+          <div className="mb-3">
             <img
               src={article.imageUrl}
               alt={article.title}
-              className="w-full h-full object-cover transition-transform group-hover:scale-105"
+              className="w-full aspect-[4/3] object-cover rounded"
               data-testid={`img-article-standard-${article.id}`}
             />
           </div>
         )}
-        <CardContent className="p-4">
-          <div className="flex items-center gap-2 mb-2">
-            <Badge variant="secondary" data-testid={`badge-category-standard-${article.id}`}>
-              {article.category}
-            </Badge>
-            <div className="flex items-center text-xs text-muted-foreground">
-              <Clock className="h-3 w-3 mr-1" />
-              <span data-testid={`text-readtime-standard-${article.id}`}>{article.readTime}</span>
-            </div>
-          </div>
-          <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2" data-testid={`text-title-standard-${article.id}`}>
-            {article.title}
-          </h3>
-          <p className="text-sm text-muted-foreground mb-3 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
-            {article.excerpt}
-          </p>
-          <div className="flex items-center gap-2 text-xs">
-            <User className="h-3 w-3" />
-            <span data-testid={`text-author-standard-${article.id}`}>{article.author}</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="text-muted-foreground" data-testid={`text-date-standard-${article.id}`}>{article.publishedAt}</span>
-          </div>
-        </CardContent>
+        <div className="mb-2">
+          <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-blue-500 text-white rounded" data-testid={`badge-category-standard-${article.id}`}>
+            {article.category}
+          </span>
+        </div>
+        <h3 className="text-lg font-semibold text-black group-hover:text-purple-600 transition-colors mb-2 leading-tight" data-testid={`text-title-standard-${article.id}`}>
+          {article.title}
+        </h3>
+        <p className="text-gray-600 text-sm mb-2 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
+          {article.excerpt}
+        </p>
+        <div className="flex items-center text-sm text-gray-500">
+          <span data-testid={`text-author-standard-${article.id}`}>{article.author}</span>
+          <span className="mx-1">•</span>
+          <span data-testid={`text-date-standard-${article.id}`}>{article.publishedAt}</span>
+          {article.comments && (
+            <>
+              <span className="mx-1">•</span>
+              <MessageCircle className="h-3 w-3 mr-1" />
+              <span data-testid={`text-comments-standard-${article.id}`}>{article.comments}</span>
+            </>
+          )}
+        </div>
       </Link>
-    </Card>
+    </div>
   );
 }
