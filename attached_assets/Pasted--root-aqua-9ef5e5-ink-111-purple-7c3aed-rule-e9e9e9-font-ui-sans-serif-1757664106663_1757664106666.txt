@@ -1,0 +1,81 @@
+:root{
+  --aqua:#9ef5e5;
+  --ink:#111;
+  --purple:#7c3aed;
+  --rule:#e9e9e9;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Roboto, Arial, sans-serif;
+}
+
+/* RESET/BASE */
+.site-header { 
+  position: relative; 
+  isolation: isolate;         /* ensures ::before sits behind foreground */
+  padding: 28px 20px 12px;
+  background: #fff;
+  font-family: var(--font);
+}
+
+/* 🎯 Oversized aqua word as a background, NOT a second block */
+.site-header::before{
+  content: attr(data-bg);
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%) translateY(-18%);
+  font-weight: 900;
+  font-size: clamp(96px, 18vw, 220px);
+  line-height: 0.9;
+  letter-spacing: .02em;
+  color: var(--aqua);
+  opacity: 0.9;
+  z-index: -1;                 /* sits behind everything in the header */
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Foreground top row */
+.topbar{
+  max-width: 1200px;
+  margin: 0 auto 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+.logo{
+  justify-self: center;        /* centers small black logo over aqua word */
+  font-weight: 900;
+  font-size: clamp(28px, 3.6vw, 44px);
+  color: var(--ink);
+}
+
+/* Right-side actions */
+.actions{ display:flex; align-items:center; gap:18px; justify-self:end; }
+.account{ text-decoration:none; color:var(--ink); font-weight:600; }
+.account .dot{
+  display:inline-block; width:10px; height:10px; border-radius:50%;
+  background: var(--purple); margin-right:8px; transform: translateY(1px);
+}
+.hamburger{ 
+  border:none; background:transparent; padding:6px; cursor:pointer; 
+  display:inline-grid; gap:4px;
+}
+.hamburger span{ display:block; width:18px; height:2px; background:#222; }
+
+/* Nav with slashes + thin underline */
+.main-nav{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 0 12px;
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+  font-weight: 600;
+}
+.main-nav a{
+  color:#222; text-decoration:none; padding:0 4px;
+}
+.main-nav .slash{ color:#777; padding:0 8px; }
+
+/* Prevent accidental second hero elsewhere */
+.bg-word, .hero, .jumbo { display:none !important; }  /* if you had those */
