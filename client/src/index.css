@@ -327,3 +327,65 @@
     inset: -1px;
   }
 }
+
+/* Verge-inspired typography */
+.verge-headline-hero {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.verge-headline-large {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.verge-headline-medium {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.verge-headline-small {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+.verge-category-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.verge-meta-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(0 0% 45%);
+}
+
+.verge-body-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: hsl(0 0% 20%);
+}
+
+.verge-divider {
+  border-top: 3px solid hsl(0 0% 10%);
+}
+
+@media (max-width: 768px) {
+  .verge-headline-hero {
+    font-size: 2.5rem;
+  }
+  
+  .verge-headline-large {
+    font-size: 1.875rem;
+  }
+}
