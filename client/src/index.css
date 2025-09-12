@@ -377,7 +377,14 @@
 }
 
 .verge-divider {
-  border-top: 3px solid hsl(0 0% 10%);
+  border-bottom: 3px solid hsl(0 0% 10%);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Custom hover states for article titles */
+.group:hover .article-title-hover {
+  color: hsl(var(--primary)) !important;
 }
 
 @media (max-width: 768px) {

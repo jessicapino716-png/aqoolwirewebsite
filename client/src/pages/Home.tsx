@@ -141,7 +141,7 @@ export default function Home() {
             <div>
               <div className="verge-divider mb-8"></div>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="verge-headline-large text-black" data-testid="text-section-latest">
+                <h2 className="verge-headline-medium text-black" data-testid="text-section-latest">
                   Latest in AI Policy
                 </h2>
                 <Link href="/policy">
