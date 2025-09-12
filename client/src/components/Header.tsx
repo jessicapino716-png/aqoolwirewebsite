@@ -17,26 +17,26 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
+    <header className="sticky top-0 z-50 w-full bg-black border-b-4 border-primary">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="text-2xl font-black text-black">
-              The Aqool AI
+            <div className="text-2xl font-black text-white">
+              THE AQOOL AI
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-black ${
+                className={`text-xs font-bold uppercase tracking-wider transition-colors hover:text-primary ${
                   location === item.href
-                    ? "text-black font-semibold"
-                    : "text-gray-600"
+                    ? "text-primary"
+                    : "text-white"
                 }`}
                 data-testid={`link-nav-${item.name.toLowerCase()}`}
               >
@@ -46,12 +46,11 @@ export default function Header() {
           </nav>
 
           {/* Right side - Subscribe and Sign In */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             {/* Subscribe button */}
             <Button
-              variant="outline"
               size="sm"
-              className="hidden md:inline-flex border-gray-300 text-black hover:bg-gray-50 rounded-md px-4 py-2 text-sm font-medium"
+              className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-white px-4 py-2 text-xs font-bold uppercase tracking-wide"
               data-testid="button-subscribe"
             >
               Subscribe
@@ -61,7 +60,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              className="hidden md:inline-flex text-black hover:bg-gray-50 text-sm font-medium"
+              className="hidden md:inline-flex text-white hover:text-primary hover:bg-white/10 text-xs font-bold uppercase tracking-wide"
               data-testid="button-signin"
             >
               Sign In
@@ -71,7 +70,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 text-gray-600 hover:bg-gray-50"
+              className="h-8 w-8 text-white hover:text-primary hover:bg-white/10"
               data-testid="button-search"
             >
               <Search className="h-4 w-4" />
@@ -83,13 +82,13 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden h-8 w-8 text-gray-600"
+                  className="md:hidden h-8 w-8 text-white hover:text-primary"
                   data-testid="button-mobile-menu"
                 >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-white">
+              <SheetContent side="right" className="w-80 bg-black text-white border-l border-gray-800">
                 <div className="flex flex-col space-y-6 mt-8">
                   {/* Mobile Search */}
                   <div className="relative">
@@ -97,7 +96,7 @@ export default function Header() {
                     <Input
                       type="search"
                       placeholder="Search..."
-                      className="pl-10 border-gray-300"
+                      className="pl-10 bg-gray-900 border-gray-700 text-white placeholder:text-gray-500"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       data-testid="input-search-mobile"
@@ -109,10 +108,10 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`text-lg font-medium transition-colors hover:text-black ${
+                      className={`text-lg font-bold uppercase tracking-wide transition-colors hover:text-primary ${
                         location === item.href
-                          ? "text-black font-semibold"
-                          : "text-gray-600"
+                          ? "text-primary"
+                          : "text-white"
                       }`}
                       data-testid={`link-nav-mobile-${item.name.toLowerCase()}`}
                     >
@@ -122,15 +121,14 @@ export default function Header() {
                   
                   <div className="pt-4 space-y-3">
                     <Button
-                      variant="outline"
-                      className="w-full border-gray-300 text-black hover:bg-gray-50"
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wide"
                       data-testid="button-subscribe-mobile"
                     >
                       Subscribe
                     </Button>
                     <Button
                       variant="ghost"
-                      className="w-full text-black hover:bg-gray-50"
+                      className="w-full text-white hover:text-primary hover:bg-white/10 font-bold uppercase tracking-wide"
                       data-testid="button-signin-mobile"
                     >
                       Sign In
