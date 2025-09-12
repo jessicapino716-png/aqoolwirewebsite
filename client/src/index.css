@@ -435,6 +435,76 @@
   }
 }
 
+/* Modern header styles */
+.modern-header-logo {
+  position: relative;
+  background: white;
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.modern-header-bg-text {
+  position: absolute;
+  font-size: 8rem;
+  font-weight: 900;
+  color: #8FFFE0;
+  opacity: 0.6;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  z-index: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modern-header-logo-overlay {
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.modern-header-logo-text {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: black;
+  letter-spacing: -0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  transition: color 0.2s ease;
+}
+
+.modern-header-logo-overlay:hover .modern-header-logo-text {
+  color: #6B7280;
+}
+
+@media (max-width: 768px) {
+  .modern-header-bg-text {
+    font-size: 4rem;
+  }
+  
+  .modern-header-logo-text {
+    font-size: 1.8rem;
+  }
+  
+  .modern-header-logo {
+    min-height: 80px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-header-bg-text {
+    font-size: 3rem;
+  }
+  
+  .modern-header-logo-text {
+    font-size: 1.4rem;
+  }
+}
+
 @media (max-width: 768px) {
   .verge-headline-hero {
     font-size: 2.5rem;
