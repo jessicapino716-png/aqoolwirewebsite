@@ -5,7 +5,7 @@ import { Menu, User } from "lucide-react";
 
 export default function Header() {
   const navigation = [
-    { name: "Tech", href: "/" },
+    { name: "Policy", href: "/" },
     { name: "Reviews", href: "/" },
     { name: "Science", href: "/" },
     { name: "Entertainment", href: "/" },
