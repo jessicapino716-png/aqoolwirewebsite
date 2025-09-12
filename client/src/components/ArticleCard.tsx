@@ -33,17 +33,29 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               />
             )}
           </div>
-          <div className="mt-4">
-            <h1 className="text-4xl font-bold leading-tight text-black group-hover:text-purple-600 transition-colors mb-3" data-testid={`text-title-hero-${article.id}`}>
+          <div className="mt-6">
+            <div className="mb-3">
+              <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-hero-${article.id}`}>
+                {article.category}
+              </span>
+            </div>
+            <h1 className="verge-headline-hero text-black group-hover:text-primary transition-colors mb-4" data-testid={`text-title-hero-${article.id}`}>
               {article.title}
             </h1>
-            <p className="text-gray-600 text-lg leading-relaxed mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
+            <p className="verge-body-text text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
               {article.excerpt}
             </p>
-            <div className="flex items-center text-sm text-gray-500">
+            <div className="verge-meta-text flex items-center">
               <span data-testid={`text-author-hero-${article.id}`}>{article.author}</span>
               <span className="mx-2">•</span>
               <span data-testid={`text-date-hero-${article.id}`}>{article.publishedAt}</span>
+              {article.comments && (
+                <>
+                  <span className="mx-2">•</span>
+                  <MessageCircle className="h-3 w-3 mr-1" />
+                  <span data-testid={`text-comments-hero-${article.id}`}>{article.comments} comments</span>
+                </>
+              )}
             </div>
           </div>
         </Link>
@@ -61,24 +73,24 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                 <img
                   src={article.imageUrl}
                   alt={article.title}
-                  className="w-20 h-20 object-cover rounded"
+                  className="w-24 h-24 object-cover rounded"
                   data-testid={`img-article-featured-${article.id}`}
                 />
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <div className="mb-1">
-                <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-orange-500 text-white rounded" data-testid={`badge-category-featured-${article.id}`}>
+              <div className="mb-2">
+                <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-featured-${article.id}`}>
                   {article.category}
                 </span>
               </div>
-              <h2 className="text-xl font-bold text-black group-hover:text-purple-600 transition-colors mb-2 leading-tight" data-testid={`text-title-featured-${article.id}`}>
+              <h2 className="verge-headline-medium text-black group-hover:text-primary transition-colors mb-3 leading-tight" data-testid={`text-title-featured-${article.id}`}>
                 {article.title}
               </h2>
-              <p className="text-gray-600 text-sm mb-2 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
+              <p className="verge-body-text mb-3 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
                 {article.excerpt}
               </p>
-              <div className="flex items-center text-sm text-gray-500">
+              <div className="verge-meta-text flex items-center">
                 <span data-testid={`text-author-featured-${article.id}`}>{article.author}</span>
                 <span className="mx-1">•</span>
                 <span data-testid={`text-date-featured-${article.id}`}>{article.publishedAt}</span>
@@ -99,7 +111,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
 
   if (variant === "list") {
     return (
-      <div className="group cursor-pointer py-4 border-b border-gray-200 last:border-b-0" data-testid={`card-article-list-${article.id}`}>
+      <div className="group cursor-pointer py-5 verge-divider last:border-b-0" data-testid={`card-article-list-${article.id}`}>
         <Link href={`/article/${article.slug}`}>
           <div className="flex gap-4">
             {article.imageUrl && (
@@ -107,21 +119,24 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                 <img
                   src={article.imageUrl}
                   alt={article.title}
-                  className="w-16 h-16 object-cover rounded"
+                  className="w-20 h-20 object-cover rounded"
                   data-testid={`img-article-list-${article.id}`}
                 />
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <div className="mb-1">
-                <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-teal-500 text-white rounded" data-testid={`badge-category-list-${article.id}`}>
+              <div className="mb-2">
+                <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-list-${article.id}`}>
                   {article.category}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold text-black group-hover:text-purple-600 transition-colors mb-1 leading-tight" data-testid={`text-title-list-${article.id}`}>
+              <h3 className="verge-headline-small text-black group-hover:text-primary transition-colors mb-2" data-testid={`text-title-list-${article.id}`}>
                 {article.title}
               </h3>
-              <div className="flex items-center text-sm text-gray-500">
+              <p className="verge-body-text mb-2 line-clamp-2" data-testid={`text-excerpt-list-${article.id}`}>
+                {article.excerpt}
+              </p>
+              <div className="verge-meta-text flex items-center">
                 <span data-testid={`text-author-list-${article.id}`}>{article.author}</span>
                 <span className="mx-1">•</span>
                 <span data-testid={`text-date-list-${article.id}`}>{article.publishedAt}</span>
@@ -144,7 +159,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
     <div className="group cursor-pointer" data-testid={`card-article-standard-${article.id}`}>
       <Link href={`/article/${article.slug}`}>
         {article.imageUrl && (
-          <div className="mb-3">
+          <div className="mb-4">
             <img
               src={article.imageUrl}
               alt={article.title}
@@ -153,18 +168,18 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             />
           </div>
         )}
-        <div className="mb-2">
-          <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-blue-500 text-white rounded" data-testid={`badge-category-standard-${article.id}`}>
+        <div className="mb-3">
+          <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-standard-${article.id}`}>
             {article.category}
           </span>
         </div>
-        <h3 className="text-lg font-semibold text-black group-hover:text-purple-600 transition-colors mb-2 leading-tight" data-testid={`text-title-standard-${article.id}`}>
+        <h3 className="verge-headline-small text-black group-hover:text-primary transition-colors mb-3" data-testid={`text-title-standard-${article.id}`}>
           {article.title}
         </h3>
-        <p className="text-gray-600 text-sm mb-2 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
+        <p className="verge-body-text mb-3 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
           {article.excerpt}
         </p>
-        <div className="flex items-center text-sm text-gray-500">
+        <div className="verge-meta-text flex items-center">
           <span data-testid={`text-author-standard-${article.id}`}>{article.author}</span>
           <span className="mx-1">•</span>
           <span data-testid={`text-date-standard-${article.id}`}>{article.publishedAt}</span>

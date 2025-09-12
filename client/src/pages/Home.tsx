@@ -103,14 +103,14 @@ const latestArticles = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Page Header */}
-      <div className="bg-white border-b border-gray-200">
+      {/* Page Header with Verge styling */}
+      <div className="bg-white verge-divider">
         <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="mb-4">
-            <h1 className="text-5xl font-black text-black mb-2" data-testid="text-page-title">
+            <h1 className="verge-headline-hero text-black mb-4" data-testid="text-page-title">
               AI Policy
             </h1>
-            <p className="text-gray-600 text-lg" data-testid="text-page-description">
+            <p className="verge-body-text text-xl" data-testid="text-page-description">
               The latest news and analysis on artificial intelligence policy and regulation in Saudi Arabia and the GCC region.
             </p>
           </div>
@@ -127,23 +127,25 @@ export default function Home() {
               <ArticleCard article={featuredArticle} variant="hero" />
             </div>
 
-            {/* Featured Articles */}
+            {/* Verge-style Off-Lede Stories */}
             <div className="mb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="verge-divider mb-8"></div>
+              <div className="space-y-8">
                 {featuredArticles.map((article) => (
                   <ArticleCard key={article.id} article={article} variant="featured" />
                 ))}
               </div>
             </div>
 
-            {/* Latest in AI Policy */}
+            {/* Latest in AI Policy - Verge River Style */}
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-black" data-testid="text-section-latest">
+              <div className="verge-divider mb-8"></div>
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="verge-headline-large text-black" data-testid="text-section-latest">
                   Latest in AI Policy
                 </h2>
                 <Link href="/policy">
-                  <span className="text-purple-600 hover:text-purple-700 text-sm font-medium" data-testid="link-view-all">
+                  <span className="verge-category-label text-primary hover:text-primary/80 transition-colors" data-testid="link-view-all">
                     View all
                   </span>
                 </Link>
@@ -158,24 +160,24 @@ export default function Home() {
 
           {/* Sidebar */}
           <div className="space-y-8">
-            {/* Most Popular */}
+            {/* Most Popular - Verge Style */}
             <div>
-              <h3 className="text-lg font-bold text-black mb-4 pb-2 border-b border-gray-200" data-testid="text-sidebar-popular">
+              <h3 className="verge-headline-medium text-black mb-6 pb-3 verge-divider" data-testid="text-sidebar-popular">
                 Most Popular
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {latestArticles.slice(0, 5).map((article, index) => (
                   <div key={article.id} className="group cursor-pointer" data-testid={`item-popular-${index}`}>
                     <Link href={`/article/${article.slug}`}>
-                      <div className="flex items-start gap-3">
-                        <span className="text-2xl font-bold text-gray-300 flex-shrink-0 mt-1">
+                      <div className="flex items-start gap-4">
+                        <span className="text-3xl font-black text-gray-300 flex-shrink-0 mt-1 verge-headline-large">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <div>
-                          <h4 className="text-sm font-semibold text-black group-hover:text-purple-600 transition-colors leading-tight">
+                          <h4 className="verge-headline-small text-black group-hover:text-primary transition-colors leading-tight mb-1">
                             {article.title}
                           </h4>
-                          <div className="text-xs text-gray-500 mt-1">
+                          <div className="verge-meta-text">
                             {article.author} • {article.publishedAt}
                           </div>
                         </div>
@@ -186,21 +188,21 @@ export default function Home() {
               </div>
             </div>
 
-            {/* AI Tools */}
+            {/* AI Tools - Verge Style */}
             <div>
-              <h3 className="text-lg font-bold text-black mb-4 pb-2 border-b border-gray-200" data-testid="text-sidebar-tools">
+              <h3 className="verge-headline-medium text-black mb-6 pb-3 verge-divider" data-testid="text-sidebar-tools">
                 AI Tools
               </h3>
               <div className="space-y-4">
                 <div className="group cursor-pointer">
-                  <div className="border border-gray-200 rounded p-4 hover:border-gray-300 transition-colors">
-                    <h4 className="font-semibold text-black group-hover:text-purple-600 transition-colors mb-2">
+                  <div className="border-2 border-gray-200 rounded p-6 hover:border-primary transition-colors">
+                    <h4 className="verge-headline-small text-black group-hover:text-primary transition-colors mb-3">
                       Claude AI Assistant
                     </h4>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className="verge-body-text mb-3">
                       Advanced AI assistant for policy analysis and regulatory research.
                     </p>
-                    <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-green-500 text-white rounded">
+                    <span className="verge-category-label bg-primary text-white px-3 py-1 rounded">
                       Featured
                     </span>
                   </div>
@@ -208,19 +210,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Newsletter */}
+            {/* Newsletter - Verge Style */}
             <div>
-              <h3 className="text-lg font-bold text-black mb-4 pb-2 border-b border-gray-200" data-testid="text-sidebar-newsletter">
+              <h3 className="verge-headline-medium text-black mb-6 pb-3 verge-divider" data-testid="text-sidebar-newsletter">
                 Newsletter
               </h3>
-              <div className="border border-gray-200 rounded p-4">
-                <h4 className="font-semibold text-black mb-2">
+              <div className="border-2 border-gray-200 rounded p-6">
+                <h4 className="verge-headline-small text-black mb-3">
                   The Aqool AI Weekly
                 </h4>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="verge-body-text mb-6">
                   Get the latest AI policy updates delivered to your inbox every Friday.
                 </p>
-                <button className="w-full bg-black text-white px-4 py-2 rounded font-medium hover:bg-gray-800 transition-colors" data-testid="button-newsletter-subscribe">
+                <button className="w-full bg-black text-white px-6 py-3 rounded verge-category-label hover:bg-gray-800 transition-colors" data-testid="button-newsletter-subscribe">
                   Subscribe
                 </button>
               </div>
