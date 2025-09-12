@@ -8,6 +8,7 @@ import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnai
 const featuredArticle = {
   id: "hero-1",
   title: "OpenAI's Funding Challenges Loom Over Oracle, Broadcom Deal Spree",
+  source: "Wall Street Journal",
   excerpt: "World's largest startup needs more paying users, but it isn't clear whether they will materialize soon. OpenAI has committed to spend around $60 billion a year for computing from Oracle, shell out $18 billion on a data-center venture, and purchase $10 billion of customized chips.",
   author: "Eliot Brown and Bradley Olson",
   publishedAt: "September 11, 2025",

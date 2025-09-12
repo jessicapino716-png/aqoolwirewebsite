@@ -4,6 +4,7 @@ import { MessageCircle } from "lucide-react";
 export interface Article {
   id: string;
   title: string;
+  source?: string;
   excerpt: string;
   author: string;
   publishedAt: string;
@@ -28,9 +29,14 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               {article.category}
             </span>
           </div>
-          <h1 className="verge-headline-hero text-black article-title-hover transition-colors mb-4 !text-black" data-testid={`text-title-hero-${article.id}`}>
+          <h1 className="verge-headline-hero text-black article-title-hover transition-colors mb-2 !text-black" data-testid={`text-title-hero-${article.id}`}>
             {article.title}
           </h1>
+          {article.source && (
+            <p className="verge-meta-text text-gray-600 mb-4 font-medium" data-testid={`text-source-hero-${article.id}`}>
+              {article.source}
+            </p>
+          )}
           <p className="verge-body-text text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
             {article.excerpt}
           </p>
@@ -72,9 +78,14 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.category}
                 </span>
               </div>
-              <h2 className="verge-headline-medium text-black article-title-hover transition-colors mb-3 leading-tight !text-black" data-testid={`text-title-featured-${article.id}`}>
+              <h2 className="verge-headline-medium text-black article-title-hover transition-colors mb-2 leading-tight !text-black" data-testid={`text-title-featured-${article.id}`}>
                 {article.title}
               </h2>
+              {article.source && (
+                <p className="verge-meta-text text-gray-600 mb-2 font-medium" data-testid={`text-source-featured-${article.id}`}>
+                  {article.source}
+                </p>
+              )}
               <p className="verge-body-text mb-3 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
                 {article.excerpt}
               </p>
@@ -118,9 +129,14 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.category}
                 </span>
               </div>
-              <h3 className="verge-headline-small text-black article-title-hover transition-colors mb-2 !text-black" data-testid={`text-title-list-${article.id}`}>
+              <h3 className="verge-headline-small text-black article-title-hover transition-colors mb-1 !text-black" data-testid={`text-title-list-${article.id}`}>
                 {article.title}
               </h3>
+              {article.source && (
+                <p className="verge-meta-text text-gray-600 mb-2 font-medium text-sm" data-testid={`text-source-list-${article.id}`}>
+                  {article.source}
+                </p>
+              )}
               <p className="verge-body-text mb-2 line-clamp-2" data-testid={`text-excerpt-list-${article.id}`}>
                 {article.excerpt}
               </p>
@@ -161,9 +177,14 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             {article.category}
           </span>
         </div>
-        <h3 className="verge-headline-small text-black article-title-hover transition-colors mb-3 !text-black" data-testid={`text-title-standard-${article.id}`}>
+        <h3 className="verge-headline-small text-black article-title-hover transition-colors mb-2 !text-black" data-testid={`text-title-standard-${article.id}`}>
           {article.title}
         </h3>
+        {article.source && (
+          <p className="verge-meta-text text-gray-600 mb-2 font-medium" data-testid={`text-source-standard-${article.id}`}>
+            {article.source}
+          </p>
+        )}
         <p className="verge-body-text mb-3 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
           {article.excerpt}
         </p>
