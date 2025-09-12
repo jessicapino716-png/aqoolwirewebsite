@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="site-header sticky top-0 z-50" data-bg="The Aqool">
+    <header className="site-header sticky top-0 z-50" data-bg="The Aqool (ai)">
       <div className="topbar">
         <Link href="/" className="logo" data-testid="link-home">The Aqool (ai)</Link>
         <div className="actions">
