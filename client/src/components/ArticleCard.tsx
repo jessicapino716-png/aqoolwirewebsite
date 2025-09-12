@@ -11,6 +11,7 @@ export interface Article {
   category: string;
   imageUrl?: string;
   slug: string;
+  externalUrl?: string;
   comments?: number;
 }
 
@@ -20,10 +21,25 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article, variant = "standard" }: ArticleCardProps) {
+  const LinkWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (article.externalUrl) {
+      return (
+        <a href={article.externalUrl} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link href={`/article/${article.slug}`}>
+        {children}
+      </Link>
+    );
+  };
+
   if (variant === "hero") {
     return (
       <div className="group cursor-pointer" data-testid={`card-article-hero-${article.id}`}>
-        <Link href={`/article/${article.slug}`}>
+        <LinkWrapper>
           <div className="mb-3">
             <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-hero-${article.id}`}>
               {article.category}
@@ -52,7 +68,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               </>
             )}
           </div>
-        </Link>
+        </LinkWrapper>
       </div>
     );
   }
@@ -60,7 +76,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
   if (variant === "featured") {
     return (
       <div className="group cursor-pointer" data-testid={`card-article-featured-${article.id}`}>
-        <Link href={`/article/${article.slug}`}>
+        <LinkWrapper>
           <div className="flex gap-4">
             {article.imageUrl && (
               <div className="flex-shrink-0">
@@ -103,7 +119,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               </div>
             </div>
           </div>
-        </Link>
+        </LinkWrapper>
       </div>
     );
   }
@@ -111,7 +127,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
   if (variant === "list") {
     return (
       <div className="group cursor-pointer py-5 verge-divider last:border-b-0" data-testid={`card-article-list-${article.id}`}>
-        <Link href={`/article/${article.slug}`}>
+        <LinkWrapper>
           <div className="flex gap-4">
             {article.imageUrl && (
               <div className="flex-shrink-0">
@@ -154,14 +170,14 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               </div>
             </div>
           </div>
-        </Link>
+        </LinkWrapper>
       </div>
     );
   }
 
   return (
     <div className="group cursor-pointer" data-testid={`card-article-standard-${article.id}`}>
-      <Link href={`/article/${article.slug}`}>
+      <LinkWrapper>
         {article.imageUrl && (
           <div className="mb-4">
             <img
@@ -200,7 +216,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             </>
           )}
         </div>
-      </Link>
+      </LinkWrapper>
     </div>
   );
 }

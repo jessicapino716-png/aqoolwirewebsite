@@ -15,6 +15,7 @@ const featuredArticle = {
   category: "AI Business",
   imageUrl: heroImage,
   slug: "openai-funding-challenges-oracle-broadcom",
+  externalUrl: "https://www.wsj.com/tech/ai/openais-funding-challenges-loom-over-oracle-broadcom-deal-spree-be353399?mod=tech_lead_story",
   comments: 89
 };
 
