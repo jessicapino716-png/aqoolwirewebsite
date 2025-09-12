@@ -103,17 +103,18 @@ const latestArticles = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Page Header with Verge styling */}
-      <div className="bg-white verge-divider">
-        <div className="mx-auto max-w-7xl px-4 py-8">
-          <div className="mb-4">
-            <h1 className="verge-headline-hero text-black mb-4" data-testid="text-page-title">
-              AI Policy
-            </h1>
-            <p className="verge-body-text text-xl" data-testid="text-page-description">
-              The latest news and analysis on artificial intelligence policy and regulation in Saudi Arabia and the GCC region.
-            </p>
-          </div>
+      {/* The Verge-style Hero Section */}
+      <div className="verge-hero verge-divider">
+        <div className="verge-hero-bg-text">
+          The Aqool
+        </div>
+        <div className="verge-hero-content">
+          <h1 className="verge-hero-logo" data-testid="text-hero-logo">
+            The Aqool
+          </h1>
+          <p className="verge-body-text text-xl text-gray-600 max-w-2xl mx-auto" data-testid="text-hero-description">
+            The latest news and analysis on artificial intelligence policy and regulation in Saudi Arabia and the GCC region.
+          </p>
         </div>
       </div>
 
