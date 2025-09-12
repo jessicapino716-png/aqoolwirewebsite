@@ -188,45 +188,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* AI Tools - Verge Style */}
-            <div>
-              <h3 className="verge-headline-medium text-black mb-6 pb-3 verge-divider" data-testid="text-sidebar-tools">
-                AI Tools
-              </h3>
-              <div className="space-y-4">
-                <div className="group cursor-pointer">
-                  <div className="border-2 border-gray-200 rounded p-6 hover:border-primary transition-colors">
-                    <h4 className="verge-headline-small text-black group-hover:text-primary transition-colors mb-3">
-                      Claude AI Assistant
-                    </h4>
-                    <p className="verge-body-text mb-3">
-                      Advanced AI assistant for policy analysis and regulatory research.
-                    </p>
-                    <span className="verge-category-label bg-primary text-white px-3 py-1 rounded">
-                      Featured
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Newsletter - Verge Style */}
-            <div>
-              <h3 className="verge-headline-medium text-black mb-6 pb-3 verge-divider" data-testid="text-sidebar-newsletter">
-                Newsletter
-              </h3>
-              <div className="border-2 border-gray-200 rounded p-6">
-                <h4 className="verge-headline-small text-black mb-3">
-                  The Aqool AI Weekly
-                </h4>
-                <p className="verge-body-text mb-6">
-                  Get the latest AI policy updates delivered to your inbox every Friday.
-                </p>
-                <button className="w-full bg-black text-white px-6 py-3 rounded verge-category-label hover:bg-gray-800 transition-colors" data-testid="button-newsletter-subscribe">
-                  Subscribe
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
