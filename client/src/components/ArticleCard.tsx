@@ -23,40 +23,28 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
     return (
       <div className="group cursor-pointer" data-testid={`card-article-hero-${article.id}`}>
         <Link href={`/article/${article.slug}`}>
-          <div className="relative overflow-hidden rounded-lg">
-            {article.imageUrl && (
-              <img
-                src={article.imageUrl}
-                alt={article.title}
-                className="w-full aspect-[16/9] object-cover"
-                data-testid={`img-article-hero-${article.id}`}
-              />
-            )}
+          <div className="mb-3">
+            <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-hero-${article.id}`}>
+              {article.category}
+            </span>
           </div>
-          <div className="mt-6">
-            <div className="mb-3">
-              <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-hero-${article.id}`}>
-                {article.category}
-              </span>
-            </div>
-            <h1 className="verge-headline-hero text-black article-title-hover transition-colors mb-4 !text-black" data-testid={`text-title-hero-${article.id}`}>
-              {article.title}
-            </h1>
-            <p className="verge-body-text text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
-              {article.excerpt}
-            </p>
-            <div className="verge-meta-text flex items-center">
-              <span data-testid={`text-author-hero-${article.id}`}>{article.author}</span>
-              <span className="mx-2">•</span>
-              <span data-testid={`text-date-hero-${article.id}`}>{article.publishedAt}</span>
-              {article.comments && (
-                <>
-                  <span className="mx-2">•</span>
-                  <MessageCircle className="h-3 w-3 mr-1" />
-                  <span data-testid={`text-comments-hero-${article.id}`}>{article.comments} comments</span>
-                </>
-              )}
-            </div>
+          <h1 className="verge-headline-hero text-black article-title-hover transition-colors mb-4 !text-black" data-testid={`text-title-hero-${article.id}`}>
+            {article.title}
+          </h1>
+          <p className="verge-body-text text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
+            {article.excerpt}
+          </p>
+          <div className="verge-meta-text flex items-center">
+            <span data-testid={`text-author-hero-${article.id}`}>{article.author}</span>
+            <span className="mx-2">•</span>
+            <span data-testid={`text-date-hero-${article.id}`}>{article.publishedAt}</span>
+            {article.comments && (
+              <>
+                <span className="mx-2">•</span>
+                <MessageCircle className="h-3 w-3 mr-1" />
+                <span data-testid={`text-comments-hero-${article.id}`}>{article.comments} comments</span>
+              </>
+            )}
           </div>
         </Link>
       </div>
