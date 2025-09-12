@@ -9,15 +9,13 @@ export default function Header() {
     { name: "Regulation", href: "/" },
     { name: "Compliance", href: "/" },
     { name: "New Ai Tools", href: "/" },
-    { name: "AI", href: "/" },
+    { name: "Newsletter", href: "/" },
   ];
 
   return (
     <header className="site-header sticky top-0 z-50" data-bg="The Aqool">
       <div className="topbar">
-        <Link href="/" className="logo" data-testid="link-home">
-          The Aqool
-        </Link>
+        <Link href="/" className="logo" data-testid="link-home">The Aqool (ai)</Link>
         <div className="actions">
           <Link href="/" className="account" data-testid="link-account">
             <span className="dot"></span> Account
@@ -54,7 +52,6 @@ export default function Header() {
           </Sheet>
         </div>
       </div>
-      
       <nav className="main-nav" aria-label="Primary">
         {navigation.map((item, index) => (
           <span key={item.name}>
