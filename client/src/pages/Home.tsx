@@ -7,14 +7,14 @@ import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnai
 
 const featuredArticle = {
   id: "hero-1",
-  title: "Saudi Arabia Leads Middle East in AI Governance Innovation",
-  excerpt: "The Kingdom's comprehensive artificial intelligence regulatory framework is setting new standards across the GCC region and attracting global attention from policymakers worldwide.",
-  author: "Dr. Ahmed Al-Rashid",
-  publishedAt: "2 hours ago",
-  category: "Featured Analysis",
+  title: "OpenAI's Funding Challenges Loom Over Oracle, Broadcom Deal Spree",
+  excerpt: "World's largest startup needs more paying users, but it isn't clear whether they will materialize soon. OpenAI has committed to spend around $60 billion a year for computing from Oracle, shell out $18 billion on a data-center venture, and purchase $10 billion of customized chips.",
+  author: "Eliot Brown and Bradley Olson",
+  publishedAt: "September 11, 2025",
+  category: "AI Business",
   imageUrl: heroImage,
-  slug: "saudi-ai-governance-innovation",
-  comments: 42
+  slug: "openai-funding-challenges-oracle-broadcom",
+  comments: 89
 };
 
 const featuredArticles = [
