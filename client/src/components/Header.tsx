@@ -8,7 +8,7 @@ export default function Header() {
     { name: "Policy", href: "/" },
     { name: "Regulation", href: "/" },
     { name: "Compliance", href: "/" },
-    { name: "Entertainment", href: "/" },
+    { name: "New Ai Tools", href: "/" },
     { name: "AI", href: "/" },
   ];
 
