@@ -503,42 +503,55 @@
   }
   
   10% {
-    transform: translate3d(-1px, 1px, 0) skew(-2deg);
-    text-shadow: 2px 0 #ff0040, -2px 0 #00ffff;
-    color: #ff0040;
+    transform: translate3d(-3px, 2px, 0) skew(-5deg);
+    text-shadow: 4px 0 #ff0040, -4px 0 #00ffff;
+    color: #ff0040 !important;
   }
   
   20% {
-    transform: translate3d(1px, -1px, 0) skew(2deg);
-    text-shadow: -2px 0 #ff0040, 2px 0 #00ffff;
-    color: #00ffff;
+    transform: translate3d(3px, -2px, 0) skew(5deg);
+    text-shadow: -4px 0 #ff0040, 4px 0 #00ffff;
+    color: #00ffff !important;
   }
   
   30% {
-    transform: translate3d(-1px, 0, 0) skew(-1deg);
-    text-shadow: 1px 0 #ff0040, -1px 0 #00ffff;
+    transform: translate3d(-2px, 1px, 0) skew(-3deg);
+    text-shadow: 3px 0 #ff0040, -3px 0 #00ffff;
+    color: #ff0040 !important;
   }
   
   40% {
-    transform: translate3d(1px, 1px, 0) skew(1deg);
-    text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;
+    transform: translate3d(2px, 2px, 0) skew(3deg);
+    text-shadow: -3px 0 #ff0040, 3px 0 #00ffff;
+    color: #00ffff !important;
   }
 }
 
 @keyframes glitch-trigger {
-  0%, 85% {
+  0%, 50% {
     animation: none;
   }
-  86%, 90% {
+  51%, 55% {
     animation: glitch 0.3s ease-in-out;
   }
-  91%, 100% {
+  56%, 100% {
     animation: none;
   }
 }
 
 .glitch-text {
-  animation: glitch-trigger 8s infinite;
+  animation: glitch-trigger 1s infinite;
   position: relative;
   display: inline-block;
+}
+
+/* Test animation to make sure animations work */
+@keyframes simple-test {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.test-animation {
+  animation: simple-test 1s infinite;
 }
