@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="hero-section px-20 py-15 pt-[20px] pb-[20px] mt-[0px] mb-[0px] ml-[0px] mr-[0px] bg-[#f5f5f0]">
+    <div className="hero-section px-20 py-15 pt-[20px] pb-[20px] mt-[0px] mb-[0px] ml-[0px] mr-[0px] bg-[#ffffff7a]">
       {/* Navigation Header */}
       <header className="flex justify-between items-center mb-15">
         <Link href="/" className="font-extrabold text-black text-[40px]" data-testid="link-home">
