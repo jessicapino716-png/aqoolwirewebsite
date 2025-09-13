@@ -5,11 +5,11 @@ import { Menu, User } from "lucide-react";
 
 export default function Header() {
   const navigation = [
-    { name: "\\ Policy", href: "#policy" },
-    { name: "\\ Regulation", href: "#regulation" },
-    { name: "\\ Analysis", href: "#analysis" },
-    { name: "\\ New AI Tools", href: "#tools" },
-    { name: "\\ Newsletter", href: "#newsletter" },
+    { name: "/ Policy", href: "#policy" },
+    { name: "/ Regulation", href: "#regulation" },
+    { name: "/ Analysis", href: "#analysis" },
+    { name: "/ New AI Tools", href: "#tools" },
+    { name: "/ Newsletter", href: "#newsletter" },
   ];
 
   return (
