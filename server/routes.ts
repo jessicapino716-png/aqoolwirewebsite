@@ -67,22 +67,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get latest weekly analysis for homepage hero
-  app.get("/api/content/weekly-analysis/latest", async (req, res) => {
-    try {
-      const latestAnalysis = await storage.getLatestWeeklyAnalysis();
-      
-      if (!latestAnalysis) {
-        return res.status(404).json({ error: "No weekly analysis found" });
-      }
-      
-      res.json(latestAnalysis);
-    } catch (error) {
-      console.error("Error fetching latest weekly analysis:", error);
-      res.status(500).json({ error: "Failed to fetch latest weekly analysis" });
-    }
-  });
-
   // Admin routes for content management
   app.post("/api/content", authenticateAdmin, async (req, res) => {
     try {
@@ -161,10 +145,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
               error: "Cannot set body field on external content. Change type to 'op-ed' first." 
             });
           }
-        } else if (existingContent.type === "weekly-analysis") {
+        } else if (existingContent.type === "op-ed") {
           if ("externalUrl" in req.body || "source" in req.body) {
             return res.status(400).json({ 
-              error: "Cannot set externalUrl or source fields on weekly-analysis content. Change type to 'external' first." 
+              error: "Cannot set externalUrl or source fields on op-ed content. Change type to 'external' first." 
             });
           }
         }
@@ -194,7 +178,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // (don't set to null - delete them completely so z.never() validation passes)
         if (requestType === "external") {
           delete contentForValidation.body;
-        } else if (requestType === "weekly-analysis") {
+        } else if (requestType === "op-ed") {
           delete contentForValidation.externalUrl;
           delete contentForValidation.source;
         }
@@ -227,7 +211,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // After validation passes, ensure forbidden fields are set to null for storage update
         if (requestType === "external") {
           validatedData.body = null;
-        } else if (requestType === "weekly-analysis") {
+        } else if (requestType === "op-ed") {
           validatedData.externalUrl = null;
           validatedData.source = null;
         }
