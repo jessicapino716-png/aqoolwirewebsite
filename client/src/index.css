@@ -1,3 +1,5 @@
+@import url('https://db.onlinewebfonts.com/c/beb784012d429b8921e66081b20406b8?family=FK+Roman+Standard+Trial+Medium');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -381,6 +383,11 @@
 .verge-excerpt-text {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 700;
+}
+
+.fk-roman-text {
+  font-family: 'FK Roman Standard Trial Medium', serif;
+  font-weight: 500;
 }
 
 .verge-divider {
