@@ -53,7 +53,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               {article.source}
             </p>
           )}
-          <p className="verge-body-text text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
+          <p className="verge-excerpt-text text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
             {article.excerpt}
           </p>
           <div className="verge-meta-text flex items-center">
@@ -102,7 +102,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.source}
                 </p>
               )}
-              <p className="verge-body-text mb-3 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
+              <p className="verge-excerpt-text mb-3 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
                 {article.excerpt}
               </p>
               <div className="verge-meta-text flex items-center">
@@ -153,7 +153,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.source}
                 </p>
               )}
-              <p className="verge-body-text mb-2 line-clamp-2" data-testid={`text-excerpt-list-${article.id}`}>
+              <p className="verge-excerpt-text mb-2 line-clamp-2" data-testid={`text-excerpt-list-${article.id}`}>
                 {article.excerpt}
               </p>
               <div className="verge-meta-text flex items-center">
@@ -201,7 +201,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             {article.source}
           </p>
         )}
-        <p className="verge-body-text mb-3 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
+        <p className="verge-excerpt-text mb-3 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
           {article.excerpt}
         </p>
         <div className="verge-meta-text flex items-center">
