@@ -1,4 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
+import HeroSection from "@/components/HeroSection";
 import { Link } from "wouter";
 
 // TODO: Remove mock data - replace with API calls
@@ -104,7 +105,8 @@ const latestArticles = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="bg-black">
+      <HeroSection />
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-4 py-8 pl-[16px] pr-[16px] pt-[70px] pb-[70px]">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

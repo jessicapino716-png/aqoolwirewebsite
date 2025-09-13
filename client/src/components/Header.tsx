@@ -11,15 +11,14 @@ export default function Header() {
   ];
 
   return (
-    <div className="hero-section px-20 py-15 pt-[20px] pb-[20px] mt-[0px] mb-[0px] ml-[0px] mr-[0px] bg-black min-h-screen">
-      {/* Navigation Header */}
-      <header className="flex justify-between items-center mb-15">
-        <Link href="/" className="font-extrabold text-white text-[64px]" data-testid="link-home">
+    <header className="bg-black border-b border-gray-800 px-6 lg:px-20 py-4">
+      <div className="flex justify-between items-center">
+        <Link href="/" className="font-extrabold text-white text-3xl lg:text-4xl" data-testid="link-home">
           The Aqool
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-4 text-[20px]">
+        <nav className="hidden lg:flex items-center space-x-4 text-lg">
           <div className="flex items-center space-x-2">
             {navigation.map((item, index) => (
               <div key={item.name} className="flex items-center">
@@ -80,25 +79,7 @@ export default function Header() {
             </div>
           </SheetContent>
         </Sheet>
-      </header>
-      {/* Tagline Section */}
-      <section className="max-w-4xl relative">
-        {/* Vertical teal line */}
-        <div className="absolute left-0 top-0 w-1 h-full bg-teal-400"></div>
-        
-        <div className="pl-12">
-          <h1 className="font-extrabold mb-8 text-white text-[80px] leading-tight" data-testid="text-headline">
-            AI Policy.<br/>
-            Regulation.<br/>
-            Innovation.
-          </h1>
-          <div className="text-white text-[24px] leading-relaxed space-y-2" data-testid="text-subheadline">
-            <div>Sharp Insights.</div>
-            <div>Weekly Analysis for Stakeholders.</div>
-            <div className="text-teal-400 mt-4">Straight from Riyadh.</div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </header>
   );
 }

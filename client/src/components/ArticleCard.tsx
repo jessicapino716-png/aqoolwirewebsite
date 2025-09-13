@@ -49,7 +49,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             {article.title}
           </h1>
           {article.source && (
-            <p className="verge-meta-text text-gray-600 mb-4 font-medium" data-testid={`text-source-hero-${article.id}`}>
+            <p className="verge-meta-text text-gray-400 mb-4 font-medium" data-testid={`text-source-hero-${article.id}`}>
               {article.source}
             </p>
           )}
@@ -98,7 +98,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                 {article.title}
               </h2>
               {article.source && (
-                <p className="verge-meta-text text-gray-600 mb-2 font-medium" data-testid={`text-source-featured-${article.id}`}>
+                <p className="verge-meta-text text-gray-400 mb-2 font-medium" data-testid={`text-source-featured-${article.id}`}>
                   {article.source}
                 </p>
               )}
@@ -149,7 +149,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                 {article.title}
               </h3>
               {article.source && (
-                <p className="verge-meta-text text-gray-600 mb-2 font-medium text-sm" data-testid={`text-source-list-${article.id}`}>
+                <p className="verge-meta-text text-gray-400 mb-2 font-medium text-sm" data-testid={`text-source-list-${article.id}`}>
                   {article.source}
                 </p>
               )}
@@ -197,7 +197,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
           {article.title}
         </h3>
         {article.source && (
-          <p className="verge-meta-text text-gray-600 mb-2 font-medium" data-testid={`text-source-standard-${article.id}`}>
+          <p className="verge-meta-text text-gray-400 mb-2 font-medium" data-testid={`text-source-standard-${article.id}`}>
             {article.source}
           </p>
         )}
