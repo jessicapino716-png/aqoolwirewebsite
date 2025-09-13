@@ -7,7 +7,7 @@ export default function Header() {
   const navigation = [
     { name: "Policy", href: "#policy" },
     { name: "Regulation", href: "#regulation" },
-    { name: "Compliance", href: "#compliance" },
+    { name: "Analysis", href: "#analysis" },
     { name: "New AI Tools", href: "#tools" },
     { name: "Newsletter", href: "#newsletter" },
   ];
