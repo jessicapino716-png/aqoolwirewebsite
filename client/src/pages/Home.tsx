@@ -129,7 +129,7 @@ export default function Home() {
             <div>
               <div className="verge-divider mb-8"></div>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="verge-headline-medium text-black" data-testid="text-section-latest">
+                <h2 className="verge-headline-medium text-white" data-testid="text-section-latest">
                   Latest in AI Policy
                 </h2>
                 <Link href="/policy">
@@ -150,7 +150,7 @@ export default function Home() {
           <div className="space-y-8">
             {/* Most Popular - Verge Style */}
             <div>
-              <h3 className="verge-headline-medium text-black mb-6 pb-3 verge-divider" data-testid="text-sidebar-popular">
+              <h3 className="verge-headline-medium text-white mb-6 pb-3 verge-divider" data-testid="text-sidebar-popular">
                 Most Popular
               </h3>
               <div className="space-y-6">
@@ -162,7 +162,7 @@ export default function Home() {
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <div>
-                          <h4 className="verge-headline-small text-black group-hover:text-primary transition-colors leading-tight mb-1">
+                          <h4 className="verge-headline-small text-white group-hover:text-primary transition-colors leading-tight mb-1">
                             {article.title}
                           </h4>
                           <div className="verge-meta-text">

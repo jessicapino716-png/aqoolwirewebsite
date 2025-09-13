@@ -34,7 +34,13 @@ export default function Header() {
               </div>
             ))}
           </div>
-          <div className="text-white font-medium ml-8">New AI Tools</div>
+          <Link 
+            href="#tools" 
+            className="text-white font-medium hover:text-gray-300 transition-colors ml-8"
+            data-testid="link-nav-new-ai-tools"
+          >
+            New AI Tools
+          </Link>
           <Link 
             href="#account" 
             className="flex items-center space-x-2 text-white font-medium hover:text-gray-300 transition-colors ml-8"
