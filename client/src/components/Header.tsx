@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="hero-section px-20 py-15 pt-[20px] pb-[20px] mt-[0px] mb-[0px] ml-[0px] mr-[0px] bg-[#faf8f0]">
+    <div className="hero-section px-20 py-15 pt-[20px] pb-[20px] mt-[0px] mb-[0px] ml-[0px] mr-[0px] bg-[#f7f4eb]">
       {/* Navigation Header */}
       <header className="flex justify-between items-center mb-15">
         <Link href="/" className="font-extrabold text-black text-[70px]" data-testid="link-home">
@@ -79,8 +79,8 @@ export default function Header() {
           AI policy. Regulation. Innovation.
         </h1>
         <p className="text-xl leading-relaxed text-gray-600" data-testid="text-subheadline">
-          Straight from the Gulf.<br />
-          Sharp insights, weekly analysis, and data-backed foresight for stakeholders.
+          Straight from the Gulf. <br />
+          Sharp insights, weekly signals, and data-backed foresight for investors and decision-makers.
         </p>
       </section>
     </div>
