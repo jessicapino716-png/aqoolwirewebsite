@@ -74,7 +74,7 @@ export default function Header() {
         </Sheet>
       </header>
       {/* Separator line */}
-      <div className="border-t border-gray-300 mb-8"></div>
+      <div className="border-t border-gray-300 mb-8 text-[#573bd4]"></div>
       {/* Tagline Section */}
       <section className="max-w-3xl">
         <h1 className="font-extrabold mb-5 text-[25px] pt-[5px] pb-[5px] pl-[0px] pr-[0px] text-[#0a0a0a]" data-testid="text-headline">
