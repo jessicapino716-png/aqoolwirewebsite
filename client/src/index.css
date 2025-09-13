@@ -493,3 +493,52 @@
     font-size: 1.875rem;
   }
 }
+
+/* Glitch Effect Animation */
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: none;
+    color: inherit;
+  }
+  
+  10% {
+    transform: translate3d(-1px, 1px, 0) skew(-2deg);
+    text-shadow: 2px 0 #ff0040, -2px 0 #00ffff;
+    color: #ff0040;
+  }
+  
+  20% {
+    transform: translate3d(1px, -1px, 0) skew(2deg);
+    text-shadow: -2px 0 #ff0040, 2px 0 #00ffff;
+    color: #00ffff;
+  }
+  
+  30% {
+    transform: translate3d(-1px, 0, 0) skew(-1deg);
+    text-shadow: 1px 0 #ff0040, -1px 0 #00ffff;
+  }
+  
+  40% {
+    transform: translate3d(1px, 1px, 0) skew(1deg);
+    text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;
+  }
+}
+
+@keyframes glitch-trigger {
+  0%, 85% {
+    animation: none;
+  }
+  86%, 90% {
+    animation: glitch 0.3s ease-in-out;
+  }
+  91%, 100% {
+    animation: none;
+  }
+}
+
+.glitch-text {
+  animation: glitch-trigger 8s infinite;
+  position: relative;
+  display: inline-block;
+}
