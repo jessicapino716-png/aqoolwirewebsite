@@ -17,7 +17,7 @@ export default function Header() {
       {/* Navigation Header */}
       <header className="flex justify-between items-center mb-15">
         <Link href="/" className="font-extrabold text-black text-[70px]" data-testid="link-home">
-          The Aqool <span className="font-semibold text-[#bff47b]">(ai)</span>
+          The Aqool <span className="font-semibold text-[#87e30e]">(ai)</span>
         </Link>
         
         {/* Desktop Navigation */}
