@@ -81,9 +81,10 @@ export default function Header() {
           AI Policy.    Regulation.    Innovation.
         </h1>
         <p className="text-xl leading-relaxed text-gray-600" data-testid="text-subheadline">
-          Straight from the Gulf.<br />
           Sharp Insights.<br />
-          Weekly Analysis.
+          Weekly Analysis.<br />
+          Data-backed Foresight for Stakeholders.<br />
+          Straight from Riyadh.
         </p>
       </section>
     </div>
