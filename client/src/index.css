@@ -212,7 +212,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-serif antialiased bg-background text-foreground;
   }
 }
 
@@ -368,12 +368,14 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: hsl(0 0% 45%);
+  font-family: Georgia, serif;
 }
 
 .verge-body-text {
   font-size: 1rem;
   line-height: 1.6;
   color: hsl(0 0% 20%);
+  font-family: Georgia, serif;
 }
 
 .verge-divider {
