@@ -5,66 +5,85 @@ import { Menu, User } from "lucide-react";
 
 export default function Header() {
   const navigation = [
-    { name: "Policy", href: "/" },
-    { name: "Regulation", href: "/" },
-    { name: "Compliance", href: "/" },
-    { name: "New Ai Tools", href: "/" },
-    { name: "Newsletter", href: "/" },
+    { name: "Policy", href: "#policy" },
+    { name: "Regulation", href: "#regulation" },
+    { name: "Compliance", href: "#compliance" },
+    { name: "New AI Tools", href: "#tools" },
+    { name: "Newsletter", href: "#newsletter" },
   ];
 
   return (
-    <header className="site-header sticky top-0 z-50 pl-[25px] pr-[25px] pt-[40px] pb-[40px] mt-[20px] mb-[20px]" data-bg="The Aqool (ai)">
-      <div className="topbar">
-        <Link href="/" className="logo" data-testid="link-home">The Aqool (ai)</Link>
-        <div className="actions">
-          <Link href="/" className="account" data-testid="link-account">
-            <span className="dot"></span> Account
-          </Link>
-          <Sheet>
-            <SheetTrigger asChild>
-              <button className="hamburger" aria-label="Open menu" data-testid="button-mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-80 bg-white text-black border-l border-gray-200">
-              <div className="flex flex-col space-y-6 mt-8">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-lg font-medium transition-colors hover:text-gray-600 text-black"
-                    data-testid={`link-nav-mobile-${item.name.toLowerCase()}`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                
-                <div className="pt-4 border-t border-gray-200">
-                  <Link href="/" className="flex items-center space-x-2 text-black hover:text-purple-600 transition-colors">
-                    <User className="h-4 w-4 text-purple-600" />
-                    <span className="text-lg font-medium">Account</span>
-                  </Link>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
-      <nav className="main-nav" aria-label="Primary">
-        {navigation.map((item, index) => (
-          <span key={item.name}>
-            <Link 
-              href={item.href} 
-              data-testid={`link-nav-${item.name.toLowerCase()}`}
+    <div className="hero-section bg-gray-50 px-20 py-15">
+      {/* Navigation Header */}
+      <header className="flex justify-between items-center mb-15">
+        <Link href="/" className="text-4xl font-extrabold text-black" data-testid="link-home">
+          The Aqool <span className="text-teal-400 font-semibold">(ai)</span>
+        </Link>
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center space-x-8">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="relative text-gray-700 font-medium hover:text-gray-900 transition-colors group"
+              data-testid={`link-nav-${item.name.toLowerCase().replace(' ', '-')}`}
             >
               {item.name}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            {index < navigation.length - 1 && <span className="slash">/</span>}
-          </span>
-        ))}
-      </nav>
-    </header>
+          ))}
+          <Link 
+            href="#account" 
+            className="flex items-center space-x-2 text-gray-700 font-medium hover:text-gray-900 transition-colors"
+            data-testid="link-account"
+          >
+            <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+            <span>Account</span>
+          </Link>
+        </nav>
+
+        {/* Mobile Menu */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <button className="lg:hidden p-2" aria-label="Open menu" data-testid="button-mobile-menu">
+              <Menu className="h-6 w-6" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-80 bg-white text-black border-l border-gray-200">
+            <div className="flex flex-col space-y-6 mt-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-lg font-medium transition-colors hover:text-gray-600 text-black"
+                  data-testid={`link-nav-mobile-${item.name.toLowerCase().replace(' ', '-')}`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              
+              <div className="pt-4 border-t border-gray-200">
+                <Link href="#account" className="flex items-center space-x-2 text-black hover:text-purple-600 transition-colors">
+                  <User className="h-4 w-4 text-purple-600" />
+                  <span className="text-lg font-medium">Account</span>
+                </Link>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </header>
+
+      {/* Tagline Section */}
+      <section className="max-w-3xl">
+        <h1 className="text-5xl font-extrabold text-black mb-5 leading-tight" data-testid="text-headline">
+          AI policy. Regulation. Innovation.
+        </h1>
+        <p className="text-xl leading-relaxed text-gray-600" data-testid="text-subheadline">
+          Straight from the Gulf.<br />
+          Sharp insights, weekly signals, and data-backed foresight for investors and decision-makers.
+        </p>
+      </section>
+    </div>
   );
 }

@@ -105,12 +105,6 @@ const latestArticles = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Site Concept Section */}
-      <div className="bg-gray-50 py-8 pt-[50px] pb-[50px]">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <p className="fk-roman-text text-lg leading-relaxed text-foreground ml-[0px] mr-[0px] pl-[38px] pr-[38px] pt-[0px] pb-[0px] font-normal text-left">The latest analysis on AI policy, regulation, and innovation in Saudi Arabia and the broader GCC. Expert insights, weekly commentary, and strategic market analysis for stakeholders </p>
-        </div>
-      </div>
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
