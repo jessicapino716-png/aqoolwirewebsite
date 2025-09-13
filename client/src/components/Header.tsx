@@ -75,7 +75,7 @@ export default function Header() {
       </header>
       {/* Tagline Section */}
       <section className="max-w-3xl">
-        <h1 className="text-5xl font-extrabold text-black mb-5 leading-tight" data-testid="text-headline">
+        <h1 className="font-extrabold mb-5 text-[25px] pt-[5px] pb-[5px] pl-[0px] pr-[0px] text-[#0a0a0a]" data-testid="text-headline">
           AI policy. Regulation. Innovation.
         </h1>
         <p className="text-xl leading-relaxed text-gray-600" data-testid="text-subheadline">
