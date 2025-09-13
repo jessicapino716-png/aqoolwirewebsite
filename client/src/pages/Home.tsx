@@ -108,7 +108,7 @@ export default function Home() {
       {/* Site Concept Section */}
       <div className="bg-gray-50 py-8">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <p className="text-lg leading-relaxed text-[#0a0a0a] font-medium">
+          <p className="text-lg leading-relaxed text-[#0a0a0a] font-serif">
             The latest analysis on AI policy, regulation, and innovation in Saudi Arabia and the broader GCC. Expert insights, weekly commentary, and strategic analysis for stakeholders
           </p>
         </div>
