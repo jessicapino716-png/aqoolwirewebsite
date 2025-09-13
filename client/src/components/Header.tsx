@@ -80,7 +80,7 @@ export default function Header() {
         </h1>
         <p className="text-xl leading-relaxed text-gray-600" data-testid="text-subheadline">
           Straight from the Gulf.<br />
-          Sharp insights, weekly signals, and data-backed foresight for investors and decision-makers.
+          Sharp insights, weekly analysis, and data-backed foresight for stakeholders.
         </p>
       </section>
     </div>
