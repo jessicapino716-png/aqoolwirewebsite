@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="hero-section px-20 py-15 pt-[20px] pb-[20px] mt-[0px] mb-[0px] ml-[0px] mr-[0px] bg-[#f7f4eb]">
+    <div className="hero-section px-20 py-15 pt-[20px] pb-[20px] mt-[0px] mb-[0px] ml-[0px] mr-[0px] bg-[#f5f5f0]">
       {/* Navigation Header */}
       <header className="flex justify-between items-center mb-15">
         <Link href="/" className="font-extrabold text-black text-[70px]" data-testid="link-home">
@@ -73,10 +73,8 @@ export default function Header() {
           </SheetContent>
         </Sheet>
       </header>
-      
       {/* Separator line */}
       <div className="border-t border-gray-300 mb-8"></div>
-      
       {/* Tagline Section */}
       <section className="max-w-3xl">
         <h1 className="font-extrabold mb-5 text-[25px] pt-[5px] pb-[5px] pl-[0px] pr-[0px] text-[#0a0a0a]" data-testid="text-headline">
