@@ -38,7 +38,7 @@ export default function Header() {
             className="flex items-center space-x-2 text-gray-700 font-medium hover:text-gray-900 transition-colors"
             data-testid="link-account"
           >
-            <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
+            <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
             <span>Account</span>
           </Link>
         </nav>
@@ -64,8 +64,8 @@ export default function Header() {
               ))}
               
               <div className="pt-4 border-t border-gray-200">
-                <Link href="#account" className="flex items-center space-x-2 text-black hover:text-purple-600 transition-colors">
-                  <User className="h-4 w-4 text-purple-600" />
+                <Link href="#account" className="flex items-center space-x-2 text-black hover:text-indigo-500 transition-colors">
+                  <User className="h-4 w-4 text-indigo-500" />
                   <span className="text-lg font-medium">Account</span>
                 </Link>
               </div>

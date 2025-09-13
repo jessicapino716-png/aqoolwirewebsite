@@ -73,7 +73,7 @@ export default function AdminDashboard() {
             >
               <CardHeader>
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
+                  <div className="p-2 bg-indigo-100 rounded-lg text-indigo-500">
                     {card.icon}
                   </div>
                   <CardTitle className="text-lg">{card.title}</CardTitle>
@@ -97,7 +97,7 @@ export default function AdminDashboard() {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600" data-testid="text-stats-total">--</div>
+                  <div className="text-2xl font-bold text-indigo-500" data-testid="text-stats-total">--</div>
                   <div className="text-sm text-gray-600">Total Articles</div>
                 </div>
                 <div className="text-center">

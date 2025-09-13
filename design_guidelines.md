@@ -10,7 +10,7 @@
 - Background: Pure white (#FFFFFF) in light mode
 - Primary text: Pure black (#000000) 
 - Secondary text: #666666 (medium gray)
-- Link color: #B266CC (purple/magenta for links)
+- Link color: #6366f1 (purple-blue for links)
 - Border color: #E5E5E5 (light gray borders)
 
 **Supporting Colors:**

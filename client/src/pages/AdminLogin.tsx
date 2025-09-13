@@ -80,7 +80,7 @@ export default function AdminLogin() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center mb-4">
-            <Lock className="h-8 w-8 text-purple-600" />
+            <Lock className="h-8 w-8 text-indigo-500" />
           </div>
           <CardTitle className="text-2xl text-center" data-testid="text-admin-login-title">
             Admin Login
