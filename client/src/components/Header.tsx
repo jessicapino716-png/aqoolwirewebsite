@@ -16,7 +16,7 @@ export default function Header() {
     <div className="hero-section bg-gray-50 px-20 py-15">
       {/* Navigation Header */}
       <header className="flex justify-between items-center mb-15">
-        <Link href="/" className="font-extrabold text-black text-[49px]" data-testid="link-home">
+        <Link href="/" className="font-extrabold text-black text-[58px]" data-testid="link-home">
           The Aqool <span className="text-teal-400 font-semibold">(ai)</span>
         </Link>
         
