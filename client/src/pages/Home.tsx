@@ -106,7 +106,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Content */}
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl px-4 py-8 pl-[16px] pr-[16px] pt-[50px] pb-[50px]">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content Column */}
           <div className="lg:col-span-2">
