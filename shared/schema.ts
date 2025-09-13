@@ -11,11 +11,11 @@ export const users = pgTable("users", {
 
 export const content = pgTable("content", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  type: text("type").notNull(), // "external" | "article" | "op-ed"
+  type: text("type").notNull(), // "external" | "weekly-analysis"
   title: text("title").notNull(),
   slug: text("slug").notNull().unique(),
   excerpt: text("excerpt").notNull(),
-  body: text("body"), // nullable - only for internal content (op-eds)
+  body: text("body"), // nullable - only for internal content (weekly analysis)
   source: text("source"), // nullable - only for external articles (e.g., "Wall Street Journal")
   externalUrl: text("external_url"), // nullable - only for external articles
   authorName: text("author_name").notNull(),
@@ -33,7 +33,7 @@ export const insertUserSchema = createInsertSchema(users).pick({
 });
 
 // Content type enum for validation
-export const contentTypeEnum = z.enum(["external", "op-ed"]);
+export const contentTypeEnum = z.enum(["external", "weekly-analysis"]);
 
 // Base content schema without type-specific validation
 const baseContentSchema = createInsertSchema(content).omit({
@@ -53,12 +53,12 @@ export const insertContentSchema = z.discriminatedUnion("type", [
     body: z.never().optional(), // Not allowed for external content
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true })),
   
-  // Op-ed content type
+  // Weekly analysis content type
   z.object({
-    type: z.literal("op-ed"),
-    body: z.string().min(1, "Body is required for op-ed content"),
-    externalUrl: z.never().optional(), // Not allowed for op-ed content
-    source: z.never().optional(), // Not allowed for op-ed content
+    type: z.literal("weekly-analysis"),
+    body: z.string().min(1, "Body is required for weekly analysis content"),
+    externalUrl: z.never().optional(), // Not allowed for weekly analysis content
+    source: z.never().optional(), // Not allowed for weekly analysis content
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true })),
 ]);
 
@@ -72,12 +72,12 @@ export const updateContentSchema = z.discriminatedUnion("type", [
     body: z.never().optional(), // Not allowed for external content
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true }).partial()),
   
-  // Op-ed content type partial
+  // Weekly analysis content type partial
   z.object({
-    type: z.literal("op-ed"),
-    body: z.string().min(1, "Body is required for op-ed content").optional(),
-    externalUrl: z.never().optional(), // Not allowed for op-ed content
-    source: z.never().optional(), // Not allowed for op-ed content
+    type: z.literal("weekly-analysis"),
+    body: z.string().min(1, "Body is required for weekly analysis content").optional(),
+    externalUrl: z.never().optional(), // Not allowed for weekly analysis content
+    source: z.never().optional(), // Not allowed for weekly analysis content
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true }).partial()),
 ]);
 

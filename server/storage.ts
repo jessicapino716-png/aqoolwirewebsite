@@ -25,6 +25,7 @@ export interface IStorage {
   }): Promise<Content[]>;
   publishContent(id: string, publishedAt?: Date): Promise<Content | undefined>;
   incrementComments(id: string): Promise<Content | undefined>;
+  getLatestWeeklyAnalysis(): Promise<Content | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -183,6 +184,20 @@ export class DatabaseStorage implements IStorage {
       .where(eq(content.id, id))
       .returning();
     return updatedContent || undefined;
+  }
+
+  async getLatestWeeklyAnalysis(): Promise<Content | undefined> {
+    const { content } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq, desc } = await import("drizzle-orm");
+    
+    const [latestAnalysis] = await db
+      .select()
+      .from(content)
+      .where(eq(content.type, "weekly-analysis"))
+      .orderBy(desc(content.publishedAt))
+      .limit(1);
+    return latestAnalysis || undefined;
   }
 }
 
