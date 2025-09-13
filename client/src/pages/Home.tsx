@@ -106,7 +106,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Site Concept Section */}
-      <div className="bg-gray-50 py-8">
+      <div className="bg-gray-50 py-8 pt-[50px] pb-[50px]">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <p className="fk-roman-text text-lg leading-relaxed text-foreground">
             The latest analysis on AI policy, regulation, and innovation in Saudi Arabia and the broader GCC. Expert insights, weekly commentary, and strategic analysis for stakeholders
