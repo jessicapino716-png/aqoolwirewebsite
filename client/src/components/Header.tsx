@@ -11,7 +11,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-black border-b border-gray-800 px-6 lg:px-20 py-4">
+    <header className="bg-background border-b border-gray-800 px-6 lg:px-20 py-4">
       <div className="flex justify-between items-center">
         <Link href="/" className="font-extrabold text-white text-3xl lg:text-4xl" data-testid="link-home">
           The Aqool
@@ -70,7 +70,7 @@ export default function Header() {
               <Menu className="h-6 w-6" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-80 bg-black text-white border-l border-gray-700">
+          <SheetContent side="right" className="w-80 bg-background text-white border-l border-gray-700">
             <div className="flex flex-col space-y-6 mt-8">
               {navigation.map((item) => (
                 <Link

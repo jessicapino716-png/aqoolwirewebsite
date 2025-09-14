@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="relative min-h-screen bg-background">
       {/* Left accent line */}
       <div className="absolute left-0 top-0 h-full w-1 bg-teal-400"></div>
       {/* Main content */}
