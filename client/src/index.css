@@ -486,13 +486,12 @@
 
 /* Neon flickering effect for AI logo */
 .neon-flicker {
-  color: #00ff88;
+  color: #2dd4bf;
   text-shadow: 
-    0 0 2px #00ff88,
-    0 0 5px #00ff88,
-    0 0 10px #00ff88,
-    0 0 20px #00ff88,
-    0 0 40px #00ff88;
+    0 0 1px #2dd4bf,
+    0 0 3px #2dd4bf,
+    0 0 6px #2dd4bf,
+    0 0 12px #2dd4bf;
   animation: neonFlicker 4.8s infinite;
 }
 
@@ -500,37 +499,36 @@
   0%, 10%, 15%, 85%, 90%, 100% {
     opacity: 1;
     text-shadow: 
-      0 0 2px #00ff88,
-      0 0 5px #00ff88,
-      0 0 10px #00ff88,
-      0 0 20px #00ff88,
-      0 0 40px #00ff88;
+      0 0 1px #2dd4bf,
+      0 0 3px #2dd4bf,
+      0 0 6px #2dd4bf,
+      0 0 12px #2dd4bf;
   }
   
   11%, 14% {
     opacity: 0.4;
     text-shadow: 
-      0 0 1px #00ff88,
-      0 0 2px #00ff88;
+      0 0 1px #2dd4bf,
+      0 0 2px #2dd4bf;
   }
   
   12%, 13% {
     opacity: 0.1;
     text-shadow: 
-      0 0 1px #004422;
+      0 0 1px #0d7377;
   }
   
   86%, 89% {
     opacity: 0.6;
     text-shadow: 
-      0 0 2px #00ff88,
-      0 0 4px #00ff88;
+      0 0 1px #2dd4bf,
+      0 0 3px #2dd4bf;
   }
   
   87%, 88% {
     opacity: 0.2;
     text-shadow: 
-      0 0 1px #004422;
+      0 0 1px #0d7377;
   }
 }
 
