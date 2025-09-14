@@ -58,7 +58,7 @@ export default function Header() {
             className="flex items-center space-x-2 text-black font-medium hover:text-blue-400 transition-colors ml-8"
             data-testid="link-account"
           >
-            <span className="w-3 h-3 bg-purple-500 rounded-full"></span>
+            <span className="w-3 h-3 rounded-full bg-[#5200FF]"></span>
             <span>Account</span>
           </Link>
         </nav>
