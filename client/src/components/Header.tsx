@@ -41,6 +41,13 @@ export default function Header() {
             New AI Tools
           </Link>
           <Link 
+            href="#newsletter" 
+            className="text-white font-medium hover:text-gray-300 transition-colors ml-8"
+            data-testid="link-nav-newsletter"
+          >
+            Newsletter
+          </Link>
+          <Link 
             href="#account" 
             className="flex items-center space-x-2 text-white font-medium hover:text-gray-300 transition-colors ml-8"
             data-testid="link-account"
@@ -69,6 +76,20 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              <Link
+                href="#tools"
+                className="text-lg font-medium transition-colors hover:text-gray-300 text-white"
+                data-testid="link-nav-mobile-new-ai-tools"
+              >
+                New AI Tools
+              </Link>
+              <Link
+                href="#newsletter"
+                className="text-lg font-medium transition-colors hover:text-gray-300 text-white"
+                data-testid="link-nav-mobile-newsletter"
+              >
+                Newsletter
+              </Link>
               
               <div className="pt-4 border-t border-gray-200">
                 <Link href="#account" className="flex items-center space-x-2 text-white hover:text-purple-400 transition-colors">
