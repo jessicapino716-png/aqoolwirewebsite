@@ -108,7 +108,7 @@ export default function Home() {
     <div className="bg-background">
       <HeroSection />
       {/* Main Content */}
-      <div className="mx-auto max-w-7xl px-4 py-8 pl-[16px] pr-[16px] pt-[70px] pb-[70px] bg-[#242424]">
+      <div className="mx-auto max-w-7xl px-4 py-8 pl-[16px] pr-[16px] pt-[70px] pb-[70px] bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content Column */}
           <div className="lg:col-span-2">
@@ -131,7 +131,7 @@ export default function Home() {
             <div>
               <div className="verge-divider mb-8"></div>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="verge-headline-medium text-white" data-testid="text-section-latest">
+                <h2 className="verge-headline-medium text-black" data-testid="text-section-latest">
                   Latest in AI Policy
                 </h2>
                 <Link href="/policy">
@@ -160,11 +160,11 @@ export default function Home() {
                   <div key={article.id} className="group cursor-pointer" data-testid={`item-popular-${index}`}>
                     <Link href={`/article/${article.slug}`}>
                       <div className="flex items-start gap-4">
-                        <span className="text-3xl font-black text-gray-300 flex-shrink-0 mt-1 verge-headline-large">
+                        <span className="text-3xl font-black text-gray-600 flex-shrink-0 mt-1 verge-headline-large">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <div>
-                          <h4 className="verge-headline-small text-white group-hover:text-primary transition-colors leading-tight mb-1">
+                          <h4 className="verge-headline-small text-black group-hover:text-primary transition-colors leading-tight mb-1">
                             {article.title}
                           </h4>
                           <div className="verge-meta-text">
@@ -181,18 +181,18 @@ export default function Home() {
             {/* Newsletter Section */}
             <div>
               <div className="w-full h-1 mb-6 bg-[#a855f7]"></div>
-              <h3 className="verge-headline-medium text-white mb-6" data-testid="text-sidebar-newsletter">
+              <h3 className="verge-headline-medium text-black mb-6" data-testid="text-sidebar-newsletter">
                 Newsletter
               </h3>
               <div className="space-y-4">
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-600 text-sm">
                   Get weekly AI policy insights delivered to your inbox.
                 </p>
                 <div className="space-y-3">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded text-white text-sm focus:border-blue-500 focus:outline-none"
+                    className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-black text-sm focus:border-blue-500 focus:outline-none"
                     data-testid="input-newsletter-email"
                   />
                   <button

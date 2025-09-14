@@ -11,9 +11,9 @@ export default function Header() {
   ];
 
   return (
-    <header className="border-b border-gray-800 px-6 lg:px-20 py-4 bg-[#242424]">
+    <header className="border-b border-gray-200 px-6 lg:px-20 py-4 bg-white">
       <div className="flex justify-between items-center">
-        <Link href="/" className="font-extrabold text-white text-3xl lg:text-4xl" data-testid="link-home">
+        <Link href="/" className="font-extrabold text-black text-3xl lg:text-4xl" data-testid="link-home">
           The Aqool <span className="neon-flicker text-[#2dd4bf]">(ai)</span>
         </Link>
         
@@ -25,7 +25,7 @@ export default function Header() {
                 <span className="text-blue-500 mx-2">/</span>
                 <Link
                   href={item.href}
-                  className="text-white font-medium hover:text-blue-400 transition-colors"
+                  className="text-black font-medium hover:text-blue-400 transition-colors"
                   data-testid={`link-nav-${item.name.toLowerCase()}`}
                 >
                   {item.name}
@@ -55,7 +55,7 @@ export default function Header() {
           </div>
           <Link 
             href="#account" 
-            className="flex items-center space-x-2 text-white font-medium hover:text-blue-400 transition-colors ml-8"
+            className="flex items-center space-x-2 text-black font-medium hover:text-blue-400 transition-colors ml-8"
             data-testid="link-account"
           >
             <span className="w-3 h-3 bg-purple-500 rounded-full"></span>
@@ -66,17 +66,17 @@ export default function Header() {
         {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild>
-            <button className="lg:hidden p-2 text-white" aria-label="Open menu" data-testid="button-mobile-menu">
+            <button className="lg:hidden p-2 text-black" aria-label="Open menu" data-testid="button-mobile-menu">
               <Menu className="h-6 w-6" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-80 bg-background text-white border-l border-gray-700">
+          <SheetContent side="right" className="w-80 bg-white text-black border-l border-gray-200">
             <div className="flex flex-col space-y-6 mt-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-medium transition-colors hover:text-blue-400 text-white"
+                  className="text-lg font-medium transition-colors hover:text-blue-400 text-black"
                   data-testid={`link-nav-mobile-${item.name.toLowerCase().replace(' ', '-')}`}
                 >
                   {item.name}
@@ -98,7 +98,7 @@ export default function Header() {
               </Link>
               
               <div className="pt-4 border-t border-gray-200">
-                <Link href="#account" className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors">
+                <Link href="#account" className="flex items-center space-x-2 text-black hover:text-blue-400 transition-colors">
                   <User className="h-4 w-4 text-purple-500" />
                   <span className="text-lg font-medium">Account</span>
                 </Link>

@@ -45,7 +45,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               {article.category}
             </span>
           </div>
-          <h1 className="verge-headline-hero text-white article-title-hover transition-colors mb-2" data-testid={`text-title-hero-${article.id}`}>
+          <h1 className="verge-headline-hero text-black article-title-hover transition-colors mb-2" data-testid={`text-title-hero-${article.id}`}>
             {article.title}
           </h1>
           {article.source && (
@@ -53,7 +53,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               {article.source}
             </p>
           )}
-          <p className="verge-excerpt-text text-gray-300 text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
+          <p className="verge-excerpt-text text-gray-700 text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
             {article.excerpt}
           </p>
           <div className="verge-meta-text flex items-center">
@@ -94,7 +94,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.category}
                 </span>
               </div>
-              <h2 className="verge-headline-medium text-white article-title-hover transition-colors mb-2 leading-tight" data-testid={`text-title-featured-${article.id}`}>
+              <h2 className="verge-headline-medium text-black article-title-hover transition-colors mb-2 leading-tight" data-testid={`text-title-featured-${article.id}`}>
                 {article.title}
               </h2>
               {article.source && (
@@ -102,7 +102,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.source}
                 </p>
               )}
-              <p className="verge-excerpt-text text-gray-300 mb-3 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
+              <p className="verge-excerpt-text text-gray-700 mb-3 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
                 {article.excerpt}
               </p>
               <div className="verge-meta-text flex items-center">
@@ -145,7 +145,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.category}
                 </span>
               </div>
-              <h3 className="verge-headline-small text-white article-title-hover transition-colors mb-1" data-testid={`text-title-list-${article.id}`}>
+              <h3 className="verge-headline-small text-black article-title-hover transition-colors mb-1" data-testid={`text-title-list-${article.id}`}>
                 {article.title}
               </h3>
               {article.source && (
@@ -153,7 +153,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                   {article.source}
                 </p>
               )}
-              <p className="verge-excerpt-text text-gray-300 mb-2 line-clamp-2" data-testid={`text-excerpt-list-${article.id}`}>
+              <p className="verge-excerpt-text text-gray-700 mb-2 line-clamp-2" data-testid={`text-excerpt-list-${article.id}`}>
                 {article.excerpt}
               </p>
               <div className="verge-meta-text flex items-center">
@@ -193,7 +193,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             {article.category}
           </span>
         </div>
-        <h3 className="verge-headline-small text-white article-title-hover transition-colors mb-2" data-testid={`text-title-standard-${article.id}`}>
+        <h3 className="verge-headline-small text-black article-title-hover transition-colors mb-2" data-testid={`text-title-standard-${article.id}`}>
           {article.title}
         </h3>
         {article.source && (

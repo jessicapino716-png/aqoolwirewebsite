@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <div className="relative min-h-screen text-[#000000] bg-[#242424]">
+    <div className="relative min-h-screen text-black bg-white">
       {/* Left accent line */}
       <div className="absolute left-0 top-0 h-full w-0.5 bg-teal-400 pl-[0px] pr-[0px] ml-[0px] mr-[0px] mt-[30px] mb-[30px]"></div>
       {/* Main content */}
@@ -8,13 +8,13 @@ export default function HeroSection() {
         <div className="max-w-4xl">
           {/* Main headline - stacked vertically */}
           <h1 className="space-y-2 mb-8" data-testid="text-main-headline">
-            <div className="text-6xl md:text-8xl font-black text-white leading-none tracking-tight">
+            <div className="text-6xl md:text-8xl font-black text-black leading-none tracking-tight">
               AI Policy.
             </div>
-            <div className="text-6xl md:text-8xl font-black text-white leading-none tracking-tight">
+            <div className="text-6xl md:text-8xl font-black text-black leading-none tracking-tight">
               Regulation.
             </div>
-            <div className="text-6xl md:text-8xl font-black text-white leading-none tracking-tight">
+            <div className="text-6xl md:text-8xl font-black text-black leading-none tracking-tight">
               Innovation.
             </div>
           </h1>
@@ -24,7 +24,7 @@ export default function HeroSection() {
             <div className="text-teal-400 font-medium">
               Straight from Riyadh
             </div>
-            <div className="text-gray-300 max-w-2xl">Policy analysis and regulatory insights from the heart of Saudi Arabia and the GCC region</div>
+            <div className="text-gray-700 max-w-2xl">Policy analysis and regulatory insights from the heart of Saudi Arabia and the GCC region</div>
           </div>
         </div>
       </div>
