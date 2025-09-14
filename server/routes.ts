@@ -343,6 +343,163 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Newsletter Campaigns API
+  app.post("/api/newsletter/campaigns", authenticateAdmin, async (req, res) => {
+    try {
+      const { insertNewsletterCampaignSchema } = await import("@shared/schema");
+      const validatedData = insertNewsletterCampaignSchema.parse(req.body);
+      
+      const campaign = await storage.createNewsletterCampaign(validatedData);
+      
+      res.json({ 
+        success: true, 
+        message: "Newsletter campaign created successfully",
+        campaign 
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ 
+          error: "Validation failed",
+          details: error.errors 
+        });
+      }
+      
+      console.error("Error creating newsletter campaign:", error);
+      res.status(500).json({ error: "Failed to create newsletter campaign" });
+    }
+  });
+
+  app.get("/api/newsletter/campaigns", requireAuth, async (req, res) => {
+    try {
+      const campaigns = await storage.getNewsletterCampaigns();
+      res.json(campaigns);
+    } catch (error) {
+      console.error("Error fetching newsletter campaigns:", error);
+      res.status(500).json({ error: "Failed to fetch newsletter campaigns" });
+    }
+  });
+
+  app.get("/api/newsletter/campaigns/:id", requireAuth, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const campaign = await storage.getNewsletterCampaignById(id);
+      
+      if (!campaign) {
+        return res.status(404).json({ error: "Newsletter campaign not found" });
+      }
+      
+      res.json(campaign);
+    } catch (error) {
+      console.error("Error fetching newsletter campaign:", error);
+      res.status(500).json({ error: "Failed to fetch newsletter campaign" });
+    }
+  });
+
+  app.patch("/api/newsletter/campaigns/:id", requireAuth, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { updateNewsletterCampaignSchema } = await import("@shared/schema");
+      const validatedData = updateNewsletterCampaignSchema.parse(req.body);
+      
+      const updatedCampaign = await storage.updateNewsletterCampaign(id, validatedData);
+      
+      if (!updatedCampaign) {
+        return res.status(404).json({ error: "Newsletter campaign not found" });
+      }
+      
+      res.json({ 
+        success: true, 
+        message: "Newsletter campaign updated successfully",
+        campaign: updatedCampaign 
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ 
+          error: "Validation failed",
+          details: error.errors 
+        });
+      }
+      
+      console.error("Error updating newsletter campaign:", error);
+      res.status(500).json({ error: "Failed to update newsletter campaign" });
+    }
+  });
+
+  app.delete("/api/newsletter/campaigns/:id", requireAuth, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const success = await storage.deleteNewsletterCampaign(id);
+      
+      if (!success) {
+        return res.status(404).json({ error: "Newsletter campaign not found" });
+      }
+      
+      res.json({ 
+        success: true, 
+        message: "Newsletter campaign deleted successfully" 
+      });
+    } catch (error) {
+      console.error("Error deleting newsletter campaign:", error);
+      res.status(500).json({ error: "Failed to delete newsletter campaign" });
+    }
+  });
+
+  app.post("/api/newsletter/campaigns/:id/send", requireAuth, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { sendNewsletterToAll } = await import("./sendgrid");
+      
+      // Get campaign
+      const campaign = await storage.getNewsletterCampaignById(id);
+      if (!campaign) {
+        return res.status(404).json({ error: "Newsletter campaign not found" });
+      }
+      
+      if (campaign.status === "sent") {
+        return res.status(400).json({ error: "Campaign has already been sent" });
+      }
+      
+      // Get all active subscribers
+      const subscribers = await storage.getAllActiveSubscribers();
+      
+      if (subscribers.length === 0) {
+        return res.status(400).json({ error: "No active subscribers found" });
+      }
+      
+      // Send newsletter to all subscribers
+      const success = await sendNewsletterToAll(campaign, subscribers);
+      
+      if (success) {
+        // Mark campaign as sent
+        const updatedCampaign = await storage.markCampaignAsSent(id, subscribers.length);
+        res.json({ 
+          success: true, 
+          message: `Newsletter sent to ${subscribers.length} subscribers`,
+          campaign: updatedCampaign,
+          subscriberCount: subscribers.length
+        });
+      } else {
+        res.status(500).json({ error: "Failed to send newsletter" });
+      }
+    } catch (error) {
+      console.error("Error sending newsletter:", error);
+      res.status(500).json({ error: "Failed to send newsletter campaign" });
+    }
+  });
+
+  app.get("/api/newsletter/subscribers", requireAuth, async (req, res) => {
+    try {
+      const subscribers = await storage.getAllActiveSubscribers();
+      res.json({
+        subscribers,
+        count: subscribers.length
+      });
+    } catch (error) {
+      console.error("Error fetching newsletter subscribers:", error);
+      res.status(500).json({ error: "Failed to fetch newsletter subscribers" });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

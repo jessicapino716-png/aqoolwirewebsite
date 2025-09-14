@@ -96,3 +96,107 @@ newsletter@aqoolai.com
     html: welcomeEmailHtml,
   });
 }
+
+export async function sendNewsletterToAll(
+  campaign: { title: string; subject: string; content: string; authorName: string },
+  subscribers: { email: string }[]
+): Promise<boolean> {
+  try {
+    console.log(`Sending newsletter "${campaign.title}" to ${subscribers.length} subscribers`);
+    
+    // Create newsletter HTML template
+    const newsletterHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>${campaign.subject}</title>
+      </head>
+      <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+          <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+              <div style="text-align: center; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                  <h1 style="color: #2dd4bf; font-size: 32px; margin: 0;">The Aqool <span style="color: #ffd700;">(ai)</span></h1>
+                  <p style="color: #666; margin: 10px 0 0 0;">AI Policy & Regulation News</p>
+              </div>
+              
+              <div style="margin-bottom: 30px;">
+                  <h1 style="color: #333; font-size: 28px; margin-bottom: 20px;">${campaign.title}</h1>
+                  <div style="font-size: 16px; line-height: 1.8;">
+                      ${campaign.content}
+                  </div>
+                  <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                      <p style="color: #666; font-style: italic; margin: 0;">
+                          By ${campaign.authorName}
+                      </p>
+                  </div>
+              </div>
+              
+              <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+                  <p style="color: #666; font-size: 14px; margin: 0;">
+                      Straight from Riyadh • AI Policy & Regulation News<br>
+                      <a href="mailto:newsletter@aqoolai.com" style="color: #2dd4bf;">newsletter@aqoolai.com</a>
+                  </p>
+                  <p style="color: #999; font-size: 12px; margin-top: 15px;">
+                      You're receiving this because you subscribed to The Aqool AI newsletter.<br>
+                      <a href="#" style="color: #999;">Unsubscribe</a> | <a href="#" style="color: #999;">Update preferences</a>
+                  </p>
+              </div>
+          </div>
+      </body>
+      </html>
+    `;
+
+    // Create plain text version
+    const newsletterText = `
+${campaign.title}
+
+${campaign.content.replace(/<[^>]*>/g, '').trim()}
+
+By ${campaign.authorName}
+
+---
+Straight from Riyadh • AI Policy & Regulation News
+newsletter@aqoolai.com
+
+You're receiving this because you subscribed to The Aqool AI newsletter.
+    `;
+
+    // Send to all subscribers
+    const emailPromises = subscribers.map(subscriber => 
+      sendEmail({
+        to: subscriber.email,
+        from: 'newsletter@aqoolai.com',
+        subject: campaign.subject,
+        text: newsletterText,
+        html: newsletterHtml,
+      })
+    );
+
+    // Wait for all emails to send
+    const results = await Promise.allSettled(emailPromises);
+    
+    // Check if all emails were sent successfully
+    const successful = results.filter(result => result.status === 'fulfilled').length;
+    const failed = results.filter(result => result.status === 'rejected').length;
+    
+    console.log(`Newsletter sending completed: ${successful} successful, ${failed} failed`);
+    
+    if (failed > 0) {
+      console.warn(`${failed} emails failed to send`);
+      // Log specific failures for debugging
+      results.forEach((result, index) => {
+        if (result.status === 'rejected') {
+          console.error(`Failed to send to ${subscribers[index].email}:`, result.reason);
+        }
+      });
+    }
+    
+    // Return true if at least 80% of emails were sent successfully
+    return (successful / subscribers.length) >= 0.8;
+    
+  } catch (error) {
+    console.error('Error sending newsletter to all subscribers:', error);
+    return false;
+  }
+}
