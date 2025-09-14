@@ -2,7 +2,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { LogOut, Plus, FileText, Settings } from 'lucide-react';
+import { LogOut, Plus, FileText, Settings, Mail } from 'lucide-react';
 
 export default function AdminDashboard() {
   const { logout } = useAuth();
@@ -34,6 +34,13 @@ export default function AdminDashboard() {
       icon: <Settings className="h-6 w-6" />,
       action: () => setLocation('/admin/content'),
       testId: "card-content-management"
+    },
+    {
+      title: "Newsletter Management",
+      description: "Create and send newsletters to subscribers",
+      icon: <Mail className="h-6 w-6" />,
+      action: () => setLocation('/admin/newsletter'),
+      testId: "card-newsletter-management"
     }
   ];
 

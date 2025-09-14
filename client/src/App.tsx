@@ -10,6 +10,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import Home from "@/pages/Home";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
+import AdminNewsletter from "@/pages/AdminNewsletter";
 import CategoryPage from "@/pages/CategoryPage";
 import NotFound from "@/pages/not-found";
 
@@ -26,6 +27,11 @@ function Router() {
       <Route path="/admin">
         <ProtectedRoute>
           <AdminDashboard />
+        </ProtectedRoute>
+      </Route>
+      <Route path="/admin/newsletter">
+        <ProtectedRoute>
+          <AdminNewsletter />
         </ProtectedRoute>
       </Route>
       {/* Fallback to 404 */}
