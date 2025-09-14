@@ -178,6 +178,57 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Newsletter Section */}
+            <div>
+              <div className="w-full h-1 bg-blue-500 mb-6"></div>
+              <h3 className="verge-headline-medium text-white mb-6" data-testid="text-sidebar-newsletter">
+                Newsletter
+              </h3>
+              <div className="space-y-4">
+                <p className="text-gray-400 text-sm">
+                  Get weekly AI policy insights delivered to your inbox.
+                </p>
+                <div className="space-y-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded text-white text-sm focus:border-blue-500 focus:outline-none"
+                    data-testid="input-newsletter-email"
+                  />
+                  <button
+                    className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-sm font-medium transition-colors"
+                    data-testid="button-newsletter-subscribe"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* News Section */}
+            <div>
+              <div className="w-full h-1 bg-blue-500 mb-6"></div>
+              <h3 className="verge-headline-medium text-white mb-6" data-testid="text-sidebar-news">
+                News
+              </h3>
+              <div className="space-y-4">
+                {latestArticles.slice(0, 3).map((article, index) => (
+                  <div key={article.id} className="group cursor-pointer" data-testid={`item-news-${index}`}>
+                    <Link href={`/article/${article.slug}`}>
+                      <div>
+                        <h4 className="verge-headline-small text-white group-hover:text-blue-500 transition-colors leading-tight mb-1">
+                          {article.title}
+                        </h4>
+                        <div className="verge-meta-text text-gray-400 text-sm">
+                          {article.publishedAt}
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
