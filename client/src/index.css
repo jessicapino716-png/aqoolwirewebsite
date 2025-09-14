@@ -484,6 +484,56 @@
 /* Prevent accidental second hero elsewhere */
 .bg-word, .hero, .jumbo { display:none !important; }  /* if you had those */
 
+/* Neon flickering effect for AI logo */
+.neon-flicker {
+  color: #00ff88;
+  text-shadow: 
+    0 0 2px #00ff88,
+    0 0 5px #00ff88,
+    0 0 10px #00ff88,
+    0 0 20px #00ff88,
+    0 0 40px #00ff88;
+  animation: neonFlicker 8s infinite;
+}
+
+@keyframes neonFlicker {
+  0%, 10%, 15%, 85%, 90%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 2px #00ff88,
+      0 0 5px #00ff88,
+      0 0 10px #00ff88,
+      0 0 20px #00ff88,
+      0 0 40px #00ff88;
+  }
+  
+  11%, 14% {
+    opacity: 0.4;
+    text-shadow: 
+      0 0 1px #00ff88,
+      0 0 2px #00ff88;
+  }
+  
+  12%, 13% {
+    opacity: 0.1;
+    text-shadow: 
+      0 0 1px #004422;
+  }
+  
+  86%, 89% {
+    opacity: 0.6;
+    text-shadow: 
+      0 0 2px #00ff88,
+      0 0 4px #00ff88;
+  }
+  
+  87%, 88% {
+    opacity: 0.2;
+    text-shadow: 
+      0 0 1px #004422;
+  }
+}
+
 @media (max-width: 768px) {
   .verge-headline-hero {
     font-size: 2.5rem;
