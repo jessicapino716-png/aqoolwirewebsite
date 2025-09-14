@@ -24,7 +24,7 @@ export default function HeroSection() {
             <div className="text-teal-400 font-medium">
               Straight from Riyadh
             </div>
-            <div className="text-gray-700 max-w-2xl">Policy analysis and regulatory insights from the heart of Saudi Arabia and the GCC region</div>
+            <div className="text-gray-700 max-w-2xl">The first platform dedicated to bring policy analysis and regulatory insights for the GCC's largest economy.</div>
           </div>
         </div>
       </div>
