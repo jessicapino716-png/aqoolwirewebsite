@@ -180,7 +180,7 @@ export default function Home() {
 
             {/* Newsletter Section */}
             <div>
-              <div className="w-full h-1 mb-6 bg-[#a855f7]"></div>
+              <div className="w-full h-1 mb-6 bg-[#5200FF]"></div>
               <h3 className="verge-headline-medium text-black mb-6" data-testid="text-sidebar-newsletter">
                 Newsletter
               </h3>
