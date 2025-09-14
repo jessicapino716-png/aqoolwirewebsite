@@ -493,7 +493,7 @@
     0 0 10px #00ff88,
     0 0 20px #00ff88,
     0 0 40px #00ff88;
-  animation: neonFlicker 8s infinite;
+  animation: neonFlicker 4.8s infinite;
 }
 
 @keyframes neonFlicker {
