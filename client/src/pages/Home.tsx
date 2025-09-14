@@ -205,29 +205,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* News Section */}
-            <div>
-              <div className="w-full h-1 bg-blue-500 mb-6"></div>
-              <h3 className="verge-headline-medium text-white mb-6" data-testid="text-sidebar-news">
-                News
-              </h3>
-              <div className="space-y-4">
-                {latestArticles.slice(0, 3).map((article, index) => (
-                  <div key={article.id} className="group cursor-pointer" data-testid={`item-news-${index}`}>
-                    <Link href={`/article/${article.slug}`}>
-                      <div>
-                        <h4 className="verge-headline-small text-white group-hover:text-blue-500 transition-colors leading-tight mb-1">
-                          {article.title}
-                        </h4>
-                        <div className="verge-meta-text text-gray-400 text-sm">
-                          {article.publishedAt}
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
+            
 
           </div>
         </div>
