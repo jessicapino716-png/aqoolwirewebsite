@@ -25,7 +25,7 @@ export default function Header() {
                 <span className="text-blue-500 mx-2">/</span>
                 <Link
                   href={item.href}
-                  className="text-white font-medium hover:text-gray-300 transition-colors"
+                  className="text-white font-medium hover:text-blue-400 transition-colors"
                   data-testid={`link-nav-${item.name.toLowerCase()}`}
                 >
                   {item.name}
@@ -37,7 +37,7 @@ export default function Header() {
             <span className="text-blue-500 mx-2">/</span>
             <Link 
               href="#tools" 
-              className="text-white font-medium hover:text-gray-300 transition-colors"
+              className="text-white font-medium hover:text-blue-400 transition-colors"
               data-testid="link-nav-new-ai-tools"
             >
               New AI Tools
@@ -47,7 +47,7 @@ export default function Header() {
             <span className="text-blue-500 mx-2">/</span>
             <Link 
               href="#newsletter" 
-              className="text-white font-medium hover:text-gray-300 transition-colors"
+              className="text-white font-medium hover:text-blue-400 transition-colors"
               data-testid="link-nav-newsletter"
             >
               Newsletter
@@ -55,7 +55,7 @@ export default function Header() {
           </div>
           <Link 
             href="#account" 
-            className="flex items-center space-x-2 text-white font-medium hover:text-gray-300 transition-colors ml-8"
+            className="flex items-center space-x-2 text-white font-medium hover:text-blue-400 transition-colors ml-8"
             data-testid="link-account"
           >
             <span className="w-3 h-3 bg-purple-500 rounded-full"></span>
@@ -76,7 +76,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-medium transition-colors hover:text-gray-300 text-white"
+                  className="text-lg font-medium transition-colors hover:text-blue-400 text-white"
                   data-testid={`link-nav-mobile-${item.name.toLowerCase().replace(' ', '-')}`}
                 >
                   {item.name}
@@ -84,21 +84,21 @@ export default function Header() {
               ))}
               <Link
                 href="#tools"
-                className="text-lg font-medium transition-colors hover:text-gray-300 text-white"
+                className="text-lg font-medium transition-colors hover:text-blue-400 text-white"
                 data-testid="link-nav-mobile-new-ai-tools"
               >
                 New AI Tools
               </Link>
               <Link
                 href="#newsletter"
-                className="text-lg font-medium transition-colors hover:text-gray-300 text-white"
+                className="text-lg font-medium transition-colors hover:text-blue-400 text-white"
                 data-testid="link-nav-mobile-newsletter"
               >
                 Newsletter
               </Link>
               
               <div className="pt-4 border-t border-gray-200">
-                <Link href="#account" className="flex items-center space-x-2 text-white hover:text-purple-400 transition-colors">
+                <Link href="#account" className="flex items-center space-x-2 text-white hover:text-blue-400 transition-colors">
                   <User className="h-4 w-4 text-purple-500" />
                   <span className="text-lg font-medium">Account</span>
                 </Link>
