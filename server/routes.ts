@@ -1,7 +1,8 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertContentSchema, updateContentSchema, updateContentWithoutTypeSchema } from "@shared/schema";
+import { insertContentSchema, updateContentSchema, updateContentWithoutTypeSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
+import { sendWelcomeEmail } from "./sendgrid";
 import { z } from "zod";
 
 // Authentication middleware for admin routes
@@ -302,6 +303,43 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error incrementing comments:", error);
       res.status(500).json({ error: "Failed to increment comments" });
+    }
+  });
+
+  // Newsletter subscription endpoint
+  app.post("/api/newsletter/subscribe", async (req, res) => {
+    try {
+      const validatedData = insertNewsletterSubscriberSchema.parse(req.body);
+      const { email } = validatedData;
+      
+      // Check if email is already subscribed
+      const isAlreadySubscribed = await storage.isEmailSubscribed(email);
+      if (isAlreadySubscribed) {
+        return res.status(409).json({ error: "Email is already subscribed" });
+      }
+      
+      // Subscribe to newsletter
+      const subscriber = await storage.subscribeToNewsletter(email);
+      
+      // Send welcome email
+      const emailSent = await sendWelcomeEmail(email);
+      
+      res.json({ 
+        success: true, 
+        message: "Successfully subscribed to newsletter",
+        emailSent,
+        subscriber: { id: subscriber.id, email: subscriber.email }
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ 
+          error: "Invalid email format",
+          details: error.errors 
+        });
+      }
+      
+      console.error("Error subscribing to newsletter:", error);
+      res.status(500).json({ error: "Failed to subscribe to newsletter" });
     }
   });
 

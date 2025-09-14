@@ -27,6 +27,13 @@ export const content = pgTable("content", {
   commentsCount: integer("comments_count").notNull().default(0),
 });
 
+export const newsletterSubscribers = pgTable("newsletter_subscribers", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  email: text("email").notNull().unique(),
+  subscribedAt: timestamp("subscribed_at").notNull().defaultNow(),
+  isActive: text("is_active").notNull().default("true"), // "true" | "false" for unsubscribed
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -88,9 +95,18 @@ export const updateContentWithoutTypeSchema = baseContentSchema.omit({
   body: true 
 }).partial();
 
+// Newsletter subscriber schema  
+export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSubscribers).pick({
+  email: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContent = z.infer<typeof insertContentSchema>;
 export type UpdateContent = z.infer<typeof updateContentSchema>;
 export type Content = typeof content.$inferSelect;
 export type ContentType = z.infer<typeof contentTypeEnum>;
+export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;

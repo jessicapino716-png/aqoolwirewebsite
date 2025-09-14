@@ -1,8 +1,8 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Twitter, Linkedin, Globe } from "lucide-react";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import { Twitter, Linkedin, Globe } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -96,18 +96,7 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground mb-4" data-testid="text-footer-newsletter-description">
               Get weekly AI policy insights delivered to your inbox.
             </p>
-            <div className="flex flex-col space-y-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="text-sm"
-                data-testid="input-footer-newsletter"
-              />
-              <Button size="sm" className="w-full" data-testid="button-footer-newsletter">
-                <Mail className="h-4 w-4 mr-2" />
-                Subscribe
-              </Button>
-            </div>
+            <NewsletterSignup variant="inline" />
           </div>
         </div>
 

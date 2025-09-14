@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Content, type InsertContent } from "@shared/schema";
+import { type User, type InsertUser, type Content, type InsertContent, type NewsletterSubscriber, type InsertNewsletterSubscriber } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 // modify the interface with any CRUD methods
@@ -25,6 +25,11 @@ export interface IStorage {
   }): Promise<Content[]>;
   publishContent(id: string, publishedAt?: Date): Promise<Content | undefined>;
   incrementComments(id: string): Promise<Content | undefined>;
+  
+  // Newsletter methods
+  subscribeToNewsletter(email: string): Promise<NewsletterSubscriber>;
+  isEmailSubscribed(email: string): Promise<boolean>;
+  getNewsletterSubscribers(): Promise<NewsletterSubscriber[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -138,25 +143,25 @@ export class DatabaseStorage implements IStorage {
     }
     
     // Build base query
-    let queryBuilder = db.select().from(content);
+    let query = db.select().from(content);
     
     // Apply filters if any
     if (conditions.length > 0) {
-      queryBuilder = queryBuilder.where(and(...conditions));
+      query = query.where(and(...conditions));
     }
     
     // Add ordering
-    queryBuilder = queryBuilder.orderBy(desc(content.publishedAt));
+    query = query.orderBy(desc(content.publishedAt));
     
     // Add pagination
     if (filters?.limit) {
-      queryBuilder = queryBuilder.limit(filters.limit);
+      query = query.limit(filters.limit);
     }
     if (filters?.offset) {
-      queryBuilder = queryBuilder.offset(filters.offset);
+      query = query.offset(filters.offset);
     }
     
-    return await queryBuilder;
+    return await query;
   }
 
   async publishContent(id: string, publishedAt?: Date): Promise<Content | undefined> {
@@ -183,6 +188,41 @@ export class DatabaseStorage implements IStorage {
       .where(eq(content.id, id))
       .returning();
     return updatedContent || undefined;
+  }
+
+  // Newsletter methods
+  async subscribeToNewsletter(email: string): Promise<NewsletterSubscriber> {
+    const { newsletterSubscribers } = await import("@shared/schema");
+    const { db } = await import("./db");
+    
+    const [subscriber] = await db
+      .insert(newsletterSubscribers)
+      .values({ email })
+      .returning();
+    return subscriber;
+  }
+
+  async isEmailSubscribed(email: string): Promise<boolean> {
+    const { newsletterSubscribers } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const [subscriber] = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.email, email));
+    return !!subscriber && subscriber.isActive === "true";
+  }
+
+  async getNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
+    const { newsletterSubscribers } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    return await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.isActive, "true"));
   }
 }
 

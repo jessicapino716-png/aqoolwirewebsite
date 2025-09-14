@@ -1,5 +1,6 @@
 import ArticleCard from "@/components/ArticleCard";
 import HeroSection from "@/components/HeroSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { Link } from "wouter";
 
 // TODO: Remove mock data - replace with API calls
@@ -181,28 +182,7 @@ export default function Home() {
             {/* Newsletter Section */}
             <div>
               <div className="w-full h-1 mb-6 bg-[#5200FF]"></div>
-              <h3 className="verge-headline-medium text-black mb-6" data-testid="text-sidebar-newsletter">
-                Newsletter
-              </h3>
-              <div className="space-y-4">
-                <p className="text-gray-600 text-sm">
-                  Get weekly AI policy insights delivered to your inbox.
-                </p>
-                <div className="space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-black text-sm focus:border-blue-500 focus:outline-none"
-                    data-testid="input-newsletter-email"
-                  />
-                  <button
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-sm font-medium transition-colors"
-                    data-testid="button-newsletter-subscribe"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </div>
+              <NewsletterSignup variant="sidebar" />
             </div>
 
             

@@ -22,17 +22,47 @@ export default function NewsletterSignup({ variant = "default", className = "" }
 
     setIsLoading(true);
     
-    // TODO: Remove mock functionality - integrate with newsletter service
-    await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
-    
-    console.log('Newsletter signup submitted for:', email);
-    setIsSubscribed(true);
-    setIsLoading(false);
-    
-    toast({
-      title: "Successfully subscribed!",
-      description: "You'll receive our weekly AI policy newsletter.",
-    });
+    try {
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (response.status === 409) {
+          toast({
+            title: "Already subscribed",
+            description: "This email is already subscribed to our newsletter.",
+            variant: "destructive",
+          });
+        } else {
+          throw new Error(data.error || 'Failed to subscribe');
+        }
+      } else {
+        setIsSubscribed(true);
+        setEmail("");
+        toast({
+          title: "Successfully subscribed!",
+          description: data.emailSent 
+            ? "Check your email for a welcome message!" 
+            : "You'll receive our weekly AI policy newsletter.",
+        });
+      }
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      toast({
+        title: "Subscription failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (variant === "inline") {
