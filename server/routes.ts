@@ -369,7 +369,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/newsletter/campaigns", requireAuth, async (req, res) => {
+  app.get("/api/newsletter/campaigns", authenticateAdmin, async (req, res) => {
     try {
       const campaigns = await storage.getNewsletterCampaigns();
       res.json(campaigns);
@@ -379,7 +379,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/newsletter/campaigns/:id", requireAuth, async (req, res) => {
+  app.get("/api/newsletter/campaigns/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const campaign = await storage.getNewsletterCampaignById(id);
@@ -395,7 +395,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.patch("/api/newsletter/campaigns/:id", requireAuth, async (req, res) => {
+  app.patch("/api/newsletter/campaigns/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const { updateNewsletterCampaignSchema } = await import("@shared/schema");
@@ -425,7 +425,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete("/api/newsletter/campaigns/:id", requireAuth, async (req, res) => {
+  app.delete("/api/newsletter/campaigns/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const success = await storage.deleteNewsletterCampaign(id);
@@ -444,7 +444,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/newsletter/campaigns/:id/send", requireAuth, async (req, res) => {
+  app.post("/api/newsletter/campaigns/:id/send", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const { sendNewsletterToAll } = await import("./sendgrid");
@@ -487,7 +487,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/newsletter/subscribers", requireAuth, async (req, res) => {
+  app.get("/api/newsletter/subscribers", authenticateAdmin, async (req, res) => {
     try {
       const subscribers = await storage.getAllActiveSubscribers();
       res.json({

@@ -52,15 +52,37 @@ export default function AdminNewsletter() {
   const [previewCampaign, setPreviewCampaign] = useState<NewsletterCampaign | null>(null);
 
   // Fetch newsletter campaigns
-  const { data: campaigns = [], isLoading, error } = useQuery({
+  const { data: campaigns = [], isLoading, error } = useQuery<NewsletterCampaign[]>({
     queryKey: ['/api/newsletter/campaigns'],
     staleTime: 5 * 60 * 1000, // 5 minutes
+    queryFn: async () => {
+      const response = await fetch('/api/newsletter/campaigns', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch campaigns');
+      }
+      return response.json();
+    },
   });
 
   // Fetch subscriber info
   const { data: subscriberInfo } = useQuery<SubscriberInfo>({
     queryKey: ['/api/newsletter/subscribers'],
     staleTime: 5 * 60 * 1000, // 5 minutes
+    queryFn: async () => {
+      const response = await fetch('/api/newsletter/subscribers', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch subscribers');
+      }
+      return response.json();
+    },
   });
 
   const createForm = useForm<CampaignFormData>({
@@ -85,11 +107,21 @@ export default function AdminNewsletter() {
 
   // Create campaign mutation
   const createMutation = useMutation({
-    mutationFn: (data: CampaignFormData) => 
-      apiRequest('/api/newsletter/campaigns', {
+    mutationFn: async (data: CampaignFormData) => {
+      const response = await fetch('/api/newsletter/campaigns', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
+        },
         body: JSON.stringify(data),
-      }),
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to create campaign');
+      }
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/newsletter/campaigns'] });
       toast({
@@ -110,11 +142,21 @@ export default function AdminNewsletter() {
 
   // Update campaign mutation
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: Partial<CampaignFormData> }) => 
-      apiRequest(`/api/newsletter/campaigns/${id}`, {
+    mutationFn: async ({ id, data }: { id: string; data: Partial<CampaignFormData> }) => {
+      const response = await fetch(`/api/newsletter/campaigns/${id}`, {
         method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
+        },
         body: JSON.stringify(data),
-      }),
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to update campaign');
+      }
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/newsletter/campaigns'] });
       toast({
@@ -136,10 +178,19 @@ export default function AdminNewsletter() {
 
   // Delete campaign mutation
   const deleteMutation = useMutation({
-    mutationFn: (id: string) => 
-      apiRequest(`/api/newsletter/campaigns/${id}`, {
+    mutationFn: async (id: string) => {
+      const response = await fetch(`/api/newsletter/campaigns/${id}`, {
         method: 'DELETE',
-      }),
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
+        },
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to delete campaign');
+      }
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/newsletter/campaigns'] });
       toast({
@@ -158,10 +209,19 @@ export default function AdminNewsletter() {
 
   // Send campaign mutation
   const sendMutation = useMutation({
-    mutationFn: (id: string) => 
-      apiRequest(`/api/newsletter/campaigns/${id}/send`, {
+    mutationFn: async (id: string) => {
+      const response = await fetch(`/api/newsletter/campaigns/${id}/send`, {
         method: 'POST',
-      }),
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
+        },
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to send campaign');
+      }
+      return response.json();
+    },
     onSuccess: (data: any) => {
       queryClient.invalidateQueries({ queryKey: ['/api/newsletter/campaigns'] });
       toast({
