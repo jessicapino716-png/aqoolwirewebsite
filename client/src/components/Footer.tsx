@@ -29,7 +29,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t bg-[#5200FF]">
+    <footer className="border-t bg-[#e1e6e4]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand and Description */}
