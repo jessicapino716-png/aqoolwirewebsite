@@ -22,6 +22,7 @@ export default function Header() {
           <div className="flex items-center space-x-2">
             {navigation.map((item, index) => (
               <div key={item.name} className="flex items-center">
+                <span className="text-blue-500 mx-2">/</span>
                 <Link
                   href={item.href}
                   className="text-white font-medium hover:text-gray-300 transition-colors"
@@ -29,24 +30,29 @@ export default function Header() {
                 >
                   {item.name}
                 </Link>
-                {index < navigation.length - 1 && <span className="text-white mx-3">/</span>}
               </div>
             ))}
           </div>
-          <Link 
-            href="#tools" 
-            className="text-white font-medium hover:text-gray-300 transition-colors ml-8"
-            data-testid="link-nav-new-ai-tools"
-          >
-            New AI Tools
-          </Link>
-          <Link 
-            href="#newsletter" 
-            className="text-white font-medium hover:text-gray-300 transition-colors ml-8"
-            data-testid="link-nav-newsletter"
-          >
-            Newsletter
-          </Link>
+          <div className="flex items-center">
+            <span className="text-blue-500 mx-2">/</span>
+            <Link 
+              href="#tools" 
+              className="text-white font-medium hover:text-gray-300 transition-colors"
+              data-testid="link-nav-new-ai-tools"
+            >
+              New AI Tools
+            </Link>
+          </div>
+          <div className="flex items-center">
+            <span className="text-blue-500 mx-2">/</span>
+            <Link 
+              href="#newsletter" 
+              className="text-white font-medium hover:text-gray-300 transition-colors"
+              data-testid="link-nav-newsletter"
+            >
+              Newsletter
+            </Link>
+          </div>
           <Link 
             href="#account" 
             className="flex items-center space-x-2 text-white font-medium hover:text-gray-300 transition-colors ml-8"
