@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Content, type InsertContent, type NewsletterSubscriber, type InsertNewsletterSubscriber } from "@shared/schema";
+import { type User, type InsertUser, type Content, type InsertContent, type NewsletterSubscriber, type InsertNewsletterSubscriber, type NewsletterCampaign, type InsertNewsletterCampaign } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 // modify the interface with any CRUD methods
@@ -30,6 +30,15 @@ export interface IStorage {
   subscribeToNewsletter(email: string): Promise<NewsletterSubscriber>;
   isEmailSubscribed(email: string): Promise<boolean>;
   getNewsletterSubscribers(): Promise<NewsletterSubscriber[]>;
+  
+  // Newsletter campaign methods
+  createNewsletterCampaign(campaign: InsertNewsletterCampaign): Promise<NewsletterCampaign>;
+  getNewsletterCampaigns(): Promise<NewsletterCampaign[]>;
+  getNewsletterCampaignById(id: string): Promise<NewsletterCampaign | undefined>;
+  updateNewsletterCampaign(id: string, updates: Partial<NewsletterCampaign>): Promise<NewsletterCampaign | undefined>;
+  deleteNewsletterCampaign(id: string): Promise<boolean>;
+  markCampaignAsSent(id: string, subscriberCount: number): Promise<NewsletterCampaign | undefined>;
+  getAllActiveSubscribers(): Promise<NewsletterSubscriber[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -142,26 +151,26 @@ export class DatabaseStorage implements IStorage {
       conditions.push(sql`${content.tags} @> ${[filters.tag]}`);
     }
     
-    // Build base query
-    let query = db.select().from(content);
+    // Build and execute query
+    const queryBuilder = db.select().from(content);
     
     // Apply filters if any
-    if (conditions.length > 0) {
-      query = query.where(and(...conditions));
-    }
+    const filteredQuery = conditions.length > 0 
+      ? queryBuilder.where(and(...conditions))
+      : queryBuilder;
     
-    // Add ordering
-    query = query.orderBy(desc(content.publishedAt));
+    // Add ordering and pagination
+    const orderedQuery = filteredQuery.orderBy(desc(content.publishedAt));
     
-    // Add pagination
+    let finalQuery = orderedQuery;
     if (filters?.limit) {
-      query = query.limit(filters.limit);
+      finalQuery = finalQuery.limit(filters.limit);
     }
     if (filters?.offset) {
-      query = query.offset(filters.offset);
+      finalQuery = finalQuery.offset(filters.offset);
     }
     
-    return await query;
+    return await finalQuery;
   }
 
   async publishContent(id: string, publishedAt?: Date): Promise<Content | undefined> {
@@ -223,6 +232,82 @@ export class DatabaseStorage implements IStorage {
       .select()
       .from(newsletterSubscribers)
       .where(eq(newsletterSubscribers.isActive, "true"));
+  }
+
+  // Newsletter campaign methods
+  async createNewsletterCampaign(insertCampaign: InsertNewsletterCampaign): Promise<NewsletterCampaign> {
+    const { newsletterCampaigns } = await import("@shared/schema");
+    const { db } = await import("./db");
+    
+    const [campaign] = await db
+      .insert(newsletterCampaigns)
+      .values(insertCampaign)
+      .returning();
+    return campaign;
+  }
+
+  async getNewsletterCampaigns(): Promise<NewsletterCampaign[]> {
+    const { newsletterCampaigns } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { desc } = await import("drizzle-orm");
+    
+    return await db.select().from(newsletterCampaigns).orderBy(desc(newsletterCampaigns.createdAt));
+  }
+
+  async getNewsletterCampaignById(id: string): Promise<NewsletterCampaign | undefined> {
+    const { newsletterCampaigns } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const [campaign] = await db.select().from(newsletterCampaigns).where(eq(newsletterCampaigns.id, id));
+    return campaign || undefined;
+  }
+
+  async updateNewsletterCampaign(id: string, updates: Partial<NewsletterCampaign>): Promise<NewsletterCampaign | undefined> {
+    const { newsletterCampaigns } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const [updatedCampaign] = await db
+      .update(newsletterCampaigns)
+      .set(updates)
+      .where(eq(newsletterCampaigns.id, id))
+      .returning();
+    return updatedCampaign || undefined;
+  }
+
+  async deleteNewsletterCampaign(id: string): Promise<boolean> {
+    const { newsletterCampaigns } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const result = await db.delete(newsletterCampaigns).where(eq(newsletterCampaigns.id, id));
+    return result.rowCount ? result.rowCount > 0 : false;
+  }
+
+  async markCampaignAsSent(id: string, subscriberCount: number): Promise<NewsletterCampaign | undefined> {
+    const { newsletterCampaigns } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const [updatedCampaign] = await db
+      .update(newsletterCampaigns)
+      .set({ 
+        status: "sent",
+        sentAt: new Date(),
+        subscriberCount: subscriberCount
+      })
+      .where(eq(newsletterCampaigns.id, id))
+      .returning();
+    return updatedCampaign || undefined;
+  }
+
+  async getAllActiveSubscribers(): Promise<NewsletterSubscriber[]> {
+    const { newsletterSubscribers } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    return await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.isActive, "true"));
   }
 }
 

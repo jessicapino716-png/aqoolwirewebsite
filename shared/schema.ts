@@ -34,6 +34,18 @@ export const newsletterSubscribers = pgTable("newsletter_subscribers", {
   isActive: text("is_active").notNull().default("true"), // "true" | "false" for unsubscribed
 });
 
+export const newsletterCampaigns = pgTable("newsletter_campaigns", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  title: text("title").notNull(),
+  subject: text("subject").notNull(),
+  content: text("content").notNull(), // HTML content
+  status: text("status").notNull().default("draft"), // "draft" | "sent"
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  sentAt: timestamp("sent_at"),
+  subscriberCount: integer("subscriber_count").default(0), // Number of subscribers when sent
+  authorName: text("author_name").notNull(),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -102,6 +114,16 @@ export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSub
   email: z.string().email("Please enter a valid email address"),
 });
 
+// Newsletter campaign schema
+export const insertNewsletterCampaignSchema = createInsertSchema(newsletterCampaigns).omit({
+  id: true,
+  createdAt: true,
+  sentAt: true,
+  subscriberCount: true,
+});
+
+export const updateNewsletterCampaignSchema = insertNewsletterCampaignSchema.partial();
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContent = z.infer<typeof insertContentSchema>;
@@ -110,3 +132,5 @@ export type Content = typeof content.$inferSelect;
 export type ContentType = z.infer<typeof contentTypeEnum>;
 export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type InsertNewsletterCampaign = z.infer<typeof insertNewsletterCampaignSchema>;
+export type NewsletterCampaign = typeof newsletterCampaigns.$inferSelect;
