@@ -2,7 +2,7 @@ import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContentSchema, updateContentSchema, updateContentWithoutTypeSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
-import { sendWelcomeEmail } from "./sendgrid";
+// Note: SendGrid functions are imported dynamically to avoid startup crashes
 import { z } from "zod";
 
 // Authentication middleware for admin routes
@@ -321,8 +321,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Subscribe to newsletter
       const subscriber = await storage.subscribeToNewsletter(email);
       
-      // Send welcome email
-      const emailSent = await sendWelcomeEmail(email);
+      // Send welcome email (dynamic import to avoid startup crashes)
+      let emailSent = false;
+      try {
+        const { sendWelcomeEmail } = await import("./sendgrid");
+        emailSent = await sendWelcomeEmail(email);
+      } catch (error) {
+        console.warn("Welcome email sending failed:", error);
+        // Continue without email - subscription still successful
+      }
       
       res.json({ 
         success: true, 
