@@ -37,7 +37,7 @@ export default function Header() {
             <span className="text-blue-500 mx-2">/</span>
             <Link 
               href="#tools" 
-              className="text-white font-medium hover:text-blue-400 transition-colors"
+              className="text-black font-medium hover:text-blue-400 transition-colors"
               data-testid="link-nav-new-ai-tools"
             >
               New AI Tools
@@ -47,7 +47,7 @@ export default function Header() {
             <span className="text-blue-500 mx-2">/</span>
             <Link 
               href="#newsletter" 
-              className="text-white font-medium hover:text-blue-400 transition-colors"
+              className="text-black font-medium hover:text-blue-400 transition-colors"
               data-testid="link-nav-newsletter"
             >
               Newsletter
