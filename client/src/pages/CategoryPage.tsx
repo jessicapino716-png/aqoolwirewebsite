@@ -1,0 +1,192 @@
+import { useQuery } from "@tanstack/react-query";
+import { useLocation, Link } from "wouter";
+import ArticleCard, { type Article } from "@/components/ArticleCard";
+import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { AlertCircle } from "lucide-react";
+import type { Content } from "@shared/schema";
+
+// Mapping of URL-friendly category names to database category names
+const categoryMapping: Record<string, string> = {
+  "policy": "Policy",
+  "regulation": "Regulation", 
+  "analysis": "Analysis",
+  "tools": "Technology", // Maps to Technology category in database
+  "newsletter": "Newsletter"
+};
+
+// Reverse mapping for display purposes
+const displayCategoryMapping: Record<string, string> = {
+  "policy": "AI Policy",
+  "regulation": "AI Regulation",
+  "analysis": "AI Analysis", 
+  "tools": "AI Tools",
+  "newsletter": "Newsletter"
+};
+
+function transformContentToArticle(content: Content): Article {
+  return {
+    id: content.id,
+    title: content.title,
+    excerpt: content.excerpt,
+    author: content.authorName,
+    publishedAt: new Date(content.publishedAt).toLocaleDateString(),
+    category: content.category,
+    imageUrl: content.imageUrl || undefined,
+    slug: content.slug,
+    externalUrl: content.externalUrl || undefined,
+    comments: content.commentsCount,
+    source: content.source || undefined
+  };
+}
+
+export default function CategoryPage() {
+  const [location] = useLocation();
+  // Extract category from URL path (e.g., "/policy" -> "policy")
+  const categorySlug = location.replace('/', '') || 'policy';
+  
+  if (!categorySlug || !categoryMapping[categorySlug]) {
+    return (
+      <div className="bg-white min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <Card className="p-8 text-center">
+            <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
+            <h1 className="text-2xl font-bold text-black mb-2">Category Not Found</h1>
+            <p className="text-gray-600 mb-4">The requested category does not exist.</p>
+            <Link href="/">
+              <span className="text-primary hover:text-primary/80 font-medium">
+                Return to Home
+              </span>
+            </Link>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
+  const dbCategory = categoryMapping[categorySlug];
+  const displayCategory = displayCategoryMapping[categorySlug];
+  
+  const { data: content = [], isLoading, error } = useQuery({
+    queryKey: ['/api/content', 'category', dbCategory],
+    queryFn: async () => {
+      const params = new URLSearchParams();
+      params.append('category', dbCategory);
+      
+      const url = `/api/content?${params.toString()}`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Failed to fetch content');
+      return response.json();
+    },
+  }) as { data: Content[]; isLoading: boolean; error: any };
+
+  if (isLoading) {
+    return (
+      <div className="bg-white min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="mb-8">
+            <Skeleton className="h-12 w-64 mb-4" />
+            <Skeleton className="h-6 w-96" />
+          </div>
+          <div className="space-y-6">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <div key={index} className="flex gap-4 p-6 border-b border-gray-200">
+                <Skeleton className="w-20 h-20 rounded" />
+                <div className="flex-1 space-y-2">
+                  <Skeleton className="h-4 w-24" />
+                  <Skeleton className="h-6 w-full" />
+                  <Skeleton className="h-4 w-3/4" />
+                  <Skeleton className="h-4 w-48" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-white min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <Card className="p-8 text-center">
+            <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
+            <h1 className="text-2xl font-bold text-black mb-2">Error Loading Articles</h1>
+            <p className="text-gray-600 mb-4">
+              Unable to load articles for this category. Please try again later.
+            </p>
+            <Link href="/">
+              <span className="text-primary hover:text-primary/80 font-medium">
+                Return to Home
+              </span>
+            </Link>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
+  const articles = content.map(transformContentToArticle);
+
+  return (
+    <div className="bg-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Category Header */}
+        <div className="mb-8">
+          <h1 className="verge-headline-hero text-black mb-4" data-testid={`text-category-title-${categorySlug}`}>
+            {displayCategory}
+          </h1>
+          <p className="verge-excerpt-text text-gray-700 text-xl" data-testid={`text-category-description-${categorySlug}`}>
+            {getCategoryDescription(displayCategory)}
+          </p>
+        </div>
+
+        {/* Articles Section */}
+        {articles.length === 0 ? (
+          <Card className="p-8 text-center" data-testid={`card-no-articles-${categorySlug}`}>
+            <h2 className="text-xl font-semibold text-black mb-2">No Articles Found</h2>
+            <p className="text-gray-600 mb-4">
+              There are currently no articles in the {displayCategory} category.
+            </p>
+            <Link href="/">
+              <span className="text-primary hover:text-primary/80 font-medium">
+                Browse All Articles
+              </span>
+            </Link>
+          </Card>
+        ) : (
+          <div className="space-y-0" data-testid={`articles-list-${categorySlug}`}>
+            {articles.map((article, index) => (
+              <div key={article.id} className={index === 0 ? "" : "verge-divider"}>
+                <ArticleCard article={article} variant="list" />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Back to Home Link */}
+        <div className="mt-12 text-center">
+          <div className="verge-divider mb-8"></div>
+          <Link href="/">
+            <span className="verge-category-label text-primary hover:text-primary/80 transition-colors" data-testid={`link-back-home-${categorySlug}`}>
+              ← Back to Home
+            </span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function getCategoryDescription(category: string): string {
+  const descriptions: Record<string, string> = {
+    "AI Policy": "Latest developments in artificial intelligence policy, governance, and regulatory frameworks affecting Saudi Arabia and the GCC region.",
+    "AI Regulation": "Comprehensive coverage of AI regulations, compliance requirements, and legal developments across the Middle East.",
+    "AI Analysis": "In-depth analysis and expert commentary on artificial intelligence trends, impacts, and strategic implications.",
+    "AI Tools": "Discover the latest artificial intelligence tools, technologies, and innovations transforming industries.",
+    "Newsletter": "Stay updated with our curated newsletter content and exclusive insights."
+  };
+  
+  return descriptions[category] || "Explore articles and insights in this category.";
+}

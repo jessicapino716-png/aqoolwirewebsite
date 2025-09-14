@@ -5,9 +5,9 @@ import { Menu, User } from "lucide-react";
 
 export default function Header() {
   const navigation = [
-    { name: "Policy", href: "#policy" },
-    { name: "Regulation", href: "#regulation" },
-    { name: "Analysis", href: "#analysis" },
+    { name: "Policy", href: "/policy" },
+    { name: "Regulation", href: "/regulation" },
+    { name: "Analysis", href: "/analysis" },
   ];
 
   return (
@@ -36,7 +36,7 @@ export default function Header() {
           <div className="flex items-center">
             <span className="text-blue-500 mx-2">/</span>
             <Link 
-              href="#tools" 
+              href="/tools" 
               className="text-black font-medium hover:text-blue-400 transition-colors"
               data-testid="link-nav-new-ai-tools"
             >
@@ -46,7 +46,7 @@ export default function Header() {
           <div className="flex items-center">
             <span className="text-blue-500 mx-2">/</span>
             <Link 
-              href="#newsletter" 
+              href="/newsletter" 
               className="text-black font-medium hover:text-blue-400 transition-colors"
               data-testid="link-nav-newsletter"
             >
@@ -83,15 +83,15 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="#tools"
-                className="text-lg font-medium transition-colors hover:text-blue-400 text-white"
+                href="/tools"
+                className="text-lg font-medium transition-colors hover:text-blue-400 text-black"
                 data-testid="link-nav-mobile-new-ai-tools"
               >
                 New AI Tools
               </Link>
               <Link
-                href="#newsletter"
-                className="text-lg font-medium transition-colors hover:text-blue-400 text-white"
+                href="/newsletter"
+                className="text-lg font-medium transition-colors hover:text-blue-400 text-black"
                 data-testid="link-nav-mobile-newsletter"
               >
                 Newsletter

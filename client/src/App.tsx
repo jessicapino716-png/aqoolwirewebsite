@@ -10,12 +10,18 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import Home from "@/pages/Home";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
+import CategoryPage from "@/pages/CategoryPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/policy" component={() => <CategoryPage />} />
+      <Route path="/regulation" component={() => <CategoryPage />} />
+      <Route path="/analysis" component={() => <CategoryPage />} />
+      <Route path="/tools" component={() => <CategoryPage />} />
+      <Route path="/newsletter" component={() => <CategoryPage />} />
       <Route path="/admin/login" component={AdminLogin} />
       <Route path="/admin">
         <ProtectedRoute>
