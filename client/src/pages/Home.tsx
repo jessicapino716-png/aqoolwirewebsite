@@ -152,7 +152,7 @@ export default function Home() {
           <div className="space-y-8" data-testid="sidebar-container">
             {/* Most Popular - Verge Style */}
             <div>
-              <h3 className="verge-headline-medium text-white mb-6 pb-3 verge-divider" data-testid="text-sidebar-popular">
+              <h3 className="verge-headline-medium mb-6 pb-3 verge-divider text-[#2dd4bf]" data-testid="text-sidebar-popular">
                 Most Popular
               </h3>
               <div className="space-y-6">
