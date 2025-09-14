@@ -484,50 +484,32 @@
 /* Prevent accidental second hero elsewhere */
 .bg-word, .hero, .jumbo { display:none !important; }  /* if you had those */
 
-/* Neon flickering effect for AI logo */
+/* Clear flickering effect for AI logo */
 .neon-flicker {
   color: #2dd4bf;
   font-weight: 900;
-  text-shadow: 
-    0 0 1px #2dd4bf,
-    0 0 2px #2dd4bf,
-    0 0 4px #2dd4bf;
-  animation: neonFlicker 4.8s infinite;
+  animation: clearFlicker 4.8s infinite;
 }
 
-@keyframes neonFlicker {
+@keyframes clearFlicker {
   0%, 10%, 15%, 85%, 90%, 100% {
     opacity: 1;
-    text-shadow: 
-      0 0 1px #2dd4bf,
-      0 0 2px #2dd4bf,
-      0 0 4px #2dd4bf;
   }
   
   11%, 14% {
     opacity: 0.7;
-    text-shadow: 
-      0 0 1px #2dd4bf,
-      0 0 2px #2dd4bf;
   }
   
   12%, 13% {
     opacity: 0.4;
-    text-shadow: 
-      0 0 1px #2dd4bf;
   }
   
   86%, 89% {
     opacity: 0.8;
-    text-shadow: 
-      0 0 1px #2dd4bf,
-      0 0 2px #2dd4bf;
   }
   
   87%, 88% {
     opacity: 0.5;
-    text-shadow: 
-      0 0 1px #2dd4bf;
   }
 }
 
