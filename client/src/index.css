@@ -495,29 +495,76 @@
 }
 
 @keyframes lightbulbFlicker {
-  0%, 10%, 15%, 85%, 90%, 100% {
+  0%, 5%, 8%, 12%, 18%, 25%, 28%, 35%, 42%, 48%, 52%, 58%, 65%, 72%, 78%, 82%, 88%, 92%, 95%, 100% {
     opacity: 1;
     background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+    color: #ffd700;
   }
   
-  11%, 14% {
-    opacity: 0.7;
-    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.05) 50%, transparent 70%);
+  6%, 7% {
+    opacity: 0.3;
+    background: radial-gradient(ellipse at center, rgba(255, 180, 0, 0.1) 0%, transparent 40%);
+    color: #ffb347;
   }
   
-  12%, 13% {
-    opacity: 0.4;
-    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
-  }
-  
-  86%, 89% {
+  9%, 11% {
     opacity: 0.8;
     background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0.08) 50%, transparent 70%);
+    color: #ffd700;
   }
   
-  87%, 88% {
+  13%, 14% {
+    opacity: 0.1;
+    background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.05) 0%, transparent 30%);
+    color: #cc8800;
+  }
+  
+  15%, 17% {
+    opacity: 0.6;
+    background: radial-gradient(ellipse at center, rgba(255, 200, 0, 0.2) 0%, rgba(255, 200, 0, 0.05) 40%, transparent 60%);
+    color: #ffcc00;
+  }
+  
+  19%, 20% {
+    opacity: 0.2;
+    background: radial-gradient(ellipse at center, rgba(255, 160, 0, 0.08) 0%, transparent 35%);
+    color: #cc9900;
+  }
+  
+  21%, 24% {
+    opacity: 0.9;
+    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.28) 0%, rgba(255, 215, 0, 0.09) 50%, transparent 70%);
+    color: #ffd700;
+  }
+  
+  26%, 27% {
+    opacity: 0.4;
+    background: radial-gradient(ellipse at center, rgba(255, 180, 0, 0.15) 0%, transparent 45%);
+    color: #ffaa00;
+  }
+  
+  83%, 84% {
+    opacity: 0.25;
+    background: radial-gradient(ellipse at center, rgba(255, 160, 0, 0.1) 0%, transparent 35%);
+    color: #cc9900;
+  }
+  
+  85%, 87% {
+    opacity: 0.7;
+    background: radial-gradient(ellipse at center, rgba(255, 200, 0, 0.22) 0%, rgba(255, 200, 0, 0.06) 45%, transparent 65%);
+    color: #ffcc00;
+  }
+  
+  89%, 91% {
+    opacity: 0.15;
+    background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.06) 0%, transparent 30%);
+    color: #cc8800;
+  }
+  
+  93%, 94% {
     opacity: 0.5;
-    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.15) 0%, transparent 50%);
+    background: radial-gradient(ellipse at center, rgba(255, 190, 0, 0.18) 0%, transparent 50%);
+    color: #ffaa00;
   }
 }
 
