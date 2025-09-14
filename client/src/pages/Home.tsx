@@ -108,7 +108,7 @@ export default function Home() {
     <div className="bg-background">
       <HeroSection />
       {/* Main Content */}
-      <div className="mx-auto max-w-7xl px-4 py-8 pl-[16px] pr-[16px] pt-[70px] pb-[70px]">
+      <div className="mx-auto max-w-7xl px-4 py-8 pl-[16px] pr-[16px] pt-[70px] pb-[70px] bg-[#242424]">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content Column */}
           <div className="lg:col-span-2">
