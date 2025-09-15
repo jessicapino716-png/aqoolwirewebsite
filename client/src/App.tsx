@@ -11,7 +11,6 @@ import Home from "@/pages/Home";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
 import AdminNewsletter from "@/pages/AdminNewsletter";
-import AdminContent from "@/pages/AdminContent";
 import CategoryPage from "@/pages/CategoryPage";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
@@ -35,11 +34,6 @@ function Router() {
       <Route path="/admin/newsletter">
         <ProtectedRoute>
           <AdminNewsletter />
-        </ProtectedRoute>
-      </Route>
-      <Route path="/admin/content">
-        <ProtectedRoute>
-          <AdminContent />
         </ProtectedRoute>
       </Route>
       {/* Fallback to 404 */}
