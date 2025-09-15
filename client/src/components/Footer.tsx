@@ -41,16 +41,25 @@ export default function Footer() {
               Leading source for AI policy and regulation news in Saudi Arabia and the GCC region. 
               Expert analysis, weekly insights, and authoritative commentary.
             </p>
-            <div className="flex space-x-2">
-              <Button variant="ghost" size="icon" data-testid="button-footer-twitter">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" data-testid="button-footer-linkedin">
-                <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" data-testid="button-footer-website">
-                <Globe className="h-4 w-4" />
-              </Button>
+            <div className="space-y-4">
+              <Link 
+                href="/contact" 
+                className="inline-block bg-[#2dd4bf] hover:bg-[#14b8a6] px-6 py-3 rounded-md text-white font-medium transition-colors"
+                data-testid="link-footer-contact"
+              >
+                Get In Touch
+              </Link>
+              <div className="flex space-x-2">
+                <Button variant="ghost" size="icon" data-testid="button-footer-twitter">
+                  <Twitter className="h-4 w-4" />
+                </Button>
+                <Button variant="ghost" size="icon" data-testid="button-footer-linkedin">
+                  <Linkedin className="h-4 w-4" />
+                </Button>
+                <Button variant="ghost" size="icon" data-testid="button-footer-website">
+                  <Globe className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
 

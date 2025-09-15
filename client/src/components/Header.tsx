@@ -53,13 +53,6 @@ export default function Header() {
               Newsletter
             </Link>
           </div>
-          <Link 
-            href="/contact" 
-            className="text-black font-medium hover:text-blue-400 transition-colors ml-8 bg-[#2dd4bf] hover:bg-[#14b8a6] px-4 py-2 rounded-md text-white hover:text-white"
-            data-testid="link-contact"
-          >
-            Get In Touch
-          </Link>
         </nav>
 
         {/* Mobile Menu */}
@@ -94,13 +87,6 @@ export default function Header() {
                 data-testid="link-nav-mobile-newsletter"
               >
                 Newsletter
-              </Link>
-              <Link
-                href="/contact"
-                className="text-lg font-medium bg-[#2dd4bf] hover:bg-[#14b8a6] px-4 py-2 rounded-md text-white text-center"
-                data-testid="link-nav-mobile-contact"
-              >
-                Get In Touch
               </Link>
             </div>
           </SheetContent>
