@@ -59,7 +59,7 @@ export default function AdminContent() {
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
 
   // Fetch content with filters
-  const { data: content = [], isLoading, error } = useQuery({
+  const { data: content = [], isLoading, error } = useQuery<ContentItem[]>({
     queryKey: ['/api/content', filterType, filterCategory, searchTerm],
     queryFn: async () => {
       const params = new URLSearchParams();
@@ -69,7 +69,7 @@ export default function AdminContent() {
       const url = `/api/content${params.toString() ? '?' + params.toString() : ''}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch content');
-      return response.json() as ContentItem[];
+      return await response.json() as ContentItem[];
     },
   });
 
@@ -107,10 +107,7 @@ export default function AdminContent() {
         tags: data.tags ? data.tags.split(',').map(tag => tag.trim()).filter(Boolean) : [],
       };
       
-      return apiRequest(`/api/content/${id}`, {
-        method: 'PATCH',
-        body: JSON.stringify(updateData),
-      });
+      return apiRequest('PATCH', `/api/content/${id}`, updateData);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/content'] });
@@ -133,9 +130,7 @@ export default function AdminContent() {
   // Delete content mutation
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      return apiRequest(`/api/content/${id}`, {
-        method: 'DELETE',
-      });
+      return apiRequest('DELETE', `/api/content/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/content'] });

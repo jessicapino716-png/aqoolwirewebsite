@@ -55,10 +55,7 @@ export default function AdminExternal() {
         imageUrl: data.imageUrl || undefined,
       };
       
-      return apiRequest('/api/content', {
-        method: 'POST',
-        body: JSON.stringify(submissionData),
-      });
+      return apiRequest('POST', '/api/content', submissionData);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/content'] });
