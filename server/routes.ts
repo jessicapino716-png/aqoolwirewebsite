@@ -592,8 +592,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       sgMail.setApiKey(apiKey);
 
       const msg = {
-        to: 'contact@aqool.ai', // You can change this to your preferred contact email
-        from: 'contact@aqool.ai', // Use the same email as sender for now
+        to: 'jessicapino@aqoolai.com', // Send contact messages to Jessica
+        from: 'jessicapino@aqoolai.com', // Use the same email as sender for now
         replyTo: email,
         subject: `Contact Form: ${subject}`,
         html: `
