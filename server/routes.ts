@@ -631,9 +631,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         message: "Message sent successfully! We'll get back to you soon." 
       });
 
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error sending contact email:", error);
-      res.status(500).json({ error: "Failed to send message. Please try again." });
+      
+      // Provide more helpful error messages
+      if (error.code === 401) {
+        res.status(500).json({ 
+          error: "Email service is temporarily unavailable. Please try again later or contact us directly at jessicapino@aqoolai.com" 
+        });
+      } else {
+        res.status(500).json({ 
+          error: "Failed to send message. Please try again or contact us directly at jessicapino@aqoolai.com" 
+        });
+      }
     }
   });
 
