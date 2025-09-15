@@ -60,14 +60,6 @@ export default function Header() {
           >
             Get In Touch
           </Link>
-          <Link 
-            href="#account" 
-            className="flex items-center space-x-2 text-black font-medium hover:text-blue-400 transition-colors ml-4"
-            data-testid="link-account"
-          >
-            <span className="w-3 h-3 rounded-full bg-[#5200FF]"></span>
-            <span>Account</span>
-          </Link>
         </nav>
 
         {/* Mobile Menu */}
@@ -110,13 +102,6 @@ export default function Header() {
               >
                 Get In Touch
               </Link>
-              
-              <div className="pt-4 border-t border-gray-200">
-                <Link href="#account" className="flex items-center space-x-2 text-black hover:text-blue-400 transition-colors">
-                  <User className="h-4 w-4 text-purple-500" />
-                  <span className="text-lg font-medium">Account</span>
-                </Link>
-              </div>
             </div>
           </SheetContent>
         </Sheet>
