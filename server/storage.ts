@@ -28,6 +28,8 @@ export interface IStorage {
   
   // Newsletter methods
   subscribeToNewsletter(email: string): Promise<NewsletterSubscriber>;
+  createNewsletterSubscriber(subscriber: Omit<NewsletterSubscriber, 'id'>): Promise<NewsletterSubscriber>;
+  getNewsletterSubscriberByEmail(email: string): Promise<NewsletterSubscriber | undefined>;
   isEmailSubscribed(email: string): Promise<boolean>;
   getNewsletterSubscribers(): Promise<NewsletterSubscriber[]>;
   
@@ -209,6 +211,29 @@ export class DatabaseStorage implements IStorage {
       .values({ email })
       .returning();
     return subscriber;
+  }
+
+  async createNewsletterSubscriber(subscriber: Omit<NewsletterSubscriber, 'id'>): Promise<NewsletterSubscriber> {
+    const { newsletterSubscribers } = await import("@shared/schema");
+    const { db } = await import("./db");
+    
+    const [newSubscriber] = await db
+      .insert(newsletterSubscribers)
+      .values(subscriber)
+      .returning();
+    return newSubscriber;
+  }
+
+  async getNewsletterSubscriberByEmail(email: string): Promise<NewsletterSubscriber | undefined> {
+    const { newsletterSubscribers } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const [subscriber] = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.email, email));
+    return subscriber || undefined;
   }
 
   async isEmailSubscribed(email: string): Promise<boolean> {

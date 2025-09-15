@@ -32,6 +32,8 @@ export const newsletterSubscribers = pgTable("newsletter_subscribers", {
   email: text("email").notNull().unique(),
   subscribedAt: timestamp("subscribed_at").notNull().defaultNow(),
   isActive: text("is_active").notNull().default("true"), // "true" | "false" for unsubscribed
+  source: text("source").notNull().default("local"), // "convertkit" | "local"
+  convertKitId: text("convertkit_id"), // ConvertKit subscriber ID
 });
 
 export const newsletterCampaigns = pgTable("newsletter_campaigns", {

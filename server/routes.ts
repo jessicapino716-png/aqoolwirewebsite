@@ -306,36 +306,54 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Newsletter subscription endpoint
+  // Newsletter subscription endpoint with ConvertKit and local storage fallback
   app.post("/api/newsletter/subscribe", async (req, res) => {
     try {
       const validatedData = insertNewsletterSubscriberSchema.parse(req.body);
       const { email } = validatedData;
       
-      // Check if email is already subscribed
-      const isAlreadySubscribed = await storage.isEmailSubscribed(email);
-      if (isAlreadySubscribed) {
+      // Check if subscriber already exists locally (normalize email)
+      const normalizedEmail = email.toLowerCase();
+      const existingSubscriber = await storage.getNewsletterSubscriberByEmail(normalizedEmail);
+      if (existingSubscriber) {
         return res.status(409).json({ error: "Email is already subscribed" });
       }
-      
-      // Subscribe to newsletter
-      const subscriber = await storage.subscribeToNewsletter(email);
-      
-      // Send welcome email (dynamic import to avoid startup crashes)
-      let emailSent = false;
+
+      let convertKitSuccess = false;
+      let convertKitResult = null;
+
+      // Try ConvertKit first
       try {
-        const { sendWelcomeEmail } = await import("./sendgrid");
-        emailSent = await sendWelcomeEmail(email);
-      } catch (error) {
-        console.warn("Welcome email sending failed:", error);
-        // Continue without email - subscription still successful
+        const { convertKit } = await import("./convertkit");
+        convertKitResult = await convertKit.addSubscriber(normalizedEmail);
+        if (convertKitResult) {
+          console.log('Successfully added subscriber to ConvertKit');
+          convertKitSuccess = true;
+        }
+      } catch (convertKitError) {
+        console.log('ConvertKit failed, using local storage fallback:', convertKitError.message);
       }
-      
+
+      // Always store locally as backup/primary record
+      const localSubscriber = await storage.createNewsletterSubscriber({
+        email: normalizedEmail,
+        subscribedAt: new Date(),
+        isActive: 'true', // Use string to match database schema
+        source: convertKitSuccess ? 'convertkit' : 'local',
+        convertKitId: convertKitResult?.id?.toString() || null
+      });
+
+      console.log('Newsletter subscriber created:', localSubscriber);
+
       res.json({ 
         success: true, 
         message: "Successfully subscribed to newsletter",
-        emailSent,
-        subscriber: { id: subscriber.id, email: subscriber.email }
+        provider: convertKitSuccess ? 'convertkit' : 'local',
+        backup: true,
+        subscriber: { 
+          id: localSubscriber.id,
+          email: localSubscriber.email
+        }
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -496,14 +514,52 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.get("/api/newsletter/subscribers", authenticateAdmin, async (req, res) => {
     try {
-      const subscribers = await storage.getAllActiveSubscribers();
+      const { convertKit } = await import("./convertkit");
+      const page = parseInt(req.query.page as string) || 1;
+      
+      // Try ConvertKit first
+      try {
+        const result = await convertKit.getSubscribers(page);
+        res.json(result);
+        return;
+      } catch (convertKitError) {
+        console.log("ConvertKit unavailable, falling back to local storage:", convertKitError.message);
+      }
+      
+      // Fallback to local storage
+      const localSubscribers = await storage.getNewsletterSubscribers();
+      const pageSize = 25;
+      const offset = (page - 1) * pageSize;
+      const paginatedSubscribers = localSubscribers.slice(offset, offset + pageSize);
+      
       res.json({
-        subscribers,
-        count: subscribers.length
+        subscribers: paginatedSubscribers.map(sub => ({
+          id: parseInt(sub.id) || 0,
+          email_address: sub.email,
+          state: sub.isActive === 'true' ? 'active' : 'unsubscribed',
+          created_at: sub.subscribedAt.toISOString(),
+          source: sub.source || 'local'
+        })),
+        total: localSubscribers.length,
+        page: page,
+        total_pages: Math.ceil(localSubscribers.length / pageSize)
       });
     } catch (error) {
       console.error("Error fetching newsletter subscribers:", error);
       res.status(500).json({ error: "Failed to fetch newsletter subscribers" });
+    }
+  });
+
+  app.get("/api/newsletter/subscribers/count", async (req, res) => {
+    try {
+      // For hybrid approach, always show local count as the authoritative source
+      // since all subscribers are stored locally regardless of ConvertKit status
+      const localSubscribers = await storage.getNewsletterSubscribers();
+      console.log("Local subscribers count:", localSubscribers.length);
+      res.json({ count: localSubscribers.length });
+    } catch (error) {
+      console.error("Error fetching subscriber count:", error);
+      res.status(500).json({ error: "Failed to fetch subscriber count" });
     }
   });
 
