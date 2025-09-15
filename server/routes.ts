@@ -634,6 +634,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error: any) {
       console.error("Error sending contact email:", error);
       
+      // Log detailed SendGrid error information
+      if (error.response && error.response.body && error.response.body.errors) {
+        console.error("SendGrid detailed errors:", JSON.stringify(error.response.body.errors, null, 2));
+      }
+      
       // Provide more helpful error messages
       if (error.code === 401) {
         res.status(500).json({ 
