@@ -12,6 +12,7 @@ import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
 import AdminNewsletter from "@/pages/AdminNewsletter";
 import CategoryPage from "@/pages/CategoryPage";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/analysis" component={() => <CategoryPage />} />
       <Route path="/tools" component={() => <CategoryPage />} />
       <Route path="/newsletter" component={() => <CategoryPage />} />
+      <Route path="/contact" component={Contact} />
       <Route path="/admin/login" component={AdminLogin} />
       <Route path="/admin">
         <ProtectedRoute>

@@ -54,8 +54,15 @@ export default function Header() {
             </Link>
           </div>
           <Link 
+            href="/contact" 
+            className="text-black font-medium hover:text-blue-400 transition-colors ml-8 bg-[#2dd4bf] hover:bg-[#14b8a6] px-4 py-2 rounded-md text-white hover:text-white"
+            data-testid="link-contact"
+          >
+            Get In Touch
+          </Link>
+          <Link 
             href="#account" 
-            className="flex items-center space-x-2 text-black font-medium hover:text-blue-400 transition-colors ml-8"
+            className="flex items-center space-x-2 text-black font-medium hover:text-blue-400 transition-colors ml-4"
             data-testid="link-account"
           >
             <span className="w-3 h-3 rounded-full bg-[#5200FF]"></span>
@@ -95,6 +102,13 @@ export default function Header() {
                 data-testid="link-nav-mobile-newsletter"
               >
                 Newsletter
+              </Link>
+              <Link
+                href="/contact"
+                className="text-lg font-medium bg-[#2dd4bf] hover:bg-[#14b8a6] px-4 py-2 rounded-md text-white text-center"
+                data-testid="link-nav-mobile-contact"
+              >
+                Get In Touch
               </Link>
               
               <div className="pt-4 border-t border-gray-200">
