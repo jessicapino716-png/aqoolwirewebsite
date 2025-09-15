@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Trash2, Edit, ExternalLink, ArrowLeft, Search, Filter } from 'lucide-react';
+import { Trash2, Edit, ExternalLink, ArrowLeft, Search, Filter, Plus } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest, queryClient } from '@/lib/queryClient';
 import { useLocation } from 'wouter';
@@ -49,6 +49,22 @@ const editFormSchema = z.object({
 
 type EditFormData = z.infer<typeof editFormSchema>;
 
+const createFormSchema = z.object({
+  type: z.enum(['external', 'op-ed']),
+  title: z.string().min(1, 'Title is required'),
+  slug: z.string().min(1, 'Slug is required'),
+  excerpt: z.string().min(1, 'Excerpt is required'),
+  externalUrl: z.string().optional(),
+  source: z.string().optional(),
+  body: z.string().optional(),
+  authorName: z.string().min(1, 'Author name is required'),
+  category: z.string().min(1, 'Category is required'),
+  tags: z.string(),
+  imageUrl: z.string().optional(),
+});
+
+type CreateFormData = z.infer<typeof createFormSchema>;
+
 export default function AdminContent() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
@@ -57,6 +73,8 @@ export default function AdminContent() {
   const [filterCategory, setFilterCategory] = useState<string>('');
   const [editingContent, setEditingContent] = useState<ContentItem | null>(null);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+  const [createArticleType, setCreateArticleType] = useState<'external' | 'op-ed'>('external');
 
   // Fetch content with filters
   const { data: content = [], isLoading, error } = useQuery({
@@ -69,7 +87,7 @@ export default function AdminContent() {
       const url = `/api/content${params.toString() ? '?' + params.toString() : ''}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch content');
-      return response.json() as ContentItem[];
+      return (await response.json()) as ContentItem[];
     },
   });
 
@@ -99,6 +117,66 @@ export default function AdminContent() {
     },
   });
 
+  // Create form
+  const createForm = useForm<CreateFormData>({
+    resolver: zodResolver(createFormSchema),
+    defaultValues: {
+      type: 'external',
+      title: '',
+      slug: '',
+      excerpt: '',
+      externalUrl: '',
+      source: '',
+      body: '',
+      authorName: '',
+      category: '',
+      tags: '',
+      imageUrl: '',
+    },
+  });
+
+  // Create content mutation
+  const createMutation = useMutation({
+    mutationFn: async (data: CreateFormData) => {
+      // Validate based on article type
+      if (data.type === 'external') {
+        if (!data.externalUrl) {
+          throw new Error('External URL is required for external articles');
+        }
+        if (!data.source) {
+          throw new Error('Source is required for external articles');
+        }
+      } else if (data.type === 'op-ed') {
+        if (!data.body) {
+          throw new Error('Body is required for op-ed articles');
+        }
+      }
+
+      const createData = {
+        ...data,
+        tags: data.tags ? data.tags.split(',').map(tag => tag.trim()).filter(Boolean) : [],
+      };
+      
+      return apiRequest('POST', '/api/content', createData);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['/api/content'] });
+      setIsCreateDialogOpen(false);
+      createForm.reset();
+      toast({
+        title: 'Success',
+        description: 'Article created successfully',
+      });
+    },
+    onError: (error: any) => {
+      toast({
+        title: 'Error',
+        description: error.message || 'Failed to create article',
+        variant: 'destructive',
+      });
+    },
+  });
+
   // Update content mutation
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }: { id: string; data: EditFormData }) => {
@@ -107,10 +185,7 @@ export default function AdminContent() {
         tags: data.tags ? data.tags.split(',').map(tag => tag.trim()).filter(Boolean) : [],
       };
       
-      return apiRequest(`/api/content/${id}`, {
-        method: 'PATCH',
-        body: JSON.stringify(updateData),
-      });
+      return apiRequest('PATCH', `/api/content/${id}`, updateData);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/content'] });
@@ -133,9 +208,7 @@ export default function AdminContent() {
   // Delete content mutation
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      return apiRequest(`/api/content/${id}`, {
-        method: 'DELETE',
-      });
+      return apiRequest('DELETE', `/api/content/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/content'] });
@@ -173,6 +246,15 @@ export default function AdminContent() {
     if (confirm('Are you sure you want to delete this content? This action cannot be undone.')) {
       deleteMutation.mutate(id);
     }
+  };
+
+  const handleCreateArticle = () => {
+    setIsCreateDialogOpen(true);
+    createForm.setValue('type', createArticleType);
+  };
+
+  const onSubmitCreate = (data: CreateFormData) => {
+    createMutation.mutate(data);
   };
 
   const onSubmitEdit = (data: EditFormData) => {
@@ -213,9 +295,29 @@ export default function AdminContent() {
                   Content Management
                 </h1>
                 <p className="text-gray-600 mt-1" data-testid="text-content-management-subtitle">
-                  Edit and manage all published content
+                  Create, edit and manage all published content
                 </p>
               </div>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <Select value={createArticleType} onValueChange={(value: any) => setCreateArticleType(value)}>
+                <SelectTrigger className="w-40" data-testid="select-article-type">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="external">External Article</SelectItem>
+                  <SelectItem value="op-ed">Op-Ed Article</SelectItem>
+                </SelectContent>
+              </Select>
+              
+              <Button 
+                onClick={handleCreateArticle}
+                data-testid="button-add-article"
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                Add Article
+              </Button>
             </div>
           </div>
         </div>
@@ -573,6 +675,210 @@ export default function AdminContent() {
                     data-testid="button-save-edit"
                   >
                     {updateMutation.isPending ? 'Saving...' : 'Save Changes'}
+                  </Button>
+                </div>
+              </form>
+            </Form>
+          </DialogContent>
+        </Dialog>
+
+        {/* Create Article Dialog */}
+        <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle data-testid="text-create-dialog-title">
+                Create {createArticleType === 'external' ? 'External Article' : 'Op-Ed Article'}
+              </DialogTitle>
+              <DialogDescription>
+                Add a new article to your content library. All fields marked with * are required.
+              </DialogDescription>
+            </DialogHeader>
+            
+            <Form {...createForm}>
+              <form onSubmit={createForm.handleSubmit(onSubmitCreate)} className="space-y-6">
+                <FormField
+                  control={createForm.control}
+                  name="type"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Article Type *</FormLabel>
+                      <FormControl>
+                        <Select value={field.value} onValueChange={field.onChange}>
+                          <SelectTrigger data-testid="select-create-type">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="external">External Article</SelectItem>
+                            <SelectItem value="op-ed">Op-Ed Article</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={createForm.control}
+                  name="title"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Title *</FormLabel>
+                      <FormControl>
+                        <Input {...field} data-testid="input-create-title" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={createForm.control}
+                  name="slug"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Slug *</FormLabel>
+                      <FormControl>
+                        <Input {...field} placeholder="e.g., ai-policy-update-2024" data-testid="input-create-slug" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={createForm.control}
+                  name="excerpt"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Excerpt *</FormLabel>
+                      <FormControl>
+                        <Textarea {...field} rows={3} data-testid="textarea-create-excerpt" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div className="grid grid-cols-2 gap-4">
+                  <FormField
+                    control={createForm.control}
+                    name="category"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Category *</FormLabel>
+                        <FormControl>
+                          <Input {...field} data-testid="input-create-category" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={createForm.control}
+                    name="authorName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Author Name *</FormLabel>
+                        <FormControl>
+                          <Input {...field} data-testid="input-create-author" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={createForm.control}
+                  name="tags"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Tags (comma-separated)</FormLabel>
+                      <FormControl>
+                        <Input {...field} placeholder="e.g., AI, policy, regulation" data-testid="input-create-tags" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={createForm.control}
+                  name="imageUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Image URL</FormLabel>
+                      <FormControl>
+                        <Input {...field} type="url" data-testid="input-create-image-url" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {createForm.watch('type') === 'external' ? (
+                  <>
+                    <FormField
+                      control={createForm.control}
+                      name="source"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Source *</FormLabel>
+                          <FormControl>
+                            <Input {...field} placeholder="e.g., Wall Street Journal" data-testid="input-create-source" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={createForm.control}
+                      name="externalUrl"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>External URL *</FormLabel>
+                          <FormControl>
+                            <Input {...field} type="url" data-testid="input-create-external-url" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </>
+                ) : (
+                  <FormField
+                    control={createForm.control}
+                    name="body"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Article Body *</FormLabel>
+                        <FormControl>
+                          <Textarea {...field} rows={10} data-testid="textarea-create-body" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
+
+                <div className="flex justify-end space-x-3">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setIsCreateDialogOpen(false)}
+                    data-testid="button-cancel-create"
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={createMutation.isPending}
+                    data-testid="button-submit-create"
+                  >
+                    {createMutation.isPending ? 'Creating...' : 'Create Article'}
                   </Button>
                 </div>
               </form>
