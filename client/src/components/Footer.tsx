@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90] pt-[0px] pb-[0px] mt-[20px] mb-[20px] pl-[0px] pr-[0px] ml-[0px] mr-[0px]">
+    <footer className="border-t bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90] pt-[0px] pb-[0px] pl-[0px] pr-[0px] ml-[0px] mr-[0px] mt-[0px] mb-[0px]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand and Description */}
