@@ -93,7 +93,7 @@ export default function Header() {
         </Sheet>
       </div>
       {/* Gradient bottom border line covering 90% of the width */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90%] h-0.5 bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90]"></div>
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90%] h-0.5 bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90] pl-[0px] pr-[0px] ml-[0px] mr-[0px] mt-[0px] mb-[0px] pt-[3px] pb-[3px]"></div>
     </header>
   );
 }
