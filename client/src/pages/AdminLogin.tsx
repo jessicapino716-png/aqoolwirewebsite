@@ -31,36 +31,18 @@ export default function AdminLogin() {
     setIsLoading(true);
 
     try {
-      // Test the token by making a request to a protected admin endpoint
-      const response = await fetch('/api/content', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({}), // Empty body to trigger validation error, but auth should be checked first
-      });
-
-      if (response.status === 400) {
-        // 400 means auth passed but validation failed - this means token is valid
-        login(token);
+      const success = await login(token);
+      
+      if (success) {
         toast({
           title: "Login Successful",
           description: "Welcome to the admin dashboard.",
         });
         setLocation('/admin');
-      } else if (response.status === 401 || response.status === 403) {
-        // 401/403 means authentication failed - invalid token
+      } else {
         toast({
           title: "Invalid Token",
           description: "The provided admin token is invalid.",
-          variant: "destructive",
-        });
-      } else {
-        // Other errors (500, etc.)
-        toast({
-          title: "Server Error",
-          description: "Unable to verify the admin token. Please try again.",
           variant: "destructive",
         });
       }
