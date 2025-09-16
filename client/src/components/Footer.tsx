@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="space-y-4">
               <Link 
                 href="/contact" 
-                className="inline-block bg-[#2dd4bf] hover:bg-[#14b8a6] px-6 py-3 rounded-md text-white font-medium transition-colors"
+                className="inline-block hover:bg-[#14b8a6] px-6 py-3 rounded-md text-white font-medium transition-colors bg-[#ff007f]"
                 data-testid="link-footer-contact"
               >
                 Get In Touch
