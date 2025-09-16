@@ -56,11 +56,14 @@ export const newsletterLimiter = rateLimit({
 });
 
 // Session configuration for admin authentication
-const sessionSecret = process.env.SESSION_SECRET;
-if (!sessionSecret) {
-  console.error("SESSION_SECRET environment variable is required for security");
-  process.exit(1);
-}
+const sessionSecret = process.env.SESSION_SECRET || (
+  process.env.NODE_ENV === 'development' 
+    ? 'dev-secret-change-in-production' 
+    : (() => {
+        console.error("SESSION_SECRET environment variable is required in production");
+        process.exit(1);
+      })()
+);
 
 app.use(session({
   secret: sessionSecret,
