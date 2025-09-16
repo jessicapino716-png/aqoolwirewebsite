@@ -65,7 +65,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <TooltipProvider>
-          <div className="min-h-screen flex flex-col bg-white">
+          <div className="min-h-screen flex flex-col bg-gradient-to-r from-teal-400 to-cyan-300">
             <Header />
             <main className="flex-1">
               <Router />

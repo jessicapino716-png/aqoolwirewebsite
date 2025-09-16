@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, User } from "lucide-react";
+import logoUrl from "@assets/logo.png";
 
 export default function Header() {
   const navigation = [
@@ -11,9 +12,10 @@ export default function Header() {
   ];
 
   return (
-    <header className="px-6 lg:px-20 py-4 bg-white relative">
+    <header className="px-6 lg:px-20 py-4 bg-white/90 backdrop-blur-sm relative">
       <div className="flex justify-between items-center">
-        <Link href="/" className="font-extrabold text-black text-3xl lg:text-4xl" data-testid="link-home">
+        <Link href="/" className="flex items-center font-extrabold text-black text-3xl lg:text-4xl" data-testid="link-home">
+          <img src={logoUrl} alt="Aqool AI Logo" className="h-8 w-8 mr-3" />
           The Aqool <span className="neon-flicker text-[#3b82f6]">(ai)</span>
         </Link>
         
