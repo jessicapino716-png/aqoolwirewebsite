@@ -2,7 +2,6 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, User } from "lucide-react";
-import logoUrl from "@assets/logo.png";
 
 export default function Header() {
   const navigation = [
@@ -15,7 +14,6 @@ export default function Header() {
     <header className="px-6 lg:px-20 py-4 bg-white/90 backdrop-blur-sm relative">
       <div className="flex justify-between items-center">
         <Link href="/" className="flex items-center font-extrabold text-black text-3xl lg:text-4xl" data-testid="link-home">
-          <img src={logoUrl} alt="Aqool AI Logo" className="h-8 w-8 mr-3" />
           The Aqool <span className="neon-flicker text-[#3b82f6]">(ai)</span>
         </Link>
         
@@ -95,7 +93,7 @@ export default function Header() {
         </Sheet>
       </div>
       {/* Gradient bottom border line covering 90% of the width */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90%] h-0.5 bg-gradient-to-r from-[#90EE90] via-[#00ff88] to-[#40E0D0]"></div>
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90%] h-0.5 bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90]"></div>
     </header>
   );
 }
