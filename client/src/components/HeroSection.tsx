@@ -2,7 +2,7 @@ export default function HeroSection() {
   return (
     <div className="relative min-h-screen text-black bg-white">
       {/* Left accent line */}
-      <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-[#40E0D0] via-[#00ff88] to-[#90EE90] pt-[0px] pb-[0px] mt-[0px] mb-[0px] pl-[4px] pr-[4px] ml-[15px] mr-[15px]"></div>
+      <div className="absolute left-0 top-0 h-[10%] w-0.5 bg-gradient-to-b from-[#40E0D0] via-[#00ff88] to-[#90EE90] pt-[0px] pb-[0px] mt-[0px] mb-[0px] pl-[4px] pr-[4px] ml-[15px] mr-[15px]"></div>
       {/* Main content */}
       <div className="container mx-auto px-6 py-16 flex items-center min-h-screen">
         <div className="max-w-4xl">
