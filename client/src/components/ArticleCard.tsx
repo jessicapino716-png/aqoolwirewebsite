@@ -41,7 +41,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
       <div className="group cursor-pointer" data-testid={`card-article-hero-${article.id}`}>
         <LinkWrapper>
           <div className="mb-3">
-            <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-hero-${article.id}`}>
+            <span className="verge-category-label text-white px-2 py-1 rounded bg-[#3b82f6]" data-testid={`badge-category-hero-${article.id}`}>
               {article.category}
             </span>
           </div>
