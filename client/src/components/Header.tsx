@@ -22,10 +22,10 @@ export default function Header() {
           <div className="flex items-center space-x-2">
             {navigation.map((item, index) => (
               <div key={item.name} className="flex items-center">
-                <span className="text-blue-500 mx-2">/</span>
+                <span className="text-[#3b82f6] mx-2">/</span>
                 <Link
                   href={item.href}
-                  className="text-black font-medium hover:text-blue-400 transition-colors"
+                  className="text-black font-medium hover:text-[#3b82f6] transition-colors"
                   data-testid={`link-nav-${item.name.toLowerCase()}`}
                 >
                   {item.name}
@@ -37,7 +37,7 @@ export default function Header() {
             <span className="text-blue-500 mx-2">/</span>
             <Link 
               href="/tools" 
-              className="text-black font-medium hover:text-blue-400 transition-colors"
+              className="text-black font-medium hover:text-[#3b82f6] transition-colors"
               data-testid="link-nav-new-ai-tools"
             >
               New AI Tools
@@ -47,7 +47,7 @@ export default function Header() {
             <span className="text-blue-500 mx-2">/</span>
             <Link 
               href="/newsletter" 
-              className="text-black font-medium hover:text-blue-400 transition-colors"
+              className="text-black font-medium hover:text-[#3b82f6] transition-colors"
               data-testid="link-nav-newsletter"
             >
               Newsletter
@@ -68,7 +68,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-medium transition-colors hover:text-blue-400 text-black"
+                  className="text-lg font-medium transition-colors hover:text-[#3b82f6] text-black"
                   data-testid={`link-nav-mobile-${item.name.toLowerCase().replace(' ', '-')}`}
                 >
                   {item.name}
@@ -76,14 +76,14 @@ export default function Header() {
               ))}
               <Link
                 href="/tools"
-                className="text-lg font-medium transition-colors hover:text-blue-400 text-black"
+                className="text-lg font-medium transition-colors hover:text-[#3b82f6] text-black"
                 data-testid="link-nav-mobile-new-ai-tools"
               >
                 New AI Tools
               </Link>
               <Link
                 href="/newsletter"
-                className="text-lg font-medium transition-colors hover:text-blue-400 text-black"
+                className="text-lg font-medium transition-colors hover:text-[#3b82f6] text-black"
                 data-testid="link-nav-mobile-newsletter"
               >
                 Newsletter

@@ -108,7 +108,7 @@ export default function AdminDashboard() {
                   <div className="text-sm text-gray-600">Total Articles</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600" data-testid="text-stats-external">--</div>
+                  <div className="text-2xl font-bold text-[#3b82f6]" data-testid="text-stats-external">--</div>
                   <div className="text-sm text-gray-600">External Links</div>
                 </div>
                 <div className="text-center">

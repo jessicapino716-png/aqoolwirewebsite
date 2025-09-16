@@ -81,7 +81,7 @@ export default function NewsletterSignup({ variant = "default", className = "" }
         <Button 
           onClick={handleSubmit}
           disabled={isLoading || isSubscribed}
-          className="bg-blue-600 hover:bg-blue-700 text-white"
+          className="bg-[#3b82f6] hover:bg-[#3b82f6]/90 text-white"
           data-testid="button-newsletter-inline"
         >
           {isLoading ? "Subscribing..." : isSubscribed ? "Subscribed!" : "Subscribe"}
@@ -112,7 +112,7 @@ export default function NewsletterSignup({ variant = "default", className = "" }
             />
             <Button 
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              className="w-full bg-[#3b82f6] hover:bg-[#3b82f6]/90 text-white"
               disabled={isLoading || isSubscribed}
               data-testid="button-newsletter-sidebar"
             >
@@ -156,7 +156,7 @@ export default function NewsletterSignup({ variant = "default", className = "" }
           />
           <Button 
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+            className="w-full bg-[#3b82f6] hover:bg-[#3b82f6]/90 text-white"
             disabled={isLoading || isSubscribed}
             data-testid="button-newsletter-default"
           >

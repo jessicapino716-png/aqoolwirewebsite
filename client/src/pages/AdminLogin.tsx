@@ -130,8 +130,8 @@ export default function AdminLogin() {
             </Button>
           </form>
           
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <p className="text-sm text-blue-800">
+          <div className="mt-6 p-4 bg-[#3b82f6]/5 rounded-lg">
+            <p className="text-sm text-[#3b82f6]">
               <strong>Note:</strong> You need a valid admin token to access the content management system. 
               Contact your system administrator if you don't have one.
             </p>
