@@ -2,9 +2,9 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  login: (token: string) => Promise<boolean>;
-  logout: () => Promise<void>;
-  checkSession: () => Promise<void>;
+  adminToken: string | null;
+  login: (token: string) => void;
+  logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -22,71 +22,30 @@ interface AuthProviderProps {
 }
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [adminToken, setAdminToken] = useState<string | null>(null);
 
-  // Check session status on mount
   useEffect(() => {
-    checkSession();
+    // Check for stored token on mount
+    const storedToken = localStorage.getItem('admin_token');
+    if (storedToken) {
+      setAdminToken(storedToken);
+    }
   }, []);
 
-  const checkSession = async () => {
-    try {
-      const response = await fetch('/api/admin/session', {
-        credentials: 'include', // Important: include cookies in request
-      });
-      
-      if (response.ok) {
-        const data = await response.json();
-        setIsAuthenticated(data.isAuthenticated);
-      } else {
-        setIsAuthenticated(false);
-      }
-    } catch (error) {
-      console.error('Error checking session:', error);
-      setIsAuthenticated(false);
-    }
+  const login = (token: string) => {
+    setAdminToken(token);
+    localStorage.setItem('admin_token', token);
   };
 
-  const login = async (token: string): Promise<boolean> => {
-    try {
-      const response = await fetch('/api/admin/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        credentials: 'include', // Important: include cookies in request
-        body: JSON.stringify({ token }),
-      });
-
-      if (response.ok) {
-        setIsAuthenticated(true);
-        return true;
-      } else {
-        setIsAuthenticated(false);
-        return false;
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      setIsAuthenticated(false);
-      return false;
-    }
+  const logout = () => {
+    setAdminToken(null);
+    localStorage.removeItem('admin_token');
   };
 
-  const logout = async (): Promise<void> => {
-    try {
-      await fetch('/api/admin/logout', {
-        method: 'POST',
-        credentials: 'include', // Important: include cookies in request
-      });
-    } catch (error) {
-      console.error('Error during logout:', error);
-    } finally {
-      setIsAuthenticated(false);
-    }
-  };
+  const isAuthenticated = adminToken !== null;
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout, checkSession }}>
+    <AuthContext.Provider value={{ isAuthenticated, adminToken, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

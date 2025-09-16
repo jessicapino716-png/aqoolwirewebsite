@@ -2,101 +2,33 @@ import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContentSchema, updateContentSchema, updateContentWithoutTypeSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
-import { adminLimiter, newsletterLimiter } from "./index";
 // Note: SendGrid functions are imported dynamically to avoid startup crashes
 import { z } from "zod";
 
-// Extend express session type to include admin flag
-declare module "express-session" {
-  interface SessionData {
-    isAdmin?: boolean;
-  }
-}
-
-// Session-based authentication middleware for admin routes
+// Authentication middleware for admin routes
 function authenticateAdmin(req: Request, res: Response, next: NextFunction) {
-  if (!req.session || !req.session.isAdmin) {
-    return res.status(401).json({ error: "Unauthorized" });
+  const authHeader = req.headers.authorization;
+  const adminToken = process.env.ADMIN_TOKEN;
+  
+  if (!adminToken) {
+    console.error("ADMIN_TOKEN environment variable not set");
+    return res.status(500).json({ error: "Server configuration error" });
+  }
+  
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ error: "Authorization header with Bearer token required" });
+  }
+  
+  const token = authHeader.substring(7); // Remove 'Bearer ' prefix
+  
+  if (token !== adminToken) {
+    return res.status(403).json({ error: "Invalid admin token" });
   }
   
   next();
 }
 
-// Helper function to verify admin token (for login)
-function verifyAdminToken(token: string): boolean {
-  const adminToken = process.env.ADMIN_TOKEN;
-  
-  if (!adminToken) {
-    console.error("ADMIN_TOKEN environment variable not set");
-    return false;
-  }
-  
-  return token === adminToken;
-}
-
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Admin authentication routes
-  app.post("/api/admin/login", adminLimiter, async (req, res) => {
-    try {
-      const { token } = req.body;
-      
-      if (!token || typeof token !== 'string') {
-        return res.status(400).json({ error: "Token is required" });
-      }
-      
-      if (!verifyAdminToken(token)) {
-        return res.status(401).json({ error: "Invalid token" });
-      }
-      
-      // Regenerate session to prevent session fixation attacks
-      req.session.regenerate((err) => {
-        if (err) {
-          console.error("Error regenerating session:", err);
-          return res.status(500).json({ error: "Internal server error" });
-        }
-        
-        // Set admin session after regeneration
-        req.session.isAdmin = true;
-        
-        res.json({ success: true, message: "Logged in successfully" });
-      });
-    } catch (error) {
-      console.error("Error during admin login:", error);
-      res.status(500).json({ error: "Internal server error" });
-    }
-  });
-  
-  app.post("/api/admin/logout", async (req, res) => {
-    try {
-      req.session.destroy((err) => {
-        if (err) {
-          console.error("Error destroying session:", err);
-          return res.status(500).json({ error: "Failed to logout" });
-        }
-        res.clearCookie('aqool.sid', {
-          path: '/',
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict'
-        });
-        res.json({ success: true, message: "Logged out successfully" });
-      });
-    } catch (error) {
-      console.error("Error during admin logout:", error);
-      res.status(500).json({ error: "Internal server error" });
-    }
-  });
-  
-  app.get("/api/admin/session", async (req, res) => {
-    try {
-      const isAdmin = !!(req.session && req.session.isAdmin);
-      res.json({ isAuthenticated: isAdmin });
-    } catch (error) {
-      console.error("Error checking admin session:", error);
-      res.status(500).json({ error: "Internal server error" });
-    }
-  });
-
   // Content API Routes
   
   // Public routes for getting content
@@ -137,7 +69,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Admin routes for content management
-  app.post("/api/content", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.post("/api/content", authenticateAdmin, async (req, res) => {
     try {
       // Validate the request body
       const validatedData = insertContentSchema.parse(req.body);
@@ -162,7 +94,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.patch("/api/content/:id", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.patch("/api/content/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       
@@ -305,7 +237,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete("/api/content/:id", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.delete("/api/content/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const deleted = await storage.deleteContent(id);
@@ -321,7 +253,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/content/:id/publish", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.post("/api/content/:id/publish", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const { publishedAt } = req.body;
@@ -358,7 +290,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Increment comments count
-  app.post("/api/content/:id/comments", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.post("/api/content/:id/comments", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const updatedContent = await storage.incrementComments(id);
@@ -375,7 +307,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Newsletter subscription endpoint with ConvertKit and local storage fallback
-  app.post("/api/newsletter/subscribe", newsletterLimiter, async (req, res) => {
+  app.post("/api/newsletter/subscribe", async (req, res) => {
     try {
       const validatedData = insertNewsletterSubscriberSchema.parse(req.body);
       const { email } = validatedData;
@@ -437,7 +369,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Newsletter Campaigns API
-  app.post("/api/newsletter/campaigns", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.post("/api/newsletter/campaigns", authenticateAdmin, async (req, res) => {
     try {
       const { insertNewsletterCampaignSchema } = await import("@shared/schema");
       const validatedData = insertNewsletterCampaignSchema.parse(req.body);
@@ -462,7 +394,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/newsletter/campaigns", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.get("/api/newsletter/campaigns", authenticateAdmin, async (req, res) => {
     try {
       const campaigns = await storage.getNewsletterCampaigns();
       res.json(campaigns);
@@ -472,7 +404,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/newsletter/campaigns/:id", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.get("/api/newsletter/campaigns/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const campaign = await storage.getNewsletterCampaignById(id);
@@ -488,7 +420,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.patch("/api/newsletter/campaigns/:id", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.patch("/api/newsletter/campaigns/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const { updateNewsletterCampaignSchema } = await import("@shared/schema");
@@ -518,7 +450,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete("/api/newsletter/campaigns/:id", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.delete("/api/newsletter/campaigns/:id", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const success = await storage.deleteNewsletterCampaign(id);
@@ -537,7 +469,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/newsletter/campaigns/:id/send", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.post("/api/newsletter/campaigns/:id/send", authenticateAdmin, async (req, res) => {
     try {
       const { id } = req.params;
       const { sendNewsletterToAll } = await import("./sendgrid");
@@ -580,7 +512,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/newsletter/subscribers", adminLimiter, authenticateAdmin, async (req, res) => {
+  app.get("/api/newsletter/subscribers", authenticateAdmin, async (req, res) => {
     try {
       const { convertKit } = await import("./convertkit");
       const page = parseInt(req.query.page as string) || 1;

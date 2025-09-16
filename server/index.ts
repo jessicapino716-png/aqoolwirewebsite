@@ -1,86 +1,8 @@
 import express, { type Request, Response, NextFunction } from "express";
-import helmet from "helmet";
-import rateLimit from "express-rate-limit";
-import session from "express-session";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
-
-// Trust proxy for secure cookies behind reverse proxy (important for production)
-app.set('trust proxy', 1);
-
-// Security middleware
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-      fontSrc: ["'self'", "https://fonts.gstatic.com"],
-      imgSrc: ["'self'", "data:", "https:"],
-      scriptSrc: ["'self'"],
-      objectSrc: ["'none'"],
-      baseUri: ["'self'"],
-      formAction: ["'self'"],
-      frameAncestors: ["'none'"],
-    },
-  },
-  crossOriginEmbedderPolicy: false, // Allows external resources like ConvertKit
-}));
-
-// Rate limiting for general API usage
-export const generalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
-  message: { error: "Too many requests from this IP, please try again later." },
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-// Rate limiting for admin routes (more restrictive)
-export const adminLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 50, // Limit each IP to 50 admin requests per windowMs
-  message: { error: "Too many admin requests from this IP, please try again later." },
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-// Rate limiting for newsletter signup (prevent spam)
-export const newsletterLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  max: 5, // Limit each IP to 5 newsletter signups per hour
-  message: { error: "Too many newsletter signup attempts, please try again later." },
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-// Session configuration for admin authentication
-const sessionSecret = process.env.SESSION_SECRET || (
-  process.env.NODE_ENV === 'development' 
-    ? 'dev-secret-change-in-production' 
-    : (() => {
-        console.error("SESSION_SECRET environment variable is required in production");
-        process.exit(1);
-      })()
-);
-
-app.use(session({
-  secret: sessionSecret,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: process.env.NODE_ENV === 'production', // HTTPS only in production
-    httpOnly: true, // Prevent XSS attacks
-    maxAge: 24 * 60 * 60 * 1000, // 24 hours
-    sameSite: 'strict', // CSRF protection
-  },
-  name: 'aqool.sid', // Custom session name (don't use default connect.sid)
-}));
-
-// Apply general rate limiting to all API routes
-app.use('/api', generalLimiter);
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -121,12 +43,8 @@ app.use((req, res, next) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
 
-    // Log the error for debugging but don't crash the process
-    console.error("Error handled by global error handler:", err);
-    
-    if (!res.headersSent) {
-      res.status(status).json({ error: "Internal server error" });
-    }
+    res.status(status).json({ message });
+    throw err;
   });
 
   // importantly only setup vite in development and after
