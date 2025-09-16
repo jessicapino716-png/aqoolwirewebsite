@@ -11,7 +11,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="border-b border-gray-200 px-6 lg:px-20 py-4 bg-white">
+    <header className="px-6 lg:px-20 py-4 bg-white relative">
       <div className="flex justify-between items-center">
         <Link href="/" className="font-extrabold text-black text-3xl lg:text-4xl" data-testid="link-home">
           The Aqool <span className="neon-flicker text-[#3b82f6]">(ai)</span>
@@ -92,6 +92,8 @@ export default function Header() {
           </SheetContent>
         </Sheet>
       </div>
+      {/* Turquoise bottom border line covering 80% of the width */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80%] h-0.5 bg-teal-400"></div>
     </header>
   );
 }
