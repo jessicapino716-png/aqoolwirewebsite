@@ -92,8 +92,8 @@ export default function Header() {
           </SheetContent>
         </Sheet>
       </div>
-      {/* Turquoise bottom border line covering 80% of the width */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80%] h-0.5 bg-teal-400"></div>
+      {/* Turquoise bottom border line covering 90% of the width */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90%] h-0.5 bg-teal-400"></div>
     </header>
   );
 }
