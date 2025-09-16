@@ -153,7 +153,7 @@ export default function Home() {
           <div className="space-y-8" data-testid="sidebar-container">
             {/* Most Popular - Verge Style */}
             <div>
-              <h3 className="verge-headline-medium mb-6 pb-3 verge-divider text-[#5200ff]" data-testid="text-sidebar-popular">
+              <h3 className="verge-headline-medium mb-6 pb-3 verge-divider text-[#ff007f]" data-testid="text-sidebar-popular">
                 Most Popular
               </h3>
               <div className="space-y-6">
@@ -181,7 +181,7 @@ export default function Home() {
 
             {/* Newsletter Section */}
             <div>
-              <div className="w-full h-1 mb-6 bg-[#5200FF]"></div>
+              <div className="w-full h-1 mb-6 bg-[#000000] text-[#000000]"></div>
               <NewsletterSignup variant="sidebar" />
             </div>
 
