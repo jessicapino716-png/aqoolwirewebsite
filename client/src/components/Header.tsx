@@ -14,7 +14,7 @@ export default function Header() {
     <header className="border-b border-gray-200 px-6 lg:px-20 py-4 bg-white">
       <div className="flex justify-between items-center">
         <Link href="/" className="font-extrabold text-black text-3xl lg:text-4xl" data-testid="link-home">
-          The Aqool <span className="neon-flicker text-[#2dd4bf]">(ai)</span>
+          The Aqool <span className="neon-flicker text-[#3b82f6]">(ai)</span>
         </Link>
         
         {/* Desktop Navigation */}
