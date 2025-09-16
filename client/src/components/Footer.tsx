@@ -9,10 +9,11 @@ export default function Footer() {
 
   const footerLinks = {
     content: [
-      { name: "AI Policy", href: "/policy" },
-      { name: "AI Tools", href: "/tools" },
-      { name: "Op-Ed", href: "/opinion" },
-      { name: "Newsletter Archive", href: "/newsletter" },
+      { name: "Policy", href: "/policy" },
+      { name: "Regulation", href: "/regulation" },
+      { name: "Analysis", href: "/analysis" },
+      { name: "New AI Tools", href: "/tools" },
+      { name: "Newsletter", href: "/newsletter" },
     ],
     company: [
       { name: "About", href: "/about" },
