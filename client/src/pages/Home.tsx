@@ -218,32 +218,6 @@ export default function Home() {
               <NewsletterSignup variant="sidebar" />
             </div>
 
-            {/* Most Commented */}
-            {transformedArticles.length > 0 && (
-              <div className="bg-white p-6 rounded-lg border">
-                <h3 className="text-xl font-bold text-black mb-6" data-testid="text-most-commented-title">
-                  Most Commented
-                </h3>
-                <div className="space-y-4">
-                  {transformedArticles
-                    .sort((a, b) => b.comments - a.comments)
-                    .slice(0, 3)
-                    .map((article, index) => (
-                      <div key={article.id} className="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded transition-colors" data-testid={`item-most-commented-${index}`}>
-                        <div className="flex-shrink-0 w-6 h-6 bg-[#3b82f6] text-white text-xs font-bold rounded-full flex items-center justify-center">
-                          {index + 1}
-                        </div>
-                        <div>
-                          <Link href={`/${article.slug}`} className="text-sm font-medium text-black hover:text-[#3b82f6] line-clamp-2">
-                            {article.title}
-                          </Link>
-                          <div className="text-xs text-gray-500 mt-1">{article.comments} comments</div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
