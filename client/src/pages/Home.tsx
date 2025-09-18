@@ -2,109 +2,151 @@ import ArticleCard from "@/components/ArticleCard";
 import HeroSection from "@/components/HeroSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { Link } from "wouter";
+import { useQuery } from "@tanstack/react-query";
+import { Content } from "@shared/schema";
 
-// TODO: Remove mock data - replace with API calls
+// Fallback images for articles without images
 import heroImage from '@assets/generated_images/AI_policy_hero_image_e5e8bfa6.png';
 import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
 
-const featuredArticle = {
-  id: "hero-1",
-  title: "OpenAI's Funding Challenges Loom Over Oracle, Broadcom Deal Spree",
-  source: "Wall Street Journal",
-  excerpt: "World's largest startup needs more paying users, but it isn't clear whether they will materialize soon. OpenAI has committed to spend around $60 billion a year for computing from Oracle, shell out $18 billion on a data-center venture, and purchase $10 billion of customized chips.",
-  author: "Eliot Brown and Bradley Olson",
-  publishedAt: "September 11, 2025",
-  category: "AI Business",
-  imageUrl: heroImage,
-  slug: "openai-funding-challenges-oracle-broadcom",
-  externalUrl: "https://www.wsj.com/tech/ai/openais-funding-challenges-loom-over-oracle-broadcom-deal-spree-be353399?mod=tech_lead_story",
-  comments: 89
+// Helper function to format published date
+const formatPublishedDate = (publishedAt: string) => {
+  const date = new Date(publishedAt);
+  const now = new Date();
+  const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
+  
+  if (diffInHours < 1) {
+    return "Just now";
+  } else if (diffInHours < 24) {
+    return `${diffInHours} hour${diffInHours > 1 ? 's' : ''} ago`;
+  } else {
+    const diffInDays = Math.floor(diffInHours / 24);
+    if (diffInDays < 7) {
+      return `${diffInDays} day${diffInDays > 1 ? 's' : ''} ago`;
+    } else {
+      return date.toLocaleDateString('en-US', { 
+        month: 'long', 
+        day: 'numeric', 
+        year: 'numeric' 
+      });
+    }
+  }
 };
 
-const featuredArticles = [
-  {
-    id: "featured-1",
-    title: "UAE and Saudi Arabia Sign Historic AI Cooperation Agreement",
-    excerpt: "Bilateral agreement establishes joint AI research initiatives and shared regulatory standards.",
-    author: "Dr. Ahmed Al-Rashid",
-    publishedAt: "4 hours ago",
-    category: "Policy",
-    imageUrl: thumbnailImage,
-    slug: "uae-saudi-ai-cooperation",
-    comments: 28
-  },
-  {
-    id: "featured-2", 
-    title: "CITC Releases New AI Ethics Guidelines for Financial Sector",
-    excerpt: "Communications and Information Technology Commission unveils comprehensive ethical framework.",
-    author: "Sarah Al-Mahmoud",
-    publishedAt: "6 hours ago",
-    category: "Regulation",
-    imageUrl: thumbnailImage,
-    slug: "citc-ai-ethics-financial",
-    comments: 19
-  }
-];
-
-const latestArticles = [
-  {
-    id: "latest-1",
-    title: "Vision 2030: AI's Role in Smart City Development",
-    excerpt: "Analysis of how artificial intelligence initiatives align with Saudi Arabia's ambitious urban development goals.",
-    author: "Mohammed Al-Zahrani",
-    publishedAt: "8 hours ago", 
-    category: "Analysis",
-    imageUrl: thumbnailImage,
-    slug: "vision-2030-ai-smart-cities",
-    comments: 15
-  },
-  {
-    id: "latest-2",
-    title: "NEOM's AI-Powered Infrastructure Takes Shape",
-    excerpt: "Latest developments in the mega-city's artificial intelligence backbone and smart systems integration.",
-    author: "Fatima Al-Zahra",
-    publishedAt: "10 hours ago",
-    category: "Technology",
-    imageUrl: thumbnailImage,
-    slug: "neom-ai-infrastructure",
-    comments: 23
-  },
-  {
-    id: "latest-3",
-    title: "GCC AI Regulatory Framework: A Comparative Study",
-    excerpt: "Deep dive into how different Gulf states are approaching artificial intelligence governance and policy development.",
-    author: "Dr. Ahmed Al-Rashid",
-    publishedAt: "1 day ago",
-    category: "Policy",
-    imageUrl: thumbnailImage,
-    slug: "gcc-ai-regulatory-framework",
-    comments: 31
-  },
-  {
-    id: "latest-4",
-    title: "AI in Healthcare: Saudi Arabia's Digital Transformation",
-    excerpt: "How the Kingdom is leveraging artificial intelligence to revolutionize healthcare delivery and patient outcomes.",
-    author: "Dr. Amina Hassan",
-    publishedAt: "1 day ago",
-    category: "Healthcare",
-    imageUrl: thumbnailImage,
-    slug: "ai-healthcare-saudi-transformation",
-    comments: 18
-  },
-  {
-    id: "latest-5",
-    title: "Quantum Computing and AI: The Next Frontier",
-    excerpt: "Exploring the intersection of quantum technologies and artificial intelligence in the Middle East research landscape.",
-    author: "Prof. Omar Al-Kindi",
-    publishedAt: "2 days ago",
-    category: "Research",
-    imageUrl: thumbnailImage,
-    slug: "quantum-computing-ai-frontier",
-    comments: 12
-  }
-];
+// Transform database content to article format expected by ArticleCard
+const transformContentToArticle = (content: Content) => ({
+  id: content.id,
+  title: content.title,
+  excerpt: content.excerpt,
+  author: content.authorName,
+  publishedAt: formatPublishedDate(content.publishedAt.toString()),
+  category: content.category,
+  imageUrl: content.imageUrl || thumbnailImage,
+  slug: content.slug,
+  comments: content.commentsCount,
+  source: content.source || undefined,
+  externalUrl: content.externalUrl || undefined,
+});
 
 export default function Home() {
+  // Fetch all articles from the API
+  const { data: articles, isLoading, error } = useQuery<Content[]>({
+    queryKey: ['/api/content'],
+    queryFn: async () => {
+      const response = await fetch('/api/content');
+      if (!response.ok) {
+        throw new Error('Failed to fetch articles');
+      }
+      return response.json();
+    },
+  });
+
+  // Transform articles for display
+  const transformedArticles = articles?.map(transformContentToArticle) || [];
+  
+  // Get hero article (first article)
+  const heroArticle = transformedArticles[0];
+  
+  // Get featured articles (next 2)
+  const featuredArticles = transformedArticles.slice(1, 3);
+  
+  // Get latest articles (remaining articles)
+  const latestArticles = transformedArticles.slice(3);
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="bg-background">
+        <HeroSection />
+        <div className="mx-auto max-w-7xl px-4 py-8 bg-white">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <div className="animate-pulse">
+                <div className="bg-gray-200 rounded-lg h-64 mb-8"></div>
+                <div className="space-y-4">
+                  <div className="bg-gray-200 rounded-lg h-32"></div>
+                  <div className="bg-gray-200 rounded-lg h-32"></div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-1">
+              <div className="bg-gray-200 rounded-lg h-64"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="bg-background">
+        <HeroSection />
+        <div className="mx-auto max-w-7xl px-4 py-8 bg-white text-center">
+          <p className="text-red-600">Failed to load articles. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
+  // No articles state
+  if (!transformedArticles.length) {
+    return (
+      <div className="bg-background">
+        <HeroSection />
+        <div className="mx-auto max-w-7xl px-4 py-8 bg-white">
+          <div className="text-center py-16">
+            <h2 className="text-2xl font-bold text-black mb-4" data-testid="text-no-articles-title">No Articles Yet</h2>
+            <p className="text-gray-600 mb-8" data-testid="text-no-articles-description">
+              Articles uploaded through the admin panel will appear here.
+            </p>
+            <Link 
+              href="/admin/login" 
+              className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-6 py-3 rounded-md font-medium transition-colors inline-block"
+              data-testid="link-admin-login"
+            >
+              Go to Admin Panel
+            </Link>
+          </div>
+          
+          {/* Sidebar with newsletter signup */}
+          <div className="max-w-md mx-auto mt-16">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
+                Stay Updated
+              </h3>
+              <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
+                Get weekly AI policy insights straight from Riyadh.
+              </p>
+              <NewsletterSignup variant="sidebar" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-background">
       <HeroSection />
@@ -114,79 +156,94 @@ export default function Home() {
           {/* Main Content Column */}
           <div className="lg:col-span-2">
             {/* Hero Article */}
-            <div className="mb-12">
-              <ArticleCard article={featuredArticle} variant="hero" />
-            </div>
-
-            {/* Verge-style Off-Lede Stories */}
-            <div className="mb-12">
-              <div className="verge-divider mb-8"></div>
-              <div className="space-y-8">
-                {featuredArticles.map((article) => (
-                  <ArticleCard key={article.id} article={article} variant="featured" />
-                ))}
+            {heroArticle && (
+              <div className="mb-12">
+                <ArticleCard article={heroArticle} variant="hero" />
               </div>
-            </div>
+            )}
 
-            {/* Latest in AI Policy - Verge River Style */}
-            <div>
-              <div className="verge-divider mb-8"></div>
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="verge-headline-medium text-black" data-testid="text-section-latest">
-                  Latest in AI Policy
+            {/* Featured Stories */}
+            {featuredArticles.length > 0 && (
+              <div className="mb-12">
+                <div className="verge-divider mb-8"></div>
+                <div className="space-y-8">
+                  {featuredArticles.map((article) => (
+                    <ArticleCard 
+                      key={article.id} 
+                      article={article} 
+                      variant="featured" 
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Latest News Grid */}
+            {latestArticles.length > 0 && (
+              <div className="mb-12">
+                <div className="verge-divider mb-8"></div>
+                <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-latest-news-title">
+                  Latest News
                 </h2>
-                <Link href="/policy">
-                  <span className="verge-category-label text-primary hover:text-primary/80 transition-colors" data-testid="link-view-all">
-                    View all
-                  </span>
-                </Link>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {latestArticles.map((article) => (
+                    <ArticleCard 
+                      key={article.id} 
+                      article={article} 
+                      variant="standard" 
+                    />
+                  ))}
+                </div>
               </div>
-              <div className="space-y-0">
-                {latestArticles.map((article) => (
-                  <ArticleCard key={article.id} article={article} variant="list" />
-                ))}
-              </div>
+            )}
+
+            {/* Load More Button */}
+            <div className="text-center">
+              <Link href="/policy" className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-8 py-3 rounded-md font-medium transition-colors inline-block" data-testid="button-load-more">
+                Load More Articles
+              </Link>
             </div>
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-8" data-testid="sidebar-container">
-            {/* Most Popular - Verge Style */}
-            <div>
-              <h3 className="verge-headline-medium mb-6 pb-3 verge-divider text-[#ff007f]" data-testid="text-sidebar-popular">
-                Most Popular
+          <div className="lg:col-span-1 space-y-8">
+            {/* Newsletter Signup */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
+                Stay Updated
               </h3>
-              <div className="space-y-6">
-                {latestArticles.slice(0, 5).map((article, index) => (
-                  <div key={article.id} className="group cursor-pointer" data-testid={`item-popular-${index}`}>
-                    <Link href={`/article/${article.slug}`}>
-                      <div className="flex items-start gap-4">
-                        <span className="text-3xl font-black text-gray-600 flex-shrink-0 mt-1 verge-headline-large">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        <div>
-                          <h4 className="verge-headline-small text-black group-hover:text-primary transition-colors leading-tight mb-1">
-                            {article.title}
-                          </h4>
-                          <div className="verge-meta-text">
-                            {article.author} • {article.publishedAt}
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Newsletter Section */}
-            <div>
-              <div className="w-full h-1 mb-6 bg-[#000000] text-[#000000]"></div>
+              <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
+                Get weekly AI policy insights straight from Riyadh.
+              </p>
               <NewsletterSignup variant="sidebar" />
             </div>
 
-            
-
+            {/* Most Commented */}
+            {transformedArticles.length > 0 && (
+              <div className="bg-white p-6 rounded-lg border">
+                <h3 className="text-xl font-bold text-black mb-6" data-testid="text-most-commented-title">
+                  Most Commented
+                </h3>
+                <div className="space-y-4">
+                  {transformedArticles
+                    .sort((a, b) => b.comments - a.comments)
+                    .slice(0, 3)
+                    .map((article, index) => (
+                      <div key={article.id} className="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded transition-colors" data-testid={`item-most-commented-${index}`}>
+                        <div className="flex-shrink-0 w-6 h-6 bg-[#3b82f6] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <Link href={`/${article.slug}`} className="text-sm font-medium text-black hover:text-[#3b82f6] line-clamp-2">
+                            {article.title}
+                          </Link>
+                          <div className="text-xs text-gray-500 mt-1">{article.comments} comments</div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
