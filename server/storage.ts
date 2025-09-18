@@ -20,6 +20,7 @@ export interface IStorage {
     type?: string;
     category?: string;
     tag?: string;
+    popular?: boolean;
     limit?: number;
     offset?: number;
   }): Promise<Content[]>;
@@ -133,6 +134,7 @@ export class DatabaseStorage implements IStorage {
     type?: string;
     category?: string;
     tag?: string;
+    popular?: boolean;
     limit?: number;
     offset?: number;
   }): Promise<Content[]> {
@@ -151,6 +153,9 @@ export class DatabaseStorage implements IStorage {
     if (filters?.tag) {
       // Use SQL operator for array contains to avoid TypeScript issues
       conditions.push(sql`${content.tags} @> ${[filters.tag]}`);
+    }
+    if (filters?.popular !== undefined) {
+      conditions.push(eq(content.isPopular, filters.popular));
     }
     
     // Build and execute query

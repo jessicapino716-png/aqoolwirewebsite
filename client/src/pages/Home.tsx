@@ -61,6 +61,18 @@ export default function Home() {
     },
   });
 
+  // Fetch popular articles from the API
+  const { data: popularArticles } = useQuery<Content[]>({
+    queryKey: ['/api/content', 'popular'],
+    queryFn: async () => {
+      const response = await fetch('/api/content?popular=true');
+      if (!response.ok) {
+        throw new Error('Failed to fetch popular articles');
+      }
+      return response.json();
+    },
+  });
+
   // Transform articles for display
   const transformedArticles = articles?.map(transformContentToArticle) || [];
   
@@ -217,6 +229,35 @@ export default function Home() {
               </p>
               <NewsletterSignup variant="sidebar" />
             </div>
+
+            {/* Most Popular */}
+            {popularArticles && popularArticles.length > 0 && (
+              <div className="bg-white p-6 rounded-lg border">
+                <h3 className="text-xl font-bold text-black mb-6" data-testid="text-most-popular-title">
+                  Most Popular
+                </h3>
+                <div className="space-y-4">
+                  {popularArticles
+                    .slice(0, 3)
+                    .map((content, index) => {
+                      const article = transformContentToArticle(content);
+                      return (
+                        <div key={article.id} className="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded transition-colors" data-testid={`item-most-popular-${index}`}>
+                          <div className="flex-shrink-0 w-6 h-6 bg-[#3b82f6] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                            {index + 1}
+                          </div>
+                          <div>
+                            <Link href={`/${article.slug}`} className="text-sm font-medium text-black hover:text-[#3b82f6] line-clamp-2">
+                              {article.title}
+                            </Link>
+                            <div className="text-xs text-gray-500 mt-1">{article.category}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
 
           </div>
         </div>

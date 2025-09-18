@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -22,6 +23,7 @@ const opEdSchema = z.object({
   category: z.string().min(1, 'Category is required'),
   tags: z.string().optional(),
   imageUrl: z.string().url().optional().or(z.literal('')),
+  isPopular: z.boolean().default(false),
 });
 
 type OpEdData = z.infer<typeof opEdSchema>;
@@ -41,6 +43,7 @@ export default function AdminOpEd() {
       category: '',
       tags: '',
       imageUrl: '',
+      isPopular: false,
     },
   });
 
@@ -283,6 +286,30 @@ export default function AdminOpEd() {
                         />
                       </FormControl>
                       <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="isPopular"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          data-testid="checkbox-op-ed-popular"
+                        />
+                      </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel>
+                          Mark as Popular
+                        </FormLabel>
+                        <p className="text-sm text-muted-foreground">
+                          Popular articles will appear in the "Most Popular" section on the homepage.
+                        </p>
+                      </div>
                     </FormItem>
                   )}
                 />

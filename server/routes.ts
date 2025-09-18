@@ -34,12 +34,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Public routes for getting content
   app.get("/api/content", async (req, res) => {
     try {
-      const { type, category, tag, limit, offset } = req.query;
+      const { type, category, tag, popular, limit, offset } = req.query;
       
       const filters = {
         type: type as string | undefined,
         category: category as string | undefined,
         tag: tag as string | undefined,
+        popular: popular === 'true' ? true : undefined,
         limit: limit ? parseInt(limit as string) : undefined,
         offset: offset ? parseInt(offset as string) : undefined,
       };
