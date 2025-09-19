@@ -6,6 +6,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle } from "lucide-react";
 import type { Content } from "@shared/schema";
 
+// Fallback thumbnail image for articles without images
+import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
+
 // Mapping of URL-friendly category names to database category names
 const categoryMapping: Record<string, string> = {
   "policy": "Policy",
@@ -32,7 +35,7 @@ function transformContentToArticle(content: Content): Article {
     author: content.authorName,
     publishedAt: new Date(content.publishedAt).toLocaleDateString(),
     category: content.category,
-    imageUrl: content.imageUrl || undefined,
+    imageUrl: content.imageUrl || thumbnailImage,
     slug: content.slug,
     externalUrl: content.externalUrl || undefined,
     comments: content.commentsCount,

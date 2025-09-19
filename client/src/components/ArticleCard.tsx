@@ -40,6 +40,16 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
     return (
       <div className="group cursor-pointer" data-testid={`card-article-hero-${article.id}`}>
         <LinkWrapper>
+          {article.imageUrl && (
+            <div className="mb-6">
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                className="w-full aspect-[16/9] object-cover rounded-lg"
+                data-testid={`img-article-hero-${article.id}`}
+              />
+            </div>
+          )}
           <div className="mb-3">
             <span className="verge-category-label text-white px-2 py-1 rounded bg-[#3b82f6]" data-testid={`badge-category-hero-${article.id}`}>
               {article.category}
