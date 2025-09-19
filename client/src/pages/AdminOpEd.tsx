@@ -60,6 +60,7 @@ export default function AdminOpEd() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/content'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/content', 'popular'] });
       toast({
         title: 'Success',
         description: 'Op-Ed article created successfully!',

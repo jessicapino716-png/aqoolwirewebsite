@@ -62,6 +62,7 @@ export default function AdminExternal() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/content'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/content', 'popular'] });
       toast({
         title: 'Success',
         description: 'External article added successfully!',
