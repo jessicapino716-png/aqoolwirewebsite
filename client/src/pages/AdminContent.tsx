@@ -54,7 +54,7 @@ export default function AdminContent() {
   const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'external' | 'op-ed'>('all');
-  const [filterCategory, setFilterCategory] = useState<string>('');
+  const [filterCategory, setFilterCategory] = useState<string>('all');
   const [editingContent, setEditingContent] = useState<ContentItem | null>(null);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
 
@@ -64,7 +64,7 @@ export default function AdminContent() {
     queryFn: async () => {
       const params = new URLSearchParams();
       if (filterType !== 'all') params.append('type', filterType);
-      if (filterCategory) params.append('category', filterCategory);
+      if (filterCategory && filterCategory !== 'all') params.append('category', filterCategory);
       
       const url = `/api/content${params.toString() ? '?' + params.toString() : ''}`;
       const response = await fetch(url);
@@ -260,7 +260,7 @@ export default function AdminContent() {
                     <SelectValue placeholder="All Categories" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Categories</SelectItem>
+                    <SelectItem value="all">All Categories</SelectItem>
                     {categories.map(category => (
                       <SelectItem key={category} value={category}>{category}</SelectItem>
                     ))}
@@ -273,7 +273,7 @@ export default function AdminContent() {
                   onClick={() => {
                     setSearchTerm('');
                     setFilterType('all');
-                    setFilterCategory('');
+                    setFilterCategory('all');
                   }}
                   data-testid="button-clear-filters"
                 >
@@ -306,7 +306,7 @@ export default function AdminContent() {
           <Card>
             <CardContent className="p-8 text-center">
               <p className="text-gray-600" data-testid="text-no-content">
-                {searchTerm || filterType !== 'all' || filterCategory 
+                {searchTerm || filterType !== 'all' || (filterCategory && filterCategory !== 'all')
                   ? 'No content found matching your filters.' 
                   : 'No content available. Create your first article to get started.'
                 }
