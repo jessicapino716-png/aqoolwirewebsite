@@ -68,7 +68,7 @@ export default function NewsletterSignup({ variant = "default", className = "" }
   if (variant === "inline") {
     return (
       <div className={`flex flex-col sm:flex-row gap-2 ${className}`}>
-        <div className="flex-1">
+        <div className="flex-1 min-w-48">
           <Input
             type="email"
             placeholder="Enter your email"
