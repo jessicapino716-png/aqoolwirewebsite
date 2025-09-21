@@ -1,8 +1,8 @@
-# The Aqool AI - News Website Project
+# The Aqool Wire - News Website Project
 
 ## Overview
 
-The Aqool AI is a news website focused on AI policy and regulation coverage in Saudi Arabia and the GCC region. The project is a full-stack web application that mimics The Verge's design aesthetic to deliver professional tech journalism content. It features a modern tech news layout with article cards, author profiles, newsletter subscription functionality, and AI tool highlights specifically tailored for the Middle Eastern AI policy landscape.
+The Aqool Wire is a news website focused on AI policy and regulation coverage in Saudi Arabia and the GCC region. The project is a full-stack web application that mimics The Verge's design aesthetic to deliver professional tech journalism content. It features a modern tech news layout with article cards, author profiles, newsletter subscription functionality, and AI tool highlights specifically tailored for the Middle Eastern AI policy landscape.
 
 ## User Preferences
 

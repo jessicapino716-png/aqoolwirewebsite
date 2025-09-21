@@ -17,7 +17,7 @@ export default function Terms() {
                 Agreement to Terms
               </h2>
               <p className="text-gray-700 leading-relaxed" data-testid="text-terms-intro">
-                These Terms of Service ("Terms") govern your use of The Aqool AI website and services. By accessing or using our website, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access our service.
+                These Terms of Service ("Terms") govern your use of The Aqool Wire website and services. By accessing or using our website, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access our service.
               </p>
             </section>
 
@@ -26,7 +26,7 @@ export default function Terms() {
                 Description of Service
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                The Aqool AI is a news and analysis platform focusing on artificial intelligence policy and regulation in Saudi Arabia and the Gulf Cooperation Council (GCC) region. We provide news articles, analysis, commentary, and related content about AI policy developments.
+                The Aqool Wire is a news and analysis platform focusing on artificial intelligence policy and regulation in Saudi Arabia and the Gulf Cooperation Council (GCC) region. We provide news articles, analysis, commentary, and related content about AI policy developments.
               </p>
             </section>
 
@@ -55,7 +55,7 @@ export default function Terms() {
                 <div>
                   <h3 className="text-xl font-medium text-black mb-2">Our Content</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    All content on The Aqool AI, including articles, analysis, commentary, graphics, logos, and design elements, is owned by us or our licensors and is protected by copyright and other intellectual property laws.
+                    All content on The Aqool Wire, including articles, analysis, commentary, graphics, logos, and design elements, is owned by us or our licensors and is protected by copyright and other intellectual property laws.
                   </p>
                 </div>
                 
@@ -109,7 +109,7 @@ export default function Terms() {
                 Limitation of Liability
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                To the fullest extent permitted by law, The Aqool AI shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our service.
+                To the fullest extent permitted by law, The Aqool Wire shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our service.
               </p>
             </section>
 
@@ -149,7 +149,7 @@ export default function Terms() {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mt-4">
                 <p className="text-gray-700">
-                  <strong>The Aqool AI</strong><br/>
+                  <strong>The Aqool Wire</strong><br/>
                   Email: legal@theaqoolai.com<br/>
                   Or use our <a href="/contact" className="text-[#3b82f6] hover:underline">contact form</a>
                 </p>

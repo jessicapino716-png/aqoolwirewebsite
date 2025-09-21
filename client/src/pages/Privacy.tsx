@@ -17,7 +17,7 @@ export default function Privacy() {
                 Introduction
               </h2>
               <p className="text-gray-700 leading-relaxed" data-testid="text-privacy-intro">
-                The Aqool AI ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services. This policy applies to all users of The Aqool AI news platform.
+                The Aqool Wire ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services. This policy applies to all users of The Aqool Wire news platform.
               </p>
             </section>
 
@@ -126,7 +126,7 @@ export default function Privacy() {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mt-4">
                 <p className="text-gray-700">
-                  <strong>The Aqool AI</strong><br/>
+                  <strong>The Aqool Wire</strong><br/>
                   Email: privacy@theaqoolai.com<br/>
                   Or use our <a href="/contact" className="text-[#3b82f6] hover:underline">contact form</a>
                 </p>

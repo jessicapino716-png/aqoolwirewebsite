@@ -113,7 +113,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-muted-foreground" data-testid="text-footer-copyright">
-            © {currentYear} The Aqool AI. All rights reserved.
+            © {currentYear} The Aqool Wire. All rights reserved.
           </div>
           <div className="flex flex-wrap gap-4">
             {footerLinks.legal.map((link) => (

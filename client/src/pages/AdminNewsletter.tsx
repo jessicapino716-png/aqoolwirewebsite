@@ -389,7 +389,7 @@ export default function AdminNewsletter() {
                         <FormControl>
                           <Input 
                             {...field} 
-                            placeholder="The Aqool AI Team"
+                            placeholder="The Aqool Wire Team"
                             data-testid="input-campaign-author"
                           />
                         </FormControl>

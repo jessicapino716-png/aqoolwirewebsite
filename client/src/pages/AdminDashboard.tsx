@@ -54,7 +54,7 @@ export default function AdminDashboard() {
                 Admin Dashboard
               </h1>
               <p className="text-gray-600 mt-1" data-testid="text-admin-dashboard-subtitle">
-                The Aqool AI Content Management System
+                The Aqool Wire Content Management System
               </p>
             </div>
             <Button 

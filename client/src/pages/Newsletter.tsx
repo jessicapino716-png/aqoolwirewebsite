@@ -51,7 +51,7 @@ export default function Newsletter() {
           {/* Benefits Grid */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center text-black mb-12" data-testid="text-benefits-title">
-              Why Subscribe to The Aqool AI Newsletter?
+              Why Subscribe to The Aqool Wire Newsletter?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {benefits.map((benefit, index) => (
@@ -115,7 +115,7 @@ export default function Newsletter() {
             {/* Final CTA */}
             <div className="mt-12 text-center">
               <p className="text-gray-600 mb-6">
-                Join the leading professionals who trust The Aqool AI for their AI policy insights
+                Join the leading professionals who trust The Aqool Wire for their AI policy insights
               </p>
               <div className="inline-flex items-center space-x-2 text-sm text-gray-500">
                 <CheckCircle className="h-4 w-4 text-green-500" />

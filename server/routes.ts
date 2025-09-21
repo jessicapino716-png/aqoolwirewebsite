@@ -617,7 +617,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             </div>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 12px;">
-              <p>This message was sent through the contact form on The Aqool AI website.</p>
+              <p>This message was sent through the contact form on The Aqool Wire website.</p>
               <p>Reply directly to this email to respond to ${name}.</p>
             </div>
           </div>

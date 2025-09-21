@@ -17,7 +17,7 @@ export default function Disclaimers() {
                 General Information Disclaimer
               </h2>
               <p className="text-gray-700 leading-relaxed" data-testid="text-disclaimers-general">
-                The information provided on The Aqool AI website is for general informational purposes only. All information on the site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the site.
+                The information provided on The Aqool Wire website is for general informational purposes only. All information on the site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the site.
               </p>
             </section>
 
@@ -60,7 +60,7 @@ export default function Disclaimers() {
               </h2>
               <div className="space-y-4">
                 <p className="text-gray-700 leading-relaxed">
-                  Our website contains both news reporting and opinion/analysis pieces. Editorial content, commentary, and analysis represent the views of the respective authors and do not necessarily reflect the official position of The Aqool AI.
+                  Our website contains both news reporting and opinion/analysis pieces. Editorial content, commentary, and analysis represent the views of the respective authors and do not necessarily reflect the official position of The Aqool Wire.
                 </p>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <p className="text-blue-700">
@@ -90,7 +90,7 @@ export default function Disclaimers() {
                 Limitation of Liability
               </h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                To the fullest extent permitted by applicable law, The Aqool AI shall not be liable for any damages arising from:
+                To the fullest extent permitted by applicable law, The Aqool Wire shall not be liable for any damages arising from:
               </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
                 <li>Use or inability to use our website or content</li>
@@ -137,7 +137,7 @@ export default function Disclaimers() {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mt-4">
                 <p className="text-gray-700">
-                  <strong>The Aqool AI Editorial Team</strong><br/>
+                  <strong>The Aqool Wire Editorial Team</strong><br/>
                   Email: editorial@theaqoolai.com<br/>
                   Or use our <a href="/contact" className="text-[#3b82f6] hover:underline">contact form</a>
                 </p>
@@ -147,7 +147,7 @@ export default function Disclaimers() {
             <section className="border-t border-gray-200 pt-8">
               <div className="bg-gray-50 rounded-lg p-6">
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  <strong>Final Note:</strong> By using The Aqool AI website, you acknowledge that you have read, understood, and agree to be bound by these disclaimers. If you do not agree with any part of these disclaimers, please do not use our website or rely on our content.
+                  <strong>Final Note:</strong> By using The Aqool Wire website, you acknowledge that you have read, understood, and agree to be bound by these disclaimers. If you do not agree with any part of these disclaimers, please do not use our website or rely on our content.
                 </p>
               </div>
             </section>

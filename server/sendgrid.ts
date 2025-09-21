@@ -51,7 +51,7 @@ export async function sendWelcomeEmail(email: string): Promise<boolean> {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to The Aqool AI Newsletter</title>
+        <title>Welcome to The Aqool Wire Newsletter</title>
     </head>
     <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -62,7 +62,7 @@ export async function sendWelcomeEmail(email: string): Promise<boolean> {
             
             <div style="background: #f9f9f9; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
                 <h2 style="color: #333; margin-top: 0;">Welcome to our newsletter!</h2>
-                <p>Thank you for subscribing to The Aqool AI newsletter. You'll now receive weekly insights on AI policy and regulation developments in Saudi Arabia and the GCC region.</p>
+                <p>Thank you for subscribing to The Aqool Wire newsletter. You'll now receive weekly insights on AI policy and regulation developments in Saudi Arabia and the GCC region.</p>
                 
                 <h3 style="color: #2dd4bf; margin-top: 25px;">What to expect:</h3>
                 <ul style="padding-left: 20px;">
@@ -85,7 +85,7 @@ export async function sendWelcomeEmail(email: string): Promise<boolean> {
   `;
 
   const welcomeEmailText = `
-Welcome to The Aqool AI Newsletter!
+Welcome to The Aqool Wire Newsletter!
 
 Thank you for subscribing to our newsletter. You'll now receive weekly insights on AI policy and regulation developments in Saudi Arabia and the GCC region.
 
@@ -103,7 +103,7 @@ newsletter@aqoolai.com
   return await sendEmail({
     to: email,
     from: 'newsletter@aqoolai.com', // You may need to verify this domain in SendGrid
-    subject: 'Welcome to The Aqool AI Newsletter',
+    subject: 'Welcome to The Aqool Wire Newsletter',
     text: welcomeEmailText,
     html: welcomeEmailHtml,
   });
@@ -150,7 +150,7 @@ export async function sendNewsletterToAll(
                       <a href="mailto:newsletter@aqoolai.com" style="color: #2dd4bf;">newsletter@aqoolai.com</a>
                   </p>
                   <p style="color: #999; font-size: 12px; margin-top: 15px;">
-                      You're receiving this because you subscribed to The Aqool AI newsletter.<br>
+                      You're receiving this because you subscribed to The Aqool Wire newsletter.<br>
                       <a href="#" style="color: #999;">Unsubscribe</a> | <a href="#" style="color: #999;">Update preferences</a>
                   </p>
               </div>
@@ -171,7 +171,7 @@ By ${campaign.authorName}
 Straight from Riyadh • AI Policy & Regulation News
 newsletter@aqoolai.com
 
-You're receiving this because you subscribed to The Aqool AI newsletter.
+You're receiving this because you subscribed to The Aqool Wire newsletter.
     `;
 
     // Send to all subscribers

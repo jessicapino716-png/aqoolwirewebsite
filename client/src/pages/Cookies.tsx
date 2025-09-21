@@ -17,7 +17,7 @@ export default function Cookies() {
                 What Are Cookies
               </h2>
               <p className="text-gray-700 leading-relaxed" data-testid="text-cookies-intro">
-                Cookies are small text files that are placed on your device when you visit The Aqool AI website. They help us provide you with a better browsing experience by remembering your preferences, analyzing website traffic, and improving our services.
+                Cookies are small text files that are placed on your device when you visit The Aqool Wire website. They help us provide you with a better browsing experience by remembering your preferences, analyzing website traffic, and improving our services.
               </p>
             </section>
 
@@ -150,7 +150,7 @@ export default function Cookies() {
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mt-4">
                 <p className="text-gray-700">
-                  <strong>The Aqool AI</strong><br/>
+                  <strong>The Aqool Wire</strong><br/>
                   Email: privacy@theaqoolai.com<br/>
                   Or use our <a href="/contact" className="text-[#3b82f6] hover:underline">contact form</a>
                 </p>
