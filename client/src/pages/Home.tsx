@@ -232,7 +232,7 @@ export default function Home() {
                       const article = transformContentToArticle(content);
                       return (
                         <div key={article.id} className="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded transition-colors" data-testid={`item-most-popular-${index}`}>
-                          <div className="flex-shrink-0 w-6 h-6 bg-[#ff007f] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                          <div className="flex-shrink-0 w-6 h-6 text-white text-xs font-bold rounded-full flex items-center justify-center bg-[#030203]">
                             {index + 1}
                           </div>
                           <div>
