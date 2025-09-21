@@ -221,41 +221,25 @@ export default function Home() {
           <div className="lg:col-span-1 space-y-8">
             {/* Most Popular */}
             {popularArticles && popularArticles.length > 0 && (
-              <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="w-1 h-8 bg-[#d91e78] rounded-full"></div>
-                  <h3 className="text-2xl font-bold text-black" data-testid="text-most-popular-title">
-                    Most Popular
-                  </h3>
-                </div>
-                <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg border">
+                <h3 className="text-xl font-bold text-black mb-6" data-testid="text-most-popular-title">
+                  Most Popular
+                </h3>
+                <div className="space-y-4">
                   {popularArticles
                     .slice(0, 3)
                     .map((content, index) => {
                       const article = transformContentToArticle(content);
                       return (
-                        <div key={article.id} className="group relative p-5 rounded-xl hover:bg-gray-50 transition-all duration-300 ease-in-out border border-transparent hover:border-gray-200" data-testid={`item-most-popular-${index}`}>
-                          <div className="flex items-start space-x-4">
-                            <div className="flex-shrink-0 relative">
-                              <div className="w-10 h-10 bg-[#d91e78] rounded-xl flex items-center justify-center shadow-sm">
-                                <span className="text-white text-sm font-bold">{index + 1}</span>
-                              </div>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <Link href={`/${article.slug}`} className="block group-hover:translate-x-1 transition-transform duration-200">
-                                <h4 className="text-base font-semibold text-black leading-6 line-clamp-2 group-hover:text-[#d91e78] transition-colors duration-200">
-                                  {article.title}
-                                </h4>
-                                <div className="flex items-center mt-3 space-x-3">
-                                  <span className="inline-flex items-center px-3 py-1 rounded-lg bg-gray-100 text-xs font-medium text-black group-hover:bg-[#d91e78]/10 transition-colors duration-200">
-                                    {article.category}
-                                  </span>
-                                  <span className="text-xs text-black/60">
-                                    {article.publishedAt}
-                                  </span>
-                                </div>
-                              </Link>
-                            </div>
+                        <div key={article.id} className="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded transition-colors" data-testid={`item-most-popular-${index}`}>
+                          <div className="flex-shrink-0 w-6 h-6 bg-[#ff007f] text-white text-xs font-bold rounded-full flex items-center justify-center">
+                            {index + 1}
+                          </div>
+                          <div>
+                            <Link href={`/${article.slug}`} className="text-sm font-medium text-black hover:text-[#ff007f] line-clamp-2">
+                              {article.title}
+                            </Link>
+                            <div className="text-xs text-gray-500 mt-1">{article.category}</div>
                           </div>
                         </div>
                       );
