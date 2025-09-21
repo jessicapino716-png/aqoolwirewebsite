@@ -14,7 +14,7 @@ export default function Header() {
     <header className="px-6 lg:px-20 py-4 bg-white relative">
       <div className="flex justify-between items-center">
         <Link href="/" className="flex items-center font-extrabold text-3xl lg:text-4xl" data-testid="link-home">
-          <span className="text-white">The Aqool </span>
+          <span className="text-[#0f0f0f]">The Aqool </span>
           <span className="electrical-wire">Wire</span>
         </Link>
         
