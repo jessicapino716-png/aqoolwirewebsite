@@ -140,9 +140,7 @@ export default function NewsletterSignup({ variant = "default", className = "" }
           <Mail className="h-6 w-6 text-primary" />
         </div>
         <CardTitle data-testid="text-newsletter-card-title">Stay Updated on AI Policy</CardTitle>
-        <CardDescription data-testid="text-newsletter-card-description">
-          Join 1,000+ professionals receiving weekly insights on AI regulation and policy developments in Saudi Arabia and the GCC.
-        </CardDescription>
+        
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
