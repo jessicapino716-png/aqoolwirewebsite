@@ -219,17 +219,6 @@ export default function Home() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-            {/* Newsletter Signup */}
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
-                Stay Updated
-              </h3>
-              <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
-                Get weekly AI policy insights straight from Riyadh.
-              </p>
-              <NewsletterSignup variant="sidebar" />
-            </div>
-
             {/* Most Popular */}
             {popularArticles && popularArticles.length > 0 && (
               <div className="bg-white p-6 rounded-lg border">
@@ -258,6 +247,17 @@ export default function Home() {
                 </div>
               </div>
             )}
+
+            {/* Newsletter Signup */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
+                Stay Updated
+              </h3>
+              <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
+                Get weekly AI policy insights straight from Riyadh.
+              </p>
+              <NewsletterSignup variant="sidebar" />
+            </div>
 
           </div>
         </div>
