@@ -35,9 +35,7 @@ export default function Newsletter() {
             <h1 className="text-5xl md:text-6xl font-black text-black mb-6 leading-tight" data-testid="text-newsletter-title">
               Stay Ahead of AI Policy
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-4" data-testid="text-newsletter-subtitle">
-              Join 1,000+ professionals getting weekly AI policy insights
-            </p>
+            <p className="text-xl md:text-2xl text-gray-600 mb-4" data-testid="text-newsletter-subtitle">Your complete AI briefing: Saudi Arabia developments, GCC regional updates, and global trends that matter. All curated from leading publications and delivered in one weekly wire.</p>
             <div className="text-lg text-[#3b82f6] font-medium" data-testid="text-newsletter-tagline">
               Straight from Riyadh
             </div>
