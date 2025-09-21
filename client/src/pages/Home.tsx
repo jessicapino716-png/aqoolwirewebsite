@@ -222,7 +222,7 @@ export default function Home() {
             {/* Most Popular */}
             {popularArticles && popularArticles.length > 0 && (
               <div className="bg-white p-6 rounded-lg border">
-                <h3 className="text-xl font-bold text-black mb-6" data-testid="text-most-popular-title">
+                <h3 className="text-xl font-bold mb-6 text-[#ff007f]" data-testid="text-most-popular-title">
                   Most Popular
                 </h3>
                 <div className="space-y-4">
