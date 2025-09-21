@@ -593,46 +593,38 @@
   background-clip: text;
 }
 
-/* Electrical wire line running through the text */
+/* Electrical wire line - invisible base */
 .electrical-line {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    #4ECDC4 20%,
-    #5FBDAB 40%,
-    #39ff14 60%,
-    #4ECDC4 80%,
-    transparent 100%);
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
+  background: transparent;
   transform: translateY(-50%);
   z-index: 1;
-  animation: electricalFlow 2s linear infinite;
-  box-shadow: 
-    0 0 10px rgba(78, 205, 196, 0.6),
-    0 0 20px rgba(57, 255, 20, 0.3);
 }
 
-/* Moving spark effect */
+/* Moving electrical current effect */
 .electrical-line::before {
   content: '';
   position: absolute;
   top: 50%;
-  left: -10px;
-  width: 20px;
-  height: 6px;
+  left: -60px;
+  width: 60px;
+  height: 3px;
   background: linear-gradient(90deg, 
-    transparent,
-    rgba(255, 255, 255, 0.9),
-    transparent);
+    transparent 0%,
+    #4ECDC4 20%,
+    #5FBDAB 50%,
+    #39ff14 80%,
+    transparent 100%);
   transform: translateY(-50%);
-  border-radius: 3px;
-  animation: sparkMove 2s linear infinite;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  border-radius: 1.5px;
+  animation: currentFlow 2s linear infinite;
+  box-shadow: 
+    0 0 10px rgba(78, 205, 196, 0.6),
+    0 0 15px rgba(57, 255, 20, 0.4);
 }
 
 @keyframes electricalFlow {
@@ -649,11 +641,11 @@
   }
 }
 
-@keyframes sparkMove {
-  0% { left: -10px; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { left: calc(100% - 10px); opacity: 0; }
+@keyframes currentFlow {
+  0% { left: -60px; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { left: calc(100% + 10px); opacity: 0; }
 }
 
 /* Respect reduced motion preferences */
