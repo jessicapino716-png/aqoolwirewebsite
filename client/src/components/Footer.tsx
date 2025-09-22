@@ -48,17 +48,7 @@ export default function Footer() {
               >
                 Get In Touch
               </Link>
-              <div className="flex space-x-2">
-                <Button variant="ghost" size="icon" data-testid="button-footer-twitter">
-                  <Twitter className="h-4 w-4" />
-                </Button>
-                <Button variant="ghost" size="icon" data-testid="button-footer-linkedin">
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-                <Button variant="ghost" size="icon" data-testid="button-footer-website">
-                  <Globe className="h-4 w-4" />
-                </Button>
-              </div>
+              
             </div>
           </div>
 
