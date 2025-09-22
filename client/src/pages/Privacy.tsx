@@ -16,9 +16,7 @@ export default function Privacy() {
               <h2 className="text-2xl font-semibold text-black mb-4" data-testid="text-privacy-intro-title">
                 Introduction
               </h2>
-              <p className="text-gray-700 leading-relaxed" data-testid="text-privacy-intro">
-                The Aqool Wire ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services. This policy applies to all users of The Aqool Wire news platform.
-              </p>
+              <p className="text-gray-700 leading-relaxed" data-testid="text-privacy-intro">The Aqool Wire is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services. This policy applies to all users of The Aqool Wire news platform.</p>
             </section>
 
             <section>
