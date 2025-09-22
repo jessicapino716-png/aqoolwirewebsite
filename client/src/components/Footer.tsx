@@ -1,8 +1,6 @@
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import NewsletterSignup from "@/components/NewsletterSignup";
-import { Twitter, Linkedin, Globe } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -48,7 +46,6 @@ export default function Footer() {
               >
                 Get In Touch
               </Link>
-              
             </div>
           </div>
 
