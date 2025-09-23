@@ -17,7 +17,7 @@ export interface Article {
 
 interface ArticleCardProps {
   article: Article;
-  variant?: "hero" | "featured" | "standard" | "list";
+  variant?: "hero" | "featured" | "standard" | "list" | "tile" | "compact" | "mini";
 }
 
 export default function ArticleCard({ article, variant = "standard" }: ArticleCardProps) {
@@ -177,6 +177,101 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                     <span data-testid={`text-comments-list-${article.id}`}>{article.comments}</span>
                   </>
                 )}
+              </div>
+            </div>
+          </div>
+        </LinkWrapper>
+      </div>
+    );
+  }
+
+  if (variant === "tile") {
+    return (
+      <div className="group cursor-pointer relative overflow-hidden rounded-lg" data-testid={`card-article-tile-${article.id}`}>
+        <LinkWrapper>
+          {article.imageUrl && (
+            <div className="relative">
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                className="w-full aspect-[4/3] object-cover"
+                data-testid={`img-article-tile-${article.id}`}
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              {/* Content overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <div className="mb-2">
+                  <span className="verge-category-label bg-primary text-white px-2 py-1 rounded text-xs" data-testid={`badge-category-tile-${article.id}`}>
+                    {article.category}
+                  </span>
+                </div>
+                <h3 className="text-white font-bold text-lg mb-2 article-title-hover transition-colors" data-testid={`text-title-tile-${article.id}`}>
+                  {article.title}
+                </h3>
+                <div className="verge-meta-text text-white/80 flex items-center text-sm">
+                  <span data-testid={`text-author-tile-${article.id}`}>{article.author}</span>
+                  <span className="mx-1">•</span>
+                  <span data-testid={`text-date-tile-${article.id}`}>{article.publishedAt}</span>
+                </div>
+              </div>
+            </div>
+          )}
+        </LinkWrapper>
+      </div>
+    );
+  }
+
+  if (variant === "compact") {
+    return (
+      <div className="group cursor-pointer" data-testid={`card-article-compact-${article.id}`}>
+        <LinkWrapper>
+          <div className="flex gap-3">
+            {article.imageUrl && (
+              <div className="flex-shrink-0">
+                <img
+                  src={article.imageUrl}
+                  alt={article.title}
+                  className="w-16 h-16 object-cover rounded"
+                  data-testid={`img-article-compact-${article.id}`}
+                />
+              </div>
+            )}
+            <div className="flex-1 min-w-0">
+              <div className="mb-1">
+                <span className="verge-category-label bg-primary text-white px-1.5 py-0.5 rounded text-xs" data-testid={`badge-category-compact-${article.id}`}>
+                  {article.category}
+                </span>
+              </div>
+              <h4 className="verge-headline-small text-black article-title-hover transition-colors mb-1 line-clamp-2" data-testid={`text-title-compact-${article.id}`}>
+                {article.title}
+              </h4>
+              <div className="verge-meta-text flex items-center text-xs">
+                <span data-testid={`text-author-compact-${article.id}`}>{article.author}</span>
+                <span className="mx-1">•</span>
+                <span data-testid={`text-date-compact-${article.id}`}>{article.publishedAt}</span>
+              </div>
+            </div>
+          </div>
+        </LinkWrapper>
+      </div>
+    );
+  }
+
+  if (variant === "mini") {
+    return (
+      <div className="group cursor-pointer py-2" data-testid={`card-article-mini-${article.id}`}>
+        <LinkWrapper>
+          <div className="flex items-start gap-2">
+            <div className="flex-1 min-w-0">
+              <h5 className="text-sm font-medium text-black article-title-hover transition-colors line-clamp-2 mb-1" data-testid={`text-title-mini-${article.id}`}>
+                {article.title}
+              </h5>
+              <div className="flex items-center gap-2 text-xs text-gray-500">
+                <span className="verge-category-label bg-gray-100 text-gray-600 px-1 py-0.5 rounded text-xs" data-testid={`badge-category-mini-${article.id}`}>
+                  {article.category}
+                </span>
+                <span data-testid={`text-date-mini-${article.id}`}>{article.publishedAt}</span>
               </div>
             </div>
           </div>

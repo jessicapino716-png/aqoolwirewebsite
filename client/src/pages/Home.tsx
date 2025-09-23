@@ -79,11 +79,21 @@ export default function Home() {
   // Get hero article (first article)
   const heroArticle = transformedArticles[0];
   
-  // Get featured articles (next 2)
-  const featuredArticles = transformedArticles.slice(1, 3);
+  // Get featured articles for mosaic tiles (show at least 1, max 2)
+  const featuredArticles = transformedArticles.slice(1, Math.min(3, transformedArticles.length));
   
-  // Get latest articles (remaining articles)
-  const latestArticles = transformedArticles.slice(3);
+  // Get articles for secondary grid (avoid duplicating featured articles)
+  const secondaryArticles = transformedArticles.length > 3 ? 
+    transformedArticles.slice(3) : // Use articles after featured ones
+    []; // Don't show secondary grid if we don't have enough unique articles
+  
+  // Get articles for breaking news (ensure we have some)
+  const breakingNewsArticles = transformedArticles.length > 0 ? transformedArticles : [];
+  
+  // Get remaining articles for traditional grid (after secondary grid)
+  const latestArticles = transformedArticles.length > 6 ? 
+    transformedArticles.slice(6) : 
+    [];
 
   // Loading state
   if (isLoading) {
@@ -162,45 +172,76 @@ export default function Home() {
   return (
     <div className="bg-background">
       <HeroSection />
-      {/* Main Content */}
+      {/* Magazine-Style Layout */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content Column */}
-          <div className="lg:col-span-2">
-            {/* Hero Article */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 lg:grid-rows-[auto_auto_auto] lg:grid-areas-mosaic">
+          
+          {/* Hero Mosaic Grid - Desktop: Asymmetric layout, Mobile: Single column */}
+          <div className="lg:col-span-3 mb-8 lg:mb-12">
+            {/* Hero Story Takes Center Stage */}
             {heroArticle && (
-              <div className="mb-12">
-                <ArticleCard article={heroArticle} variant="hero" />
-              </div>
-            )}
-
-            {/* Featured Stories */}
-            {featuredArticles.length > 0 && (
-              <div className="mb-12">
-                <div className="verge-divider mb-8"></div>
-                <div className="space-y-8">
-                  {featuredArticles.map((article) => (
+              <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 mb-8">
+                {/* Main Hero Article - Takes 4 columns on desktop */}
+                <div className="lg:col-span-4">
+                  <ArticleCard article={heroArticle} variant="hero" />
+                </div>
+                
+                {/* Medium Featured Articles - 2 columns on desktop */}
+                <div className="lg:col-span-2 space-y-6">
+                  {featuredArticles.slice(0, 2).map((article) => (
                     <ArticleCard 
                       key={article.id} 
                       article={article} 
-                      variant="featured" 
+                      variant="tile" 
                     />
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Latest News Grid */}
+            {/* Secondary Grid - 3 Smaller Articles */}
+            {secondaryArticles.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {secondaryArticles.slice(0, 3).map((article) => (
+                  <ArticleCard 
+                    key={`secondary-${article.id}`} 
+                    article={article} 
+                    variant="compact" 
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Breaking News Bar - Horizontal Scroll Rail */}
+            {breakingNewsArticles.length > 0 && (
+              <div className="mb-8 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+                <h3 className="text-red-800 font-bold text-sm uppercase mb-3">Breaking News</h3>
+                <div className="overflow-x-auto">
+                  <div className="flex gap-4 snap-x snap-mandatory">
+                    {breakingNewsArticles.slice(0, 6).map((article) => (
+                      <div key={`breaking-${article.id}`} className="flex-shrink-0 snap-start min-w-[280px]">
+                        <ArticleCard 
+                          article={article} 
+                          variant="mini" 
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* More Stories in Traditional Grid */}
             {latestArticles.length > 0 && (
               <div className="mb-12">
                 <div className="verge-divider mb-8"></div>
-                <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-latest-news-title">
-                  Latest News
+                <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-more-stories-title">
+                  More Stories
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {latestArticles.map((article) => (
                     <ArticleCard 
-                      key={article.id} 
+                      key={`more-${article.id}`} 
                       article={article} 
                       variant="standard" 
                     />
@@ -217,8 +258,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-8">
+          {/* Enhanced Sticky Sidebar */}
+          <div className="lg:col-span-1 space-y-8 lg:sticky lg:top-8 lg:self-start">
             {/* Most Popular */}
             {popularArticles && popularArticles.length > 0 && (
               <div className="bg-white p-6 rounded-lg border">
@@ -236,7 +277,7 @@ export default function Home() {
                             {index + 1}
                           </div>
                           <div>
-                            <Link href={`/${article.slug}`} className="font-medium text-black hover:text-[#ff007f] line-clamp-2 text-[18px]">
+                            <Link href={`/article/${article.slug}`} className="font-medium text-black hover:text-[#ff007f] line-clamp-2 text-[18px]">
                               {article.title}
                             </Link>
                             <div className="text-xs text-gray-500 mt-1">{article.category}</div>
