@@ -236,7 +236,7 @@ export default function Home() {
                             {index + 1}
                           </div>
                           <div>
-                            <Link href={`/${article.slug}`} className="text-sm font-medium text-black hover:text-[#ff007f] line-clamp-2">
+                            <Link href={`/${article.slug}`} className="font-medium text-black hover:text-[#ff007f] line-clamp-2 text-[18px]">
                               {article.title}
                             </Link>
                             <div className="text-xs text-gray-500 mt-1">{article.category}</div>
