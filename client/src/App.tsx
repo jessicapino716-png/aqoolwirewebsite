@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollProgressLine from "@/components/ScrollProgressLine";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import Home from "@/pages/Home";
 import AdminLogin from "@/pages/AdminLogin";
@@ -83,6 +84,7 @@ function App() {
       <AuthProvider>
         <TooltipProvider>
           <div className="min-h-screen flex flex-col bg-gradient-to-r from-teal-400 to-cyan-300">
+            <ScrollProgressLine />
             <Header />
             <main className="flex-1">
               <Router />
