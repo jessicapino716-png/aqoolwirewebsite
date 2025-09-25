@@ -159,9 +159,17 @@ export default function Home() {
     );
   }
 
+  // Transform popular articles for hero section
+  const transformedPopularArticles = popularArticles?.map(content => ({
+    id: content.id,
+    title: content.title,
+    slug: content.slug,
+    category: content.category,
+  })) || [];
+
   return (
     <div className="bg-background">
-      <HeroSection />
+      <HeroSection popularArticles={transformedPopularArticles} />
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -219,35 +227,6 @@ export default function Home() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-            {/* Most Popular */}
-            {popularArticles && popularArticles.length > 0 && (
-              <div className="bg-white p-6 rounded-lg border">
-                <h3 className="text-xl font-bold mb-6 text-[#ff007f]" data-testid="text-most-popular-title">
-                  Most Popular
-                </h3>
-                <div className="space-y-4">
-                  {popularArticles
-                    .slice(0, 3)
-                    .map((content, index) => {
-                      const article = transformContentToArticle(content);
-                      return (
-                        <div key={article.id} className="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded transition-colors" data-testid={`item-most-popular-${index}`}>
-                          <div className="flex-shrink-0 w-6 h-6 text-white text-xs font-bold rounded-full flex items-center justify-center bg-[#030203]">
-                            {index + 1}
-                          </div>
-                          <div>
-                            <Link href={`/${article.slug}`} className="font-medium text-black hover:text-[#ff007f] line-clamp-2 text-[18px]">
-                              {article.title}
-                            </Link>
-                            <div className="text-xs text-gray-500 mt-1">{article.category}</div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                </div>
-              </div>
-            )}
-
             {/* Newsletter Signup */}
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
@@ -258,7 +237,6 @@ export default function Home() {
               </p>
               <NewsletterSignup variant="sidebar" />
             </div>
-
           </div>
         </div>
       </div>
