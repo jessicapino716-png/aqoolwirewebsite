@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, User } from "lucide-react";
+import ThemeControls from "@/components/ThemeControls";
 
 export default function Header() {
   const navigation = [
@@ -23,50 +24,56 @@ export default function Header() {
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-4 text-lg">
-          <div className="flex items-center space-x-2">
-            {navigation.map((item, index) => (
-              <div key={item.name} className="flex items-center">
-                <span className="text-[#3b82f6] mx-2">/</span>
-                <Link
-                  href={item.href}
-                  className="text-black font-medium hover:text-[#3b82f6] transition-colors"
-                  data-testid={`link-nav-${item.name.toLowerCase()}`}
-                >
-                  {item.name}
-                </Link>
-              </div>
-            ))}
-          </div>
-          <div className="flex items-center">
-            <span className="text-blue-500 mx-2">/</span>
-            <Link 
-              href="/tools" 
-              className="text-black font-medium hover:text-[#3b82f6] transition-colors"
-              data-testid="link-nav-new-ai-tools"
-            >
-              New AI Tools
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <span className="text-blue-500 mx-2">/</span>
-            <Link 
-              href="/newsletter" 
-              className="text-black font-medium hover:text-[#3b82f6] transition-colors"
-              data-testid="link-nav-newsletter"
-            >
-              Newsletter
-            </Link>
-          </div>
-        </nav>
+        <div className="hidden lg:flex items-center space-x-6">
+          <nav className="flex items-center space-x-4 text-lg">
+            <div className="flex items-center space-x-2">
+              {navigation.map((item, index) => (
+                <div key={item.name} className="flex items-center">
+                  <span className="text-[#3b82f6] mx-2">/</span>
+                  <Link
+                    href={item.href}
+                    className="text-black font-medium hover:text-[#3b82f6] transition-colors"
+                    data-testid={`link-nav-${item.name.toLowerCase()}`}
+                  >
+                    {item.name}
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center">
+              <span className="text-blue-500 mx-2">/</span>
+              <Link 
+                href="/tools" 
+                className="text-black font-medium hover:text-[#3b82f6] transition-colors"
+                data-testid="link-nav-new-ai-tools"
+              >
+                New AI Tools
+              </Link>
+            </div>
+            <div className="flex items-center">
+              <span className="text-blue-500 mx-2">/</span>
+              <Link 
+                href="/newsletter" 
+                className="text-black font-medium hover:text-[#3b82f6] transition-colors"
+                data-testid="link-nav-newsletter"
+              >
+                Newsletter
+              </Link>
+            </div>
+          </nav>
+          
+          <ThemeControls />
+        </div>
 
-        {/* Mobile Menu */}
-        <Sheet>
-          <SheetTrigger asChild>
-            <button className="lg:hidden p-2 text-black" aria-label="Open menu" data-testid="button-mobile-menu">
-              <Menu className="h-6 w-6" />
-            </button>
-          </SheetTrigger>
+        {/* Mobile Menu and Theme Controls */}
+        <div className="lg:hidden flex items-center gap-2">
+          <ThemeControls />
+          <Sheet>
+            <SheetTrigger asChild>
+              <button className="p-2 text-black" aria-label="Open menu" data-testid="button-mobile-menu">
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
           <SheetContent side="right" className="w-80 bg-white text-black border-l border-gray-200">
             <div className="flex flex-col space-y-6 mt-8">
               {navigation.map((item) => (
@@ -95,7 +102,8 @@ export default function Header() {
               </Link>
             </div>
           </SheetContent>
-        </Sheet>
+          </Sheet>
+        </div>
       </div>
       {/* Gradient bottom border line covering 90% of the width */}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90%] h-0.5 bg-black"></div>

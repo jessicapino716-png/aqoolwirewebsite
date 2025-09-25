@@ -1,7 +1,9 @@
 import { useScrollProgress } from '@/hooks/use-scroll-progress';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function ScrollProgressLine() {
   const { percentage, direction } = useScrollProgress();
+  const { colorPalette } = useTheme();
 
   return (
     <div 
@@ -20,14 +22,10 @@ export default function ScrollProgressLine() {
         className="scroll-progress-indicator absolute top-0 left-0 w-full origin-top transition-all duration-75 ease-out"
         style={{
           height: `${percentage}%`,
-          background: `linear-gradient(180deg, 
-            #4ECDC4 0%, 
-            #5FBDAB 30%,
-            #39ff14 70%,
-            #2dd4bf 100%)`,
+          background: colorPalette.wireGradient,
           boxShadow: `
-            0 0 8px rgba(78, 205, 196, 0.4),
-            0 0 12px rgba(57, 255, 20, 0.3),
+            0 0 8px ${colorPalette.primary}40,
+            0 0 12px ${colorPalette.accent}30,
             inset 0 0 4px rgba(255, 255, 255, 0.2)
           `
         }}
@@ -41,8 +39,8 @@ export default function ScrollProgressLine() {
           style={{
             top: `${percentage}%`,
             left: '-2px',
-            background: direction === 'down' ? '#39ff14' : '#4ECDC4',
-            boxShadow: `0 0 6px ${direction === 'down' ? 'rgba(57, 255, 20, 0.8)' : 'rgba(78, 205, 196, 0.8)'}`,
+            background: direction === 'down' ? colorPalette.accent : colorPalette.primary,
+            boxShadow: `0 0 6px ${direction === 'down' ? colorPalette.accent : colorPalette.primary}80`,
             transform: 'translateY(-50%)',
           }}
           data-testid="scroll-progress-tip"
