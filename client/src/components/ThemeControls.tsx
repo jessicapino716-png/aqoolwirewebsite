@@ -16,7 +16,7 @@ export default function ThemeControls() {
   const { accentColor, setAccentColor, isDarkMode, toggleDarkMode, colorPalette } = useTheme();
 
   return (
-    <div className="flex items-center gap-2">
+    <>
       {/* Dark Mode Toggle */}
       <Button
         variant="ghost"
@@ -104,6 +104,6 @@ export default function ThemeControls() {
           </div>
         </PopoverContent>
       </Popover>
-    </div>
+    </>
   );
 }
