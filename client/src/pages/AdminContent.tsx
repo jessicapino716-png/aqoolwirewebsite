@@ -172,7 +172,27 @@ export default function AdminContent() {
 
   const onSubmitEdit = (data: EditFormData) => {
     if (!editingContent) return;
-    updateMutation.mutate({ id: editingContent.id, data });
+    
+    // Filter out inappropriate fields based on content type
+    const filteredData: any = {
+      title: data.title,
+      excerpt: data.excerpt,
+      category: data.category,
+      tags: data.tags,
+      authorName: data.authorName,
+      imageUrl: data.imageUrl,
+    };
+    
+    if (editingContent.type === 'external') {
+      // For external articles, include source and externalUrl but not body
+      filteredData.source = data.source;
+      filteredData.externalUrl = data.externalUrl;
+    } else {
+      // For op-ed articles, include body but not source or externalUrl
+      filteredData.body = data.body;
+    }
+    
+    updateMutation.mutate({ id: editingContent.id, data: filteredData });
   };
 
   if (error) {
