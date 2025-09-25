@@ -16,23 +16,6 @@ export default function ThemeControls() {
   const { accentColor, setAccentColor, isDarkMode, toggleDarkMode, colorPalette } = useTheme();
 
   return (
-    <>
-      {/* Dark Mode Toggle */}
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={toggleDarkMode}
-        className="relative"
-        data-testid="button-dark-mode-toggle"
-        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-      >
-        {isDarkMode ? (
-          <Sun className="h-4 w-4" />
-        ) : (
-          <Moon className="h-4 w-4" />
-        )}
-      </Button>
-
-    </>
+    <></>
   );
 }
