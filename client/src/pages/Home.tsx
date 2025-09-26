@@ -228,7 +228,7 @@ export default function Home() {
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
             {/* Newsletter Signup */}
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="p-6 rounded-lg bg-[#dedede]">
               <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
                 Stay Updated
               </h3>
