@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand and Description */}
           <div className="space-y-4">
-            <div className="text-2xl font-bold text-primary" data-testid="text-footer-brand">The Aqool Wire</div>
+            <div className="text-2xl font-bold text-[#080808]" data-testid="text-footer-brand">The Aqool Wire</div>
             <p className="text-sm text-muted-foreground" data-testid="text-footer-description">
               Leading source for AI policy and regulation news in Saudi Arabia and the GCC region. 
               Expert analysis, weekly insights, and authoritative commentary.
