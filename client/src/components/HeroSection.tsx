@@ -16,7 +16,6 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
     <div className="relative min-h-[60vh] md:min-h-screen text-black bg-white">
       {/* Left accent line - hidden on mobile */}
       <div className="absolute left-0 top-0 h-[90%] w-0.5 bg-gradient-to-b from-[#40E0D0] via-[#00ff88] to-[#90EE90] ml-[15px] mt-[30px] hidden md:block"></div>
-      
       {/* Main content */}
       <div className="container mx-auto px-6 py-8 md:py-16 flex items-center min-h-[60vh] md:min-h-screen">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
@@ -47,7 +46,7 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           {/* Right side - Most Popular */}
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
-              <div className="bg-white p-6 rounded-lg border shadow-lg w-full">
+              <div className="p-6 rounded-lg border shadow-lg w-full bg-[#cfcaca]">
                 <h3 className="text-xl font-bold mb-6 text-[#D7FD51]" data-testid="text-hero-most-popular-title">
                   Most Popular
                 </h3>

@@ -100,7 +100,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             )}
             <div className="flex-1 min-w-0">
               <div className="mb-2">
-                <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-featured-${article.id}`}>
+                <span className="verge-category-label bg-[#3b82f6] text-white px-2 py-1 rounded" data-testid={`badge-category-featured-${article.id}`}>
                   {article.category}
                 </span>
               </div>
@@ -151,7 +151,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             )}
             <div className="flex-1 min-w-0">
               <div className="mb-2">
-                <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-list-${article.id}`}>
+                <span className="verge-category-label bg-[#3b82f6] text-white px-2 py-1 rounded" data-testid={`badge-category-list-${article.id}`}>
                   {article.category}
                 </span>
               </div>
@@ -199,7 +199,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
           </div>
         )}
         <div className="mb-3">
-          <span className="verge-category-label bg-primary text-white px-2 py-1 rounded" data-testid={`badge-category-standard-${article.id}`}>
+          <span className="verge-category-label bg-[#3b82f6] text-white px-2 py-1 rounded" data-testid={`badge-category-standard-${article.id}`}>
             {article.category}
           </span>
         </div>
