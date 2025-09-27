@@ -47,7 +47,7 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
               <div className="p-6 rounded-lg border shadow-lg w-full bg-[#d9d4d4]">
-                <h3 className="font-bold mb-6 text-[#D7FD51] text-[26px]" data-testid="text-hero-most-popular-title">
+                <h3 className="font-bold mb-6 text-[26px] text-[#f2007d]" data-testid="text-hero-most-popular-title">
                   Most Popular
                 </h3>
                 <div className="space-y-4">
