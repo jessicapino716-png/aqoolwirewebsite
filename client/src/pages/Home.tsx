@@ -4,6 +4,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import MostPopular, { PopularArticle } from "@/components/MostPopular";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
+import { Mail } from "lucide-react";
 import { Content } from "@shared/schema";
 
 // Fallback images for articles without images
@@ -206,6 +207,22 @@ export default function Home() {
               </div>
             )}
 
+            {/* Inline Newsletter CTA */}
+            <div className="mb-12">
+              <div className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-6 text-center">
+                <div className="max-w-md mx-auto">
+                  <Mail className="h-8 w-8 text-[#3b82f6] mx-auto mb-3" />
+                  <h3 className="text-lg font-semibold text-black mb-2" data-testid="text-inline-newsletter-title">
+                    Stay Ahead of AI Policy
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4" data-testid="text-inline-newsletter-description">
+                    Weekly insights from Riyadh • Expert analysis • Policy updates
+                  </p>
+                  <NewsletterSignup variant="inline" />
+                </div>
+              </div>
+            </div>
+
             {/* Latest News Grid */}
             {latestArticles.length > 0 && (
               <div className="mb-12">
@@ -233,18 +250,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Sidebar */}
+          {/* Sidebar - Now Empty, Could be removed or used for ads/other content */}
           <div className="lg:col-span-1 space-y-8">
-            {/* Newsletter Signup */}
-            <div className="p-6 rounded-lg bg-[#dedede]">
-              <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
-                Stay Updated
-              </h3>
-              <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
-                Get weekly AI policy insights straight from Riyadh.
-              </p>
-              <NewsletterSignup variant="sidebar" />
-            </div>
+            {/* Sidebar content can be added here later */}
           </div>
         </div>
       </div>
