@@ -75,13 +75,14 @@ export default function NewsletterSignup({ variant = "default", className = "" }
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading || isSubscribed}
+            className="min-h-[44px] sm:min-h-[36px]"
             data-testid="input-newsletter-inline"
           />
         </div>
         <Button 
           onClick={handleSubmit}
           disabled={isLoading || isSubscribed}
-          className="bg-[#3b82f6] hover:bg-[#3b82f6]/90 text-white"
+          className="bg-[#3b82f6] hover:bg-[#3b82f6]/90 text-white min-h-[44px] sm:min-h-[36px] px-4"
           data-testid="button-newsletter-inline"
         >
           {isLoading ? "Subscribing..." : isSubscribed ? "Subscribed!" : "Subscribe"}
