@@ -1,6 +1,7 @@
 import ArticleCard from "@/components/ArticleCard";
 import HeroSection from "@/components/HeroSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import MostPopular, { PopularArticle } from "@/components/MostPopular";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Content } from "@shared/schema";
@@ -84,6 +85,14 @@ export default function Home() {
   
   // Get latest articles (remaining articles)
   const latestArticles = transformedArticles.slice(3);
+  
+  // Transform popular articles for MostPopular component
+  const popularArticlesForComponent: PopularArticle[] = popularArticles?.map(content => ({
+    id: content.id,
+    title: content.title,
+    slug: content.slug,
+    category: content.category,
+  })) || [];
 
   // Loading state
   if (isLoading) {
@@ -171,6 +180,13 @@ export default function Home() {
             {heroArticle && (
               <div className="mb-12">
                 <ArticleCard article={heroArticle} variant="hero" />
+              </div>
+            )}
+
+            {/* Most Popular */}
+            {popularArticlesForComponent.length > 0 && (
+              <div className="mb-12">
+                <MostPopular articles={popularArticlesForComponent} />
               </div>
             )}
 

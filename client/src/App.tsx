@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import ScrollProgressLine from "@/components/ScrollProgressLine";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import Home from "@/pages/Home";
+import ArticleDetail from "@/pages/ArticleDetail";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
 import AdminNewsletter from "@/pages/AdminNewsletter";
@@ -37,6 +38,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/article/:slug" component={ArticleDetail} />
       <Route path="/policy" component={() => <CategoryPage />} />
       <Route path="/regulation" component={() => <CategoryPage />} />
       <Route path="/analysis" component={() => <CategoryPage />} />
