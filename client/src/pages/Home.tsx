@@ -159,17 +159,9 @@ export default function Home() {
     );
   }
 
-  // Transform popular articles for hero section
-  const transformedPopularArticles = popularArticles?.map(content => ({
-    id: content.id,
-    title: content.title,
-    slug: content.slug,
-    category: content.category,
-  })) || [];
-
   return (
     <div className="bg-background">
-      <HeroSection popularArticles={transformedPopularArticles} />
+      <HeroSection />
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
