@@ -145,27 +145,97 @@ export default function CategoryPage() {
           </p>
         </div>
 
-        {/* Articles Section */}
-        {articles.length === 0 ? (
-          <Card className="p-8 text-center" data-testid={`card-no-articles-${categorySlug}`}>
-            <h2 className="text-xl font-semibold text-black mb-2">No Articles Found</h2>
-            <p className="text-gray-600 mb-4">
-              There are currently no articles in the {displayCategory} category.
-            </p>
-            <Link href="/">
-              <span className="text-primary hover:text-primary/80 font-medium">
-                Browse All Articles
-              </span>
-            </Link>
-          </Card>
-        ) : (
-          <div className="space-y-0" data-testid={`articles-list-${categorySlug}`}>
-            {articles.map((article, index) => (
-              <div key={article.id} className={index === 0 ? "" : "verge-divider"}>
-                <ArticleCard article={article} variant="list" />
+        {/* Special layout for AI Tools page */}
+        {categorySlug === 'tools' ? (
+          <div>
+            {/* Purpose Description Section */}
+            <div className="mb-12">
+              <Card className="p-8 text-center bg-gradient-to-r from-[#f8fafc] to-[#f1f5f9] border-2 border-[#3b82f6]/20">
+                <h2 className="text-2xl font-bold text-black mb-4" data-testid="text-tools-purpose-title">
+                  Explore Cutting-Edge AI Tools
+                </h2>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed" data-testid="text-tools-purpose-description">
+                  Discover the latest artificial intelligence tools and technologies that are transforming industries across Saudi Arabia and the GCC region. 
+                  From innovative software solutions to breakthrough applications, explore comprehensive reviews, demonstrations, and insights into the tools 
+                  shaping the future of AI in the Middle East.
+                </p>
+              </Card>
+            </div>
+
+            {/* YouTube Videos Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-black mb-6" data-testid="text-tools-videos-title">
+                Featured AI Tool Demonstrations
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="grid-youtube-videos">
+                {/* YouTube videos will be added here by the user */}
+                <Card className="p-6 text-center border-2 border-dashed border-gray-300">
+                  <div className="h-48 flex items-center justify-center bg-gray-50 rounded-lg mb-4">
+                    <p className="text-gray-500">YouTube Video Placeholder</p>
+                  </div>
+                  <p className="text-sm text-gray-600">Add your AI tool demonstration videos here</p>
+                </Card>
+                <Card className="p-6 text-center border-2 border-dashed border-gray-300">
+                  <div className="h-48 flex items-center justify-center bg-gray-50 rounded-lg mb-4">
+                    <p className="text-gray-500">YouTube Video Placeholder</p>
+                  </div>
+                  <p className="text-sm text-gray-600">Add your AI tool demonstration videos here</p>
+                </Card>
+                <Card className="p-6 text-center border-2 border-dashed border-gray-300">
+                  <div className="h-48 flex items-center justify-center bg-gray-50 rounded-lg mb-4">
+                    <p className="text-gray-500">YouTube Video Placeholder</p>
+                  </div>
+                  <p className="text-sm text-gray-600">Add your AI tool demonstration videos here</p>
+                </Card>
               </div>
-            ))}
+            </div>
+
+            {/* Articles Section for Tools */}
+            {articles.length > 0 && (
+              <div>
+                <h3 className="text-2xl font-bold text-black mb-6" data-testid="text-tools-articles-title">
+                  Latest AI Tool Reviews & Analysis
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-testid={`articles-grid-${categorySlug}`}>
+                  {articles.map((article) => (
+                    <ArticleCard key={article.id} article={article} variant="standard" />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {articles.length === 0 && (
+              <Card className="p-8 text-center" data-testid={`card-no-articles-${categorySlug}`}>
+                <h3 className="text-xl font-semibold text-black mb-2">No Articles Yet</h3>
+                <p className="text-gray-600 mb-4">
+                  AI tool reviews and analysis articles will appear here once published.
+                </p>
+              </Card>
+            )}
           </div>
+        ) : (
+          /* Regular layout for other categories */
+          articles.length === 0 ? (
+            <Card className="p-8 text-center" data-testid={`card-no-articles-${categorySlug}`}>
+              <h2 className="text-xl font-semibold text-black mb-2">No Articles Found</h2>
+              <p className="text-gray-600 mb-4">
+                There are currently no articles in the {displayCategory} category.
+              </p>
+              <Link href="/">
+                <span className="text-primary hover:text-primary/80 font-medium">
+                  Browse All Articles
+                </span>
+              </Link>
+            </Card>
+          ) : (
+            <div className="space-y-0" data-testid={`articles-list-${categorySlug}`}>
+              {articles.map((article, index) => (
+                <div key={article.id} className={index === 0 ? "" : "verge-divider"}>
+                  <ArticleCard article={article} variant="list" />
+                </div>
+              ))}
+            </div>
+          )
         )}
 
         {/* Back to Home Link */}
