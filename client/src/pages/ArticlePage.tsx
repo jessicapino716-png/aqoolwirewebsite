@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
+import { useEffect, useState } from "react";
 import { ArrowLeft, Calendar, User, Tag, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle } from "lucide-react";
 import type { Content } from "@shared/schema";
@@ -13,6 +15,9 @@ import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnai
 export default function ArticlePage() {
   const [match, params] = useRoute("/article/:slug");
   const slug = params?.slug;
+  
+  // Handle external article redirection state (must be declared at top level)
+  const [isRedirecting, setIsRedirecting] = useState(false);
 
   const { data: article, isLoading, error } = useQuery({
     queryKey: ['/api/content', slug],
@@ -30,6 +35,18 @@ export default function ArticlePage() {
     },
     enabled: !!slug,
   }) as { data: Content; isLoading: boolean; error: any };
+
+  // External article auto-redirect effect (must be at component top level)
+  useEffect(() => {
+    if (article && article.type === 'external' && article.externalUrl && !isRedirecting) {
+      // Auto-redirect after a short delay to give user context
+      const timer = setTimeout(() => {
+        window.location.href = article.externalUrl!;
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [article, isRedirecting]);
 
   if (!match || !slug) {
     return (
@@ -104,10 +121,63 @@ export default function ArticlePage() {
     );
   }
 
-  // If this is an external article, redirect to external URL
+
+  // If this is an external article, show redirect UI
   if (article.type === 'external' && article.externalUrl) {
-    window.location.href = article.externalUrl;
-    return null;
+    return (
+      <div className="bg-white min-h-screen">
+        <div className="max-w-4xl mx-auto px-4 py-8">
+          {/* Back Button */}
+          <div className="mb-8" data-testid="article-back-button">
+            <Link href="/">
+              <span className="inline-flex items-center text-[#3b82f6] hover:text-[#2563eb] font-medium transition-colors">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </span>
+            </Link>
+          </div>
+
+          {/* External Article Redirect Card */}
+          <Card className="p-8 text-center">
+            <div className="flex flex-col items-center space-y-6">
+              <ExternalLink className="h-16 w-16 text-[#3b82f6]" />
+              
+              <div className="space-y-4">
+                <h1 className="text-2xl font-bold text-black">{article.title}</h1>
+                <p className="text-gray-600 max-w-2xl">
+                  This article is hosted on <strong>{article.source}</strong>. 
+                  You will be redirected automatically in a few seconds, or you can click the button below to continue immediately.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  onClick={() => {
+                    setIsRedirecting(true);
+                    window.location.href = article.externalUrl!;
+                  }}
+                  className="bg-[#3b82f6] hover:bg-[#2563eb] text-white"
+                  data-testid="button-external-redirect"
+                >
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Read on {article.source}
+                </Button>
+                
+                <Link href="/">
+                  <Button variant="outline" data-testid="button-stay-home">
+                    Stay on The Aqool Wire
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="text-sm text-gray-500">
+                Redirecting automatically in 3 seconds...
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    );
   }
 
   // If this is an op-ed but has no body content, show error
