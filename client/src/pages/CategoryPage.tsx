@@ -151,9 +151,7 @@ export default function CategoryPage() {
             {/* Purpose Description Section */}
             <div className="mb-12">
               <Card className="p-8 text-center bg-gradient-to-r from-[#f8fafc] to-[#f1f5f9] border-2 border-[#3b82f6]/20">
-                <h2 className="text-2xl font-bold text-black mb-4" data-testid="text-tools-purpose-title">
-                  Explore Cutting-Edge AI Tools
-                </h2>
+                <h2 className="text-2xl font-bold text-black mb-4" data-testid="text-tools-purpose-title">Explore The Latest AI Tools</h2>
                 <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed" data-testid="text-tools-purpose-description">
                   Discover the latest artificial intelligence tools and technologies that are transforming industries across Saudi Arabia and the GCC region. 
                   From innovative software solutions to breakthrough applications, explore comprehensive reviews, demonstrations, and insights into the tools 
@@ -215,27 +213,23 @@ export default function CategoryPage() {
           </div>
         ) : (
           /* Regular layout for other categories */
-          articles.length === 0 ? (
-            <Card className="p-8 text-center" data-testid={`card-no-articles-${categorySlug}`}>
-              <h2 className="text-xl font-semibold text-black mb-2">No Articles Found</h2>
-              <p className="text-gray-600 mb-4">
-                There are currently no articles in the {displayCategory} category.
-              </p>
-              <Link href="/">
-                <span className="text-primary hover:text-primary/80 font-medium">
-                  Browse All Articles
-                </span>
-              </Link>
-            </Card>
-          ) : (
-            <div className="space-y-0" data-testid={`articles-list-${categorySlug}`}>
-              {articles.map((article, index) => (
-                <div key={article.id} className={index === 0 ? "" : "verge-divider"}>
-                  <ArticleCard article={article} variant="list" />
-                </div>
-              ))}
-            </div>
-          )
+          (articles.length === 0 ? (<Card className="p-8 text-center" data-testid={`card-no-articles-${categorySlug}`}>
+            <h2 className="text-xl font-semibold text-black mb-2">No Articles Found</h2>
+            <p className="text-gray-600 mb-4">
+              There are currently no articles in the {displayCategory} category.
+            </p>
+            <Link href="/">
+              <span className="text-primary hover:text-primary/80 font-medium">
+                Browse All Articles
+              </span>
+            </Link>
+          </Card>) : (<div className="space-y-0" data-testid={`articles-list-${categorySlug}`}>
+            {articles.map((article, index) => (
+              <div key={article.id} className={index === 0 ? "" : "verge-divider"}>
+                <ArticleCard article={article} variant="list" />
+              </div>
+            ))}
+          </div>))
         )}
 
         {/* Back to Home Link */}
