@@ -18,6 +18,7 @@ import AdminExternal from "@/pages/AdminExternal";
 import AdminOpEd from "@/pages/AdminOpEd";
 import AdminContent from "@/pages/AdminContent";
 import CategoryPage from "@/pages/CategoryPage";
+import ArticlePage from "@/pages/ArticlePage";
 import Newsletter from "@/pages/Newsletter";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
@@ -41,6 +42,7 @@ function Router() {
       <Route path="/regulation" component={() => <CategoryPage />} />
       <Route path="/analysis" component={() => <CategoryPage />} />
       <Route path="/tools" component={() => <CategoryPage />} />
+      <Route path="/article/:slug" component={ArticlePage} />
       <Route path="/newsletter" component={Newsletter} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={Privacy} />
