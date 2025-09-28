@@ -9,9 +9,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle } from "lucide-react";
 import type { Content } from "@shared/schema";
 
-// Fallback thumbnail image for articles without images
-import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
-
 export default function ArticlePage() {
   const [match, params] = useRoute("/article/:slug");
   const slug = params?.slug;
