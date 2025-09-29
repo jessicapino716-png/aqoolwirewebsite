@@ -175,10 +175,26 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content Column */}
           <div className="lg:col-span-2">
-            {/* Hero Article */}
+            {/* Hero Section with Side Articles */}
             {heroArticle && (
               <div className="mb-12">
-                <ArticleCard article={heroArticle} variant="hero" />
+                <div className="flex flex-col lg:flex-row gap-8">
+                  {/* Main Hero Article */}
+                  <div className="lg:w-2/3">
+                    <ArticleCard article={heroArticle} variant="hero" />
+                  </div>
+                  
+                  {/* Side Articles */}
+                  <div className="lg:w-1/3 space-y-6">
+                    {featuredArticles.slice(0, 2).map((article) => (
+                      <ArticleCard 
+                        key={article.id} 
+                        article={article} 
+                        variant="list" 
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
 
