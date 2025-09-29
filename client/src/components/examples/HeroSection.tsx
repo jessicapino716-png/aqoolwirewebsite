@@ -1,5 +1,5 @@
 import HeroSection from '../HeroSection';
-import heroImage from '@assets/generated_images/AI_policy_hero_image_e5e8bfa6.png';
+const heroImage = '/assets/generated_images/AI_policy_hero_image_e5e8bfa6.png';
 
 const featuredArticle = {
   id: "hero-1",

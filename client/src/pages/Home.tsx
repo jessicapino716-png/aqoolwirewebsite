@@ -5,9 +5,9 @@ import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Content } from "@shared/schema";
 
-// Fallback images for articles without images
-import heroImage from '@assets/generated_images/AI_policy_hero_image_e5e8bfa6.png';
-import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
+// Fallback images for articles without images - using public folder paths
+const heroImage = '/assets/generated_images/AI_policy_hero_image_e5e8bfa6.png';
+const thumbnailImage = '/assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
 
 // Helper function to format published date
 const formatPublishedDate = (publishedAt: string) => {

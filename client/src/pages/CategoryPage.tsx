@@ -6,8 +6,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle } from "lucide-react";
 import type { Content } from "@shared/schema";
 
-// Fallback thumbnail image for articles without images
-import thumbnailImage from '@assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
+// Fallback thumbnail image for articles without images - using public folder path
+const thumbnailImage = '/assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
 
 // Mapping of URL-friendly category names to database category names
 const categoryMapping: Record<string, string> = {

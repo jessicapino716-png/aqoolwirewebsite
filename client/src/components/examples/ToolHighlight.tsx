@@ -1,5 +1,5 @@
 import ToolHighlight from '../ToolHighlight';
-import toolImage from '@assets/generated_images/AI_tools_showcase_image_6a7339f5.png';
+const toolImage = '/assets/generated_images/AI_tools_showcase_image_6a7339f5.png';
 
 const sampleTool = {
   id: "tool-1",

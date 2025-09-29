@@ -1,5 +1,5 @@
 import AuthorProfile from '../AuthorProfile';
-import authorImage from '@assets/generated_images/Author_profile_picture_464b5283.png';
+const authorImage = '/assets/generated_images/Author_profile_picture_464b5283.png';
 
 const sampleAuthor = {
   id: "author-1",
