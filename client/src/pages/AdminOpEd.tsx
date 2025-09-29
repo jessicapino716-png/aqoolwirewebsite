@@ -275,6 +275,11 @@ export default function AdminOpEd() {
                           data-testid="textarea-op-ed-body"
                         />
                       </FormControl>
+                      <div className="text-sm text-gray-600 mt-2">
+                        <p className="mb-1"><strong>Formatting Tips:</strong></p>
+                        <p>• Add hyperlinks: <code>[link text](https://example.com)</code></p>
+                        <p>• Separate paragraphs with empty lines</p>
+                      </div>
                       <FormMessage />
                     </FormItem>
                   )}

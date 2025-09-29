@@ -212,11 +212,54 @@ export default function ArticlePage() {
     // Split by paragraphs and filter out empty ones
     const paragraphs = body.split('\n').filter(p => p.trim().length > 0);
     
-    return paragraphs.map((paragraph, index) => (
-      <p key={index} className="mb-4 text-lg leading-relaxed text-gray-800">
-        {paragraph.trim()}
-      </p>
-    ));
+    return paragraphs.map((paragraph, index) => {
+      // Parse markdown links: [text](url)
+      const parseLinks = (text: string) => {
+        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        const parts = [];
+        let lastIndex = 0;
+        let match;
+
+        while ((match = linkRegex.exec(text)) !== null) {
+          // Add text before the link
+          if (match.index > lastIndex) {
+            parts.push(text.slice(lastIndex, match.index));
+          }
+          
+          // Add the link
+          const linkText = match[1];
+          const linkUrl = match[2];
+          parts.push(
+            <a
+              key={match.index}
+              href={linkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 transition-colors"
+            >
+              {linkText}
+            </a>
+          );
+          
+          lastIndex = match.index + match[0].length;
+        }
+        
+        // Add any remaining text
+        if (lastIndex < text.length) {
+          parts.push(text.slice(lastIndex));
+        }
+        
+        return parts.length > 0 ? parts : [text];
+      };
+
+      const content = parseLinks(paragraph.trim());
+      
+      return (
+        <p key={index} className="mb-4 text-lg leading-relaxed text-gray-800">
+          {content}
+        </p>
+      );
+    });
   };
 
   return (
