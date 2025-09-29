@@ -227,16 +227,20 @@ export default function Home() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-            {/* Newsletter Signup */}
-            <div className="p-6 rounded-lg bg-[#dedede]">
-              <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
-                Stay Updated
-              </h3>
-              <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
-                Get weekly AI policy insights straight from Riyadh.
-              </p>
-              <NewsletterSignup variant="sidebar" />
-            </div>
+            {/* Sidebar content - placeholder for future content */}
+          </div>
+        </div>
+        
+        {/* Newsletter Signup - Bottom of page */}
+        <div className="max-w-2xl mx-auto mt-16 mb-8">
+          <div className="p-6 rounded-lg bg-[#dedede]">
+            <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
+              Stay Updated
+            </h3>
+            <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
+              Get weekly AI policy insights straight from Riyadh.
+            </p>
+            <NewsletterSignup variant="sidebar" />
           </div>
         </div>
       </div>
