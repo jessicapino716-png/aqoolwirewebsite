@@ -45,7 +45,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               <img
                 src={article.imageUrl}
                 alt={article.title}
-                className="w-full aspect-[16/9] object-cover rounded-lg"
+                className="w-3/5 aspect-[16/9] object-cover rounded-lg"
                 data-testid={`img-article-hero-${article.id}`}
               />
             </div>
