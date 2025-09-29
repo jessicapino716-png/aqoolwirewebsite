@@ -10,9 +10,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { ArrowLeft, ExternalLink, Plus } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Plus, Upload, X, FileText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest, queryClient } from '@/lib/queryClient';
+import { ObjectUploader } from '@/components/ObjectUploader';
+import type { UploadResult } from '@uppy/core';
 
 const externalArticleSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -32,6 +34,7 @@ type ExternalArticleData = z.infer<typeof externalArticleSchema>;
 export default function AdminExternal() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const [uploadedImageUrl, setUploadedImageUrl] = useState<string>('');
 
   const form = useForm<ExternalArticleData>({
     resolver: zodResolver(externalArticleSchema),
