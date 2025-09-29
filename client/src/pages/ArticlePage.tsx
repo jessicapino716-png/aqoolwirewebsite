@@ -235,7 +235,8 @@ export default function ArticlePage() {
               href={linkUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 transition-colors"
+              className="text-gray-800 hover:text-blue-600 hover:underline cursor-pointer transition-colors duration-200"
+              title="Click to view source"
             >
               {linkText}
             </a>
