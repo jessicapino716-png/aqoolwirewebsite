@@ -2,8 +2,9 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 import Uppy from "@uppy/core";
 import { DashboardModal } from "@uppy/react";
-// CSS imports removed - Uppy v5 may not require explicit CSS imports
 import AwsS3 from "@uppy/aws-s3";
+
+// Note: Uppy CSS imports causing Vite issues - will add inline styles if needed
 import type { UploadResult } from "@uppy/core";
 import { Button } from "@/components/ui/button";
 
