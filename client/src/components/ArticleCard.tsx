@@ -55,7 +55,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               {article.category}
             </span>
           </div>
-          <h1 className="verge-headline-hero text-black article-title-hover transition-colors mb-2" data-testid={`text-title-hero-${article.id}`}>
+          <h1 className="verge-headline-hero text-black article-title-hover transition-colors mb-2 text-[40px]" data-testid={`text-title-hero-${article.id}`}>
             {article.title}
           </h1>
           {article.source && (
