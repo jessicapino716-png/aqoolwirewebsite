@@ -13,8 +13,8 @@ import { z } from 'zod';
 import { ArrowLeft, FileText, Plus, Upload, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest, queryClient } from '@/lib/queryClient';
-// import { ObjectUploader } from '@/components/ObjectUploader';
-// import type { UploadResult } from '@uppy/core';
+import { ObjectUploader } from '@/components/ObjectUploader';
+import type { UploadResult } from '@uppy/core';
 
 const opEdSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -87,9 +87,62 @@ export default function AdminOpEd() {
     createMutation.mutate(submissionData);
   };
 
-  // Upload handlers temporarily disabled
-  // const handleGetUploadParameters = async () => { ... };
-  // const handleUploadComplete = async (result) => { ... };
+  const handleGetUploadParameters = async () => {
+    const token = localStorage.getItem('adminToken');
+    const response = await fetch('/api/objects/upload', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to get upload URL');
+    }
+    
+    const { uploadURL } = await response.json();
+    return {
+      method: 'PUT' as const,
+      url: uploadURL,
+    };
+  };
+
+  const handleUploadComplete = async (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
+    if (result.successful.length > 0) {
+      const uploadedFile = result.successful[0];
+      const imageURL = uploadedFile.uploadURL;
+      
+      try {
+        const token = localStorage.getItem('adminToken');
+        const response = await fetch('/api/article-images', {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ imageURL }),
+        });
+        
+        if (response.ok) {
+          const { objectPath } = await response.json();
+          setUploadedImageUrl(objectPath);
+          form.setValue('imageUrl', objectPath);
+          toast({
+            title: 'Success',
+            description: 'Image uploaded successfully!',
+          });
+        }
+      } catch (error) {
+        console.error('Error setting image ACL:', error);
+        toast({
+          title: 'Error',
+          description: 'Failed to process uploaded image',
+          variant: 'destructive',
+        });
+      }
+    }
+  };
 
   const generateSlug = (title: string) => {
     return title
@@ -283,24 +336,76 @@ export default function AdminOpEd() {
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="imageUrl"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Image URL (optional)</FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          type="url"
-                          placeholder="https://example.com/image.jpg"
-                          data-testid="input-op-ed-image"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <div className="space-y-4">
+                  <FormLabel>Article Image (optional)</FormLabel>
+                  
+                  {/* Image Upload Section */}
+                  <div className="flex flex-col gap-4">
+                    <ObjectUploader
+                      maxNumberOfFiles={1}
+                      maxFileSize={10485760} // 10MB
+                      onGetUploadParameters={handleGetUploadParameters}
+                      onComplete={handleUploadComplete}
+                      buttonClassName="w-full"
+                    >
+                      <div className="flex items-center gap-2">
+                        <Upload className="h-4 w-4" />
+                        <span>Upload Image</span>
+                      </div>
+                    </ObjectUploader>
+                    
+                    {/* Show uploaded image preview */}
+                    {uploadedImageUrl && (
+                      <div className="flex items-center justify-between p-3 bg-green-50 border border-green-200 rounded-md">
+                        <div className="flex items-center gap-2">
+                          <FileText className="h-4 w-4 text-green-600" />
+                          <span className="text-sm text-green-700">Image uploaded successfully</span>
+                        </div>
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => {
+                            setUploadedImageUrl('');
+                            form.setValue('imageUrl', '');
+                          }}
+                        >
+                          <X className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    )}
+                    
+                    {/* Fallback URL input */}
+                    <div className="border-t pt-4">
+                      <FormField
+                        control={form.control}
+                        name="imageUrl"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm text-gray-600">Or enter image URL manually</FormLabel>
+                            <FormControl>
+                              <Input
+                                {...field}
+                                type="url"
+                                placeholder="https://example.com/image.jpg"
+                                data-testid="input-op-ed-image"
+                                value={uploadedImageUrl || field.value}
+                                onChange={(e) => {
+                                  field.onChange(e);
+                                  if (!uploadedImageUrl) {
+                                    // Only update if no uploaded image
+                                    setUploadedImageUrl('');
+                                  }
+                                }}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                  </div>
+                </div>
 
                 <FormField
                   control={form.control}
