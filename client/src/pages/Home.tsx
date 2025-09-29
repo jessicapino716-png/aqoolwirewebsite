@@ -76,14 +76,22 @@ export default function Home() {
   // Transform articles for display
   const transformedArticles = articles?.map(transformContentToArticle) || [];
   
-  // Get hero article (first article)
-  const heroArticle = transformedArticles[0];
+  // Separate op-ed and external articles
+  const opEdArticles = transformedArticles.filter(article => 
+    articles?.find(content => content.id === article.id)?.type === 'op-ed'
+  );
+  const externalArticles = transformedArticles.filter(article => 
+    articles?.find(content => content.id === article.id)?.type === 'external'
+  );
   
-  // Get featured articles (next 2)
-  const featuredArticles = transformedArticles.slice(1, 3);
+  // Get hero article (first op-ed article only)
+  const heroArticle = opEdArticles[0];
   
-  // Get latest articles (remaining articles)
-  const latestArticles = transformedArticles.slice(3);
+  // Get featured articles (next 2 op-ed articles only)
+  const featuredArticles = opEdArticles.slice(1, 3);
+  
+  // Get latest articles (remaining op-ed articles + all external articles)
+  const latestArticles = [...opEdArticles.slice(3), ...externalArticles];
 
   // Loading state
   if (isLoading) {
