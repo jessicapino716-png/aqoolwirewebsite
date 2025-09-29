@@ -172,79 +172,69 @@ export default function Home() {
       <HeroSection popularArticles={transformedPopularArticles} />
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-2 py-8 bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content Column */}
-          <div className="lg:col-span-2">
-            {/* Hero Section with Side Articles */}
-            {heroArticle && (
-              <div className="mb-12">
-                <div className="flex flex-col lg:flex-row gap-8">
-                  {/* Main Hero Article */}
-                  <div className="lg:w-2/3">
-                    <ArticleCard article={heroArticle} variant="hero" />
-                  </div>
-                  
-                  {/* Side Articles */}
-                  <div className="lg:w-1/3 space-y-6">
-                    {featuredArticles.slice(0, 2).map((article) => (
-                      <ArticleCard 
-                        key={article.id} 
-                        article={article} 
-                        variant="list" 
-                      />
-                    ))}
-                  </div>
-                </div>
+        {/* Hero Section with Side Articles - Full Width */}
+        {heroArticle && (
+          <div className="mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Main Hero Article */}
+              <div className="lg:col-span-2">
+                <ArticleCard article={heroArticle} variant="hero" />
               </div>
-            )}
-
-            {/* Featured Stories */}
-            {featuredArticles.length > 0 && (
-              <div className="mb-12">
-                <div className="verge-divider mb-8"></div>
-                <div className="space-y-8">
-                  {featuredArticles.map((article) => (
-                    <ArticleCard 
-                      key={article.id} 
-                      article={article} 
-                      variant="featured" 
-                    />
-                  ))}
-                </div>
+              
+              {/* Side Articles */}
+              <div className="lg:col-span-1 space-y-6">
+                {featuredArticles.slice(0, 2).map((article) => (
+                  <ArticleCard 
+                    key={article.id} 
+                    article={article} 
+                    variant="list" 
+                  />
+                ))}
               </div>
-            )}
-
-            {/* Latest News Grid */}
-            {latestArticles.length > 0 && (
-              <div className="mb-12">
-                <div className="verge-divider mb-8"></div>
-                <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-latest-news-title">
-                  Latest News
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {latestArticles.map((article) => (
-                    <ArticleCard 
-                      key={article.id} 
-                      article={article} 
-                      variant="standard" 
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Load More Button */}
-            <div className="text-center">
-              <Link href="/policy" className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-8 py-3 rounded-md font-medium transition-colors inline-block" data-testid="button-load-more">
-                Load More Articles
-              </Link>
             </div>
           </div>
+        )}
 
-          {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-8">
-            {/* Sidebar content - placeholder for future content */}
+        {/* Featured Stories */}
+        {featuredArticles.length > 2 && (
+          <div className="mb-12">
+            <div className="verge-divider mb-8"></div>
+            <div className="space-y-8">
+              {featuredArticles.slice(2).map((article) => (
+                <ArticleCard 
+                  key={article.id} 
+                  article={article} 
+                  variant="featured" 
+                />
+              ))}
+            </div>
           </div>
+        )}
+
+        {/* Latest News Grid */}
+        {latestArticles.length > 0 && (
+          <div className="mb-12">
+            <div className="verge-divider mb-8"></div>
+            <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-latest-news-title">
+              Latest News
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {latestArticles.map((article) => (
+                <ArticleCard 
+                  key={article.id} 
+                  article={article} 
+                  variant="standard" 
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Load More Button */}
+        <div className="text-center">
+          <Link href="/policy" className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-8 py-3 rounded-md font-medium transition-colors inline-block" data-testid="button-load-more">
+            Load More Articles
+          </Link>
         </div>
         
         {/* Newsletter Signup - Bottom of page */}
