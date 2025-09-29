@@ -215,7 +215,7 @@ export default function ArticlePage() {
     return paragraphs.map((paragraph, index) => {
       // Parse markdown links: [text](url)
       const parseLinks = (text: string) => {
-        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        const linkRegex = /\[([^\]]+)\]\s*\(([^)]+)\)/g;
         const parts = [];
         let lastIndex = 0;
         let match;
