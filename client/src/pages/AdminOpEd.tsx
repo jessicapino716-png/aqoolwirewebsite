@@ -23,7 +23,7 @@ const opEdSchema = z.object({
   authorName: z.string().min(1, 'Author name is required'),
   category: z.string().min(1, 'Category is required'),
   tags: z.string().optional(),
-  imageUrl: z.string().url().optional().or(z.literal('')),
+  imageUrl: z.string().optional(),
   isPopular: z.boolean().default(false),
 });
 
