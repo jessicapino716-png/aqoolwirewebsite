@@ -35,7 +35,7 @@ export function ObjectUploader({
   children,
 }: ObjectUploaderProps) {
   const [showModal, setShowModal] = useState(false);
-  const [uppy] = useState(() =>
+  const [uppy] = useState(() => 
     new Uppy({
       restrictions: {
         maxNumberOfFiles,
@@ -46,10 +46,20 @@ export function ObjectUploader({
     })
       .use(AwsS3, {
         shouldUseMultipart: false,
-        getUploadParameters: onGetUploadParameters,
+        getUploadParameters: async (file) => {
+          const params = await onGetUploadParameters();
+          return {
+            method: params.method,
+            url: params.url,
+            headers: {
+              'Content-Type': file.type || 'application/octet-stream',
+            },
+          };
+        },
       })
       .on("complete", (result) => {
         onComplete?.(result);
+        setShowModal(false);
       })
   );
 
