@@ -180,39 +180,18 @@ export default function Home() {
       <HeroSection popularArticles={transformedPopularArticles} />
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-2 py-8 bg-white">
-        {/* Hero Section with Side Articles - Full Width */}
-        {heroArticle && (
+        {/* Analysis Section - Op-Ed Articles in Equal Grid */}
+        {opEdArticles.length > 0 && (
           <div className="mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Main Hero Article */}
-              <div className="lg:col-span-2">
-                <ArticleCard article={heroArticle} variant="hero" />
-              </div>
-              
-              {/* Side Articles */}
-              <div className="lg:col-span-1 space-y-6">
-                {featuredArticles.slice(0, 2).map((article) => (
-                  <ArticleCard 
-                    key={article.id} 
-                    article={article} 
-                    variant="list" 
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Featured Stories */}
-        {featuredArticles.length > 2 && (
-          <div className="mb-12">
-            <div className="verge-divider mb-8"></div>
-            <div className="space-y-8">
-              {featuredArticles.slice(2).map((article) => (
+            <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-analysis-title">
+              Analysis & Commentary
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {opEdArticles.map((article) => (
                 <ArticleCard 
                   key={article.id} 
                   article={article} 
-                  variant="featured" 
+                  variant="standard" 
                 />
               ))}
             </div>
