@@ -109,9 +109,24 @@ export default function AdminOpEd() {
   };
 
   const handleUploadComplete = async (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
+    console.log('Upload complete result:', result);
+    
     if (result.successful && result.successful.length > 0) {
       const uploadedFile = result.successful[0];
+      console.log('Uploaded file:', uploadedFile);
+      
       const imageURL = uploadedFile.uploadURL;
+      console.log('Image URL extracted:', imageURL);
+      
+      if (!imageURL) {
+        console.error('No uploadURL in result');
+        toast({
+          title: 'Error',
+          description: 'Upload completed but no URL was returned',
+          variant: 'destructive',
+        });
+        return;
+      }
       
       try {
         const token = localStorage.getItem('adminToken');
@@ -124,13 +139,25 @@ export default function AdminOpEd() {
           body: JSON.stringify({ imageURL }),
         });
         
+        console.log('Article images response status:', response.status);
+        
         if (response.ok) {
-          const { objectPath } = await response.json();
+          const data = await response.json();
+          console.log('Article images response data:', data);
+          const { objectPath } = data;
           setUploadedImageUrl(objectPath);
           form.setValue('imageUrl', objectPath);
           toast({
             title: 'Success',
             description: 'Image uploaded successfully!',
+          });
+        } else {
+          const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+          console.error('Article images error:', errorData);
+          toast({
+            title: 'Error',
+            description: errorData.error || 'Failed to process uploaded image',
+            variant: 'destructive',
           });
         }
       } catch (error) {
@@ -141,6 +168,8 @@ export default function AdminOpEd() {
           variant: 'destructive',
         });
       }
+    } else {
+      console.log('No successful uploads in result');
     }
   };
 

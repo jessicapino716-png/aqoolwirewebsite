@@ -671,12 +671,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Update article with uploaded image (admin only)
   app.put("/api/article-images", authenticateAdmin, async (req, res) => {
+    console.log("Received article-images request:", req.body);
+    
     if (!req.body.imageURL) {
+      console.error("No imageURL in request body");
       return res.status(400).json({ error: "imageURL is required" });
     }
 
     try {
       const objectStorageService = new ObjectStorageService();
+      console.log("Setting ACL policy for image:", req.body.imageURL);
+      
       const objectPath = await objectStorageService.trySetObjectEntityAclPolicy(
         req.body.imageURL,
         {
@@ -684,6 +689,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
           visibility: "public", // Article images should be public
         },
       );
+
+      console.log("Object path after normalization:", objectPath);
 
       res.status(200).json({
         objectPath: objectPath,
