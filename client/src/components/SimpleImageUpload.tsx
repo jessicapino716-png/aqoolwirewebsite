@@ -45,7 +45,7 @@ export function SimpleImageUpload({ onUploadComplete, currentImageUrl, onRemove 
       const formData = new FormData();
       formData.append('image', file);
 
-      const token = localStorage.getItem('adminToken');
+      const token = localStorage.getItem('admin_token');
       const response = await fetch('/api/upload-image', {
         method: 'POST',
         headers: {
