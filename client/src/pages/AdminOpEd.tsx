@@ -79,11 +79,23 @@ export default function AdminOpEd() {
   });
 
   const onSubmit = (data: OpEdData) => {
+    console.log('Form submitted with data:', data);
+    console.log('Form errors:', form.formState.errors);
     const submissionData = {
       ...data,
       imageUrl: uploadedImageUrl || data.imageUrl,
     };
+    console.log('Submitting to API:', submissionData);
     createMutation.mutate(submissionData);
+  };
+
+  const handleInvalidSubmit = (errors: any) => {
+    console.error('Form validation failed:', errors);
+    toast({
+      title: 'Validation Error',
+      description: 'Please fill in all required fields correctly.',
+      variant: 'destructive',
+    });
   };
 
   const handleUploadComplete = (imageUrl: string) => {
@@ -157,7 +169,7 @@ export default function AdminOpEd() {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit, handleInvalidSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="title"
