@@ -4,7 +4,6 @@ import Uppy from "@uppy/core";
 import { DashboardModal } from "@uppy/react";
 import AwsS3 from "@uppy/aws-s3";
 
-// Note: Uppy CSS imports causing Vite issues - will add inline styles if needed
 import type { UploadResult } from "@uppy/core";
 import { Button } from "@/components/ui/button";
 
@@ -47,19 +46,39 @@ export function ObjectUploader({
       .use(AwsS3, {
         shouldUseMultipart: false,
         getUploadParameters: async (file) => {
-          const params = await onGetUploadParameters();
-          return {
-            method: params.method,
-            url: params.url,
-            headers: {
-              'Content-Type': file.type || 'application/octet-stream',
-            },
-          };
+          console.log('Getting upload parameters for file:', file.name);
+          try {
+            const params = await onGetUploadParameters();
+            console.log('Received upload parameters:', params);
+            return {
+              method: params.method,
+              url: params.url,
+              headers: {
+                'Content-Type': file.type || 'application/octet-stream',
+              },
+            };
+          } catch (error) {
+            console.error('Error getting upload parameters:', error);
+            throw error;
+          }
         },
       })
+      .on("upload", (data) => {
+        console.log('Upload started:', data);
+      })
+      .on("upload-success", (file, response) => {
+        console.log('Upload success:', { file: file?.name, response });
+      })
+      .on("upload-error", (file, error) => {
+        console.error('Upload error:', { file: file?.name, error });
+      })
       .on("complete", (result) => {
+        console.log('Upload complete:', result);
         onComplete?.(result);
         setShowModal(false);
+      })
+      .on("error", (error) => {
+        console.error('Uppy error:', error);
       })
   );
 
