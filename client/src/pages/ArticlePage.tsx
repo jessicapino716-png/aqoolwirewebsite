@@ -1,20 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { useEffect, useState } from "react";
-import { ArrowLeft, Calendar, User, Tag, ExternalLink } from "lucide-react";
+import { ArrowLeft, Calendar, User, Tag, ExternalLink, Share2, Copy, Check } from "lucide-react";
+import { SiX, SiFacebook, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import type { Content } from "@shared/schema";
 
 export default function ArticlePage() {
   const [match, params] = useRoute("/article/:slug");
   const slug = params?.slug;
+  const { toast } = useToast();
   
   // Handle external article redirection state (must be declared at top level)
   const [isRedirecting, setIsRedirecting] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
 
   const { data: article, isLoading, error } = useQuery({
     queryKey: ['/api/content', slug],
@@ -280,6 +284,75 @@ export default function ArticlePage() {
     });
   };
 
+  const handleShare = async (platform: string) => {
+    if (!article) return;
+
+    const url = window.location.href;
+    const title = article.title;
+    const text = article.excerpt;
+
+    switch (platform) {
+      case 'twitter':
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+          '_blank',
+          'width=550,height=420'
+        );
+        break;
+      case 'facebook':
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+          '_blank',
+          'width=550,height=420'
+        );
+        break;
+      case 'linkedin':
+        window.open(
+          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+          '_blank',
+          'width=550,height=420'
+        );
+        break;
+      case 'whatsapp':
+        window.open(
+          `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`,
+          '_blank'
+        );
+        break;
+      case 'copy':
+        try {
+          await navigator.clipboard.writeText(url);
+          setCopiedLink(true);
+          toast({
+            title: "Link Copied!",
+            description: "Article link copied to clipboard",
+          });
+          setTimeout(() => setCopiedLink(false), 2000);
+        } catch (err) {
+          toast({
+            title: "Failed to copy",
+            description: "Please try again",
+            variant: "destructive",
+          });
+        }
+        break;
+      case 'native':
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: title,
+              text: text,
+              url: url,
+            });
+          } catch (err) {
+            // User cancelled or share failed
+            console.log('Share cancelled');
+          }
+        }
+        break;
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -352,6 +425,95 @@ export default function ArticlePage() {
               {formatBody(article.body)}
             </div>
           )}
+
+          {/* Social Share Buttons */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <Share2 className="h-5 w-5 text-gray-600" />
+                <span className="text-sm font-medium text-gray-700">Share this article:</span>
+              </div>
+              
+              <div className="flex flex-wrap items-center gap-2">
+                {/* Twitter/X */}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleShare('twitter')}
+                  className="gap-2"
+                  data-testid="button-share-twitter"
+                >
+                  <SiX className="h-4 w-4" />
+                  <span className="hidden sm:inline">Twitter</span>
+                </Button>
+
+                {/* Facebook */}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleShare('facebook')}
+                  className="gap-2"
+                  data-testid="button-share-facebook"
+                >
+                  <SiFacebook className="h-4 w-4" />
+                  <span className="hidden sm:inline">Facebook</span>
+                </Button>
+
+                {/* LinkedIn */}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleShare('linkedin')}
+                  className="gap-2"
+                  data-testid="button-share-linkedin"
+                >
+                  <SiLinkedin className="h-4 w-4" />
+                  <span className="hidden sm:inline">LinkedIn</span>
+                </Button>
+
+                {/* WhatsApp */}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleShare('whatsapp')}
+                  className="gap-2"
+                  data-testid="button-share-whatsapp"
+                >
+                  <SiWhatsapp className="h-4 w-4" />
+                  <span className="hidden sm:inline">WhatsApp</span>
+                </Button>
+
+                {/* Copy Link */}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleShare('copy')}
+                  className="gap-2"
+                  data-testid="button-share-copy"
+                >
+                  {copiedLink ? (
+                    <Check className="h-4 w-4 text-green-600" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
+                  <span className="hidden sm:inline">{copiedLink ? 'Copied!' : 'Copy Link'}</span>
+                </Button>
+
+                {/* Native Share (Mobile) */}
+                {'share' in navigator && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => handleShare('native')}
+                    className="gap-2 sm:hidden"
+                    data-testid="button-share-native"
+                  >
+                    <Share2 className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+            </div>
+          </div>
 
           {/* Article Tags */}
           {article.tags && article.tags.length > 0 && (
