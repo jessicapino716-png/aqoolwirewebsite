@@ -713,7 +713,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       console.log("File uploaded to GCS successfully");
 
-      // Set ACL to public
+      // Set metadata for ACL (don't use makePublic() due to public access prevention)
       await file.setMetadata({
         metadata: {
           owner: 'admin',
@@ -721,12 +721,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         },
       });
 
-      // Make it publicly readable
-      await file.makePublic();
+      console.log("File metadata set successfully");
 
-      console.log("File made public successfully");
-
-      // Return the object path
+      // Return the object path (served via /objects/:objectPath route)
       const imageUrl = `/objects/${objectName}`;
       
       res.json({ imageUrl });
