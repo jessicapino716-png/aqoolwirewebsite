@@ -60,8 +60,9 @@ export function SimpleImageUpload({ onUploadComplete, currentImageUrl, onRemove 
       }
 
       const data = await response.json();
-      onUploadComplete(data.imageUrl);
+      console.log('Upload successful, image URL:', data.imageUrl);
       setError(null);
+      onUploadComplete(data.imageUrl);
     } catch (err: any) {
       console.error('Upload error:', err);
       setError(err.message || 'Failed to upload image');
