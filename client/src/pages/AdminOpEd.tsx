@@ -243,10 +243,11 @@ export default function AdminOpEd() {
                           data-testid="textarea-op-ed-body"
                         />
                       </FormControl>
-                      <div className="text-sm text-gray-600 mt-2">
-                        <p className="mb-1"><strong>Formatting Tips:</strong></p>
-                        <p>• Add invisible source links: <code>[fact or quote](https://source.com)</code></p>
-                        <p>• Links will appear as normal text but be clickable for sources</p>
+                      <div className="text-sm text-gray-600 mt-2 space-y-1">
+                        <p className="font-semibold mb-2">Formatting Tips:</p>
+                        <p>• <strong>Bold text:</strong> <code>**your text**</code> or <code>__your text__</code></p>
+                        <p>• <em>Italic text:</em> <code>*your text*</code> or <code>_your text_</code></p>
+                        <p>• Invisible source links: <code>[fact or quote](https://source.com)</code></p>
                         <p>• Separate paragraphs with empty lines</p>
                       </div>
                       <FormMessage />

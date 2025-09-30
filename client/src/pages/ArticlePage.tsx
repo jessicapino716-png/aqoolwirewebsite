@@ -213,34 +213,51 @@ export default function ArticlePage() {
     const paragraphs = body.split('\n').filter(p => p.trim().length > 0);
     
     return paragraphs.map((paragraph, index) => {
-      // Parse markdown links: [text](url)
-      const parseLinks = (text: string) => {
-        const linkRegex = /\[([^\]]+)\]\s*\(([^)]+)\)/g;
-        const parts = [];
+      // Parse markdown formatting: bold, italic, and links
+      const parseFormatting = (text: string): (string | JSX.Element)[] => {
+        // Combined regex for all formatting types
+        // Order matters: links first, then bold, then italic
+        const formattingRegex = /(\[([^\]]+)\]\s*\(([^)]+)\))|(\*\*([^*]+)\*\*)|(__([^_]+)__)|(\*([^*]+)\*)|(_([^_]+)_)/g;
+        const parts: (string | JSX.Element)[] = [];
         let lastIndex = 0;
         let match;
+        let keyCounter = 0;
 
-        while ((match = linkRegex.exec(text)) !== null) {
-          // Add text before the link
+        while ((match = formattingRegex.exec(text)) !== null) {
+          // Add text before the match
           if (match.index > lastIndex) {
             parts.push(text.slice(lastIndex, match.index));
           }
           
-          // Add the link
-          const linkText = match[1];
-          const linkUrl = match[2];
-          parts.push(
-            <a
-              key={match.index}
-              href={linkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-800 hover:text-blue-600 hover:underline cursor-pointer transition-colors duration-200"
-              title="Click to view source"
-            >
-              {linkText}
-            </a>
-          );
+          if (match[1]) {
+            // Markdown link: [text](url)
+            const linkText = match[2];
+            const linkUrl = match[3];
+            parts.push(
+              <a
+                key={`link-${keyCounter++}`}
+                href={linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-blue-600 hover:underline cursor-pointer transition-colors duration-200"
+                title="Click to view source"
+              >
+                {linkText}
+              </a>
+            );
+          } else if (match[4]) {
+            // Bold with **: **text**
+            parts.push(<strong key={`bold-${keyCounter++}`}>{match[5]}</strong>);
+          } else if (match[6]) {
+            // Bold with __: __text__
+            parts.push(<strong key={`bold-${keyCounter++}`}>{match[7]}</strong>);
+          } else if (match[8]) {
+            // Italic with *: *text*
+            parts.push(<em key={`italic-${keyCounter++}`}>{match[9]}</em>);
+          } else if (match[10]) {
+            // Italic with _: _text_
+            parts.push(<em key={`italic-${keyCounter++}`}>{match[11]}</em>);
+          }
           
           lastIndex = match.index + match[0].length;
         }
@@ -253,7 +270,7 @@ export default function ArticlePage() {
         return parts.length > 0 ? parts : [text];
       };
 
-      const content = parseLinks(paragraph.trim());
+      const content = parseFormatting(paragraph.trim());
       
       return (
         <p key={index} className="mb-4 text-lg leading-relaxed text-gray-800">
