@@ -13,8 +13,7 @@ import { z } from 'zod';
 import { ArrowLeft, FileText, Plus, Upload, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest, queryClient } from '@/lib/queryClient';
-import { ObjectUploader } from '@/components/ObjectUploader';
-import type { UploadResult } from '@uppy/core';
+import { SimpleImageUpload } from '@/components/SimpleImageUpload';
 
 const opEdSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -87,90 +86,18 @@ export default function AdminOpEd() {
     createMutation.mutate(submissionData);
   };
 
-  const handleGetUploadParameters = async () => {
-    const token = localStorage.getItem('adminToken');
-    const response = await fetch('/api/objects/upload', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
+  const handleUploadComplete = (imageUrl: string) => {
+    setUploadedImageUrl(imageUrl);
+    form.setValue('imageUrl', imageUrl);
+    toast({
+      title: 'Success',
+      description: 'Image uploaded successfully!',
     });
-    
-    if (!response.ok) {
-      throw new Error('Failed to get upload URL');
-    }
-    
-    const { uploadURL } = await response.json();
-    return {
-      method: 'PUT' as const,
-      url: uploadURL,
-    };
   };
 
-  const handleUploadComplete = async (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
-    console.log('Upload complete result:', result);
-    
-    if (result.successful && result.successful.length > 0) {
-      const uploadedFile = result.successful[0];
-      console.log('Uploaded file:', uploadedFile);
-      
-      const imageURL = uploadedFile.uploadURL;
-      console.log('Image URL extracted:', imageURL);
-      
-      if (!imageURL) {
-        console.error('No uploadURL in result');
-        toast({
-          title: 'Error',
-          description: 'Upload completed but no URL was returned',
-          variant: 'destructive',
-        });
-        return;
-      }
-      
-      try {
-        const token = localStorage.getItem('adminToken');
-        const response = await fetch('/api/article-images', {
-          method: 'PUT',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ imageURL }),
-        });
-        
-        console.log('Article images response status:', response.status);
-        
-        if (response.ok) {
-          const data = await response.json();
-          console.log('Article images response data:', data);
-          const { objectPath } = data;
-          setUploadedImageUrl(objectPath);
-          form.setValue('imageUrl', objectPath);
-          toast({
-            title: 'Success',
-            description: 'Image uploaded successfully!',
-          });
-        } else {
-          const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-          console.error('Article images error:', errorData);
-          toast({
-            title: 'Error',
-            description: errorData.error || 'Failed to process uploaded image',
-            variant: 'destructive',
-          });
-        }
-      } catch (error) {
-        console.error('Error setting image ACL:', error);
-        toast({
-          title: 'Error',
-          description: 'Failed to process uploaded image',
-          variant: 'destructive',
-        });
-      }
-    } else {
-      console.log('No successful uploads in result');
-    }
+  const handleRemoveImage = () => {
+    setUploadedImageUrl('');
+    form.setValue('imageUrl', '');
   };
 
   const generateSlug = (title: string) => {
@@ -374,43 +301,15 @@ export default function AdminOpEd() {
                 <div className="space-y-4">
                   <FormLabel>Article Image (optional)</FormLabel>
                   
-                  {/* Image Upload Section */}
-                  <div className="flex flex-col gap-4">
-                    <ObjectUploader
-                      maxNumberOfFiles={1}
-                      maxFileSize={10485760} // 10MB
-                      onGetUploadParameters={handleGetUploadParameters}
-                      onComplete={handleUploadComplete}
-                      buttonClassName="w-full"
-                    >
-                      <div className="flex items-center gap-2">
-                        <Upload className="h-4 w-4" />
-                        <span>Upload Image</span>
-                      </div>
-                    </ObjectUploader>
-                    
-                    {/* Show uploaded image preview */}
-                    {uploadedImageUrl && (
-                      <div className="flex items-center justify-between p-3 bg-green-50 border border-green-200 rounded-md">
-                        <div className="flex items-center gap-2">
-                          <FileText className="h-4 w-4 text-green-600" />
-                          <span className="text-sm text-green-700">Image uploaded successfully</span>
-                        </div>
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => {
-                            setUploadedImageUrl('');
-                            form.setValue('imageUrl', '');
-                          }}
-                        >
-                          <X className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    )}
-                    
-                    {/* Fallback URL input */}
+                  {/* Simple Image Upload */}
+                  <SimpleImageUpload
+                    onUploadComplete={handleUploadComplete}
+                    currentImageUrl={uploadedImageUrl}
+                    onRemove={handleRemoveImage}
+                  />
+                  
+                  {/* Fallback URL input */}
+                  {!uploadedImageUrl && (
                     <div className="border-t pt-4">
                       <FormField
                         control={form.control}
@@ -424,14 +323,6 @@ export default function AdminOpEd() {
                                 type="url"
                                 placeholder="https://example.com/image.jpg"
                                 data-testid="input-op-ed-image"
-                                value={uploadedImageUrl || field.value}
-                                onChange={(e) => {
-                                  field.onChange(e);
-                                  if (!uploadedImageUrl) {
-                                    // Only update if no uploaded image
-                                    setUploadedImageUrl('');
-                                  }
-                                }}
                               />
                             </FormControl>
                             <FormMessage />
@@ -439,7 +330,7 @@ export default function AdminOpEd() {
                         )}
                       />
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 <FormField

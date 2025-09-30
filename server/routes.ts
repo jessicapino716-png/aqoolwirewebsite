@@ -6,6 +6,8 @@ import { insertContentSchema, updateContentSchema, updateContentWithoutTypeSchem
 import { z } from "zod";
 import { ObjectStorageService, ObjectNotFoundError } from "./objectStorage";
 import { ObjectPermission } from "./objectAcl";
+import multer from "multer";
+import { randomUUID } from "crypto";
 
 // Authentication middleware for admin routes
 function authenticateAdmin(req: Request, res: Response, next: NextFunction) {
@@ -656,6 +658,83 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Object Storage routes for admin image uploads
+  
+  // Configure multer for memory storage
+  const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+      fileSize: 10 * 1024 * 1024, // 10MB limit
+    },
+    fileFilter: (req, file, cb) => {
+      if (file.mimetype.startsWith('image/')) {
+        cb(null, true);
+      } else {
+        cb(new Error('Only image files are allowed'));
+      }
+    },
+  });
+
+  // Direct file upload endpoint (admin only)
+  app.post("/api/upload-image", authenticateAdmin, upload.single('image'), async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ error: "No image file provided" });
+      }
+
+      console.log("Received image upload:", req.file.originalname, req.file.mimetype, req.file.size);
+
+      const objectStorageService = new ObjectStorageService();
+      
+      // Get the private object directory
+      const privateObjectDir = objectStorageService.getPrivateObjectDir();
+      const objectId = randomUUID();
+      const fileExtension = req.file.originalname.split('.').pop() || 'jpg';
+      const objectName = `uploads/${objectId}.${fileExtension}`;
+      const fullPath = `${privateObjectDir}/${objectName}`;
+
+      console.log("Uploading to:", fullPath);
+
+      // Parse the path to get bucket and object name
+      const pathParts = fullPath.split('/');
+      const bucketName = pathParts[1];
+      const gcsObjectName = pathParts.slice(2).join('/');
+
+      // Import GCS client
+      const { objectStorageClient } = await import('./objectStorage');
+      const bucket = objectStorageClient.bucket(bucketName);
+      const file = bucket.file(gcsObjectName);
+
+      // Upload the file buffer
+      await file.save(req.file.buffer, {
+        metadata: {
+          contentType: req.file.mimetype,
+        },
+      });
+
+      console.log("File uploaded to GCS successfully");
+
+      // Set ACL to public
+      await file.setMetadata({
+        metadata: {
+          owner: 'admin',
+          visibility: 'public',
+        },
+      });
+
+      // Make it publicly readable
+      await file.makePublic();
+
+      console.log("File made public successfully");
+
+      // Return the object path
+      const imageUrl = `/objects/${objectName}`;
+      
+      res.json({ imageUrl });
+    } catch (error: any) {
+      console.error("Error uploading image:", error);
+      res.status(500).json({ error: error.message || "Failed to upload image" });
+    }
+  });
   
   // Get upload URL for images (admin only)
   app.post("/api/objects/upload", authenticateAdmin, async (req, res) => {
