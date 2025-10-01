@@ -111,7 +111,7 @@ export default function AdminExternal() {
   };
 
   const handleUploadComplete = async (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
-    console.log('Upload complete result:', result);
+    console.log('Upload complete result:', JSON.stringify(result, null, 2));
     
     if (!result.successful || result.successful.length === 0) {
       console.error('No successful uploads in result:', result);
@@ -124,9 +124,25 @@ export default function AdminExternal() {
     }
     
     const uploadedFile = result.successful[0];
-    const imageURL = uploadedFile.uploadURL;
+    console.log('Uploaded file object:', JSON.stringify(uploadedFile, null, 2));
     
-    console.log('Uploaded file URL:', imageURL);
+    // The uploadURL might be in different places depending on Uppy version
+    // Try uploadURL, response.uploadURL, or construct from the upload parameters
+    const imageURL = uploadedFile.uploadURL || 
+                     (uploadedFile as any).response?.uploadURL || 
+                     (uploadedFile as any).response?.body?.uploadURL;
+    
+    console.log('Extracted image URL:', imageURL);
+    
+    if (!imageURL) {
+      console.error('Could not find uploadURL in uploaded file:', uploadedFile);
+      toast({
+        title: 'Error',
+        description: 'Upload completed but could not get image URL',
+        variant: 'destructive',
+      });
+      return;
+    }
     
     try {
       const token = localStorage.getItem('adminToken');
