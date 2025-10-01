@@ -64,21 +64,26 @@ export function ObjectUploader({
         },
       })
       .on("upload", (data) => {
-        console.log('Upload started:', data);
+        console.log('🔵 Upload started:', data);
+        alert('Upload started!');
       })
       .on("upload-success", (file, response) => {
-        console.log('Upload success:', { file: file?.name, response });
+        console.log('🟢 Upload success:', { file: file?.name, response });
+        alert('Upload success: ' + file?.name);
       })
       .on("upload-error", (file, error) => {
-        console.error('Upload error:', { file: file?.name, error });
+        console.error('🔴 Upload error:', { file: file?.name, error });
+        alert('Upload error: ' + error?.message);
       })
       .on("complete", (result) => {
-        console.log('Upload complete:', result);
+        console.log('✅ Upload complete:', result);
+        alert('Upload complete! Successful: ' + (result.successful?.length || 0) + ', Failed: ' + (result.failed?.length || 0));
         onComplete?.(result);
         setShowModal(false);
       })
       .on("error", (error) => {
-        console.error('Uppy error:', error);
+        console.error('❌ Uppy error:', error);
+        alert('Uppy error: ' + error?.message);
       })
   );
 
