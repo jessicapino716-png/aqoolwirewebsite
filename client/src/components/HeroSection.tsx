@@ -46,26 +46,19 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           {/* Right side - Most Popular */}
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
-              <div className="relative w-full bg-white rounded-xl border-2 border-gray-200 overflow-hidden">
-                {/* Accent gradient bar at top */}
-                <div className="h-1 bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#93c5fd]"></div>
+              <div className="relative w-full bg-black rounded-lg border border-[#00ff88] overflow-hidden shadow-[0_0_20px_rgba(0,255,136,0.3)]">
+                {/* Neon accent bar at top */}
+                <div className="h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90]"></div>
                 
                 {/* Content */}
-                <div className="p-8">
-                  {/* Title with icon */}
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3b82f6] to-[#2563eb] flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                    </div>
-                    <h3 className="font-bold text-2xl text-gray-900" data-testid="text-hero-most-popular-title">
-                      Most Popular
-                    </h3>
-                  </div>
+                <div className="p-6">
+                  {/* Title */}
+                  <h3 className="font-black text-2xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90]" data-testid="text-hero-most-popular-title">
+                    MOST POPULAR
+                  </h3>
 
                   {/* Articles list */}
-                  <div className="space-y-5">
+                  <div className="space-y-4">
                     {popularArticles
                       .slice(0, 3)
                       .map((article, index) => (
@@ -74,22 +67,22 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                           href={`/${article.slug}`}
                         >
                           <div 
-                            className="group flex items-start gap-4 p-3 rounded-lg hover:bg-blue-50 transition-all duration-200 cursor-pointer border border-transparent hover:border-blue-200" 
+                            className="group flex items-start gap-4 p-3 rounded-md hover:bg-[#00ff88]/10 transition-all duration-200 cursor-pointer border border-transparent hover:border-[#00ff88]/50" 
                             data-testid={`item-hero-most-popular-${index}`}
                           >
-                            {/* Number badge */}
-                            <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:from-[#3b82f6] group-hover:to-[#2563eb] transition-all duration-200">
-                              <span className="text-sm font-bold text-gray-700 group-hover:text-white transition-colors">
+                            {/* Number with neon glow */}
+                            <div className="flex-shrink-0 w-8 h-8 rounded flex items-center justify-center bg-gradient-to-br from-[#40E0D0] to-[#00ff88] shadow-[0_0_10px_rgba(0,255,136,0.5)]">
+                              <span className="text-sm font-black text-black">
                                 {index + 1}
                               </span>
                             </div>
 
                             {/* Article info */}
                             <div className="flex-1 min-w-0">
-                              <h4 className="font-semibold text-gray-900 group-hover:text-[#3b82f6] line-clamp-2 text-sm leading-snug mb-1 transition-colors">
+                              <h4 className="font-bold text-white group-hover:text-[#00ff88] line-clamp-2 text-base leading-tight mb-2 transition-colors">
                                 {article.title}
                               </h4>
-                              <span className="inline-block text-xs font-medium text-gray-500 uppercase tracking-wide">
+                              <span className="inline-block text-xs font-semibold text-[#40E0D0] uppercase tracking-wider">
                                 {article.category}
                               </span>
                             </div>
@@ -99,8 +92,8 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                   </div>
                 </div>
 
-                {/* Bottom decorative element */}
-                <div className="h-1 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"></div>
+                {/* Neon bottom bar */}
+                <div className="h-1.5 bg-gradient-to-r from-[#90EE90] via-[#00ff88] to-[#40E0D0]"></div>
               </div>
             )}
           </div>
