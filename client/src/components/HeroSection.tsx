@@ -46,14 +46,14 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           {/* Right side - Most Popular */}
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
-              <div className="relative w-full bg-black rounded-lg border border-[#00ff88] overflow-hidden shadow-[0_0_20px_rgba(0,255,136,0.3)]">
+              <div className="relative w-full bg-black rounded-lg border border-[#ff00ff] overflow-hidden shadow-[0_0_20px_rgba(255,0,255,0.4)]">
                 {/* Neon accent bar at top */}
-                <div className="h-1.5 bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90]"></div>
+                <div className="h-1.5 bg-gradient-to-r from-[#ff00ff] via-[#ff1493] to-[#ff69b4]"></div>
                 
                 {/* Content */}
                 <div className="p-6">
                   {/* Title */}
-                  <h3 className="font-black text-2xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#40E0D0] via-[#00ff88] to-[#90EE90]" data-testid="text-hero-most-popular-title">
+                  <h3 className="font-black text-2xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] via-[#ff1493] to-[#ff69b4]" data-testid="text-hero-most-popular-title">
                     MOST POPULAR
                   </h3>
 
@@ -67,22 +67,22 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                           href={`/${article.slug}`}
                         >
                           <div 
-                            className="group flex items-start gap-4 p-3 rounded-md hover:bg-[#00ff88]/10 transition-all duration-200 cursor-pointer border border-transparent hover:border-[#00ff88]/50" 
+                            className="group flex items-start gap-4 p-3 rounded-md hover:bg-[#ff00ff]/10 transition-all duration-200 cursor-pointer border border-transparent hover:border-[#ff00ff]/50" 
                             data-testid={`item-hero-most-popular-${index}`}
                           >
                             {/* Number with neon glow */}
-                            <div className="flex-shrink-0 w-8 h-8 rounded flex items-center justify-center bg-gradient-to-br from-[#40E0D0] to-[#00ff88] shadow-[0_0_10px_rgba(0,255,136,0.5)]">
-                              <span className="text-sm font-black text-black">
+                            <div className="flex-shrink-0 w-8 h-8 rounded flex items-center justify-center bg-gradient-to-br from-[#ff00ff] to-[#ff1493] shadow-[0_0_10px_rgba(255,0,255,0.6)]">
+                              <span className="text-sm font-black text-white">
                                 {index + 1}
                               </span>
                             </div>
 
                             {/* Article info */}
                             <div className="flex-1 min-w-0">
-                              <h4 className="font-bold text-white group-hover:text-[#00ff88] line-clamp-2 text-base leading-tight mb-2 transition-colors">
+                              <h4 className="font-bold text-white group-hover:text-[#ff00ff] line-clamp-2 text-base leading-tight mb-2 transition-colors">
                                 {article.title}
                               </h4>
-                              <span className="inline-block text-xs font-semibold text-[#40E0D0] uppercase tracking-wider">
+                              <span className="inline-block text-xs font-semibold text-[#ff69b4] uppercase tracking-wider">
                                 {article.category}
                               </span>
                             </div>
@@ -93,7 +93,7 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                 </div>
 
                 {/* Neon bottom bar */}
-                <div className="h-1.5 bg-gradient-to-r from-[#90EE90] via-[#00ff88] to-[#40E0D0]"></div>
+                <div className="h-1.5 bg-gradient-to-r from-[#ff69b4] via-[#ff1493] to-[#ff00ff]"></div>
               </div>
             )}
           </div>
