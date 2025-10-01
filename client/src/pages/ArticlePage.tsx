@@ -37,9 +37,9 @@ export default function ArticlePage() {
     enabled: !!slug,
   }) as { data: Content; isLoading: boolean; error: any };
 
-  // External article auto-redirect effect (must be at component top level)
+  // External article/op-ed auto-redirect effect (must be at component top level)
   useEffect(() => {
-    if (article && article.type === 'external' && article.externalUrl && !isRedirecting) {
+    if (article && article.externalUrl && !isRedirecting) {
       // Auto-redirect after a short delay to give user context
       const timer = setTimeout(() => {
         window.location.href = article.externalUrl!;
@@ -123,8 +123,11 @@ export default function ArticlePage() {
   }
 
 
-  // If this is an external article, show redirect UI
-  if (article.type === 'external' && article.externalUrl) {
+  // If this has an external URL (external article or op-ed), show redirect UI
+  if (article.externalUrl) {
+    const sourceName = article.source || 'the external site';
+    const contentType = article.type === 'external' ? 'article' : 'Op-Ed';
+    
     return (
       <div className="bg-white min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-8">
@@ -138,7 +141,7 @@ export default function ArticlePage() {
             </Link>
           </div>
 
-          {/* External Article Redirect Card */}
+          {/* External Content Redirect Card */}
           <Card className="p-8 text-center">
             <div className="flex flex-col items-center space-y-6">
               <ExternalLink className="h-16 w-16 text-[#3b82f6]" />
@@ -146,7 +149,7 @@ export default function ArticlePage() {
               <div className="space-y-4">
                 <h1 className="text-2xl font-bold text-black">{article.title}</h1>
                 <p className="text-gray-600 max-w-2xl">
-                  This article is hosted on <strong>{article.source}</strong>. 
+                  This {contentType} is hosted on <strong>{sourceName}</strong>. 
                   You will be redirected automatically in a few seconds, or you can click the button below to continue immediately.
                 </p>
               </div>
@@ -161,7 +164,7 @@ export default function ArticlePage() {
                   data-testid="button-external-redirect"
                 >
                   <ExternalLink className="h-4 w-4 mr-2" />
-                  Read on {article.source}
+                  Read on {sourceName}
                 </Button>
                 
                 <Link href="/">

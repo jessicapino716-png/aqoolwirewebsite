@@ -19,13 +19,18 @@ const opEdSchema = z.object({
   title: z.string().min(1, 'Title is required'),
   slug: z.string().min(1, 'URL slug is required'),
   excerpt: z.string().min(1, 'Excerpt is required'),
-  body: z.string().min(1, 'Article body is required'),
+  body: z.string().optional(),
+  externalUrl: z.string().url().optional().or(z.literal('')),
+  source: z.string().optional(),
   authorName: z.string().min(1, 'Author name is required'),
   category: z.string().min(1, 'Category is required'),
   tags: z.string().optional(),
   imageUrl: z.string().optional(),
   isPopular: z.boolean().default(false),
-});
+}).refine(
+  (data) => data.body || data.externalUrl,
+  { message: "Either paste content or provide external URL", path: ["body"] }
+);
 
 type OpEdData = z.infer<typeof opEdSchema>;
 
@@ -33,6 +38,7 @@ export default function AdminOpEd() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string>('');
+  const [contentMode, setContentMode] = useState<'paste' | 'external'>('paste');
 
   const form = useForm<OpEdData>({
     resolver: zodResolver(opEdSchema),
@@ -41,6 +47,8 @@ export default function AdminOpEd() {
       slug: '',
       excerpt: '',
       body: '',
+      externalUrl: '',
+      source: '',
       authorName: '',
       category: '',
       tags: '',
@@ -56,6 +64,9 @@ export default function AdminOpEd() {
         ...data,
         tags: data.tags ? data.tags.split(',').map(tag => tag.trim()).filter(Boolean) : [],
         imageUrl: data.imageUrl || undefined,
+        body: data.body || undefined,
+        externalUrl: data.externalUrl || undefined,
+        source: data.source || undefined,
       };
       
       return apiRequest('POST', '/api/content', submissionData);
@@ -229,31 +240,112 @@ export default function AdminOpEd() {
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="body"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Article Body *</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          {...field}
-                          rows={12}
-                          placeholder="Write your full article content here..."
-                          data-testid="textarea-op-ed-body"
-                        />
-                      </FormControl>
-                      <div className="text-sm text-gray-600 mt-2 space-y-1">
-                        <p className="font-semibold mb-2">Formatting Tips:</p>
-                        <p>• <strong>Bold text:</strong> <code>**your text**</code> or <code>__your text__</code></p>
-                        <p>• <em>Italic text:</em> <code>*your text*</code> or <code>_your text_</code></p>
-                        <p>• Invisible source links: <code>[fact or quote](https://source.com)</code></p>
-                        <p>• Separate paragraphs with empty lines</p>
-                      </div>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                {/* Content Mode Selector */}
+                <div className="space-y-4 border-2 border-blue-200 rounded-lg p-4 bg-blue-50">
+                  <FormLabel className="text-base font-semibold">Content Mode *</FormLabel>
+                  <div className="flex gap-4">
+                    <Button
+                      type="button"
+                      variant={contentMode === 'paste' ? 'default' : 'outline'}
+                      onClick={() => {
+                        setContentMode('paste');
+                        form.setValue('externalUrl', '');
+                        form.setValue('source', '');
+                      }}
+                      data-testid="button-mode-paste"
+                    >
+                      <FileText className="h-4 w-4 mr-2" />
+                      Paste Content
+                    </Button>
+                    <Button
+                      type="button"
+                      variant={contentMode === 'external' ? 'default' : 'outline'}
+                      onClick={() => {
+                        setContentMode('external');
+                        form.setValue('body', '');
+                      }}
+                      data-testid="button-mode-external"
+                    >
+                      <Upload className="h-4 w-4 mr-2" />
+                      Link to External
+                    </Button>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    {contentMode === 'paste' 
+                      ? 'Write or paste your article content directly' 
+                      : 'Provide a link to an external article or think tank piece'}
+                  </p>
+                </div>
+
+                {/* Body field - shown when paste mode */}
+                {contentMode === 'paste' && (
+                  <FormField
+                    control={form.control}
+                    name="body"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Article Body *</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            {...field}
+                            rows={12}
+                            placeholder="Write your full article content here..."
+                            data-testid="textarea-op-ed-body"
+                          />
+                        </FormControl>
+                        <div className="text-sm text-gray-600 mt-2 space-y-1">
+                          <p className="font-semibold mb-2">Formatting Tips:</p>
+                          <p>• <strong>Bold text:</strong> <code>**your text**</code> or <code>__your text__</code></p>
+                          <p>• <em>Italic text:</em> <code>*your text*</code> or <code>_your text_</code></p>
+                          <p>• Invisible source links: <code>[fact or quote](https://source.com)</code></p>
+                          <p>• Separate paragraphs with empty lines</p>
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
+
+                {/* External URL fields - shown when external mode */}
+                {contentMode === 'external' && (
+                  <div className="space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="externalUrl"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>External URL *</FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              type="url"
+                              placeholder="https://thinktank.org/article-title"
+                              data-testid="input-op-ed-external-url"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="source"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Source (optional)</FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              placeholder="e.g., MIT Technology Review, Brookings Institution"
+                              data-testid="input-op-ed-source"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <FormField

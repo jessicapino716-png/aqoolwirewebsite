@@ -75,14 +75,23 @@ export const insertContentSchema = z.discriminatedUnion("type", [
     body: z.never().optional(), // Not allowed for external content
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true })),
   
-  // Op-ed content type
+  // Op-ed content type - can have EITHER body OR externalUrl
   z.object({
     type: z.literal("op-ed"),
-    body: z.string().min(1, "Body is required for op-ed content"),
-    externalUrl: z.never().optional(), // Not allowed for op-ed content
-    source: z.never().optional(), // Not allowed for op-ed content
+    body: z.string().optional(),
+    externalUrl: z.string().url().optional(),
+    source: z.string().optional(), // Optional source for external op-eds
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true })),
-]);
+]).superRefine((data, ctx) => {
+  // For op-eds, ensure at least one of body or externalUrl is provided
+  if (data.type === "op-ed" && !data.body && !data.externalUrl) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Either content body or external URL must be provided",
+      path: ["body"],
+    });
+  }
+});
 
 // Update schema for PATCH operations - discriminated union of partials only
 export const updateContentSchema = z.discriminatedUnion("type", [
@@ -94,12 +103,12 @@ export const updateContentSchema = z.discriminatedUnion("type", [
     body: z.never().optional(), // Not allowed for external content
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true }).partial()),
   
-  // Op-ed content type partial
+  // Op-ed content type partial - can have EITHER body OR externalUrl
   z.object({
     type: z.literal("op-ed"),
-    body: z.string().min(1, "Body is required for op-ed content").optional(),
-    externalUrl: z.never().optional(), // Not allowed for op-ed content
-    source: z.never().optional(), // Not allowed for op-ed content
+    body: z.string().optional(),
+    externalUrl: z.string().url().optional(),
+    source: z.string().optional(), // Optional source for external op-eds
   }).merge(baseContentSchema.omit({ externalUrl: true, source: true, body: true }).partial()),
 ]);
 
