@@ -46,10 +46,12 @@ export function ObjectUploader({
       .use(AwsS3, {
         shouldUseMultipart: false,
         getUploadParameters: async (file) => {
-          console.log('Getting upload parameters for file:', file.name);
+          console.log('🟡 Getting upload parameters for file:', file.name);
+          alert('Getting upload URL for: ' + file.name);
           try {
             const params = await onGetUploadParameters();
-            console.log('Received upload parameters:', params);
+            console.log('🟢 Received upload parameters:', params);
+            alert('Got upload URL: ' + params.url.substring(0, 50) + '...');
             return {
               method: params.method,
               url: params.url,
@@ -58,7 +60,8 @@ export function ObjectUploader({
               },
             };
           } catch (error) {
-            console.error('Error getting upload parameters:', error);
+            console.error('🔴 Error getting upload parameters:', error);
+            alert('Failed to get upload URL: ' + (error as Error).message);
             throw error;
           }
         },
