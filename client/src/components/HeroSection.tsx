@@ -48,7 +48,7 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
             {popularArticles && popularArticles.length > 0 && (
               <div className="w-full bg-[#1a1a1a] p-6 rounded-none">
                 {/* Title */}
-                <div className="border-l-4 border-[#FFD700] pl-4 mb-6">
+                <div className="border-l-4 border-[#f2007d] pl-4 mb-6">
                   <h3 className="font-black text-3xl text-white uppercase" data-testid="text-hero-most-popular-title">
                     Must Read
                   </h3>
@@ -64,18 +64,18 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                         href={`/${article.slug}`}
                       >
                         <div 
-                          className="group border-b border-gray-700 pb-5 last:border-b-0 hover:border-[#FFD700] transition-colors cursor-pointer"
+                          className="group border-b border-gray-700 pb-5 last:border-b-0 hover:border-[#f2007d] transition-colors cursor-pointer"
                           data-testid={`item-hero-most-popular-${index}`}
                         >
                           {/* Category tag */}
                           <div className="mb-3">
-                            <span className="bg-[#FFD700] text-black text-xs font-black px-3 py-1 uppercase">
+                            <span className="bg-[#f2007d] text-white text-xs font-black px-3 py-1 uppercase">
                               {article.category}
                             </span>
                           </div>
 
                           {/* Article title */}
-                          <h4 className="font-bold text-white group-hover:text-[#FFD700] text-xl leading-tight transition-colors">
+                          <h4 className="font-bold text-white group-hover:text-[#f2007d] text-xl leading-tight transition-colors">
                             {article.title}
                           </h4>
                         </div>
