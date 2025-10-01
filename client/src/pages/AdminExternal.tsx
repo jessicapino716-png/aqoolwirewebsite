@@ -111,38 +111,58 @@ export default function AdminExternal() {
   };
 
   const handleUploadComplete = async (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
-    if (result.successful.length > 0) {
-      const uploadedFile = result.successful[0];
-      const imageURL = uploadedFile.uploadURL;
+    console.log('Upload complete result:', result);
+    
+    if (!result.successful || result.successful.length === 0) {
+      console.error('No successful uploads in result:', result);
+      toast({
+        title: 'Error',
+        description: 'Failed to upload image. Please try again.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    
+    const uploadedFile = result.successful[0];
+    const imageURL = uploadedFile.uploadURL;
+    
+    console.log('Uploaded file URL:', imageURL);
+    
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await fetch('/api/article-images', {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ imageURL }),
+      });
       
-      try {
-        const token = localStorage.getItem('adminToken');
-        const response = await fetch('/api/article-images', {
-          method: 'PUT',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ imageURL }),
+      if (response.ok) {
+        const { objectPath } = await response.json();
+        setUploadedImageUrl(objectPath);
+        form.setValue('imageUrl', objectPath);
+        toast({
+          title: 'Success',
+          description: 'Image uploaded successfully!',
         });
-        
-        if (response.ok) {
-          const { objectPath } = await response.json();
-          setUploadedImageUrl(objectPath);
-          form.setValue('imageUrl', objectPath);
-          toast({
-            title: 'Success',
-            description: 'Image uploaded successfully!',
-          });
-        }
-      } catch (error) {
-        console.error('Error setting image ACL:', error);
+      } else {
+        const error = await response.text();
+        console.error('Failed to set image ACL:', error);
         toast({
           title: 'Error',
           description: 'Failed to process uploaded image',
           variant: 'destructive',
         });
       }
+    } catch (error) {
+      console.error('Error setting image ACL:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to process uploaded image',
+        variant: 'destructive',
+      });
     }
   };
 
