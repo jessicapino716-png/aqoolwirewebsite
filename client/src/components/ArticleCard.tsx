@@ -207,7 +207,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
           {article.title}
         </h3>
         {article.source && (
-          <p className="verge-meta-text mb-2 text-[#0eeb7d] font-bold" data-testid={`text-source-standard-${article.id}`}>
+          <p className="verge-meta-text mb-2 text-[#04d968] font-bold" data-testid={`text-source-standard-${article.id}`}>
             {article.source}
           </p>
         )}
