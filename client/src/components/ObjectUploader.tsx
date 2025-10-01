@@ -46,12 +46,10 @@ export function ObjectUploader({
       .use(AwsS3, {
         shouldUseMultipart: false,
         getUploadParameters: async (file) => {
-          console.log('🟡 Getting upload parameters for file:', file.name);
-          alert('Getting upload URL for: ' + file.name);
+          console.log('Getting upload parameters for file:', file.name);
           try {
             const params = await onGetUploadParameters();
-            console.log('🟢 Received upload parameters:', params);
-            alert('Got upload URL: ' + params.url.substring(0, 50) + '...');
+            console.log('Received upload parameters:', params);
             return {
               method: params.method,
               url: params.url,
@@ -60,33 +58,27 @@ export function ObjectUploader({
               },
             };
           } catch (error) {
-            console.error('🔴 Error getting upload parameters:', error);
-            alert('Failed to get upload URL: ' + (error as Error).message);
+            console.error('Error getting upload parameters:', error);
             throw error;
           }
         },
       })
       .on("upload", (data) => {
-        console.log('🔵 Upload started:', data);
-        alert('Upload started!');
+        console.log('Upload started:', data);
       })
       .on("upload-success", (file, response) => {
-        console.log('🟢 Upload success:', { file: file?.name, response });
-        alert('Upload success: ' + file?.name);
+        console.log('Upload success:', { file: file?.name, response });
       })
       .on("upload-error", (file, error) => {
-        console.error('🔴 Upload error:', { file: file?.name, error });
-        alert('Upload error: ' + error?.message);
+        console.error('Upload error:', { file: file?.name, error });
       })
       .on("complete", (result) => {
-        console.log('✅ Upload complete:', result);
-        alert('Upload complete! Successful: ' + (result.successful?.length || 0) + ', Failed: ' + (result.failed?.length || 0));
+        console.log('Upload complete:', result);
         onComplete?.(result);
         setShowModal(false);
       })
       .on("error", (error) => {
-        console.error('❌ Uppy error:', error);
-        alert('Uppy error: ' + error?.message);
+        console.error('Uppy error:', error);
       })
   );
 

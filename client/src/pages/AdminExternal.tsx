@@ -13,8 +13,7 @@ import { z } from 'zod';
 import { ArrowLeft, ExternalLink, Plus, Upload, X, FileText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest, queryClient } from '@/lib/queryClient';
-import { ObjectUploader } from '@/components/ObjectUploader';
-import type { UploadResult } from '@uppy/core';
+import { SimpleImageUpload } from '@/components/SimpleImageUpload';
 
 const externalArticleSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -34,7 +33,7 @@ type ExternalArticleData = z.infer<typeof externalArticleSchema>;
 export default function AdminExternal() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
-  const [uploadedImageUrl, setUploadedImageUrl] = useState<string>('');
+  const [uploadedImageUrl, setUploadedImageUrl] = useState<string | undefined>();
 
   const form = useForm<ExternalArticleData>({
     resolver: zodResolver(externalArticleSchema),
@@ -89,97 +88,14 @@ export default function AdminExternal() {
     createMutation.mutate(submissionData);
   };
 
-  const handleGetUploadParameters = async () => {
-    const token = localStorage.getItem('adminToken');
-    const response = await fetch('/api/objects/upload', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-    });
-    
-    if (!response.ok) {
-      throw new Error('Failed to get upload URL');
-    }
-    
-    const { uploadURL } = await response.json();
-    return {
-      method: 'PUT' as const,
-      url: uploadURL,
-    };
+  const handleUploadComplete = (imageUrl: string) => {
+    setUploadedImageUrl(imageUrl);
+    form.setValue('imageUrl', imageUrl);
   };
 
-  const handleUploadComplete = async (result: UploadResult<Record<string, unknown>, Record<string, unknown>>) => {
-    console.log('Upload complete result:', JSON.stringify(result, null, 2));
-    
-    if (!result.successful || result.successful.length === 0) {
-      console.error('No successful uploads in result:', result);
-      toast({
-        title: 'Error',
-        description: 'Failed to upload image. Please try again.',
-        variant: 'destructive',
-      });
-      return;
-    }
-    
-    const uploadedFile = result.successful[0];
-    console.log('Uploaded file object:', JSON.stringify(uploadedFile, null, 2));
-    
-    // The uploadURL might be in different places depending on Uppy version
-    // Try uploadURL, response.uploadURL, or construct from the upload parameters
-    const imageURL = uploadedFile.uploadURL || 
-                     (uploadedFile as any).response?.uploadURL || 
-                     (uploadedFile as any).response?.body?.uploadURL;
-    
-    console.log('Extracted image URL:', imageURL);
-    
-    if (!imageURL) {
-      console.error('Could not find uploadURL in uploaded file:', uploadedFile);
-      toast({
-        title: 'Error',
-        description: 'Upload completed but could not get image URL',
-        variant: 'destructive',
-      });
-      return;
-    }
-    
-    try {
-      const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/article-images', {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ imageURL }),
-      });
-      
-      if (response.ok) {
-        const { objectPath } = await response.json();
-        setUploadedImageUrl(objectPath);
-        form.setValue('imageUrl', objectPath);
-        toast({
-          title: 'Success',
-          description: 'Image uploaded successfully!',
-        });
-      } else {
-        const error = await response.text();
-        console.error('Failed to set image ACL:', error);
-        toast({
-          title: 'Error',
-          description: 'Failed to process uploaded image',
-          variant: 'destructive',
-        });
-      }
-    } catch (error) {
-      console.error('Error setting image ACL:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to process uploaded image',
-        variant: 'destructive',
-      });
-    }
+  const handleRemoveImage = () => {
+    setUploadedImageUrl(undefined);
+    form.setValue('imageUrl', undefined);
   };
 
   const generateSlug = (title: string) => {
@@ -397,44 +313,15 @@ export default function AdminExternal() {
                 <div className="space-y-4">
                   <FormLabel>Article Image (optional)</FormLabel>
                   
-                  {/* Image Upload Section */}
-                  <div className="flex flex-col gap-4">
-                    <ObjectUploader
-                      maxNumberOfFiles={1}
-                      maxFileSize={10485760} // 10MB
-                      onGetUploadParameters={handleGetUploadParameters}
-                      onComplete={handleUploadComplete}
-                      buttonClassName="w-full"
-                    >
-                      <div className="flex items-center gap-2">
-                        <Upload className="h-4 w-4" />
-                        <span>Upload Image</span>
-                      </div>
-                    </ObjectUploader>
-                    
-                    {/* Show uploaded image preview */}
-                    {uploadedImageUrl && (
-                      <div className="flex items-center justify-between p-3 bg-green-50 border border-green-200 rounded-md">
-                        <div className="flex items-center gap-2">
-                          <FileText className="h-4 w-4 text-green-600" />
-                          <span className="text-sm text-green-700">Image uploaded successfully</span>
-                        </div>
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => {
-                            setUploadedImageUrl('');
-                            form.setValue('imageUrl', '');
-                          }}
-                        >
-                          <X className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    )}
+                  {/* Simple Image Upload */}
+                  <SimpleImageUpload
+                    onUploadComplete={handleUploadComplete}
+                    currentImageUrl={uploadedImageUrl}
+                    onRemove={handleRemoveImage}
+                  />
                     
                     {/* Fallback URL input */}
-                    <div className="border-t pt-4">
+                    <div className="border-t pt-4 mt-4">
                       <FormField
                         control={form.control}
                         name="imageUrl"
@@ -462,7 +349,6 @@ export default function AdminExternal() {
                         )}
                       />
                     </div>
-                  </div>
                 </div>
 
                 <FormField

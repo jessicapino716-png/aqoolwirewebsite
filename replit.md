@@ -41,6 +41,10 @@ Preferred communication style: Simple, everyday language.
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
 - **Newsletter Integration**: Multi-variant newsletter signup components with form validation
 - **Tool Reviews**: Dedicated components for AI tool showcases and reviews
+- **Image Upload**: Backend-proxied upload system using SimpleImageUpload component to avoid CORS issues
+  - External articles and Op-Eds both use SimpleImageUpload for reliable image uploads
+  - Images are uploaded through /api/upload-image endpoint to Google Cloud Storage
+  - Admin authentication token key: 'adminToken' (camelCase) stored in localStorage
 
 ## External Dependencies
 
