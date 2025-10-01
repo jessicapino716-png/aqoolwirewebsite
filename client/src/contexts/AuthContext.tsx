@@ -26,7 +26,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   useEffect(() => {
     // Check for stored token on mount
-    const storedToken = localStorage.getItem('admin_token');
+    const storedToken = localStorage.getItem('adminToken');
     if (storedToken) {
       setAdminToken(storedToken);
     }
@@ -34,12 +34,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const login = (token: string) => {
     setAdminToken(token);
-    localStorage.setItem('admin_token', token);
+    localStorage.setItem('adminToken', token);
   };
 
   const logout = () => {
     setAdminToken(null);
-    localStorage.removeItem('admin_token');
+    localStorage.removeItem('adminToken');
   };
 
   const isAuthenticated = adminToken !== null;
