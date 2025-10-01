@@ -25,23 +25,21 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-6">
-          <nav className="flex items-center space-x-4 text-lg">
-            <div className="flex items-center space-x-2">
-              {navigation.map((item, index) => (
-                <div key={item.name} className="flex items-center">
-                  <span className="text-[#3b82f6] mx-2 font-black text-2xl scale-x-150 inline-block">/</span>
-                  <Link
-                    href={item.href}
-                    className="text-black font-bold hover:text-[#3b82f6] transition-colors"
-                    data-testid={`link-nav-${item.name.toLowerCase()}`}
-                  >
-                    {item.name}
-                  </Link>
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center">
-              <span className="text-[#3b82f6] mx-2 font-black text-2xl scale-x-150 inline-block">/</span>
+          <nav className="flex items-center gap-4 text-lg">
+            {navigation.map((item, index) => (
+              <div key={item.name} className="flex items-center gap-4">
+                <span className="text-[#3b82f6] font-black text-2xl scale-x-150 inline-block">/</span>
+                <Link
+                  href={item.href}
+                  className="text-black font-bold hover:text-[#3b82f6] transition-colors"
+                  data-testid={`link-nav-${item.name.toLowerCase()}`}
+                >
+                  {item.name}
+                </Link>
+              </div>
+            ))}
+            <div className="flex items-center gap-4">
+              <span className="text-[#3b82f6] font-black text-2xl scale-x-150 inline-block">/</span>
               <Link 
                 href="/tools" 
                 className="text-black font-bold hover:text-[#3b82f6] transition-colors"
@@ -50,8 +48,8 @@ export default function Header() {
                 New AI Tools
               </Link>
             </div>
-            <div className="flex items-center">
-              <span className="text-[#3b82f6] mx-2 font-black text-2xl scale-x-150 inline-block">/</span>
+            <div className="flex items-center gap-4">
+              <span className="text-[#3b82f6] font-black text-2xl scale-x-150 inline-block">/</span>
               <Link 
                 href="/newsletter" 
                 className="text-black font-bold hover:text-[#3b82f6] transition-colors"
