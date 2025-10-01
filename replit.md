@@ -41,6 +41,11 @@ Preferred communication style: Simple, everyday language.
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
 - **Newsletter Integration**: Multi-variant newsletter signup components with form validation
 - **Tool Reviews**: Dedicated components for AI tool showcases and reviews
+- **Source Attribution**: 
+  - Internal op-eds automatically display "The Aqool Wire" as the source
+  - External op-eds can specify custom sources (e.g., think tank names)
+  - External articles require a source field (e.g., "TechCrunch", "Reuters")
+  - Source names display in bright green (#00e676) across all article cards
 - **Image Upload**: Backend-proxied upload system using SimpleImageUpload component to avoid CORS issues
   - External articles and Op-Eds both use SimpleImageUpload for reliable image uploads
   - Images are uploaded through /api/upload-image endpoint to Google Cloud Storage

@@ -50,7 +50,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       };
       
       const content = await storage.listContent(filters);
-      res.json(content);
+      
+      // Normalize internal op-ed articles to have source attribution
+      const normalizedContent = content.map(item => {
+        if (item.type === 'op-ed' && !item.externalUrl && !item.source) {
+          return { ...item, source: 'The Aqool Wire' };
+        }
+        return item;
+      });
+      
+      res.json(normalizedContent);
     } catch (error) {
       console.error("Error fetching content:", error);
       res.status(500).json({ error: "Failed to fetch content" });
@@ -66,7 +75,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ error: "Content not found" });
       }
       
-      res.json(content);
+      // Normalize internal op-ed articles to have source attribution (avoid mutating storage object)
+      if (content.type === 'op-ed' && !content.externalUrl && !content.source) {
+        res.json({ ...content, source: 'The Aqool Wire' });
+      } else {
+        res.json(content);
+      }
     } catch (error) {
       console.error("Error fetching content:", error);
       res.status(500).json({ error: "Failed to fetch content" });
@@ -83,6 +97,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const existingContent = await storage.getContentBySlug(validatedData.slug);
       if (existingContent) {
         return res.status(400).json({ error: "Content with this slug already exists" });
+      }
+      
+      // Auto-set source for internal op-ed articles (not external op-eds)
+      if (validatedData.type === 'op-ed' && !validatedData.externalUrl && !validatedData.source) {
+        validatedData.source = 'The Aqool Wire';
       }
       
       const newContent = await storage.createContent(validatedData);
@@ -151,13 +170,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
               error: "Cannot set body field on external content. Change type to 'op-ed' first." 
             });
           }
-        } else if (existingContent.type === "op-ed") {
-          if ("externalUrl" in req.body || "source" in req.body) {
-            return res.status(400).json({ 
-              error: "Cannot set externalUrl or source fields on op-ed content. Change type to 'external' first." 
-            });
-          }
         }
+        // Note: Op-eds can have source field (for attribution), so we don't restrict it
       }
       
       // If slug is being updated, check it doesn't exist
@@ -184,10 +198,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // (don't set to null - delete them completely so z.never() validation passes)
         if (requestType === "external") {
           delete contentForValidation.body;
-        } else if (requestType === "op-ed") {
-          delete contentForValidation.externalUrl;
-          delete contentForValidation.source;
         }
+        // Op-eds can have body, externalUrl, and source, so don't delete them
         
         // Validate against insertContentSchema to ensure all required fields are present
         try {
@@ -217,10 +229,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // After validation passes, ensure forbidden fields are set to null for storage update
         if (requestType === "external") {
           validatedData.body = null;
-        } else if (requestType === "op-ed") {
-          validatedData.externalUrl = null;
-          validatedData.source = null;
         }
+        // Op-eds can have body, externalUrl, and source, so don't null them out
+      }
+      
+      // Auto-set source for internal op-ed articles only (not external op-eds)
+      const hasExternalUrl = validatedData.externalUrl || existingContent.externalUrl;
+      const hasSource = validatedData.source || existingContent.source;
+      if (effectiveType === 'op-ed' && !hasExternalUrl && !hasSource) {
+        validatedData.source = 'The Aqool Wire';
       }
       
       const updatedContent = await storage.updateContent(id, validatedData);
