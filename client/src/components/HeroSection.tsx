@@ -49,7 +49,7 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
               <div className="w-full bg-[#1a1a1a] p-6 rounded-none">
                 {/* Title */}
                 <div className="border-l-4 border-[#f2007d] pl-4 mb-6">
-                  <h3 className="font-black text-3xl text-white uppercase" data-testid="text-hero-most-popular-title">popular news</h3>
+                  <h3 className="font-black text-3xl uppercase text-[#3b82f6]" data-testid="text-hero-most-popular-title">popular news</h3>
                 </div>
 
                 {/* Articles list */}
