@@ -723,8 +723,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       console.log("File metadata set successfully");
 
-      // Return the object path (served via /objects/:objectPath route)
-      const imageUrl = `/objects/${objectName}`;
+      // Return the full public URL
+      const protocol = req.headers['x-forwarded-proto'] || 'https';
+      const host = req.headers.host;
+      const imageUrl = `${protocol}://${host}/objects/${objectName}`;
+      
+      console.log("Returning image URL:", imageUrl);
       
       res.json({ imageUrl });
     } catch (error: any) {

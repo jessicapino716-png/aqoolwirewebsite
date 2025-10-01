@@ -95,7 +95,7 @@ export default function AdminExternal() {
 
   const handleRemoveImage = () => {
     setUploadedImageUrl(undefined);
-    form.setValue('imageUrl', undefined);
+    form.setValue('imageUrl', '');
   };
 
   const generateSlug = (title: string) => {
@@ -334,14 +334,6 @@ export default function AdminExternal() {
                                 type="url"
                                 placeholder="https://example.com/image.jpg"
                                 data-testid="input-external-image"
-                                value={uploadedImageUrl || field.value}
-                                onChange={(e) => {
-                                  field.onChange(e);
-                                  if (!uploadedImageUrl) {
-                                    // Only update if no uploaded image
-                                    setUploadedImageUrl('');
-                                  }
-                                }}
                               />
                             </FormControl>
                             <FormMessage />
