@@ -46,54 +46,49 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           {/* Right side - Most Popular */}
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
-              <div className="relative w-full bg-black rounded-lg border-2 border-[#1A4FFF] overflow-hidden shadow-[0_0_25px_rgba(26,79,255,0.5)]">
-                {/* Neon accent bar at top */}
-                <div className="h-2 bg-gradient-to-r from-[#1A4FFF] via-[#72FF33] to-[#1A4FFF]"></div>
-                
-                {/* Content */}
-                <div className="p-6">
-                  {/* Title */}
-                  <h3 className="font-black text-2xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#1A4FFF] via-[#72FF33] to-[#1A4FFF]" data-testid="text-hero-most-popular-title">
-                    MOST POPULAR
+              <div className="w-full space-y-3">
+                {/* Title bar */}
+                <div className="bg-[#FF4500] px-6 py-4 rounded-lg">
+                  <h3 className="font-black text-2xl text-white uppercase tracking-tight" data-testid="text-hero-most-popular-title">
+                    Trending Now
                   </h3>
+                </div>
 
-                  {/* Articles list */}
-                  <div className="space-y-4">
-                    {popularArticles
-                      .slice(0, 3)
-                      .map((article, index) => (
-                        <Link 
-                          key={article.id} 
-                          href={`/${article.slug}`}
+                {/* Articles list */}
+                <div className="space-y-3">
+                  {popularArticles
+                    .slice(0, 3)
+                    .map((article, index) => (
+                      <Link 
+                        key={article.id} 
+                        href={`/${article.slug}`}
+                      >
+                        <div 
+                          className="group bg-white hover:bg-gray-50 p-5 rounded-lg transition-colors cursor-pointer"
+                          data-testid={`item-hero-most-popular-${index}`}
                         >
-                          <div 
-                            className="group flex items-start gap-4 p-3 rounded-md hover:bg-[#72FF33]/10 transition-all duration-200 cursor-pointer border border-transparent hover:border-[#72FF33]/50" 
-                            data-testid={`item-hero-most-popular-${index}`}
-                          >
-                            {/* Number with neon glow */}
-                            <div className="flex-shrink-0 w-8 h-8 rounded flex items-center justify-center bg-gradient-to-br from-[#1A4FFF] to-[#72FF33] shadow-[0_0_15px_rgba(114,255,51,0.6)]">
-                              <span className="text-sm font-black text-white">
+                          <div className="flex items-start gap-4">
+                            {/* Large number */}
+                            <div className="flex-shrink-0">
+                              <span className="text-5xl font-black text-[#FF4500] leading-none">
                                 {index + 1}
                               </span>
                             </div>
 
                             {/* Article info */}
-                            <div className="flex-1 min-w-0">
-                              <h4 className="font-bold text-white group-hover:text-[#72FF33] line-clamp-2 text-base leading-tight mb-2 transition-colors">
+                            <div className="flex-1 min-w-0 pt-1">
+                              <h4 className="font-bold text-black group-hover:text-[#FF4500] line-clamp-2 text-lg leading-tight mb-2 transition-colors">
                                 {article.title}
                               </h4>
-                              <span className="inline-block text-xs font-semibold text-[#1A4FFF] uppercase tracking-wider">
+                              <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold uppercase rounded-full">
                                 {article.category}
                               </span>
                             </div>
                           </div>
-                        </Link>
-                      ))}
-                  </div>
+                        </div>
+                      </Link>
+                    ))}
                 </div>
-
-                {/* Neon bottom bar */}
-                <div className="h-2 bg-gradient-to-r from-[#1A4FFF] via-[#72FF33] to-[#1A4FFF]"></div>
               </div>
             )}
           </div>
