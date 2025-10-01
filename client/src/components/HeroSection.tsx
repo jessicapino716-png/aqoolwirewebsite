@@ -46,16 +46,16 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           {/* Right side - Most Popular */}
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
-              <div className="w-full space-y-3">
-                {/* Title bar */}
-                <div className="bg-[#FF4500] px-6 py-4 rounded-lg">
-                  <h3 className="font-black text-2xl text-white uppercase tracking-tight" data-testid="text-hero-most-popular-title">
-                    Trending Now
+              <div className="w-full bg-[#1a1a1a] p-6 rounded-none">
+                {/* Title */}
+                <div className="border-l-4 border-[#FFD700] pl-4 mb-6">
+                  <h3 className="font-black text-3xl text-white uppercase" data-testid="text-hero-most-popular-title">
+                    Must Read
                   </h3>
                 </div>
 
                 {/* Articles list */}
-                <div className="space-y-3">
+                <div className="space-y-6">
                   {popularArticles
                     .slice(0, 3)
                     .map((article, index) => (
@@ -64,27 +64,20 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                         href={`/${article.slug}`}
                       >
                         <div 
-                          className="group bg-white hover:bg-gray-50 p-5 rounded-lg transition-colors cursor-pointer"
+                          className="group border-b border-gray-700 pb-5 last:border-b-0 hover:border-[#FFD700] transition-colors cursor-pointer"
                           data-testid={`item-hero-most-popular-${index}`}
                         >
-                          <div className="flex items-start gap-4">
-                            {/* Large number */}
-                            <div className="flex-shrink-0">
-                              <span className="text-5xl font-black text-[#FF4500] leading-none">
-                                {index + 1}
-                              </span>
-                            </div>
-
-                            {/* Article info */}
-                            <div className="flex-1 min-w-0 pt-1">
-                              <h4 className="font-bold text-black group-hover:text-[#FF4500] line-clamp-2 text-lg leading-tight mb-2 transition-colors">
-                                {article.title}
-                              </h4>
-                              <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold uppercase rounded-full">
-                                {article.category}
-                              </span>
-                            </div>
+                          {/* Category tag */}
+                          <div className="mb-3">
+                            <span className="bg-[#FFD700] text-black text-xs font-black px-3 py-1 uppercase">
+                              {article.category}
+                            </span>
                           </div>
+
+                          {/* Article title */}
+                          <h4 className="font-bold text-white group-hover:text-[#FFD700] text-xl leading-tight transition-colors">
+                            {article.title}
+                          </h4>
                         </div>
                       </Link>
                     ))}
