@@ -29,7 +29,7 @@ export default function Header() {
             <div className="flex items-center space-x-2">
               {navigation.map((item, index) => (
                 <div key={item.name} className="flex items-center">
-                  <span className="text-[#3b82f6] mx-2">/</span>
+                  <span className="text-[#3b82f6] mx-2 ml-[8px] mr-[8px] pl-[0px] pr-[0px] mt-[0px] mb-[0px] pt-[6px] pb-[6px]">/</span>
                   <Link
                     href={item.href}
                     className="text-black font-bold hover:text-[#3b82f6] transition-colors"
