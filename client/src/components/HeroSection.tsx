@@ -15,7 +15,7 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
   return (
     <div className="relative min-h-[60vh] md:min-h-screen text-black bg-white">
       {/* Left accent line - hidden on mobile */}
-      <div className="absolute left-0 top-0 h-[90%] w-0.5 bg-gradient-to-b from-[#40E0D0] via-[#00ff88] to-[#90EE90] mt-[30px] hidden md:block ml-[7.5px] mr-[7.5px] pl-[6px] pr-[6px]"></div>
+      <div className="absolute left-0 top-0 h-[90%] w-0.5 bg-gradient-to-b from-[#40E0D0] via-[#00ff88] to-[#90EE90] mt-[30px] hidden md:block ml-[7.5px] mr-[7.5px] pl-[9px] pr-[9px]"></div>
       {/* Main content */}
       <div className="container mx-auto px-6 py-8 md:py-16 flex items-center min-h-[60vh] md:min-h-screen">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
