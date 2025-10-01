@@ -32,7 +32,7 @@ export default function Header() {
                   <span className="text-[#3b82f6] mx-2">/</span>
                   <Link
                     href={item.href}
-                    className="text-black font-medium hover:text-[#3b82f6] transition-colors"
+                    className="text-black font-bold hover:text-[#3b82f6] transition-colors"
                     data-testid={`link-nav-${item.name.toLowerCase()}`}
                   >
                     {item.name}
@@ -44,7 +44,7 @@ export default function Header() {
               <span className="text-blue-500 mx-2">/</span>
               <Link 
                 href="/tools" 
-                className="text-black font-medium hover:text-[#3b82f6] transition-colors"
+                className="text-black font-bold hover:text-[#3b82f6] transition-colors"
                 data-testid="link-nav-new-ai-tools"
               >
                 New AI Tools
@@ -54,7 +54,7 @@ export default function Header() {
               <span className="text-blue-500 mx-2">/</span>
               <Link 
                 href="/newsletter" 
-                className="text-black font-medium hover:text-[#3b82f6] transition-colors"
+                className="text-black font-bold hover:text-[#3b82f6] transition-colors"
                 data-testid="link-nav-newsletter"
               >
                 Newsletter
