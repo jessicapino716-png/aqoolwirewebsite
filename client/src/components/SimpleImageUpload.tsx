@@ -46,6 +46,8 @@ export function SimpleImageUpload({ onUploadComplete, currentImageUrl, onRemove 
       formData.append('image', file);
 
       const token = localStorage.getItem('adminToken');
+      console.log('Admin token from localStorage:', token ? 'Token exists (length: ' + token.length + ')' : 'NO TOKEN FOUND');
+      
       const response = await fetch('/api/upload-image', {
         method: 'POST',
         headers: {
@@ -54,8 +56,11 @@ export function SimpleImageUpload({ onUploadComplete, currentImageUrl, onRemove 
         body: formData,
       });
 
+      console.log('Upload response status:', response.status);
+
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({ error: 'Upload failed' }));
+        console.log('Upload error response:', errorData);
         throw new Error(errorData.error || 'Upload failed');
       }
 
