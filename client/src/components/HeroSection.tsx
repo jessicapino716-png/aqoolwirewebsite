@@ -46,25 +46,61 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           {/* Right side - Most Popular */}
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
-              <div className="p-6 rounded-lg border shadow-lg w-full bg-[#d9d4d4]">
-                <h3 className="font-bold mb-6 text-[26px] text-[#f2007d]" data-testid="text-hero-most-popular-title">Most Popular News</h3>
-                <div className="space-y-4">
-                  {popularArticles
-                    .slice(0, 3)
-                    .map((article, index) => (
-                      <div key={article.id} className="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded transition-colors" data-testid={`item-hero-most-popular-${index}`}>
-                        <div className="flex-shrink-0 w-6 h-6 text-white text-xs font-bold rounded-full flex items-center justify-center bg-[#030203]">
-                          {index + 1}
-                        </div>
-                        <div>
-                          <Link href={`/${article.slug}`} className="font-medium text-black hover:text-[#ff007f] line-clamp-2 text-[16px] leading-tight">
-                            {article.title}
-                          </Link>
-                          <div className="text-xs text-gray-500 mt-1">{article.category}</div>
-                        </div>
-                      </div>
-                    ))}
+              <div className="relative w-full bg-white rounded-xl border-2 border-gray-200 overflow-hidden">
+                {/* Accent gradient bar at top */}
+                <div className="h-1 bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#93c5fd]"></div>
+                
+                {/* Content */}
+                <div className="p-8">
+                  {/* Title with icon */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3b82f6] to-[#2563eb] flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-2xl text-gray-900" data-testid="text-hero-most-popular-title">
+                      Most Popular
+                    </h3>
+                  </div>
+
+                  {/* Articles list */}
+                  <div className="space-y-5">
+                    {popularArticles
+                      .slice(0, 3)
+                      .map((article, index) => (
+                        <Link 
+                          key={article.id} 
+                          href={`/${article.slug}`}
+                        >
+                          <div 
+                            className="group flex items-start gap-4 p-3 rounded-lg hover:bg-blue-50 transition-all duration-200 cursor-pointer border border-transparent hover:border-blue-200" 
+                            data-testid={`item-hero-most-popular-${index}`}
+                          >
+                            {/* Number badge */}
+                            <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:from-[#3b82f6] group-hover:to-[#2563eb] transition-all duration-200">
+                              <span className="text-sm font-bold text-gray-700 group-hover:text-white transition-colors">
+                                {index + 1}
+                              </span>
+                            </div>
+
+                            {/* Article info */}
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-semibold text-gray-900 group-hover:text-[#3b82f6] line-clamp-2 text-sm leading-snug mb-1 transition-colors">
+                                {article.title}
+                              </h4>
+                              <span className="inline-block text-xs font-medium text-gray-500 uppercase tracking-wide">
+                                {article.category}
+                              </span>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                  </div>
                 </div>
+
+                {/* Bottom decorative element */}
+                <div className="h-1 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"></div>
               </div>
             )}
           </div>
