@@ -29,7 +29,7 @@ export default function Header() {
             <div className="flex items-center space-x-2">
               {navigation.map((item, index) => (
                 <div key={item.name} className="flex items-center">
-                  <span className="text-[#3b82f6] mx-2 ml-[8px] mr-[8px] pl-[0px] pr-[0px] mt-[0px] mb-[0px] pt-[6px] pb-[6px]">/</span>
+                  <span className="text-[#3b82f6] mx-2 font-black text-2xl scale-x-150 inline-block">/</span>
                   <Link
                     href={item.href}
                     className="text-black font-bold hover:text-[#3b82f6] transition-colors"
@@ -41,7 +41,7 @@ export default function Header() {
               ))}
             </div>
             <div className="flex items-center">
-              <span className="text-blue-500 mx-2">/</span>
+              <span className="text-[#3b82f6] mx-2 font-black text-2xl scale-x-150 inline-block">/</span>
               <Link 
                 href="/tools" 
                 className="text-black font-bold hover:text-[#3b82f6] transition-colors"
@@ -51,7 +51,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="flex items-center">
-              <span className="text-blue-500 mx-2">/</span>
+              <span className="text-[#3b82f6] mx-2 font-black text-2xl scale-x-150 inline-block">/</span>
               <Link 
                 href="/newsletter" 
                 className="text-black font-bold hover:text-[#3b82f6] transition-colors"
