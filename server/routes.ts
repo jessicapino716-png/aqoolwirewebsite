@@ -585,6 +585,91 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Tool Videos API
+  app.get("/api/tool-videos", async (req, res) => {
+    try {
+      const videos = await storage.getToolVideos();
+      res.json(videos);
+    } catch (error) {
+      console.error("Error fetching tool videos:", error);
+      res.status(500).json({ error: "Failed to fetch tool videos" });
+    }
+  });
+
+  app.post("/api/tool-videos", authenticateAdmin, async (req, res) => {
+    try {
+      const { insertToolVideoSchema } = await import("@shared/schema");
+      const validatedData = insertToolVideoSchema.parse(req.body);
+      
+      const video = await storage.createToolVideo(validatedData);
+      
+      res.status(201).json({
+        success: true,
+        message: "Tool video created successfully",
+        video
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({
+          error: "Validation failed",
+          details: error.errors
+        });
+      }
+      
+      console.error("Error creating tool video:", error);
+      res.status(500).json({ error: "Failed to create tool video" });
+    }
+  });
+
+  app.patch("/api/tool-videos/:id", authenticateAdmin, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { updateToolVideoSchema } = await import("@shared/schema");
+      const validatedData = updateToolVideoSchema.parse(req.body);
+      
+      const updatedVideo = await storage.updateToolVideo(id, validatedData);
+      
+      if (!updatedVideo) {
+        return res.status(404).json({ error: "Tool video not found" });
+      }
+      
+      res.json({
+        success: true,
+        message: "Tool video updated successfully",
+        video: updatedVideo
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({
+          error: "Validation failed",
+          details: error.errors
+        });
+      }
+      
+      console.error("Error updating tool video:", error);
+      res.status(500).json({ error: "Failed to update tool video" });
+    }
+  });
+
+  app.delete("/api/tool-videos/:id", authenticateAdmin, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const success = await storage.deleteToolVideo(id);
+      
+      if (!success) {
+        return res.status(404).json({ error: "Tool video not found" });
+      }
+      
+      res.json({
+        success: true,
+        message: "Tool video deleted successfully"
+      });
+    } catch (error) {
+      console.error("Error deleting tool video:", error);
+      res.status(500).json({ error: "Failed to delete tool video" });
+    }
+  });
+
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
