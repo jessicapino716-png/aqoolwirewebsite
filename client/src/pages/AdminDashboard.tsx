@@ -2,7 +2,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { LogOut, Plus, FileText, Settings, Mail } from 'lucide-react';
+import { LogOut, Plus, FileText, Settings, Mail, Video } from 'lucide-react';
 
 export default function AdminDashboard() {
   const { logout } = useAuth();
@@ -41,6 +41,13 @@ export default function AdminDashboard() {
       icon: <Mail className="h-6 w-6" />,
       action: () => setLocation('/admin/newsletter'),
       testId: "card-newsletter-management"
+    },
+    {
+      title: "AI Tool Videos",
+      description: "Manage YouTube videos for the AI Tools section",
+      icon: <Video className="h-6 w-6" />,
+      action: () => setLocation('/admin/tool-videos'),
+      testId: "card-tool-videos"
     }
   ];
 

@@ -17,6 +17,7 @@ import AdminNewsletter from "@/pages/AdminNewsletter";
 import AdminExternal from "@/pages/AdminExternal";
 import AdminOpEd from "@/pages/AdminOpEd";
 import AdminContent from "@/pages/AdminContent";
+import AdminToolVideos from "@/pages/AdminToolVideos";
 import CategoryPage from "@/pages/CategoryPage";
 import ArticlePage from "@/pages/ArticlePage";
 import Newsletter from "@/pages/Newsletter";
@@ -73,6 +74,11 @@ function Router() {
       <Route path="/admin/content">
         <ProtectedRoute>
           <AdminContent />
+        </ProtectedRoute>
+      </Route>
+      <Route path="/admin/tool-videos">
+        <ProtectedRoute>
+          <AdminToolVideos />
         </ProtectedRoute>
       </Route>
       {/* Fallback to 404 */}
