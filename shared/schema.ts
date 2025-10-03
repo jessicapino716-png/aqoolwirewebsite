@@ -7,6 +7,7 @@ export const users = pgTable("users", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
+  isAdmin: boolean("is_admin").notNull().default(false),
 });
 
 export const content = pgTable("content", {
@@ -47,6 +48,15 @@ export const newsletterCampaigns = pgTable("newsletter_campaigns", {
   sentAt: timestamp("sent_at"),
   subscriberCount: integer("subscriber_count").default(0), // Number of subscribers when sent
   authorName: text("author_name").notNull(),
+});
+
+export const toolVideos = pgTable("tool_videos", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  title: text("title").notNull(),
+  description: text("description"),
+  youtubeUrl: text("youtube_url").notNull(),
+  displayOrder: integer("display_order").notNull().default(0),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
@@ -136,6 +146,16 @@ export const insertNewsletterCampaignSchema = createInsertSchema(newsletterCampa
 
 export const updateNewsletterCampaignSchema = insertNewsletterCampaignSchema.partial();
 
+// Tool video schema
+export const insertToolVideoSchema = createInsertSchema(toolVideos).omit({
+  id: true,
+  createdAt: true,
+}).extend({
+  youtubeUrl: z.string().url("Must be a valid YouTube URL"),
+});
+
+export const updateToolVideoSchema = insertToolVideoSchema.partial();
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContent = z.infer<typeof insertContentSchema>;
@@ -146,3 +166,6 @@ export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscrib
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterCampaign = z.infer<typeof insertNewsletterCampaignSchema>;
 export type NewsletterCampaign = typeof newsletterCampaigns.$inferSelect;
+export type InsertToolVideo = z.infer<typeof insertToolVideoSchema>;
+export type UpdateToolVideo = z.infer<typeof updateToolVideoSchema>;
+export type ToolVideo = typeof toolVideos.$inferSelect;
