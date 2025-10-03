@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Content, type InsertContent, type NewsletterSubscriber, type InsertNewsletterSubscriber, type NewsletterCampaign, type InsertNewsletterCampaign } from "@shared/schema";
+import { type User, type InsertUser, type Content, type InsertContent, type NewsletterSubscriber, type InsertNewsletterSubscriber, type NewsletterCampaign, type InsertNewsletterCampaign, type ToolVideo, type InsertToolVideo } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 // modify the interface with any CRUD methods
@@ -42,6 +42,13 @@ export interface IStorage {
   deleteNewsletterCampaign(id: string): Promise<boolean>;
   markCampaignAsSent(id: string, subscriberCount: number): Promise<NewsletterCampaign | undefined>;
   getAllActiveSubscribers(): Promise<NewsletterSubscriber[]>;
+  
+  // Tool video methods
+  createToolVideo(video: InsertToolVideo): Promise<ToolVideo>;
+  getToolVideos(): Promise<ToolVideo[]>;
+  getToolVideoById(id: string): Promise<ToolVideo | undefined>;
+  updateToolVideo(id: string, updates: Partial<InsertToolVideo>): Promise<ToolVideo | undefined>;
+  deleteToolVideo(id: string): Promise<boolean>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -338,6 +345,57 @@ export class DatabaseStorage implements IStorage {
     const { eq } = await import("drizzle-orm");
     
     return await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.isActive, "true"));
+  }
+
+  // Tool video methods
+  async createToolVideo(insertVideo: InsertToolVideo): Promise<ToolVideo> {
+    const { toolVideos } = await import("@shared/schema");
+    const { db } = await import("./db");
+    
+    const [video] = await db
+      .insert(toolVideos)
+      .values(insertVideo)
+      .returning();
+    return video;
+  }
+
+  async getToolVideos(): Promise<ToolVideo[]> {
+    const { toolVideos } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { asc } = await import("drizzle-orm");
+    
+    return await db.select().from(toolVideos).orderBy(asc(toolVideos.displayOrder));
+  }
+
+  async getToolVideoById(id: string): Promise<ToolVideo | undefined> {
+    const { toolVideos } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const [video] = await db.select().from(toolVideos).where(eq(toolVideos.id, id));
+    return video || undefined;
+  }
+
+  async updateToolVideo(id: string, updates: Partial<InsertToolVideo>): Promise<ToolVideo | undefined> {
+    const { toolVideos } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const [updatedVideo] = await db
+      .update(toolVideos)
+      .set(updates)
+      .where(eq(toolVideos.id, id))
+      .returning();
+    return updatedVideo || undefined;
+  }
+
+  async deleteToolVideo(id: string): Promise<boolean> {
+    const { toolVideos } = await import("@shared/schema");
+    const { db } = await import("./db");
+    const { eq } = await import("drizzle-orm");
+    
+    const result = await db.delete(toolVideos).where(eq(toolVideos.id, id));
+    return result.rowCount ? result.rowCount > 0 : false;
   }
 }
 
