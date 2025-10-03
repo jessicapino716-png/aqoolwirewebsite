@@ -19,7 +19,7 @@ export async function apiRequest(
   }
   
   // Add Authorization header for admin routes
-  const adminToken = localStorage.getItem('admin_token');
+  const adminToken = localStorage.getItem('adminToken');
   if (adminToken) {
     headers["Authorization"] = `Bearer ${adminToken}`;
   }

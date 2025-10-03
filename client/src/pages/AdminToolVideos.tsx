@@ -57,10 +57,7 @@ export default function AdminToolVideos() {
   // Create mutation
   const createMutation = useMutation({
     mutationFn: async (data: VideoFormData) => {
-      return await apiRequest('/api/tool-videos', {
-        method: 'POST',
-        body: JSON.stringify(data),
-      });
+      return await apiRequest('POST', '/api/tool-videos', data);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/tool-videos'] });
@@ -83,10 +80,7 @@ export default function AdminToolVideos() {
   // Update mutation
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }: { id: string; data: VideoFormData }) => {
-      return await apiRequest(`/api/tool-videos/${id}`, {
-        method: 'PATCH',
-        body: JSON.stringify(data),
-      });
+      return await apiRequest('PATCH', `/api/tool-videos/${id}`, data);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/tool-videos'] });
@@ -110,9 +104,7 @@ export default function AdminToolVideos() {
   // Delete mutation
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      return await apiRequest(`/api/tool-videos/${id}`, {
-        method: 'DELETE',
-      });
+      return await apiRequest('DELETE', `/api/tool-videos/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/tool-videos'] });

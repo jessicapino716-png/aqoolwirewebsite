@@ -6,6 +6,15 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle } from "lucide-react";
 import type { Content } from "@shared/schema";
 
+interface ToolVideo {
+  id: string;
+  title: string;
+  description: string | null;
+  youtubeUrl: string;
+  displayOrder: number;
+  createdAt: string;
+}
+
 // Fallback thumbnail image for articles without images - using public folder path
 const thumbnailImage = '/assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
 
@@ -41,6 +50,11 @@ function transformContentToArticle(content: Content): Article {
     comments: content.commentsCount,
     source: content.source || undefined
   };
+}
+
+function extractYoutubeVideoId(url: string): string | null {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/);
+  return match ? match[1] : null;
 }
 
 export default function CategoryPage() {
@@ -82,6 +96,12 @@ export default function CategoryPage() {
       return response.json();
     },
   }) as { data: Content[]; isLoading: boolean; error: any };
+
+  // Fetch tool videos only for the tools category
+  const { data: toolVideos = [], isLoading: videosLoading } = useQuery<ToolVideo[]>({
+    queryKey: ['/api/tool-videos'],
+    enabled: categorySlug === 'tools',
+  });
 
   if (isLoading) {
     return (
@@ -165,27 +185,60 @@ export default function CategoryPage() {
               <h3 className="text-2xl font-bold text-black mb-6" data-testid="text-tools-videos-title">
                 Featured AI Tool Demonstrations
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="grid-youtube-videos">
-                {/* YouTube videos will be added here by the user */}
-                <Card className="p-6 text-center border-2 border-dashed border-gray-300">
+              {videosLoading ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {Array.from({ length: 3 }).map((_, index) => (
+                    <Card key={index} className="p-6">
+                      <Skeleton className="h-48 w-full mb-4 rounded-lg" />
+                      <Skeleton className="h-6 w-3/4 mb-2" />
+                      <Skeleton className="h-4 w-full" />
+                    </Card>
+                  ))}
+                </div>
+              ) : toolVideos.length === 0 ? (
+                <Card className="p-6 text-center border-2 border-dashed border-gray-300" data-testid="card-no-videos">
                   <div className="h-48 flex items-center justify-center bg-gray-50 rounded-lg mb-4">
-                    <p className="text-gray-500">YouTube Video Placeholder</p>
+                    <p className="text-gray-500">No videos yet</p>
                   </div>
-                  <p className="text-sm text-gray-600">Add your AI tool demonstration videos here</p>
+                  <p className="text-sm text-gray-600">AI tool demonstration videos will appear here</p>
                 </Card>
-                <Card className="p-6 text-center border-2 border-dashed border-gray-300">
-                  <div className="h-48 flex items-center justify-center bg-gray-50 rounded-lg mb-4">
-                    <p className="text-gray-500">YouTube Video Placeholder</p>
-                  </div>
-                  <p className="text-sm text-gray-600">Add your AI tool demonstration videos here</p>
-                </Card>
-                <Card className="p-6 text-center border-2 border-dashed border-gray-300">
-                  <div className="h-48 flex items-center justify-center bg-gray-50 rounded-lg mb-4">
-                    <p className="text-gray-500">YouTube Video Placeholder</p>
-                  </div>
-                  <p className="text-sm text-gray-600">Add your AI tool demonstration videos here</p>
-                </Card>
-              </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="grid-youtube-videos">
+                  {toolVideos.map((video) => {
+                    const videoId = extractYoutubeVideoId(video.youtubeUrl);
+                    return (
+                      <Card key={video.id} className="overflow-hidden hover:shadow-lg transition-shadow" data-testid={`card-video-${video.id}`}>
+                        <div className="aspect-video bg-gray-900">
+                          {videoId ? (
+                            <iframe
+                              src={`https://www.youtube.com/embed/${videoId}`}
+                              title={video.title}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="w-full h-full"
+                              data-testid={`iframe-video-${video.id}`}
+                            />
+                          ) : (
+                            <div className="flex items-center justify-center h-full text-white">
+                              Invalid video URL
+                            </div>
+                          )}
+                        </div>
+                        <div className="p-4">
+                          <h4 className="font-semibold text-black mb-2" data-testid={`text-video-title-${video.id}`}>
+                            {video.title}
+                          </h4>
+                          {video.description && (
+                            <p className="text-sm text-gray-600" data-testid={`text-video-description-${video.id}`}>
+                              {video.description}
+                            </p>
+                          )}
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {/* Articles Section for Tools */}

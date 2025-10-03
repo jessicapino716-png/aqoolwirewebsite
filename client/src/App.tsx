@@ -56,6 +56,11 @@ function Router() {
           <AdminDashboard />
         </ProtectedRoute>
       </Route>
+      <Route path="/admin/dashboard">
+        <ProtectedRoute>
+          <AdminDashboard />
+        </ProtectedRoute>
+      </Route>
       <Route path="/admin/newsletter">
         <ProtectedRoute>
           <AdminNewsletter />
