@@ -41,6 +41,13 @@ Preferred communication style: Simple, everyday language.
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
 - **Newsletter Integration**: Multi-variant newsletter signup components with form validation
 - **Tool Reviews**: Dedicated components for AI tool showcases and reviews
+- **YouTube Video Management**: Full CRUD system for managing AI tool demonstration videos
+  - Admin interface at /admin/tool-videos for creating, editing, and deleting videos
+  - Videos display on /tools page with embedded YouTube iframes
+  - Database table (toolVideos) with fields: id, title, description, youtubeUrl, displayOrder, createdAt
+  - API routes at /api/tool-videos with admin authentication required
+  - Ordered display based on displayOrder field
+  - Loading and empty states for optimal UX
 - **Source Attribution**: 
   - Internal op-eds automatically display "The Aqool Wire" as the source
   - External op-eds can specify custom sources (e.g., think tank names)
