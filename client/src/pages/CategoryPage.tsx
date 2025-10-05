@@ -53,8 +53,27 @@ function transformContentToArticle(content: Content): Article {
 }
 
 function extractYoutubeVideoId(url: string): string | null {
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/);
-  return match ? match[1] : null;
+  // Handle various YouTube URL formats:
+  // - https://www.youtube.com/watch?v=VIDEO_ID
+  // - https://youtube.com/watch?v=VIDEO_ID
+  // - https://youtu.be/VIDEO_ID
+  // - https://m.youtube.com/watch?v=VIDEO_ID
+  // - https://www.youtube.com/embed/VIDEO_ID
+  // - https://www.youtube.com/v/VIDEO_ID
+  const patterns = [
+    /(?:youtube\.com\/(?:watch\?v=|embed\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+    /(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
+    /(?:m\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+  
+  return null;
 }
 
 export default function CategoryPage() {
