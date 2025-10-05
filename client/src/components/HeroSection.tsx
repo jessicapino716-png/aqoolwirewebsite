@@ -61,7 +61,7 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                     .map((article, index) => (
                       <Link 
                         key={article.id} 
-                        href={`/${article.slug}`}
+                        href={`/article/${article.slug}`}
                       >
                         <div 
                           className="group border-b border-gray-700 pb-5 last:border-b-0 hover:border-[#f2007d] transition-colors cursor-pointer"
