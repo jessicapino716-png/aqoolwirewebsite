@@ -186,7 +186,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-analysis-title">
               Analysis & Commentary
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {opEdArticles.map((article) => (
                 <ArticleCard 
                   key={article.id} 
@@ -205,7 +205,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-latest-news-title">
               Latest News
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {latestArticles.map((article) => (
                 <ArticleCard 
                   key={article.id} 
