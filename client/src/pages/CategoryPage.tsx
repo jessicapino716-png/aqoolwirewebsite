@@ -60,10 +60,12 @@ function extractYoutubeVideoId(url: string): string | null {
   // - https://m.youtube.com/watch?v=VIDEO_ID
   // - https://www.youtube.com/embed/VIDEO_ID
   // - https://www.youtube.com/v/VIDEO_ID
+  // - https://www.youtube.com/live/VIDEO_ID
   const patterns = [
-    /(?:youtube\.com\/(?:watch\?v=|embed\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+    /(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
     /(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
     /(?:m\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/,
+    /(?:www\.)?youtube\.com\/live\/([a-zA-Z0-9_-]{11})/,
   ];
   
   for (const pattern of patterns) {
