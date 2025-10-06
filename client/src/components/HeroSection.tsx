@@ -5,6 +5,7 @@ interface Article {
   title: string;
   slug: string;
   category: string;
+  externalUrl?: string;
 }
 
 interface HeroSectionProps {
@@ -58,11 +59,8 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                 <div className="space-y-6">
                   {popularArticles
                     .slice(0, 3)
-                    .map((article, index) => (
-                      <Link 
-                        key={article.id} 
-                        href={`/article/${article.slug}`}
-                      >
+                    .map((article, index) => {
+                      const linkContent = (
                         <div 
                           className="group border-b border-gray-700 pb-5 last:border-b-0 hover:border-[#f2007d] transition-colors cursor-pointer"
                           data-testid={`item-hero-most-popular-${index}`}
@@ -79,8 +77,30 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
                             {article.title}
                           </h4>
                         </div>
-                      </Link>
-                    ))}
+                      );
+
+                      if (article.externalUrl) {
+                        return (
+                          <a 
+                            key={article.id}
+                            href={article.externalUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {linkContent}
+                          </a>
+                        );
+                      }
+
+                      return (
+                        <Link 
+                          key={article.id} 
+                          href={`/article/${article.slug}`}
+                        >
+                          {linkContent}
+                        </Link>
+                      );
+                    })}
                 </div>
               </div>
             )}

@@ -173,6 +173,7 @@ export default function Home() {
     title: content.title,
     slug: content.slug,
     category: content.category,
+    externalUrl: content.externalUrl || undefined,
   })) || [];
 
   return (
