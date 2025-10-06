@@ -16,7 +16,7 @@ export default function Header() {
       <div className="flex justify-between items-center">
         <Link href="/" className="flex items-center font-extrabold text-3xl lg:text-4xl" data-testid="link-home">
           <div className="logo-container">
-            <div className="logo-base">
+            <div className="logo-base text-[40px]">
               The Aqool <span className="wire-text">Wire</span>
             </div>
             <div className="electrical-line"></div>
