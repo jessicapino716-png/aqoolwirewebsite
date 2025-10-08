@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, User } from "lucide-react";
 import ThemeControls from "@/components/ThemeControls";
-import logoImage from "@assets/generated_images/Circuit_board_eagle_logo_cb402cd1.png";
+import logoImage from "@assets/generated_images/Purple_blue_tech_falcon_logo_3a06f9e7.png";
 
 export default function Header() {
   const navigation = [
@@ -15,16 +15,20 @@ export default function Header() {
   return (
     <header className="px-6 lg:px-20 py-4 bg-white relative">
       <div className="flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-4" data-testid="link-home">
+        <Link href="/" className="flex items-center gap-3" data-testid="link-home">
           <img 
             src={logoImage} 
             alt="The Aqool Wire" 
-            className="w-16 h-16 lg:w-20 lg:h-20"
+            className="w-14 h-14 lg:w-20 lg:h-20"
           />
           <div className="flex flex-col leading-none">
-            <div className="text-base lg:text-lg font-medium text-black">The</div>
-            <div className="text-3xl lg:text-5xl font-black text-black -mt-1">Aqool</div>
-            <div className="text-3xl lg:text-5xl font-black text-black -mt-2">Wire</div>
+            <div className="text-sm lg:text-base font-light text-gray-600 tracking-wider">THE</div>
+            <div className="text-2xl lg:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 -mt-0.5">
+              Aqool
+            </div>
+            <div className="text-2xl lg:text-4xl font-extrabold text-black -mt-1.5 tracking-tight">
+              Wire
+            </div>
           </div>
         </Link>
         
