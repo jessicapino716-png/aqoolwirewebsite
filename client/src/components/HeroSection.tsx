@@ -47,33 +47,29 @@ export default function HeroSection({ popularArticles }: HeroSectionProps) {
           {/* Right side - Most Popular */}
           <div className="lg:col-span-1 flex items-center">
             {popularArticles && popularArticles.length > 0 && (
-              <div className="w-full bg-[#1a1a1a] p-6 rounded-none">
+              <div className="w-full bg-white p-6">
                 {/* Title */}
-                <div className="border-l-4 border-[#f2007d] pl-4 mb-6">
-                  <h3 className="font-black text-3xl text-white uppercase" data-testid="text-hero-most-popular-title">
-                    popular news
-                  </h3>
-                </div>
+                <h3 className="font-black text-2xl text-[#6366f1] uppercase mb-8 tracking-wide" data-testid="text-hero-most-popular-title">
+                  MOST POPULAR
+                </h3>
 
                 {/* Articles list */}
-                <div className="space-y-6">
+                <div className="space-y-0">
                   {popularArticles
-                    .slice(0, 3)
+                    .slice(0, 5)
                     .map((article, index) => {
                       const linkContent = (
                         <div 
-                          className="group border-b border-gray-700 pb-5 last:border-b-0 hover:border-[#f2007d] transition-colors cursor-pointer"
+                          className="group border-b border-black py-6 last:border-b-0 hover:opacity-70 transition-opacity cursor-pointer flex gap-4"
                           data-testid={`item-hero-most-popular-${index}`}
                         >
-                          {/* Category tag */}
-                          <div className="mb-3">
-                            <span className="bg-[#f2007d] text-white text-xs font-black px-3 py-1 uppercase">
-                              {article.category}
-                            </span>
+                          {/* Number */}
+                          <div className="text-[#6366f1] font-black text-2xl flex-shrink-0">
+                            {index + 1}
                           </div>
 
                           {/* Article title */}
-                          <h4 className="font-bold text-white group-hover:text-[#f2007d] text-xl leading-tight transition-colors">
+                          <h4 className="font-bold text-black text-lg leading-tight">
                             {article.title}
                           </h4>
                         </div>
