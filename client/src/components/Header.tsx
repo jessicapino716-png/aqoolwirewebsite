@@ -30,7 +30,7 @@ export default function Header() {
                 <span className="px-2 text-lg text-[#3b82f6]">/</span>
                 <Link
                   href={item.href}
-                  className="px-3 py-2 text-sm font-semibold text-gray-900 hover:text-[#f2007d] transition-colors"
+                  className="px-3 py-2 font-semibold text-gray-900 hover:text-[#f2007d] transition-colors text-[16px]"
                   data-testid={`link-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {item.name}
