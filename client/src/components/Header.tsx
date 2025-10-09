@@ -39,17 +39,8 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right side - Account & Menu */}
+          {/* Right side - Menu */}
           <div className="flex items-center gap-4">
-            <Link 
-              href="/admin/login" 
-              className="hidden lg:flex items-center gap-1 text-sm font-semibold text-gray-900 hover:text-[#f2007d] transition-colors"
-              data-testid="link-account"
-            >
-              <User className="h-4 w-4" />
-              <span>ACCOUNT</span>
-            </Link>
-            
             <Sheet>
               <SheetTrigger asChild>
                 <button 
