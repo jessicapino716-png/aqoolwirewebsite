@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, User } from "lucide-react";
+import { Menu } from "lucide-react";
 
 export default function Header() {
   const navigation = [
@@ -40,7 +40,7 @@ export default function Header() {
           </nav>
 
           {/* Right side - Menu */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
             <Sheet>
               <SheetTrigger asChild>
                 <button 
@@ -63,14 +63,6 @@ export default function Header() {
                       {item.name}
                     </Link>
                   ))}
-                  <Link
-                    href="/admin/login"
-                    className="px-4 py-3 text-base font-semibold transition-colors hover:bg-gray-100 text-gray-900 rounded-md flex items-center gap-2"
-                    data-testid="link-nav-mobile-account"
-                  >
-                    <User className="h-4 w-4" />
-                    Account
-                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
