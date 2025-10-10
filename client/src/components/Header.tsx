@@ -19,7 +19,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center" data-testid="link-home">
             <div className="text-2xl lg:text-3xl font-black">
-              The Aqool <span className="text-[#00d9a3]">Wire</span>
+              The Aqool <span className="text-[#00edc5]">Wire</span>
             </div>
           </Link>
           
