@@ -18,7 +18,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center" data-testid="link-home">
-            <div className="text-2xl lg:text-3xl font-black">
+            <div className="text-2xl lg:text-3xl font-black tracking-tighter uppercase" style={{ fontFamily: 'var(--font-geist-mono), monospace' }}>
               The Aqool <span className="text-[#00edc5]">Wire</span>
             </div>
           </Link>
