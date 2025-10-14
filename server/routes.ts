@@ -33,6 +33,17 @@ function authenticateAdmin(req: Request, res: Response, next: NextFunction) {
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Robots.txt endpoint
+  app.get("/robots.txt", (req, res) => {
+    const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: https://theaqoolwire.com/sitemap.xml`;
+    
+    res.header('Content-Type', 'text/plain');
+    res.send(robotsTxt);
+  });
+
   // Sitemap XML endpoint
   app.get("/sitemap.xml", async (req, res) => {
     try {
