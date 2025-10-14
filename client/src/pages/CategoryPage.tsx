@@ -181,9 +181,6 @@ export default function CategoryPage() {
           <h1 className="verge-headline-hero text-black mb-4" data-testid={`text-category-title-${categorySlug}`}>
             {displayCategory}
           </h1>
-          <p className="verge-excerpt-text text-gray-700 text-xl" data-testid={`text-category-description-${categorySlug}`}>
-            {getCategoryDescription(displayCategory)}
-          </p>
         </div>
 
         {/* Special layout for AI Tools page */}
