@@ -18,7 +18,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3" data-testid="link-home">
-            <div className="w-12 h-12 bg-[#5ec9b9] rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#0ff2b2]">
               <span className="text-white font-black text-xl">AW</span>
             </div>
             <div className="text-2xl lg:text-3xl font-black tracking-tighter uppercase" style={{ fontFamily: 'var(--font-geist-mono), monospace' }}>
