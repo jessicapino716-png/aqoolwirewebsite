@@ -14,7 +14,8 @@ async function getCredentials() {
     throw new Error('X_REPLIT_TOKEN not found for repl/depl');
   }
 
-  connectionSettings = await fetch(
+  console.log('Fetching SendGrid credentials from connector API...');
+  const response = await fetch(
     'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=sendgrid',
     {
       headers: {
@@ -22,11 +23,19 @@ async function getCredentials() {
         'X_REPLIT_TOKEN': xReplitToken
       }
     }
-  ).then(res => res.json()).then(data => data.items?.[0]);
+  );
+  
+  const data = await response.json();
+  console.log('Connector API response status:', response.status);
+  console.log('Number of connections found:', data.items?.length || 0);
+  
+  connectionSettings = data.items?.[0];
 
   if (!connectionSettings || (!connectionSettings.settings.api_key || !connectionSettings.settings.from_email)) {
     throw new Error('SendGrid not connected');
   }
+  
+  console.log('SendGrid connection found - from email:', connectionSettings.settings.from_email);
   return {apiKey: connectionSettings.settings.api_key, email: connectionSettings.settings.from_email};
 }
 
@@ -35,6 +44,7 @@ async function getCredentials() {
 // Always call this function again to get a fresh client.
 export async function getUncachableSendGridClient() {
   const {apiKey, email} = await getCredentials();
+  console.log('SendGrid credentials fetched - from email:', email, 'API key prefix:', apiKey?.substring(0, 10) + '...');
   sgMail.setApiKey(apiKey);
   return {
     client: sgMail,
