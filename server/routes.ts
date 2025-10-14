@@ -686,21 +686,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Invalid email format" });
       }
 
-      // Send email using SendGrid
-      const sgMailModule = await import("@sendgrid/mail");
-      const sgMail = sgMailModule.default;
-      const apiKey = process.env.SENDGRID_API_KEY;
-      
-      if (!apiKey) {
-        console.error("SendGrid API key not found");
-        return res.status(500).json({ error: "Email service not configured" });
-      }
-
-      sgMail.setApiKey(apiKey);
+      // Get SendGrid client using Replit connector
+      const { getUncachableSendGridClient } = await import("./sendgridClient");
+      const { client: sgMail, fromEmail } = await getUncachableSendGridClient();
 
       const msg = {
-        to: 'jessicapino@aqoolai.com', // Send contact messages to Jessica
-        from: 'jessicapino@aqoolai.com', // Use the same email as sender for now
+        to: 'jessicapino@theaqoolwire.com',
+        from: fromEmail,
         replyTo: email,
         subject: `Contact Form: ${subject}`,
         html: `
@@ -731,7 +723,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       };
 
       await sgMail.send(msg);
-      console.log('Contact form email sent successfully');
+      console.log('Contact form email sent successfully to jessicapino@theaqoolwire.com');
 
       res.json({ 
         success: true, 
@@ -749,11 +741,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Provide more helpful error messages
       if (error.code === 401) {
         res.status(500).json({ 
-          error: "Email service is temporarily unavailable. Please try again later or contact us directly at jessicapino@aqoolai.com" 
+          error: "Email service is temporarily unavailable. Please try again later or contact us directly at jessicapino@theaqoolwire.com" 
         });
       } else {
         res.status(500).json({ 
-          error: "Failed to send message. Please try again or contact us directly at jessicapino@aqoolai.com" 
+          error: "Failed to send message. Please try again or contact us directly at jessicapino@theaqoolwire.com" 
         });
       }
     }
