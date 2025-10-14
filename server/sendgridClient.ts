@@ -3,6 +3,16 @@ import sgMail from '@sendgrid/mail';
 let connectionSettings: any;
 
 async function getCredentials() {
+  // Check if direct API key is provided (bypasses connector caching)
+  if (process.env.SENDGRID_API_KEY_NEW) {
+    console.log('Using direct SendGrid API key from environment variable');
+    return {
+      apiKey: process.env.SENDGRID_API_KEY_NEW,
+      email: 'jessicapino@theaqoolwire.com'
+    };
+  }
+
+  // Fallback to connector API
   const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME
   const xReplitToken = process.env.REPL_IDENTITY 
     ? 'repl ' + process.env.REPL_IDENTITY 
