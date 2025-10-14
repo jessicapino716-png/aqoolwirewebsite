@@ -218,13 +218,6 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
           <span data-testid={`text-author-standard-${article.id}`}>{article.author}</span>
           <span className="mx-1">•</span>
           <span data-testid={`text-date-standard-${article.id}`}>{article.publishedAt}</span>
-          {article.comments && (
-            <>
-              <span className="mx-1">•</span>
-              <MessageCircle className="h-3 w-3 mr-1" />
-              <span data-testid={`text-comments-standard-${article.id}`}>{article.comments}</span>
-            </>
-          )}
         </div>
       </LinkWrapper>
     </div>
