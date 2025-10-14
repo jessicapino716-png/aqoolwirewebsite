@@ -36,9 +36,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Sitemap XML endpoint
   app.get("/sitemap.xml", async (req, res) => {
     try {
-      const baseUrl = process.env.REPLIT_DOMAINS 
-        ? `https://${process.env.REPLIT_DOMAINS.split(',')[0]}`
-        : 'https://theaqoolwire.com';
+      // Always use the custom domain for SEO purposes
+      const baseUrl = 'https://theaqoolwire.com';
 
       // Get all published content
       const allContent = await storage.listContent({ limit: 10000 });
