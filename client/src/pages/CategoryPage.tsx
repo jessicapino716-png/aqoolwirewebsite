@@ -193,11 +193,7 @@ export default function CategoryPage() {
             <div className="mb-12">
               <Card className="p-8 text-center bg-gradient-to-r from-[#f8fafc] to-[#f1f5f9] border-2 border-[#3b82f6]/20">
                 <h2 className="text-2xl font-bold text-black mb-4" data-testid="text-tools-purpose-title">Explore The Most Recently Released AI Tools</h2>
-                <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed" data-testid="text-tools-purpose-description">
-                  Discover the latest artificial intelligence tools and technologies that are transforming industries across Saudi Arabia and the GCC region. 
-                  From innovative software solutions to breakthrough applications, explore comprehensive reviews, demonstrations, and insights into the tools 
-                  shaping the future of AI in the Middle East.
-                </p>
+                <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed" data-testid="text-tools-purpose-description">Curious about the latest AI tools everyone’s talking about? Watch Youtube demos, discover new applications, and learn how to use them to power your work.</p>
               </Card>
             </div>
 
