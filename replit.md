@@ -57,6 +57,11 @@ Preferred communication style: Simple, everyday language.
   - External articles and Op-Eds both use SimpleImageUpload for reliable image uploads
   - Images are uploaded through /api/upload-image endpoint to Google Cloud Storage
   - Admin authentication token key: 'adminToken' (camelCase) stored in localStorage
+- **SEO**: 
+  - Dynamic sitemap.xml generation at /sitemap.xml
+  - Includes all static pages and dynamically generated article pages
+  - Automatically updates when new content is published
+  - Proper priority and change frequency hints for search engines
 
 ## External Dependencies
 
@@ -81,7 +86,10 @@ Preferred communication style: Simple, everyday language.
 - **Build System**: Vite with React plugin and runtime error overlay
 - **TypeScript**: Full TypeScript support across client and server
 - **Development**: Replit-specific plugins for enhanced development experience
-- **Email Service**: SendGrid integration for newsletter functionality
+- **Email Service**: SendGrid integration for contact form and newsletter functionality
+  - Using direct API key (SENDGRID_API_KEY_NEW) stored in Replit Secrets
+  - Verified sender: jessicapino@theaqoolwire.com
+  - Fallback to Replit connector if direct key not available
 
 ### Production Considerations
 - **Build Process**: ESBuild for server-side bundling and Vite for client-side optimization

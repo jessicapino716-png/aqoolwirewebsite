@@ -33,6 +33,64 @@ function authenticateAdmin(req: Request, res: Response, next: NextFunction) {
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Sitemap XML endpoint
+  app.get("/sitemap.xml", async (req, res) => {
+    try {
+      const baseUrl = process.env.REPLIT_DOMAINS 
+        ? `https://${process.env.REPLIT_DOMAINS.split(',')[0]}`
+        : 'https://theaqoolwire.com';
+
+      // Get all published content
+      const allContent = await storage.listContent({ limit: 10000 });
+      
+      // Static pages with priority
+      const staticPages = [
+        { url: '/', priority: '1.0', changefreq: 'daily' },
+        { url: '/policy', priority: '0.9', changefreq: 'daily' },
+        { url: '/regulation', priority: '0.9', changefreq: 'daily' },
+        { url: '/analysis', priority: '0.9', changefreq: 'daily' },
+        { url: '/tools', priority: '0.8', changefreq: 'weekly' },
+        { url: '/newsletter', priority: '0.7', changefreq: 'monthly' },
+        { url: '/contact', priority: '0.6', changefreq: 'monthly' },
+        { url: '/privacy', priority: '0.3', changefreq: 'yearly' },
+        { url: '/terms', priority: '0.3', changefreq: 'yearly' },
+        { url: '/cookies', priority: '0.3', changefreq: 'yearly' },
+        { url: '/disclaimers', priority: '0.3', changefreq: 'yearly' },
+      ];
+
+      // Build XML sitemap
+      let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+      xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+
+      // Add static pages
+      staticPages.forEach(page => {
+        xml += '  <url>\n';
+        xml += `    <loc>${baseUrl}${page.url}</loc>\n`;
+        xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+        xml += `    <priority>${page.priority}</priority>\n`;
+        xml += '  </url>\n';
+      });
+
+      // Add article pages
+      allContent.forEach(article => {
+        xml += '  <url>\n';
+        xml += `    <loc>${baseUrl}/article/${article.slug}</loc>\n`;
+        xml += `    <lastmod>${new Date(article.publishedAt).toISOString().split('T')[0]}</lastmod>\n`;
+        xml += `    <changefreq>monthly</changefreq>\n`;
+        xml += `    <priority>0.8</priority>\n`;
+        xml += '  </url>\n';
+      });
+
+      xml += '</urlset>';
+
+      res.header('Content-Type', 'application/xml');
+      res.send(xml);
+    } catch (error) {
+      console.error("Error generating sitemap:", error);
+      res.status(500).send('Error generating sitemap');
+    }
+  });
+
   // Content API Routes
   
   // Public routes for getting content
