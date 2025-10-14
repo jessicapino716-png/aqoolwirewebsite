@@ -22,7 +22,7 @@ export default function Header() {
               <span className="text-white font-black text-xl">AW</span>
             </div>
             <div className="text-2xl lg:text-3xl font-black tracking-tighter uppercase" style={{ fontFamily: 'var(--font-geist-mono), monospace' }}>
-              The Aqool <span className="text-[#5ec9b9] italic font-normal">Wire</span>
+              The Aqool <span className="italic font-normal text-[#0ff2b2]">Wire</span>
             </div>
           </Link>
           
