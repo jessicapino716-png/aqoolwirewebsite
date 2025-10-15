@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, Calendar, User, Tag, ExternalLink, Share2, Copy, Check } from "lucide-react";
 import { SiX, SiFacebook, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { Card } from "@/components/ui/card";
@@ -358,6 +359,20 @@ export default function ArticlePage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Helmet>
+        <title>{article.title} | The Aqool Wire</title>
+        <meta name="description" content={article.excerpt} />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.excerpt} />
+        <meta property="og:type" content="article" />
+        {article.imageUrl && <meta property="og:image" content={article.imageUrl} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.excerpt} />
+        {article.imageUrl && <meta name="twitter:image" content={article.imageUrl} />}
+        <link rel="canonical" href={`https://theaqoolwire.com/article/${article.slug}`} />
+      </Helmet>
+      
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Back Button */}
         <div className="mb-8" data-testid="article-back-button">
