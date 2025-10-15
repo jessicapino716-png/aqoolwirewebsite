@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 import { Content } from "@shared/schema";
 
 // Fallback images for articles without images - using public folder paths
@@ -178,6 +179,16 @@ export default function Home() {
 
   return (
     <div className="bg-background">
+      <Helmet>
+        <title>The Aqool Wire | AI Policy, Regulation & Innovation from Riyadh</title>
+        <meta name="description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC — covering innovation, ethics, and the future of work." />
+        <meta name="keywords" content="AI policy, AI regulation, Saudi Arabia, GCC, Riyadh, artificial intelligence, Vision 2030, AI innovation, AI law, data privacy, AI ethics, AI jobs" />
+        <meta property="og:title" content="The Aqool Wire | AI Policy, Regulation & Innovation from Riyadh" />
+        <meta property="og:description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC — covering innovation, ethics, and the future of work." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://theaqoolwire.com/" />
+      </Helmet>
+      
       <HeroSection popularArticles={transformedPopularArticles} />
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-2 py-8 bg-white">
