@@ -43,7 +43,7 @@ export default function Footer() {
             {/* Social Media Links */}
             <div className="flex gap-4">
               <a
-                href="https://www.linkedin.com/company/theaqoolwire"
+                href="https://www.linkedin.com/company/the-aqool-wire"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center h-9 w-9 rounded-md bg-[#0077b5] text-white hover:bg-[#005885] transition-colors"

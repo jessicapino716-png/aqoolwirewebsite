@@ -66,7 +66,7 @@ Preferred communication style: Simple, everyday language.
   - Dynamic page-specific SEO using React Helmet Async
   - Canonical URLs always use https://theaqoolwire.com domain
 - **Social Media Integration**:
-  - LinkedIn company page link in footer (https://www.linkedin.com/company/theaqoolwire)
+  - LinkedIn company page link in footer (https://www.linkedin.com/company/the-aqool-wire)
   - Helps with brand authority and referral traffic
   - Improves branded search results on Google
 
