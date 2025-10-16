@@ -62,6 +62,13 @@ Preferred communication style: Simple, everyday language.
   - Includes all static pages and dynamically generated article pages
   - Automatically updates when new content is published
   - Proper priority and change frequency hints for search engines
+  - Site-wide meta tags optimized for AI policy, regulation, Saudi Arabia, GCC, Riyadh, Vision 2030
+  - Dynamic page-specific SEO using React Helmet Async
+  - Canonical URLs always use https://theaqoolwire.com domain
+- **Social Media Integration**:
+  - LinkedIn company page link in footer (https://www.linkedin.com/company/theaqoolwire)
+  - Helps with brand authority and referral traffic
+  - Improves branded search results on Google
 
 ## External Dependencies
 

@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import { SiLinkedin } from "react-icons/si";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,6 +39,21 @@ export default function Footer() {
               Leading source for AI policy and regulation news in Saudi Arabia and the GCC region. 
               Expert analysis, weekly insights, and authoritative commentary.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex gap-4">
+              <a
+                href="https://www.linkedin.com/company/theaqoolwire"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-9 w-9 rounded-md bg-[#0077b5] text-white hover:bg-[#005885] transition-colors"
+                data-testid="link-footer-linkedin"
+                aria-label="Follow us on LinkedIn"
+              >
+                <SiLinkedin className="h-5 w-5" />
+              </a>
+            </div>
+            
             <div className="space-y-4">
               <Link 
                 href="/contact" 
