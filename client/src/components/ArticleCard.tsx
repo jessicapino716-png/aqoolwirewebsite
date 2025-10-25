@@ -5,6 +5,7 @@ export interface Article {
   id: string;
   title: string;
   source?: string;
+  sourceLogoUrl?: string;
   excerpt: string;
   author: string;
   publishedAt: string;
@@ -59,9 +60,19 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
             {article.title}
           </h1>
           {article.source && (
-            <p className="mb-4 !font-bold !text-[#f2007d]" style={{ fontSize: '0.875rem' }} data-testid={`text-source-hero-${article.id}`}>
-              {article.source}
-            </p>
+            <div className="mb-4 flex items-center gap-2" data-testid={`source-hero-${article.id}`}>
+              {article.sourceLogoUrl && (
+                <img 
+                  src={article.sourceLogoUrl} 
+                  alt={`${article.source} logo`}
+                  className="h-5 w-5 object-contain"
+                  data-testid={`img-source-logo-hero-${article.id}`}
+                />
+              )}
+              <p className="!font-bold !text-[#f2007d]" style={{ fontSize: '0.875rem' }} data-testid={`text-source-hero-${article.id}`}>
+                {article.source}
+              </p>
+            </div>
           )}
           <p className="verge-excerpt-text text-gray-700 text-xl mb-4" data-testid={`text-excerpt-hero-${article.id}`}>
             {article.excerpt}
@@ -108,9 +119,19 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                 {article.title}
               </h2>
               {article.source && (
-                <p className="mb-2 !font-bold !text-[#f2007d]" style={{ fontSize: '0.875rem' }} data-testid={`text-source-featured-${article.id}`}>
-                  {article.source}
-                </p>
+                <div className="mb-2 flex items-center gap-2" data-testid={`source-featured-${article.id}`}>
+                  {article.sourceLogoUrl && (
+                    <img 
+                      src={article.sourceLogoUrl} 
+                      alt={`${article.source} logo`}
+                      className="h-4 w-4 object-contain"
+                      data-testid={`img-source-logo-featured-${article.id}`}
+                    />
+                  )}
+                  <p className="!font-bold !text-[#f2007d]" style={{ fontSize: '0.875rem' }} data-testid={`text-source-featured-${article.id}`}>
+                    {article.source}
+                  </p>
+                </div>
               )}
               <p className="verge-excerpt-text text-gray-700 mb-3 line-clamp-2" data-testid={`text-excerpt-featured-${article.id}`}>
                 {article.excerpt}
@@ -159,9 +180,19 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                 {article.title}
               </h3>
               {article.source && (
-                <p className="mb-2 !font-bold !text-[#f2007d] text-sm" data-testid={`text-source-list-${article.id}`}>
-                  {article.source}
-                </p>
+                <div className="mb-2 flex items-center gap-2" data-testid={`source-list-${article.id}`}>
+                  {article.sourceLogoUrl && (
+                    <img 
+                      src={article.sourceLogoUrl} 
+                      alt={`${article.source} logo`}
+                      className="h-4 w-4 object-contain"
+                      data-testid={`img-source-logo-list-${article.id}`}
+                    />
+                  )}
+                  <p className="!font-bold !text-[#f2007d] text-sm" data-testid={`text-source-list-${article.id}`}>
+                    {article.source}
+                  </p>
+                </div>
               )}
               <p className="verge-excerpt-text text-gray-700 mb-2 line-clamp-2" data-testid={`text-excerpt-list-${article.id}`}>
                 {article.excerpt}
@@ -207,9 +238,19 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
           {article.title}
         </h3>
         {article.source && (
-          <p className="mb-2 !font-bold !text-[#f2007d]" style={{ fontSize: '0.875rem' }} data-testid={`text-source-standard-${article.id}`}>
-            {article.source}
-          </p>
+          <div className="mb-2 flex items-center gap-2" data-testid={`source-standard-${article.id}`}>
+            {article.sourceLogoUrl && (
+              <img 
+                src={article.sourceLogoUrl} 
+                alt={`${article.source} logo`}
+                className="h-4 w-4 object-contain"
+                data-testid={`img-source-logo-standard-${article.id}`}
+              />
+            )}
+            <p className="!font-bold !text-[#f2007d]" style={{ fontSize: '0.875rem' }} data-testid={`text-source-standard-${article.id}`}>
+              {article.source}
+            </p>
+          </div>
         )}
         <p className="verge-excerpt-text mb-3 line-clamp-2" data-testid={`text-excerpt-standard-${article.id}`}>
           {article.excerpt}

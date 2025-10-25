@@ -46,6 +46,7 @@ const transformContentToArticle = (content: Content) => ({
   slug: content.slug,
   comments: content.commentsCount,
   source: content.source || undefined,
+  sourceLogoUrl: content.sourceLogoUrl || undefined,
   externalUrl: content.externalUrl || undefined,
 });
 
