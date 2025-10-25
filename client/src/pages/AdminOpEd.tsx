@@ -22,6 +22,7 @@ const opEdSchema = z.object({
   body: z.string().optional(),
   externalUrl: z.string().url().optional().or(z.literal('')),
   source: z.string().optional(),
+  sourceLogoUrl: z.string().url().optional().or(z.literal('')),
   authorName: z.string().min(1, 'Author name is required'),
   category: z.string().min(1, 'Category is required'),
   tags: z.string().optional(),
@@ -49,6 +50,7 @@ export default function AdminOpEd() {
       body: '',
       externalUrl: '',
       source: '',
+      sourceLogoUrl: '',
       authorName: '',
       category: '',
       tags: '',
@@ -67,6 +69,7 @@ export default function AdminOpEd() {
         body: data.body || undefined,
         externalUrl: data.externalUrl || undefined,
         source: data.source || undefined,
+        sourceLogoUrl: data.sourceLogoUrl || undefined,
       };
       
       return apiRequest('POST', '/api/content', submissionData);
@@ -338,6 +341,24 @@ export default function AdminOpEd() {
                               {...field}
                               placeholder="e.g., MIT Technology Review, Brookings Institution"
                               data-testid="input-op-ed-source"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="sourceLogoUrl"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Source Logo URL (optional)</FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              type="url"
+                              placeholder="https://example.com/logo.png"
+                              data-testid="input-op-ed-source-logo"
                             />
                           </FormControl>
                           <FormMessage />

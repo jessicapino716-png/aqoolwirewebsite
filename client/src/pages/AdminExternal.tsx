@@ -20,6 +20,7 @@ const externalArticleSchema = z.object({
   slug: z.string().min(1, 'URL slug is required'),
   excerpt: z.string().min(1, 'Excerpt is required'),
   source: z.string().min(1, 'Source is required'),
+  sourceLogoUrl: z.string().url().optional().or(z.literal('')),
   externalUrl: z.string().url('Must be a valid URL'),
   authorName: z.string().min(1, 'Author name is required'),
   category: z.string().min(1, 'Category is required'),
@@ -42,6 +43,7 @@ export default function AdminExternal() {
       slug: '',
       excerpt: '',
       source: '',
+      sourceLogoUrl: '',
       externalUrl: '',
       authorName: '',
       category: '',
@@ -58,6 +60,7 @@ export default function AdminExternal() {
         ...data,
         tags: data.tags ? data.tags.split(',').map(tag => tag.trim()).filter(Boolean) : [],
         imageUrl: data.imageUrl || undefined,
+        sourceLogoUrl: data.sourceLogoUrl || undefined,
       };
       
       return apiRequest('POST', '/api/content', submissionData);
@@ -234,6 +237,25 @@ export default function AdminExternal() {
                     )}
                   />
                 </div>
+
+                <FormField
+                  control={form.control}
+                  name="sourceLogoUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Source Logo URL (optional)</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="url"
+                          placeholder="https://example.com/logo.png"
+                          data-testid="input-external-source-logo"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
                 <FormField
                   control={form.control}
