@@ -52,7 +52,9 @@ Preferred communication style: Simple, everyday language.
   - Internal op-eds automatically display "The Aqool Wire" as the source
   - External op-eds can specify custom sources (e.g., think tank names)
   - External articles require a source field (e.g., "TechCrunch", "Reuters")
-  - Source names display in bright green (#00e676) across all article cards
+  - Source names display in hot pink (#f2007d) across all article cards
+  - Source logos can be displayed next to source names for external articles
+  - Admin forms include optional "Source Logo URL" field for adding news site logos
 - **Image Upload**: Backend-proxied upload system using SimpleImageUpload component to avoid CORS issues
   - External articles and Op-Eds both use SimpleImageUpload for reliable image uploads
   - Images are uploaded through /api/upload-image endpoint to Google Cloud Storage
