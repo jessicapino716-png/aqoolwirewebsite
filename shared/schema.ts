@@ -18,6 +18,7 @@ export const content = pgTable("content", {
   excerpt: text("excerpt").notNull(),
   body: text("body"), // nullable - only for internal content (op-eds)
   source: text("source"), // nullable - only for external articles (e.g., "Wall Street Journal")
+  sourceLogoUrl: text("source_logo_url"), // nullable - logo URL for news source (e.g., TechCrunch logo)
   externalUrl: text("external_url"), // nullable - only for external articles
   authorName: text("author_name").notNull(),
   authorId: varchar("author_id").references(() => users.id), // nullable - link to user who created it
