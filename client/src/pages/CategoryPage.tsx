@@ -111,21 +111,13 @@ export default function CategoryPage() {
   // For the news page, filter by type="external" instead of category
   const isNewsPage = categorySlug === 'news';
   
+  // Build query URL with appropriate filter
+  const queryUrl = isNewsPage 
+    ? `/api/content?type=external`
+    : `/api/content?category=${encodeURIComponent(dbCategory)}`;
+  
   const { data: content = [], isLoading, error } = useQuery({
-    queryKey: isNewsPage ? ['/api/content', 'type', 'external'] : ['/api/content', 'category', dbCategory],
-    queryFn: async () => {
-      const params = new URLSearchParams();
-      if (isNewsPage) {
-        params.append('type', 'external');
-      } else {
-        params.append('category', dbCategory);
-      }
-      
-      const url = `/api/content?${params.toString()}`;
-      const response = await fetch(url);
-      if (!response.ok) throw new Error('Failed to fetch content');
-      return response.json();
-    },
+    queryKey: [queryUrl],
   }) as { data: Content[]; isLoading: boolean; error: any };
 
   // Fetch tool videos only for the tools category
