@@ -65,7 +65,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                 <img 
                   src={article.sourceLogoUrl} 
                   alt={`${article.source} logo`}
-                  className="h-5 w-5 object-contain"
+                  className="h-7 w-7 object-contain"
                   data-testid={`img-source-logo-hero-${article.id}`}
                 />
               )}
@@ -124,7 +124,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                     <img 
                       src={article.sourceLogoUrl} 
                       alt={`${article.source} logo`}
-                      className="h-4 w-4 object-contain"
+                      className="h-6 w-6 object-contain"
                       data-testid={`img-source-logo-featured-${article.id}`}
                     />
                   )}
@@ -185,7 +185,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
                     <img 
                       src={article.sourceLogoUrl} 
                       alt={`${article.source} logo`}
-                      className="h-4 w-4 object-contain"
+                      className="h-6 w-6 object-contain"
                       data-testid={`img-source-logo-list-${article.id}`}
                     />
                   )}
@@ -243,7 +243,7 @@ export default function ArticleCard({ article, variant = "standard" }: ArticleCa
               <img 
                 src={article.sourceLogoUrl} 
                 alt={`${article.source} logo`}
-                className="h-4 w-4 object-contain"
+                className="h-6 w-6 object-contain"
                 data-testid={`img-source-logo-standard-${article.id}`}
               />
             )}
