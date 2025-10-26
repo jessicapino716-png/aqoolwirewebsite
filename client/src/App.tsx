@@ -43,6 +43,7 @@ function Router() {
       <Route path="/policy" component={() => <CategoryPage />} />
       <Route path="/regulation" component={() => <CategoryPage />} />
       <Route path="/analysis" component={() => <CategoryPage />} />
+      <Route path="/news" component={() => <CategoryPage />} />
       <Route path="/tools" component={() => <CategoryPage />} />
       <Route path="/article/:slug" component={ArticlePage} />
       <Route path="/newsletter" component={Newsletter} />
