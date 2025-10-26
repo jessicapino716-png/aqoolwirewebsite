@@ -23,6 +23,7 @@ const categoryMapping: Record<string, string> = {
   "policy": "Policy",
   "regulation": "Regulation", 
   "analysis": "Analysis",
+  "news": "News", // Special handling - filters by type instead
   "tools": "Technology", // Maps to Technology category in database
   "newsletter": "Newsletter"
 };
@@ -31,7 +32,8 @@ const categoryMapping: Record<string, string> = {
 const displayCategoryMapping: Record<string, string> = {
   "policy": "AI Policy",
   "regulation": "AI Regulation",
-  "analysis": "AI Analysis", 
+  "analysis": "AI Analysis",
+  "news": "News",
   "tools": "AI Tools",
   "newsletter": "Newsletter"
 };
@@ -48,7 +50,8 @@ function transformContentToArticle(content: Content): Article {
     slug: content.slug,
     externalUrl: content.externalUrl || undefined,
     comments: content.commentsCount,
-    source: content.source || undefined
+    source: content.source || undefined,
+    sourceLogoUrl: content.sourceLogoUrl || undefined
   };
 }
 
@@ -105,11 +108,18 @@ export default function CategoryPage() {
   const dbCategory = categoryMapping[categorySlug];
   const displayCategory = displayCategoryMapping[categorySlug];
   
+  // For the news page, filter by type="external" instead of category
+  const isNewsPage = categorySlug === 'news';
+  
   const { data: content = [], isLoading, error } = useQuery({
-    queryKey: ['/api/content', 'category', dbCategory],
+    queryKey: isNewsPage ? ['/api/content', 'type', 'external'] : ['/api/content', 'category', dbCategory],
     queryFn: async () => {
       const params = new URLSearchParams();
-      params.append('category', dbCategory);
+      if (isNewsPage) {
+        params.append('type', 'external');
+      } else {
+        params.append('category', dbCategory);
+      }
       
       const url = `/api/content?${params.toString()}`;
       const response = await fetch(url);
