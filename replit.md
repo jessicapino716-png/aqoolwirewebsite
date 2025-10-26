@@ -13,6 +13,7 @@ Preferred communication style: Simple, everyday language.
 ### Frontend Architecture
 - **Framework**: React 18 with TypeScript for type safety and modern development
 - **Routing**: Wouter for lightweight client-side routing
+  - Main pages: Policy, Regulation, Analysis, News (external articles), New AI Tools, Newsletter
 - **Styling**: Tailwind CSS with shadcn/ui component library for consistent design system
 - **State Management**: TanStack Query (React Query) for server state management and caching
 - **Build Tool**: Vite for fast development and optimized production builds
@@ -38,6 +39,8 @@ Preferred communication style: Simple, everyday language.
 
 ### Content Management
 - **Article System**: Structured article data with metadata including categories, authors, and timestamps
+  - Content types: "external" (news articles), "op-ed" (opinion pieces)
+  - News tab displays all external articles (filtered by type="external")
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
 - **Newsletter Integration**: Multi-variant newsletter signup components with form validation
 - **Tool Reviews**: Dedicated components for AI tool showcases and reviews
