@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Aqool Wire is a news website focused on AI policy and regulation coverage in Saudi Arabia and the GCC region. The project is a full-stack web application that mimics The Verge's design aesthetic to deliver professional tech journalism content. It features a modern tech news layout with article cards, author profiles, newsletter subscription functionality, and AI tool highlights specifically tailored for the Middle Eastern AI policy landscape.
+The Aqool Wire is a news website focused on AI policy and regulation coverage in Saudi Arabia and the GCC region. The project is a full-stack web application that mimics The Verge's design aesthetic to deliver professional tech journalism content. It features a modern tech news layout with article cards, author profiles, and comprehensive coverage specifically tailored for the Middle Eastern AI policy landscape.
 
 ## User Preferences
 
@@ -13,7 +13,7 @@ Preferred communication style: Simple, everyday language.
 ### Frontend Architecture
 - **Framework**: React 18 with TypeScript for type safety and modern development
 - **Routing**: Wouter for lightweight client-side routing
-  - Main pages: Policy, Regulation, Analysis, News (external articles), New AI Tools, Newsletter
+  - Main pages: Policy, Regulation, Analysis, News (external articles)
 - **Styling**: Tailwind CSS with shadcn/ui component library for consistent design system
 - **State Management**: TanStack Query (React Query) for server state management and caching
 - **Build Tool**: Vite for fast development and optimized production builds
@@ -42,15 +42,6 @@ Preferred communication style: Simple, everyday language.
   - Content types: "external" (news articles), "op-ed" (opinion pieces)
   - News tab displays all external articles (filtered by type="external")
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
-- **Newsletter Integration**: Multi-variant newsletter signup components with form validation
-- **Tool Reviews**: Dedicated components for AI tool showcases and reviews
-- **YouTube Video Management**: Full CRUD system for managing AI tool demonstration videos
-  - Admin interface at /admin/tool-videos for creating, editing, and deleting videos
-  - Videos display on /tools page with embedded YouTube iframes
-  - Database table (toolVideos) with fields: id, title, description, youtubeUrl, displayOrder, createdAt
-  - API routes at /api/tool-videos with admin authentication required
-  - Ordered display based on displayOrder field
-  - Loading and empty states for optimal UX
 - **Source Attribution**: 
   - Internal op-eds automatically display "The Aqool Wire" as the source
   - External op-eds can specify custom sources (e.g., think tank names)
