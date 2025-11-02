@@ -1,6 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
 import HeroSection from "@/components/HeroSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
@@ -151,19 +150,6 @@ export default function Home() {
               Go to Admin Panel
             </Link>
           </div>
-          
-          {/* Sidebar with newsletter signup */}
-          <div className="max-w-md mx-auto mt-16">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
-                Stay Updated
-              </h3>
-              <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
-                Get weekly AI policy insights straight from Riyadh.
-              </p>
-              <NewsletterSignup variant="sidebar" />
-            </div>
-          </div>
         </div>
       </div>
     );
@@ -235,19 +221,6 @@ export default function Home() {
           <Link href="/policy" className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-8 py-3 rounded-md font-medium transition-colors inline-block" data-testid="button-load-more">
             Load More Articles
           </Link>
-        </div>
-        
-        {/* Newsletter Signup - Bottom of page */}
-        <div className="max-w-2xl mx-auto mt-16 mb-8">
-          <div className="p-6 rounded-lg bg-[#dedede]">
-            <h3 className="text-xl font-bold text-black mb-4" data-testid="text-sidebar-newsletter-title">
-              Stay Updated
-            </h3>
-            <p className="text-gray-600 mb-4" data-testid="text-sidebar-newsletter-description">
-              Get weekly AI policy insights straight from Riyadh.
-            </p>
-            <NewsletterSignup variant="sidebar" />
-          </div>
         </div>
       </div>
     </div>

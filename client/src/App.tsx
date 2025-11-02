@@ -14,14 +14,11 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import Home from "@/pages/Home";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
-import AdminNewsletter from "@/pages/AdminNewsletter";
 import AdminExternal from "@/pages/AdminExternal";
 import AdminOpEd from "@/pages/AdminOpEd";
 import AdminContent from "@/pages/AdminContent";
-import AdminToolVideos from "@/pages/AdminToolVideos";
 import CategoryPage from "@/pages/CategoryPage";
 import ArticlePage from "@/pages/ArticlePage";
-import Newsletter from "@/pages/Newsletter";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
@@ -44,9 +41,7 @@ function Router() {
       <Route path="/regulation" component={() => <CategoryPage />} />
       <Route path="/analysis" component={() => <CategoryPage />} />
       <Route path="/news" component={() => <CategoryPage />} />
-      <Route path="/tools" component={() => <CategoryPage />} />
       <Route path="/article/:slug" component={ArticlePage} />
-      <Route path="/newsletter" component={Newsletter} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
@@ -63,11 +58,6 @@ function Router() {
           <AdminDashboard />
         </ProtectedRoute>
       </Route>
-      <Route path="/admin/newsletter">
-        <ProtectedRoute>
-          <AdminNewsletter />
-        </ProtectedRoute>
-      </Route>
       <Route path="/admin/external">
         <ProtectedRoute>
           <AdminExternal />
@@ -81,11 +71,6 @@ function Router() {
       <Route path="/admin/content">
         <ProtectedRoute>
           <AdminContent />
-        </ProtectedRoute>
-      </Route>
-      <Route path="/admin/tool-videos">
-        <ProtectedRoute>
-          <AdminToolVideos />
         </ProtectedRoute>
       </Route>
       {/* Fallback to 404 */}
