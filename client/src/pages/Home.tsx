@@ -207,7 +207,7 @@ export default function Home() {
                     title="Special Edition"
                     subtitle={specialArticle.title}
                     description={specialArticle.excerpt}
-                    imageUrl={specialArticle.imageUrl || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"}
+                    imageUrl={specialArticle.imageUrl || "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"}
                     href={`/article/${specialArticle.id}`}
                     ctaText="Read More"
                   />
@@ -216,7 +216,7 @@ export default function Home() {
                     title="Special Edition"
                     subtitle="Vision 2030 and the AI Transformation"
                     description="Deep analysis of Saudi Arabia's AI strategy, government initiatives, and the roadmap toward becoming a global leader in artificial intelligence."
-                    imageUrl="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"
+                    imageUrl="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"
                     href="/about"
                     ctaText="Read More"
                   />
