@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
+import { Link } from "wouter";
 import HeroFeature from "@/components/magazine/HeroFeature";
 import { TopSpotlightCard } from "@/components/magazine/TopSpotlightCard";
 import FeaturedList from "@/components/magazine/FeaturedList";
@@ -146,15 +147,15 @@ export default function Home() {
             <>
               {/* ROW 1: Hero Left + Article Spotlight & Featured News Right */}
               <div className="grid lg:grid-cols-[2fr_1fr] gap-6 mb-8">
-                {/* Left Column: Hero Feature - Platform Mission */}
+                {/* Left Column: Hero Feature - Platform Tagline */}
                 <div>
                   <HeroFeature
-                    kicker="Our Mission"
-                    title="Saudi Arabia's first data-driven intelligence platform"
-                    excerpt="Tracking AI policy, regulation, and strategic developments across the Kingdom. We deliver authoritative analysis and insights that shape the narrative of artificial intelligence in Saudi Arabia and the GCC region."
+                    kicker="Intelligence Platform"
+                    title="Shaping the Narrative of AI in Saudi Arabia"
+                    excerpt="Your authoritative source for AI policy, regulation, and strategic intelligence across the Kingdom and GCC region. Delivering data-driven insights that matter."
                     imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
-                    href="/about"
-                    ctaText="Learn More"
+                    href="/regulatory-intelligence"
+                    ctaText="Explore Coverage"
                   />
                 </div>
 

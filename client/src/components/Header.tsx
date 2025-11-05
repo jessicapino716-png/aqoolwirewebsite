@@ -14,7 +14,6 @@ export default function Header() {
     { name: "AI Advisory", href: "/ai-advisory" },
     { name: "Insights", href: "/insights" },
     { name: "Reports", href: "/reports" },
-    { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/contact" },
   ];
 
