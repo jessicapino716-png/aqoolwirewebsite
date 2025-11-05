@@ -106,11 +106,25 @@ Preferred communication style: Simple, everyday language.
 - **New color scheme**: Deep green (#0a0f1b) to black (#050a12) gradient with cyan/magenta accents
 - **Glass morphism**: Added backdrop blur effects and transparent borders throughout
 - **Navigation restructure**: Updated to magazine-focused sections (Regulatory Intelligence, Research & Policy, AI Advisory, Insights, Reports)
-- **Homepage rewrite**: Implemented magazine grid layout with Hero, Sidebar, Special Edition, Most Recents, and Category Grids
-- **Component library**: Created 7 reusable magazine components for editorial layouts
+- **Component library**: Created 7 reusable magazine components for editorial layouts including TopSpotlightCard with Saudi Arabia map background
 - **Dark mode only**: Removed light mode; site defaults to dark magazine aesthetic
 - **Accessibility**: All components include focus-cyan states, ARIA labels, semantic HTML, data-testid attributes
 - **Bug fixes**: Fixed date handling in Insights page to prevent runtime errors with invalid dates
+
+### Homepage Layout Restructure (November 5, 2024)
+- **Three-row magazine grid layout**:
+  - **Row 1**: Large hero feature (left 2fr) + Platform mission spotlight with Saudi map background & Featured News list (right 1fr)
+  - **Row 2**: Most Recents numbered list (left 1fr) + Special Edition banner (right 2fr)
+  - **Row 3**: Five dedicated topic grids (3-column layout each)
+- **Platform Mission Spotlight**: Top right card shows platform mission statement over Saudi Arabia map background instead of article
+- **Topic-Specific Grids**: Five dedicated sections for content organization:
+  - Regulatory Intelligence (regulation/policy/compliance articles)
+  - Research & Technology Policy (research/tech/innovation articles)
+  - AI Advisory (strategy/analysis/governance articles)
+  - Insights (opinion/perspective/commentary articles)
+  - Reports (data/market/intelligence briefs)
+- **Flexible Category Filtering**: Case-insensitive keyword-based matching system ensures sections populate regardless of category capitalization
+- **Newsletter Consolidation**: Removed newsletter form from main content; kept only in footer
 
 ## External Dependencies
 
