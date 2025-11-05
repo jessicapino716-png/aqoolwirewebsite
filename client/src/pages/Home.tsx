@@ -188,10 +188,19 @@ export default function Home() {
 
               {/* ROW 2: Most Recents Left + Special Edition Right */}
               <div className="grid lg:grid-cols-[1fr_2fr] gap-6 mb-12">
-                {/* Most Recents (left column) */}
-                {mostRecents.length > 0 && (
-                  <NumberedList title="Most Recents" items={mostRecents} />
-                )}
+                {/* Most Recents (left column) - always render */}
+                <NumberedList 
+                  title="Most Recents" 
+                  items={mostRecents.length > 0 ? mostRecents : [
+                    {
+                      id: "placeholder-1",
+                      title: "Latest AI policy updates coming soon",
+                      excerpt: "Stay tuned for breaking developments",
+                      href: "/regulatory-intelligence",
+                      createdAt: new Date().toISOString()
+                    }
+                  ]} 
+                />
 
                 {/* Special Edition (right column) */}
                 {specialArticle ? (
@@ -215,57 +224,77 @@ export default function Home() {
                 )}
               </div>
 
-              {/* ROW 3: Topic-Specific Grids */}
+              {/* ROW 3: Topic-Specific Grids - Always render all 5 sections */}
               <div className="space-y-12">
                 {/* Regulatory Intelligence */}
-                {regulatoryArticles.length > 0 && (
-                  <section>
-                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                      Regulatory Intelligence
-                    </h2>
+                <section>
+                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                    Regulatory Intelligence
+                  </h2>
+                  {regulatoryArticles.length > 0 ? (
                     <CardGrid title="" cards={regulatoryArticles} columns={3} />
-                  </section>
-                )}
+                  ) : (
+                    <div className="glass-card p-12 text-center">
+                      <p className="text-gray-400 text-lg">Regulatory intelligence updates coming soon</p>
+                    </div>
+                  )}
+                </section>
 
                 {/* Research & Technology Policy */}
-                {researchArticles.length > 0 && (
-                  <section>
-                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                      Research & Technology Policy
-                    </h2>
+                <section>
+                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                    Research & Technology Policy
+                  </h2>
+                  {researchArticles.length > 0 ? (
                     <CardGrid title="" cards={researchArticles} columns={3} />
-                  </section>
-                )}
+                  ) : (
+                    <div className="glass-card p-12 text-center">
+                      <p className="text-gray-400 text-lg">Research & policy coverage coming soon</p>
+                    </div>
+                  )}
+                </section>
 
                 {/* AI Advisory */}
-                {advisoryArticles.length > 0 && (
-                  <section>
-                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                      AI Advisory
-                    </h2>
+                <section>
+                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                    AI Advisory
+                  </h2>
+                  {advisoryArticles.length > 0 ? (
                     <CardGrid title="" cards={advisoryArticles} columns={3} />
-                  </section>
-                )}
+                  ) : (
+                    <div className="glass-card p-12 text-center">
+                      <p className="text-gray-400 text-lg">AI advisory insights coming soon</p>
+                    </div>
+                  )}
+                </section>
 
                 {/* Insights */}
-                {insightsArticles.length > 0 && (
-                  <section>
-                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                      Insights
-                    </h2>
+                <section>
+                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                    Insights
+                  </h2>
+                  {insightsArticles.length > 0 ? (
                     <CardGrid title="" cards={insightsArticles} columns={3} />
-                  </section>
-                )}
+                  ) : (
+                    <div className="glass-card p-12 text-center">
+                      <p className="text-gray-400 text-lg">Expert insights coming soon</p>
+                    </div>
+                  )}
+                </section>
 
                 {/* Reports */}
-                {reportsArticles.length > 0 && (
-                  <section>
-                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                      Reports
-                    </h2>
+                <section>
+                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                    Reports
+                  </h2>
+                  {reportsArticles.length > 0 ? (
                     <CardGrid title="" cards={reportsArticles} columns={3} />
-                  </section>
-                )}
+                  ) : (
+                    <div className="glass-card p-12 text-center">
+                      <p className="text-gray-400 text-lg">Intelligence reports coming soon</p>
+                    </div>
+                  )}
+                </section>
               </div>
             </>
           )}
