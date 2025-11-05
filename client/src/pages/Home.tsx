@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
-import { Link } from "wouter";
 import HeroFeature from "@/components/magazine/HeroFeature";
 import { TopSpotlightCard } from "@/components/magazine/TopSpotlightCard";
 import FeaturedList from "@/components/magazine/FeaturedList";
@@ -21,9 +20,6 @@ export default function Home() {
   // Hero: First op-ed article
   const heroArticle = opEdArticles[0];
 
-  // Top Spotlight: Second op-ed article (with Saudi map background)
-  const topSpotlightArticle = opEdArticles[1];
-
   // Featured News List: External articles 1-5
   const featuredNews = externalArticles.slice(0, 5).map((article) => ({
     id: article.id,
@@ -42,22 +38,78 @@ export default function Home() {
     createdAt: article.publishedAt.toString(),
   }));
 
-  // Special Edition: Third op-ed article
-  const specialArticle = opEdArticles[2];
+  // Special Edition: Second op-ed article
+  const specialArticle = opEdArticles[1];
 
-  // Top Stories Grid: Mix of op-eds and external articles
-  const topStoriesCards = [
-    ...opEdArticles.slice(3, 5),
-    ...externalArticles.slice(10, 12)
-  ].map((article) => ({
-    id: article.id,
-    title: article.title,
-    excerpt: article.excerpt,
-    category: article.category,
-    imageUrl: article.imageUrl || undefined,
-    source: article.source || undefined,
-    href: `/article/${article.id}`,
-  }));
+  // Helper function for category matching (case-insensitive, keyword-based)
+  const matchesCategory = (article: Content, keywords: string[]) => {
+    const category = article.category.toLowerCase();
+    return keywords.some(keyword => category.includes(keyword.toLowerCase()));
+  };
+
+  // Category-specific grids
+  const regulatoryArticles = articles
+    ?.filter((article) => matchesCategory(article, ["regulation", "policy", "compliance", "regulatory"]))
+    .slice(0, 3)
+    .map((article) => ({
+      id: article.id,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+      imageUrl: article.imageUrl || undefined,
+      source: article.source || undefined,
+      href: `/article/${article.id}`,
+    })) || [];
+
+  const researchArticles = articles
+    ?.filter((article) => matchesCategory(article, ["research", "technology", "tech", "innovation", "development"]))
+    .slice(0, 3)
+    .map((article) => ({
+      id: article.id,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+      imageUrl: article.imageUrl || undefined,
+      source: article.source || undefined,
+      href: `/article/${article.id}`,
+    })) || [];
+
+  const advisoryArticles = articles
+    ?.filter((article) => matchesCategory(article, ["strategy", "analysis", "advisory", "consulting", "governance"]))
+    .slice(0, 3)
+    .map((article) => ({
+      id: article.id,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+      imageUrl: article.imageUrl || undefined,
+      source: article.source || undefined,
+      href: `/article/${article.id}`,
+    })) || [];
+
+  const insightsArticles = articles
+    ?.filter((article) => matchesCategory(article, ["insights", "opinion", "perspective", "commentary", "thought"]))
+    .slice(0, 3)
+    .map((article) => ({
+      id: article.id,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+      imageUrl: article.imageUrl || undefined,
+      href: `/article/${article.id}`,
+    })) || [];
+
+  const reportsArticles = articles
+    ?.filter((article) => matchesCategory(article, ["report", "data", "market", "intelligence", "brief"]))
+    .slice(0, 3)
+    .map((article) => ({
+      id: article.id,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+      imageUrl: article.imageUrl || undefined,
+      href: `/article/${article.id}`,
+    })) || [];
 
   return (
     <>
@@ -92,7 +144,7 @@ export default function Home() {
             </div>
           ) : (
             <>
-              {/* ROW 1: Hero Left + Top Spotlight & Featured News Right */}
+              {/* ROW 1: Hero Left + Platform Mission & Featured News Right */}
               <div className="grid lg:grid-cols-[2fr_1fr] gap-6 mb-8">
                 {/* Left Column: Hero Feature */}
                 <div>
@@ -108,33 +160,24 @@ export default function Home() {
                   ) : (
                     <HeroFeature
                       kicker="Leading Intelligence"
-                      title="Saudi Arabia Leads MENA in AI Adoption with $25B Investment"
-                      excerpt="Comprehensive tracking of AI policy developments, regulatory frameworks, and compliance requirements across the Kingdom and GCC region."
+                      title="Shaping the Narrative of AI in Saudi Arabia"
+                      excerpt="Comprehensive tracking of AI policy developments, regulatory frameworks, and strategic intelligence across the Kingdom and GCC region."
                       imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
-                      href="/regulatory-intelligence"
-                      ctaText="Read Analysis"
+                      href="/about"
+                      ctaText="Learn More"
                     />
                   )}
                 </div>
 
-                {/* Right Column: Top Spotlight + Featured News */}
+                {/* Right Column: Platform Mission + Featured News */}
                 <div className="space-y-6">
-                  {/* Top Spotlight Card with Saudi Map Background */}
-                  {topSpotlightArticle ? (
-                    <TopSpotlightCard
-                      kicker={topSpotlightArticle.category}
-                      title={topSpotlightArticle.title}
-                      href={`/article/${topSpotlightArticle.id}`}
-                      showMapBackground={true}
-                    />
-                  ) : (
-                    <TopSpotlightCard
-                      kicker="Regulatory Intelligence"
-                      title="SDAIA Announces New AI Governance Framework for 2025"
-                      href="/regulatory-intelligence"
-                      showMapBackground={true}
-                    />
-                  )}
+                  {/* Platform Mission Card with Saudi Map Background */}
+                  <TopSpotlightCard
+                    kicker="Our Mission"
+                    title="Saudi Arabia's first data-driven intelligence platform tracking AI policy, regulation, and strategic developments across the Kingdom."
+                    href="/about"
+                    showMapBackground={true}
+                  />
 
                   {/* Featured News List */}
                   {featuredNews.length > 0 && (
@@ -153,7 +196,7 @@ export default function Home() {
                 {/* Special Edition (right column) */}
                 {specialArticle ? (
                   <SpecialEdition
-                    title="Research & Technology Policy"
+                    title="Special Edition"
                     subtitle={specialArticle.title}
                     description={specialArticle.excerpt}
                     imageUrl={specialArticle.imageUrl || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"}
@@ -162,27 +205,68 @@ export default function Home() {
                   />
                 ) : (
                   <SpecialEdition
-                    title="Research & Technology Policy"
-                    subtitle="AI Research Priorities Align with Vision 2030 Goals"
-                    description="Deep analysis of Saudi Arabia's AI research landscape, government funding initiatives, and academic partnerships shaping the future of innovation."
+                    title="Special Edition"
+                    subtitle="Vision 2030 and the AI Transformation"
+                    description="Deep analysis of Saudi Arabia's AI strategy, government initiatives, and the roadmap toward becoming a global leader in artificial intelligence."
                     imageUrl="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"
-                    href="/research-technology-policy"
+                    href="/about"
                     ctaText="Read More"
                   />
                 )}
               </div>
 
-              {/* ROW 3: Top Stories Grid */}
-              {topStoriesCards.length > 0 && (
-                <section className="mb-12">
-                  <div className="mb-6">
-                    <h2 className="text-3xl font-black text-white">
-                      Top Stories
+              {/* ROW 3: Topic-Specific Grids */}
+              <div className="space-y-12">
+                {/* Regulatory Intelligence */}
+                {regulatoryArticles.length > 0 && (
+                  <section>
+                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                      Regulatory Intelligence
                     </h2>
-                  </div>
-                  <CardGrid title="" cards={topStoriesCards} columns={2} />
-                </section>
-              )}
+                    <CardGrid title="" cards={regulatoryArticles} columns={3} />
+                  </section>
+                )}
+
+                {/* Research & Technology Policy */}
+                {researchArticles.length > 0 && (
+                  <section>
+                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                      Research & Technology Policy
+                    </h2>
+                    <CardGrid title="" cards={researchArticles} columns={3} />
+                  </section>
+                )}
+
+                {/* AI Advisory */}
+                {advisoryArticles.length > 0 && (
+                  <section>
+                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                      AI Advisory
+                    </h2>
+                    <CardGrid title="" cards={advisoryArticles} columns={3} />
+                  </section>
+                )}
+
+                {/* Insights */}
+                {insightsArticles.length > 0 && (
+                  <section>
+                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                      Insights
+                    </h2>
+                    <CardGrid title="" cards={insightsArticles} columns={3} />
+                  </section>
+                )}
+
+                {/* Reports */}
+                {reportsArticles.length > 0 && (
+                  <section>
+                    <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
+                      Reports
+                    </h2>
+                    <CardGrid title="" cards={reportsArticles} columns={3} />
+                  </section>
+                )}
+              </div>
             </>
           )}
         </div>
