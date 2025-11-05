@@ -144,40 +144,38 @@ export default function Home() {
             </div>
           ) : (
             <>
-              {/* ROW 1: Hero Left + Platform Mission & Featured News Right */}
+              {/* ROW 1: Hero Left + Article Spotlight & Featured News Right */}
               <div className="grid lg:grid-cols-[2fr_1fr] gap-6 mb-8">
-                {/* Left Column: Hero Feature */}
+                {/* Left Column: Hero Feature - Platform Mission */}
                 <div>
-                  {heroArticle ? (
-                    <HeroFeature
-                      kicker="Leading Intelligence"
-                      title={heroArticle.title}
-                      excerpt={heroArticle.excerpt}
-                      imageUrl={heroArticle.imageUrl || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"}
-                      href={`/article/${heroArticle.id}`}
-                      ctaText="Read Analysis"
-                    />
-                  ) : (
-                    <HeroFeature
-                      kicker="Leading Intelligence"
-                      title="Shaping the Narrative of AI in Saudi Arabia"
-                      excerpt="Comprehensive tracking of AI policy developments, regulatory frameworks, and strategic intelligence across the Kingdom and GCC region."
-                      imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
-                      href="/about"
-                      ctaText="Learn More"
-                    />
-                  )}
+                  <HeroFeature
+                    kicker="Our Mission"
+                    title="Saudi Arabia's first data-driven intelligence platform"
+                    excerpt="Tracking AI policy, regulation, and strategic developments across the Kingdom. We deliver authoritative analysis and insights that shape the narrative of artificial intelligence in Saudi Arabia and the GCC region."
+                    imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
+                    href="/about"
+                    ctaText="Learn More"
+                  />
                 </div>
 
-                {/* Right Column: Platform Mission + Featured News */}
+                {/* Right Column: Article Spotlight + Featured News */}
                 <div className="space-y-6">
-                  {/* Platform Mission Card with Saudi Map Background */}
-                  <TopSpotlightCard
-                    kicker="Our Mission"
-                    title="Saudi Arabia's first data-driven intelligence platform tracking AI policy, regulation, and strategic developments across the Kingdom."
-                    href="/about"
-                    showMapBackground={true}
-                  />
+                  {/* Top Spotlight - Featured Article with Saudi Map Background */}
+                  {heroArticle ? (
+                    <TopSpotlightCard
+                      kicker={heroArticle.category}
+                      title={heroArticle.title}
+                      href={`/article/${heroArticle.id}`}
+                      showMapBackground={true}
+                    />
+                  ) : (
+                    <TopSpotlightCard
+                      kicker="Analysis"
+                      title="The Future of AI Regulation in Saudi Arabia: A Comprehensive Analysis"
+                      href="/regulatory-intelligence"
+                      showMapBackground={true}
+                    />
+                  )}
 
                   {/* Featured News List */}
                   {featuredNews.length > 0 && (
