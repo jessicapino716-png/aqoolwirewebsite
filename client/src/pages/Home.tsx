@@ -222,77 +222,180 @@ export default function Home() {
                 )}
               </div>
 
-              {/* ROW 3: Topic-Specific Grids - Always render all 5 sections */}
-              <div className="space-y-12">
-                {/* Regulatory Intelligence */}
-                <section>
-                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                    Regulatory Intelligence
-                  </h2>
-                  {regulatoryArticles.length > 0 ? (
-                    <CardGrid title="" cards={regulatoryArticles} columns={3} />
-                  ) : (
-                    <div className="glass-card p-12 text-center">
-                      <p className="text-gray-400 text-lg">Regulatory intelligence updates coming soon</p>
-                    </div>
-                  )}
-                </section>
+              {/* ROW 3: Topic Sections - Asymmetric Magazine Layout */}
+              <div className="space-y-8">
+                {/* Row 1: Regulatory Intelligence (Large) + Research & Tech (Medium) */}
+                <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6">
+                  {/* Regulatory Intelligence - Large */}
+                  <section>
+                    <h2 className="text-2xl font-black text-white mb-4 uppercase tracking-tight">
+                      Regulatory Intelligence
+                    </h2>
+                    {regulatoryArticles.length > 0 ? (
+                      <div className="grid gap-6">
+                        {regulatoryArticles.slice(0, 2).map((article) => (
+                          <Link key={article.id} href={article.href} data-testid={`link-card-${article.id}`}>
+                            <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer">
+                              {article.imageUrl && (
+                                <div className="aspect-video overflow-hidden">
+                                  <img
+                                    src={article.imageUrl}
+                                    alt={article.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                              )}
+                              <div className="p-6">
+                                <span className="eyebrow">{article.category}</span>
+                                <h3 className="text-xl font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
+                                  {article.title}
+                                </h3>
+                                <p className="text-gray-400 text-sm leading-relaxed">{article.excerpt}</p>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="glass-card p-12 text-center">
+                        <p className="text-gray-400">Regulatory intelligence updates coming soon</p>
+                      </div>
+                    )}
+                  </section>
 
-                {/* Research & Technology Policy */}
-                <section>
-                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                    Research & Technology Policy
-                  </h2>
-                  {researchArticles.length > 0 ? (
-                    <CardGrid title="" cards={researchArticles} columns={3} />
-                  ) : (
-                    <div className="glass-card p-12 text-center">
-                      <p className="text-gray-400 text-lg">Research & policy coverage coming soon</p>
-                    </div>
-                  )}
-                </section>
+                  {/* Research & Technology Policy - Medium */}
+                  <section>
+                    <h2 className="text-2xl font-black text-white mb-4 uppercase tracking-tight">
+                      Research & Tech Policy
+                    </h2>
+                    {researchArticles.length > 0 ? (
+                      <div className="space-y-6">
+                        {researchArticles.slice(0, 1).map((article) => (
+                          <Link key={article.id} href={article.href} data-testid={`link-card-${article.id}`}>
+                            <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer h-full">
+                              {article.imageUrl && (
+                                <div className="aspect-video overflow-hidden">
+                                  <img
+                                    src={article.imageUrl}
+                                    alt={article.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                              )}
+                              <div className="p-6">
+                                <span className="eyebrow">{article.category}</span>
+                                <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
+                                  {article.title}
+                                </h3>
+                                <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">{article.excerpt}</p>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="glass-card p-12 text-center">
+                        <p className="text-gray-400">Research coverage coming soon</p>
+                      </div>
+                    )}
+                  </section>
+                </div>
 
-                {/* AI Advisory */}
-                <section>
-                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                    AI Advisory
-                  </h2>
-                  {advisoryArticles.length > 0 ? (
-                    <CardGrid title="" cards={advisoryArticles} columns={3} />
-                  ) : (
-                    <div className="glass-card p-12 text-center">
-                      <p className="text-gray-400 text-lg">AI advisory insights coming soon</p>
-                    </div>
-                  )}
-                </section>
+                {/* Row 2: AI Advisory (Medium) + Insights (Small) + Reports (Small) */}
+                <div className="grid lg:grid-cols-[1.2fr_0.9fr_0.9fr] gap-6">
+                  {/* AI Advisory - Medium */}
+                  <section>
+                    <h2 className="text-2xl font-black text-white mb-4 uppercase tracking-tight">
+                      AI Advisory
+                    </h2>
+                    {advisoryArticles.length > 0 ? (
+                      <div>
+                        {advisoryArticles.slice(0, 1).map((article) => (
+                          <Link key={article.id} href={article.href} data-testid={`link-card-${article.id}`}>
+                            <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer">
+                              {article.imageUrl && (
+                                <div className="aspect-video overflow-hidden">
+                                  <img
+                                    src={article.imageUrl}
+                                    alt={article.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                              )}
+                              <div className="p-6">
+                                <span className="eyebrow">{article.category}</span>
+                                <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
+                                  {article.title}
+                                </h3>
+                                <p className="text-gray-400 text-sm leading-relaxed">{article.excerpt}</p>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="glass-card p-10 text-center">
+                        <p className="text-gray-400">Advisory insights coming soon</p>
+                      </div>
+                    )}
+                  </section>
 
-                {/* Insights */}
-                <section>
-                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                    Insights
-                  </h2>
-                  {insightsArticles.length > 0 ? (
-                    <CardGrid title="" cards={insightsArticles} columns={3} />
-                  ) : (
-                    <div className="glass-card p-12 text-center">
-                      <p className="text-gray-400 text-lg">Expert insights coming soon</p>
-                    </div>
-                  )}
-                </section>
+                  {/* Insights - Small */}
+                  <section>
+                    <h2 className="text-xl font-black text-white mb-4 uppercase tracking-tight">
+                      Insights
+                    </h2>
+                    {insightsArticles.length > 0 ? (
+                      <div>
+                        {insightsArticles.slice(0, 1).map((article) => (
+                          <Link key={article.id} href={article.href} data-testid={`link-card-${article.id}`}>
+                            <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer h-full">
+                              <div className="p-6">
+                                <span className="eyebrow text-xs">{article.category}</span>
+                                <h3 className="text-base font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2 line-clamp-3">
+                                  {article.title}
+                                </h3>
+                                <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">{article.excerpt}</p>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="glass-card p-8 text-center">
+                        <p className="text-gray-400 text-sm">Expert insights coming soon</p>
+                      </div>
+                    )}
+                  </section>
 
-                {/* Reports */}
-                <section>
-                  <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-tight">
-                    Reports
-                  </h2>
-                  {reportsArticles.length > 0 ? (
-                    <CardGrid title="" cards={reportsArticles} columns={3} />
-                  ) : (
-                    <div className="glass-card p-12 text-center">
-                      <p className="text-gray-400 text-lg">Intelligence reports coming soon</p>
-                    </div>
-                  )}
-                </section>
+                  {/* Reports - Small */}
+                  <section>
+                    <h2 className="text-xl font-black text-white mb-4 uppercase tracking-tight">
+                      Reports
+                    </h2>
+                    {reportsArticles.length > 0 ? (
+                      <div>
+                        {reportsArticles.slice(0, 1).map((article) => (
+                          <Link key={article.id} href={article.href} data-testid={`link-card-${article.id}`}>
+                            <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer h-full">
+                              <div className="p-6">
+                                <span className="eyebrow text-xs">{article.category}</span>
+                                <h3 className="text-base font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2 line-clamp-3">
+                                  {article.title}
+                                </h3>
+                                <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">{article.excerpt}</p>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="glass-card p-8 text-center">
+                        <p className="text-gray-400 text-sm">Intelligence reports coming soon</p>
+                      </div>
+                    )}
+                  </section>
+                </div>
               </div>
             </>
           )}
