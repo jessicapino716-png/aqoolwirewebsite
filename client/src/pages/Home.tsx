@@ -8,7 +8,7 @@ import SpecialEdition from "@/components/magazine/SpecialEdition";
 import NumberedList from "@/components/magazine/NumberedList";
 import CardGrid from "@/components/magazine/CardGrid";
 import { Content } from "@shared/schema";
-import saudiMapNetwork from "@assets/stock_images/saudi_arabia_map_net_46f1a62c.jpg";
+import saudiMapNetwork from "@assets/generated_images/Saudi_Arabia_AI_network_map_db551bbd.png";
 
 export default function Home() {
   const { data: articles, isLoading } = useQuery<Content[]>({
