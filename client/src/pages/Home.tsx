@@ -1,228 +1,268 @@
-import ArticleCard from "@/components/ArticleCard";
-import HeroSection from "@/components/HeroSection";
-import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
+import { Link } from "wouter";
+import HeroFeature from "@/components/magazine/HeroFeature";
+import SidebarSpotlight from "@/components/magazine/SidebarSpotlight";
+import FeaturedList from "@/components/magazine/FeaturedList";
+import SpecialEdition from "@/components/magazine/SpecialEdition";
+import NumberedList from "@/components/magazine/NumberedList";
+import CardGrid from "@/components/magazine/CardGrid";
+import NewsletterForm from "@/components/magazine/NewsletterForm";
 import { Content } from "@shared/schema";
 
-// Fallback images for articles without images - using public folder paths
-const heroImage = '/assets/generated_images/AI_policy_hero_image_e5e8bfa6.png';
-const thumbnailImage = '/assets/generated_images/AI_regulation_news_thumbnail_f02ad3d3.png';
-
-// Helper function to format published date
-const formatPublishedDate = (publishedAt: string) => {
-  const date = new Date(publishedAt);
-  const now = new Date();
-  const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
-  
-  if (diffInHours < 1) {
-    return "Just now";
-  } else if (diffInHours < 24) {
-    return `${diffInHours} hour${diffInHours > 1 ? 's' : ''} ago`;
-  } else {
-    const diffInDays = Math.floor(diffInHours / 24);
-    if (diffInDays < 7) {
-      return `${diffInDays} day${diffInDays > 1 ? 's' : ''} ago`;
-    } else {
-      return date.toLocaleDateString('en-US', { 
-        month: 'long', 
-        day: 'numeric', 
-        year: 'numeric' 
-      });
-    }
-  }
-};
-
-// Transform database content to article format expected by ArticleCard
-const transformContentToArticle = (content: Content) => ({
-  id: content.id,
-  title: content.title,
-  excerpt: content.excerpt,
-  author: content.authorName,
-  publishedAt: formatPublishedDate(content.publishedAt.toString()),
-  category: content.category,
-  imageUrl: content.imageUrl || thumbnailImage,
-  slug: content.slug,
-  comments: content.commentsCount,
-  source: content.source || undefined,
-  sourceLogoUrl: content.sourceLogoUrl || undefined,
-  externalUrl: content.externalUrl || undefined,
-});
-
 export default function Home() {
-  // Fetch all articles from the API
-  const { data: articles, isLoading, error } = useQuery<Content[]>({
-    queryKey: ['/api/content'],
-    queryFn: async () => {
-      const response = await fetch('/api/content');
-      if (!response.ok) {
-        throw new Error('Failed to fetch articles');
-      }
-      return response.json();
-    },
+  const { data: articles, isLoading } = useQuery<Content[]>({
+    queryKey: ["/api/content"],
   });
 
-  // Fetch popular articles from the API
-  const { data: popularArticles } = useQuery<Content[]>({
-    queryKey: ['/api/content', 'popular'],
-    queryFn: async () => {
-      const response = await fetch('/api/content?popular=true');
-      if (!response.ok) {
-        throw new Error('Failed to fetch popular articles');
-      }
-      return response.json();
-    },
-  });
-
-  // Transform articles for display
-  const transformedArticles = articles?.map(transformContentToArticle) || [];
-  
   // Separate op-ed and external articles
-  const opEdArticles = transformedArticles.filter(article => 
-    articles?.find(content => content.id === article.id)?.type === 'op-ed'
-  );
-  const externalArticles = transformedArticles.filter(article => 
-    articles?.find(content => content.id === article.id)?.type === 'external'
-  );
-  
-  // Get hero article (first op-ed article only)
+  const opEdArticles = articles?.filter((article) => article.type === "op-ed") || [];
+  const externalArticles = articles?.filter((article) => article.type === "external") || [];
+
+  // Hero: First op-ed article
   const heroArticle = opEdArticles[0];
-  
-  // Get featured articles (next 2 op-ed articles only)
-  const featuredArticles = opEdArticles.slice(1, 3);
-  
-  // Get latest articles (remaining op-ed articles + all external articles)
-  const latestArticles = [...opEdArticles.slice(3), ...externalArticles];
 
-  // Loading state
-  if (isLoading) {
-    return (
-      <div className="bg-background">
-        <HeroSection />
-        <div className="mx-auto max-w-7xl px-4 py-8 bg-white">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <div className="animate-pulse">
-                <div className="bg-gray-200 rounded-lg h-64 mb-8"></div>
-                <div className="space-y-4">
-                  <div className="bg-gray-200 rounded-lg h-32"></div>
-                  <div className="bg-gray-200 rounded-lg h-32"></div>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-1">
-              <div className="bg-gray-200 rounded-lg h-64"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // Sidebar Spotlight: Second op-ed article
+  const spotlightArticle = opEdArticles[1];
 
-  // Error state
-  if (error) {
-    return (
-      <div className="bg-background">
-        <HeroSection />
-        <div className="mx-auto max-w-7xl px-4 py-8 bg-white text-center">
-          <p className="text-red-600">Failed to load articles. Please try again later.</p>
-        </div>
-      </div>
-    );
-  }
+  // Featured News List: External articles 1-5
+  const featuredNews = externalArticles.slice(0, 5).map((article) => ({
+    id: article.id,
+    title: article.title,
+    href: `/article/${article.id}`,
+    category: article.category,
+  }));
 
-  // No articles state
-  if (!transformedArticles.length) {
-    return (
-      <div className="bg-background">
-        <HeroSection />
-        <div className="mx-auto max-w-7xl px-4 py-8 bg-white">
-          <div className="text-center py-16">
-            <h2 className="text-2xl font-bold text-black mb-4" data-testid="text-no-articles-title">No Articles Yet</h2>
-            <p className="text-gray-600 mb-8" data-testid="text-no-articles-description">
-              Articles uploaded through the admin panel will appear here.
-            </p>
-            <Link 
-              href="/admin/login" 
-              className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-6 py-3 rounded-md font-medium transition-colors inline-block"
-              data-testid="link-admin-login"
-            >
-              Go to Admin Panel
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // Most Recents: External articles 6-10
+  const mostRecents = externalArticles.slice(5, 10).map((article) => ({
+    id: article.id,
+    title: article.title,
+    excerpt: article.excerpt,
+    source: article.source || undefined,
+    href: `/article/${article.id}`,
+    createdAt: article.publishedAt.toString(),
+  }));
 
-  // Transform popular articles for hero section
-  const transformedPopularArticles = popularArticles?.map(content => ({
-    id: content.id,
-    title: content.title,
-    slug: content.slug,
-    category: content.category,
-    externalUrl: content.externalUrl || undefined,
-  })) || [];
+  // Special Edition: Third op-ed article
+  const specialArticle = opEdArticles[2];
+
+  // Insights Grid: Remaining op-eds
+  const insightsCards = opEdArticles.slice(3, 9).map((article) => ({
+    id: article.id,
+    title: article.title,
+    excerpt: article.excerpt,
+    category: article.category,
+    imageUrl: article.imageUrl || undefined,
+    source: article.source || undefined,
+    href: `/article/${article.id}`,
+  }));
+
+  // Reports Grid: Policy/regulation articles
+  const reportsCards = articles
+    ?.filter((article) => article.category === "policy" || article.category === "regulation")
+    .slice(0, 3)
+    .map((article) => ({
+      id: article.id,
+      title: article.title,
+      excerpt: article.excerpt,
+      category: article.category,
+      imageUrl: article.imageUrl || undefined,
+      href: `/article/${article.id}`,
+    })) || [];
 
   return (
-    <div className="bg-background">
+    <>
       <Helmet>
-        <title>The Aqool Wire | AI Policy, Regulation & Innovation from Riyadh</title>
-        <meta name="description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC — covering innovation, ethics, and the future of work." />
-        <meta name="keywords" content="AI policy, AI regulation, Saudi Arabia, GCC, Riyadh, artificial intelligence, Vision 2030, AI innovation, AI law, data privacy, AI ethics, AI jobs" />
-        <meta property="og:title" content="The Aqool Wire | AI Policy, Regulation & Innovation from Riyadh" />
-        <meta property="og:description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC — covering innovation, ethics, and the future of work." />
+        <title>The Aqool Wire - Saudi Arabia's AI Intelligence Platform</title>
+        <meta
+          name="description"
+          content="The first data-driven intelligence platform shaping the narrative of AI in Saudi Arabia. Track regulatory developments, strategic insights, and market intelligence across the Kingdom and GCC region."
+        />
+        <meta
+          name="keywords"
+          content="Saudi Arabia AI, AI policy, AI regulation, SDAIA, Vision 2030, GCC AI, Saudi tech, AI governance, Riyadh AI"
+        />
+        <meta property="og:title" content="The Aqool Wire - Saudi Arabia's AI Intelligence Platform" />
+        <meta
+          property="og:description"
+          content="The first data-driven intelligence platform shaping the narrative of AI in Saudi Arabia."
+        />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://theaqoolwire.com/" />
+        <link rel="canonical" href="https://theaqoolwire.com" />
       </Helmet>
-      
-      <HeroSection popularArticles={transformedPopularArticles} />
-      {/* Main Content */}
-      <div className="mx-auto max-w-7xl px-2 py-8 bg-white">
-        {/* Analysis Section - Op-Ed Articles in Equal Grid */}
-        {opEdArticles.length > 0 && (
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-analysis-title">
-              Analysis & Commentary
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {opEdArticles.map((article) => (
-                <ArticleCard 
-                  key={article.id} 
-                  article={article} 
-                  variant="standard" 
-                />
+
+      <main className="min-h-screen relative z-10">
+        <div className="max-w-7xl mx-auto px-4 py-8 lg:py-12">
+          {isLoading ? (
+            <div className="space-y-6">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="glass-card p-8 animate-pulse">
+                  <div className="h-64 bg-white/5 rounded-lg"></div>
+                </div>
               ))}
             </div>
-          </div>
-        )}
+          ) : (
+            <>
+              {/* Main Grid Layout */}
+              <div className="grid lg:grid-cols-[2.2fr_1fr] gap-6 mb-12">
+                {/* Left Column: Hero Feature */}
+                <div>
+                  {heroArticle ? (
+                    <HeroFeature
+                      kicker="Regulatory Intelligence"
+                      title={heroArticle.title}
+                      excerpt={heroArticle.excerpt}
+                      imageUrl={heroArticle.imageUrl || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"}
+                      href={`/article/${heroArticle.id}`}
+                      ctaText="Explore Updates"
+                    />
+                  ) : (
+                    <HeroFeature
+                      kicker="Regulatory Intelligence"
+                      title="Saudi Arabia Leads MENA in AI Adoption with $25B Investment"
+                      excerpt="Comprehensive tracking of AI policy developments, regulatory frameworks, and compliance requirements across the Kingdom and GCC region."
+                      imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
+                      href="/regulatory-intelligence"
+                      ctaText="Explore Updates"
+                    />
+                  )}
+                </div>
 
-        {/* Latest News Grid */}
-        {latestArticles.length > 0 && (
-          <div className="mb-12">
-            <div className="verge-divider mb-8"></div>
-            <h2 className="text-3xl font-bold text-black mb-8" data-testid="text-latest-news-title">
-              Latest News
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {latestArticles.map((article) => (
-                <ArticleCard 
-                  key={article.id} 
-                  article={article} 
-                  variant="standard" 
-                />
-              ))}
-            </div>
-          </div>
-        )}
+                {/* Right Column: Sidebar */}
+                <div className="space-y-6">
+                  {/* Spotlight Card */}
+                  {spotlightArticle && (
+                    <SidebarSpotlight
+                      category={spotlightArticle.category}
+                      title={spotlightArticle.title}
+                      imageUrl={spotlightArticle.imageUrl || undefined}
+                      href={`/article/${spotlightArticle.id}`}
+                      source={spotlightArticle.source || undefined}
+                    />
+                  )}
 
-        {/* Load More Button */}
-        <div className="text-center">
-          <Link href="/policy" className="bg-[#3b82f6] hover:bg-[#2563eb] text-white px-8 py-3 rounded-md font-medium transition-colors inline-block" data-testid="button-load-more">
-            Load More Articles
-          </Link>
+                  {/* Featured News List */}
+                  {featuredNews.length > 0 && (
+                    <FeaturedList title="Featured News" items={featuredNews} />
+                  )}
+
+                  {/* Quick Links */}
+                  <div className="glass-card p-6">
+                    <h3 className="text-xl font-black text-white mb-4 border-b border-white/10 pb-3">
+                      Quick Links
+                    </h3>
+                    <ul className="space-y-3">
+                      <li>
+                        <Link
+                          href="/regulatory-intelligence"
+                          className="text-sm text-[#00d4aa] hover:text-[#00a888] transition-colors font-semibold"
+                          data-testid="link-quick-regulatory"
+                        >
+                          Regulatory Intelligence →
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/reports"
+                          className="text-sm text-[#00d4aa] hover:text-[#00a888] transition-colors font-semibold"
+                          data-testid="link-quick-reports"
+                        >
+                          Latest Reports →
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/contact"
+                          className="text-sm text-[#ff00ff] hover:text-[#cc00cc] transition-colors font-semibold"
+                          data-testid="link-quick-newsletter"
+                        >
+                          Get In Touch →
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Below Hero: Most Recents + Special Edition */}
+              <div className="grid lg:grid-cols-[1fr_2fr] gap-6 mb-12">
+                {/* Most Recents (left column) */}
+                {mostRecents.length > 0 && (
+                  <NumberedList title="Most Recents" items={mostRecents} />
+                )}
+
+                {/* Special Edition (right column) */}
+                {specialArticle && (
+                  <SpecialEdition
+                    title="Research & Technology Policy Spotlight"
+                    subtitle={specialArticle.title}
+                    description={specialArticle.excerpt}
+                    imageUrl={specialArticle.imageUrl || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"}
+                    href={`/article/${specialArticle.id}`}
+                    ctaText="Read Analysis"
+                  />
+                )}
+              </div>
+
+              {/* Category Grids */}
+              <div className="space-y-16">
+                {/* Insights Grid */}
+                {insightsCards.length > 0 && (
+                  <section>
+                    <div className="flex items-center justify-between mb-6">
+                      <h2 className="text-3xl font-black text-white">
+                        AI Advisory & Insights
+                      </h2>
+                      <Link
+                        href="/insights"
+                        className="text-sm text-[#00d4aa] hover:text-[#00a888] font-semibold"
+                        data-testid="link-view-all-insights"
+                      >
+                        View All →
+                      </Link>
+                    </div>
+                    <CardGrid title="" cards={insightsCards} columns={3} />
+                  </section>
+                )}
+
+                {/* Reports Grid */}
+                {reportsCards.length > 0 && (
+                  <section>
+                    <div className="flex items-center justify-between mb-6">
+                      <h2 className="text-3xl font-black text-white">
+                        Reports & Policy Briefs
+                      </h2>
+                      <Link
+                        href="/reports"
+                        className="text-sm text-[#00d4aa] hover:text-[#00a888] font-semibold"
+                        data-testid="link-view-all-reports"
+                      >
+                        View All →
+                      </Link>
+                    </div>
+                    <CardGrid title="" cards={reportsCards} columns={3} />
+                  </section>
+                )}
+
+                {/* Newsletter CTA */}
+                <section className="grid lg:grid-cols-2 gap-6 items-center">
+                  <div>
+                    <h2 className="text-3xl lg:text-4xl font-black text-white mb-4 leading-tight">
+                      Stay Ahead of the AI Curve
+                    </h2>
+                    <p className="text-lg text-gray-400 leading-relaxed">
+                      Get weekly insights on AI policy, regulation, and strategic developments shaping Saudi Arabia's digital future.
+                    </p>
+                  </div>
+                  <div>
+                    <NewsletterForm />
+                  </div>
+                </section>
+              </div>
+            </>
+          )}
         </div>
-      </div>
-    </div>
+      </main>
+    </>
   );
 }

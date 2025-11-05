@@ -19,6 +19,12 @@ import AdminOpEd from "@/pages/AdminOpEd";
 import AdminContent from "@/pages/AdminContent";
 import CategoryPage from "@/pages/CategoryPage";
 import ArticlePage from "@/pages/ArticlePage";
+import RegulatoryIntelligence from "@/pages/RegulatoryIntelligence";
+import ResearchTechnologyPolicy from "@/pages/ResearchTechnologyPolicy";
+import AIAdvisory from "@/pages/AIAdvisory";
+import Insights from "@/pages/Insights";
+import Reports from "@/pages/Reports";
+import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
@@ -37,16 +43,32 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      
+      {/* New Magazine Routes */}
+      <Route path="/regulatory-intelligence" component={RegulatoryIntelligence} />
+      <Route path="/research-technology-policy" component={ResearchTechnologyPolicy} />
+      <Route path="/ai-advisory" component={AIAdvisory} />
+      <Route path="/insights" component={Insights} />
+      <Route path="/reports" component={Reports} />
+      <Route path="/about" component={About} />
+      
+      {/* Legacy Category Routes */}
       <Route path="/policy" component={() => <CategoryPage />} />
       <Route path="/regulation" component={() => <CategoryPage />} />
       <Route path="/analysis" component={() => <CategoryPage />} />
       <Route path="/news" component={() => <CategoryPage />} />
+      
+      {/* Article Pages */}
       <Route path="/article/:slug" component={ArticlePage} />
+      
+      {/* Static Pages */}
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/cookies" component={Cookies} />
       <Route path="/disclaimers" component={Disclaimers} />
+      
+      {/* Admin Routes */}
       <Route path="/admin/login" component={AdminLogin} />
       <Route path="/admin">
         <ProtectedRoute>
@@ -73,6 +95,7 @@ function Router() {
           <AdminContent />
         </ProtectedRoute>
       </Route>
+      
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
@@ -86,7 +109,7 @@ function App() {
         <AuthProvider>
           <ThemeProvider>
             <TooltipProvider>
-              <div className="min-h-screen flex flex-col bg-gradient-to-r from-teal-400 to-cyan-300">
+              <div className="min-h-screen flex flex-col">
                 <ScrollProgressLine />
                 <Header />
                 <main className="flex-1">

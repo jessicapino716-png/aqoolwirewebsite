@@ -1,0 +1,133 @@
+You are refactoring "The Aqool Wire" website into a magazine grid layout with a deep green (#0a0f1b) to black (#050a12) gradient background matching the provided slide aesthetic. Use cyan (#00d4aa) and magenta (#ff00ff) as accent colors.
+
+VISUAL THEME FROM SLIDE:
+- Background: Linear gradient 135deg from #0a0f1b to #050a12
+- Primary accent: #00d4aa (cyan)
+- Secondary accent: #ff00ff (magenta)
+- All text: White/light gray on dark
+- Glass morphism cards: backdrop-filter: blur(10px), border: 1px solid rgba(255,255,255,0.1)
+- Subtle grid pattern overlay
+
+Tech + Project Rules
+Keep my current stack. If static HTML/CSS/JS, modify those files. If React/Vite/Next, create reusable components and routes. If Tailwind is present, use it; otherwise write modern CSS (Grid + Flex) in /styles/.
+
+No external UI kit. No inline styles.
+
+Fully responsive: 1280+ (desktop), 1024 (laptop), 768 (tablet), 360 (mobile).
+
+Accessible: semantic landmarks (header/nav/main/aside/footer), keyboard focus styles, color contrast ≥ 4.5:1, aria-labels where helpful, alt text on all images.
+
+Performance: lazy-load non-critical images, preconnect fonts, use aspect-ratio to avoid CLS.
+
+Information Architecture (rename / add these sections)
+Top-level nav (in this order):
+- Regulatory Intelligence
+- Research & Policy
+- AI Advisory
+- Insights
+- Reports
+- About Us
+- Contact Us
+
+Create routes/pages (or sections with anchors if single page):
+/regulatory-intelligence
+/research-technology-policy
+/ai-advisory
+/insights
+/reports
+/about
+/contact
+
+Homepage Layout (match the screenshot structure)
+Use CSS Grid. At ≥1024px:
+.main {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;   /* content | sidebar */
+  gap: 24px;
+}
+
+A. Hero Feature (left, big)
+Full-bleed image with dark overlay, kicker label "Regulatory Intelligence" (cyan glow), H1 headline, 1–2 line dek, CTA button "Explore Updates" (cyan gradient with hover glow).
+Supports video thumbnail fallback. Maintain 16:9 using aspect-ratio.
+
+B. Sidebar (right)
+Card 1: Small image tile ("Spotlight") with headline + link. Glass morphism effect.
+Card 2: "Featured News" list (5–7 items, no images, tight leading). Cyan hover states.
+Card 3: "Quick Links" to Regulatory Intelligence, Reports, Newsletter. Magenta accents.
+
+C. Below Hero – Two Wide Tiles
+Left rail (narrow column inside the left grid column):
+"Most Recents" (numbered 01–05 with cyan numbers). Each: title, source, 1-line snippet, timestamp.
+
+Main wide tile:
+"Special Edition" banner card with medium image on the right and text on the left (swap on mobile). Use this for Research & Technology Policy Spotlight. Glass morphism background.
+
+D. Category Grid (full width under A–C)
+A three-column grid (grid-template-columns: repeat(3, minmax(0,1fr))) of section cards:
+- AI Advisory — services overview + 3 featured case studies (cyan borders)
+- Insights — 6 latest posts as compact cards (eyebrow, title, source/date)
+- Reports — 3 longform reports with cover thumbnails and "Download PDF" buttons (magenta accent)
+
+On mobile (≤768px), stack all blocks in this order: Hero, Sidebar Spotlight, Special Edition, Most Recents, AI Advisory, Insights, Reports.
+
+E. Footer
+Dark gradient background with subtle top border.
+Left: brand blurb + newsletter signup (email input + submit with cyan glow, with success state).
+Middle: "Content" links (Regulatory Intelligence, Research & Technology Policy, AI Advisory, Insights, Reports).
+Right: "Company" links (About, Contact, Editorial Guidelines, Privacy, Terms, Cookies, Disclaimers) and LinkedIn icon.
+
+Components (create or update)
+Header.tsx|jsx|html: sticky top with blur backdrop, logo left, nav center, search right. Mobile: hamburger opens overlay menu.
+HeroFeature.*: props for kicker, title, dek, image, href.
+SidebarSpotlight.*: small image tile with category tag.
+FeaturedList.*: list of headline links.
+SpecialEdition.*: left text/right image banner; configurable title "Research & Technology Policy Spotlight".
+NumberedList.*: "Most Recents" (accepts an array of posts).
+CardGrid.*: generic grid for Insights/Reports.
+NewsletterForm.*: client validation, async submit; show aria-live="polite" success.
+Footer.*.
+
+Styling (CSS or Tailwind classes)
+Container widths: .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+Type scale: 44/32/24/18/16/14; line-height 1.25–1.6.
+Font: IBM Plex Sans (Google Fonts)
+Utilities: .eyebrow uppercase, letter-spacing 0.08em; .muted color for meta; .kicker pill background with cyan glow.
+Card hover: translateY(–2px) + cyan box-shadow; respect prefers-reduced-motion.
+
+CONTENT FOR SAUDI AI FOCUS:
+- Hero: "Saudi Arabia Leads MENA in AI Adoption with $25B Investment"
+- Featured: NEOM smart city updates, Vision 2030 AI initiatives
+- Reports: "Kingdom's AI Strategy 2024", "SDAIA Annual Report"
+- Insights: Local AI startups, regulatory updates, market analysis
+- Tagline: "The first data-driven intelligence platform shaping the narrative of AI in Saudi Arabia"
+
+Data Wiring
+Map categories:
+- Regulatory Intelligence (policy/regulation trackers + short updates)
+- Research & Technology Policy (think-tank/academic, comparatives)
+- Insights (analysis/opinions/news briefs)
+- Reports (longform, PDFs, briefs)
+- AI Advisory (services/case studies)
+
+Accessibility + SEO
+Proper <h1> only on the hero headline; sections start at <h2>.
+Unique page titles and meta descriptions per route.
+JSON-LD: BreadcrumbList on category pages; NewsArticle/Report on posts where applicable.
+Open Graph/Twitter cards for all articles.
+Focus states with cyan outline: focus-visible: outline: 2px solid #00d4aa;
+
+Deliverables
+Updated homepage template with the grid layout matching the deep green aesthetic.
+New/updated routes for the six sections with matching index pages.
+Each category page shows a hero (section intro) + paginated grid (12 per page).
+Refactored header/footer components with glass morphism.
+Newsletter form wired to the existing endpoint.
+Dark mode only (no light mode toggle needed given the aesthetic).
+
+Acceptance Criteria
+Layout visually matches the magazine grid pattern with deep green/black gradient theme.
+Lighthouse (desktop) scores ≥ 90 for Performance/SEO/Best Practices/Accessibility.
+No console errors; tab order logical; all links focusable with cyan focus rings.
+Mobile: hero image scales, sidebar content reorders beneath hero, grids collapse to single column.
+Professional Bloomberg/Reuters terminal aesthetic with modern tech magazine polish.
+
