@@ -22,7 +22,7 @@ export default function CardGrid({ title, cards, columns = 3 }: CardGridProps) {
   
   return (
     <div>
-      <h2 className="text-3xl font-black text-white mb-6">{title}</h2>
+      {title && <h2 className="text-3xl font-black text-white mb-6">{title}</h2>}
       <div className={`grid grid-cols-1 md:grid-cols-2 ${gridCols} gap-6`}>
         {cards.map((card) => (
           <Link key={card.id} href={card.href} data-testid={`link-card-${card.id}`}>
