@@ -67,7 +67,7 @@ export default function Reports() {
                 data-testid={`report-${report.id}`}
               >
                 {/* Cover Image */}
-                <div className="aspect-[2/3] overflow-hidden bg-gradient-to-br from-[#00d4aa]/20 to-[#ff00ff]/20 relative">
+                <div className="aspect-[2/3] overflow-hidden bg-gradient-to-br from-[#00e5ff]/20 to-[#ff00ff]/20 relative">
                   <img
                     src={report.coverImage}
                     alt={report.title}
@@ -84,7 +84,7 @@ export default function Reports() {
                 {/* Content */}
                 <div className="p-6">
                   <span className="eyebrow mb-3 block">{report.category}</span>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00d4aa] transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00e5ff] transition-colors">
                     {report.title}
                   </h3>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -104,7 +104,7 @@ export default function Reports() {
                   {/* Download Button */}
                   <a
                     href={report.downloadUrl}
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-[#00d4aa] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow"
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-[#00e5ff] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow"
                     data-testid={`button-download-${report.id}`}
                   >
                     <Download className="w-4 h-4" />
@@ -116,7 +116,7 @@ export default function Reports() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 glass-card p-12 text-center border border-[#00d4aa]/30">
+          <div className="mt-16 glass-card p-12 text-center border border-[#00e5ff]/30">
             <h2 className="text-3xl font-black text-white mb-4">
               Need Custom Research?
             </h2>

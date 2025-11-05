@@ -30,7 +30,7 @@ export default function SidebarSpotlight({
         )}
         <div className="p-4">
           <span className="eyebrow mb-2 block">{category}</span>
-          <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors line-clamp-2">
+          <h3 className="text-lg font-bold text-white group-hover:text-[#00e5ff] transition-colors line-clamp-2">
             {title}
           </h3>
           {source && (

@@ -27,14 +27,14 @@ export default function NumberedList({ title, items }: NumberedListProps) {
             <div className="group cursor-pointer flex gap-4" data-testid={`link-numbered-${item.id}`}>
               {/* Number */}
               <div className="flex-shrink-0">
-                <span className="text-3xl font-black text-[#00d4aa] opacity-50 group-hover:opacity-100 transition-opacity">
+                <span className="text-3xl font-black text-[#00e5ff] opacity-50 group-hover:opacity-100 transition-opacity">
                   {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
               
               {/* Content */}
               <div className="flex-1 min-w-0">
-                <h4 className="text-sm font-bold text-white group-hover:text-[#00d4aa] transition-colors mb-1 line-clamp-2">
+                <h4 className="text-sm font-bold text-white group-hover:text-[#00e5ff] transition-colors mb-1 line-clamp-2">
                   {item.title}
                 </h4>
                 {item.source && (

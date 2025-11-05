@@ -99,7 +99,7 @@ export default function ResearchTechnologyPolicy() {
                         </>
                       )}
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-[#00d4aa] transition-colors mb-2 line-clamp-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors mb-2 line-clamp-2">
                       {article.title}
                     </h3>
                     <p className="text-gray-400 line-clamp-3 leading-relaxed">

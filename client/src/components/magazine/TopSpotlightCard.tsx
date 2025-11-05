@@ -30,13 +30,13 @@ export function TopSpotlightCard({ kicker, title, href, showMapBackground = fals
         <div className="relative h-full flex flex-col justify-end p-6">
           {/* Kicker */}
           <div className="mb-3">
-            <span className="inline-block px-3 py-1 bg-[#00d4aa]/20 border border-[#00d4aa]/40 rounded text-[#00d4aa] text-xs font-semibold uppercase tracking-wider">
+            <span className="inline-block px-3 py-1 bg-[#00e5ff]/20 border border-[#00e5ff]/40 rounded text-[#00e5ff] text-xs font-semibold uppercase tracking-wider">
               {kicker}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors leading-tight">
+          <h3 className="text-lg font-bold text-white group-hover:text-[#00e5ff] transition-colors leading-tight">
             {title}
           </h3>
         </div>

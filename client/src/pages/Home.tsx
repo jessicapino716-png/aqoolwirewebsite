@@ -248,7 +248,7 @@ export default function Home() {
                               )}
                               <div className="p-6">
                                 <span className="eyebrow">{article.category}</span>
-                                <h3 className="text-xl font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
+                                <h3 className="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">{article.excerpt}</p>
@@ -285,7 +285,7 @@ export default function Home() {
                               )}
                               <div className="p-6">
                                 <span className="eyebrow">{article.category}</span>
-                                <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
+                                <h3 className="text-lg font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">{article.excerpt}</p>
@@ -325,7 +325,7 @@ export default function Home() {
                               )}
                               <div className="p-6">
                                 <span className="eyebrow">{article.category}</span>
-                                <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
+                                <h3 className="text-lg font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">{article.excerpt}</p>
@@ -353,7 +353,7 @@ export default function Home() {
                             <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer h-full">
                               <div className="p-6">
                                 <span className="eyebrow text-xs">{article.category}</span>
-                                <h3 className="text-base font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2 line-clamp-3">
+                                <h3 className="text-base font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2 line-clamp-3">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">{article.excerpt}</p>
@@ -381,7 +381,7 @@ export default function Home() {
                             <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer h-full">
                               <div className="p-6">
                                 <span className="eyebrow text-xs">{article.category}</span>
-                                <h3 className="text-base font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2 line-clamp-3">
+                                <h3 className="text-base font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2 line-clamp-3">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">{article.excerpt}</p>

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Aqool Wire is Saudi Arabia's first data-driven AI intelligence platform, designed as a premium magazine-style publication with a Bloomberg/Reuters terminal aesthetic. The site features a deep green to black gradient background (#0a0f1b → #050a12) with cyan (#00d4aa) and magenta (#ff00ff) accents, glass morphism effects, and a sophisticated magazine grid layout that delivers authoritative coverage of AI policy, regulation, and strategy across the Kingdom and GCC region.
+The Aqool Wire is Saudi Arabia's first data-driven AI intelligence platform, designed as a premium magazine-style publication with a Bloomberg/Reuters terminal aesthetic. The site features a dark teal to black gradient background (#0a3d3d → #051a1f) with bright cyan (#00e5ff) and vibrant magenta (#ff00ff) accents, glass morphism effects, and a sophisticated magazine grid layout that delivers authoritative coverage of AI policy, regulation, and strategy across the Kingdom and GCC region.
 
 ## User Preferences
 
@@ -40,11 +40,11 @@ Preferred communication style: Simple, everyday language.
 
 ### Design System
 - **Visual Theme**: Bloomberg/Reuters terminal-inspired magazine aesthetic
-  - Background: Linear gradient 135deg from #0a0f1b (deep green) to #050a12 (black)
-  - Grid pattern overlay with subtle cyan lines (rgba(0,212,170,0.03))
+  - Background: Linear gradient 135deg from #0a3d3d (dark teal) to #051a1f (black)
+  - Grid pattern overlay with subtle cyan lines (rgba(0,229,255,0.03))
   - Glass morphism cards with backdrop blur and transparent borders
 - **Color Palette**:
-  - Primary Cyan: #00d4aa (HSL 168 100% 42%) - links, CTAs, hover states
+  - Primary Cyan: #00e5ff (HSL 188 100% 50%) - links, CTAs, hover states
   - Secondary Magenta: #ff00ff (HSL 300 100% 50%) - special highlights, destructive actions
   - Foreground: 98% white for text
   - Muted: 65% gray for secondary text
@@ -113,18 +113,25 @@ Preferred communication style: Simple, everyday language.
 
 ### Homepage Layout Restructure (November 5, 2024)
 - **Three-row magazine grid layout**:
-  - **Row 1**: Large hero feature (left 2fr) + Platform mission spotlight with Saudi map background & Featured News list (right 1fr)
+  - **Row 1**: Large hero feature with "Shaping the Narrative of AI in Saudi Arabia" (left 2fr) + Latest article spotlight with Saudi map background & Featured News list (right 1fr)
   - **Row 2**: Most Recents numbered list (left 1fr) + Special Edition banner (right 2fr)
-  - **Row 3**: Five dedicated topic grids (3-column layout each)
-- **Platform Mission Spotlight**: Top right card shows platform mission statement over Saudi Arabia map background instead of article
-- **Topic-Specific Grids**: Five dedicated sections for content organization:
-  - Regulatory Intelligence (regulation/policy/compliance articles)
-  - Research & Technology Policy (research/tech/innovation articles)
-  - AI Advisory (strategy/analysis/governance articles)
-  - Insights (opinion/perspective/commentary articles)
-  - Reports (data/market/intelligence briefs)
+  - **Row 3**: Asymmetric topic sections - varied sizes, positioned unevenly
+- **Hero Content Update**: Changed from mission statement to impactful tagline "Shaping the Narrative of AI in Saudi Arabia"
+- **Navigation Simplification**: Removed "About Us" section - now 6 sections total
+- **Asymmetric Topic Layout**: Five dedicated sections with varied card sizes (not regular grid):
+  - Row 1: Regulatory Intelligence (Large, 2 articles) + Research & Tech Policy (Medium, 1 article)
+  - Row 2: AI Advisory (Medium, 1 article) + Insights (Small) + Reports (Small)
+  - Different heading sizes, card proportions, and asymmetric positioning for magazine editorial feel
 - **Flexible Category Filtering**: Case-insensitive keyword-based matching system ensures sections populate regardless of category capitalization
 - **Newsletter Consolidation**: Removed newsletter form from main content; kept only in footer
+
+### Color Scheme Update (November 5, 2024)
+- **New vibrant color palette**: Updated from muted green to tech-forward teal and bright cyan
+  - Background gradient: #0a3d3d (dark teal) → #051a1f (black)
+  - Primary accent: #00e5ff (bright cyan) - replacing #00d4aa
+  - Grid overlay: rgba(0,229,255,0.03) - brighter cyan lines
+- **Updated throughout**: All components, utilities, and theme variables updated to new color scheme
+- **Design inspiration**: Matches AI/tech network visualization aesthetic with vibrant magenta and cyan
 
 ## External Dependencies
 

@@ -41,9 +41,9 @@ export default function NewsletterForm() {
   };
 
   return (
-    <div className="glass-card p-6 border border-[#00d4aa]/20">
+    <div className="glass-card p-6 border border-[#00e5ff]/20">
       <div className="flex items-center gap-2 mb-4">
-        <Mail className="w-5 h-5 text-[#00d4aa]" />
+        <Mail className="w-5 h-5 text-[#00e5ff]" />
         <h3 className="text-lg font-black text-white">Stay Informed</h3>
       </div>
       <p className="text-sm text-gray-400 mb-4">
@@ -52,7 +52,7 @@ export default function NewsletterForm() {
 
       {isSuccess ? (
         <div
-          className="flex items-center gap-2 text-[#00d4aa] text-sm font-semibold"
+          className="flex items-center gap-2 text-[#00e5ff] text-sm font-semibold"
           role="alert"
           aria-live="polite"
         >
@@ -66,7 +66,7 @@ export default function NewsletterForm() {
               type="email"
               placeholder="your.email@example.com"
               {...register("email")}
-              className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus-visible:ring-[#00d4aa]/50"
+              className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus-visible:ring-[#00e5ff]/50"
               data-testid="input-newsletter-email"
               aria-label="Email address"
               aria-invalid={errors.email ? "true" : "false"}
@@ -81,7 +81,7 @@ export default function NewsletterForm() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-[#00d4aa] to-[#00a888] text-[#0a0f1b] font-bold hover:scale-105 transition-transform cyan-glow"
+            className="w-full bg-gradient-to-r from-[#00e5ff] to-[#00a888] text-[#0a0f1b] font-bold hover:scale-105 transition-transform cyan-glow"
             data-testid="button-newsletter-submit"
           >
             {isSubmitting ? (

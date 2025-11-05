@@ -29,8 +29,8 @@ export default function About() {
           {/* Mission, Vision, Values */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="glass-card p-8 text-center">
-              <div className="w-16 h-16 bg-[#00d4aa]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-[#00d4aa]" />
+              <div className="w-16 h-16 bg-[#00e5ff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-[#00e5ff]" />
               </div>
               <h2 className="text-2xl font-black text-white mb-3">Our Mission</h2>
               <p className="text-gray-400 leading-relaxed">
@@ -49,8 +49,8 @@ export default function About() {
             </div>
 
             <div className="glass-card p-8 text-center">
-              <div className="w-16 h-16 bg-[#00d4aa]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-[#00d4aa]" />
+              <div className="w-16 h-16 bg-[#00e5ff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-[#00e5ff]" />
               </div>
               <h2 className="text-2xl font-black text-white mb-3">Our Approach</h2>
               <p className="text-gray-400 leading-relaxed">
@@ -90,7 +90,7 @@ export default function About() {
                 "Regional Comparative Analysis"
               ].map((area, index) => (
                 <div key={index} className="flex items-center gap-3 text-gray-300">
-                  <span className="w-2 h-2 bg-[#00d4aa] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#00e5ff] rounded-full"></span>
                   <span>{area}</span>
                 </div>
               ))}
@@ -98,7 +98,7 @@ export default function About() {
           </div>
 
           {/* CTA */}
-          <div className="glass-card p-12 text-center border border-[#00d4aa]/30">
+          <div className="glass-card p-12 text-center border border-[#00e5ff]/30">
             <h2 className="text-3xl font-black text-white mb-4">
               Get In Touch
             </h2>
@@ -106,7 +106,7 @@ export default function About() {
               Interested in partnership, custom research, or advisory services? We'd love to hear from you.
             </p>
             <Link href="/contact" data-testid="link-contact-about">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#00d4aa] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow">
+              <button className="px-8 py-4 bg-gradient-to-r from-[#00e5ff] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow">
                 Contact Us
               </button>
             </Link>

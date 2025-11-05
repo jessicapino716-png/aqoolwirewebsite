@@ -6,73 +6,73 @@
 
 /* LIGHT MODE (Not used - magazine design is dark-mode only) */
 :root {
-  --button-outline: rgba(0,212,170, .15);
-  --badge-outline: rgba(0,212,170, .10);
+  --button-outline: rgba(0,229,255, .15);
+  --badge-outline: rgba(0,229,255, .10);
 
   /* Automatic computation of border around primary / danger buttons */
   --opaque-button-border-intensity: 12;  /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(0,212,170, .05);
-  --elevate-2: rgba(0,212,170, .12);
+  --elevate-1: rgba(0,229,255, .05);
+  --elevate-2: rgba(0,229,255, .12);
 
-  /* Deep green to black gradient background */
-  --background: 200 45% 6%;
+  /* Dark teal background */
+  --background: 180 60% 8%;
 
   --foreground: 0 0% 98%;
 
-  --border: 200 20% 15%;
+  --border: 180 30% 18%;
 
   /* Glass morphism card with subtle transparency */
-  --card: 200 35% 8%;
+  --card: 180 50% 10%;
 
   --card-foreground: 0 0% 97%;
 
-  --card-border: 200 25% 18%;
+  --card-border: 180 35% 20%;
 
-  --sidebar: 200 40% 7%;
+  --sidebar: 180 55% 9%;
 
   --sidebar-foreground: 0 0% 97%;
 
-  --sidebar-border: 200 25% 16%;
+  --sidebar-border: 180 35% 18%;
 
-  /* Cyan accent color (#00d4aa) */
-  --sidebar-primary: 168 100% 42%;
+  /* Bright cyan accent color (#00e5ff) */
+  --sidebar-primary: 188 100% 50%;
 
-  --sidebar-primary-foreground: 200 45% 6%;
+  --sidebar-primary-foreground: 180 60% 8%;
 
-  --sidebar-accent: 200 30% 12%;
+  --sidebar-accent: 180 40% 14%;
 
   --sidebar-accent-foreground: 0 0% 92%;
 
-  --sidebar-ring: 168 100% 50%;
+  --sidebar-ring: 188 100% 55%;
 
-  --popover: 200 35% 9%;
+  --popover: 180 50% 11%;
 
   --popover-foreground: 0 0% 97%;
 
-  --popover-border: 200 25% 20%;
+  --popover-border: 180 35% 22%;
 
-  /* Cyan primary */
-  --primary: 168 100% 42%;
+  /* Bright cyan primary */
+  --primary: 188 100% 50%;
 
-  --primary-foreground: 200 45% 6%;
+  --primary-foreground: 180 60% 8%;
 
   /* Dark secondary */
-  --secondary: 200 30% 13%;
+  --secondary: 180 40% 15%;
 
   --secondary-foreground: 0 0% 88%;
 
-  --muted: 200 30% 11%;
+  --muted: 180 40% 13%;
 
-  --muted-foreground: 200 10% 65%;
+  --muted-foreground: 180 15% 65%;
 
-  /* Cyan accent */
-  --accent: 168 100% 42%;
+  /* Bright cyan accent */
+  --accent: 188 100% 50%;
 
-  --accent-foreground: 200 45% 6%;
+  --accent-foreground: 180 60% 8%;
 
-  /* Magenta destructive */
+  /* Bright magenta destructive */
   --destructive: 300 100% 50%;
 
   --destructive-foreground: 0 0% 100%;
@@ -133,80 +133,80 @@
 }
 
 .dark {
-  --button-outline: rgba(0,212,170, .15);
-  --badge-outline: rgba(0,212,170, .10);
+  --button-outline: rgba(0,229,255, .15);
+  --badge-outline: rgba(0,229,255, .10);
 
   --opaque-button-border-intensity: 12;  /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(0,212,170, .05);
-  --elevate-2: rgba(0,212,170, .12);
+  --elevate-1: rgba(0,229,255, .05);
+  --elevate-2: rgba(0,229,255, .12);
 
-  /* Deep green to black gradient background */
-  --background: 200 45% 6%;
+  /* Dark teal background */
+  --background: 180 60% 8%;
 
   --foreground: 0 0% 98%;
 
-  --border: 200 20% 15%;
+  --border: 180 30% 18%;
 
   /* Glass morphism card with subtle transparency */
-  --card: 200 35% 8%;
+  --card: 180 50% 10%;
 
   --card-foreground: 0 0% 97%;
 
-  --card-border: 200 25% 18%;
+  --card-border: 180 35% 20%;
 
-  --sidebar: 200 40% 7%;
+  --sidebar: 180 55% 9%;
 
   --sidebar-foreground: 0 0% 97%;
 
-  --sidebar-border: 200 25% 16%;
+  --sidebar-border: 180 35% 18%;
 
-  /* Cyan accent color (#00d4aa) */
-  --sidebar-primary: 168 100% 42%;
+  /* Bright cyan accent color (#00e5ff) */
+  --sidebar-primary: 188 100% 50%;
 
-  --sidebar-primary-foreground: 200 45% 6%;
+  --sidebar-primary-foreground: 180 60% 8%;
 
-  --sidebar-accent: 200 30% 12%;
+  --sidebar-accent: 180 40% 14%;
 
   --sidebar-accent-foreground: 0 0% 92%;
 
-  --sidebar-ring: 168 100% 50%;
+  --sidebar-ring: 188 100% 55%;
 
-  --popover: 200 35% 9%;
+  --popover: 180 50% 11%;
 
   --popover-foreground: 0 0% 97%;
 
-  --popover-border: 200 25% 20%;
+  --popover-border: 180 35% 22%;
 
-  /* Cyan primary */
-  --primary: 168 100% 42%;
+  /* Bright cyan primary */
+  --primary: 188 100% 50%;
 
-  --primary-foreground: 200 45% 6%;
+  --primary-foreground: 180 60% 8%;
 
   /* Dark secondary */
-  --secondary: 200 30% 13%;
+  --secondary: 180 40% 15%;
 
   --secondary-foreground: 0 0% 88%;
 
-  --muted: 200 30% 11%;
+  --muted: 180 40% 13%;
 
-  --muted-foreground: 200 10% 65%;
+  --muted-foreground: 180 15% 65%;
 
-  /* Cyan accent */
-  --accent: 168 100% 42%;
+  /* Bright cyan accent */
+  --accent: 188 100% 50%;
 
-  --accent-foreground: 200 45% 6%;
+  --accent-foreground: 180 60% 8%;
 
-  /* Magenta destructive */
+  /* Bright magenta destructive */
   --destructive: 300 100% 50%;
 
   --destructive-foreground: 0 0% 100%;
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
-  --input: 200 20% 22%;
-  --ring: 168 100% 50%;
-  --chart-1: 168 100% 42%;
+  --input: 180 30% 22%;
+  --ring: 188 100% 55%;
+  --chart-1: 188 100% 50%;
   --chart-2: 300 100% 50%;
   --chart-3: 45 93% 65%;
   --chart-4: 280 65% 70%;
@@ -230,7 +230,7 @@
 
   body {
     @apply font-sans antialiased text-foreground;
-    background: linear-gradient(135deg, #0a0f1b 0%, #050a12 100%);
+    background: linear-gradient(135deg, #0a3d3d 0%, #051a1f 100%);
     background-attachment: fixed;
     position: relative;
   }
@@ -244,8 +244,8 @@
     right: 0;
     bottom: 0;
     background-image: 
-      linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
     z-index: 0;
