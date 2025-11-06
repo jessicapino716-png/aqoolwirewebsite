@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
-import { Target, Eye, Zap } from "lucide-react";
 
 export default function About() {
   return (
@@ -26,51 +25,32 @@ export default function About() {
             </p>
           </div>
 
-          {/* Mission, Vision, Values */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="glass-card p-8 text-center">
-              <div className="w-16 h-16 bg-[#00e5ff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-[#00e5ff]" />
-              </div>
-              <h2 className="text-2xl font-black text-white mb-3">Our Mission</h2>
-              <p className="text-gray-400 leading-relaxed">
-                To provide authoritative, data-driven intelligence that empowers decision-makers navigating Saudi Arabia's AI transformation.
-              </p>
-            </div>
-
-            <div className="glass-card p-8 text-center">
-              <div className="w-16 h-16 bg-[#ff00ff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Eye className="w-8 h-8 text-[#ff00ff]" />
-              </div>
-              <h2 className="text-2xl font-black text-white mb-3">Our Vision</h2>
-              <p className="text-gray-400 leading-relaxed">
-                To be the definitive source of AI intelligence for the Middle East, bridging policy, technology, and business.
-              </p>
-            </div>
-
-            <div className="glass-card p-8 text-center">
-              <div className="w-16 h-16 bg-[#00e5ff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-[#00e5ff]" />
-              </div>
-              <h2 className="text-2xl font-black text-white mb-3">Our Approach</h2>
-              <p className="text-gray-400 leading-relaxed">
-                Rigorous research, local expertise, and real-time tracking of regulatory, strategic, and market developments.
-              </p>
-            </div>
-          </div>
-
           {/* What We Do */}
           <div className="glass-card p-10 mb-16">
             <h2 className="text-3xl font-black text-white mb-6">What We Do</h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
               <p>
-                The Aqool Wire was founded to address a critical gap in the Middle Eastern AI ecosystem: the lack of specialized, authoritative intelligence on how artificial intelligence is being deployed, regulated, and developed across the Kingdom of Saudi Arabia and the broader GCC region.
+                <span className="font-bold text-white">The Aqool Wire</span> is Saudi Arabia's home for clear, credible intelligence on artificial intelligence. We focus exclusively on the Kingdom—how AI is being deployed, regulated, funded, and scaled across ministries, national programmes, and leading enterprises under Vision 2030.
               </p>
               <p>
-                We track policy developments from entities like SDAIA (Saudi Data & AI Authority), monitor Vision 2030 AI initiatives, analyze investment trends, and provide strategic insights for organizations navigating this rapidly evolving landscape.
+                We distil signals that matter: policy moves from <span className="font-bold text-white">SDAIA</span> and key regulators; national AI programmes and sector pilots; investment flows from the <span className="font-bold text-white">PIF</span> ecosystem and corporate venture arms; and the partnerships shaping Saudi Arabia's AI stack—from data infrastructure to frontier model adoption.
               </p>
               <p>
-                Our platform serves government officials, corporate executives, investors, researchers, and anyone who needs to stay informed about AI developments in the region. Through our Regulatory Intelligence, Research & Policy analysis, and Advisory services, we deliver actionable intelligence that drives better decisions.
+                Our work equips <span className="font-bold text-white">government leaders, corporate executives, investors, and researchers</span> with decision-ready insight across three service lines:
+              </p>
+              <ul className="space-y-4 ml-6">
+                <li>
+                  <span className="font-bold text-white">Regulatory Intelligence:</span> Continuous monitoring and briefings on laws, standards, compliance guidance, and implementation timelines within the Kingdom.
+                </li>
+                <li>
+                  <span className="font-bold text-white">Research & Policy Analysis:</span> Deep dives on priority sectors—energy, health, finance, industry, public services—with clear implications and options for action.
+                </li>
+                <li>
+                  <span className="font-bold text-white">Advisory:</span> Tailored memos, stakeholder mapping, and go-to-market support to align strategies with national priorities and delivery cycles.
+                </li>
+              </ul>
+              <p>
+                The result: timely, actionable intelligence that helps Saudi decision-makers move with confidence and pace.
               </p>
             </div>
           </div>
