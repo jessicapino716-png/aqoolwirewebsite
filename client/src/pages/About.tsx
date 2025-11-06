@@ -30,27 +30,27 @@ export default function About() {
             <h2 className="text-3xl font-black text-white mb-6">What We Do</h2>
             <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
               <p>
-                <span className="font-bold text-white">The Aqool Wire</span> is Saudi Arabia's home for clear, credible intelligence on artificial intelligence. We focus exclusively on the Kingdom—how AI is being deployed, regulated, funded, and scaled across ministries, national programmes, and leading enterprises under Vision 2030.
+                The Aqool Wire is Saudi Arabia's home for clear, credible intelligence on artificial intelligence. We focus exclusively on the Kingdom, how AI is being deployed, regulated, funded, and scaled across ministries, national programmes, and leading enterprises under Vision 2030.
               </p>
               <p>
-                We distil signals that matter: policy moves from <span className="font-bold text-white">SDAIA</span> and key regulators; national AI programmes and sector pilots; investment flows from the <span className="font-bold text-white">PIF</span> ecosystem and corporate venture arms; and the partnerships shaping Saudi Arabia's AI stack—from data infrastructure to frontier model adoption.
+                We distill signals that matter: policy moves from SDAIA and key regulators; national AI programmes and sector pilots; investment flows from the PIF ecosystem and corporate venture arms; and the partnerships shaping Saudi Arabia's AI stack, from data infrastructure to frontier model adoption.
               </p>
               <p>
-                Our work equips <span className="font-bold text-white">government leaders, corporate executives, investors, and researchers</span> with decision-ready insight across three service lines:
+                Our work equips government leaders, corporate executives, investors, and researchers with decision-ready insight across three service lines:
               </p>
-              <ul className="space-y-4 ml-6">
-                <li>
+              <div className="space-y-4">
+                <p>
                   <span className="font-bold text-white">Regulatory Intelligence:</span> Continuous monitoring and briefings on laws, standards, compliance guidance, and implementation timelines within the Kingdom.
-                </li>
-                <li>
-                  <span className="font-bold text-white">Research & Policy Analysis:</span> Deep dives on priority sectors—energy, health, finance, industry, public services—with clear implications and options for action.
-                </li>
-                <li>
+                </p>
+                <p>
+                  <span className="font-bold text-white">Research & Policy Analysis:</span> Deep dives on priority sectors, energy, health, finance, industry, public services, with clear implications and options for action.
+                </p>
+                <p>
                   <span className="font-bold text-white">Advisory:</span> Tailored memos, stakeholder mapping, and go-to-market support to align strategies with national priorities and delivery cycles.
-                </li>
-              </ul>
+                </p>
+              </div>
               <p>
-                The result: timely, actionable intelligence that helps Saudi decision-makers move with confidence and pace.
+                We offer timely, actionable intelligence that helps decision-makers move with confidence and pace.
               </p>
             </div>
           </div>
