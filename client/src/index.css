@@ -6,15 +6,15 @@
 
 /* LIGHT MODE (Not used - magazine design is dark-mode only) */
 :root {
-  --button-outline: rgba(0,229,255, .15);
-  --badge-outline: rgba(0,229,255, .10);
+  --button-outline: rgba(100,180,200, .12);
+  --badge-outline: rgba(100,180,200, .08);
 
   /* Automatic computation of border around primary / danger buttons */
   --opaque-button-border-intensity: 12;  /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(0,229,255, .05);
-  --elevate-2: rgba(0,229,255, .12);
+  --elevate-1: rgba(100,180,200, .04);
+  --elevate-2: rgba(100,180,200, .08);
 
   /* Dark teal background */
   --background: 180 60% 8%;
@@ -36,16 +36,16 @@
 
   --sidebar-border: 180 35% 18%;
 
-  /* Bright cyan accent color (#00e5ff) */
-  --sidebar-primary: 188 100% 50%;
+  /* Muted teal accent color */
+  --sidebar-primary: 188 45% 45%;
 
-  --sidebar-primary-foreground: 180 60% 8%;
+  --sidebar-primary-foreground: 0 0% 98%;
 
   --sidebar-accent: 180 40% 14%;
 
   --sidebar-accent-foreground: 0 0% 92%;
 
-  --sidebar-ring: 188 100% 55%;
+  --sidebar-ring: 188 45% 50%;
 
   --popover: 180 50% 11%;
 
@@ -53,10 +53,10 @@
 
   --popover-border: 180 35% 22%;
 
-  /* Bright cyan primary */
-  --primary: 188 100% 50%;
+  /* Muted teal primary */
+  --primary: 188 45% 45%;
 
-  --primary-foreground: 180 60% 8%;
+  --primary-foreground: 0 0% 98%;
 
   /* Dark secondary */
   --secondary: 180 40% 15%;
@@ -67,13 +67,13 @@
 
   --muted-foreground: 180 15% 65%;
 
-  /* Bright cyan accent */
-  --accent: 188 100% 50%;
+  /* Muted teal accent */
+  --accent: 188 45% 45%;
 
-  --accent-foreground: 180 60% 8%;
+  --accent-foreground: 0 0% 98%;
 
-  /* Bright magenta destructive */
-  --destructive: 300 100% 50%;
+  /* Muted magenta destructive */
+  --destructive: 300 50% 50%;
 
   --destructive-foreground: 0 0% 100%;
 
@@ -133,14 +133,14 @@
 }
 
 .dark {
-  --button-outline: rgba(0,229,255, .15);
-  --badge-outline: rgba(0,229,255, .10);
+  --button-outline: rgba(100,180,200, .12);
+  --badge-outline: rgba(100,180,200, .08);
 
   --opaque-button-border-intensity: 12;  /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(0,229,255, .05);
-  --elevate-2: rgba(0,229,255, .12);
+  --elevate-1: rgba(100,180,200, .04);
+  --elevate-2: rgba(100,180,200, .08);
 
   /* Dark teal background */
   --background: 180 60% 8%;
@@ -162,16 +162,16 @@
 
   --sidebar-border: 180 35% 18%;
 
-  /* Bright cyan accent color (#00e5ff) */
-  --sidebar-primary: 188 100% 50%;
+  /* Muted teal accent color */
+  --sidebar-primary: 188 45% 45%;
 
-  --sidebar-primary-foreground: 180 60% 8%;
+  --sidebar-primary-foreground: 0 0% 98%;
 
   --sidebar-accent: 180 40% 14%;
 
   --sidebar-accent-foreground: 0 0% 92%;
 
-  --sidebar-ring: 188 100% 55%;
+  --sidebar-ring: 188 45% 50%;
 
   --popover: 180 50% 11%;
 
@@ -179,10 +179,10 @@
 
   --popover-border: 180 35% 22%;
 
-  /* Bright cyan primary */
-  --primary: 188 100% 50%;
+  /* Muted teal primary */
+  --primary: 188 45% 45%;
 
-  --primary-foreground: 180 60% 8%;
+  --primary-foreground: 0 0% 98%;
 
   /* Dark secondary */
   --secondary: 180 40% 15%;
@@ -193,13 +193,13 @@
 
   --muted-foreground: 180 15% 65%;
 
-  /* Bright cyan accent */
-  --accent: 188 100% 50%;
+  /* Muted teal accent */
+  --accent: 188 45% 45%;
 
-  --accent-foreground: 180 60% 8%;
+  --accent-foreground: 0 0% 98%;
 
-  /* Bright magenta destructive */
-  --destructive: 300 100% 50%;
+  /* Muted magenta destructive */
+  --destructive: 300 50% 50%;
 
   --destructive-foreground: 0 0% 100%;
 
@@ -244,8 +244,8 @@
     right: 0;
     bottom: 0;
     background-image: 
-      linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(100, 180, 200, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100, 180, 200, 0.015) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
     z-index: 0;
@@ -266,16 +266,16 @@
     background: rgba(10, 15, 27, 0.8);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(0, 212, 170, 0.2);
+    border: 1px solid rgba(100, 180, 200, 0.15);
     border-radius: 12px;
   }
 
   .cyan-glow {
-    box-shadow: 0 0 20px rgba(0, 212, 170, 0.3), 0 0 40px rgba(0, 212, 170, 0.1);
+    box-shadow: 0 0 15px rgba(100, 180, 200, 0.15), 0 0 30px rgba(100, 180, 200, 0.05);
   }
 
   .magenta-glow {
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 15px rgba(180, 100, 180, 0.15), 0 0 30px rgba(180, 100, 180, 0.05);
   }
 
   .kicker {
@@ -285,10 +285,10 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 4px 12px;
-    background: rgba(0, 212, 170, 0.15);
-    color: #00d4aa;
+    background: rgba(100, 180, 200, 0.12);
+    color: hsl(188, 45%, 55%);
     border-radius: 4px;
-    border: 1px solid rgba(0, 212, 170, 0.3);
+    border: 1px solid rgba(100, 180, 200, 0.25);
   }
 
   .eyebrow {
@@ -296,11 +296,11 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #00d4aa;
+    color: hsl(188, 45%, 55%);
   }
 
   .focus-cyan:focus-visible {
-    outline: 2px solid #00d4aa;
+    outline: 2px solid hsl(188, 45%, 50%);
     outline-offset: 2px;
   }
 }
