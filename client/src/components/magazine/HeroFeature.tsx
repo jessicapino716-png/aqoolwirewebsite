@@ -34,13 +34,13 @@ export default function HeroFeature({
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-10">
           <span className="kicker mb-3">{kicker}</span>
-          <h2 className="text-3xl lg:text-5xl font-black text-white mb-4 leading-tight group-hover:text-[#00e5ff] transition-colors">
+          <h2 className="text-3xl lg:text-5xl font-black text-white mb-4 leading-tight group-hover:text-[#00d4aa] transition-colors">
             {title}
           </h2>
           <p className="text-lg lg:text-xl text-gray-300 mb-6 max-w-3xl leading-relaxed">
             {excerpt}
           </p>
-          <div className="flex items-center gap-2 text-[#00e5ff] font-semibold group-hover:gap-4 transition-all">
+          <div className="flex items-center gap-2 text-[#00d4aa] font-semibold group-hover:gap-4 transition-all">
             <span>{ctaText}</span>
             <ArrowRight className="w-5 h-5" />
           </div>

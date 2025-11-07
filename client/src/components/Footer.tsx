@@ -34,7 +34,7 @@ export default function Footer() {
             <div>
               <Link href="/" className="inline-block mb-4" data-testid="link-footer-home">
                 <div className="text-2xl font-black text-white">
-                  The Aqool <span className="text-[#00e5ff]">Wire</span>
+                  The Aqool <span className="text-[#00d4aa]">Wire</span>
                 </div>
                 <div className="text-xs uppercase tracking-widest text-gray-400 font-semibold mt-1">
                   Intelligence Platform
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#00e5ff] transition-colors focus-cyan"
+                    className="text-sm text-gray-400 hover:text-[#00d4aa] transition-colors focus-cyan"
                     data-testid={`link-footer-${link.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                   >
                     {link.name}
@@ -79,7 +79,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#00e5ff] transition-colors focus-cyan"
+                    className="text-sm text-gray-400 hover:text-[#00d4aa] transition-colors focus-cyan"
                     data-testid={`link-footer-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     {link.name}

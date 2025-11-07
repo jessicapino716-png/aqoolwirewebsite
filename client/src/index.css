@@ -6,74 +6,74 @@
 
 /* LIGHT MODE (Not used - magazine design is dark-mode only) */
 :root {
-  --button-outline: rgba(100,180,200, .12);
-  --badge-outline: rgba(100,180,200, .08);
+  --button-outline: rgba(0,212,170, .15);
+  --badge-outline: rgba(0,212,170, .10);
 
   /* Automatic computation of border around primary / danger buttons */
   --opaque-button-border-intensity: 12;  /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(100,180,200, .04);
-  --elevate-2: rgba(100,180,200, .08);
+  --elevate-1: rgba(0,212,170, .05);
+  --elevate-2: rgba(0,212,170, .12);
 
-  /* Dark teal background */
-  --background: 180 60% 8%;
+  /* Deep green to black gradient background */
+  --background: 200 45% 6%;
 
   --foreground: 0 0% 98%;
 
-  --border: 180 30% 18%;
+  --border: 200 20% 15%;
 
   /* Glass morphism card with subtle transparency */
-  --card: 180 50% 10%;
+  --card: 200 35% 8%;
 
   --card-foreground: 0 0% 97%;
 
-  --card-border: 180 35% 20%;
+  --card-border: 200 25% 18%;
 
-  --sidebar: 180 55% 9%;
+  --sidebar: 200 40% 7%;
 
   --sidebar-foreground: 0 0% 97%;
 
-  --sidebar-border: 180 35% 18%;
+  --sidebar-border: 200 25% 16%;
 
-  /* Muted teal accent color */
-  --sidebar-primary: 188 45% 45%;
+  /* Cyan accent color (#00d4aa) */
+  --sidebar-primary: 168 100% 42%;
 
-  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-primary-foreground: 200 45% 6%;
 
-  --sidebar-accent: 180 40% 14%;
+  --sidebar-accent: 200 30% 12%;
 
   --sidebar-accent-foreground: 0 0% 92%;
 
-  --sidebar-ring: 188 45% 50%;
+  --sidebar-ring: 168 100% 50%;
 
-  --popover: 180 50% 11%;
+  --popover: 200 35% 9%;
 
   --popover-foreground: 0 0% 97%;
 
-  --popover-border: 180 35% 22%;
+  --popover-border: 200 25% 20%;
 
-  /* Muted teal primary */
-  --primary: 188 45% 45%;
+  /* Cyan primary */
+  --primary: 168 100% 42%;
 
-  --primary-foreground: 0 0% 98%;
+  --primary-foreground: 200 45% 6%;
 
   /* Dark secondary */
-  --secondary: 180 40% 15%;
+  --secondary: 200 30% 13%;
 
   --secondary-foreground: 0 0% 88%;
 
-  --muted: 180 40% 13%;
+  --muted: 200 30% 11%;
 
-  --muted-foreground: 180 15% 65%;
+  --muted-foreground: 200 10% 65%;
 
-  /* Muted teal accent */
-  --accent: 188 45% 45%;
+  /* Cyan accent */
+  --accent: 168 100% 42%;
 
-  --accent-foreground: 0 0% 98%;
+  --accent-foreground: 200 45% 6%;
 
-  /* Muted magenta destructive */
-  --destructive: 300 50% 50%;
+  /* Magenta destructive */
+  --destructive: 300 100% 50%;
 
   --destructive-foreground: 0 0% 100%;
 
@@ -133,80 +133,80 @@
 }
 
 .dark {
-  --button-outline: rgba(100,180,200, .12);
-  --badge-outline: rgba(100,180,200, .08);
+  --button-outline: rgba(0,212,170, .15);
+  --badge-outline: rgba(0,212,170, .10);
 
   --opaque-button-border-intensity: 12;  /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(100,180,200, .04);
-  --elevate-2: rgba(100,180,200, .08);
+  --elevate-1: rgba(0,212,170, .05);
+  --elevate-2: rgba(0,212,170, .12);
 
-  /* Dark teal background */
-  --background: 180 60% 8%;
+  /* Deep green to black gradient background */
+  --background: 200 45% 6%;
 
   --foreground: 0 0% 98%;
 
-  --border: 180 30% 18%;
+  --border: 200 20% 15%;
 
   /* Glass morphism card with subtle transparency */
-  --card: 180 50% 10%;
+  --card: 200 35% 8%;
 
   --card-foreground: 0 0% 97%;
 
-  --card-border: 180 35% 20%;
+  --card-border: 200 25% 18%;
 
-  --sidebar: 180 55% 9%;
+  --sidebar: 200 40% 7%;
 
   --sidebar-foreground: 0 0% 97%;
 
-  --sidebar-border: 180 35% 18%;
+  --sidebar-border: 200 25% 16%;
 
-  /* Muted teal accent color */
-  --sidebar-primary: 188 45% 45%;
+  /* Cyan accent color (#00d4aa) */
+  --sidebar-primary: 168 100% 42%;
 
-  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-primary-foreground: 200 45% 6%;
 
-  --sidebar-accent: 180 40% 14%;
+  --sidebar-accent: 200 30% 12%;
 
   --sidebar-accent-foreground: 0 0% 92%;
 
-  --sidebar-ring: 188 45% 50%;
+  --sidebar-ring: 168 100% 50%;
 
-  --popover: 180 50% 11%;
+  --popover: 200 35% 9%;
 
   --popover-foreground: 0 0% 97%;
 
-  --popover-border: 180 35% 22%;
+  --popover-border: 200 25% 20%;
 
-  /* Muted teal primary */
-  --primary: 188 45% 45%;
+  /* Cyan primary */
+  --primary: 168 100% 42%;
 
-  --primary-foreground: 0 0% 98%;
+  --primary-foreground: 200 45% 6%;
 
   /* Dark secondary */
-  --secondary: 180 40% 15%;
+  --secondary: 200 30% 13%;
 
   --secondary-foreground: 0 0% 88%;
 
-  --muted: 180 40% 13%;
+  --muted: 200 30% 11%;
 
-  --muted-foreground: 180 15% 65%;
+  --muted-foreground: 200 10% 65%;
 
-  /* Muted teal accent */
-  --accent: 188 45% 45%;
+  /* Cyan accent */
+  --accent: 168 100% 42%;
 
-  --accent-foreground: 0 0% 98%;
+  --accent-foreground: 200 45% 6%;
 
-  /* Muted magenta destructive */
-  --destructive: 300 50% 50%;
+  /* Magenta destructive */
+  --destructive: 300 100% 50%;
 
   --destructive-foreground: 0 0% 100%;
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
-  --input: 180 30% 22%;
-  --ring: 188 100% 55%;
-  --chart-1: 188 100% 50%;
+  --input: 200 20% 22%;
+  --ring: 168 100% 50%;
+  --chart-1: 168 100% 42%;
   --chart-2: 300 100% 50%;
   --chart-3: 45 93% 65%;
   --chart-4: 280 65% 70%;
@@ -230,7 +230,7 @@
 
   body {
     @apply font-sans antialiased text-foreground;
-    background: linear-gradient(135deg, #0a3d3d 0%, #051a1f 100%);
+    background: linear-gradient(135deg, #0a0f1b 0%, #050a12 100%);
     background-attachment: fixed;
     position: relative;
   }
@@ -244,8 +244,8 @@
     right: 0;
     bottom: 0;
     background-image: 
-      linear-gradient(rgba(100, 180, 200, 0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(100, 180, 200, 0.015) 1px, transparent 1px);
+      linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
     z-index: 0;
@@ -266,16 +266,16 @@
     background: rgba(10, 15, 27, 0.8);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(100, 180, 200, 0.15);
+    border: 1px solid rgba(0, 212, 170, 0.2);
     border-radius: 12px;
   }
 
   .cyan-glow {
-    box-shadow: 0 0 15px rgba(100, 180, 200, 0.15), 0 0 30px rgba(100, 180, 200, 0.05);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.3), 0 0 40px rgba(0, 212, 170, 0.1);
   }
 
   .magenta-glow {
-    box-shadow: 0 0 15px rgba(180, 100, 180, 0.15), 0 0 30px rgba(180, 100, 180, 0.05);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.1);
   }
 
   .kicker {
@@ -285,10 +285,10 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 4px 12px;
-    background: rgba(100, 180, 200, 0.12);
-    color: hsl(188, 45%, 55%);
+    background: rgba(0, 212, 170, 0.15);
+    color: #00d4aa;
     border-radius: 4px;
-    border: 1px solid rgba(100, 180, 200, 0.25);
+    border: 1px solid rgba(0, 212, 170, 0.3);
   }
 
   .eyebrow {
@@ -296,11 +296,11 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: hsl(188, 45%, 55%);
+    color: #00d4aa;
   }
 
   .focus-cyan:focus-visible {
-    outline: 2px solid hsl(188, 45%, 50%);
+    outline: 2px solid #00d4aa;
     outline-offset: 2px;
   }
 }

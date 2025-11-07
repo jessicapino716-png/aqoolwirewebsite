@@ -8,7 +8,6 @@ import SpecialEdition from "@/components/magazine/SpecialEdition";
 import NumberedList from "@/components/magazine/NumberedList";
 import CardGrid from "@/components/magazine/CardGrid";
 import { Content } from "@shared/schema";
-import saudiMapNetwork from "@assets/generated_images/Saudi_Arabia_AI_network_map_db551bbd.png";
 
 export default function Home() {
   const { data: articles, isLoading } = useQuery<Content[]>({
@@ -154,7 +153,7 @@ export default function Home() {
                     kicker="Intelligence Platform"
                     title="Shaping the Narrative of AI in Saudi Arabia"
                     excerpt="Your authoritative source for AI policy, regulation, and strategic intelligence across the Kingdom and GCC region. Delivering data-driven insights that matter."
-                    imageUrl={saudiMapNetwork}
+                    imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
                     href="/regulatory-intelligence"
                     ctaText="Explore Coverage"
                   />
@@ -208,7 +207,7 @@ export default function Home() {
                     title="Special Edition"
                     subtitle={specialArticle.title}
                     description={specialArticle.excerpt}
-                    imageUrl={specialArticle.imageUrl || "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"}
+                    imageUrl={specialArticle.imageUrl || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"}
                     href={`/article/${specialArticle.id}`}
                     ctaText="Read More"
                   />
@@ -217,7 +216,7 @@ export default function Home() {
                     title="Special Edition"
                     subtitle="Vision 2030 and the AI Transformation"
                     description="Deep analysis of Saudi Arabia's AI strategy, government initiatives, and the roadmap toward becoming a global leader in artificial intelligence."
-                    imageUrl="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"
+                    imageUrl="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"
                     href="/about"
                     ctaText="Read More"
                   />
@@ -249,7 +248,7 @@ export default function Home() {
                               )}
                               <div className="p-6">
                                 <span className="eyebrow">{article.category}</span>
-                                <h3 className="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2">
+                                <h3 className="text-xl font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">{article.excerpt}</p>
@@ -286,7 +285,7 @@ export default function Home() {
                               )}
                               <div className="p-6">
                                 <span className="eyebrow">{article.category}</span>
-                                <h3 className="text-lg font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2">
+                                <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">{article.excerpt}</p>
@@ -326,7 +325,7 @@ export default function Home() {
                               )}
                               <div className="p-6">
                                 <span className="eyebrow">{article.category}</span>
-                                <h3 className="text-lg font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2">
+                                <h3 className="text-lg font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-sm leading-relaxed">{article.excerpt}</p>
@@ -354,7 +353,7 @@ export default function Home() {
                             <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer h-full">
                               <div className="p-6">
                                 <span className="eyebrow text-xs">{article.category}</span>
-                                <h3 className="text-base font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2 line-clamp-3">
+                                <h3 className="text-base font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2 line-clamp-3">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">{article.excerpt}</p>
@@ -382,7 +381,7 @@ export default function Home() {
                             <div className="glass-card group overflow-hidden hover:scale-[1.01] transition-all duration-300 cursor-pointer h-full">
                               <div className="p-6">
                                 <span className="eyebrow text-xs">{article.category}</span>
-                                <h3 className="text-base font-bold text-white group-hover:text-[#00e5ff] transition-colors mt-2 mb-2 line-clamp-3">
+                                <h3 className="text-base font-bold text-white group-hover:text-[#00d4aa] transition-colors mt-2 mb-2 line-clamp-3">
                                   {article.title}
                                 </h3>
                                 <p className="text-gray-400 text-xs leading-relaxed line-clamp-4">{article.excerpt}</p>

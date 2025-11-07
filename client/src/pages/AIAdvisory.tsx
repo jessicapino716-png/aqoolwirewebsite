@@ -67,7 +67,7 @@ export default function AIAdvisory() {
               Expert guidance for organizations implementing AI in Saudi Arabia. From strategy to compliance, we help you succeed in the evolving AI landscape.
             </p>
             <Link href="/contact" className="inline-block" data-testid="link-contact-advisory">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#00e5ff] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow">
+              <button className="px-8 py-4 bg-gradient-to-r from-[#00d4aa] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow">
                 Schedule Consultation
                 <ArrowRight className="inline-block ml-2 w-5 h-5" />
               </button>
@@ -81,16 +81,16 @@ export default function AIAdvisory() {
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <div key={index} className="glass-card p-8 border-l-4 border-[#00e5ff]">
-                    <div className="w-12 h-12 bg-[#00e5ff]/20 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-[#00e5ff]" />
+                  <div key={index} className="glass-card p-8 border-l-4 border-[#00d4aa]">
+                    <div className="w-12 h-12 bg-[#00d4aa]/20 rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-[#00d4aa]" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                     <p className="text-gray-400 mb-4 leading-relaxed">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, i) => (
                         <li key={i} className="text-sm text-gray-300 flex items-center">
-                          <span className="w-1.5 h-1.5 bg-[#00e5ff] rounded-full mr-2"></span>
+                          <span className="w-1.5 h-1.5 bg-[#00d4aa] rounded-full mr-2"></span>
                           {feature}
                         </li>
                       ))}
@@ -110,7 +110,7 @@ export default function AIAdvisory() {
                   <span className="eyebrow mb-3 block">{study.category}</span>
                   <h3 className="text-xl font-bold text-white mb-2">{study.title}</h3>
                   <p className="text-sm text-gray-400 mb-3">{study.client}</p>
-                  <p className="text-[#00e5ff] font-semibold">{study.result}</p>
+                  <p className="text-[#00d4aa] font-semibold">{study.result}</p>
                 </div>
               ))}
             </div>

@@ -27,12 +27,12 @@ export default function Header() {
             className="flex items-center gap-3 group focus-cyan" 
             data-testid="link-home"
           >
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-[#00e5ff] to-[#00a888] cyan-glow group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-[#00d4aa] to-[#00a888] cyan-glow group-hover:scale-105 transition-transform">
               <span className="text-[#0a0f1b] font-black text-lg">AW</span>
             </div>
             <div className="hidden sm:flex flex-col">
               <span className="text-xl font-black tracking-tight text-white">
-                The Aqool <span className="text-[#00e5ff]">Wire</span>
+                The Aqool <span className="text-[#00d4aa]">Wire</span>
               </span>
               <span className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">
                 Intelligence Platform
@@ -52,8 +52,8 @@ export default function Header() {
                   href={item.href}
                   className={`px-3 py-2 text-sm font-semibold transition-all focus-cyan rounded-md ${
                     isActive 
-                      ? 'text-[#00e5ff] bg-[#00e5ff]/10' 
-                      : 'text-gray-300 hover:text-[#00e5ff] hover:bg-white/5'
+                      ? 'text-[#00d4aa] bg-[#00d4aa]/10' 
+                      : 'text-gray-300 hover:text-[#00d4aa] hover:bg-white/5'
                   }`}
                   data-testid={`link-nav-${item.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                 >
@@ -68,7 +68,7 @@ export default function Header() {
             {/* Search Button */}
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 hover:bg-white/5 rounded-md transition-colors text-gray-300 hover:text-[#00e5ff] focus-cyan"
+              className="p-2 hover:bg-white/5 rounded-md transition-colors text-gray-300 hover:text-[#00d4aa] focus-cyan"
               aria-label="Search"
               data-testid="button-search"
             >
@@ -79,7 +79,7 @@ export default function Header() {
             <Sheet>
               <SheetTrigger asChild>
                 <button 
-                  className="lg:hidden p-2 hover:bg-white/5 rounded-md transition-colors text-gray-300 hover:text-[#00e5ff] focus-cyan" 
+                  className="lg:hidden p-2 hover:bg-white/5 rounded-md transition-colors text-gray-300 hover:text-[#00d4aa] focus-cyan" 
                   aria-label="Open menu" 
                   data-testid="button-mobile-menu"
                 >
@@ -98,8 +98,8 @@ export default function Header() {
                         href={item.href}
                         className={`px-4 py-3 text-base font-semibold transition-all rounded-md focus-cyan ${
                           isActive
-                            ? 'text-[#00e5ff] bg-[#00e5ff]/10'
-                            : 'text-gray-300 hover:text-[#00e5ff] hover:bg-white/5'
+                            ? 'text-[#00d4aa] bg-[#00d4aa]/10'
+                            : 'text-gray-300 hover:text-[#00d4aa] hover:bg-white/5'
                         }`}
                         data-testid={`link-nav-mobile-${item.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                       >
@@ -121,7 +121,7 @@ export default function Header() {
             <input
               type="search"
               placeholder="Search articles, reports, insights..."
-              className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00e5ff]/50"
+              className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00d4aa]/50"
               autoFocus
               data-testid="input-search"
             />

@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
+import { Target, Eye, Zap } from "lucide-react";
 
 export default function About() {
   return (
@@ -25,32 +26,51 @@ export default function About() {
             </p>
           </div>
 
+          {/* Mission, Vision, Values */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="glass-card p-8 text-center">
+              <div className="w-16 h-16 bg-[#00d4aa]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-[#00d4aa]" />
+              </div>
+              <h2 className="text-2xl font-black text-white mb-3">Our Mission</h2>
+              <p className="text-gray-400 leading-relaxed">
+                To provide authoritative, data-driven intelligence that empowers decision-makers navigating Saudi Arabia's AI transformation.
+              </p>
+            </div>
+
+            <div className="glass-card p-8 text-center">
+              <div className="w-16 h-16 bg-[#ff00ff]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Eye className="w-8 h-8 text-[#ff00ff]" />
+              </div>
+              <h2 className="text-2xl font-black text-white mb-3">Our Vision</h2>
+              <p className="text-gray-400 leading-relaxed">
+                To be the definitive source of AI intelligence for the Middle East, bridging policy, technology, and business.
+              </p>
+            </div>
+
+            <div className="glass-card p-8 text-center">
+              <div className="w-16 h-16 bg-[#00d4aa]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-[#00d4aa]" />
+              </div>
+              <h2 className="text-2xl font-black text-white mb-3">Our Approach</h2>
+              <p className="text-gray-400 leading-relaxed">
+                Rigorous research, local expertise, and real-time tracking of regulatory, strategic, and market developments.
+              </p>
+            </div>
+          </div>
+
           {/* What We Do */}
           <div className="glass-card p-10 mb-16">
             <h2 className="text-3xl font-black text-white mb-6">What We Do</h2>
-            <div className="space-y-6 text-gray-300 leading-relaxed text-lg">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                The Aqool Wire is Saudi Arabia's home for clear, credible intelligence on artificial intelligence. We focus exclusively on the Kingdom, how AI is being deployed, regulated, funded, and scaled across ministries, national programmes, and leading enterprises under Vision 2030.
+                The Aqool Wire was founded to address a critical gap in the Middle Eastern AI ecosystem: the lack of specialized, authoritative intelligence on how artificial intelligence is being deployed, regulated, and developed across the Kingdom of Saudi Arabia and the broader GCC region.
               </p>
               <p>
-                We distill signals that matter: policy moves from SDAIA and key regulators; national AI programmes and sector pilots; investment flows from the PIF ecosystem and corporate venture arms; and the partnerships shaping Saudi Arabia's AI stack, from data infrastructure to frontier model adoption.
+                We track policy developments from entities like SDAIA (Saudi Data & AI Authority), monitor Vision 2030 AI initiatives, analyze investment trends, and provide strategic insights for organizations navigating this rapidly evolving landscape.
               </p>
               <p>
-                Our work equips government leaders, corporate executives, investors, and researchers with decision-ready insight across three service lines:
-              </p>
-              <div className="space-y-4">
-                <p>
-                  <span className="font-bold text-white">Regulatory Intelligence:</span> Continuous monitoring and briefings on laws, standards, compliance guidance, and implementation timelines within the Kingdom.
-                </p>
-                <p>
-                  <span className="font-bold text-white">Research & Policy Analysis:</span> Deep dives on priority sectors, energy, health, finance, industry, public services, with clear implications and options for action.
-                </p>
-                <p>
-                  <span className="font-bold text-white">Advisory:</span> Tailored memos, stakeholder mapping, and go-to-market support to align strategies with national priorities and delivery cycles.
-                </p>
-              </div>
-              <p>
-                We offer timely, actionable intelligence that helps decision-makers move with confidence and pace.
+                Our platform serves government officials, corporate executives, investors, researchers, and anyone who needs to stay informed about AI developments in the region. Through our Regulatory Intelligence, Research & Policy analysis, and Advisory services, we deliver actionable intelligence that drives better decisions.
               </p>
             </div>
           </div>
@@ -70,7 +90,7 @@ export default function About() {
                 "Regional Comparative Analysis"
               ].map((area, index) => (
                 <div key={index} className="flex items-center gap-3 text-gray-300">
-                  <span className="w-2 h-2 bg-[#00e5ff] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#00d4aa] rounded-full"></span>
                   <span>{area}</span>
                 </div>
               ))}
@@ -78,7 +98,7 @@ export default function About() {
           </div>
 
           {/* CTA */}
-          <div className="glass-card p-12 text-center border border-[#00e5ff]/30">
+          <div className="glass-card p-12 text-center border border-[#00d4aa]/30">
             <h2 className="text-3xl font-black text-white mb-4">
               Get In Touch
             </h2>
@@ -86,7 +106,7 @@ export default function About() {
               Interested in partnership, custom research, or advisory services? We'd love to hear from you.
             </p>
             <Link href="/contact" data-testid="link-contact-about">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#00e5ff] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow">
+              <button className="px-8 py-4 bg-gradient-to-r from-[#00d4aa] to-[#00a888] text-[#0a0f1b] font-bold rounded-lg hover:scale-105 transition-transform cyan-glow">
                 Contact Us
               </button>
             </Link>

@@ -24,11 +24,11 @@ export default function FeaturedList({ title, items }: FeaturedListProps) {
             <Link href={item.href}>
               <div className="group cursor-pointer" data-testid={`link-featured-${item.id}`}>
                 {item.category && (
-                  <span className="text-xs text-[#00e5ff] font-semibold uppercase tracking-wide">
+                  <span className="text-xs text-[#00d4aa] font-semibold uppercase tracking-wide">
                     {item.category}
                   </span>
                 )}
-                <p className="text-sm text-gray-300 group-hover:text-[#00e5ff] transition-colors leading-snug mt-1">
+                <p className="text-sm text-gray-300 group-hover:text-[#00d4aa] transition-colors leading-snug mt-1">
                   {item.title}
                 </p>
               </div>
