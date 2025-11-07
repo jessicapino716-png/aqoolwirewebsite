@@ -59,7 +59,6 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
         { url: '/policy', priority: '0.9', changefreq: 'daily' },
         { url: '/regulation', priority: '0.9', changefreq: 'daily' },
         { url: '/analysis', priority: '0.9', changefreq: 'daily' },
-        { url: '/news', priority: '0.9', changefreq: 'daily' },
         { url: '/tools', priority: '0.8', changefreq: 'weekly' },
         { url: '/newsletter', priority: '0.7', changefreq: 'monthly' },
         { url: '/contact', priority: '0.6', changefreq: 'monthly' },
