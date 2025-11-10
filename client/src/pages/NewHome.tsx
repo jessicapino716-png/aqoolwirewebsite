@@ -86,7 +86,7 @@ export default function NewHome() {
         />
       </Helmet>
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628] border-b border-[#1a2638]">
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -96,25 +96,25 @@ export default function NewHome() {
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#ai-investment-observatory" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <a href="#ai-investment-observatory" className="text-sm font-medium text-white hover:text-primary transition-colors">
                 AI Investment Observatory
               </a>
-              <a href="#insights" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <a href="#insights" className="text-sm font-medium text-white hover:text-primary transition-colors">
                 Insights
               </a>
-              <a href="#reports" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <a href="#reports" className="text-sm font-medium text-white hover:text-primary transition-colors">
                 Reports
               </a>
-              <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <a href="#about" className="text-sm font-medium text-white hover:text-primary transition-colors">
                 About
               </a>
-              <a href="#contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <a href="#contact" className="text-sm font-medium text-white hover:text-primary transition-colors">
                 Contact
               </a>
             </nav>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden p-2">
+            <button className="md:hidden p-2 text-white">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>

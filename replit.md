@@ -7,9 +7,11 @@ The Aqool Wire is a marketing landing page showcasing AI investment opportunitie
 **Recent Migration (November 2025):**
 - Transformed from news website to marketing landing page
 - All existing articles preserved in dedicated Insights section
-- Custom SVG art visualizations (AnimatedSaudiMap, PolicyFlow, OpportunityGraph, etc.)
+- Custom SVG art visualizations (AnimatedSaudiMap, ArchitectureLayers, OpportunityGraph, etc.)
 - Conditional navigation: marketing pages have custom navigation, other routes use global Header/Footer
 - Dark theme with teal accent color (#2bd4a7) for marketing sections
+- Logo background color (#0a1628 - dark navy blue) applied to all header navigation bars
+- Single service offering: AI Investment Observatory
 
 ## User Preferences
 
@@ -44,12 +46,13 @@ Preferred communication style: Simple, everyday language.
 - **Spacing**: Consistent Tailwind utility classes for spacing and layout
 
 ### Content Management
-- **Marketing Home Page**: Custom landing page (NewHome.tsx) with hero section, statistics showcase, services overview, and integrated contact form
+- **Marketing Home Page**: Custom landing page (NewHome.tsx) with hero section, statistics showcase, AI Investment Observatory service section, and integrated contact form
+  - Fixed header navigation with logo's background color (#0a1628)
+  - Navigation links: AI Investment Observatory, Insights, Reports, About, Contact
 - **Custom Art Visualizations**: 
   - AnimatedSaudiMap: SVG map of Saudi Arabia with animated connections
-  - PolicyFlow: Visual flow of AI policy development
-  - ArchitectureLayers: Layered architecture diagram
-  - FeatureVignettes: Feature highlights with icons
+  - ArchitectureLayers: Layered architecture diagram showing AI stack
+  - FeatureVignettes: Feature highlights with icons (Signal Scanning, Operational Mapping, Execution Timing)
   - OpportunityGraph: Investment opportunity visualization
 - **Insights Section**: Dedicated page (Insights.tsx) preserving all existing articles with filtering and display
 - **Article System**: Structured article data with metadata including categories, authors, and timestamps (displayed in Insights)
