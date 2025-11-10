@@ -233,9 +233,7 @@ export default function NewHome() {
             </div>
             <div className="order-1 lg:order-2">
               <h2 className="mb-6">AI Investment Observatory</h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Track the full stack from infrastructure to business model—connect capability gaps to deployment windows.
-              </p>
+              <p className="text-muted-foreground text-lg mb-8">Track the full stack from infrastructure to business model, connect capability gaps to deployment windows.</p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
