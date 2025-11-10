@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { StatTile } from "@/components/StatTile";
 import { AnimatedSaudiMap } from "@/components/art/AnimatedSaudiMap";
 import { SignalScanningVignette, OperationalMappingVignette, ExecutionTimingVignette } from "@/components/art/FeatureVignettes";
-import { PolicyFlow } from "@/components/art/PolicyFlow";
 import { ArchitectureLayers } from "@/components/art/ArchitectureLayers";
 import { OpportunityGraph } from "@/components/art/OpportunityGraph";
 import { ArrowRight } from "lucide-react";
@@ -97,9 +96,6 @@ export default function NewHome() {
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#regulatory-intelligence" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Regulatory Intelligence
-              </a>
               <a href="#ai-investment-observatory" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 AI Investment Observatory
               </a>
@@ -191,36 +187,6 @@ export default function NewHome() {
                 Identify likely windows along investment and buildout cycles.
               </p>
             </Card>
-          </div>
-        </div>
-      </section>
-      {/* Regulatory Intelligence */}
-      <section id="regulatory-intelligence" className="py-24 bg-card">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="mb-6">Regulatory Intelligence</h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Navigate complex frameworks with precision intelligence that connects policy announcements to market entry requirements.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <p className="text-foreground">Compliance pathway mapping from announcement to license</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <p className="text-foreground">Localisation requirement tracking across sectors</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <p className="text-foreground">Regulatory timeline forecasting</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <PolicyFlow />
-            </div>
           </div>
         </div>
       </section>
@@ -495,7 +461,6 @@ export default function NewHome() {
             <div>
               <h4 className="mb-4 text-lg font-semibold">Services</h4>
               <ul className="space-y-3">
-                <li><a href="#regulatory-intelligence" className="text-muted-foreground hover:text-primary transition-colors">Regulatory Intelligence</a></li>
                 <li><a href="#ai-investment-observatory" className="text-muted-foreground hover:text-primary transition-colors">AI Investment Observatory</a></li>
               </ul>
             </div>
