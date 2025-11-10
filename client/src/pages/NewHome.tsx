@@ -156,7 +156,7 @@ export default function NewHome() {
       {/* What We Do */}
       <section className="py-24">
         <div className="container-custom">
-          <h2 className="text-center mb-16 font-semibold text-[50px]">What We Do</h2>
+          <h2 className="text-center mb-16 text-[40px] font-extrabold">What We Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
               <div className="mb-6">
