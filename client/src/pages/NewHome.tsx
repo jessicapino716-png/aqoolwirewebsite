@@ -138,7 +138,7 @@ export default function NewHome() {
               <Button size="lg" data-testid="button-read-wire">Read the Wire</Button>
             </Link>
             <Button variant="outline" size="lg" asChild data-testid="button-contact">
-              <a href="#contact">Contact</a>
+              <a href="#contact">Contact Us</a>
             </Button>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function NewHome() {
       {/* What We Do */}
       <section className="py-24">
         <div className="container-custom">
-          <h2 className="text-center mb-16 text-[55px] font-semibold">What We Do</h2>
+          <h2 className="text-center mb-16 font-semibold text-[50px]">What We Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
               <div className="mb-6">
@@ -198,7 +198,7 @@ export default function NewHome() {
               <ArchitectureLayers />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="mb-6 font-extrabold text-[40px]">AI Investment Observatory</h2>
+              <h2 className="mb-6 font-extrabold text-[30px]">AI Investment Observatory</h2>
               <p className="text-muted-foreground text-lg mb-8">Track the full stack from infrastructure to business model, connect capability gaps to deployment windows.</p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
