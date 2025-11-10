@@ -306,7 +306,7 @@ export default function NewHome() {
         </div>
       </section>
       {/* About */}
-      <section id="about" className="py-24">
+      <section id="about" className="py-24 pt-[85px] pb-[85px]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="mb-6 text-[50px] font-semibold">The AQOOL Wire</h2>
