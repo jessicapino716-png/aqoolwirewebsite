@@ -126,7 +126,7 @@ export default function NewHome() {
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <AnimatedSaudiMap />
         <div className="container-custom relative z-10 text-center py-32">
-          <h1 className="mb-6 font-bold text-foreground text-[84px]">AQOOL Wire</h1>
+          <h1 className="mb-6 font-bold text-foreground text-[80px]">AQOOL Wire</h1>
           <p className="text-muted-foreground text-xl mb-8 max-w-3xl mx-auto italic">
             Making sense of signals in Saudi Arabia's AI economy.
           </p>
