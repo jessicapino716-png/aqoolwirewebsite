@@ -86,7 +86,7 @@ export default function NewHome() {
         />
       </Helmet>
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628] border-b border-[#1a2638]">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/90 backdrop-blur-header supports-[backdrop-filter]:bg-[#0a1628]/70 border-b border-[#1a2638]">
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -133,9 +133,9 @@ export default function NewHome() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/insights" data-testid="link-insights">
-              <Button size="lg" data-testid="button-read-wire">Read the Wire</Button>
+              <Button size="lg" className="btn-hover-lift" data-testid="button-read-wire">Read the Wire</Button>
             </Link>
-            <Button variant="outline" size="lg" asChild data-testid="button-contact">
+            <Button variant="outline" size="lg" className="btn-hover-lift" asChild data-testid="button-contact">
               <a href="#contact">Contact Us</a>
             </Button>
           </div>
@@ -156,8 +156,8 @@ export default function NewHome() {
         <div className="container-custom">
           <h2 className="text-center mb-16 text-[40px] font-extrabold">What We Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="mb-6">
+            <div className="group hover-lift p-6 rounded-lg">
+              <div className="mb-6 overflow-visible">
                 <SignalScanningVignette />
               </div>
               <h3 className="mb-4 font-bold text-center text-[25px]">Signal Scanning</h3>
@@ -166,8 +166,8 @@ export default function NewHome() {
               </p>
             </div>
 
-            <div>
-              <div className="mb-6">
+            <div className="group hover-lift p-6 rounded-lg">
+              <div className="mb-6 overflow-visible">
                 <OperationalMappingVignette />
               </div>
               <h3 className="mb-4 font-bold text-center text-[25px]">Operational Mapping</h3>
@@ -176,8 +176,8 @@ export default function NewHome() {
               </p>
             </div>
 
-            <div>
-              <div className="mb-6">
+            <div className="group hover-lift p-6 rounded-lg">
+              <div className="mb-6 overflow-visible">
                 <ExecutionTimingVignette />
               </div>
               <h3 className="mb-4 font-bold text-center text-[24px]">Execution Timing</h3>
