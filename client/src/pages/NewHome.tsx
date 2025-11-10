@@ -84,12 +84,11 @@ export default function NewHome() {
           content="Making sense of signals in Saudi Arabia's AI economy. We synthesize policy, market, and capital signals to highlight major AI investment opportunities."
         />
       </Helmet>
-
       {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <AnimatedSaudiMap />
         <div className="container-custom relative z-10 text-center py-32">
-          <h1 className="mb-6 font-bold text-foreground">AQOOL Wire</h1>
+          <h1 className="mb-6 font-bold text-foreground text-[84px]">AQOOL Wire</h1>
           <p className="text-muted-foreground text-xl mb-8 max-w-3xl mx-auto italic">
             Making sense of signals in Saudi Arabia's AI economy.
           </p>
@@ -106,7 +105,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* Stats */}
       <section className="py-24 bg-muted/30">
         <div className="container-custom">
@@ -117,7 +115,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* What We Do */}
       <section className="py-24">
         <div className="container-custom">
@@ -155,7 +152,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* Insights */}
       <section id="insights" className="py-24 bg-muted/30">
         <div className="container-custom">
@@ -230,7 +226,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* Reports */}
       <section id="reports" className="py-24 bg-card">
         <div className="container-custom text-center">
@@ -244,7 +239,6 @@ export default function NewHome() {
           </Link>
         </div>
       </section>
-
       {/* About */}
       <section id="about" className="py-24">
         <div className="container-custom">
@@ -259,7 +253,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* Contact */}
       <section id="contact" className="py-24 bg-card">
         <div className="container-custom">
@@ -384,7 +377,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
         <div className="container-custom">
