@@ -28,6 +28,8 @@ import Terms from "@/pages/Terms";
 import Cookies from "@/pages/Cookies";
 import Disclaimers from "@/pages/Disclaimers";
 import NotFound from "@/pages/not-found";
+import NewHome from "@/pages/NewHome";
+import Insights from "@/pages/Insights";
 
 function Router() {
   const [location] = useLocation();
@@ -39,7 +41,8 @@ function Router() {
 
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={NewHome} />
+      <Route path="/insights" component={Insights} />
       <Route path="/policy" component={() => <CategoryPage />} />
       <Route path="/regulation" component={() => <CategoryPage />} />
       <Route path="/analysis" component={() => <CategoryPage />} />
@@ -93,6 +96,25 @@ function Router() {
   );
 }
 
+function Layout() {
+  const [location] = useLocation();
+  
+  // Marketing pages have their own navigation/footer built-in
+  const isMarketingPage = location === '/' || location === '/insights';
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      {!isMarketingPage && <ScrollProgressLine />}
+      {!isMarketingPage && <Header />}
+      <main className={isMarketingPage ? "" : "flex-1"}>
+        <Router />
+      </main>
+      {!isMarketingPage && <Footer />}
+      <Toaster />
+    </div>
+  );
+}
+
 function App() {
   return (
     <HelmetProvider>
@@ -100,15 +122,7 @@ function App() {
         <AuthProvider>
           <ThemeProvider>
             <TooltipProvider>
-              <div className="min-h-screen flex flex-col bg-gradient-to-r from-teal-400 to-cyan-300">
-                <ScrollProgressLine />
-                <Header />
-                <main className="flex-1">
-                  <Router />
-                </main>
-                <Footer />
-              </div>
-              <Toaster />
+              <Layout />
             </TooltipProvider>
           </ThemeProvider>
         </AuthProvider>
