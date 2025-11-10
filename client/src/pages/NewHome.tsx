@@ -88,10 +88,10 @@ export default function NewHome() {
       {/* Header Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628] border-b border-[#1a2638]">
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#hero" className="flex items-center">
-              <img src={logo} alt="AQOOL Wire" className="h-8" />
+            <a href="#hero" className="flex items-center py-2">
+              <img src={logo} alt="AQOOL Wire" className="h-14 md:h-16" />
             </a>
 
             {/* Navigation */}

@@ -16,10 +16,10 @@ export default function Header() {
   return (
     <header className="border-b border-[#1a2638] bg-[#0a1628] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3" data-testid="link-home">
-            <img src={logo} alt="The Aqool Wire" className="h-8 md:h-10" />
+          <Link href="/" className="flex items-center gap-3 py-2" data-testid="link-home">
+            <img src={logo} alt="The Aqool Wire" className="h-14 md:h-16" />
           </Link>
           
           {/* Desktop Navigation */}

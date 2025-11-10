@@ -44,6 +44,7 @@ Preferred communication style: Simple, everyday language.
 - **Color Scheme**: Pure black background (0 0% 0%) with subtle gray cards and elements for contrast, maintaining the teal accent (#2bd4a7) for marketing highlights
 - **Layout**: Responsive grid system with mobile-first approach
 - **Spacing**: Consistent Tailwind utility classes for spacing and layout
+- **Header**: Logo sized at h-14 (56px) on mobile and h-16 (64px) on desktop for improved legibility
 
 ### Content Management
 - **Marketing Home Page**: Custom landing page (NewHome.tsx) with hero section, statistics showcase, AI Investment Observatory service section, and integrated contact form
