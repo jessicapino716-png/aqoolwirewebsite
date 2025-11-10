@@ -155,7 +155,7 @@ export default function NewHome() {
       {/* Insights */}
       <section id="insights" className="py-24 bg-muted/30">
         <div className="container-custom">
-          <h2 className="text-center mb-16">Insights</h2>
+          <h2 className="text-center mb-16 font-semibold text-[50px]">Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Link href="/insights" data-testid="link-insights-card-1">
               <Card className="cursor-pointer hover-elevate">
