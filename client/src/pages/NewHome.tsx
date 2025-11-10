@@ -162,8 +162,8 @@ export default function NewHome() {
               <div className="mb-6">
                 <SignalScanningVignette />
               </div>
-              <h3 className="mb-4 text-xl font-bold">Signal Scanning</h3>
-              <p className="text-muted-foreground">
+              <h3 className="mb-4 text-xl font-bold text-center">Signal Scanning</h3>
+              <p className="text-muted-foreground text-center">
                 Structured monitoring of policy, sector, and capital activity.
               </p>
             </Card>
