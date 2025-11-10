@@ -229,7 +229,7 @@ export default function NewHome() {
       {/* Reports */}
       <section id="reports" className="py-24 bg-card">
         <div className="container-custom text-center">
-          <h2 className="mb-6">Reports</h2>
+          <h2 className="mb-6 text-[50px] bg-[transparent] font-semibold">Reports</h2>
           <h3 className="text-primary mb-6 text-2xl font-semibold">Deep dives for decision-makers</h3>
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
             Playbooks, timelines, partner maps, and valuation drivers.
