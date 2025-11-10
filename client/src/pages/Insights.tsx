@@ -84,27 +84,22 @@ export default function Insights() {
         />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="py-24 bg-card border-b border-border">
+      {/* Simple Title */}
+      <section className="pt-16 pb-8">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Insights</h1>
-            <p className="text-xl text-muted-foreground">
-              In-depth analysis connecting policy, capital, and operations across Saudi Arabia's AI transformation.
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-normal text-center text-foreground">Insights</h1>
         </div>
       </section>
 
       {/* Articles Grid */}
-      <section className="py-16">
+      <section className="pb-16">
         <div className="container-custom">
           {allArticles.length === 0 ? (
             <div className="text-center py-16">
               <p className="text-muted-foreground text-lg">No articles published yet. Check back soon!</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {allArticles.map((article) => (
                 <div key={article.id} data-testid={`article-card-${article.id}`}>
                   {article.type === 'external' && article.externalUrl ? (
@@ -112,77 +107,50 @@ export default function Insights() {
                       href={article.externalUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="block"
+                      className="block group"
                       data-testid={`link-article-external-${article.id}`}
                     >
-                      <Card className="h-full flex flex-col cursor-pointer hover-elevate">
+                      <div className="relative h-64 rounded-lg overflow-hidden">
                         {article.imageUrl && (
-                          <div className="w-full h-48 bg-muted rounded-t-lg overflow-hidden">
+                          <>
                             <img 
                               src={article.imageUrl} 
                               alt={article.title}
                               className="w-full h-full object-cover"
                             />
-                          </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                          </>
                         )}
-                        <div className="p-6 flex-1 flex flex-col">
-                          <div className="flex items-center gap-2 mb-3 flex-wrap">
-                            <Badge variant="secondary" data-testid={`badge-category-${article.id}`}>
-                              {article.category}
-                            </Badge>
-                            {article.source && (
-                              <Badge variant="outline" className="gap-1" data-testid={`badge-source-${article.id}`}>
-                                <ExternalLink className="w-3 h-3" />
-                                {article.source}
-                              </Badge>
-                            )}
-                          </div>
-                          <h3 className="text-xl font-bold mb-3 line-clamp-2">{article.title}</h3>
-                          <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">{article.excerpt}</p>
-                          <div className="flex items-center justify-between text-sm text-muted-foreground">
-                            <span>{article.authorName}</span>
-                            <span>{formatPublishedDate(article.publishedAt.toString())}</span>
-                          </div>
-                          <div className="flex items-center text-primary gap-1 mt-4">
-                            <span className="text-sm font-medium">Read on {article.source}</span>
-                            <ExternalLink className="w-4 h-4" />
+                        <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                          <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">{article.title}</h3>
+                          <p className="text-gray-300 text-sm mb-3 line-clamp-2">{article.excerpt}</p>
+                          <div className="text-gray-300 text-sm group-hover:text-white transition-colors">
+                            Read more
                           </div>
                         </div>
-                      </Card>
+                      </div>
                     </a>
                   ) : (
                     <Link href={`/article/${article.slug}`} data-testid={`link-article-${article.id}`}>
-                      <Card className="h-full flex flex-col cursor-pointer hover-elevate">
+                      <div className="relative h-64 rounded-lg overflow-hidden group">
                         {article.imageUrl && (
-                          <div className="w-full h-48 bg-muted rounded-t-lg overflow-hidden">
+                          <>
                             <img 
                               src={article.imageUrl} 
                               alt={article.title}
                               className="w-full h-full object-cover"
                             />
-                          </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                          </>
                         )}
-                        <div className="p-6 flex-1 flex flex-col">
-                          <div className="flex items-center gap-2 mb-3 flex-wrap">
-                            <Badge variant="secondary" data-testid={`badge-category-${article.id}`}>
-                              {article.category}
-                            </Badge>
-                            {article.type === 'op-ed' && (
-                              <Badge variant="outline" data-testid={`badge-type-${article.id}`}>Op-Ed</Badge>
-                            )}
-                          </div>
-                          <h3 className="text-xl font-bold mb-3 line-clamp-2">{article.title}</h3>
-                          <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">{article.excerpt}</p>
-                          <div className="flex items-center justify-between text-sm text-muted-foreground">
-                            <span>{article.authorName}</span>
-                            <span>{formatPublishedDate(article.publishedAt.toString())}</span>
-                          </div>
-                          <div className="flex items-center text-primary gap-1 mt-4">
-                            <span className="text-sm font-medium">Read article</span>
-                            <ArrowRight className="w-4 h-4" />
+                        <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                          <h3 className="text-xl font-semibold mb-2 text-white line-clamp-2">{article.title}</h3>
+                          <p className="text-gray-300 text-sm mb-3 line-clamp-2">{article.excerpt}</p>
+                          <div className="text-gray-300 text-sm group-hover:text-white transition-colors">
+                            Read more
                           </div>
                         </div>
-                      </Card>
+                      </div>
                     </Link>
                   )}
                 </div>
