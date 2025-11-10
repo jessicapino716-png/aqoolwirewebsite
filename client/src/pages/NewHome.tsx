@@ -172,7 +172,7 @@ export default function NewHome() {
               <div className="mb-6">
                 <OperationalMappingVignette />
               </div>
-              <h3 className="mb-4 text-xl font-bold">Operational Mapping</h3>
+              <h3 className="mb-4 text-xl font-bold text-center">Operational Mapping</h3>
               <p className="text-muted-foreground">
                 Translate announcements into clear AI capability needs and business cases.
               </p>
