@@ -156,7 +156,7 @@ export default function NewHome() {
         <div className="container-custom">
           <h2 className="text-center mb-16 text-[40px] font-extrabold">What We Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
+            <div>
               <div className="mb-6">
                 <SignalScanningVignette />
               </div>
@@ -164,9 +164,9 @@ export default function NewHome() {
               <p className="text-muted-foreground text-center">
                 Structured monitoring of policy, sector, and capital activity.
               </p>
-            </Card>
+            </div>
 
-            <Card>
+            <div>
               <div className="mb-6">
                 <OperationalMappingVignette />
               </div>
@@ -174,9 +174,9 @@ export default function NewHome() {
               <p className="text-muted-foreground text-center">
                 Translate announcements into clear AI capability needs and business cases.
               </p>
-            </Card>
+            </div>
 
-            <Card>
+            <div>
               <div className="mb-6">
                 <ExecutionTimingVignette />
               </div>
@@ -184,7 +184,7 @@ export default function NewHome() {
               <p className="text-muted-foreground text-center">
                 Identify likely windows along investment and buildout cycles.
               </p>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
