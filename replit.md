@@ -40,12 +40,22 @@ Preferred communication style: Simple, everyday language.
 
 ### Design System
 - **Component Library**: Custom shadcn/ui implementation with extensive component coverage
-- **Typography**: Google DeepMind font system - DM Sans (primary), DM Serif Display (headings), DM Mono (code)
-  - DM Sans: Low-contrast geometric sans-serif for body text and UI elements
-  - DM Serif Display: Serif font for emphasis and editorial content  
-  - DM Mono: Monospace font for code snippets
-  - All fonts loaded from Google Fonts CDN
-- **Color Scheme**: Pure black background (0 0% 0%) with subtle gray cards and elements for contrast, maintaining the teal accent (#2bd4a7) for marketing highlights
+- **Typography**: IBM Plex Sans font system (primary), IBM Plex Serif (headings), IBM Plex Mono (code)
+  - IBM Plex Sans: Professional geometric sans-serif for body text and UI elements
+  - IBM Plex Serif: Serif font for emphasis and editorial content
+  - IBM Plex Mono: Monospace font for code snippets
+  - All fonts loaded from Google Fonts CDN with weights: 300, 400, 500, 600, 700
+- **Color Scheme**: 
+  - Primary brand color: Teal #2bd4a7 (HSL: 164 66% 50%) consistently applied across light and dark modes
+  - Header background: Dark navy #0a1628 with backdrop blur and translucency for glassmorphism effect
+  - White background for main content with subtle gray cards and elements for contrast
+  - Pure black background (0 0% 0%) in dark mode with elevated grays
+- **Visual Enhancements**:
+  - Backdrop blur on header navigation (backdrop-filter: blur(10px)) with semi-transparent background
+  - Hover lift effects on interactive elements using cubic-bezier(0.4, 0, 0.2, 1) transitions
+  - Button hover: translateY(-2px) with box-shadow: 0 4px 12px rgba(0,0,0,0.1)
+  - Card hover: translateY(-4px) with box-shadow: 0 8px 24px rgba(0,0,0,0.1)
+  - Accessibility: All animations respect prefers-reduced-motion setting
 - **Layout**: Responsive grid system with mobile-first approach
 - **Spacing**: Consistent Tailwind utility classes for spacing and layout
 - **Header**: Logo sized at h-14 (56px) on mobile and h-16 (64px) on desktop for improved legibility
