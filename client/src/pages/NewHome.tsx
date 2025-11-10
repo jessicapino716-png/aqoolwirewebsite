@@ -235,7 +235,7 @@ export default function NewHome() {
                     <path d="M 80,40 L 85,40 L 85,60 L 80,60" stroke="hsl(var(--accent))" strokeWidth="1.5" fill="none" />
                   </svg>
                 </div>
-                <h4 className="mb-3 text-lg font-semibold">Industrial Cities: The AI Enablement Layer</h4>
+                <h4 className="mb-3 text-lg font-semibold text-center">Industrial Cities: The AI Enablement Layer</h4>
                 <p className="text-muted-foreground mb-4">Infrastructure meets intelligence at scale</p>
                 <div className="flex items-center text-primary gap-1 transition-all">
                   <span>Read more</span>
@@ -281,7 +281,7 @@ export default function NewHome() {
                     <circle cx="80" cy="55" r="3" fill="hsl(var(--accent))" />
                   </svg>
                 </div>
-                <h4 className="mb-3 text-lg font-semibold">Logistics Modernisation: Ports as Algorithms</h4>
+                <h4 className="mb-3 text-lg font-semibold text-center">Logistics Modernisation: Ports as Algorithms</h4>
                 <p className="text-muted-foreground mb-4">Real-time optimization across supply chains</p>
                 <div className="flex items-center text-primary gap-1 transition-all">
                   <span>Read more</span>
