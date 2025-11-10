@@ -160,7 +160,7 @@ export default function NewHome() {
               <div className="mb-6">
                 <SignalScanningVignette />
               </div>
-              <h3 className="mb-4 text-xl font-bold text-center">Signal Scanning</h3>
+              <h3 className="mb-4 font-bold text-center text-[25px]">Signal Scanning</h3>
               <p className="text-muted-foreground text-center">
                 Structured monitoring of policy, sector, and capital activity.
               </p>
@@ -170,7 +170,7 @@ export default function NewHome() {
               <div className="mb-6">
                 <OperationalMappingVignette />
               </div>
-              <h3 className="mb-4 text-xl font-bold text-center">Operational Mapping</h3>
+              <h3 className="mb-4 font-bold text-center text-[25px]">Operational Mapping</h3>
               <p className="text-muted-foreground text-center">
                 Translate announcements into clear AI capability needs and business cases.
               </p>
@@ -180,7 +180,7 @@ export default function NewHome() {
               <div className="mb-6">
                 <ExecutionTimingVignette />
               </div>
-              <h3 className="mb-4 text-xl font-bold text-center">Execution Timing</h3>
+              <h3 className="mb-4 font-bold text-center text-[24px]">Execution Timing</h3>
               <p className="text-muted-foreground text-center">
                 Identify likely windows along investment and buildout cycles.
               </p>
