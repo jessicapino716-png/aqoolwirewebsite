@@ -236,7 +236,7 @@ export default function NewHome() {
                   </svg>
                 </div>
                 <h4 className="mb-3 text-lg font-semibold text-center">Industrial Cities: The AI Enablement Layer</h4>
-                <p className="text-muted-foreground mb-4">Infrastructure meets intelligence at scale</p>
+                <p className="text-muted-foreground mb-4 text-center">Infrastructure meets intelligence at scale</p>
                 <div className="flex items-center text-primary gap-1 transition-all">
                   <span>Read more</span>
                   <ArrowRight className="w-4 h-4" />
@@ -258,7 +258,7 @@ export default function NewHome() {
                   </svg>
                 </div>
                 <h4 className="mb-3 text-lg font-semibold text-center">Tourism at 150M: Personalisation at Scale</h4>
-                <p className="text-muted-foreground mb-4">From visitor flows to predictive experiences</p>
+                <p className="text-muted-foreground mb-4 text-center">From visitor flows to predictive experiences</p>
                 <div className="flex items-center text-primary gap-1 transition-all">
                   <span>Read more</span>
                   <ArrowRight className="w-4 h-4" />
@@ -282,7 +282,7 @@ export default function NewHome() {
                   </svg>
                 </div>
                 <h4 className="mb-3 text-lg font-semibold text-center">Logistics Modernisation: Ports as Algorithms</h4>
-                <p className="text-muted-foreground mb-4">Real-time optimization across supply chains</p>
+                <p className="text-muted-foreground mb-4 text-center">Real-time optimization across supply chains</p>
                 <div className="flex items-center text-primary gap-1 transition-all">
                   <span>Read more</span>
                   <ArrowRight className="w-4 h-4" />
