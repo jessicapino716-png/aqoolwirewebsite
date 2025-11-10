@@ -198,7 +198,7 @@ export default function NewHome() {
               <ArchitectureLayers />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="mb-6 text-[20px] font-extrabold">AI Investment Observatory</h2>
+              <h2 className="mb-6 font-extrabold text-[40px]">AI Investment Observatory</h2>
               <p className="text-muted-foreground text-lg mb-8">Track the full stack from infrastructure to business model, connect capability gaps to deployment windows.</p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
