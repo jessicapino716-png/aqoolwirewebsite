@@ -127,9 +127,7 @@ export default function NewHome() {
         <AnimatedSaudiMap />
         <div className="container-custom relative z-10 text-center py-32">
           <h1 className="mb-6 font-bold text-foreground text-[80px]">AQOOL Wire</h1>
-          <p className="text-muted-foreground text-xl mb-8 max-w-3xl mx-auto italic">
-            Making sense of signals in Saudi Arabia's AI economy.
-          </p>
+          <p className="text-muted-foreground text-xl mb-8 max-w-3xl mx-auto italic">Making sense of signals in Saudi Arabia's AI ecosystem</p>
           <p className="text-lg mb-12 max-w-2xl mx-auto text-foreground">
             We synthesize policy, market, and capital signals to highlight major <span className="text-primary font-extrabold">AI investment</span> opportunities.
           </p>
