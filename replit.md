@@ -1,8 +1,15 @@
-# The Aqool Wire - News Website Project
+# The Aqool Wire - Marketing Landing Page
 
 ## Overview
 
-The Aqool Wire is a news website focused on AI policy and regulation coverage in Saudi Arabia and the GCC region. The project is a full-stack web application that mimics The Verge's design aesthetic to deliver professional tech journalism content. It features a modern tech news layout with article cards, author profiles, newsletter subscription functionality, and AI tool highlights specifically tailored for the Middle Eastern AI policy landscape.
+The Aqool Wire is a marketing landing page showcasing AI investment opportunities in Saudi Arabia and the GCC region. The project features custom SVG visualizations, an interactive contact form with SendGrid integration, and an Insights section preserving all existing articles. The site uses a modern dark theme with custom art components to highlight investment opportunities in Saudi Arabia's AI sector.
+
+**Recent Migration (November 2025):**
+- Transformed from news website to marketing landing page
+- All existing articles preserved in dedicated Insights section
+- Custom SVG art visualizations (AnimatedSaudiMap, PolicyFlow, OpportunityGraph, etc.)
+- Conditional navigation: marketing pages have custom navigation, other routes use global Header/Footer
+- Dark theme with teal accent color (#2bd4a7) for marketing sections
 
 ## User Preferences
 
@@ -37,10 +44,19 @@ Preferred communication style: Simple, everyday language.
 - **Spacing**: Consistent Tailwind utility classes for spacing and layout
 
 ### Content Management
-- **Article System**: Structured article data with metadata including categories, authors, and timestamps
+- **Marketing Home Page**: Custom landing page (NewHome.tsx) with hero section, statistics showcase, services overview, and integrated contact form
+- **Custom Art Visualizations**: 
+  - AnimatedSaudiMap: SVG map of Saudi Arabia with animated connections
+  - PolicyFlow: Visual flow of AI policy development
+  - ArchitectureLayers: Layered architecture diagram
+  - FeatureVignettes: Feature highlights with icons
+  - OpportunityGraph: Investment opportunity visualization
+- **Insights Section**: Dedicated page (Insights.tsx) preserving all existing articles with filtering and display
+- **Article System**: Structured article data with metadata including categories, authors, and timestamps (displayed in Insights)
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
 - **Newsletter Integration**: Multi-variant newsletter signup components with form validation
 - **Tool Reviews**: Dedicated components for AI tool showcases and reviews
+- **Contact Form Integration**: SendGrid-powered contact form on marketing home page
 - **YouTube Video Management**: Full CRUD system for managing AI tool demonstration videos
   - Admin interface at /admin/tool-videos for creating, editing, and deleting videos
   - Videos display on /tools page with embedded YouTube iframes
