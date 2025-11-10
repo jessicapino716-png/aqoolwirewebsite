@@ -134,53 +134,53 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 0 0% 14%;
+  --background: 180 65% 11%;
 
   --foreground: 0 0% 95%;
 
-  --border: 222 15% 18%;
+  --border: 180 45% 18%;
 
-  --card: 222 15% 11%;
+  --card: 180 60% 13%;
 
   --card-foreground: 0 0% 95%;
 
-  --card-border: 222 15% 21%;
+  --card-border: 180 50% 20%;
 
-  --sidebar: 222 15% 9%;
+  --sidebar: 180 65% 10%;
 
   --sidebar-foreground: 0 0% 95%;
 
-  --sidebar-border: 222 15% 19%;
+  --sidebar-border: 180 55% 16%;
 
   --sidebar-primary: 221 91% 60%;
 
   --sidebar-primary-foreground: 0 0% 98%;
 
-  --sidebar-accent: 210 20% 15%;
+  --sidebar-accent: 180 50% 15%;
 
   --sidebar-accent-foreground: 0 0% 90%;
 
   --sidebar-ring: 221 97% 53%;
 
-  --popover: 222 15% 13%;
+  --popover: 180 60% 12%;
 
   --popover-foreground: 0 0% 95%;
 
-  --popover-border: 222 15% 23%;
+  --popover-border: 180 50% 22%;
 
   --primary: 221 91% 60%;
 
   --primary-foreground: 0 0% 98%;
 
-  --secondary: 222 15% 16%;
+  --secondary: 180 55% 16%;
 
   --secondary-foreground: 0 0% 85%;
 
-  --muted: 222 15% 14%;
+  --muted: 180 60% 14%;
 
-  --muted-foreground: 215 16% 65%;
+  --muted-foreground: 180 25% 65%;
 
-  --accent: 210 20% 15%;
+  --accent: 180 50% 15%;
 
   --accent-foreground: 0 0% 90%;
 
@@ -189,7 +189,7 @@
   --destructive-foreground: 0 0% 98%;
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
-  --input: 222 15% 25%;
+  --input: 180 45% 25%;
   --ring: 210 85% 45%;
   --chart-1: 210 85% 65%;
   --chart-2: 142 76% 55%;
@@ -197,14 +197,14 @@
   --chart-4: 280 65% 70%;
   --chart-5: 340 82% 70%;
 
-  --shadow-2xs: 0px 2px 0px 0px hsl(222 15% 5% / 0.10);
-  --shadow-xs: 0px 2px 0px 0px hsl(222 15% 5% / 0.15);
-  --shadow-sm: 0px 2px 0px 0px hsl(222 15% 5% / 0.15), 0px 1px 2px -1px hsl(222 15% 5% / 0.20);
-  --shadow: 0px 2px 0px 0px hsl(222 15% 5% / 0.15), 0px 1px 2px -1px hsl(222 15% 5% / 0.25);
-  --shadow-md: 0px 2px 0px 0px hsl(222 15% 5% / 0.20), 0px 2px 4px -1px hsl(222 15% 5% / 0.30);
-  --shadow-lg: 0px 2px 0px 0px hsl(222 15% 5% / 0.20), 0px 4px 6px -1px hsl(222 15% 5% / 0.40);
-  --shadow-xl: 0px 2px 0px 0px hsl(222 15% 5% / 0.20), 0px 8px 10px -1px hsl(222 15% 5% / 0.50);
-  --shadow-2xl: 0px 2px 0px 0px hsl(222 15% 5% / 0.25);
+  --shadow-2xs: 0px 2px 0px 0px hsl(180 60% 5% / 0.10);
+  --shadow-xs: 0px 2px 0px 0px hsl(180 60% 5% / 0.15);
+  --shadow-sm: 0px 2px 0px 0px hsl(180 60% 5% / 0.15), 0px 1px 2px -1px hsl(180 60% 5% / 0.20);
+  --shadow: 0px 2px 0px 0px hsl(180 60% 5% / 0.15), 0px 1px 2px -1px hsl(180 60% 5% / 0.25);
+  --shadow-md: 0px 2px 0px 0px hsl(180 60% 5% / 0.20), 0px 2px 4px -1px hsl(180 60% 5% / 0.30);
+  --shadow-lg: 0px 2px 0px 0px hsl(180 60% 5% / 0.20), 0px 4px 6px -1px hsl(180 60% 5% / 0.40);
+  --shadow-xl: 0px 2px 0px 0px hsl(180 60% 5% / 0.20), 0px 8px 10px -1px hsl(180 60% 5% / 0.50);
+  --shadow-2xl: 0px 2px 0px 0px hsl(180 60% 5% / 0.25);
 
 }
 
