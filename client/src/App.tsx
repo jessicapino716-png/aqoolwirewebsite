@@ -30,6 +30,7 @@ import Disclaimers from "@/pages/Disclaimers";
 import NotFound from "@/pages/not-found";
 import NewHome from "@/pages/NewHome";
 import Insights from "@/pages/Insights";
+import AIInvestmentObservatory from "@/pages/AIInvestmentObservatory";
 
 function Router() {
   const [location] = useLocation();
@@ -43,6 +44,7 @@ function Router() {
     <Switch>
       <Route path="/" component={NewHome} />
       <Route path="/insights" component={Insights} />
+      <Route path="/aiinvestmentobservatory" component={AIInvestmentObservatory} />
       <Route path="/policy" component={() => <CategoryPage />} />
       <Route path="/regulation" component={() => <CategoryPage />} />
       <Route path="/analysis" component={() => <CategoryPage />} />
@@ -100,7 +102,7 @@ function Layout() {
   const [location] = useLocation();
   
   // Marketing pages have their own navigation/footer built-in
-  const isMarketingPage = location === '/' || location === '/insights';
+  const isMarketingPage = location === '/' || location === '/insights' || location === '/aiinvestmentobservatory';
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

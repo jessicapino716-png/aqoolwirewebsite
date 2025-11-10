@@ -50,6 +50,10 @@ Preferred communication style: Simple, everyday language.
 - **Marketing Home Page**: Custom landing page (NewHome.tsx) with hero section, statistics showcase, AI Investment Observatory service section, and integrated contact form
   - Fixed header navigation with logo's background color (#0a1628)
   - Navigation links: AI Investment Observatory, Insights, Reports, About, Contact
+- **AI Investment Observatory**: Coming soon page at /aiinvestmentobservatory
+  - Clean, centered "coming soon" message
+  - No header/footer (marketing page style)
+  - Teal accent color for call-to-action text
 - **Custom Art Visualizations**: 
   - AnimatedSaudiMap: SVG map of Saudi Arabia with animated connections
   - ArchitectureLayers: Layered architecture diagram showing AI stack
