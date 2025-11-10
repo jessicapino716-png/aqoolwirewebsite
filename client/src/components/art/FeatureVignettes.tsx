@@ -27,26 +27,28 @@ export function SignalScanningVignette() {
 
 export function OperationalMappingVignette() {
   return (
-    <svg width="140" height="80" viewBox="0 0 140 80" className="mx-auto">
-      {/* Announcement */}
-      <rect x="10" y="15" width="30" height="40" rx="8" fill="none" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" opacity="0.4" />
-      <line x1="18" y1="25" x2="32" y2="25" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" opacity="0.4" strokeLinecap="round" />
-      <line x1="18" y1="32" x2="32" y2="32" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" opacity="0.4" strokeLinecap="round" />
-      
-      {/* Arrow */}
-      <line x1="45" y1="35" x2="60" y2="35" stroke="#2BD4A7" strokeWidth="1.5" strokeLinecap="round" />
-      <polygon points="60,35 56,32 56,38" fill="#2BD4A7" />
-      
-      {/* Capability blocks */}
-      <rect x="70" y="10" width="25" height="15" rx="4" fill="#2BD4A7" opacity="0.2" stroke="#2BD4A7" strokeWidth="1.5" />
-      <rect x="70" y="30" width="25" height="15" rx="4" fill="#2BD4A7" opacity="0.2" stroke="#2BD4A7" strokeWidth="1.5" />
-      <rect x="70" y="50" width="25" height="15" rx="4" fill="#2BD4A7" opacity="0.2" stroke="#2BD4A7" strokeWidth="1.5" />
-      
-      {/* Timeline */}
-      <line x1="105" y1="35" x2="130" y2="35" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="110" cy="35" r="2" fill="hsl(var(--muted-foreground))" />
-      <circle cx="120" cy="35" r="2" fill="hsl(var(--muted-foreground))" />
-      <circle cx="130" cy="35" r="3" fill="#2BD4A7" />
+    <svg width="120" height="120" viewBox="0 0 120 120" className="mx-auto">
+      <g transform="translate(-10, 20)">
+        {/* Announcement */}
+        <rect x="10" y="15" width="30" height="40" rx="8" fill="none" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" opacity="0.4" />
+        <line x1="18" y1="25" x2="32" y2="25" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" opacity="0.4" strokeLinecap="round" />
+        <line x1="18" y1="32" x2="32" y2="32" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" opacity="0.4" strokeLinecap="round" />
+        
+        {/* Arrow */}
+        <line x1="45" y1="35" x2="60" y2="35" stroke="#2BD4A7" strokeWidth="1.5" strokeLinecap="round" />
+        <polygon points="60,35 56,32 56,38" fill="#2BD4A7" />
+        
+        {/* Capability blocks */}
+        <rect x="70" y="10" width="25" height="15" rx="4" fill="#2BD4A7" opacity="0.2" stroke="#2BD4A7" strokeWidth="1.5" />
+        <rect x="70" y="30" width="25" height="15" rx="4" fill="#2BD4A7" opacity="0.2" stroke="#2BD4A7" strokeWidth="1.5" />
+        <rect x="70" y="50" width="25" height="15" rx="4" fill="#2BD4A7" opacity="0.2" stroke="#2BD4A7" strokeWidth="1.5" />
+        
+        {/* Timeline */}
+        <line x1="105" y1="35" x2="130" y2="35" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="110" cy="35" r="2" fill="hsl(var(--muted-foreground))" />
+        <circle cx="120" cy="35" r="2" fill="hsl(var(--muted-foreground))" />
+        <circle cx="130" cy="35" r="3" fill="#2BD4A7" />
+      </g>
     </svg>
   );
 }
