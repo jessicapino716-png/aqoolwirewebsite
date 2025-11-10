@@ -84,7 +84,7 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [accentColor, setAccentColorState] = useState<AccentColor>('wire');
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     // Load theme preferences from localStorage
@@ -95,8 +95,8 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       setAccentColorState(storedAccent);
     }
     
-    // Default to dark mode if no preference stored
-    const shouldUseDarkMode = storedDarkMode === null ? true : storedDarkMode === 'true';
+    // Default to light mode if no preference stored
+    const shouldUseDarkMode = storedDarkMode === null ? false : storedDarkMode === 'true';
     setIsDarkMode(shouldUseDarkMode);
     
     // Apply initial dark mode class
