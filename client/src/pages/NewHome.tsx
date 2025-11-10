@@ -293,16 +293,59 @@ export default function NewHome() {
         </div>
       </section>
       {/* Reports */}
-      <section id="reports" className="py-24 bg-card pt-[7px] pb-[7px]">
-        <div className="container-custom text-center">
-          <h2 className="mb-6 text-[50px] bg-[transparent] font-semibold">Reports</h2>
-          <h3 className="text-primary mb-6 text-2xl font-semibold">Deep dives for decision-makers</h3>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Playbooks, timelines, partner maps, and valuation drivers.
-          </p>
-          <Link href="/insights" data-testid="link-reports">
-            <Button size="lg">Explore Reports</Button>
-          </Link>
+      <section id="reports" className="py-24">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="mb-4 text-4xl font-normal">Reports</h2>
+            <h3 className="text-[#2bd4a7] mb-4 text-2xl font-normal">Deep dives for decision-makers</h3>
+            <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+              Playbooks, timelines, partner maps, and valuation drivers.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden h-80 group cursor-pointer">
+              <img 
+                src={new URL('@assets/stock_images/modern_city_building_66529547.jpg', import.meta.url).href}
+                alt="NEOM & Giga-Projects"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+              <div className="absolute top-4 left-4">
+                <span className="bg-[#2bd4a7] text-white text-xs px-3 py-1 rounded-full">Featured Report</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h4 className="text-white text-2xl font-semibold mb-2">NEOM & Giga-Projects: AI Infrastructure at Scale</h4>
+                <p className="text-gray-300 text-sm mb-4">Mapping opportunity across mega-developments</p>
+                <button className="text-[#2bd4a7] text-sm font-medium hover:underline">Download Report</button>
+              </div>
+            </div>
+
+            <div className="relative rounded-xl overflow-hidden h-80 group cursor-pointer">
+              <img 
+                src={new URL('@assets/stock_images/data_center_server_r_58007f77.jpg', import.meta.url).href}
+                alt="AI Compute Datacentre Buildout"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+              <div className="absolute top-4 left-4">
+                <span className="bg-[#2bd4a7] text-white text-xs px-3 py-1 rounded-full">Featured Report</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h4 className="text-white text-2xl font-semibold mb-2">AI Compute: Datacentre Buildout Roadmap</h4>
+                <p className="text-gray-300 text-sm mb-4">Infrastructure investment timeline and partners</p>
+                <button className="text-[#2bd4a7] text-sm font-medium hover:underline">Download Report</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link href="/insights" data-testid="link-reports">
+              <Button size="lg" className="bg-[#2bd4a7] hover:bg-[#25c29a] text-white px-8">
+                Explore All Reports
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
       {/* About */}
