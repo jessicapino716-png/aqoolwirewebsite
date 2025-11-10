@@ -293,7 +293,7 @@ export default function NewHome() {
         </div>
       </section>
       {/* Reports */}
-      <section id="reports" className="py-24 bg-card">
+      <section id="reports" className="py-24 bg-card pt-[7px] pb-[7px]">
         <div className="container-custom text-center">
           <h2 className="mb-6 text-[50px] bg-[transparent] font-semibold">Reports</h2>
           <h3 className="text-primary mb-6 text-2xl font-semibold">Deep dives for decision-makers</h3>
