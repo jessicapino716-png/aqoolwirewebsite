@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { StatTile } from "@/components/StatTile";
 import { AnimatedSaudiMap } from "@/components/art/AnimatedSaudiMap";
 import { SignalScanningVignette, OperationalMappingVignette, ExecutionTimingVignette } from "@/components/art/FeatureVignettes";
-import { ArchitectureLayers } from "@/components/art/ArchitectureLayers";
 import { OpportunityGraph } from "@/components/art/OpportunityGraph";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -153,37 +152,6 @@ export default function NewHome() {
                 Identify likely windows along investment and buildout cycles.
               </p>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Investment Observatory */}
-      <section id="ai-investment-observatory" className="py-24">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center order-2 lg:order-1">
-              <ArchitectureLayers />
-            </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="mb-6">AI Investment Observatory</h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Track the full stack from infrastructure to business model—connect capability gaps to deployment windows.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <p className="text-foreground">Stack analysis: data → models → operations → ROI</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <p className="text-foreground">Project lifecycle intelligence</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <p className="text-foreground">Market entry timing signals</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -420,7 +388,7 @@ export default function NewHome() {
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* Company */}
             <div>
               <div className="mb-6">
@@ -439,14 +407,6 @@ export default function NewHome() {
               <ul className="space-y-3">
                 <li><Link href="/insights" className="text-muted-foreground hover:text-primary transition-colors">Insights</Link></li>
                 <li><a href="#reports" className="text-muted-foreground hover:text-primary transition-colors">Reports</a></li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="mb-4 text-lg font-semibold">Services</h4>
-              <ul className="space-y-3">
-                <li><a href="#ai-investment-observatory" className="text-muted-foreground hover:text-primary transition-colors">AI Investment Observatory</a></li>
               </ul>
             </div>
 
