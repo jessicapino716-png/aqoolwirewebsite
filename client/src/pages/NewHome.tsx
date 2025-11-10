@@ -96,9 +96,9 @@ export default function NewHome() {
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#ai-investment-observatory" className="text-sm font-medium text-white hover:text-primary transition-colors">
+              <Link href="/aiinvestmentobservatory" className="text-sm font-medium text-white hover:text-primary transition-colors">
                 AI Investment Observatory
-              </a>
+              </Link>
               <a href="#insights" className="text-sm font-medium text-white hover:text-primary transition-colors">
                 Insights
               </a>
@@ -492,7 +492,7 @@ export default function NewHome() {
             <div>
               <h4 className="mb-4 text-lg font-semibold">Services</h4>
               <ul className="space-y-3">
-                <li><a href="#ai-investment-observatory" className="text-muted-foreground hover:text-primary transition-colors">AI Investment Observatory</a></li>
+                <li><Link href="/aiinvestmentobservatory" className="text-muted-foreground hover:text-primary transition-colors">AI Investment Observatory</Link></li>
               </ul>
             </div>
 
