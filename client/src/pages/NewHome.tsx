@@ -244,9 +244,7 @@ export default function NewHome() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="mb-6 text-[50px] font-semibold">The AQOOL Wire</h2>
-            <p className="text-muted-foreground text-lg">
-              We map Saudi Arabia's AI transformation—connecting policy, capital, and operations—into a living opportunity graph.
-            </p>
+            <p className="text-muted-foreground text-lg font-bold">We map Saudi Arabia's AI transformation, connecting policy, capital, and operations, into a living opportunity graph.</p>
           </div>
           <div className="flex justify-center">
             <OpportunityGraph />
