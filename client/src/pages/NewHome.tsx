@@ -286,7 +286,7 @@ export default function NewHome() {
       <section id="reports" className="py-24">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="mb-4 text-4xl font-normal">Reports</h2>
+            <h2 className="mb-4 text-4xl font-extrabold">Reports</h2>
             <h3 className="text-[#2bd4a7] mb-4 text-2xl font-normal">Deep dives for decision-makers</h3>
             <p className="text-muted-foreground text-base max-w-2xl mx-auto">
               Playbooks, timelines, partner maps, and valuation drivers.
