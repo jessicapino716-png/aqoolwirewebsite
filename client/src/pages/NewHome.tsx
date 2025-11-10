@@ -131,7 +131,7 @@ export default function NewHome() {
             Making sense of signals in Saudi Arabia's AI economy.
           </p>
           <p className="text-lg mb-12 max-w-2xl mx-auto text-foreground">
-            We synthesize policy, market, and capital signals to highlight major <span className="text-primary">AI investment</span> opportunities.
+            We synthesize policy, market, and capital signals to highlight major <span className="text-primary font-extrabold">AI investment</span> opportunities.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/insights" data-testid="link-insights">
