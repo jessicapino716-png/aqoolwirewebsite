@@ -183,7 +183,7 @@ export default function NewHome() {
                 <ExecutionTimingVignette />
               </div>
               <h3 className="mb-4 text-xl font-bold text-center">Execution Timing</h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-center">
                 Identify likely windows along investment and buildout cycles.
               </p>
             </Card>
