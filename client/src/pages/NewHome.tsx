@@ -219,75 +219,65 @@ export default function NewHome() {
         </div>
       </section>
       {/* Insights */}
-      <section id="insights" className="py-24 bg-muted/30">
+      <section id="insights" className="py-24">
         <div className="container-custom">
-          <h2 className="text-center mb-16 font-semibold text-[50px]">Insights</h2>
+          <h2 className="text-center mb-16 font-normal text-4xl">Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Link href="/insights" data-testid="link-insights-card-1">
-              <Card className="cursor-pointer hover-elevate">
-                <div className="mb-6">
-                  <svg width="100" height="100" viewBox="0 0 100 100" className="mx-auto">
-                    <rect x="30" y="50" width="40" height="30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <polygon points="25,50 50,30 75,50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <rect x="40" y="60" width="8" height="12" fill="hsl(var(--primary))" opacity="0.3" />
-                    <rect x="52" y="60" width="8" height="12" fill="hsl(var(--primary))" opacity="0.3" />
-                    <path d="M 20,40 L 15,40 L 15,60 L 20,60" stroke="hsl(var(--accent))" strokeWidth="1.5" fill="none" />
-                    <path d="M 80,40 L 85,40 L 85,60 L 80,60" stroke="hsl(var(--accent))" strokeWidth="1.5" fill="none" />
-                  </svg>
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={new URL('@assets/stock_images/industrial_city_fact_04495527.jpg', import.meta.url).href}
+                    alt="Industrial Cities"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h4 className="mb-3 text-lg font-semibold text-center">Industrial Cities: The AI Enablement Layer</h4>
-                <p className="text-muted-foreground mb-4 text-center">Infrastructure meets intelligence at scale</p>
-                <div className="flex items-center text-primary gap-1 transition-all">
-                  <span>Read more</span>
-                  <ArrowRight className="w-4 h-4" />
+                <div className="p-6">
+                  <h4 className="mb-3 text-lg font-semibold text-gray-900">Industrial Cities: The AI Enablement Layer</h4>
+                  <p className="text-gray-500 mb-4 text-sm">Infrastructure meets intelligence at scale</p>
+                  <div className="text-[#2bd4a7] text-sm font-medium hover:underline">
+                    Read more
+                  </div>
                 </div>
-              </Card>
+              </div>
             </Link>
 
             <Link href="/insights" data-testid="link-insights-card-2">
-              <Card className="cursor-pointer hover-elevate">
-                <div className="mb-6">
-                  <svg width="100" height="100" viewBox="0 0 100 100" className="mx-auto">
-                    <circle cx="50" cy="40" r="12" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <path d="M 50,52 L 50,65" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" />
-                    <circle cx="50" cy="40" r="4" fill="hsl(var(--primary))" />
-                    <path d="M 30,70 Q 40,60 50,65 T 70,70" stroke="hsl(var(--accent))" strokeWidth="1.5" fill="none" strokeDasharray="2,2" />
-                    <circle cx="30" cy="70" r="2" fill="hsl(var(--accent))" />
-                    <circle cx="50" cy="65" r="2" fill="hsl(var(--accent))" />
-                    <circle cx="70" cy="70" r="2" fill="hsl(var(--accent))" />
-                  </svg>
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={new URL('@assets/stock_images/tourism_travel_vacat_c2ac0f98.jpg', import.meta.url).href}
+                    alt="Tourism at 150M"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h4 className="mb-3 text-lg font-semibold text-center">Tourism at 150M: Personalisation at Scale</h4>
-                <p className="text-muted-foreground mb-4 text-center">From visitor flows to predictive experiences</p>
-                <div className="flex items-center text-primary gap-1 transition-all">
-                  <span>Read more</span>
-                  <ArrowRight className="w-4 h-4" />
+                <div className="p-6">
+                  <h4 className="mb-3 text-lg font-semibold text-gray-900">Tourism at 150M: Personalisation at Scale</h4>
+                  <p className="text-gray-500 mb-4 text-sm">From visitor flows to predictive experiences</p>
+                  <div className="text-[#2bd4a7] text-sm font-medium hover:underline">
+                    Read more
+                  </div>
                 </div>
-              </Card>
+              </div>
             </Link>
 
             <Link href="/insights" data-testid="link-insights-card-3">
-              <Card className="cursor-pointer hover-elevate">
-                <div className="mb-6">
-                  <svg width="100" height="100" viewBox="0 0 100 100" className="mx-auto">
-                    <rect x="35" y="45" width="30" height="20" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <line x1="40" y1="45" x2="40" y2="65" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <line x1="45" y1="45" x2="45" y2="65" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <line x1="55" y1="45" x2="55" y2="65" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <line x1="60" y1="45" x2="60" y2="65" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-                    <path d="M 20,35 L 35,45 L 65,45 L 80,55" stroke="hsl(var(--accent))" strokeWidth="1.5" fill="none" />
-                    <circle cx="20" cy="35" r="3" fill="hsl(var(--accent))" />
-                    <circle cx="50" cy="45" r="3" fill="hsl(var(--accent))" />
-                    <circle cx="80" cy="55" r="3" fill="hsl(var(--accent))" />
-                  </svg>
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={new URL('@assets/stock_images/logistics_port_shipp_b2671eb4.jpg', import.meta.url).href}
+                    alt="Logistics Modernisation"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h4 className="mb-3 text-lg font-semibold text-center">Logistics Modernisation: Ports as Algorithms</h4>
-                <p className="text-muted-foreground mb-4 text-center">Real-time optimization across supply chains</p>
-                <div className="flex items-center text-primary gap-1 transition-all">
-                  <span>Read more</span>
-                  <ArrowRight className="w-4 h-4" />
+                <div className="p-6">
+                  <h4 className="mb-3 text-lg font-semibold text-gray-900">Logistics Modernisation: Ports as Algorithms</h4>
+                  <p className="text-gray-500 mb-4 text-sm">Real-time optimization across supply chains</p>
+                  <div className="text-[#2bd4a7] text-sm font-medium hover:underline">
+                    Read more
+                  </div>
                 </div>
-              </Card>
+              </div>
             </Link>
           </div>
         </div>
