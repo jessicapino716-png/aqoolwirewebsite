@@ -86,7 +86,6 @@ export default function NewHome() {
           content="Making sense of signals in Saudi Arabia's AI economy. We synthesize policy, market, and capital signals to highlight major AI investment opportunities."
         />
       </Helmet>
-
       {/* Header Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container-custom">
@@ -127,7 +126,6 @@ export default function NewHome() {
           </div>
         </div>
       </header>
-
       {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <AnimatedSaudiMap />
@@ -196,7 +194,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* Regulatory Intelligence */}
       <section id="regulatory-intelligence" className="py-24 bg-card">
         <div className="container-custom">
@@ -227,7 +224,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* AI Investment Observatory */}
       <section id="ai-investment-observatory" className="py-24">
         <div className="container-custom">
@@ -243,7 +239,7 @@ export default function NewHome() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <p className="text-foreground">Stack analysis: data → models → operations → ROI</p>
+                  <p className="text-foreground">Stack analysis: data into models through operations & ROI</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -258,7 +254,6 @@ export default function NewHome() {
           </div>
         </div>
       </section>
-
       {/* Insights */}
       <section id="insights" className="py-24 bg-muted/30">
         <div className="container-custom">
