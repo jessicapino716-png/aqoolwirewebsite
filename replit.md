@@ -40,7 +40,11 @@ Preferred communication style: Simple, everyday language.
 
 ### Design System
 - **Component Library**: Custom shadcn/ui implementation with extensive component coverage
-- **Typography**: Multi-font system with Geist, DM Sans, and Fira Code for varied content types
+- **Typography**: Google DeepMind font system - DM Sans (primary), DM Serif Display (headings), DM Mono (code)
+  - DM Sans: Low-contrast geometric sans-serif for body text and UI elements
+  - DM Serif Display: Serif font for emphasis and editorial content  
+  - DM Mono: Monospace font for code snippets
+  - All fonts loaded from Google Fonts CDN
 - **Color Scheme**: Pure black background (0 0% 0%) with subtle gray cards and elements for contrast, maintaining the teal accent (#2bd4a7) for marketing highlights
 - **Layout**: Responsive grid system with mobile-first approach
 - **Spacing**: Consistent Tailwind utility classes for spacing and layout

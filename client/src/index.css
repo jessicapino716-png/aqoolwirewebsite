@@ -1,4 +1,4 @@
-@import url('https://db.onlinewebfonts.com/c/beb784012d429b8921e66081b20406b8?family=FK+Roman+Standard+Trial+Medium');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -78,9 +78,9 @@
   --chart-4: 280 65% 50%;
   --chart-5: 340 82% 52%;
 
-  --font-sans: __Polysans__, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: Menlo, monospace;
+  --font-sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-mono: "DM Mono", Menlo, monospace;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(220 13% 9% / 0.02);
   --shadow-xs: 0px 2px 0px 0px hsl(220 13% 9% / 0.03);
