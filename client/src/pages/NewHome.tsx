@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { StatTile } from "@/components/StatTile";
 import { AnimatedSaudiMap } from "@/components/art/AnimatedSaudiMap";
 import { SignalScanningVignette, OperationalMappingVignette, ExecutionTimingVignette } from "@/components/art/FeatureVignettes";
+import { PolicyFlow } from "@/components/art/PolicyFlow";
+import { ArchitectureLayers } from "@/components/art/ArchitectureLayers";
 import { OpportunityGraph } from "@/components/art/OpportunityGraph";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -84,6 +86,48 @@ export default function NewHome() {
           content="Making sense of signals in Saudi Arabia's AI economy. We synthesize policy, market, and capital signals to highlight major AI investment opportunities."
         />
       </Helmet>
+
+      {/* Header Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="container-custom">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <a href="#hero" className="flex items-center">
+              <img src={logo} alt="AQOOL Wire" className="h-8" />
+            </a>
+
+            {/* Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#regulatory-intelligence" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Regulatory Intelligence
+              </a>
+              <a href="#ai-investment-observatory" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                AI Investment Observatory
+              </a>
+              <a href="#insights" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Insights
+              </a>
+              <a href="#reports" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Reports
+              </a>
+              <a href="#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                About
+              </a>
+              <a href="#contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Contact
+              </a>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden p-2">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
       {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <AnimatedSaudiMap />
@@ -152,6 +196,69 @@ export default function NewHome() {
           </div>
         </div>
       </section>
+
+      {/* Regulatory Intelligence */}
+      <section id="regulatory-intelligence" className="py-24 bg-card">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="mb-6">Regulatory Intelligence</h2>
+              <p className="text-muted-foreground text-lg mb-8">
+                Navigate complex frameworks with precision intelligence that connects policy announcements to market entry requirements.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-foreground">Compliance pathway mapping from announcement to license</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-foreground">Localisation requirement tracking across sectors</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-foreground">Regulatory timeline forecasting</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <PolicyFlow />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Investment Observatory */}
+      <section id="ai-investment-observatory" className="py-24">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center order-2 lg:order-1">
+              <ArchitectureLayers />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="mb-6">AI Investment Observatory</h2>
+              <p className="text-muted-foreground text-lg mb-8">
+                Track the full stack from infrastructure to business model—connect capability gaps to deployment windows.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-foreground">Stack analysis: data → models → operations → ROI</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-foreground">Project lifecycle intelligence</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-foreground">Market entry timing signals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Insights */}
       <section id="insights" className="py-24 bg-muted/30">
         <div className="container-custom">
@@ -378,7 +485,7 @@ export default function NewHome() {
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
             {/* Company */}
             <div>
               <div className="mb-6">
@@ -388,6 +495,15 @@ export default function NewHome() {
               <ul className="space-y-3">
                 <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a></li>
                 <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="mb-4 text-lg font-semibold">Services</h4>
+              <ul className="space-y-3">
+                <li><a href="#regulatory-intelligence" className="text-muted-foreground hover:text-primary transition-colors">Regulatory Intelligence</a></li>
+                <li><a href="#ai-investment-observatory" className="text-muted-foreground hover:text-primary transition-colors">AI Investment Observatory</a></li>
               </ul>
             </div>
 
