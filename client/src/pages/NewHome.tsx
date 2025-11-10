@@ -173,7 +173,7 @@ export default function NewHome() {
                 <OperationalMappingVignette />
               </div>
               <h3 className="mb-4 text-xl font-bold text-center">Operational Mapping</h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-center">
                 Translate announcements into clear AI capability needs and business cases.
               </p>
             </Card>
