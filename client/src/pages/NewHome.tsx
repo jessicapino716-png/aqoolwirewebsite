@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-import logo from "@assets/aqool-wire-logo.png";
+import logo from "@assets/LOGO_1762786105067.jpeg";
 
 export default function NewHome() {
   const [formData, setFormData] = useState({

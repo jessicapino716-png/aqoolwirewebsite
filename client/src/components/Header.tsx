@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import logo from "@assets/LOGO_1762786105067.jpeg";
 
 export default function Header() {
   const navigation = [
@@ -18,12 +19,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3" data-testid="link-home">
-            <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#0ff2b2]">
-              <span className="text-white font-black text-[22px]">AW</span>
-            </div>
-            <div className="text-2xl lg:text-3xl font-black tracking-tighter uppercase" style={{ fontFamily: 'var(--font-geist-mono), monospace' }}>
-              The Aqool <span className="italic text-[#0ff2b2] font-medium">Wire</span>
-            </div>
+            <img src={logo} alt="The Aqool Wire" className="h-8 md:h-10" />
           </Link>
           
           {/* Desktop Navigation */}
