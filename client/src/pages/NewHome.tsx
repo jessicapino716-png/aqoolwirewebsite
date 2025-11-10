@@ -353,7 +353,7 @@ export default function NewHome() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="mb-6 text-[40px] font-bold">Contact</h2>
+              <h2 className="mb-6 text-[40px] font-bold">Get In Touch</h2>
               <p className="text-muted-foreground text-lg">Bring a thesis, leave with an AI Investment pipeline.</p>
             </div>
 

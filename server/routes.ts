@@ -741,10 +741,10 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
-      const { name, email, subject, message } = req.body;
+      const { name, email, organisation, interest, message, consent } = req.body;
 
       // Validate required fields
-      if (!name || !email || !subject || !message) {
+      if (!name || !email || !organisation || !interest || !message) {
         return res.status(400).json({ error: "All fields are required" });
       }
 
@@ -762,22 +762,24 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
         to: 'jessicapino@theaqoolwire.com',
         from: fromEmail,
         replyTo: email,
-        subject: `Contact Form: ${subject}`,
+        subject: `New Contact Form Submission - ${interest}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #333; border-bottom: 2px solid #2dd4bf; padding-bottom: 10px;">
+            <h2 style="color: #333; border-bottom: 2px solid #2bd4a7; padding-bottom: 10px;">
               New Contact Form Submission
             </h2>
             
             <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <p><strong>Name:</strong> ${name}</p>
               <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Subject:</strong> ${subject}</p>
+              <p><strong>Organisation:</strong> ${organisation}</p>
+              <p><strong>Interest:</strong> ${interest}</p>
+              <p><strong>Consent:</strong> ${consent ? 'Yes' : 'No'}</p>
             </div>
             
             <div style="margin: 20px 0;">
               <h3 style="color: #333;">Message:</h3>
-              <div style="background-color: #fff; padding: 15px; border-left: 4px solid #2dd4bf; border-radius: 4px;">
+              <div style="background-color: #fff; padding: 15px; border-left: 4px solid #2bd4a7; border-radius: 4px;">
                 ${message.replace(/\n/g, '<br>')}
               </div>
             </div>

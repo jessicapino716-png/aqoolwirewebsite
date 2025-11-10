@@ -59,7 +59,11 @@ Preferred communication style: Simple, everyday language.
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
 - **Newsletter Integration**: Multi-variant newsletter signup components with form validation
 - **Tool Reviews**: Dedicated components for AI tool showcases and reviews
-- **Contact Form Integration**: SendGrid-powered contact form on marketing home page
+- **Contact Form Integration**: "Get In Touch" section with SendGrid-powered contact form on marketing home page
+  - Form fields: Name, Work Email, Organisation, Interest (dropdown: Investor, Solution Provider, Fund, Other), Message, Consent checkbox
+  - Sends to jessicapino@theaqoolwire.com with formatted HTML email including all form data
+  - Uses SendGrid API via direct key (SENDGRID_API_KEY_NEW) with fallback to Replit connector
+  - Success/error handling with user-friendly toast notifications
 - **YouTube Video Management**: Full CRUD system for managing AI tool demonstration videos
   - Admin interface at /admin/tool-videos for creating, editing, and deleting videos
   - Videos display on /tools page with embedded YouTube iframes
