@@ -84,22 +84,26 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [accentColor, setAccentColorState] = useState<AccentColor>('wire');
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     // Load theme preferences from localStorage
     const storedAccent = localStorage.getItem('theme_accent') as AccentColor;
-    const storedDarkMode = localStorage.getItem('theme_dark') === 'true';
+    const storedDarkMode = localStorage.getItem('theme_dark');
     
     if (storedAccent && colorPalettes[storedAccent]) {
       setAccentColorState(storedAccent);
     }
     
-    setIsDarkMode(storedDarkMode);
+    // Default to dark mode if no preference stored
+    const shouldUseDarkMode = storedDarkMode === null ? true : storedDarkMode === 'true';
+    setIsDarkMode(shouldUseDarkMode);
     
     // Apply initial dark mode class
-    if (storedDarkMode) {
+    if (shouldUseDarkMode) {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
