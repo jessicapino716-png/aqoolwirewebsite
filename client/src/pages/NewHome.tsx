@@ -257,7 +257,7 @@ export default function NewHome() {
                     <circle cx="70" cy="70" r="2" fill="hsl(var(--accent))" />
                   </svg>
                 </div>
-                <h4 className="mb-3 text-lg font-semibold">Tourism at 150M: Personalisation at Scale</h4>
+                <h4 className="mb-3 text-lg font-semibold text-center">Tourism at 150M: Personalisation at Scale</h4>
                 <p className="text-muted-foreground mb-4">From visitor flows to predictive experiences</p>
                 <div className="flex items-center text-primary gap-1 transition-all">
                   <span>Read more</span>
