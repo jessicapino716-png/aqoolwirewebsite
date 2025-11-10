@@ -491,9 +491,7 @@ export default function NewHome() {
 
           {/* Legal note */}
           <div className="pt-8 border-t border-border">
-            <p className="text-muted-foreground text-sm max-w-3xl">
-              AQOOL Wire uses lawful, non-confidential sources. We do not use or solicit non-public, material information.
-            </p>
+            <p className="text-muted-foreground text-sm max-w-3xl">AQOOL Wire uses lawful, non-confidential sources. </p>
           </div>
         </div>
       </footer>
