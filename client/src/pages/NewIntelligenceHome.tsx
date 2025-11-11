@@ -179,9 +179,9 @@ export default function NewIntelligenceHome() {
                     boxShadow: '0 4px 14px rgba(0, 217, 200, 0.4)',
                     textDecoration: 'none'
                   }}
-                  data-testid="button-get-started"
+                  data-testid="button-become-partner"
                 >
-                  Get Started
+                  Become a Partner
                 </a>
                 <a 
                   href="#about"
