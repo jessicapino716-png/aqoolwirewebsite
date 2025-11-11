@@ -163,9 +163,7 @@ export default function NewIntelligenceHome() {
                 fontSize: '18.4px',
                 fontWeight: 400,
                 lineHeight: '31.28px'
-              }}>
-                The first platform connecting capital flows, policies, and partnerships across the Kingdom's $100B AI transformation
-              </p>
+              }}>The first platform mapping capital flows, infrastructure, and partnerships across the Kingdom's $100B AI transformation</p>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-5">
