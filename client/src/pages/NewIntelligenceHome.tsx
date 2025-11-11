@@ -304,7 +304,7 @@ export default function NewIntelligenceHome() {
       {/* Co-Pilot Section */}
       <section id="copilot" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-dark)) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">
-          Your <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">AI Investment Co-Pilot</span>
+          Your <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">AI Insight Co-Pilot</span>
         </h2>
         
         <p className="text-base md:text-lg lg:text-xl text-center mb-10 md:mb-16 max-w-3xl mx-auto leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
