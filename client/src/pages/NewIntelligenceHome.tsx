@@ -74,7 +74,6 @@ export default function NewIntelligenceHome() {
         <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
       </Helmet>
       <AnimatedBackground />
-      
       {/* Header + Hero Container with Gradient */}
       <div className="relative" style={{
         background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(94.34% 58.96% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
@@ -105,7 +104,7 @@ export default function NewIntelligenceHome() {
         </header>
         
         {/* Hero Section */}
-        <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-[1200px] mx-auto">
+        <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-[1200px] mx-auto ml-[20px] mr-[20px]">
           {/* Badge with shadow dot */}
           <div className="inline-flex items-center gap-2.5 px-6 py-3 mb-10 max-w-max" style={{
             border: '1px solid rgba(0, 217, 200, 0.3)',
@@ -203,7 +202,6 @@ export default function NewIntelligenceHome() {
           </div>
         </section>
       </div>
-      
       {/* About Section */}
       <section id="about" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-base)) 0%, hsl(var(--bg-light)) 100%)' }}>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16">What We Do</h2>
