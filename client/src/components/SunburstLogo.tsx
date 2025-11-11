@@ -37,30 +37,6 @@ export default function SunburstLogo({ size = 60 }: { size?: number }) {
   
   return (
     <div className="inline-block relative" style={{ width: size, height: size }}>
-      {/* Rays */}
-      <div className="absolute w-full h-full">
-        {Array.from({ length: rays }).map((_, i) => {
-          const angle = (360 / rays) * i;
-          const [color1, color2] = getRayGradient(i);
-          
-          return (
-            <div
-              key={i}
-              className="absolute rounded-sm"
-              style={{
-                width: rayWidth,
-                height: rayHeight,
-                left: '50%',
-                top: 0,
-                transformOrigin: `50% ${size * 0.5}px`,
-                transform: `rotate(${angle}deg)`,
-                background: `linear-gradient(to bottom, ${color1}, ${color2})`
-              }}
-            />
-          );
-        })}
-      </div>
-      
       {/* Center Circle */}
       <div
         className="absolute top-1/2 left-1/2 rounded-full"
