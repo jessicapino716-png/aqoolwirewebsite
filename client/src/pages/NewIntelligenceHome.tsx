@@ -284,7 +284,7 @@ export default function NewIntelligenceHome() {
             'What if AI infrastructure investment doubles — how will compute capacity respond?',
             'Which Saudi funds are actively investing in AI?',
             'Where are the capability gaps in the current stack?',
-            'What are the upcoming policy changes in AI regulation?'
+            'What if PIF increases funding for AI-focused startups — will domestic compute capacity be able to keep pace?'
           ].map((query, index) => (
             <div
               key={index}
