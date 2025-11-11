@@ -438,7 +438,7 @@ export default function NewIntelligenceHome() {
             <img 
               src={logoImage} 
               alt="The Aqool Wire" 
-              className="h-16 md:h-24 lg:h-28 w-auto mt-3 md:mt-4"
+              className="h-40 md:h-56 lg:h-64 w-auto mt-3 md:mt-4"
             />
           </div>
 
