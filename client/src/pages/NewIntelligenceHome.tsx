@@ -74,6 +74,7 @@ export default function NewIntelligenceHome() {
       <Helmet>
         <title>The Aqool Wire - Intelligence Platform</title>
         <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
+        <link rel="icon" type="image/png" href={logoImage} />
       </Helmet>
       <AnimatedBackground />
       {/* Header + Hero Container with Gradient */}
