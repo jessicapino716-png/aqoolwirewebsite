@@ -83,7 +83,7 @@ export default function NewIntelligenceHome() {
             <img 
               src={logoImage} 
               alt="The Aqool Wire" 
-              className="h-15 md:h-18 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              className="h-12 md:h-14 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               style={{ mixBlendMode: 'screen' }}
             />
           </Link>
@@ -352,7 +352,7 @@ export default function NewIntelligenceHome() {
             <img 
               src={logoImage} 
               alt="The Aqool Wire" 
-              className="h-18 w-auto"
+              className="h-14 w-auto"
               style={{ mixBlendMode: 'screen' }}
             />
           </div>
