@@ -326,10 +326,6 @@ export default function NewIntelligenceHome() {
             </div>
           ))}
         </div>
-
-        <div className="text-center text-xl font-semibold text-green-400">
-          Launching in 2026
-        </div>
       </section>
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto">
@@ -453,6 +449,10 @@ export default function NewIntelligenceHome() {
             >
               in
             </a>
+          </div>
+
+          <div className="text-center text-xl font-semibold text-green-400 mb-6">
+            Launching in 2026
           </div>
 
           <p className="text-sm" style={{ color: 'hsl(var(--gray-medium))' }}>
