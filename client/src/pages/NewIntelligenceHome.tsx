@@ -131,7 +131,7 @@ export default function NewIntelligenceHome() {
 
           {/* Main Heading */}
           <h1 className="mb-8" style={{
-            color: '#14B8A6',
+            color: '#FFFFFF',
             fontSize: '88px',
             fontWeight: 700,
             lineHeight: '96.8px',
@@ -141,7 +141,7 @@ export default function NewIntelligenceHome() {
             The Data Platform<br />
             Accelerating<br />
             Saudi Arabia's<br />
-            AI Transformation
+            <span style={{ color: '#14B8A6' }}>AI Transformation</span>
           </h1>
 
           {/* Subheading */}
