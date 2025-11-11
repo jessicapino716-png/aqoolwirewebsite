@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import logoImage from "@assets/The Aqool Wire_1762849230304.jpg";
+import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
