@@ -207,7 +207,7 @@ export default function NewIntelligenceHome() {
             </div>
 
             {/* Right Column - Map Image */}
-            <div className="hidden md:flex justify-center items-center">
+            <div className="hidden md:flex justify-center items-start pt-8">
               <img 
                 src={mapImage} 
                 alt="Saudi Arabia AI Network Map" 
