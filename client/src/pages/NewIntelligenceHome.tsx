@@ -5,6 +5,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
+import mapImage from "@assets/map_1762856003294.png";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -104,104 +105,118 @@ export default function NewIntelligenceHome() {
         </header>
         
         {/* Hero Section */}
-        <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-[1200px] mx-auto ml-[20px] mr-[20px]">
-          {/* Badge with shadow dot */}
-          <div className="inline-flex items-center gap-2.5 px-6 py-3 mb-10 max-w-max" style={{
-            border: '1px solid rgba(0, 217, 200, 0.3)',
-            background: 'rgba(0, 217, 200, 0.1)',
-            borderRadius: '50px'
-          }}>
-            <div style={{
-              width: '8px',
-              height: '8px',
-              background: '#07ebd0',
-              borderRadius: '4px',
-              boxShadow: '0 0 10px #07ebd0'
-            }} />
-            <span style={{
-              color: '#07ebd0',
-              fontSize: '14.4px',
-              fontWeight: 600,
-              letterSpacing: '0.288px',
-              lineHeight: '23px'
-            }}>
-              Accelerating Vision 2030's AI Momentum
-            </span>
-          </div>
+        <section id="hero" className="relative z-10 min-h-[85vh] flex items-center px-4 md:px-8 py-24 max-w-[1400px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center w-full">
+            {/* Left Column - Text Content */}
+            <div>
+              {/* Badge with shadow dot */}
+              <div className="inline-flex items-center gap-2.5 px-6 py-3 mb-10 max-w-max" style={{
+                border: '1px solid rgba(0, 217, 200, 0.3)',
+                background: 'rgba(0, 217, 200, 0.1)',
+                borderRadius: '50px'
+              }}>
+                <div style={{
+                  width: '8px',
+                  height: '8px',
+                  background: '#07ebd0',
+                  borderRadius: '4px',
+                  boxShadow: '0 0 10px #07ebd0'
+                }} />
+                <span style={{
+                  color: '#07ebd0',
+                  fontSize: '14.4px',
+                  fontWeight: 600,
+                  letterSpacing: '0.288px',
+                  lineHeight: '23px'
+                }}>
+                  Accelerating Vision 2030's AI Momentum
+                </span>
+              </div>
 
-          {/* Main Heading */}
-          <h1 className="mb-8" style={{
-            color: '#FFFFFF',
-            fontSize: '88px',
-            fontWeight: 700,
-            lineHeight: '96.8px',
-            letterSpacing: '-1.76px',
-            maxWidth: '1140px'
-          }}>
-            The Data Platform<br />
-            Accelerating<br />
-            Saudi Arabia's<br />
-            <span style={{ color: '#07ebd0' }}>AI Transformation</span>
-          </h1>
+              {/* Main Heading */}
+              <h1 className="mb-8" style={{
+                color: '#FFFFFF',
+                fontSize: '88px',
+                fontWeight: 700,
+                lineHeight: '96.8px',
+                letterSpacing: '-1.76px'
+              }}>
+                The Data Platform<br />
+                Accelerating<br />
+                Saudi Arabia's<br />
+                <span style={{ color: '#07ebd0' }}>AI Transformation</span>
+              </h1>
 
-          {/* Subheading */}
-          <p className="mb-5" style={{
-            color: '#E2E8F0',
-            fontSize: '22.4px',
-            fontWeight: 400,
-            lineHeight: '38px',
-            maxWidth: '900px'
-          }}>
-            Unifying fragmented data into actionable intelligence
-          </p>
+              {/* Subheading */}
+              <p className="mb-5" style={{
+                color: '#E2E8F0',
+                fontSize: '22.4px',
+                fontWeight: 400,
+                lineHeight: '38px'
+              }}>
+                Unifying fragmented data into actionable intelligence
+              </p>
 
-          {/* Description */}
-          <p className="mb-12" style={{
-            color: '#94A3B8',
-            fontSize: '18.4px',
-            fontWeight: 400,
-            lineHeight: '31.28px',
-            maxWidth: '850px'
-          }}>
-            The first platform connecting capital flows, policies, and partnerships across the Kingdom's $100B AI transformation
-          </p>
+              {/* Description */}
+              <p className="mb-12" style={{
+                color: '#94A3B8',
+                fontSize: '18.4px',
+                fontWeight: 400,
+                lineHeight: '31.28px'
+              }}>
+                The first platform connecting capital flows, policies, and partnerships across the Kingdom's $100B AI transformation
+              </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-5">
-            <a 
-              href="#contact"
-              className="inline-flex items-center px-9 py-4"
-              style={{
-                background: '#00D9C8',
-                borderRadius: '8px',
-                color: '#0A1628',
-                fontSize: '16px',
-                fontWeight: 600,
-                lineHeight: '25.6px',
-                boxShadow: '0 4px 14px rgba(0, 217, 200, 0.4)',
-                textDecoration: 'none'
-              }}
-              data-testid="button-get-started"
-            >
-              Get Started
-            </a>
-            <a 
-              href="#about"
-              className="inline-flex items-center px-9 py-4"
-              style={{
-                border: '2px solid #00D9C8',
-                borderRadius: '8px',
-                color: '#00FFD9',
-                fontSize: '16px',
-                fontWeight: 600,
-                lineHeight: '25.6px',
-                textDecoration: 'none',
-                background: 'transparent'
-              }}
-              data-testid="button-learn-more"
-            >
-              Learn More
-            </a>
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-5">
+                <a 
+                  href="#contact"
+                  className="inline-flex items-center px-9 py-4"
+                  style={{
+                    background: '#00D9C8',
+                    borderRadius: '8px',
+                    color: '#0A1628',
+                    fontSize: '16px',
+                    fontWeight: 600,
+                    lineHeight: '25.6px',
+                    boxShadow: '0 4px 14px rgba(0, 217, 200, 0.4)',
+                    textDecoration: 'none'
+                  }}
+                  data-testid="button-get-started"
+                >
+                  Get Started
+                </a>
+                <a 
+                  href="#about"
+                  className="inline-flex items-center px-9 py-4"
+                  style={{
+                    border: '2px solid #00D9C8',
+                    borderRadius: '8px',
+                    color: '#00FFD9',
+                    fontSize: '16px',
+                    fontWeight: 600,
+                    lineHeight: '25.6px',
+                    textDecoration: 'none',
+                    background: 'transparent'
+                  }}
+                  data-testid="button-learn-more"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column - Map Image */}
+            <div className="hidden md:flex justify-center items-center">
+              <img 
+                src={mapImage} 
+                alt="Saudi Arabia AI Network Map" 
+                className="w-full max-w-[600px] h-auto"
+                style={{
+                  filter: 'drop-shadow(0 0 40px rgba(7, 235, 208, 0.3))'
+                }}
+              />
+            </div>
           </div>
         </section>
       </div>
