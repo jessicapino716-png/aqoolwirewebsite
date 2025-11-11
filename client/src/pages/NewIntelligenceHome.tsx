@@ -81,12 +81,12 @@ export default function NewIntelligenceHome() {
       }}>
         {/* Header */}
         <header className="relative z-20 w-full border-b border-cyan-500/20">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-1 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 py-0.5 flex items-center justify-between">
             <Link href="/" data-testid="link-logo">
               <img 
                 src={logoImage} 
                 alt="The Aqool Wire" 
-                className="h-36 w-auto cursor-pointer hover:opacity-80 transition-opacity -my-6"
+                className="h-40 w-auto cursor-pointer hover:opacity-80 transition-opacity -my-8"
               />
             </Link>
             <nav className="hidden md:flex items-center gap-8">
