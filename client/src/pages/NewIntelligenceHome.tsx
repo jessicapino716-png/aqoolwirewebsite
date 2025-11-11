@@ -237,17 +237,33 @@ export default function NewIntelligenceHome() {
 
           <div className="flex flex-col gap-4">
             {[
-              'Real-time policy & regulation tracking',
-              'Investment flow analysis',
-              'Infrastructure capability mapping',
-              'Market timing intelligence',
-              'Opportunity identification'
+              { 
+                title: 'Insight Co-Pilot & Predictive Modeling', 
+                description: 'Real-time AI assistant that surfaces trends, forecasts, and "what-if" scenarios across Saudi Arabia\'s AI economy.' 
+              },
+              { 
+                title: 'Investment Flow Analysis', 
+                description: 'Mapping capital movements, partnerships, and funding activity across Vision 2030 programs.' 
+              },
+              { 
+                title: 'Compute & Cloud Capacity Intelligence', 
+                description: 'Visibility into data-center growth, GPU availability, and emerging infrastructure projects.' 
+              },
+              { 
+                title: 'Market Timing & Opportunity Identification', 
+                description: 'Detecting emerging sectors, regional demand shifts, and partnership openings.' 
+              },
+              { 
+                title: 'Real-time Policy & Regulation Tracking', 
+                description: 'Live bilingual tracker of national AI laws, standards, and strategic initiatives.' 
+              }
             ].map((feature, index) => (
               <div
                 key={index}
                 className="px-6 py-5 bg-cyan-500/5 border-l-[3px] border-cyan-500 rounded hover:bg-cyan-500/10 hover:border-green-400 transition-all hover:translate-x-2"
               >
-                <span className="text-lg font-medium">{feature}</span>
+                <h3 className="text-lg font-semibold mb-2 text-cyan-400">{feature.title}</h3>
+                <p className="text-base" style={{ color: 'hsl(var(--gray-light))' }}>{feature.description}</p>
               </div>
             ))}
           </div>
