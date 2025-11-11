@@ -432,43 +432,49 @@ export default function NewIntelligenceHome() {
         </form>
       </section>
       {/* Footer */}
-      <footer id="footer" className="relative z-10 py-16 md:py-20 px-4 md:px-8 border-t border-cyan-500/20 pt-[10px] pb-[10px]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-8 md:mb-10">
+      <footer id="footer" className="relative z-10 py-20 md:py-24 px-4 md:px-8 border-t border-cyan-500/20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start mb-12">
             {/* Left Column - Logo */}
-            <div className="flex justify-start">
+            <div className="flex justify-start items-start">
               <img 
                 src={logoImage} 
                 alt="The Aqool Wire" 
-                className="h-40 md:h-56 lg:h-64 w-auto mt-3 md:mt-4"
+                className="h-32 md:h-40 lg:h-48 w-auto"
               />
             </div>
 
             {/* Right Column - Social & Info */}
-            <div className="flex flex-col items-start md:items-end">
-              <h3 className="text-lg md:text-xl font-semibold mb-5 md:mb-6 text-cyan-400">Follow Us</h3>
-
-              <div className="flex gap-4 md:gap-5 mb-8 md:mb-10">
+            <div className="flex flex-col justify-between h-full">
+              <div className="mb-8 md:mb-12">
+                <h3 className="text-base md:text-lg font-semibold mb-4 text-gray-300 uppercase tracking-wider">Connect With Us</h3>
                 <a
                   href="https://www.linkedin.com/company/the-aqool-wire"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 border-2 border-cyan-500 rounded-full flex items-center justify-center text-cyan-400 text-lg font-semibold hover:bg-cyan-500 hover:text-gray-900 transition-all hover:-translate-y-1"
+                  className="inline-flex items-center gap-3 px-5 py-2.5 border border-cyan-500/30 rounded-lg text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all group"
                   data-testid="link-linkedin"
                 >
-                  in
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  <span className="font-medium">Follow us on LinkedIn</span>
                 </a>
               </div>
 
-              <div className="text-lg md:text-xl font-semibold text-green-400 mb-5 md:mb-6">
-                Launching in 2026
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/10 border border-green-400/30 rounded-full max-w-max">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-sm md:text-base font-semibold text-green-400">Launching 2026</span>
               </div>
             </div>
           </div>
 
-          <p className="text-xs md:text-sm text-center" style={{ color: 'hsl(var(--gray-medium))' }}>
-            © {new Date().getFullYear()} The Aqool Wire. All rights reserved.
-          </p>
+          {/* Bottom Bar */}
+          <div className="pt-8 border-t border-cyan-500/10">
+            <p className="text-sm text-center" style={{ color: 'hsl(var(--gray-medium))' }}>
+              © {new Date().getFullYear()} The Aqool Wire. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
