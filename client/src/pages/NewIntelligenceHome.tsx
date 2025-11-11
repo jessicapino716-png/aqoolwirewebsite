@@ -77,7 +77,7 @@ export default function NewIntelligenceHome() {
       
       {/* Header + Hero Container with Gradient */}
       <div className="relative" style={{
-        background: 'radial-gradient(91.18% 145.89% at 20% 30%, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0) 40%), radial-gradient(91.18% 145.89% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(58.96% 94.34% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
+        background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(94.34% 58.96% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
       }}>
         {/* Header */}
         <header className="relative z-20 w-full border-b border-cyan-500/20">
@@ -105,44 +105,103 @@ export default function NewIntelligenceHome() {
         </header>
         
         {/* Hero Section */}
-        <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-400 rounded-full text-sm font-medium mb-10 max-w-max text-black">
-          Accelerating Vision 2030's AI Momentum
-        </div>
+        <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-[1200px] mx-auto">
+          {/* Badge with shadow dot */}
+          <div className="inline-flex items-center gap-2.5 px-6 py-3 mb-10 max-w-max" style={{
+            border: '1px solid rgba(0, 217, 200, 0.3)',
+            background: 'rgba(0, 217, 200, 0.1)',
+            borderRadius: '50px'
+          }}>
+            <div style={{
+              width: '8px',
+              height: '8px',
+              background: '#00FFD9',
+              borderRadius: '4px',
+              boxShadow: '0 0 10px #00FFD9'
+            }} />
+            <span style={{
+              color: '#00FFD9',
+              fontSize: '14.4px',
+              fontWeight: 600,
+              letterSpacing: '0.288px',
+              lineHeight: '23px'
+            }}>
+              Accelerating Vision 2030's AI Momentum
+            </span>
+          </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-          The Bloomberg Terminal for<br />
-          Saudi Arabia's <span className="text-cyan-400">AI Ecosystem</span>
-        </h1>
+          {/* Main Heading */}
+          <h1 className="mb-8" style={{
+            color: '#14B8A6',
+            fontSize: '88px',
+            fontWeight: 700,
+            lineHeight: '96.8px',
+            letterSpacing: '-1.76px',
+            maxWidth: '1140px'
+          }}>
+            The Data Terminal Powering Saudi Arabia's AI Transformation
+          </h1>
 
-        <p className="text-lg md:text-xl mb-6 max-w-4xl text-white">
-          Track the full stack from infrastructure to business model, connect capability gaps to deployment windows.
-        </p>
+          {/* Subheading */}
+          <p className="mb-5" style={{
+            color: '#E2E8F0',
+            fontSize: '22.4px',
+            fontWeight: 400,
+            lineHeight: '38px',
+            maxWidth: '900px'
+          }}>
+            Unifying fragmented data into actionable intelligence
+          </p>
 
-        <p className="text-base md:text-lg mb-12 max-w-3xl text-gray-400">
-          We synthesize policy, market, and capital signals to identify AI investment opportunities in Saudi Arabia and the GCC.
-        </p>
+          {/* Description */}
+          <p className="mb-12" style={{
+            color: '#94A3B8',
+            fontSize: '18.4px',
+            fontWeight: 400,
+            lineHeight: '31.28px',
+            maxWidth: '850px'
+          }}>
+            The first platform connecting capital flows, policies, and partnerships across the Kingdom's $100B AI transformation
+          </p>
 
-        <div className="flex flex-wrap gap-4">
-          <Button 
-            size="lg" 
-            className="bg-cyan-400 hover:bg-cyan-300 text-black font-semibold rounded-full px-8"
-            asChild
-            data-testid="button-get-started"
-          >
-            <a href="#contact">Get Started</a>
-          </Button>
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 rounded-full px-8"
-            asChild
-            data-testid="button-learn-more"
-          >
-            <a href="#about">Learn More</a>
-          </Button>
-        </div>
-      </section>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-5">
+            <a 
+              href="#contact"
+              className="inline-flex items-center px-9 py-4"
+              style={{
+                background: '#00D9C8',
+                borderRadius: '8px',
+                color: '#0A1628',
+                fontSize: '16px',
+                fontWeight: 600,
+                lineHeight: '25.6px',
+                boxShadow: '0 4px 14px rgba(0, 217, 200, 0.4)',
+                textDecoration: 'none'
+              }}
+              data-testid="button-get-started"
+            >
+              Get Started
+            </a>
+            <a 
+              href="#about"
+              className="inline-flex items-center px-9 py-4"
+              style={{
+                border: '2px solid #00D9C8',
+                borderRadius: '8px',
+                color: '#00FFD9',
+                fontSize: '16px',
+                fontWeight: 600,
+                lineHeight: '25.6px',
+                textDecoration: 'none',
+                background: 'transparent'
+              }}
+              data-testid="button-learn-more"
+            >
+              Learn More
+            </a>
+          </div>
+        </section>
       </div>
       
       {/* About Section */}

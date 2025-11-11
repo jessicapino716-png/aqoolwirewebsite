@@ -1,0 +1,1158 @@
+Implement the following design in React. Use the following files generated from a Figma design as a specification and guide:
+
+```src/styles/IndexHtml_11_11_2025_11_39_48Gmt_3.module.css
+@import "https://fonts.googleapis.com/css?family=Inter:0,undefined;0,700;0,400;0,500&display=swap";
+.Frame_4_1194 {
+  background: linear-gradient(
+      0deg,
+      var(--color-azure-10, #0a1628) 0%,
+      var(--color-azure-10, #0a1628) 100%
+    ),
+    var(--color-white-solid, #fff);
+  width: 100%;
+  height: 100%;
+}
+.Gradient_4_1195 {
+  opacity: var(--opacity-50, 0.5);
+  background: linear-gradient(
+      180deg,
+      var(--color-spring-green-504, #00ff410a) 1%,
+      var(--color-spring-green-500, #00ff4100) 1%
+    ),
+    linear-gradient(
+      90deg,
+      var(--color-spring-green-504, #00ff410a) 1%,
+      var(--color-spring-green-500, #00ff4100) 1%
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-cyan-433, #00d9c808) 5%,
+      var(--color-cyan-430, #00d9c800) 5%
+    ),
+    linear-gradient(
+      90deg,
+      var(--color-azure-503, #00b4ff08) 5%,
+      var(--color-azure-500, #09f0) 5%
+    );
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1200px;
+}
+.Gradient_4_1221,
+.Gradient_7_70 {
+  background: radial-gradient(
+      145.89% 91.18% at 20% 30%,
+      var(--color-spring-green-5010, #00ff411a) 0%,
+      var(--color-spring-green-500, #00ff4100) 40%
+    ),
+    radial-gradient(
+      145.89% 91.18% at 80% 70%,
+      var(--color-azure-5010, #0099ff1a) 0%,
+      var(--color-azure-500, #09f0) 40%
+    ),
+    radial-gradient(
+      94.34% 58.96% at 50% 50%,
+      var(--color-cyan-438, #00d9c814) 0%,
+      var(--color-cyan-430, #00d9c800) 50%
+    );
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1200px;
+}
+.Section_4_1222 {
+  flex-shrink: 0;
+  width: 1200px;
+  height: 1080px;
+}
+.Margin_4_1223 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 361px;
+  padding-bottom: 40px;
+  display: flex;
+}
+.OverlayBorder_4_1224 {
+  align-items: center;
+  gap: var(--item-spacing-10, 10px);
+  border: var(--stroke-weight-1, 1px) solid var(--color-cyan-4330, #00d9c84d);
+  background: var(--color-cyan-4310, #00d9c81a);
+  box-sizing: border-box;
+  border-radius: 50px;
+  width: 100%;
+  padding: 12.5px 25px 12.55px;
+  display: flex;
+}
+.BackgroundShadow_4_1225 {
+  background: var(--color-cyan-50, #00ffd9);
+  border-radius: 4px;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 10px #00ffd9;
+}
+.AcceleratingVision_2030SAiMomentum_4_1226 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 14.4px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  letter-spacing: var(--letter-spacing-0_29, 0.288px);
+  line-height: 23px;
+  display: inline-block;
+}
+.Heading_1Margin_4_1227 {
+  justify-content: center;
+  align-items: center;
+  width: 1140px;
+  padding: 0.189px 0 29.001px;
+  display: flex;
+}
+.Heading_1_4_1228 {
+  align-items: flex-start;
+  gap: var(--item-spacing-0_09, 0.09px);
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 1140px;
+  display: flex;
+}
+.TheDataTerminalPoweringSaudiArabiaSAiTransformation_4_1229 {
+  color: var(--color-cyan-40, #14b8a6);
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-88, 88px);
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-96_8, 96.8px);
+  letter-spacing: var(--letter-spacing--1_76, -1.76px);
+  display: inline-block;
+}
+.Margin_4_1232 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 900px;
+  max-width: 900px;
+  padding-bottom: 20px;
+  display: flex;
+}
+.Container_4_1233 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+}
+.UnifyingFragmentedDataIntoActionableIntelligence_4_1234 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 22.4px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  max-height: 38.08px;
+  line-height: 38px;
+  display: inline-block;
+}
+.Margin_4_1235 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 850px;
+  max-width: 850px;
+  padding-bottom: 50px;
+  display: flex;
+}
+.Container_4_1236 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+}
+.TheFirstPlatformConnectingCapitalFlowsPoliciesAndPartnershipsAcrossTheKingdomS_100BAiTransformation_4_1237 {
+  color: var(--Gull-Gray, var(--color-azure-65, #94a3b8));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-31_28, 31.28px);
+  display: inline-block;
+}
+.Container_4_1238 {
+  align-items: flex-start;
+  gap: 0 var(--item-spacing-20, 20px);
+  flex-wrap: wrap;
+  width: 1140px;
+  display: flex;
+}
+.Component_3_4_1239 {
+  background: #00d9c8;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px 36px 20.59px;
+  display: flex;
+  box-shadow: 0 4px 14px #00d9c866;
+}
+.Text_4_1055 {
+  color: var(--Firefly, var(--color-azure-10, #0a1628));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-16, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-25_6, 25.6px);
+  display: inline-block;
+}
+.Component_3_4_1241 {
+  border: var(--stroke-weight-2, 2px) solid #00d9c8;
+  box-sizing: border-box;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 17px 38px 18.59px;
+  display: flex;
+}
+.Text_4_1059 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-16, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-25_6, 25.6px);
+  display: inline-block;
+}
+.Image_1_4_1526 {
+  aspect-ratio: 1;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  flex-shrink: 0;
+  width: 201px;
+  height: 201px;
+}
+.Section_4_1271 {
+  align-items: flex-start;
+  gap: var(--item-spacing-60, 60px);
+  background: linear-gradient(
+    117deg,
+    var(--color-azure-12, #0f1e2e) 0%,
+    var(--color-azure-18, #1a2942) 100%
+  );
+  flex-direction: column;
+  width: 1200px;
+  max-width: 1200px;
+  padding: 119px 30px 120px;
+  display: flex;
+}
+.Heading_2_4_1272 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.AboutAqoolWire_4_1273 {
+  color: var(--White, var(--color-white-solid, #fff));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-56, 56px);
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-67_2, 67.2px);
+  letter-spacing: var(--letter-spacing--1_12, -1.12px);
+  display: inline-block;
+}
+.Container_4_1274 {
+  flex-flow: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  display: flex;
+}
+.Container_4_1275 {
+  align-items: flex-start;
+  gap: var(--item-spacing-23_13, 23.125px);
+  flex-direction: column;
+  width: 540px;
+  padding-bottom: 24px;
+  display: flex;
+}
+.Container_4_1276 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.TheAqoolWireIsAnIndependentPlatformBuiltForThePrivateSectorToUnderstandAndEngageWithSaudiArabiaSAiBuildOut_4_1277 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-33_12, 33.12px);
+  display: inline-block;
+}
+.Container_4_1278 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.ItIntegratesOpenGovernmentDataFromSdaiaDgaAndOtherSourcesWithRealTimeAnalysisToBringTransparencyAndForesightToVision_2030_4_1279 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-33_12, 33.12px);
+  display: inline-block;
+}
+.Container_4_1280 {
+  align-items: flex-start;
+  gap: var(--item-spacing-s, 16px);
+  flex-direction: column;
+  width: 540px;
+  display: flex;
+}
+.Component_4_4_1281 {
+  border-left: var(--stroke-weight-3, 3px) solid #00d9c8;
+  box-sizing: border-box;
+  background: #00d9c80d;
+  border-radius: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px 24px 24px 27px;
+  display: flex;
+}
+.Text_4_1063 {
+  color: var(--White, var(--color-white-solid, #fff));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-26_88, 26.88px);
+  display: inline-block;
+}
+.Component_4_4_1283,
+.Component_4_4_1285 {
+  border-left: var(--stroke-weight-3, 3px) solid #00d9c8;
+  box-sizing: border-box;
+  background: #00d9c80d;
+  border-radius: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px 24px 24px 27px;
+  display: flex;
+}
+.Section_4_1287 {
+  align-items: center;
+  gap: var(--item-spacing-23_3, 23.3px);
+  background: linear-gradient(
+    128deg,
+    var(--color-azure-10, #0a1628) 0%,
+    var(--color-azure-12, #0f1e2e) 50%,
+    var(--color-azure-505, #0099ff0d) 100%
+  );
+  flex-direction: column;
+  width: 1200px;
+  max-width: 1200px;
+  padding: 119px 30px 119.99px;
+  display: flex;
+}
+.Heading_2_4_1288 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.TheInsightCoPilot_4_1289 {
+  color: var(--White, var(--color-white-solid, #fff));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-56, 56px);
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-67_2, 67.2px);
+  letter-spacing: var(--letter-spacing--1_12, -1.12px);
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(99deg, #00e436 0%, #00d9c8 50%, #09f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+}
+.Container_4_1290 {
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  max-width: 800px;
+  display: flex;
+}
+.ABilingualAiAssistantForInvestorsInnovatorsAndPolicymakersTurningOpenSaudiDataIntoRealTimeForesight_4_1291 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 19.2px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-32_64, 32.64px);
+  display: inline-block;
+}
+.OverlayBorderOverlayBlur_4_1292 {
+  align-items: flex-start;
+  gap: var(--item-spacing-s, 16px);
+  border: var(--stroke-weight-1, 1px) solid var(--color-cyan-4320, #00d9c833);
+  background: var(--color-azure-1250, #0f1e2e80);
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  border-radius: 12px;
+  flex-direction: column;
+  width: 800px;
+  max-width: 800px;
+  padding: 73.7px 37px 53px;
+  display: flex;
+}
+.Component_5_4_1293 {
+  border: var(--stroke-weight-1, 1px) solid #00d9c833;
+  box-sizing: border-box;
+  background: #0a162899;
+  border-radius: 8px;
+  align-items: center;
+  gap: 3.669px;
+  height: 75.27px;
+  padding: 20.5px 252.229px 20.77px 25px;
+  display: flex;
+}
+.generated__4_1069 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  justify-content: center;
+  width: 11.811px;
+  height: 34px;
+  display: inline-block;
+}
+.WhatIfSdaiaSComputeCapacityDoublesBy_2026_4_1070 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-26_88, 26.88px);
+  flex-direction: column;
+  justify-content: center;
+  width: 417.833px;
+  height: 27px;
+  display: inline-block;
+}
+.generated__4_1071 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  justify-content: center;
+  width: 11.821px;
+  height: 34px;
+  display: inline-block;
+}
+.Component_5_4_1297 {
+  border: var(--stroke-weight-1, 1px) solid #00d9c833;
+  box-sizing: border-box;
+  background: #0a162899;
+  border-radius: 8px;
+  height: 75.26px;
+}
+.generated__4_1077 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 11.811px;
+  height: 34px;
+  display: inline-block;
+}
+.WhichSaudiRegionsAreAttractingTheMostAiStartupsThisQuarter_4_1078 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-26_88, 26.88px);
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 544.822px;
+  height: 27px;
+  display: inline-block;
+}
+.generated__4_1079 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 11.811px;
+  height: 34px;
+  display: inline-block;
+}
+.Component_5_4_1301 {
+  border: var(--stroke-weight-1, 1px) solid #00d9c833;
+  box-sizing: border-box;
+  background: #0a162899;
+  border-radius: 8px;
+  align-items: center;
+  gap: 3.669px;
+  height: 75.27px;
+  padding: 20.5px 157.089px 20.77px 25px;
+  display: flex;
+}
+.generated__4_1085 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  justify-content: center;
+  width: 11.811px;
+  height: 34px;
+  display: inline-block;
+}
+.HowWouldAiInvestmentFlowsShiftIfGpuImportsAreDelayed_4_1086 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-26_88, 26.88px);
+  flex-direction: column;
+  justify-content: center;
+  width: 513.41px;
+  height: 27px;
+  display: inline-block;
+}
+.generated__4_1087 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  justify-content: center;
+  width: 11.821px;
+  height: 34px;
+  display: inline-block;
+}
+.Component_5_4_1305 {
+  border: var(--stroke-weight-1, 1px) solid #00d9c833;
+  box-sizing: border-box;
+  background: #0a162899;
+  border-radius: 8px;
+  align-items: center;
+  gap: 3.669px;
+  height: 75.26px;
+  padding: 20.5px 173.419px 20.76px 25px;
+  display: flex;
+}
+.generated__4_1093 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  justify-content: center;
+  width: 11.811px;
+  height: 34px;
+  display: inline-block;
+}
+.WhichSectorsWillSeeTheHighestAiTalentDemandNextYear_4_1094 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-26_88, 26.88px);
+  flex-direction: column;
+  justify-content: center;
+  width: 497.457px;
+  height: 27px;
+  display: inline-block;
+}
+.generated__4_1095 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-33_28, 33.28px);
+  flex-direction: column;
+  justify-content: center;
+  width: 11.811px;
+  height: 34px;
+  display: inline-block;
+}
+.Container_4_1309 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 7.7px;
+  display: flex;
+}
+.PoweredByOpenSaudiDataAiAnalysis_4_1310 {
+  color: var(--Malachite, var(--color-spring-green-50, #00ff41));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 15.2px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-24_32, 24.32px);
+  letter-spacing: var(--letter-spacing-0_76, 0.76px);
+  display: inline-block;
+}
+.Section_4_1311 {
+  align-items: flex-start;
+  gap: var(--item-spacing-s, 24px);
+  background: linear-gradient(
+    123deg,
+    var(--color-spring-green-503, #00ff4108) 0%,
+    var(--color-azure-12, #0f1e2e) 50%,
+    var(--color-azure-505, #0099ff0d) 100%
+  );
+  flex-direction: column;
+  width: 1200px;
+  max-width: 1200px;
+  padding: 119px 30px 120.01px;
+  display: flex;
+}
+.Heading_2_4_1312 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.WhatSComing_4_1313 {
+  color: var(--White, var(--color-white-solid, #fff));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-56, 56px);
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-67_2, 67.2px);
+  letter-spacing: var(--letter-spacing--1_12, -1.12px);
+  display: inline-block;
+}
+.Container_4_1314 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.BuildingTheDataLayerOfSaudiArabiaSAiFuture_4_1315 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 20.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-33_28, 33.28px);
+  display: inline-block;
+}
+.Container_4_1316 {
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--item-spacing-m, 32px);
+  width: 100%;
+  padding-top: 46px;
+  display: flex;
+}
+.Component_6_4_1317 {
+  align-items: flex-start;
+  gap: var(--item-spacing-s, 16px);
+  border: var(--stroke-weight-1, 1px) solid #00d9c833;
+  box-sizing: border-box;
+  background: #0f1e2e66;
+  border-radius: 12px;
+  flex-direction: column;
+  width: 358.66px;
+  padding: 39.9px 33px 41px;
+  display: flex;
+}
+.Heading_3_4_1103 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 0.69px;
+  display: flex;
+}
+.AiInvestmentObservatory_4_1104 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-24, 24px);
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-28_8, 28.8px);
+  display: inline-block;
+}
+.Container_4_1105 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.TrackDealsMoUsProgramsShapingSaudiArabiaSAiEconomyInRealTime_4_1106 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-28_56, 28.56px);
+  display: inline-block;
+}
+.Component_6_4_1322 {
+  align-items: flex-start;
+  gap: var(--item-spacing-15_27, 15.27px);
+  border: var(--stroke-weight-1, 1px) solid #00d9c833;
+  box-sizing: border-box;
+  background: #0f1e2e66;
+  border-radius: 12px;
+  flex-direction: column;
+  width: 358.67px;
+  padding: 40px 33px 98.34px;
+  display: flex;
+}
+.Heading_3_4_1114 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 0.8px;
+  display: flex;
+}
+.RegulatoryIntelligence_4_1115 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-24, 24px);
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-28_8, 28.8px);
+  display: inline-block;
+}
+.Container_4_1116 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.LiveBilingualTrackerOfAiLawsStandardsAndPolicyDevelopments_4_1117 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-28_56, 28.56px);
+  display: inline-block;
+}
+.Component_6_4_1327 {
+  align-items: flex-start;
+  gap: var(--item-spacing-s, 16px);
+  border: var(--stroke-weight-1, 1px) solid #00d9c833;
+  box-sizing: border-box;
+  background: #0f1e2e66;
+  border-radius: 12px;
+  flex-direction: column;
+  width: 358.65px;
+  padding: 40px 33px 69.79px;
+  display: flex;
+}
+.Heading_3_4_1125 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 0.8px;
+  display: flex;
+}
+.TalentSkillsSignals_4_1126 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-24, 24px);
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-28_8, 28.8px);
+  display: inline-block;
+}
+.Container_4_1127 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.MapWhereAiSkillsAreBeingTrainedFundedAndDeployedAcrossTheKingdom_4_1128 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-28_56, 28.56px);
+  display: inline-block;
+}
+.Container_4_1332 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 35px;
+  display: flex;
+}
+.Launching_2026EarlyPartnersWelcome_4_1333 {
+  color: var(--Malachite, var(--color-spring-green-50, #00ff41));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-29_44, 29.44px);
+  display: inline-block;
+}
+.Section_4_1334 {
+  align-items: center;
+  gap: var(--item-spacing-s, 24px);
+  background: var(--color-azure-10, #0a1628);
+  flex-direction: column;
+  width: 1200px;
+  max-width: 1200px;
+  padding: 119px 30px 120px;
+  display: flex;
+}
+.Heading_2_4_1335 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.GetInTouch_4_1336 {
+  color: var(--White, var(--color-white-solid, #fff));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-56, 56px);
+  font-style: normal;
+  font-weight: var(--font-weight-700, 700);
+  line-height: var(--line-height-67_2, 67.2px);
+  letter-spacing: var(--letter-spacing--1_12, -1.12px);
+  display: inline-block;
+}
+.Container_4_1337 {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.InterestedInSponsoringPartneringOrEarlyAccessLetSTalk_4_1338 {
+  color: var(--Mystic, var(--color-grey-91, #e2e8f0));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 19.2px;
+  font-style: normal;
+  font-weight: var(--font-weight-400, 400);
+  line-height: var(--line-height-30_72, 30.72px);
+  display: inline-block;
+}
+.Form_4_1339 {
+  align-items: flex-start;
+  gap: var(--item-spacing-27, 27px);
+  flex-direction: column;
+  width: 650px;
+  max-width: 650px;
+  padding-top: 35px;
+  display: flex;
+}
+.Container_4_1340 {
+  align-items: flex-start;
+  gap: var(--item-spacing-10, 10px);
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+.Label_4_1341 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.Name_4_1342 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 15.2px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-24_32, 24.32px);
+  letter-spacing: var(--letter-spacing-0_3, 0.304px);
+  display: inline-block;
+}
+.Input_4_1343 {
+  border: var(--stroke-weight-1, 1px) solid var(--color-cyan-4330, #00d9c84d);
+  background: var(--color-azure-1240, #0f1e2e66);
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+.Container_4_1344 {
+  align-items: flex-start;
+  gap: var(--item-spacing-10, 10px);
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+.Label_4_1345 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.Organization_4_1346 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 15.2px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-24_32, 24.32px);
+  letter-spacing: var(--letter-spacing-0_3, 0.304px);
+  display: inline-block;
+}
+.Input_4_1347 {
+  border: var(--stroke-weight-1, 1px) solid var(--color-cyan-4330, #00d9c84d);
+  background: var(--color-azure-1240, #0f1e2e66);
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+.Container_4_1348 {
+  align-items: flex-start;
+  gap: var(--item-spacing-10, 10px);
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+.Label_4_1349 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.Email_4_1350 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 15.2px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-24_32, 24.32px);
+  letter-spacing: var(--letter-spacing-0_3, 0.304px);
+  display: inline-block;
+}
+.Input_4_1351 {
+  border: var(--stroke-weight-1, 1px) solid var(--color-cyan-4330, #00d9c84d);
+  background: var(--color-azure-1240, #0f1e2e66);
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+.Container_4_1352 {
+  align-items: flex-start;
+  gap: var(--item-spacing-10, 10px);
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+.Label_4_1353 {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+.Message_4_1354 {
+  color: var(--Bright-Turquoise, var(--color-cyan-50, #00ffd9));
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: 15.2px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-24_32, 24.32px);
+  letter-spacing: var(--letter-spacing-0_3, 0.304px);
+  display: inline-block;
+}
+.Textarea_4_1355 {
+  min-height: var(--height-140, 140px);
+  border: var(--stroke-weight-1, 1px) solid var(--color-cyan-4330, #00d9c84d);
+  background: var(--color-azure-1240, #0f1e2e66);
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+.Component_7_4_1356 {
+  background: #00d9c8;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 36px 16px;
+  display: flex;
+  box-shadow: 0 4px 14px #00d9c866;
+}
+.Text_4_1132 {
+  color: var(--Firefly, var(--color-azure-10, #0a1628));
+  text-align: center;
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-16, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  flex: 1 0 0;
+  line-height: normal;
+  display: inline-block;
+}
+.Image_2_6_67 {
+  aspect-ratio: 391/519;
+  background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
+  flex-shrink: 0;
+  width: 782px;
+  height: 1038px;
+}
+
+```
+
+---
+
+```src/components/IndexHtml_11_11_2025_11_39_48Gmt_3.tsx
+import React from 'react';
+import styles from '../styles/IndexHtml_11_11_2025_11_39_48Gmt_3.module.css';
+
+
+export default function IndexHtml_11_11_2025_11_39_48Gmt_3() {
+  return (
+    <div className={styles.IndexHtml_11_11_2025_11_39_48Gmt_3_4_1358}>
+      <div className={styles.Frame_4_1194}>
+        <div className={styles.Gradient_4_1195}></div>
+        <div className={styles.Gradient_4_1221}></div>
+        <div className={styles.Gradient_7_70}></div>
+        <div className={styles.Section_4_1222}>
+          <div className={styles.Margin_4_1223}>
+            <div className={styles.OverlayBorder_4_1224}>
+              <div className={styles.BackgroundShadow_4_1225}></div><span className={styles.AcceleratingVision_2030SAiMomentum_4_1226}>Accelerating Vision 2030&#x27;s AI Momentum</span>
+            </div>
+          </div>
+          <div className={styles.Heading_1Margin_4_1227}>
+            <div className={styles.Heading_1_4_1228}><span className={styles.TheDataTerminalPoweringSaudiArabiaSAiTransformation_4_1229}>The Data Terminal
+                Powering
+                Saudi Arabia&#x2019;s
+                AI Transformation</span></div>
+          </div>
+          <div className={styles.Margin_4_1232}>
+            <div className={styles.Container_4_1233}><span className={styles.UnifyingFragmentedDataIntoActionableIntelligence_4_1234}>Unifying fragmented data into actionable intelligence.</span></div>
+          </div>
+          <div className={styles.Margin_4_1235}>
+            <div className={styles.Container_4_1236}><span className={styles.TheFirstPlatformConnectingCapitalFlowsPoliciesAndPartnershipsAcrossTheKingdomS_100BAiTransformation_4_1237}>The first platform connecting capital flows, policies, and partnerships across the Kingdom&#x27;s
+                $100B+ AI transformation.</span></div>
+          </div>
+          <div className={styles.Container_4_1238}>
+            <div className={styles.Component_3_4_1239}><span className={styles.Text_4_1055}>Stay Informed</span></div>
+            <div className={styles.Component_3_4_1241}><span className={styles.Text_4_1059}>Get in Touch</span></div>
+          </div>
+          <div className={styles.Image_1_4_1526}></div>
+        </div>
+        <div className={styles.Section_4_1271}>
+          <div className={styles.Heading_2_4_1272}><span className={styles.AboutAqoolWire_4_1273}>About Aqool Wire</span></div>
+          <div className={styles.Container_4_1274}>
+            <div className={styles.Container_4_1275}>
+              <div className={styles.Container_4_1276}><span className={styles.TheAqoolWireIsAnIndependentPlatformBuiltForThePrivateSectorToUnderstandAndEngageWithSaudiArabiaSAiBuildOut_4_1277}>The Aqool Wire is an independent platform built for the
+                  private sector to understand and engage with Saudi Arabia&#x27;s
+                  AI build-out.</span></div>
+              <div className={styles.Container_4_1278}><span className={styles.ItIntegratesOpenGovernmentDataFromSdaiaDgaAndOtherSourcesWithRealTimeAnalysisToBringTransparencyAndForesightToVision_2030_4_1279}>It integrates open government data &#x2014; from SDAIA, DGA, and
+                  other sources &#x2014; with real-time analysis to bring transparency
+                  and foresight to Vision 2030.</span></div>
+            </div>
+            <div className={styles.Container_4_1280}>
+              <div className={styles.Component_4_4_1281}><span className={styles.Text_4_1063}>Policy &#x26; Regulation Tracking</span></div>
+              <div className={styles.Component_4_4_1283}><span className={styles.Text_4_1063}>Investment &#x26; Infrastructure Visibility</span></div>
+              <div className={styles.Component_4_4_1285}><span className={styles.Text_4_1063}>Skills, Talent &#x26; AI Workforce Signals</span></div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.Section_4_1287}>
+          <div className={styles.Heading_2_4_1288}><span className={styles.TheInsightCoPilot_4_1289}>The Insight Co-Pilot</span></div>
+          <div className={styles.Container_4_1290}><span className={styles.ABilingualAiAssistantForInvestorsInnovatorsAndPolicymakersTurningOpenSaudiDataIntoRealTimeForesight_4_1291}>A bilingual AI assistant for investors, innovators, and policymakers &#x2014; turning open
+              Saudi data into real-time foresight.</span></div>
+          <div className={styles.OverlayBorderOverlayBlur_4_1292}>
+            <div className={styles.Component_5_4_1293}><span className={styles.generated__4_1069}>&#x22;</span><span className={styles.WhatIfSdaiaSComputeCapacityDoublesBy_2026_4_1070}>What if SDAIA&#x27;s compute capacity doubles by 2026?</span><span className={styles.generated__4_1071}>&#x22;</span></div>
+            <div className={styles.Component_5_4_1297}><span className={styles.generated__4_1077}>&#x22;</span><span className={styles.WhichSaudiRegionsAreAttractingTheMostAiStartupsThisQuarter_4_1078}>Which Saudi regions are attracting the most AI startups this quarter?</span><span className={styles.generated__4_1079}>&#x22;</span></div>
+            <div className={styles.Component_5_4_1301}><span className={styles.generated__4_1085}>&#x22;</span><span className={styles.HowWouldAiInvestmentFlowsShiftIfGpuImportsAreDelayed_4_1086}>How would AI investment flows shift if GPU imports are delayed?</span><span className={styles.generated__4_1087}>&#x22;</span></div>
+            <div className={styles.Component_5_4_1305}><span className={styles.generated__4_1093}>&#x22;</span><span className={styles.WhichSectorsWillSeeTheHighestAiTalentDemandNextYear_4_1094}>Which sectors will see the highest AI talent demand next year?</span><span className={styles.generated__4_1095}>&#x22;</span></div>
+          </div>
+          <div className={styles.Container_4_1309}><span className={styles.PoweredByOpenSaudiDataAiAnalysis_4_1310}>Powered by open Saudi data + AI analysis</span></div>
+        </div>
+        <div className={styles.Section_4_1311}>
+          <div className={styles.Heading_2_4_1312}><span className={styles.WhatSComing_4_1313}>What&#x27;s Coming</span></div>
+          <div className={styles.Container_4_1314}><span className={styles.BuildingTheDataLayerOfSaudiArabiaSAiFuture_4_1315}>Building the data layer of Saudi Arabia&#x27;s AI future.</span></div>
+          <div className={styles.Container_4_1316}>
+            <div className={styles.Component_6_4_1317}>
+              <div className={styles.Heading_3_4_1103}><span className={styles.AiInvestmentObservatory_4_1104}>AI Investment
+                  Observatory</span></div>
+              <div className={styles.Container_4_1105}><span className={styles.TrackDealsMoUsProgramsShapingSaudiArabiaSAiEconomyInRealTime_4_1106}>Track deals, MOUs &#x26; programs
+                  shaping Saudi Arabia&#x27;s AI economy
+                  in real-time.</span></div>
+            </div>
+            <div className={styles.Component_6_4_1322}>
+              <div className={styles.Heading_3_4_1114}><span className={styles.RegulatoryIntelligence_4_1115}>Regulatory Intelligence</span></div>
+              <div className={styles.Container_4_1116}><span className={styles.LiveBilingualTrackerOfAiLawsStandardsAndPolicyDevelopments_4_1117}>Live bilingual tracker of AI laws,
+                  standards, and policy developments.</span></div>
+            </div>
+            <div className={styles.Component_6_4_1327}>
+              <div className={styles.Heading_3_4_1125}><span className={styles.TalentSkillsSignals_4_1126}>Talent &#x26; Skills Signals</span></div>
+              <div className={styles.Container_4_1127}><span className={styles.MapWhereAiSkillsAreBeingTrainedFundedAndDeployedAcrossTheKingdom_4_1128}>Map where AI skills are being
+                  trained, funded, and deployed
+                  across the Kingdom.</span></div>
+            </div>
+          </div>
+          <div className={styles.Container_4_1332}><span className={styles.Launching_2026EarlyPartnersWelcome_4_1333}>Launching 2026 &#x2014; early partners welcome.</span></div>
+        </div>
+        <div className={styles.Section_4_1334}>
+          <div className={styles.Heading_2_4_1335}><span className={styles.GetInTouch_4_1336}>Get in Touch</span></div>
+          <div className={styles.Container_4_1337}><span className={styles.InterestedInSponsoringPartneringOrEarlyAccessLetSTalk_4_1338}>Interested in sponsoring, partnering, or early access? Let&#x27;s talk.</span></div>
+          <div className={styles.Form_4_1339}>
+            <div className={styles.Container_4_1340}>
+              <div className={styles.Label_4_1341}><span className={styles.Name_4_1342}>Name</span></div>
+              <div className={styles.Input_4_1343}></div>
+            </div>
+            <div className={styles.Container_4_1344}>
+              <div className={styles.Label_4_1345}><span className={styles.Organization_4_1346}>Organization</span></div>
+              <div className={styles.Input_4_1347}></div>
+            </div>
+            <div className={styles.Container_4_1348}>
+              <div className={styles.Label_4_1349}><span className={styles.Email_4_1350}>Email</span></div>
+              <div className={styles.Input_4_1351}></div>
+            </div>
+            <div className={styles.Container_4_1352}>
+              <div className={styles.Label_4_1353}><span className={styles.Message_4_1354}>Message</span></div>
+              <div className={styles.Textarea_4_1355}></div>
+            </div>
+            <div className={styles.Component_7_4_1356}><span className={styles.Text_4_1132}>Send Message</span></div>
+          </div>
+        </div>
+        <div className={styles.Image_2_6_67}></div>
+      </div>
+    </div>
+  );
+}
+```
+
