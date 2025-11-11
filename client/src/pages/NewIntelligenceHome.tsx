@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import SunburstLogo from "@/components/SunburstLogo";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import logoImage from "@assets/The Aqool Wire_1762849230304.jpg";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -76,10 +76,33 @@ export default function NewIntelligenceHome() {
 
       <AnimatedBackground />
 
+      {/* Header */}
+      <header className="relative z-20 w-full border-b border-cyan-500/20 bg-gray-900/40 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+          <Link href="/" data-testid="link-logo">
+            <img 
+              src={logoImage} 
+              alt="The Aqool Wire" 
+              className="h-10 md:h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+            />
+          </Link>
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
+            <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
+            <a href="#vision" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Vision</a>
+            <Button 
+              size="sm"
+              className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold"
+              asChild
+            >
+              <a href="#contact">Contact</a>
+            </Button>
+          </nav>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section id="hero" className="relative z-10 min-h-[90vh] flex flex-col justify-center px-4 md:px-8 py-32 max-w-6xl mx-auto">
-        <SunburstLogo size={60} />
-        
+      <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto">
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm font-semibold mb-10 max-w-max" style={{ color: 'hsl(var(--cyan-bright))' }}>
           <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_hsl(var(--cyan-bright))] animate-[pulse-dot_2s_ease-in-out_infinite]" />
           Accelerating Vision 2030's AI Momentum
@@ -324,8 +347,12 @@ export default function NewIntelligenceHome() {
       {/* Footer */}
       <footer id="footer" className="relative z-10 py-20 px-4 md:px-8 border-t border-cyan-500/20 text-center">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-10">
-            <SunburstLogo size={60} />
+          <div className="mb-10 flex justify-center">
+            <img 
+              src={logoImage} 
+              alt="The Aqool Wire" 
+              className="h-12 w-auto"
+            />
           </div>
 
           <h3 className="text-xl font-semibold mb-6 text-cyan-400">Follow Us</h3>
