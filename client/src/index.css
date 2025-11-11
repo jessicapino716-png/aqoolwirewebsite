@@ -840,3 +840,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Map glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 40px rgba(7, 235, 208, 0.3)) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 60px rgba(7, 235, 208, 0.6)) brightness(1.15);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
