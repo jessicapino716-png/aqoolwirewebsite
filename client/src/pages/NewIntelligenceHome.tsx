@@ -74,32 +74,38 @@ export default function NewIntelligenceHome() {
         <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
       </Helmet>
       <AnimatedBackground />
-      {/* Header */}
-      <header className="relative z-20 w-full border-b border-cyan-500/20" style={{ backgroundColor: '#0a1628' }}>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
-          <Link href="/" data-testid="link-logo">
-            <img 
-              src={logoImage} 
-              alt="The Aqool Wire" 
-              className="h-14 w-auto cursor-pointer hover:opacity-80 transition-opacity"
-            />
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
-            <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
-            <a href="#vision" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Vision</a>
-            <Button 
-              size="sm"
-              className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold"
-              asChild
-            >
-              <a href="#contact">Contact</a>
-            </Button>
-          </nav>
-        </div>
-      </header>
-      {/* Hero Section */}
-      <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto ml-[20px] mr-[20px]">
+      
+      {/* Header + Hero Container with Gradient */}
+      <div className="relative" style={{
+        background: 'radial-gradient(91.18% 145.89% at 20% 30%, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0) 40%), radial-gradient(91.18% 145.89% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(58.96% 94.34% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
+      }}>
+        {/* Header */}
+        <header className="relative z-20 w-full border-b border-cyan-500/20">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
+            <Link href="/" data-testid="link-logo">
+              <img 
+                src={logoImage} 
+                alt="The Aqool Wire" 
+                className="h-14 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </Link>
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
+              <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
+              <a href="#vision" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Vision</a>
+              <Button 
+                size="sm"
+                className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold"
+                asChild
+              >
+                <a href="#contact">Contact</a>
+              </Button>
+            </nav>
+          </div>
+        </header>
+        
+        {/* Hero Section */}
+        <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto">
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm font-semibold mb-10 max-w-max" style={{ color: 'hsl(var(--cyan-bright))' }}>
           <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_hsl(var(--cyan-bright))] animate-[pulse-dot_2s_ease-in-out_infinite]" />
           Accelerating Vision 2030's AI Momentum
@@ -138,6 +144,8 @@ export default function NewIntelligenceHome() {
           </Button>
         </div>
       </section>
+      </div>
+      
       {/* About Section */}
       <section id="about" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-base)) 0%, hsl(var(--bg-light)) 100%)' }}>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16">What We Do</h2>
