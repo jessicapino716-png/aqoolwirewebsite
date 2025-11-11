@@ -94,7 +94,7 @@ export default function NewIntelligenceHome() {
               <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
               <Button 
                 size="sm"
-                className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold"
+                className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold shadow-[0_4px_14px_rgba(0,217,200,0.4)] hover:shadow-[0_6px_20px_rgba(0,217,200,0.5)] transition-all hover:-translate-y-0.5"
                 asChild
               >
                 <a href="#contact">Contact</a>
