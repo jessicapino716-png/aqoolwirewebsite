@@ -74,7 +74,20 @@ export default function NewIntelligenceHome() {
       <Helmet>
         <title>The Aqool Wire - Intelligence Platform</title>
         <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
-        <link rel="icon" type="image/png" href={logoImage} />
+        
+        {/* Favicon - Multiple sizes for optimal display */}
+        <link rel="icon" type="image/png" sizes="16x16" href={logoImage} />
+        <link rel="icon" type="image/png" sizes="32x32" href={logoImage} />
+        <link rel="icon" type="image/png" sizes="48x48" href={logoImage} />
+        <link rel="icon" type="image/png" sizes="64x64" href={logoImage} />
+        <link rel="icon" type="image/png" sizes="128x128" href={logoImage} />
+        
+        {/* Apple Touch Icon */}
+        <link rel="apple-touch-icon" sizes="180x180" href={logoImage} />
+        
+        {/* Android Chrome */}
+        <link rel="icon" type="image/png" sizes="192x192" href={logoImage} />
+        <link rel="icon" type="image/png" sizes="512x512" href={logoImage} />
       </Helmet>
       <AnimatedBackground />
       {/* Header + Hero Container with Gradient */}
