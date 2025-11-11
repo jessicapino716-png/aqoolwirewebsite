@@ -177,9 +177,7 @@ export default function NewIntelligenceHome() {
                 }} />
                 <span className="text-xs md:text-sm font-semibold tracking-wide" style={{
                   color: '#07ebd0'
-                }}>
-                  Accelerating Vision 2030's AI Momentum
-                </span>
+                }}>Supercharging Vision 2030's AI Momentum</span>
               </div>
 
               {/* Main Heading */}
