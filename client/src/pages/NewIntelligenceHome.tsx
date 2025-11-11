@@ -138,7 +138,10 @@ export default function NewIntelligenceHome() {
             letterSpacing: '-1.76px',
             maxWidth: '1140px'
           }}>
-            The Data Terminal Powering Saudi Arabia's AI Transformation
+            The Data Platform<br />
+            Accelerating<br />
+            Saudi Arabia's<br />
+            AI Transformation
           </h1>
 
           {/* Subheading */}
