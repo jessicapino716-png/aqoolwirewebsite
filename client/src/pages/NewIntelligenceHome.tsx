@@ -300,33 +300,6 @@ export default function NewIntelligenceHome() {
           <div className="mt-8 text-center text-sm font-semibold tracking-wide text-green-400">POWERED BY REAL-TIME DATA INTEGRATION</div>
         </div>
       </section>
-      {/* Vision Section */}
-      <section id="vision" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, rgba(0, 255, 65, 0.03) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">Our Vision</h2>
-        
-        <p className="text-xl text-center mb-20" style={{ color: 'hsl(var(--gray-light))' }}>
-          Building the definitive intelligence layer for AI investment in the GCC
-        </p>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {[
-            { title: 'Complete Coverage', description: 'Track every policy, project, and investment across the Saudi AI ecosystem' },
-            { title: 'Real-Time Intelligence', description: 'Get updates as they happen, not after the opportunity has passed' },
-            { title: 'Actionable Insights', description: 'Move from data to decisions with clear investment signals' },
-            { title: 'Network Effects', description: 'Connect with other investors, providers, and stakeholders' },
-            { title: 'Stack Visibility', description: 'See the full picture from chips to applications' },
-            { title: 'Timing Intelligence', description: 'Identify the right moment to enter markets and deploy capital' }
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="px-8 py-10 bg-gray-900/40 border border-cyan-500/20 rounded-xl relative overflow-hidden group hover:-translate-y-2 hover:border-cyan-500 hover:shadow-[0_16px_40px_rgba(0,217,200,0.3)] transition-all before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-green-400 before:via-cyan-400 before:to-blue-500 before:scale-x-0 before:origin-left before:transition-transform hover:before:scale-x-100"
-            >
-              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">{item.title}</h3>
-              <p className="text-lg" style={{ color: 'hsl(var(--gray-light))' }}>{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">Get In Touch</h2>
