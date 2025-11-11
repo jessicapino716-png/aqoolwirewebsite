@@ -297,9 +297,7 @@ export default function NewIntelligenceHome() {
             </div>
           ))}
           
-          <div className="mt-8 text-center text-sm font-semibold tracking-wide text-green-400">
-            POWERED BY REAL-TIME SIGNAL SYNTHESIS
-          </div>
+          <div className="mt-8 text-center text-sm font-semibold tracking-wide text-green-400">POWERED BY REAL-TIME DATA INTEGRATION</div>
         </div>
       </section>
       {/* Vision Section */}
