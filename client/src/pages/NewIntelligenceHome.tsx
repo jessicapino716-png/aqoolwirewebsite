@@ -432,7 +432,7 @@ export default function NewIntelligenceHome() {
         </form>
       </section>
       {/* Footer */}
-      <footer id="footer" className="relative z-10 py-16 md:py-20 px-4 md:px-8 border-t border-cyan-500/20 text-center">
+      <footer id="footer" className="relative z-10 py-16 md:py-20 px-4 md:px-8 border-t border-cyan-500/20 text-center pt-[10px] pb-[10px]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 md:mb-10 flex justify-center">
             <img 
