@@ -86,7 +86,7 @@ export default function NewIntelligenceHome() {
               <img 
                 src={logoImage} 
                 alt="The Aqool Wire" 
-                className="h-14 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                className="h-20 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
             <nav className="hidden md:flex items-center gap-8">
