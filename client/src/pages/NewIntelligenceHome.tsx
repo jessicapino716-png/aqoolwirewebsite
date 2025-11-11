@@ -90,7 +90,7 @@ export default function NewIntelligenceHome() {
               />
             </Link>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
+              <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Our Vision</a>
               <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
               <Button 
                 size="sm"
