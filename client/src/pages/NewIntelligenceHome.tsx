@@ -18,6 +18,7 @@ export default function NewIntelligenceHome() {
     consent: false,
   });
   const [submitting, setSubmitting] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,6 +90,7 @@ export default function NewIntelligenceHome() {
                 className="h-20 md:h-32 lg:h-40 w-auto cursor-pointer hover:opacity-80 transition-opacity -my-4 md:-my-6 lg:-my-8"
               />
             </Link>
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Our Vision</a>
               <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
@@ -100,7 +102,59 @@ export default function NewIntelligenceHome() {
                 <a href="#contact">Contact</a>
               </Button>
             </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+              data-testid="button-mobile-menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {mobileMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden border-t border-cyan-500/20 bg-[#0f1e2e]">
+              <nav className="flex flex-col px-4 py-4 space-y-3">
+                <a 
+                  href="#about" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors font-medium py-2"
+                >
+                  Our Vision
+                </a>
+                <a 
+                  href="#copilot" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors font-medium py-2"
+                >
+                  Co-Pilot
+                </a>
+                <a 
+                  href="#contact" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold bg-cyan-500 hover:bg-cyan-400 text-gray-900 rounded-lg shadow-[0_4px_14px_rgba(0,217,200,0.4)] transition-all"
+                >
+                  Contact
+                </a>
+              </nav>
+            </div>
+          )}
         </header>
         
         {/* Hero Section */}
