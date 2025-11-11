@@ -1,73 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE */
+/* DARK MODE - New Design */
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
+  --button-outline: rgba(0, 217, 200, 0.3);
+  --badge-outline: rgba(0, 217, 200, 0.2);
 
   /* Automatic computation of border around primary / danger buttons */
   --opaque-button-border-intensity: -8; /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
+  --elevate-1: rgba(0, 217, 200, 0.05);
+  --elevate-2: rgba(0, 217, 200, 0.1);
 
-  --background: 0 0% 100%;
-
-  --foreground: 0 0% 0%;
-
-  --border: 0 0% 90%;
-
-  --card: 0 0% 100%;
-
-  --card-foreground: 0 0% 0%;
-
-  --card-border: 0 0% 90%;
-
-  --sidebar: 0 0% 100%;
-
-  --sidebar-foreground: 0 0% 0%;
-
-  --sidebar-border: 0 0% 90%;
-
-  --sidebar-primary: 221 91% 60%;
-
-  --sidebar-primary-foreground: 0 0% 100%;
-
-  --sidebar-accent: 0 0% 97%;
-
-  --sidebar-accent-foreground: 0 0% 45%;
-
-  --sidebar-ring: 221 97% 53%;
-
-  --popover: 0 0% 100%;
-
-  --popover-foreground: 0 0% 0%;
-
-  --popover-border: 0 0% 90%;
-
-  --primary: 221 91% 60%;
-
-  --primary-foreground: 0 0% 100%;
-
-  --secondary: 0 0% 96%;
-
-  --secondary-foreground: 0 0% 45%;
-
-  --muted: 0 0% 97%;
-
-  --muted-foreground: 0 0% 45%;
-
-  --accent: 0 0% 97%;
-
-  --accent-foreground: 0 0% 45%;
-
+  /* New color scheme - dark theme */
+  --bg-dark: 210 52% 10%;  /* #0a1628 */
+  --bg-base: 210 50% 12%;  /* #0f1e2e */
+  --bg-light: 210 45% 18%; /* #1a2942 */
+  
+  --background: 210 52% 10%;  /* #0a1628 */
+  --foreground: 0 0% 100%;    /* white */
+  
+  --border: 180 100% 43% / 0.2;  /* cyan with opacity */
+  
+  --card: 210 50% 12%;        /* #0f1e2e */
+  --card-foreground: 0 0% 100%;
+  --card-border: 180 100% 43% / 0.2;
+  
+  --sidebar: 210 50% 12%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 180 100% 43% / 0.2;
+  
+  --sidebar-primary: 180 100% 43%;  /* cyan */
+  --sidebar-primary-foreground: 210 52% 10%;
+  
+  --sidebar-accent: 210 45% 18%;
+  --sidebar-accent-foreground: 180 100% 58%;
+  
+  --sidebar-ring: 180 100% 43%;
+  
+  --popover: 210 50% 12%;
+  --popover-foreground: 0 0% 100%;
+  --popover-border: 180 100% 43% / 0.2;
+  
+  --primary: 180 100% 43%;      /* cyan #00d9c8 */
+  --primary-foreground: 210 52% 10%;
+  
+  --secondary: 210 45% 18%;
+  --secondary-foreground: 180 100% 58%;
+  
+  --muted: 210 45% 18%;
+  --muted-foreground: 217 10% 65%;  /* gray-medium */
+  
+  --accent: 180 100% 43%;
+  --accent-foreground: 210 52% 10%;
+  
   --destructive: 0 84% 60%;
-
   --destructive-foreground: 0 0% 98%;
 
   --input: 220 13% 80%;
@@ -78,9 +69,20 @@
   --chart-4: 280 65% 50%;
   --chart-5: 340 82% 52%;
 
-  --font-sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "DM Serif Display", Georgia, serif;
-  --font-mono: "DM Mono", Menlo, monospace;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Inter", Georgia, serif;
+  --font-mono: "Inter", Menlo, monospace;
+  
+  /* New design colors */
+  --green-bright: 130 100% 50%;  /* #00ff41 */
+  --green: 130 100% 45%;         /* #00e436 */
+  --cyan: 180 100% 43%;          /* #00d9c8 */
+  --cyan-bright: 180 100% 58%;   /* #00ffd9 */
+  --blue: 203 100% 50%;          /* #0099ff */
+  --blue-bright: 203 100% 56%;   /* #00b4ff */
+  --gray-light: 216 30% 90%;     /* #e2e8f0 */
+  --gray-medium: 217 10% 65%;    /* #94a3b8 */
+  --gray-dark: 217 16% 38%;      /* #475569 */
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(220 13% 9% / 0.02);
   --shadow-xs: 0px 2px 0px 0px hsl(220 13% 9% / 0.03);
@@ -813,4 +815,28 @@
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
+}
+/* Animated Vector Grid Background */
+@keyframes grid-move {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* New design global styles */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }

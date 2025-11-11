@@ -29,6 +29,7 @@ import Cookies from "@/pages/Cookies";
 import Disclaimers from "@/pages/Disclaimers";
 import NotFound from "@/pages/not-found";
 import NewHome from "@/pages/NewHome";
+import NewIntelligenceHome from "@/pages/NewIntelligenceHome";
 import Insights from "@/pages/Insights";
 import AIInvestmentObservatory from "@/pages/AIInvestmentObservatory";
 
@@ -42,7 +43,7 @@ function Router() {
 
   return (
     <Switch>
-      <Route path="/" component={NewHome} />
+      <Route path="/" component={NewIntelligenceHome} />
       <Route path="/insights" component={Insights} />
       <Route path="/aiinvestmentobservatory" component={AIInvestmentObservatory} />
       <Route path="/policy" component={() => <CategoryPage />} />
