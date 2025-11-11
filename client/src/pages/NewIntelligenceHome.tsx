@@ -432,35 +432,41 @@ export default function NewIntelligenceHome() {
         </form>
       </section>
       {/* Footer */}
-      <footer id="footer" className="relative z-10 py-16 md:py-20 px-4 md:px-8 border-t border-cyan-500/20 text-center pt-[10px] pb-[10px]">
+      <footer id="footer" className="relative z-10 py-16 md:py-20 px-4 md:px-8 border-t border-cyan-500/20 pt-[10px] pb-[10px]">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-8 md:mb-10 flex justify-center">
-            <img 
-              src={logoImage} 
-              alt="The Aqool Wire" 
-              className="h-40 md:h-56 lg:h-64 w-auto mt-3 md:mt-4"
-            />
+          <div className="grid md:grid-cols-2 gap-8 mb-8 md:mb-10">
+            {/* Left Column - Logo */}
+            <div className="flex justify-start">
+              <img 
+                src={logoImage} 
+                alt="The Aqool Wire" 
+                className="h-40 md:h-56 lg:h-64 w-auto mt-3 md:mt-4"
+              />
+            </div>
+
+            {/* Right Column - Social & Info */}
+            <div className="flex flex-col items-start md:items-end">
+              <h3 className="text-lg md:text-xl font-semibold mb-5 md:mb-6 text-cyan-400">Follow Us</h3>
+
+              <div className="flex gap-4 md:gap-5 mb-8 md:mb-10">
+                <a
+                  href="https://www.linkedin.com/company/the-aqool-wire"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 border-2 border-cyan-500 rounded-full flex items-center justify-center text-cyan-400 text-lg font-semibold hover:bg-cyan-500 hover:text-gray-900 transition-all hover:-translate-y-1"
+                  data-testid="link-linkedin"
+                >
+                  in
+                </a>
+              </div>
+
+              <div className="text-lg md:text-xl font-semibold text-green-400 mb-5 md:mb-6">
+                Launching in 2026
+              </div>
+            </div>
           </div>
 
-          <h3 className="text-lg md:text-xl font-semibold mb-5 md:mb-6 text-cyan-400">Follow Us</h3>
-
-          <div className="flex gap-4 md:gap-5 justify-center mb-8 md:mb-10">
-            <a
-              href="https://www.linkedin.com/company/the-aqool-wire"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 border-2 border-cyan-500 rounded-full flex items-center justify-center text-cyan-400 text-lg font-semibold hover:bg-cyan-500 hover:text-gray-900 transition-all hover:-translate-y-1"
-              data-testid="link-linkedin"
-            >
-              in
-            </a>
-          </div>
-
-          <div className="text-center text-lg md:text-xl font-semibold text-green-400 mb-5 md:mb-6">
-            Launching in 2026
-          </div>
-
-          <p className="text-xs md:text-sm" style={{ color: 'hsl(var(--gray-medium))' }}>
+          <p className="text-xs md:text-sm text-center" style={{ color: 'hsl(var(--gray-medium))' }}>
             © {new Date().getFullYear()} The Aqool Wire. All rights reserved.
           </p>
         </div>
