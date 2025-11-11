@@ -354,9 +354,8 @@ export default function NewIntelligenceHome() {
               data-testid="select-interest"
             >
               <option value="">Select your interest</option>
-              <option value="Investor">Investor</option>
-              <option value="Solution Provider">Solution Provider</option>
-              <option value="Fund">Fund</option>
+              <option value="Sponsor">Sponsor</option>
+              <option value="Future Customer">Future Customer</option>
               <option value="Other">Other</option>
             </select>
           </div>
