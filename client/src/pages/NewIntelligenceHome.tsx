@@ -138,7 +138,7 @@ export default function NewIntelligenceHome() {
                 color: '#FFFFFF',
                 fontSize: '88px',
                 fontWeight: 700,
-                lineHeight: '1.05',
+                lineHeight: '1.1',
                 letterSpacing: '-1.76px'
               }}>
                 The Data Platform<br />
@@ -211,7 +211,7 @@ export default function NewIntelligenceHome() {
               <img 
                 src={mapImage} 
                 alt="Saudi Arabia AI Network Map" 
-                className="w-full max-w-[600px] h-auto"
+                className="w-full max-w-[500px] h-auto"
                 style={{
                   filter: 'drop-shadow(0 0 40px rgba(7, 235, 208, 0.3))'
                 }}
