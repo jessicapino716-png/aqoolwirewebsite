@@ -76,18 +76,18 @@ export default function NewIntelligenceHome() {
         <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
         
         {/* Favicon - Multiple sizes for optimal display */}
-        <link rel="icon" type="image/png" sizes="16x16" href={logoImage} />
-        <link rel="icon" type="image/png" sizes="32x32" href={logoImage} />
-        <link rel="icon" type="image/png" sizes="48x48" href={logoImage} />
-        <link rel="icon" type="image/png" sizes="64x64" href={logoImage} />
-        <link rel="icon" type="image/png" sizes="128x128" href={logoImage} />
+        <link rel="icon" type="image/png" sizes="16x16" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="icon" type="image/png" sizes="64x64" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="icon" type="image/png" sizes="128x128" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
         
         {/* Apple Touch Icon */}
-        <link rel="apple-touch-icon" sizes="180x180" href={logoImage} />
+        <link rel="apple-touch-icon" sizes="180x180" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
         
         {/* Android Chrome */}
-        <link rel="icon" type="image/png" sizes="192x192" href={logoImage} />
-        <link rel="icon" type="image/png" sizes="512x512" href={logoImage} />
+        <link rel="icon" type="image/png" sizes="192x192" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
       </Helmet>
       <AnimatedBackground />
       {/* Header + Hero Container with Gradient */}
