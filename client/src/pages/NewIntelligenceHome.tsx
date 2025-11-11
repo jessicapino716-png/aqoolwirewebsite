@@ -405,7 +405,7 @@ export default function NewIntelligenceHome() {
             <img 
               src={logoImage} 
               alt="The Aqool Wire" 
-              className="h-28 w-auto"
+              className="h-28 w-auto mt-4"
             />
           </div>
 
