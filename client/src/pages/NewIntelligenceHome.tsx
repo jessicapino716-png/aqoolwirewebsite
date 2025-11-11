@@ -76,7 +76,7 @@ export default function NewIntelligenceHome() {
       <AnimatedBackground />
       {/* Header + Hero Container with Gradient */}
       <div className="relative" style={{
-        background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(94.34% 58.96% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
+        background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(100, 255, 180, 0.1) 0%, rgba(100, 255, 180, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(94.34% 58.96% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
       }}>
         {/* Header */}
         <header className="relative z-20 w-full border-b border-cyan-500/20">
