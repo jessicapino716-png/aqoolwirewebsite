@@ -92,7 +92,6 @@ export default function NewIntelligenceHome() {
             <nav className="hidden md:flex items-center gap-8">
               <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
               <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
-              <a href="#vision" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Vision</a>
               <Button 
                 size="sm"
                 className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold"
