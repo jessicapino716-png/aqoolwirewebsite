@@ -86,7 +86,7 @@ export default function NewIntelligenceHome() {
               <img 
                 src={logoImage} 
                 alt="The Aqool Wire" 
-                className="h-40 w-auto cursor-pointer hover:opacity-80 transition-opacity -my-8"
+                className="h-20 md:h-32 lg:h-40 w-auto cursor-pointer hover:opacity-80 transition-opacity -my-4 md:-my-6 lg:-my-8"
               />
             </Link>
             <nav className="hidden md:flex items-center gap-8">
@@ -109,7 +109,7 @@ export default function NewIntelligenceHome() {
             {/* Left Column - Text Content */}
             <div>
               {/* Badge with shadow dot */}
-              <div className="inline-flex items-center gap-2.5 px-6 py-3 mb-10 max-w-max" style={{
+              <div className="inline-flex items-center gap-2 md:gap-2.5 px-4 md:px-6 py-2 md:py-3 mb-6 md:mb-10 max-w-max" style={{
                 border: '1px solid rgba(0, 217, 200, 0.3)',
                 background: 'rgba(0, 217, 200, 0.1)',
                 borderRadius: '50px'
@@ -121,24 +121,17 @@ export default function NewIntelligenceHome() {
                   borderRadius: '4px',
                   boxShadow: '0 0 10px #07ebd0'
                 }} />
-                <span style={{
-                  color: '#07ebd0',
-                  fontSize: '14.4px',
-                  fontWeight: 600,
-                  letterSpacing: '0.288px',
-                  lineHeight: '23px'
+                <span className="text-xs md:text-sm font-semibold tracking-wide" style={{
+                  color: '#07ebd0'
                 }}>
                   Accelerating Vision 2030's AI Momentum
                 </span>
               </div>
 
               {/* Main Heading */}
-              <h1 className="mb-8" style={{
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight" style={{
                 color: '#FFFFFF',
-                fontSize: '64px',
-                fontWeight: 700,
-                lineHeight: '1.15',
-                letterSpacing: '-1.28px'
+                letterSpacing: '-0.02em'
               }}>
                 The Data Platform<br />
                 Accelerating<br />
@@ -147,35 +140,26 @@ export default function NewIntelligenceHome() {
               </h1>
 
               {/* Subheading */}
-              <p className="mb-5" style={{
-                color: '#E2E8F0',
-                fontSize: '22.4px',
-                fontWeight: 400,
-                lineHeight: '38px'
+              <p className="text-lg md:text-xl lg:text-2xl mb-4 md:mb-5 leading-relaxed" style={{
+                color: '#E2E8F0'
               }}>
                 Unifying fragmented data into actionable intelligence
               </p>
 
               {/* Description */}
-              <p className="mb-12" style={{
-                color: '#94A3B8',
-                fontSize: '18.4px',
-                fontWeight: 400,
-                lineHeight: '31.28px'
+              <p className="text-base md:text-lg mb-8 md:mb-12 leading-relaxed" style={{
+                color: '#94A3B8'
               }}>The first platform mapping capital flows, infrastructure, and partnerships across the Kingdom's $100B AI transformation</p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-5">
+              <div className="flex flex-wrap gap-3 md:gap-5">
                 <a 
                   href="#contact"
-                  className="inline-flex items-center px-9 py-4"
+                  className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     background: '#00D9C8',
                     borderRadius: '8px',
                     color: '#0A1628',
-                    fontSize: '16px',
-                    fontWeight: 600,
-                    lineHeight: '25.6px',
                     boxShadow: '0 4px 14px rgba(0, 217, 200, 0.4)',
                     textDecoration: 'none'
                   }}
@@ -185,14 +169,11 @@ export default function NewIntelligenceHome() {
                 </a>
                 <a 
                   href="#about"
-                  className="inline-flex items-center px-9 py-4"
+                  className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     border: '2px solid #00D9C8',
                     borderRadius: '8px',
                     color: '#00FFD9',
-                    fontSize: '16px',
-                    fontWeight: 600,
-                    lineHeight: '25.6px',
                     textDecoration: 'none',
                     background: 'transparent'
                   }}
@@ -218,18 +199,18 @@ export default function NewIntelligenceHome() {
         </section>
       </div>
       {/* About Section */}
-      <section id="about" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-base)) 0%, hsl(var(--bg-light)) 100%)' }}>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16">What We Do</h2>
+      <section id="about" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-base)) 0%, hsl(var(--bg-light)) 100%)' }}>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 md:mb-16">What We Do</h2>
         
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16">
           <div>
-            <p className="text-lg mb-6" style={{ color: 'hsl(var(--gray-light))' }}>
+            <p className="text-base md:text-lg mb-5 md:mb-6 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
               The Aqool Wire is building the first intelligence platform designed to track Saudi Arabia's AI transformation — from investment flows and policy developments to compute, cloud, and data infrastructure capacity.
             </p>
-            <p className="text-lg mb-6" style={{ color: 'hsl(var(--gray-light))' }}>
+            <p className="text-base md:text-lg mb-5 md:mb-6 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
               Our goal is to make the Kingdom's AI ecosystem visible, measurable, and connected — linking the dots between funding, infrastructure buildouts, and strategic partnerships driving Vision 2030's digital economy.
             </p>
-            <p className="text-lg" style={{ color: 'hsl(var(--gray-light))' }}>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
               The platform is currently in development, with early partners helping us shape the tools that will power the next generation of AI insight and opportunity.
             </p>
           </div>
@@ -259,26 +240,26 @@ export default function NewIntelligenceHome() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="px-6 py-5 bg-cyan-500/5 border-l-[3px] border-cyan-500 rounded hover:bg-cyan-500/10 hover:border-green-400 transition-all hover:translate-x-2"
+                className="px-4 md:px-6 py-4 md:py-5 bg-cyan-500/5 border-l-[3px] border-cyan-500 rounded hover:bg-cyan-500/10 hover:border-green-400 transition-all hover:translate-x-2"
               >
-                <h3 className="text-lg font-semibold mb-2 text-cyan-400">{feature.title}</h3>
-                <p className="text-base" style={{ color: 'hsl(var(--gray-light))' }}>{feature.description}</p>
+                <h3 className="text-base md:text-lg font-semibold mb-2 text-cyan-400">{feature.title}</h3>
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       {/* Co-Pilot Section */}
-      <section id="copilot" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-dark)) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">
+      <section id="copilot" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-dark)) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">
           Your <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">AI Investment Co-Pilot</span>
         </h2>
         
-        <p className="text-xl text-center mb-16 max-w-3xl mx-auto" style={{ color: 'hsl(var(--gray-light))' }}>
+        <p className="text-base md:text-lg lg:text-xl text-center mb-10 md:mb-16 max-w-3xl mx-auto leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
           Ask questions, get intelligence. Our platform connects signals across policy, markets, and capital to surface actionable insights.
         </p>
 
-        <div className="max-w-3xl mx-auto bg-gray-900/50 border border-cyan-500/20 rounded-xl p-9 backdrop-blur">
+        <div className="max-w-3xl mx-auto bg-gray-900/50 border border-cyan-500/20 rounded-xl p-5 md:p-9 backdrop-blur">
           {[
             'What if AI infrastructure investment doubles — how will compute capacity respond?',
             'Which Saudi funds are actively investing in AI?',
@@ -287,23 +268,23 @@ export default function NewIntelligenceHome() {
           ].map((query, index) => (
             <div
               key={index}
-              className="px-6 py-5 bg-gray-900/60 border border-cyan-500/20 rounded-lg mb-4 text-lg hover:border-cyan-500 hover:bg-cyan-500/8 transition-all hover:translate-x-1 relative"
+              className="px-4 md:px-6 py-4 md:py-5 bg-gray-900/60 border border-cyan-500/20 rounded-lg mb-3 md:mb-4 text-sm md:text-base lg:text-lg hover:border-cyan-500 hover:bg-cyan-500/8 transition-all hover:translate-x-1 relative leading-relaxed"
               style={{ color: 'hsl(var(--gray-light))' }}
             >
-              <span className="text-cyan-400 font-bold text-xl mr-1">"</span>
+              <span className="text-cyan-400 font-bold text-lg md:text-xl mr-1">"</span>
               {query}
-              <span className="text-cyan-400 font-bold text-xl ml-1">"</span>
+              <span className="text-cyan-400 font-bold text-lg md:text-xl ml-1">"</span>
             </div>
           ))}
           
-          <div className="mt-8 text-center text-sm font-semibold tracking-wide text-green-400">POWERED BY REAL-TIME DATA INTEGRATION</div>
+          <div className="mt-6 md:mt-8 text-center text-xs md:text-sm font-semibold tracking-wide text-green-400">POWERED BY REAL-TIME DATA INTEGRATION</div>
         </div>
       </section>
       {/* Contact Section */}
-      <section id="contact" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">Get In Touch</h2>
+      <section id="contact" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">Get In Touch</h2>
         
-        <p className="text-xl text-center mb-16" style={{ color: 'hsl(var(--gray-light))' }}>
+        <p className="text-base md:text-lg lg:text-xl text-center mb-10 md:mb-16 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
           Interested in early access? Let's talk.
         </p>
 
@@ -398,19 +379,19 @@ export default function NewIntelligenceHome() {
         </form>
       </section>
       {/* Footer */}
-      <footer id="footer" className="relative z-10 py-20 px-4 md:px-8 border-t border-cyan-500/20 text-center pt-[0px] pb-[0px]">
+      <footer id="footer" className="relative z-10 py-16 md:py-20 px-4 md:px-8 border-t border-cyan-500/20 text-center">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-10 flex justify-center">
+          <div className="mb-8 md:mb-10 flex justify-center">
             <img 
               src={logoImage} 
               alt="The Aqool Wire" 
-              className="h-28 w-auto mt-4"
+              className="h-16 md:h-24 lg:h-28 w-auto mt-3 md:mt-4"
             />
           </div>
 
-          <h3 className="text-xl font-semibold mb-6 text-cyan-400">Follow Us</h3>
+          <h3 className="text-lg md:text-xl font-semibold mb-5 md:mb-6 text-cyan-400">Follow Us</h3>
 
-          <div className="flex gap-5 justify-center mb-10">
+          <div className="flex gap-4 md:gap-5 justify-center mb-8 md:mb-10">
             <a
               href="https://www.linkedin.com/company/the-aqool-wire"
               target="_blank"
@@ -422,11 +403,11 @@ export default function NewIntelligenceHome() {
             </a>
           </div>
 
-          <div className="text-center text-xl font-semibold text-green-400 mb-6">
+          <div className="text-center text-lg md:text-xl font-semibold text-green-400 mb-5 md:mb-6">
             Launching in 2026
           </div>
 
-          <p className="text-sm" style={{ color: 'hsl(var(--gray-medium))' }}>
+          <p className="text-xs md:text-sm" style={{ color: 'hsl(var(--gray-medium))' }}>
             © {new Date().getFullYear()} The Aqool Wire. All rights reserved.
           </p>
         </div>
