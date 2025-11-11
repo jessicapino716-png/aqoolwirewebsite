@@ -114,9 +114,9 @@ export default function NewIntelligenceHome() {
             <div style={{
               width: '8px',
               height: '8px',
-              background: '#00FFD9',
+              background: '#07ebd0',
               borderRadius: '4px',
-              boxShadow: '0 0 10px #00FFD9'
+              boxShadow: '0 0 10px #07ebd0'
             }} />
             <span style={{
               color: '#07ebd0',
