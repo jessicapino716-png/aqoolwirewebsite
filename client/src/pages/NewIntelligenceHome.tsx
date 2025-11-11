@@ -328,7 +328,7 @@ export default function NewIntelligenceHome() {
         </div>
 
         <div className="text-center text-xl font-semibold text-green-400">
-          Launching Q2 2025
+          Launching in 2026
         </div>
       </section>
       {/* Contact Section */}
