@@ -281,7 +281,7 @@ export default function NewIntelligenceHome() {
 
         <div className="max-w-3xl mx-auto bg-gray-900/50 border border-cyan-500/20 rounded-xl p-9 backdrop-blur">
           {[
-            'What AI infrastructure is being built in NEOM?',
+            'What if AI infrastructure investment doubles — how will compute capacity respond?',
             'Which Saudi funds are actively investing in AI?',
             'Where are the capability gaps in the current stack?',
             'What are the upcoming policy changes in AI regulation?'
