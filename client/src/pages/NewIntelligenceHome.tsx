@@ -105,7 +105,7 @@ export default function NewIntelligenceHome() {
         </header>
         
         {/* Hero Section */}
-        <section id="hero" className="relative z-10 min-h-[85vh] flex items-center px-4 md:px-8 py-24 max-w-[1400px] mx-auto">
+        <section id="hero" className="relative z-10 min-h-[85vh] flex items-center px-4 md:px-8 py-24 max-w-[1400px] mx-auto pt-[20px] pb-[20px]">
           <div className="grid md:grid-cols-2 gap-12 items-center w-full">
             {/* Left Column - Text Content */}
             <div>
