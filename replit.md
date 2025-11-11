@@ -1,17 +1,19 @@
-# The Aqool Wire - Marketing Landing Page
+# The Aqool Wire - Intelligence Platform
 
 ## Overview
 
-The Aqool Wire is a marketing landing page showcasing AI investment opportunities in Saudi Arabia and the GCC region. The project features custom SVG visualizations, an interactive contact form with SendGrid integration, and an Insights section preserving all existing articles. The site uses a modern dark theme with custom art components to highlight investment opportunities in Saudi Arabia's AI sector.
+The Aqool Wire is a tech-forward intelligence platform for AI investment opportunities in Saudi Arabia and the GCC region. The site features a dark, immersive design with animated backgrounds, custom sunburst logo, and cyan/green/blue accent colors. SendGrid integration powers the contact form for lead capture.
 
-**Recent Migration (November 2025):**
-- Transformed from news website to marketing landing page
+**Latest Redesign (November 2025):**
+- Complete visual rebrand to dark intelligence platform aesthetic
+- New color scheme: Dark backgrounds (#0a1628, #0f1e2e, #1a2942) with cyan/green/blue accents (#00d9c8, #00ff41, #0099ff)
+- Typography changed from DM Sans to Inter font family
+- Animated grid background with gradient overlays for dynamic visual effect
+- Custom 24-ray sunburst logo component with gradient rays
+- Single-page homepage (NewIntelligenceHome.tsx) with 6 sections: Hero, About, Co-Pilot, Vision, Contact, Footer
+- Maintained SendGrid contact form integration (verified working)
 - All existing articles preserved in dedicated Insights section
-- Custom SVG art visualizations (AnimatedSaudiMap, ArchitectureLayers, OpportunityGraph, etc.)
 - Conditional navigation: marketing pages have custom navigation, other routes use global Header/Footer
-- Dark theme with teal accent color (#2bd4a7) for marketing sections
-- Logo background color (#0a1628 - dark navy blue) applied to all header navigation bars
-- Single service offering: AI Investment Observatory
 
 ## User Preferences
 
@@ -40,31 +42,30 @@ Preferred communication style: Simple, everyday language.
 
 ### Design System
 - **Component Library**: Custom shadcn/ui implementation with extensive component coverage
-- **Typography**: Google DeepMind font system - DM Sans (primary), DM Serif Display (headings), DM Mono (code)
-  - DM Sans: Low-contrast geometric sans-serif for body text and UI elements
-  - DM Serif Display: Serif font for emphasis and editorial content  
-  - DM Mono: Monospace font for code snippets
-  - All fonts loaded from Google Fonts CDN
-- **Color Scheme**: Pure black background (0 0% 0%) with subtle gray cards and elements for contrast, maintaining the teal accent (#2bd4a7) for marketing highlights
+- **Typography**: Inter font family (weights 300-800) for modern, technical aesthetic
+  - Primary font for all text: Inter
+  - Loaded from Google Fonts CDN
+- **Color Scheme**: Dark intelligence platform theme
+  - Backgrounds: #0a1628 (dark), #0f1e2e (base), #1a2942 (light)
+  - Primary Accent: #00d9c8 (cyan)
+  - Secondary Accents: #00ff41 (green), #0099ff (blue)
+  - Text: white, #e2e8f0 (light gray), #94a3b8 (medium gray)
+  - CSS variables: --bg-dark, --bg-base, --bg-light, --cyan-primary, --green-accent, --blue-accent, --gray-light, --gray-medium
 - **Layout**: Responsive grid system with mobile-first approach
 - **Spacing**: Consistent Tailwind utility classes for spacing and layout
-- **Header**: Logo sized at h-14 (56px) on mobile and h-16 (64px) on desktop for improved legibility
+- **Animations**: Animated grid background, pulsing badge dot, hover effects on cards and buttons
 
 ### Content Management
-- **Marketing Home Page**: Custom landing page (NewHome.tsx) with hero section, statistics showcase, AI Investment Observatory service section, and integrated contact form
-  - Fixed header navigation with logo's background color (#0a1628)
-  - Navigation links: AI Investment Observatory (/aiinvestmentobservatory), Insights, Reports, About, Contact
-  - Footer Services section includes link to AI Investment Observatory
-- **AI Investment Observatory**: Coming soon page at /aiinvestmentobservatory
-  - Accessible from header navigation and footer Services section on homepage
-  - Clean, centered "coming soon" message
-  - No header/footer (marketing page style)
-  - Teal accent color for call-to-action text
-- **Custom Art Visualizations**: 
-  - AnimatedSaudiMap: SVG map of Saudi Arabia with animated connections
-  - ArchitectureLayers: Layered architecture diagram showing AI stack
-  - FeatureVignettes: Feature highlights with icons (Signal Scanning, Operational Mapping, Execution Timing)
-  - OpportunityGraph: Investment opportunity visualization
+- **Intelligence Platform Home Page**: Single-page landing (NewIntelligenceHome.tsx) at / route
+  - **Hero Section**: Sunburst logo, pulsing badge "Accelerating Vision 2030's AI Momentum", main heading "The Bloomberg Terminal for Saudi Arabia's AI Ecosystem", CTA buttons
+  - **About Section**: Two-column grid explaining intelligence platform with 5 feature items (policy tracking, investment flow analysis, infrastructure mapping, market timing, opportunity identification)
+  - **Co-Pilot Section**: Chat-style interface showing 4 example queries with cyan quotation marks, "POWERED BY REAL-TIME SIGNAL SYNTHESIS" badge
+  - **Vision Section**: 6-card grid showcasing platform vision (Complete Coverage, Real-Time Intelligence, Actionable Insights, Network Effects, Stack Visibility, Timing Intelligence), "Launching Q2 2025" text
+  - **Contact Section**: SendGrid-powered contact form with Name, Email, Organisation, Interest dropdown, Message, Consent checkbox
+  - **Footer**: Sunburst logo, "Follow Us" heading, LinkedIn link, copyright text
+- **Custom Components**:
+  - AnimatedBackground: Fixed position grid pattern with continuous animation and gradient overlays
+  - SunburstLogo: 24-ray circular logo with gradient colors (green → cyan → blue)
 - **Insights Section**: Dedicated page (Insights.tsx) preserving all existing articles with filtering and display
 - **Article System**: Structured article data with metadata including categories, authors, and timestamps (displayed in Insights)
 - **Author Profiles**: Comprehensive author information with social links and expertise areas
