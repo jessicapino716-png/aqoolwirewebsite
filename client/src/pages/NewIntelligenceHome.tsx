@@ -118,13 +118,15 @@ export default function NewIntelligenceHome() {
               borderRadius: '4px',
               boxShadow: '0 0 10px #00FFD9'
             }} />
-            <span style={{
-              color: '#00FFD9',
-              fontSize: '14.4px',
-              fontWeight: 600,
-              letterSpacing: '0.288px',
-              lineHeight: '23px'
-            }}>
+            <span
+              style={{
+                color: '#00FFD9',
+                fontSize: '14.4px',
+                fontWeight: 600,
+                letterSpacing: '0.288px',
+                lineHeight: '23px'
+              }}
+              className="text-[#07ebd0]">
               Accelerating Vision 2030's AI Momentum
             </span>
           </div>
