@@ -106,8 +106,7 @@ export default function NewIntelligenceHome() {
         
         {/* Hero Section */}
         <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto">
-        <div className="inline-flex items-center gap-3 px-6 py-3 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm font-semibold mb-10 max-w-max" style={{ color: 'hsl(var(--cyan-bright))' }}>
-          <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_hsl(var(--cyan-bright))] animate-[pulse-dot_2s_ease-in-out_infinite]" />
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-400 rounded-full text-sm font-medium mb-10 max-w-max text-black">
           Accelerating Vision 2030's AI Momentum
         </div>
 
@@ -116,18 +115,18 @@ export default function NewIntelligenceHome() {
           Saudi Arabia's <span className="text-cyan-400">AI Ecosystem</span>
         </h1>
 
-        <p className="text-xl md:text-2xl mb-6 max-w-4xl" style={{ color: 'hsl(var(--gray-light))' }}>
+        <p className="text-lg md:text-xl mb-6 max-w-4xl text-white">
           Track the full stack from infrastructure to business model, connect capability gaps to deployment windows.
         </p>
 
-        <p className="text-lg md:text-xl mb-12 max-w-3xl" style={{ color: 'hsl(var(--gray-medium))' }}>
+        <p className="text-base md:text-lg mb-12 max-w-3xl text-gray-400">
           We synthesize policy, market, and capital signals to identify AI investment opportunities in Saudi Arabia and the GCC.
         </p>
 
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-wrap gap-4">
           <Button 
             size="lg" 
-            className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold shadow-[0_4px_14px_rgba(0,217,200,0.4)] hover:shadow-[0_6px_20px_rgba(0,217,200,0.5)] transition-all hover:-translate-y-0.5"
+            className="bg-cyan-400 hover:bg-cyan-300 text-black font-semibold rounded-full px-8"
             asChild
             data-testid="button-get-started"
           >
@@ -136,7 +135,7 @@ export default function NewIntelligenceHome() {
           <Button 
             size="lg"
             variant="outline"
-            className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 transition-all hover:-translate-y-0.5"
+            className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 rounded-full px-8"
             asChild
             data-testid="button-learn-more"
           >
