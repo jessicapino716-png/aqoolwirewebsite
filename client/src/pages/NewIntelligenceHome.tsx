@@ -73,9 +73,7 @@ export default function NewIntelligenceHome() {
         <title>The Aqool Wire - Intelligence Platform</title>
         <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
       </Helmet>
-
       <AnimatedBackground />
-
       {/* Header */}
       <header className="relative z-20 w-full border-b border-cyan-500/20" style={{ backgroundColor: '#0a1628' }}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
@@ -100,9 +98,8 @@ export default function NewIntelligenceHome() {
           </nav>
         </div>
       </header>
-
       {/* Hero Section */}
-      <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto">
+      <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto ml-[20px] mr-[20px]">
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm font-semibold mb-10 max-w-max" style={{ color: 'hsl(var(--cyan-bright))' }}>
           <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_hsl(var(--cyan-bright))] animate-[pulse-dot_2s_ease-in-out_infinite]" />
           Accelerating Vision 2030's AI Momentum
@@ -141,7 +138,6 @@ export default function NewIntelligenceHome() {
           </Button>
         </div>
       </section>
-
       {/* About Section */}
       <section id="about" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-base)) 0%, hsl(var(--bg-light)) 100%)' }}>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16">What We Do</h2>
@@ -177,7 +173,6 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* Co-Pilot Section */}
       <section id="copilot" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-dark)) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">
@@ -211,7 +206,6 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* Vision Section */}
       <section id="vision" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, rgba(0, 255, 65, 0.03) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">Our Vision</h2>
@@ -243,7 +237,6 @@ export default function NewIntelligenceHome() {
           Launching Q2 2025
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-32 px-4 md:px-8 max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">Get In Touch</h2>
@@ -343,7 +336,6 @@ export default function NewIntelligenceHome() {
           </Button>
         </form>
       </section>
-
       {/* Footer */}
       <footer id="footer" className="relative z-10 py-20 px-4 md:px-8 border-t border-cyan-500/20 text-center">
         <div className="max-w-6xl mx-auto">
