@@ -75,75 +75,83 @@ export default function NewIntelligenceHome() {
       </Helmet>
       <AnimatedBackground />
       
-      {/* Header + Hero Container with Gradient */}
+      {/* Header + Hero Container */}
       <div className="relative" style={{
-        background: 'radial-gradient(91.18% 145.89% at 20% 30%, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0) 40%), radial-gradient(91.18% 145.89% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(58.96% 94.34% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
+        background: 'linear-gradient(135deg, #0a2e3d 0%, #0f1e2e 50%, #1a2942 100%)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 z-0" style={{
+          background: 'radial-gradient(91.18% 145.89% at 20% 30%, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0) 40%), radial-gradient(91.18% 145.89% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(58.96% 94.34% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
+        }}></div>
+        
         {/* Header */}
-        <header className="relative z-20 w-full border-b border-cyan-500/20">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
+        <header className="relative z-20 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
             <Link href="/" data-testid="link-logo">
               <img 
                 src={logoImage} 
                 alt="The Aqool Wire" 
-                className="h-14 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                className="h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
-            <nav className="hidden md:flex items-center gap-8">
-              <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
-              <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
-              <a href="#vision" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Vision</a>
-              <Button 
-                size="sm"
-                className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold"
-                asChild
-              >
-                <a href="#contact">Contact</a>
-              </Button>
-            </nav>
           </div>
         </header>
         
         {/* Hero Section */}
-        <section id="hero" className="relative z-10 min-h-[85vh] flex flex-col justify-center px-4 md:px-8 py-24 max-w-6xl mx-auto">
-        <div className="inline-flex items-center gap-3 px-6 py-3 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm font-semibold mb-10 max-w-max" style={{ color: 'hsl(var(--cyan-bright))' }}>
-          <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_hsl(var(--cyan-bright))] animate-[pulse-dot_2s_ease-in-out_infinite]" />
-          Accelerating Vision 2030's AI Momentum
-        </div>
+        <section id="hero" className="relative z-10 min-h-[90vh] flex items-center px-6 md:px-12 py-20">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-cyan-500/40 rounded-full text-xs font-medium mb-8 bg-cyan-500/5" style={{ color: '#00d9c8' }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                Accelerating Vision 2030's AI Momentum
+              </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-          The Bloomberg Terminal for<br />
-          Saudi Arabia's <span className="text-cyan-400">AI Ecosystem</span>
-        </h1>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                The Data Terminal<br />
+                Powering<br />
+                Saudi Arabia's<br />
+                <span style={{ color: '#00d9c8' }}>AI Transformation</span>
+              </h1>
 
-        <p className="text-xl md:text-2xl mb-6 max-w-4xl" style={{ color: 'hsl(var(--gray-light))' }}>
-          Track the full stack from infrastructure to business model, connect capability gaps to deployment windows.
-        </p>
+              <p className="text-xl md:text-2xl mb-4 font-medium" style={{ color: '#e2e8f0' }}>
+                Unifying fragmented data into actionable intelligence.
+              </p>
 
-        <p className="text-lg md:text-xl mb-12 max-w-3xl" style={{ color: 'hsl(var(--gray-medium))' }}>
-          We synthesize policy, market, and capital signals to identify AI investment opportunities in Saudi Arabia and the GCC.
-        </p>
+              <p className="text-base md:text-lg mb-10 max-w-xl" style={{ color: '#94a3b8' }}>
+                The first platform connecting capital flows, policies, and partnerships across the Kingdom's $100B+ AI transformation.
+              </p>
 
-        <div className="flex flex-wrap gap-5">
-          <Button 
-            size="lg" 
-            className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold shadow-[0_4px_14px_rgba(0,217,200,0.4)] hover:shadow-[0_6px_20px_rgba(0,217,200,0.5)] transition-all hover:-translate-y-0.5"
-            asChild
-            data-testid="button-get-started"
-          >
-            <a href="#contact">Get Started</a>
-          </Button>
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 transition-all hover:-translate-y-0.5"
-            asChild
-            data-testid="button-learn-more"
-          >
-            <a href="#about">Learn More</a>
-          </Button>
-        </div>
-      </section>
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold px-8"
+                  asChild
+                  data-testid="button-stay-informed"
+                >
+                  <a href="#contact">Stay Informed</a>
+                </Button>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 px-8"
+                  asChild
+                  data-testid="button-get-in-touch"
+                >
+                  <a href="#contact">Get in Touch</a>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right side - Map visualization placeholder */}
+            <div className="hidden md:block relative h-[600px]">
+              <div className="absolute inset-0 flex items-center justify-center opacity-30">
+                <div className="text-cyan-400/20 text-9xl font-bold">MAP</div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       
       {/* About Section */}
