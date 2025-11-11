@@ -138,7 +138,7 @@ export default function NewIntelligenceHome() {
                 color: '#FFFFFF',
                 fontSize: '88px',
                 fontWeight: 700,
-                lineHeight: '96.8px',
+                lineHeight: '1.05',
                 letterSpacing: '-1.76px'
               }}>
                 The Data Platform<br />
