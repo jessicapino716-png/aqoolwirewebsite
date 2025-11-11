@@ -81,7 +81,7 @@ export default function NewIntelligenceHome() {
       }}>
         {/* Header */}
         <header className="relative z-20 w-full border-b border-cyan-500/20">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-0.5 flex items-center justify-between">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-0.5 flex items-center justify-between">
             <Link href="/" data-testid="link-logo">
               <img 
                 src={logoImage} 
