@@ -448,7 +448,7 @@ export default function NewIntelligenceHome() {
       <footer id="footer" className="relative z-10 py-20 md:py-24 px-4 md:px-8 border-t border-cyan-500/20">
         <div className="max-w-[1400px] mx-auto text-center">
           {/* Logo */}
-          <div className="flex justify-center mb-10 md:mb-12">
+          <div className="flex justify-center mb-4 md:mb-6">
             <img 
               src={logoImage} 
               alt="The Aqool Wire" 
