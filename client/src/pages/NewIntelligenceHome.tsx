@@ -202,7 +202,7 @@ export default function NewIntelligenceHome() {
                 The Data Platform<br />
                 Accelerating<br />
                 Saudi Arabia's<br />
-                <span style={{ color: '#07ebd0' }}>AI Transformation</span>
+                <span style={{ color: '#07ebd0', whiteSpace: 'nowrap' }}>AI Transformation</span>
               </h1>
 
               {/* Subheading */}
