@@ -70,7 +70,7 @@ export default function NewIntelligenceHome() {
   };
 
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="min-h-screen text-white relative overflow-x-hidden">
       <Helmet>
         <title>The Aqool Wire - Intelligence Platform</title>
         <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
@@ -91,7 +91,7 @@ export default function NewIntelligenceHome() {
       </Helmet>
       <AnimatedBackground />
       {/* Header + Hero Container with Gradient */}
-      <div className="relative" style={{
+      <div className="relative w-full overflow-x-hidden" style={{
         background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(100, 255, 180, 0.1) 0%, rgba(100, 255, 180, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(94.34% 58.96% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
       }}>
         {/* Header */}
