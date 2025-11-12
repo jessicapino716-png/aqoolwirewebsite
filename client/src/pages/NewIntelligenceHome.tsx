@@ -445,10 +445,10 @@ export default function NewIntelligenceHome() {
         </form>
       </section>
       {/* Footer */}
-      <footer id="footer" className="relative z-10 py-20 md:py-24 px-4 md:px-8 border-t border-cyan-500/20 pt-[10px] pb-[10px]">
+      <footer id="footer" className="relative z-10 pt-[10px] pb-[10px] px-4 md:px-8 border-t border-cyan-500/20">
         <div className="max-w-[1400px] mx-auto text-center">
           {/* Logo */}
-          <div className="flex justify-center md:mb-6 mt-[0px] mb-[0px]">
+          <div className="flex justify-center mb-0">
             <img 
               src={logoImage} 
               alt="The Aqool Wire" 
