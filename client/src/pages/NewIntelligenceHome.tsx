@@ -273,9 +273,7 @@ export default function NewIntelligenceHome() {
             <p className="text-base md:text-lg mb-5 md:mb-6 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
               The Aqool Wire is building the first intelligence platform designed to help the private sector identify and act on opportunities within Saudi Arabia's AI transformation — from investment flows and policy developments to compute, cloud, and data-infrastructure capacity.
             </p>
-            <p className="text-base md:text-lg mb-5 md:mb-6 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
-              Our goal is to make the Kingdom's AI ecosystem visible, measurable, and connected — linking the dots between funding, infrastructure build-outs, and strategic partnerships driving Vision 2030's digital economy. By translating complex public data into actionable insight, we enable companies, investors, and innovators to see where growth is emerging and where collaboration can deliver the most impact.
-            </p>
+            <p className="text-base md:text-lg mb-5 md:mb-6 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>Our goal is to make the Kingdom's AI ecosystem visible, measurable, and connected — synthesizing information across funding, infrastructure build-outs, and strategic partnerships driving Vision 2030's digital economy. By translating complex public data into actionable insight, we enable companies, investors, and innovators to see where growth is emerging and where collaboration can deliver the most impact.</p>
             <p className="text-base md:text-lg leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
               The platform is currently in development, with early partners helping us shape the tools that will power the next generation of AI foresight and market intelligence — accelerating how the private sector engages with the Kingdom's AI-driven future.
             </p>
