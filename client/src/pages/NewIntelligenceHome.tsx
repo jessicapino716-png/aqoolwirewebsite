@@ -195,7 +195,7 @@ export default function NewIntelligenceHome() {
               </div>
 
               {/* Main Heading */}
-              <h1 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 text-[50px]" style={{
+              <h1 className="text-[50px] md:text-[60px] lg:text-[72px] font-bold mb-6 md:mb-8 leading-tight" style={{
                 color: '#FFFFFF',
                 letterSpacing: '-0.02em'
               }}>
