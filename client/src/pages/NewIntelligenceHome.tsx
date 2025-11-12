@@ -255,7 +255,7 @@ export default function NewIntelligenceHome() {
               <img 
                 src={mapImage} 
                 alt="Saudi Arabia AI Network Map" 
-                className="w-full max-w-[650px] h-auto animate-pulse-glow"
+                className="w-full max-w-[800px] h-auto animate-pulse-glow"
                 style={{
                   filter: 'drop-shadow(0 0 40px rgba(7, 235, 208, 0.3))'
                 }}
