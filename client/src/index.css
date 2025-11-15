@@ -886,7 +886,7 @@ html {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: #9ca3af;
+  color: #ffffff;
   margin-bottom: 4px;
 }
 
@@ -894,23 +894,24 @@ html {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 12px;
+  color: #ffffff;
 }
 
 .wwd-copy p {
   font-size: 16px;
   line-height: 1.7;
-  color: #cbd5f5;
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
 .wwd-copy strong {
-  color: #f9fafb;
+  color: #ffffff;
 }
 
 .wwd-footnote {
   margin-top: 12px;
   font-size: 13px;
-  color: #9ca3af;
+  color: #ffffff;
   border-left: 2px solid rgba(56,189,248,0.7);
   padding-left: 10px;
   line-height: 1.6;
