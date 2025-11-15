@@ -861,3 +861,144 @@ html {
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
 }
+
+/* WHAT WE DO SECTION */
+.wwd-section {
+  padding: 40px 5vw 48px;
+  background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(34,197,94,0.10), transparent 55%),
+              #020617;
+  color: #e5e7eb;
+  position: relative;
+  z-index: 10;
+}
+
+.wwd-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+  gap: 32px;
+}
+
+/* LEFT COPY */
+.wwd-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.wwd-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.wwd-copy p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5f5;
+  margin-bottom: 10px;
+}
+
+.wwd-copy strong {
+  color: #f9fafb;
+}
+
+.wwd-footnote {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #9ca3af;
+  border-left: 2px solid rgba(56,189,248,0.7);
+  padding-left: 10px;
+}
+
+/* RIGHT CARDS */
+.wwd-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wwd-card {
+  background: rgba(15,23,42,0.98);
+  border-radius: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(30,64,175,0.8);
+  box-shadow: 0 10px 28px rgba(15,23,42,0.85);
+  position: relative;
+  overflow: hidden;
+}
+
+.wwd-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at top left, rgba(56,189,248,0.22), transparent 60%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.wwd-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.wwd-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wwd-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(56,189,248,0.9);
+  color: #e0f2fe;
+  background: rgba(15,23,42,0.95);
+  white-space: nowrap;
+}
+
+.wwd-card p {
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+/* Hover effect */
+.wwd-card:hover {
+  border-color: rgba(56,189,248,1);
+  box-shadow: 0 14px 40px rgba(37,99,235,0.5);
+  transform: translateY(-1px);
+  transition: all 0.18s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .wwd-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wwd-section {
+    padding: 32px 16px 40px;
+  }
+  .wwd-title {
+    font-size: 22px;
+  }
+  .wwd-copy p {
+    font-size: 13px;
+  }
+}

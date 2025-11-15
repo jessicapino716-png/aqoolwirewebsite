@@ -264,52 +264,107 @@ export default function NewIntelligenceHome() {
           </div>
         </section>
       </div>
-      {/* About Section */}
-      <section id="about" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-base)) 0%, hsl(var(--bg-light)) 100%)' }}>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 md:mb-16">What We Do</h2>
-        
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16">
-          <div>
-            <p className="text-base md:text-lg mb-5 md:mb-6 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
-              The Aqool Wire is building the first intelligence platform designed to help the private sector identify and act on opportunities within Saudi Arabia's AI transformation — from investment flows and policy developments to compute, cloud, and data-infrastructure capacity.
+      {/* What We Do Section */}
+      <section id="what-we-do" className="wwd-section">
+        <div className="wwd-inner">
+          {/* LEFT: COPY */}
+          <div className="wwd-copy">
+            <div className="wwd-eyebrow">For global investors & Saudi decision-makers</div>
+            <h2 className="wwd-title">What We Do</h2>
+
+            <p>
+              The Aqool Wire is the first intelligence platform built to help global investors
+              understand where to deploy capital inside Saudi Arabia's AI, cloud, and digital-
+              infrastructure transformation.
             </p>
-            <p className="text-base md:text-lg mb-5 md:mb-6 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>Our goal is to make the Kingdom's AI ecosystem visible, measurable, and connected — synthesizing information across funding, infrastructure build-outs, and strategic partnerships driving Vision 2030's digital economy. By translating complex public data into actionable insight, we enable companies, investors, and innovators to see where growth is emerging and where collaboration can deliver the most impact.</p>
-            <p className="text-base md:text-lg leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
-              The platform is currently in development, with early partners helping us shape the tools that will power the next generation of AI foresight and market intelligence — accelerating how the private sector engages with the Kingdom's AI-driven future.
+
+            <p>
+              Today, billions are being committed across data centers, cloud regions, giga-projects,
+              sovereign data programs, and cross-border technology partnerships. But for foreign
+              companies, the landscape is fragmented: announcements are spread across ministries,
+              regulators, PIF vehicles, and portfolio companies, with no single, investor-friendly view.
             </p>
+
+            <p>
+              The Aqool Wire consolidates this into one interactive platform. By synthesizing open
+              government data, public disclosures, infrastructure build-outs, and policy signals,
+              we show <strong>where Saudi is betting on AI</strong>, <strong>which regions and sectors are heating up</strong>,
+              and <strong>where partnership and supply-chain gaps remain</strong>.
+            </p>
+
+            <p>
+              Our goal is to support <strong>Vision 2030</strong> by making the AI ecosystem more visible, measurable,
+              and investable — giving ministries, PIF-backed programs, and global investors a shared
+              map of Saudi Arabia's emerging AI economy.
+            </p>
+
+            <div className="wwd-footnote">
+              Early partners are helping us shape tools that can sit alongside Invest Saudi, MISA,
+              and PIF initiatives — as an independent, data-driven companion for attracting and 
+              allocating capital.
+            </div>
           </div>
 
-          <div className="flex flex-col gap-4">
-            {[
-              { 
-                title: 'Insight Co-Pilot & Predictive Modeling', 
-                description: 'Real-time AI assistant that surfaces trends, forecasts, and "what-if" scenarios across Saudi Arabia\'s AI economy.' 
-              },
-              { 
-                title: 'Investment Flow Analysis', 
-                description: 'Mapping capital movements, partnerships, and funding activity across Vision 2030 programs.' 
-              },
-              { 
-                title: 'Compute & Cloud Capacity Intelligence', 
-                description: 'Visibility into data-center growth, GPU availability, and emerging infrastructure projects.' 
-              },
-              { 
-                title: 'Market Timing & Opportunity Identification', 
-                description: 'Detecting emerging sectors, regional demand shifts, and partnership openings.' 
-              },
-              { 
-                title: 'Real-time Policy & Regulation Tracking', 
-                description: 'Live bilingual tracker of national AI laws, standards, and strategic initiatives.' 
-              }
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="px-4 md:px-6 py-4 md:py-5 bg-cyan-500/5 border-l-[3px] border-cyan-500 rounded hover:bg-cyan-500/10 hover:border-green-400 transition-all hover:translate-x-2"
-              >
-                <h3 className="text-base md:text-lg font-semibold mb-2 text-cyan-400">{feature.title}</h3>
-                <p className="text-sm md:text-base leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>{feature.description}</p>
+          {/* RIGHT: CAPABILITY CARDS */}
+          <div className="wwd-cards">
+            <article className="wwd-card">
+              <div className="wwd-card-header">
+                <h3>Insight Co-Pilot & Predictive Modeling</h3>
+                <span className="wwd-tag">FDI & strategy</span>
               </div>
-            ))}
+              <p>
+                Real-time AI assistant that answers investor questions about Saudi Arabia's AI and
+                digital ecosystem — surfacing trends, forecasts, and "what-if" scenarios across
+                missions, sectors, and giga-projects.
+              </p>
+            </article>
+
+            <article className="wwd-card">
+              <div className="wwd-card-header">
+                <h3>Investment Flow Analysis</h3>
+                <span className="wwd-tag">Capital flows</span>
+              </div>
+              <p>
+                Maps capital movements, public–private partnerships, and funding activity across
+                Vision 2030 programs — helping investors see which sectors, vehicles, and regions
+                are attracting new commitments.
+              </p>
+            </article>
+
+            <article className="wwd-card">
+              <div className="wwd-card-header">
+                <h3>Compute & Cloud Capacity Intelligence</h3>
+                <span className="wwd-tag">Infra & GPUs</span>
+              </div>
+              <p>
+                Tracks data-center pipelines, cloud regions, GPU availability, and sovereign-cloud
+                initiatives, giving AI companies a clear view of where technical capacity is coming
+                online first.
+              </p>
+            </article>
+
+            <article className="wwd-card">
+              <div className="wwd-card-header">
+                <h3>Market Timing & Opportunity Identification</h3>
+                <span className="wwd-tag">Entry points</span>
+              </div>
+              <p>
+                Detects emerging sectors, regional demand shifts, and partnership openings — designed
+                for firms deciding <em>when</em> and <em>where</em> to enter the Saudi market or scale an existing presence.
+              </p>
+            </article>
+
+            <article className="wwd-card">
+              <div className="wwd-card-header">
+                <h3>Real-time Policy & Regulation Tracking</h3>
+                <span className="wwd-tag">Compliance</span>
+              </div>
+              <p>
+                Live bilingual tracker of AI-related laws, standards, and national strategies, giving
+                foreign companies a continuously updated view of regulatory clarity and compliance
+                requirements.
+              </p>
+            </article>
           </div>
         </div>
       </section>
