@@ -298,11 +298,7 @@ export default function NewIntelligenceHome() {
               map of Saudi Arabia's emerging AI economy.
             </p>
 
-            <div className="wwd-footnote">
-              Early partners are helping us shape tools that can sit alongside Invest Saudi, MISA,
-              and PIF initiatives — as an independent, data-driven companion for attracting and 
-              allocating capital.
-            </div>
+            <div className="wwd-footnote">An independent intelligence platform that helps global investors navigate Saudi Arabia’s AI and digital-economy opportunities with clarity, neutrality, and confidence.</div>
           </div>
 
           {/* RIGHT: CAPABILITY CARDS */}
