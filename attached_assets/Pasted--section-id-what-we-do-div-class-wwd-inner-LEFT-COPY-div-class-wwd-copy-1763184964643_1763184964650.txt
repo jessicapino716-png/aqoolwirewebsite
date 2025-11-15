@@ -1,0 +1,103 @@
+<section id="what-we-do">
+  <div class="wwd-inner">
+    <!-- LEFT: COPY -->
+    <div class="wwd-copy">
+      <div class="wwd-eyebrow">For global investors &amp; Saudi decision-makers</div>
+      <h2 class="wwd-title">What We Do</h2>
+
+      <p>
+        The Aqool Wire is the first intelligence platform built to help global investors
+        understand where to deploy capital inside Saudi Arabia’s AI, cloud, and digital-
+        infrastructure transformation.
+      </p>
+
+      <p>
+        Today, billions are being committed across data centers, cloud regions, giga-projects,
+        sovereign data programs, and cross-border technology partnerships. But for foreign
+        companies, the landscape is fragmented: announcements are spread across ministries,
+        regulators, PIF vehicles, and portfolio companies, with no single, investor-friendly view.
+      </p>
+
+      <p>
+        The Aqool Wire consolidates this into one interactive platform. By synthesizing open
+        government data, public disclosures, infrastructure build-outs, and policy signals,
+        we show <strong>where Saudi is betting on AI</strong>, <strong>which regions and sectors are heating up</strong>,
+        and <strong>where partnership and supply-chain gaps remain</strong>.
+      </p>
+
+      <p>
+        Our goal is to support <strong>Vision 2030</strong> by making the AI ecosystem more visible, measurable,
+        and investable — giving ministries, PIF-backed programs, and global investors a shared
+        map of Saudi Arabia’s emerging AI economy.
+      </p>
+
+      <div class="wwd-footnote">
+        Early partners are helping us shape tools that can sit alongside Invest Saudi, MISA,
+        and PIF initiatives — as an independent, data-driven companion for attracting and 
+        allocating capital.
+      </div>
+    </div>
+
+    <!-- RIGHT: CAPABILITY CARDS -->
+    <div class="wwd-cards">
+      <article class="wwd-card">
+        <div class="wwd-card-header">
+          <h3>Insight Co-Pilot &amp; Predictive Modeling</h3>
+          <span class="wwd-tag">FDI &amp; strategy</span>
+        </div>
+        <p>
+          Real-time AI assistant that answers investor questions about Saudi Arabia’s AI and
+          digital ecosystem — surfacing trends, forecasts, and “what-if” scenarios across
+          missions, sectors, and giga-projects.
+        </p>
+      </article>
+
+      <article class="wwd-card">
+        <div class="wwd-card-header">
+          <h3>Investment Flow Analysis</h3>
+          <span class="wwd-tag">Capital flows</span>
+        </div>
+        <p>
+          Maps capital movements, public–private partnerships, and funding activity across
+          Vision 2030 programs — helping investors see which sectors, vehicles, and regions
+          are attracting new commitments.
+        </p>
+      </article>
+
+      <article class="wwd-card">
+        <div class="wwd-card-header">
+          <h3>Compute &amp; Cloud Capacity Intelligence</h3>
+          <span class="wwd-tag">Infra &amp; GPUs</span>
+        </div>
+        <p>
+          Tracks data-center pipelines, cloud regions, GPU availability, and sovereign-cloud
+          initiatives, giving AI companies a clear view of where technical capacity is coming
+          online first.
+        </p>
+      </article>
+
+      <article class="wwd-card">
+        <div class="wwd-card-header">
+          <h3>Market Timing &amp; Opportunity Identification</h3>
+          <span class="wwd-tag">Entry points</span>
+        </div>
+        <p>
+          Detects emerging sectors, regional demand shifts, and partnership openings — designed
+          for firms deciding <em>when</em> and <em>where</em> to enter the Saudi market or scale an existing presence.
+        </p>
+      </article>
+
+      <article class="wwd-card">
+        <div class="wwd-card-header">
+          <h3>Real-time Policy &amp; Regulation Tracking</h3>
+          <span class="wwd-tag">Compliance</span>
+        </div>
+        <p>
+          Live bilingual tracker of AI-related laws, standards, and national strategies, giving
+          foreign companies a continuously updated view of regulatory clarity and compliance
+          requirements.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
