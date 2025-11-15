@@ -883,7 +883,7 @@ html {
 
 /* LEFT COPY */
 .wwd-eyebrow {
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: #ffffff;
@@ -891,14 +891,14 @@ html {
 }
 
 .wwd-title {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 600;
   margin-bottom: 12px;
   color: #ffffff;
 }
 
 .wwd-copy p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   color: #ffffff;
   margin-bottom: 12px;
@@ -910,7 +910,7 @@ html {
 
 .wwd-footnote {
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 15px;
   color: #ffffff;
   border-left: 2px solid rgba(56,189,248,0.7);
   padding-left: 10px;

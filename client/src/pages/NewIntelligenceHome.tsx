@@ -272,27 +272,27 @@ export default function NewIntelligenceHome() {
             <div className="wwd-eyebrow">For global investors & Saudi decision-makers</div>
             <h2 className="wwd-title">What We Do</h2>
 
-            <p className="text-[#ffffff] text-[16px]">
+            <p className="text-[#ffffff] text-[18px]">
               The Aqool Wire is the first intelligence platform built to help global investors
               understand where to deploy capital inside Saudi Arabia's AI, cloud, and digital-
               infrastructure transformation.
             </p>
 
-            <p className="text-[#ffffff] text-[15px]">
+            <p className="text-[#ffffff] text-[18px]">
               Today, billions are being committed across data centers, cloud regions, giga-projects,
               sovereign data programs, and cross-border technology partnerships. But for foreign
               companies, the landscape is fragmented: announcements are spread across ministries,
               regulators, PIF vehicles, and portfolio companies, with no single, investor-friendly view.
             </p>
 
-            <p className="text-[#ffffff] text-[15px]">
+            <p className="text-[#ffffff] text-[18px]">
               The Aqool Wire consolidates this into one interactive platform. By synthesizing open
               government data, public disclosures, infrastructure build-outs, and policy signals,
               we show <strong className="text-[#ffffff] font-normal">where Saudi is betting on AI</strong>, <strong className="text-[#ffffff] font-normal">which regions and sectors are heating up</strong>,
               and <strong className="font-normal text-[#ffffff]">where partnership and supply-chain gaps remain</strong>.
             </p>
 
-            <p className="text-[#ffffff] text-[15px]">
+            <p className="text-[#ffffff] text-[18px]">
               Our goal is to support <strong className="font-normal text-[#ffffff]">Vision 2030</strong> by making the AI ecosystem more visible, measurable,
               and investable — giving ministries, PIF-backed programs, and global investors a shared
               map of Saudi Arabia's emerging AI economy.
