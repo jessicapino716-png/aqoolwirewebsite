@@ -288,7 +288,7 @@ export default function NewIntelligenceHome() {
             <p className="text-[#ffffff] text-[15px]">
               The Aqool Wire consolidates this into one interactive platform. By synthesizing open
               government data, public disclosures, infrastructure build-outs, and policy signals,
-              we show <strong>where Saudi is betting on AI</strong>, <strong className="text-[#cbd5f5]">which regions and sectors are heating up</strong>,
+              we show <strong>where Saudi is betting on AI</strong>, <strong className="font-normal text-[#f9fafb]">which regions and sectors are heating up</strong>,
               and <strong className="font-normal">where partnership and supply-chain gaps remain</strong>.
             </p>
 
