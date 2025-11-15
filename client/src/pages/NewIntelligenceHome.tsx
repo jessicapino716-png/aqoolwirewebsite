@@ -278,7 +278,7 @@ export default function NewIntelligenceHome() {
               infrastructure transformation.
             </p>
 
-            <p className="text-[#ffffff]">
+            <p className="text-[#ffffff] text-[15px]">
               Today, billions are being committed across data centers, cloud regions, giga-projects,
               sovereign data programs, and cross-border technology partnerships. But for foreign
               companies, the landscape is fragmented: announcements are spread across ministries,
