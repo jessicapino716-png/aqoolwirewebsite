@@ -272,7 +272,7 @@ export default function NewIntelligenceHome() {
             <div className="wwd-eyebrow">For global investors & Saudi decision-makers</div>
             <h2 className="wwd-title">What We Do</h2>
 
-            <p>
+            <p className="text-[#ffffff]">
               The Aqool Wire is the first intelligence platform built to help global investors
               understand where to deploy capital inside Saudi Arabia's AI, cloud, and digital-
               infrastructure transformation.
