@@ -891,16 +891,16 @@ html {
 }
 
 .wwd-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .wwd-copy p {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
   color: #cbd5f5;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .wwd-copy strong {
@@ -908,11 +908,12 @@ html {
 }
 
 .wwd-footnote {
-  margin-top: 8px;
-  font-size: 12px;
+  margin-top: 12px;
+  font-size: 13px;
   color: #9ca3af;
   border-left: 2px solid rgba(56,189,248,0.7);
   padding-left: 10px;
+  line-height: 1.6;
 }
 
 /* RIGHT CARDS */
@@ -952,7 +953,7 @@ html {
 }
 
 .wwd-card h3 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -971,8 +972,8 @@ html {
 .wwd-card p {
   position: relative;
   z-index: 1;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.6;
   color: #d1d5db;
 }
 
