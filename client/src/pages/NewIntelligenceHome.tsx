@@ -292,7 +292,7 @@ export default function NewIntelligenceHome() {
               and <strong>where partnership and supply-chain gaps remain</strong>.
             </p>
 
-            <p>
+            <p className="text-[#ffffff]">
               Our goal is to support <strong>Vision 2030</strong> by making the AI ecosystem more visible, measurable,
               and investable — giving ministries, PIF-backed programs, and global investors a shared
               map of Saudi Arabia's emerging AI economy.
