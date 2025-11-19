@@ -298,7 +298,6 @@ export default function NewIntelligenceHome() {
               map of Saudi Arabia's emerging AI economy.
             </p>
 
-            <div className="wwd-footnote">An independent intelligence platform that helps global investors navigate Saudi Arabia’s AI and digital-economy opportunities with clarity, neutrality, and confidence.</div>
           </div>
 
           {/* RIGHT: CAPABILITY CARDS */}
