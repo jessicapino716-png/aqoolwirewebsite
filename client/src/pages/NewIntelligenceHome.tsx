@@ -382,7 +382,7 @@ export default function NewIntelligenceHome() {
           ].map((query, index) => (
             <div
               key={index}
-              className="px-4 md:px-6 py-4 md:py-5 bg-gray-900/60 border border-cyan-500/20 rounded-lg mb-3 md:mb-4 text-sm md:text-base lg:text-lg hover:border-cyan-500 hover:bg-cyan-500/8 transition-all hover:translate-x-1 relative leading-relaxed"
+              className="px-4 md:px-6 py-4 md:py-5 bg-gray-900/60 border border-cyan-500/20 rounded-lg mb-3 md:mb-4 text-sm md:text-base lg:text-lg hover:border-cyan-500 hover:bg-cyan-500/8 transition-all hover:translate-x-1 relative leading-relaxed italic"
               style={{ color: 'hsl(var(--gray-light))' }}
             >
               <span className="text-cyan-400 font-bold text-lg md:text-xl mr-1">"</span>
