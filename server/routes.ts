@@ -962,6 +962,12 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
     }
   });
 
+  // Explicit 404 handler for unknown API routes
+  // This MUST be after all other /api routes to catch unmatched API requests
+  app.all("/api/*", (req, res) => {
+    res.status(404).json({ error: "API endpoint not found" });
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

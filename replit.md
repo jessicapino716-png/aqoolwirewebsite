@@ -102,6 +102,12 @@ Preferred communication style: Simple, everyday language.
   - Site-wide meta tags optimized for AI policy, regulation, Saudi Arabia, GCC, Riyadh, Vision 2030
   - Dynamic page-specific SEO using React Helmet Async
   - Canonical URLs always use https://theaqoolwire.com domain
+  - **Proper 404 Status Codes** (January 2026 fix for Google Search Console Soft 404 errors):
+    - Server returns proper HTTP 404 status for non-existent pages (not soft 404 with 200)
+    - Known static routes defined in server/index.ts (KNOWN_STATIC_ROUTES array)
+    - Dynamic article routes validate article existence before returning 200
+    - Unknown API routes return 404 JSON response
+    - Custom 404 page styled to match dark theme with back-to-home button
 - **Social Media Integration**:
   - LinkedIn company page link in footer (https://www.linkedin.com/company/the-aqool-wire)
   - Helps with brand authority and referral traffic
