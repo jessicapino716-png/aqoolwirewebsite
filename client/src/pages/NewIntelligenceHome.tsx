@@ -345,7 +345,7 @@ export default function NewIntelligenceHome() {
           {/* Product 2 */}
           <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6 md:p-10">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-400/10 border border-green-400/30 rounded-full text-xs font-semibold text-green-400">Operational</span>
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-400/10 border border-blue-400/30 rounded-full text-xs font-semibold text-blue-400">Coming in February</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">AI Investment Observatory</h3>
             <p className="text-cyan-400 text-lg mb-6">Real-time intelligence revealing where AI policy, capital, and opportunity converge.</p>
