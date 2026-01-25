@@ -209,7 +209,7 @@ export default function NewIntelligenceHome() {
               <p className="text-lg md:text-xl lg:text-2xl mb-4 md:mb-5 leading-relaxed" style={{
                 color: '#E2E8F0'
               }}>
-                Unifying fragmented data into actionable intelligence
+                The Real-Time Intelligence Platform
               </p>
 
               {/* Description */}
