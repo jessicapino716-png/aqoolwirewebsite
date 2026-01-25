@@ -564,6 +564,19 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
+
+      {/* GCC Expansion Teaser */}
+      <section className="relative z-10 py-12 md:py-20 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-cyan-500/10 via-green-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl backdrop-blur">
+            <div className="text-left">
+              <p className="text-lg md:text-xl font-semibold text-white mb-1">Saudi Arabia First. Then the Entire GCC.</p>
+              <p className="text-sm md:text-base text-gray-400">The same intelligence infrastructure. Expanded across the Gulf Cooperation Council.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">Get In Touch</h2>
