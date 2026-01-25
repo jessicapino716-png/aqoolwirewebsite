@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Button } from "@/components/ui/button";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
+import jessicaImage from "@assets/000-eHDrIDseLsY_1769360651903.jpeg";
 import { ArrowLeft } from "lucide-react";
 
 export default function About() {
@@ -46,6 +47,18 @@ export default function About() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 text-center">
             About <span className="text-cyan-400">Jessica Pino</span>, Founder
           </h1>
+
+          {/* Jessica's Photo */}
+          <div className="flex justify-center mb-10 md:mb-12">
+            <div className="relative">
+              <img 
+                src={jessicaImage} 
+                alt="Jessica Pino, Founder of The Aqool Wire" 
+                className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-cyan-500/30 shadow-[0_0_30px_rgba(0,217,200,0.2)]"
+              />
+              <div className="absolute inset-0 rounded-full border-4 border-cyan-400/20 animate-pulse"></div>
+            </div>
+          </div>
           
           <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
             <p>
