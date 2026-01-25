@@ -199,23 +199,22 @@ export default function NewIntelligenceHome() {
                 color: '#FFFFFF',
                 letterSpacing: '-0.02em'
               }}>
-                The Data Platform<br />
-                Accelerating<br />
+                Real-Time Intelligence for<br />
                 Saudi Arabia's<br />
-                <span style={{ color: '#07ebd0', whiteSpace: 'nowrap' }}>AI Transformation</span>
+                <span style={{ color: '#07ebd0', whiteSpace: 'nowrap' }}>AI Economy</span>
               </h1>
 
               {/* Subheading */}
               <p className="text-lg md:text-xl lg:text-2xl mb-4 md:mb-5 leading-relaxed" style={{
                 color: '#E2E8F0'
               }}>
-                The Real-Time Intelligence Platform
+                Transforming Fragmented Data Into Unified Intelligence
               </p>
 
               {/* Description */}
               <p className="text-base md:text-lg mb-8 md:mb-12 leading-relaxed" style={{
                 color: '#94A3B8'
-              }}>The first platform mapping capital flows, infrastructure, and partnerships across the Kingdom's $100B AI transformation</p>
+              }}>Saudi Arabia's Vision 2030 generates thousands of data points weekly across government sources, private sector announcements, and international partnerships. We synthesize it all into one platform.</p>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-3 md:gap-5">
@@ -264,103 +263,201 @@ export default function NewIntelligenceHome() {
           </div>
         </section>
       </div>
-      {/* What We Do Section */}
-      <section id="what-we-do" className="wwd-section">
-        <div className="wwd-inner">
-          {/* LEFT: COPY */}
-          <div className="wwd-copy">
-            <div className="wwd-eyebrow">For global investors & Saudi decision-makers</div>
-            <h2 className="wwd-title">What We Do</h2>
-
-            <p className="text-[#ffffff] text-[18px]">
-              The Aqool Wire is the first intelligence platform built to help global investors
-              understand where to deploy capital inside Saudi Arabia's AI, cloud, and digital-
-              infrastructure transformation.
+      {/* The Problem Section */}
+      <section id="the-problem" className="relative z-10 py-16 md:py-24 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">The Challenge</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">The Problem</h2>
+          </div>
+          <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
+            <p>
+              Saudi Arabia's Vision 2030 generates thousands of data points weekly across government sources, private sector announcements, and international partnerships. This information is scattered across ministries, PIF vehicles, regulators, and industry sources—making it nearly impossible to see the complete picture of where capital is flowing, what infrastructure is being built, and how these pieces connect.
             </p>
-
-            <p className="text-[#ffffff] text-[18px]">
-              Today, billions are being committed across data centers, cloud regions, giga-projects,
-              sovereign data programs, and cross-border technology partnerships. But for foreign
-              companies, the landscape is fragmented: announcements are spread across ministries,
-              regulators, PIF vehicles, and portfolio companies, with no single, investor-friendly view.
+            <p className="text-cyan-400 font-semibold text-lg md:text-xl">
+              By the time most organizations manually compile this information, opportunities have already shifted.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <p className="text-[#ffffff] text-[18px]">
-              The Aqool Wire consolidates this into one interactive platform. By synthesizing open
-              government data, public disclosures, infrastructure build-outs, and policy signals,
-              we show <strong className="text-[#ffffff] font-normal">where Saudi is betting on AI</strong>, <strong className="text-[#ffffff] font-normal">which regions and sectors are heating up</strong>,
-              and <strong className="font-normal text-[#ffffff]">where partnership and supply-chain gaps remain</strong>.
+      {/* Our Solution Section */}
+      <section id="solution" className="relative z-10 py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-green-400 text-sm font-semibold tracking-wider uppercase">The Aqool Engine</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">Our Solution</h2>
+            <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
+              The Aqool Wire transforms fragmented data into unified intelligence through the <span className="text-cyan-400 font-semibold">Aqool Engine</span>—our proprietary data infrastructure that continuously monitors, organizes, and synthesizes information on Saudi Arabia's AI economy.
             </p>
+          </div>
+          <p className="text-center text-lg md:text-xl font-semibold text-cyan-400 mb-12">
+            Three operational products plus one in development:
+          </p>
+        </div>
+      </section>
 
-            <p className="text-[#ffffff] text-[18px]">
-              Our goal is to support <strong className="font-normal text-[#ffffff]">Vision 2030</strong> by making the AI ecosystem more visible, measurable,
-              and investable — giving ministries, PIF-backed programs, and global investors a shared
-              map of Saudi Arabia's emerging AI economy.
-            </p>
-
+      {/* Products Section */}
+      <section id="products" className="relative z-10 py-8 md:py-16 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto space-y-12">
+          
+          {/* Product 1 */}
+          <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6 md:p-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-400/10 border border-green-400/30 rounded-full text-xs font-semibold text-green-400">Operational</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">Infrastructure & Data Sovereignty Map</h3>
+            <p className="text-cyan-400 text-lg mb-6">Mapping the digital backbone powering Saudi Arabia's AI transformation.</p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold text-white mb-3">What It Does:</h4>
+                <p className="text-gray-300 mb-6">Comprehensive dashboard tracking Saudi Arabia's data center projects, compute capacity, cloud infrastructure, and regional distribution—providing visibility into where AI capacity is being built and when it comes online.</p>
+                
+                <h4 className="font-semibold text-white mb-3">What It Tracks:</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> All major data center projects (AWS, STC, HUMAIN, DataVolt, etc.) by capacity, ownership, and region</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Total compute growth across regions, including GW capacity, storage, and network reach</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Saudi progress benchmarked against regional and global infrastructure leaders</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                <ul className="space-y-2 text-gray-300 mb-6">
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Visual infrastructure mapping by region and operator</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Capacity timelines and deployment schedules</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Compute availability analysis for market entry planning</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Sovereignty and ownership structure mapping</li>
+                </ul>
+                
+                <h4 className="font-semibold text-white mb-3">Use It For:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Infrastructure readiness</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market entry timing</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Capacity planning</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Competitive positioning</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* RIGHT: CAPABILITY CARDS */}
-          <div className="wwd-cards">
-            <article className="wwd-card">
-              <div className="wwd-card-header">
-                <h3>Insight Co-Pilot & Predictive Modeling</h3>
-                <span className="wwd-tag">FDI & strategy</span>
+          {/* Product 2 */}
+          <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6 md:p-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-400/10 border border-green-400/30 rounded-full text-xs font-semibold text-green-400">Operational</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">AI Investment Observatory</h3>
+            <p className="text-cyan-400 text-lg mb-6">Real-time intelligence revealing where AI policy, capital, and opportunity converge.</p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold text-white mb-3">What It Does:</h4>
+                <p className="text-gray-300 mb-6">Tracks and visualizes capital flows, investment patterns, and partnership activity across Vision 2030's AI ecosystem—showing where funding is accelerating, where gaps remain, and where policy momentum meets private investment potential.</p>
+                
+                <h4 className="font-semibold text-white mb-3">Core Features:</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Opportunity Radar:</strong> Predictive AI engine spotting emerging opportunity zones</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Investment Intelligence Engine:</strong> Real-time visualization of AI capital flows by sector, region, and investor</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Regulatory Intelligence:</strong> AI policy tracker turning complex regulations into actionable guidance</li>
+                </ul>
               </div>
-              <p>
-                Real-time AI assistant that answers investor questions about Saudi Arabia's AI and
-                digital ecosystem — surfacing trends, forecasts, and "what-if" scenarios across
-                missions, sectors, and giga-projects.
-              </p>
-            </article>
-
-            <article className="wwd-card">
-              <div className="wwd-card-header">
-                <h3>Investment Flow Analysis</h3>
-                <span className="wwd-tag">Capital flows</span>
+              <div>
+                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                <ul className="space-y-2 text-gray-300 mb-6">
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Interactive capital flow mapping (Capital Anemone visualization)</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Verified transaction ledger with deal amounts, participants, and sectors</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Early signals of where private solutions can align with Saudi's AI priorities</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Policy and partnership analysis uncovering opportunities</li>
+                </ul>
+                
+                <h4 className="font-semibold text-white mb-3">Use It For:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Investment opportunities</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Competitive intelligence</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market entry strategy</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Partnership spotting</span>
+                </div>
               </div>
-              <p>
-                Maps capital movements, public–private partnerships, and funding activity across
-                Vision 2030 programs — helping investors see which sectors, vehicles, and regions
-                are attracting new commitments.
-              </p>
-            </article>
-
-            <article className="wwd-card">
-              <div className="wwd-card-header">
-                <h3>Compute & Cloud Capacity Intelligence</h3>
-                <span className="wwd-tag">Infra & GPUs</span>
-              </div>
-              <p>
-                Tracks data-center pipelines, cloud regions, GPU availability, and sovereign-cloud
-                initiatives, giving AI companies a clear view of where technical capacity is coming
-                online first.
-              </p>
-            </article>
-
-            <article className="wwd-card">
-              <div className="wwd-card-header">
-                <h3>Market Timing & Opportunity Identification</h3>
-                <span className="wwd-tag">Entry points</span>
-              </div>
-              <p>
-                Detects emerging sectors, regional demand shifts, and partnership openings — designed
-                for firms deciding <em>when</em> and <em>where</em> to enter the Saudi market or scale an existing presence.
-              </p>
-            </article>
-
-            <article className="wwd-card">
-              <div className="wwd-card-header">
-                <h3>Real-time Policy & Regulation Tracking</h3>
-                <span className="wwd-tag">Compliance</span>
-              </div>
-              <p>
-                Live bilingual tracker of AI-related laws, standards, and national strategies, giving
-                foreign companies a continuously updated view of regulatory clarity and compliance
-                requirements.
-              </p>
-            </article>
+            </div>
           </div>
+
+          {/* Product 3 */}
+          <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6 md:p-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-400/10 border border-green-400/30 rounded-full text-xs font-semibold text-green-400">Operational</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">The Insight Series</h3>
+            <p className="text-cyan-400 text-lg mb-6">AI-driven intelligence briefs transforming data into actionable foresight.</p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold text-white mb-3">What It Does:</h4>
+                <p className="text-gray-300 mb-6">Automated intelligence generation powered by the Aqool Engine, synthesizing thousands of data points into structured briefs revealing trends, risks, and early signals shaping Saudi Arabia's AI economy.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                <ul className="space-y-2 text-gray-300 mb-6">
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Daily Intelligence Briefs:</strong> Synthesis of the previous 24 hours with source attribution</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Weekly Sector Analysis:</strong> Trend identification across healthcare, logistics, education, energy</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Monthly Landscape Reports:</strong> Comprehensive updates on policy, capital, and infrastructure</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Custom Alerts:</strong> Notifications for specific topics, sectors, or developments</li>
+                </ul>
+                
+                <h4 className="font-semibold text-white mb-3">Use It For:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market monitoring</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Morning briefings</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Research continuity</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Early opportunity ID</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Product 4 - Prototype */}
+          <div className="bg-gray-900/50 border border-yellow-500/30 rounded-xl p-6 md:p-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full text-xs font-semibold text-yellow-400">Prototype</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">Digital Twinning Policy Lab</h3>
+            <p className="text-cyan-400 text-lg mb-6">Interactive scenario modeling for complex policy environments.</p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold text-white mb-3">What It Does:</h4>
+                <p className="text-gray-300 mb-6">Simulation environment using actual GASTAT economic and workforce data to model policy outcomes, workforce scenarios, and compliance requirements before making investment or market entry decisions.</p>
+                
+                <h4 className="font-semibold text-white mb-3">What You Can Model:</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Workforce composition under different Saudization requirements (40%, 60%, 80%)</li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Training program investment ROI using actual salary data</li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Regional workforce availability and hiring timelines</li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Compliance cost projections for different business models</li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Multi-year scenarios (1, 3, 5, 10-year projections)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                <ul className="space-y-2 text-gray-300 mb-6">
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Interactive policy scenario testing</li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Compliance cost modeling based on GASTAT data</li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Regional comparison analysis</li>
+                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Export-ready projections for presentations</li>
+                </ul>
+                
+                <h4 className="font-semibold text-white mb-3">Use It For:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-sm text-yellow-400">Market entry planning</span>
+                  <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-sm text-yellow-400">Scenario development</span>
+                  <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-sm text-yellow-400">Policy risk assessment</span>
+                  <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-sm text-yellow-400">Compliance testing</span>
+                </div>
+                
+                <p className="mt-6 text-sm text-yellow-400 italic">Limited access available for pilot partners</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
