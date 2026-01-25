@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { MessageSquare, Link2, Search, BarChart3 } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
 
@@ -233,7 +234,7 @@ export default function NewIntelligenceHome() {
                   Become a Partner
                 </a>
                 <a 
-                  href="#about"
+                  href="#the-problem"
                   className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     border: '2px solid #00D9C8',
@@ -481,19 +482,19 @@ export default function NewIntelligenceHome() {
           <h3 className="text-lg font-semibold text-white mb-6 text-center">Planned Capabilities:</h3>
           <div className="grid md:grid-cols-2 gap-4 mb-8">
             <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <span className="text-cyan-400 text-xl">💬</span>
+              <MessageSquare className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
               <p className="text-gray-300">Ask questions in plain English, get organized results with source attribution</p>
             </div>
             <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <span className="text-cyan-400 text-xl">🔗</span>
+              <Link2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
               <p className="text-gray-300">Cross-reference data across all products and datasets</p>
             </div>
             <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <span className="text-cyan-400 text-xl">🔍</span>
+              <Search className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
               <p className="text-gray-300">Custom search and filtering</p>
             </div>
             <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <span className="text-cyan-400 text-xl">📊</span>
+              <BarChart3 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
               <p className="text-gray-300">Export capability for reports</p>
             </div>
           </div>
