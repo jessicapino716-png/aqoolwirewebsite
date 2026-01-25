@@ -106,7 +106,7 @@ export default function NewIntelligenceHome() {
             </Link>
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</a>
+              <Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</Link>
               <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
               <Button 
                 size="sm"
@@ -145,13 +145,13 @@ export default function NewIntelligenceHome() {
           {mobileMenuOpen && (
             <div className="md:hidden border-t border-cyan-500/20 bg-[#0f1e2e]">
               <nav className="flex flex-col px-4 py-4 space-y-3">
-                <a 
-                  href="#about" 
+                <Link 
+                  href="/about" 
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-gray-300 hover:text-cyan-400 transition-colors font-medium py-2"
                 >
                   About
-                </a>
+                </Link>
                 <a 
                   href="#copilot" 
                   onClick={() => setMobileMenuOpen(false)}
@@ -360,32 +360,6 @@ export default function NewIntelligenceHome() {
                 requirements.
               </p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="relative z-10 py-16 md:py-32 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">
-            About <span className="text-cyan-400">Jessica Pino</span>, Founder
-          </h2>
-          
-          <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
-            <p>
-              After eighteen years as a US State Department economic and political analyst working across developing economies in the Middle East and South Asia—including Egypt, Iraq, and Pakistan—Jessica Pino spent her career attempting to answer an impossible question: how do you measure the effectiveness of foreign policy programs? She developed frameworks to quantify development outcomes, tracked infrastructure investments across fragile states, and built analytical models to assess whether billions in US assistance actually achieved their intended goals. The challenge was never the analysis—it was the data. Information arrived late, contradicted itself across sources, and by the time rigorous assessment was possible, policy windows had closed. When Saudi Arabia accelerated its Vision 2030 AI transformation, Ms. Pino recognized the same intelligence gap, but saw an opportunity to solve it differently.
-            </p>
-            
-            <p>
-              She built The Aqool Wire to solve a problem she lived with for nearly two decades. Traditional consulting reports cost six figures and arrive quarterly—far too slow for the pace of Saudi Arabia's AI economy, where billions move weekly and infrastructure decisions reshape entire sectors. Her recent Masters in Public Policy from LSE, focused on econometrics and AI labor markets, convinced her that institutional-grade intelligence could be automated using the same AI technologies transforming Saudi Arabia itself. The platform combines her deep knowledge of Saudi policy architecture with modern AI capabilities to deliver what government agencies, sovereign wealth funds, and strategic investors actually need: verified, real-time intelligence on capital flows, infrastructure development, and regulatory evolution.
-            </p>
-            
-            <div className="mt-10 p-6 md:p-8 bg-gray-900/50 border border-cyan-500/20 rounded-xl">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Digital Twinning Policy Lab</h3>
-              <p>
-                The Aqool Wire goes beyond traditional market intelligence by incorporating a Digital Twinning Policy Lab—an interactive simulation environment where decision-makers can model workforce scenarios, policy interventions, and investment outcomes before committing capital. This tool emerged from Ms. Pino's academic work on AI labor market dynamics and years of watching governments implement policies without adequate impact forecasting. Users can test variables like Saudization quotas, training program investments, or sector-specific visa policies against real economic data, seeing projected outcomes across timeframes from quarters to decades. It's policy analysis that matches the sophistication of the investments it informs.
-              </p>
-            </div>
           </div>
         </div>
       </section>

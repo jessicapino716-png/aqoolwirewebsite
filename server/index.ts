@@ -8,6 +8,7 @@ const app = express();
 // Known static frontend routes that should return 200
 const KNOWN_STATIC_ROUTES = [
   '/',
+  '/about',
   '/insights',
   '/aiinvestmentobservatory',
   '/policy',
