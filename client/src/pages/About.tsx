@@ -62,7 +62,7 @@ export default function About() {
           
           <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
             <p>
-              After eighteen years as a US State Department economic and political analyst working across developing economies in the Middle East and South Asia—including Egypt, Iraq, and Pakistan—Jessica Pino spent her career attempting to answer an impossible question: how do you measure the effectiveness of foreign policy programs? She developed frameworks to quantify development outcomes, tracked infrastructure investments across fragile states, and built analytical models to assess whether billions in US assistance actually achieved their intended goals. The challenge was never the analysis—it was the data. Information arrived late, contradicted itself across sources, and by the time rigorous assessment was possible, policy windows had closed. When Saudi Arabia accelerated its Vision 2030 AI transformation, Ms. Pino recognized the same intelligence gap, but saw an opportunity to solve it differently.
+              Jessica Pino spent eighteen years as a US State Department economic and political analyst working across developing economies in the Middle East and South Asia—including Egypt, Iraq, and Pakistan—attempting to answer an impossible question: how do you measure the effectiveness of foreign policy programs? She developed frameworks to quantify development outcomes, tracked infrastructure investments across fragile states, and evaluated whether US assistance programs actually delivered their intended results. The challenge was never the analysis—it was the data. Information arrived late, contradicted itself across sources, and by the time rigorous assessment was possible, policy windows had closed. When Saudi Arabia accelerated its Vision 2030 AI transformation, Ms. Pino recognized a similar intelligence gap, but saw an opportunity to solve it differently.
             </p>
             
             <p>
@@ -75,6 +75,10 @@ export default function About() {
                 The Aqool Wire goes beyond traditional market intelligence by incorporating a Digital Twinning Policy Lab—an interactive simulation environment where decision-makers can model workforce scenarios, policy interventions, and investment outcomes before committing capital. This tool emerged from Ms. Pino's academic work on AI labor market dynamics and years of watching governments implement policies without adequate impact forecasting. Users can test variables like Saudization quotas, training program investments, or sector-specific visa policies against real economic data, seeing projected outcomes across timeframes from quarters to decades. It's policy analysis that matches the sophistication of the investments it informs.
               </p>
             </div>
+
+            <p>
+              This platform represents the convergence of traditional economic expertise with AI-powered intelligence infrastructure. Every data point traces back to Tier 1 government sources—GASTAT, ministry announcements, verified regulatory filings. Every analysis maintains the rigor of academic econometrics while delivering insights at the speed of algorithmic processing. For the first time, institutions can access Saudi economic intelligence that's both authoritative and immediate, analytical and actionable. The Aqool Wire exists because the future of public and private sector investment demands intelligence infrastructure that operates at the pace of transformation itself.
+            </p>
           </div>
 
           {/* Back to Home Button */}
