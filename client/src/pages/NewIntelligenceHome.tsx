@@ -281,7 +281,6 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* Our Solution Section */}
       <section id="solution" className="relative z-10 py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent">
         <div className="max-w-6xl mx-auto">
@@ -297,7 +296,6 @@ export default function NewIntelligenceHome() {
           </p>
         </div>
       </section>
-
       {/* Products Section */}
       <section id="products" className="relative z-10 py-8 md:py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto space-y-12">
@@ -461,7 +459,6 @@ export default function NewIntelligenceHome() {
 
         </div>
       </section>
-
       {/* Decision Co-Pilot Section - Coming Q1 2026 */}
       <section id="copilot" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-dark)) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
         <div className="flex justify-center mb-6">
@@ -502,7 +499,6 @@ export default function NewIntelligenceHome() {
           <div className="mt-6 md:mt-8 text-center text-xs md:text-sm font-semibold tracking-wide text-blue-400">LAUNCHING Q1 2026</div>
         </div>
       </section>
-
       {/* The Aqool Engine Section */}
       <section id="engine" className="relative z-10 py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-transparent via-green-500/5 to-transparent">
         <div className="max-w-6xl mx-auto">
@@ -564,19 +560,17 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* GCC Expansion Teaser */}
       <section className="relative z-10 py-12 md:py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-cyan-500/10 via-green-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl backdrop-blur">
             <div className="text-left">
-              <p className="text-lg md:text-xl font-semibold text-white mb-1">Saudi Arabia First. Then the Entire GCC.</p>
+              <p className="text-lg md:text-xl font-semibold text-white mb-1">Saudi Arabia Now. Soon the Entire GCC.</p>
               <p className="text-sm md:text-base text-gray-400">The same intelligence infrastructure. Expanded across the Gulf Cooperation Council.</p>
             </div>
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">Get In Touch</h2>
