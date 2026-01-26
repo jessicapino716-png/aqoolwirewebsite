@@ -1014,14 +1014,15 @@ html {
 
 /* Horizontal scrolling animation for data source boxes */
 @keyframes scroll-x {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(calc(-50% - 8px));
   }
 }
 
 .animate-scroll-x {
-  animation: scroll-x 30s linear infinite;
+  animation: scroll-x 25s linear infinite;
+  will-change: transform;
 }
