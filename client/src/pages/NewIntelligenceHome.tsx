@@ -586,13 +586,8 @@ export default function NewIntelligenceHome() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
-                <ul className="space-y-2 text-gray-300 mb-6">
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Interactive policy scenario testing</li>
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Compliance cost modeling based on GASTAT data</li>
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Regional comparison analysis</li>
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Export-ready projections for presentations</li>
-                </ul>
+                <h4 className="font-semibold text-white mb-3">Why It Matters:</h4>
+                <p className="text-gray-300 mb-6">Most policy and investment decisions are still made using static assumptions and historical snapshots. The Digital Twinning Policy Lab explores a different approach: adaptive models that update as real-world conditions change, allowing decision-makers to evaluate trade-offs, risks, and long-term impacts with greater confidence.</p>
                 
                 <h4 className="font-semibold text-white mb-3">Use It For:</h4>
                 <div className="flex flex-wrap gap-2">
