@@ -100,7 +100,7 @@ export default function NewIntelligenceHome() {
         background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(100, 255, 180, 0.1) 0%, rgba(100, 255, 180, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(94.34% 58.96% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
       }}>
         {/* Header */}
-        <header className="sticky top-0 z-50 w-full border-b border-cyan-500/20 bg-[#0a1628]/90 backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full border-b border-cyan-500/20 bg-black/40 backdrop-blur-lg">
           <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-1 flex items-center justify-between">
             <Link href="/" data-testid="link-logo">
               <img 
@@ -150,7 +150,7 @@ export default function NewIntelligenceHome() {
 
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-t border-cyan-500/20 bg-[#0a1628]/95 backdrop-blur-md">
+            <div className="md:hidden border-t border-cyan-500/20 bg-black/60 backdrop-blur-lg">
               <nav className="flex flex-col px-4 py-4 space-y-1">
                 <a 
                   href="#solution" 
