@@ -713,8 +713,6 @@ export default function NewIntelligenceHome() {
             <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-lg text-sm text-blue-400">Timestamps</span>
             <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-lg text-sm text-blue-400">Links to original announcements, filings, or reports</span>
           </div>
-          
-          <div className="mt-6 md:mt-8 text-center text-xs md:text-sm font-semibold tracking-wide text-blue-400">LAUNCHING Q1 2026</div>
         </div>
       </section>
       {/* The Aqool Engine Section */}
