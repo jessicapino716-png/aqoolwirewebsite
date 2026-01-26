@@ -650,9 +650,10 @@ export default function NewIntelligenceHome() {
             Coming Q1 2026
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center">
           <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">Decision Co-Pilot</span>
         </h2>
+        <p className="text-blue-400 text-sm md:text-base text-center mb-4 md:mb-6">Planned interface layer across Aqool's intelligence products</p>
         
         <p className="text-base md:text-lg lg:text-xl text-center mb-10 md:mb-16 max-w-3xl mx-auto leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
           Natural language query interface for instant access to the entire Aqool data lake. Ask questions in plain English, get organized results with source attribution.
