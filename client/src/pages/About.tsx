@@ -73,7 +73,7 @@ export default function About() {
             </div>
 
             <p>
-              This platform represents the convergence of traditional economic expertise with AI-powered intelligence infrastructure. Every data point traces back to Tier 1 government sources—GASTAT, ministry announcements, verified regulatory filings. Every analysis maintains the rigor of academic econometrics while delivering insights at the speed of algorithmic processing. For the first time, institutions can access Saudi economic intelligence that's both authoritative and immediate, analytical and actionable. The Aqool Wire exists because the future of public and private sector investment demands intelligence infrastructure that operates at the pace of transformation itself.
+              This platform represents the convergence of traditional economic expertise with AI-powered intelligence infrastructure. Every data point traces back to Tier 1 government sources—GASTAT, ministry announcements, verified regulatory filings. Every report is produced from a structured, verifiable data foundation and is maintained continuously as conditions evolve. For the first time, institutions can access Saudi economic intelligence that's both authoritative and immediate, analytical and actionable. The Aqool Wire exists because the future of public and private sector investment demands intelligence infrastructure that operates at the pace of transformation itself.
             </p>
           </div>
 
