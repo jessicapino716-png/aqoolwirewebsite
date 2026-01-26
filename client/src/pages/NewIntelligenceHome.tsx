@@ -457,12 +457,21 @@ export default function NewIntelligenceHome() {
                 <h4 className="font-semibold text-white mb-3">What It Does:</h4>
                 <p className="text-gray-300 mb-6">Aggregates and analyzes AI-related capital flows, policy signals, and partnership activity across Saudi Arabia's Vision 2030 ecosystem — identifying where funding is accelerating, where gaps remain, and where private solutions can align with national priorities.</p>
                 
-                <h4 className="font-semibold text-white mb-3">Planned Capabilities:</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Opportunity Radar:</strong> Predictive intelligence highlighting emerging investment and partnership zones before capital concentration peaks</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Investment Intelligence Engine:</strong> Real-time visualization of AI capital flows by sector, region, investor, and strategic theme</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Regulatory & Policy Intelligence:</strong> Continuous tracking of AI policy developments translated into actionable investment and market-entry guidance</li>
-                </ul>
+                <h4 className="font-semibold text-white mb-4">Planned Capabilities:</h4>
+                <div className="grid gap-4">
+                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
+                    <h5 className="text-white font-semibold mb-2">Opportunity Radar</h5>
+                    <p className="text-gray-300 text-sm">Predictive intelligence highlighting emerging investment and partnership zones before capital concentration peaks</p>
+                  </div>
+                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
+                    <h5 className="text-white font-semibold mb-2">Investment Intelligence Engine</h5>
+                    <p className="text-gray-300 text-sm">Real-time visualization of AI capital flows by sector, region, investor, and strategic theme</p>
+                  </div>
+                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
+                    <h5 className="text-white font-semibold mb-2">Regulatory & Policy Intelligence</h5>
+                    <p className="text-gray-300 text-sm">Continuous tracking of AI policy developments translated into actionable investment and market-entry guidance</p>
+                  </div>
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold text-white mb-3">What You Get:</h4>
