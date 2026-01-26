@@ -642,12 +642,12 @@ export default function NewIntelligenceHome() {
 
         </div>
       </section>
-      {/* Decision Co-Pilot Section - Coming Q1 2026 */}
+      {/* Decision Co-Pilot Section - Coming Q3 2026 */}
       <section id="copilot" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto" style={{ background: 'linear-gradient(135deg, hsl(var(--bg-dark)) 0%, hsl(var(--bg-base)) 50%, rgba(0, 153, 255, 0.05) 100%)' }}>
         <div className="flex justify-center mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-400/10 border border-blue-400/30 rounded-full text-sm font-semibold text-blue-400">
             <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            Coming Q1 2026
+            Coming Q3 2026
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center">
@@ -680,7 +680,7 @@ export default function NewIntelligenceHome() {
 
           {/* Planned Capabilities */}
           <div className="bg-gray-900/30 border border-blue-500/20 rounded-lg p-5">
-            <h4 className="text-base font-semibold text-white mb-3">Planned Capabilities (Q1 2026)</h4>
+            <h4 className="text-base font-semibold text-white mb-3">Planned Capabilities (Q3 2026)</h4>
             <ul className="text-sm text-gray-300 space-y-1.5">
               <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Natural-language querying over Aqool's intelligence graph</li>
               <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Cross-product data synthesis with source provenance</li>
