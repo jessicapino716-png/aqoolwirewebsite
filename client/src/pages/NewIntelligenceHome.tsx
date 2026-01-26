@@ -272,42 +272,22 @@ export default function NewIntelligenceHome() {
             <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Siloed data</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">The Problem</h2>
           </div>
-          <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
-            <p className="text-xl md:text-2xl font-semibold text-white">
-              Saudi Arabia is executing one of the most ambitious AI and digital transformation agendas in the world.
-            </p>
+          <div className="max-w-4xl mx-auto space-y-8 text-lg md:text-xl leading-relaxed" style={{ color: '#E2E8F0' }}>
             <p>
-              But the speed of execution has created a new challenge: critical intelligence is fragmented across dozens of institutions, initiatives, and announcements.
+              <span className="text-white font-semibold">Saudi Arabia is executing one of the most ambitious AI and digital transformation agendas in the world.</span> But the speed of execution has created a new challenge: critical intelligence is fragmented across dozens of institutions, initiatives, and announcements.
             </p>
             
-            <div className="pt-2">
-              <p className="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-4">Key signals are spread across:</p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 mt-1">•</span>
-                  <span>Ministries, giga-projects, and sovereign entities</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 mt-1">•</span>
-                  <span>Press releases, speeches, PDFs, and closed briefings</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-cyan-400 mt-1">•</span>
-                  <span>Parallel AI, cloud, and data-center initiatives moving simultaneously</span>
-                </li>
-              </ul>
-            </div>
-            
-            <p className="text-lg md:text-xl font-semibold text-white pt-4">
-              Decision-makers are left stitching together partial views — often relying on static reports or consultants that are outdated the moment they're published.
+            <p>
+              Key signals are spread across ministries, giga-projects, and sovereign entities — buried in press releases, speeches, PDFs, and closed briefings — while parallel AI, cloud, and data-center initiatives move simultaneously.
             </p>
             
-            <div className="pt-4">
-              <p className="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-2">The result:</p>
-              <p className="text-lg md:text-xl font-semibold text-white">
-                Missed opportunities, coordination gaps, and slower decisions in a system that's moving at real-time speed.
-              </p>
-            </div>
+            <p>
+              Decision-makers are left stitching together partial views, often relying on static reports or consultants that are outdated the moment they're published.
+            </p>
+            
+            <p className="text-white font-semibold border-l-4 border-cyan-400 pl-6">
+              The result: missed opportunities, coordination gaps, and slower decisions in a system that's moving at real-time speed.
+            </p>
           </div>
           
           {/* Visual showing the data fragmentation problem */}
