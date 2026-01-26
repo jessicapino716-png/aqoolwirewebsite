@@ -749,7 +749,7 @@ export default function NewIntelligenceHome() {
               <ul className="space-y-3 text-sm text-gray-300">
                 <li><strong className="text-green-400">Data Integration Layer:</strong> Continuous ingestion from 50+ authoritative sources with standardization</li>
                 <li><strong className="text-green-400">Analytics Engine:</strong> Trend detection, anomaly identification, predictive modeling via Vertex AI</li>
-                <li><strong className="text-green-400">Decision Co-Pilot:</strong> Natural language interface (Q1 2026)</li>
+                <li><strong className="text-green-400">Decision Co-Pilot:</strong> Natural language interface (Q3 2026)</li>
               </ul>
             </div>
 
