@@ -512,10 +512,10 @@ export default function NewIntelligenceHome() {
               <div>
                 <h4 className="font-semibold text-white mb-3">What You Get:</h4>
                 <ul className="space-y-2 text-gray-300 mb-6">
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Daily Intelligence Briefs:</strong> Synthesis of the previous 24 hours with source attribution</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Weekly Sector Analysis:</strong> Trend identification across healthcare, logistics, education, energy</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Monthly Landscape Reports:</strong> Comprehensive updates on policy, capital, and infrastructure</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Custom Alerts:</strong> Notifications for specific topics, sectors, or developments</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Weekly Sector Intelligence:</strong> Ongoing analysis of priority sectors (e.g. AI infrastructure, healthcare, energy, logistics, govtech), automatically updated as new signals emerge</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Monthly AI Landscape Reports:</strong> Always-current views of Saudi Arabia's AI ecosystem — spanning policy direction, capital flows, and infrastructure build-out</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Sector Deep Dives:</strong> Living reports that combine policy, capital, and execution intelligence within specific industries or strategic domains</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Custom Intelligence Reports:</strong> Reports generated on demand around specific questions, sectors, regions, or investment themes — maintained in real time as conditions change</li>
                 </ul>
                 
                 <h4 className="font-semibold text-white mb-3">Use It For:</h4>
