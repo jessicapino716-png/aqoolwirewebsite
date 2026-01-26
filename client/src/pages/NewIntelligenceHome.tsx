@@ -7,7 +7,6 @@ import { useToast } from "@/hooks/use-toast";
 import { MessageSquare, Link2, Search, BarChart3 } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
-import problemSectionImage from "@assets/problem-section-page2-02.png";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -304,13 +303,60 @@ export default function NewIntelligenceHome() {
             </p>
           </div>
           
-          {/* Visual showing the data fragmentation problem */}
-          <div className="mt-12 md:mt-16 max-w-5xl mx-auto">
-            <img 
-              src={problemSectionImage} 
-              alt="Data fragmentation across Saudi Arabia's AI ecosystem - showing how investors miss opportunities when data is scattered" 
-              className="w-full rounded-xl border border-cyan-500/20 shadow-2xl"
-            />
+          {/* Horizontal scrolling data source boxes */}
+          <div className="mt-12 md:mt-16 overflow-hidden">
+            <div className="flex gap-4 animate-scroll-x">
+              {/* First set of boxes */}
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Government Portals</h4>
+                <p className="text-gray-400 text-sm">SDAIA, MCIT, GASTAT, NCC announcements scattered across websites</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Giga-Projects</h4>
+                <p className="text-gray-400 text-sm">NEOM, Red Sea, Qiddiya, Diriyah tech initiatives in separate ecosystems</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Private Sector</h4>
+                <p className="text-gray-400 text-sm">AWS, Google, Oracle, Microsoft partnerships announced in isolation</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Regulatory Bodies</h4>
+                <p className="text-gray-400 text-sm">Policy changes, licensing updates, compliance requirements in PDFs</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Investment Flows</h4>
+                <p className="text-gray-400 text-sm">PIF allocations, VC rounds, sovereign investments across platforms</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Global Benchmarks</h4>
+                <p className="text-gray-400 text-sm">OECD, WEF, Stanford reports requiring local context integration</p>
+              </div>
+              {/* Duplicate set for seamless loop */}
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Government Portals</h4>
+                <p className="text-gray-400 text-sm">SDAIA, MCIT, GASTAT, NCC announcements scattered across websites</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Giga-Projects</h4>
+                <p className="text-gray-400 text-sm">NEOM, Red Sea, Qiddiya, Diriyah tech initiatives in separate ecosystems</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Private Sector</h4>
+                <p className="text-gray-400 text-sm">AWS, Google, Oracle, Microsoft partnerships announced in isolation</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Regulatory Bodies</h4>
+                <p className="text-gray-400 text-sm">Policy changes, licensing updates, compliance requirements in PDFs</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Investment Flows</h4>
+                <p className="text-gray-400 text-sm">PIF allocations, VC rounds, sovereign investments across platforms</p>
+              </div>
+              <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+                <h4 className="text-blue-400 font-semibold mb-2">Global Benchmarks</h4>
+                <p className="text-gray-400 text-sm">OECD, WEF, Stanford reports requiring local context integration</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

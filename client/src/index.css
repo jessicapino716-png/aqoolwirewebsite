@@ -1011,3 +1011,17 @@ html {
     font-size: 16px;
   }
 }
+
+/* Horizontal scrolling animation for data source boxes */
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 30s linear infinite;
+}
