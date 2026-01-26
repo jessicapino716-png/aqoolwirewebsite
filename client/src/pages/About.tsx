@@ -69,9 +69,7 @@ export default function About() {
             
             <div className="mt-10 p-6 md:p-8 bg-gray-900/50 border border-cyan-500/20 rounded-xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Digital Twin Policy Lab</h2>
-              <p>
-                The Aqool Wire goes beyond traditional market intelligence by incorporating a Digital Twinning Policy Lab—an interactive simulation environment where decision-makers can model workforce scenarios, policy interventions, and investment outcomes before committing capital. This tool emerged from Ms. Pino's academic work on AI labor market dynamics and years of watching governments implement policies without adequate impact forecasting. Users can test variables like Saudization quotas, training program investments, or sector-specific visa policies against real economic data, seeing projected outcomes across timeframes from quarters to decades. It's policy analysis that matches the sophistication of the investments it informs.
-              </p>
+              <p>The Aqool Wire goes beyond traditional market intelligence by incorporating a Digital Twin Policy Lab—an interactive simulation environment where decision-makers can model workforce scenarios, policy interventions, and investment outcomes before committing capital. This tool emerged from Ms. Pino's academic work on AI labor market dynamics and years of watching governments implement policies without adequate impact forecasting. Users can test variables like Saudization quotas, training program investments, or sector-specific visa policies against real economic data, seeing projected outcomes across timeframes from quarters to decades. It's policy analysis that matches the sophistication of the investments it informs.</p>
             </div>
 
             <p>
