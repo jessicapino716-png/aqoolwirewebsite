@@ -576,7 +576,8 @@ export default function NewIntelligenceHome() {
                 <h4 className="font-semibold text-white mb-3">What It Does:</h4>
                 <p className="text-gray-300 mb-6">The Digital Twinning Policy Lab is a continuously evolving simulation environment that integrates official economic and workforce data with AI-assisted econometric modeling. It enables policymakers, investors, and enterprises to test scenarios, compare outcomes, and stress-test decisions as new data becomes available.</p>
                 
-                <h4 className="font-semibold text-white mb-3">What You Can Model:</h4>
+                <h4 className="font-semibold text-white mb-1">Current Modeling Capabilities</h4>
+                <p className="text-gray-400 text-sm mb-3">(with expansion underway)</p>
                 <ul className="space-y-2 text-gray-300">
                   <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Workforce composition under different Saudization requirements (40%, 60%, 80%)</li>
                   <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Training program investment ROI using actual salary data</li>
