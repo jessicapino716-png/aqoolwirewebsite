@@ -329,7 +329,7 @@ export default function NewIntelligenceHome() {
               </div>
               <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
                 <h4 className="text-blue-400 font-semibold mb-2">Global Benchmarks</h4>
-                <p className="text-gray-400 text-sm">OECD, WEF, Stanford reports requiring local context integration</p>
+                <p className="text-gray-400 text-sm">OECD, WEF, academic reports requiring local context integration</p>
               </div>
               {/* Duplicate set for seamless loop */}
               <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
@@ -354,7 +354,7 @@ export default function NewIntelligenceHome() {
               </div>
               <div className="flex-shrink-0 w-64 p-5 bg-blue-500/10 border border-blue-500/30 rounded-xl">
                 <h4 className="text-blue-400 font-semibold mb-2">Global Benchmarks</h4>
-                <p className="text-gray-400 text-sm">OECD, WEF, Stanford reports requiring local context integration</p>
+                <p className="text-gray-400 text-sm">OECD, WEF, academic reports requiring local context integration</p>
               </div>
             </div>
           </div>
