@@ -8,6 +8,7 @@ import { MessageSquare, Link2, Search, BarChart3 } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
 import infrastructureScreenshot from "@assets/Screenshot_2026-01-26_at_11.14.32_AM_1769415278423.png";
+import infrastructureMapScreenshot from "@assets/Screenshot_2026-01-26_at_11.17.14_AM_1769415442425.png";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -397,6 +398,21 @@ export default function NewIntelligenceHome() {
                   <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Total compute growth across regions, including GW capacity, storage, and network reach</li>
                   <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Saudi progress benchmarked against regional and global infrastructure leaders</li>
                 </ul>
+                
+                <div className="mt-6">
+                  <div className="relative rounded-xl overflow-hidden border border-cyan-500/30 shadow-2xl">
+                    <img 
+                      src={infrastructureMapScreenshot} 
+                      alt="Infrastructure Map - Geographic visualization of Saudi Arabia's AI infrastructure" 
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 to-transparent p-4">
+                      <p className="text-cyan-400 font-semibold text-sm">Geographic Infrastructure View</p>
+                      <p className="text-gray-300 text-xs">Real-time mapping of data centers, cloud regions, AI hubs, and compute facilities across the Kingdom.</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2 text-center">15 Live · 7 Building · 6 Planned · $750B+ Invested</p>
+                </div>
               </div>
               <div>
                 <div className="mb-6">
