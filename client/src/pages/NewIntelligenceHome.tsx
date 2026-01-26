@@ -429,12 +429,14 @@ export default function NewIntelligenceHome() {
                   </div>
                   <p className="text-xs text-gray-500 mt-2 text-center">Live data · Updated continuously</p>
                 </div>
-                <h4 className="font-semibold text-white mb-3">Use It For:</h4>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Infrastructure readiness</span>
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market entry timing</span>
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Capacity planning</span>
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Competitive positioning</span>
+                <div className="mt-6">
+                  <h4 className="font-semibold text-white mb-3">Use It For:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Infrastructure readiness</span>
+                    <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market entry timing</span>
+                    <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Capacity planning</span>
+                    <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Competitive positioning</span>
+                  </div>
                 </div>
               </div>
             </div>
