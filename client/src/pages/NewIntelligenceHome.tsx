@@ -389,8 +389,10 @@ export default function NewIntelligenceHome() {
                 </li>
               </ul>
             </div>
-            <p className="text-white font-semibold border-l-4 border-cyan-400 pl-6">
-              Below are two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine's continuously updated, source-verified intelligence layer.
+            <p className="text-center text-lg md:text-xl font-semibold mt-12">
+              <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Below are two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine's continuously updated, source-verified intelligence layer.
+              </span>
             </p>
           </div>
         </div>
