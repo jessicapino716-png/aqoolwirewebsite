@@ -272,12 +272,33 @@ export default function NewIntelligenceHome() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">The Problem</h2>
           </div>
           <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
-            <p>
-              Saudi Arabia's Vision 2030 generates thousands of data points weekly across government sources, private sector announcements, and international partnerships. This information is scattered across ministries, PIF vehicles, regulators, and industry sources—making it nearly impossible to see the complete picture of where capital is flowing, what infrastructure is being built, and how these pieces connect.
+            <p className="text-xl md:text-2xl font-semibold text-white">
+              Saudi Arabia's AI economy is moving faster than anyone can track.
             </p>
-            <p className="text-cyan-400 font-semibold text-lg md:text-xl">
-              By the time most organizations manually compile this information, opportunities have already shifted.
-            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="text-cyan-400 mt-1">•</span>
+                <span>Vision 2030 initiatives are announced daily</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-cyan-400 mt-1">•</span>
+                <span>AI, cloud, and data infrastructure investments are scattered across ministries, giga-projects, and private firms</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-cyan-400 mt-1">•</span>
+                <span>Critical signals live in press releases, speeches, PDFs, and closed briefings</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-cyan-400 mt-1">•</span>
+                <span>Decision-makers are forced to rely on static reports, consultants, or partial views</span>
+              </li>
+            </ul>
+            <div className="pt-4">
+              <p className="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-2">Result:</p>
+              <p className="text-lg md:text-xl font-semibold text-white">
+                Missed opportunities. Poor coordination. Slow decisions in a fast-moving system.
+              </p>
+            </div>
           </div>
         </div>
       </section>
