@@ -735,67 +735,6 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-      {/* The Aqool Engine Section */}
-      <section id="engine" className="relative z-10 py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-transparent via-green-500/5 to-transparent pt-[60px] pb-[60px]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-green-400 text-sm font-semibold tracking-wider uppercase">Powering All Products</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">The Aqool Engine</h2>
-            <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
-              The unified intelligence infrastructure powering all products. Every product on The Aqool Wire is powered by the Aqool Engine—our proprietary data infrastructure that makes real-time intelligence possible.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {/* Tier 1 */}
-            <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-8 h-8 flex items-center justify-center bg-cyan-500/20 rounded-full text-cyan-400 font-bold text-sm">1</span>
-                <h3 className="text-lg font-semibold text-white">Data Collection</h3>
-              </div>
-              <ul className="space-y-3 text-sm text-gray-300">
-                <li><strong className="text-cyan-400">Open-Source Government:</strong> Saudi Digital Government Authority, GASTAT, SDAIA, MCIT</li>
-                <li><strong className="text-cyan-400">Private Sector:</strong> Verified company announcements, industry consortium data</li>
-                <li><strong className="text-cyan-400">Global Datasets:</strong> OECD.AI, MAGNiTT, WEF, Stanford Digital Economy Lab</li>
-              </ul>
-            </div>
-
-            {/* Tier 2 */}
-            <div className="bg-gray-900/50 border border-green-500/20 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-8 h-8 flex items-center justify-center bg-green-500/20 rounded-full text-green-400 font-bold text-sm">2</span>
-                <h3 className="text-lg font-semibold text-white">Unified Intelligence Engine</h3>
-              </div>
-              <ul className="space-y-3 text-sm text-gray-300">
-                <li><strong className="text-green-400">Data Integration Layer:</strong> Continuous ingestion from authoritative sources with standardization</li>
-                <li><strong className="text-green-400">Analytics Engine:</strong> Trend detection, anomaly identification, predictive modeling</li>
-                <li><strong className="text-green-400">Decision Co-Pilot:</strong> Natural language interface (Q3 2026)</li>
-              </ul>
-            </div>
-
-            {/* Tier 3 */}
-            <div className="bg-gray-900/50 border border-blue-500/20 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-8 h-8 flex items-center justify-center bg-blue-500/20 rounded-full text-blue-400 font-bold text-sm">3</span>
-                <h3 className="text-lg font-semibold text-white">Product Outputs</h3>
-              </div>
-              <ul className="space-y-3 text-sm text-gray-300">
-                <li><strong className="text-blue-400">Infrastructure Map:</strong> Visual sovereignty and capacity mapping</li>
-                <li><strong className="text-blue-400">Investment Observatory:</strong> Capital flow dashboards</li>
-                <li><strong className="text-blue-400">Insight Series:</strong> Automated intelligence briefs</li>
-                <li><strong className="text-blue-400">Policy Lab:</strong> Simulation models</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900/50 border border-cyan-500/20 rounded-full">
-              <span className="text-cyan-400 font-semibold">Trust & Compliance:</span>
-              <span className="text-gray-300 text-sm">Built on open data standards (PDDL, ISO, Open Data Institute)</span>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* GCC Expansion Teaser */}
       <section className="relative z-10 py-12 md:py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
