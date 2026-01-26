@@ -296,9 +296,7 @@ export default function NewIntelligenceHome() {
             </ul>
             <div className="pt-4">
               <p className="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-2">Result:</p>
-              <p className="text-lg md:text-xl font-semibold text-white">
-                Missed opportunities. Poor coordination. Slow decisions in a fast-moving system.
-              </p>
+              <p className="text-lg md:text-xl font-semibold text-white">Missed opportunities. Challenging coordination. Slow decisions in a fast-moving system.</p>
             </div>
           </div>
           
