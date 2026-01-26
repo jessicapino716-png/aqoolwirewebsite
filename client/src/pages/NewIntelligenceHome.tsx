@@ -290,7 +290,7 @@ export default function NewIntelligenceHome() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1">•</span>
-                  <span>Parallel AI, cloud, and data-center initiatives moving simultaneously</span>
+                  <span>International datasets, benchmarks, and external analyses that lack local integration</span>
                 </li>
               </ul>
             </div>
