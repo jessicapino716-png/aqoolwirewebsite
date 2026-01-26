@@ -274,7 +274,7 @@ export default function NewIntelligenceHome() {
           </div>
           <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
             <p className="text-xl md:text-2xl font-semibold text-white">
-              Saudi Arabia's AI economy is moving faster than anyone can track.
+              Saudi Arabia's AI economy is accelerating faster than decision-makers can see.
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
