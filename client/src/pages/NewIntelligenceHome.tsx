@@ -277,9 +277,23 @@ export default function NewIntelligenceHome() {
               <span className="text-white font-semibold">Saudi Arabia is executing one of the most ambitious AI and digital transformation agendas in the world.</span> But the speed of execution has created a new challenge: critical intelligence is fragmented across dozens of institutions, initiatives, and announcements.
             </p>
             
-            <p>
-              Key signals are spread across ministries, giga-projects, and sovereign entities — buried in press releases, speeches, PDFs, and closed briefings — while parallel AI, cloud, and data-center initiatives move simultaneously.
-            </p>
+            <div>
+              <p className="mb-4">Key signals are spread across:</p>
+              <ul className="space-y-2 pl-1">
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Ministries, giga-projects, and sovereign entities</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Press releases, speeches, PDFs, and closed briefings</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Parallel AI, cloud, and data-center initiatives moving simultaneously</span>
+                </li>
+              </ul>
+            </div>
             
             <p>
               Decision-makers are left stitching together partial views, often relying on static reports or consultants that are outdated the moment they're published.
