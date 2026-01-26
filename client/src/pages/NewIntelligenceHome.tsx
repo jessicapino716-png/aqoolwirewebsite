@@ -100,19 +100,21 @@ export default function NewIntelligenceHome() {
         background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(100, 255, 180, 0.1) 0%, rgba(100, 255, 180, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%), radial-gradient(94.34% 58.96% at 50% 50%, rgba(0, 217, 200, 0.08) 0%, rgba(0, 217, 200, 0) 50%)'
       }}>
         {/* Header */}
-        <header className="relative z-20 w-full border-b border-cyan-500/20">
-          <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-0.5 flex items-center justify-between">
+        <header className="sticky top-0 z-50 w-full border-b border-cyan-500/20 bg-[#0a1628]/90 backdrop-blur-md">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-1 flex items-center justify-between">
             <Link href="/" data-testid="link-logo">
               <img 
                 src={logoImage} 
                 alt="The Aqool Wire" 
-                className="h-20 md:h-32 lg:h-40 w-auto cursor-pointer hover:opacity-80 transition-opacity -my-4 md:-my-6 lg:-my-8"
+                className="h-16 md:h-20 lg:h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
-              <Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">About</Link>
-              <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors font-medium">Co-Pilot</a>
+            <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+              <a href="#solution" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm font-medium">Solution</a>
+              <a href="#products" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm font-medium">Products</a>
+              <a href="#copilot" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm font-medium">Co-Pilot</a>
+              <Link href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm font-medium">About</Link>
               <Button 
                 size="sm"
                 className="bg-[#16e0ab] hover:bg-cyan-400 text-gray-900 font-semibold shadow-[0_4px_14px_rgba(0,217,200,0.4)] hover:shadow-[0_6px_20px_rgba(0,217,200,0.5)] transition-all hover:-translate-y-0.5"
@@ -148,26 +150,40 @@ export default function NewIntelligenceHome() {
 
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-t border-cyan-500/20 bg-[#0f1e2e]">
-              <nav className="flex flex-col px-4 py-4 space-y-3">
+            <div className="md:hidden border-t border-cyan-500/20 bg-[#0a1628]/95 backdrop-blur-md">
+              <nav className="flex flex-col px-4 py-4 space-y-1">
+                <a 
+                  href="#solution" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors font-medium py-3 px-3 rounded-lg"
+                >
+                  Solution
+                </a>
+                <a 
+                  href="#products" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors font-medium py-3 px-3 rounded-lg"
+                >
+                  Products
+                </a>
+                <a 
+                  href="#copilot" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors font-medium py-3 px-3 rounded-lg"
+                >
+                  Co-Pilot
+                </a>
                 <Link 
                   href="/about" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors font-medium py-2"
+                  className="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors font-medium py-3 px-3 rounded-lg"
                 >
                   About
                 </Link>
                 <a 
-                  href="#copilot" 
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors font-medium py-2"
-                >
-                  Co-Pilot
-                </a>
-                <a 
                   href="#contact" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold bg-cyan-500 hover:bg-cyan-400 text-gray-900 rounded-lg shadow-[0_4px_14px_rgba(0,217,200,0.4)] transition-all"
+                  className="inline-flex items-center justify-center px-6 py-3 mt-2 text-sm font-semibold bg-cyan-500 hover:bg-cyan-400 text-gray-900 rounded-lg shadow-[0_4px_14px_rgba(0,217,200,0.4)] transition-all"
                 >
                   Contact
                 </a>
