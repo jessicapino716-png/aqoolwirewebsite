@@ -10,6 +10,7 @@ import mapImage from "@assets/map_1762856003294.png";
 import infrastructureScreenshot from "@assets/Screenshot_2026-01-26_at_11.14.32_AM_1769415278423.png";
 import infrastructureMapScreenshot from "@assets/Screenshot_2026-01-26_at_11.17.14_AM_1769415442425.png";
 import insightSeriesVideo from "@assets/insight_series_demo.mp4";
+import policyLabScreenshot from "@assets/Screenshot_2026-01-26_at_1.11.20_PM_1769422288323.png";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -627,6 +628,14 @@ export default function NewIntelligenceHome() {
                 </div>
                 
                 <p className="mt-6 text-sm text-yellow-400 italic">Limited access available for pilot partners</p>
+                
+                <div className="mt-6 rounded-xl overflow-hidden border border-yellow-500/20 shadow-lg">
+                  <img 
+                    src={policyLabScreenshot} 
+                    alt="Tech Workforce Upskilling Simulator interface" 
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
