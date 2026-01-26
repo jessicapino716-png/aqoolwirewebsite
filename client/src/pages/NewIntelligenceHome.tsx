@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { MessageSquare, Link2, Search, BarChart3 } from "lucide-react";
+import { MessageSquare, Link2, Search, BarChart3, TrendingUp, Clock, Users, Activity, FileText } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
 import infrastructureScreenshot from "@assets/Screenshot_2026-01-26_at_11.14.32_AM_1769415278423.png";
@@ -575,26 +575,41 @@ export default function NewIntelligenceHome() {
                 <p className="text-gray-300 mb-6">The Digital Twinning Policy Lab is a continuously evolving simulation environment that integrates official economic and workforce data with AI-assisted econometric modeling. It enables policymakers, investors, and enterprises to test scenarios, compare outcomes, and stress-test decisions as new data becomes available.</p>
                 
                 <h4 className="font-semibold text-white mb-1">Current Modeling Capabilities</h4>
-                <p className="text-yellow-400 text-sm mb-4">Tech Workforce Upskilling</p>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-white font-medium mb-1">Investment-based scenario testing</p>
+                <p className="text-yellow-400 text-sm mb-5">Tech Workforce Upskilling</p>
+                <div className="space-y-3">
+                  <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
+                    <p className="text-white font-medium mb-1 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-yellow-400" />
+                      Investment-based scenario testing
+                    </p>
                     <p className="text-gray-400 text-sm">Models how varying levels of public and private investment in tech education affect workforce and economic outcomes</p>
                   </div>
-                  <div>
-                    <p className="text-white font-medium mb-1">Time-horizon sensitivity analysis</p>
+                  <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
+                    <p className="text-white font-medium mb-1 flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-yellow-400" />
+                      Time-horizon sensitivity analysis
+                    </p>
                     <p className="text-gray-400 text-sm">Allows exploration of short-, medium-, and longer-term impacts (1–10 years), accounting for pipeline and compounding effects</p>
                   </div>
-                  <div>
-                    <p className="text-white font-medium mb-1">Human capital outcome projections</p>
+                  <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
+                    <p className="text-white font-medium mb-1 flex items-center gap-2">
+                      <Users className="w-4 h-4 text-yellow-400" />
+                      Human capital outcome projections
+                    </p>
                     <p className="text-gray-400 text-sm">Estimates changes in total tech workforce size, AI/ML talent concentration, wage premiums, and aggregate economic contribution</p>
                   </div>
-                  <div>
-                    <p className="text-white font-medium mb-1">Non-linear growth dynamics</p>
+                  <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
+                    <p className="text-white font-medium mb-1 flex items-center gap-2">
+                      <Activity className="w-4 h-4 text-yellow-400" />
+                      Non-linear growth dynamics
+                    </p>
                     <p className="text-gray-400 text-sm">Incorporates diminishing returns, retention effects, and training efficiency assumptions rather than simple linear extrapolation</p>
                   </div>
-                  <div>
-                    <p className="text-white font-medium mb-1">Transparent assumptions and limitations</p>
+                  <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
+                    <p className="text-white font-medium mb-1 flex items-center gap-2">
+                      <FileText className="w-4 h-4 text-yellow-400" />
+                      Transparent assumptions and limitations
+                    </p>
                     <p className="text-gray-400 text-sm">Model structure, calibration sources, and caveats are explicitly documented for responsible use</p>
                   </div>
                 </div>
