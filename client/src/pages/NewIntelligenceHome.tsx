@@ -668,16 +668,16 @@ export default function NewIntelligenceHome() {
           <h3 className="text-lg font-semibold text-white mb-6">Examples of supported queries include:</h3>
           <div className="space-y-3 mb-8">
             <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
-              <p className="text-gray-300 text-sm md:text-base">Which venture capital firms invested in pre-seed tech companies in Saudi Arabia in Q3 2025?</p>
+              <p className="text-gray-300 text-sm md:text-base italic">Which venture capital firms invested in pre-seed tech companies in Saudi Arabia in Q3 2025?</p>
             </div>
             <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
-              <p className="text-gray-300 text-sm md:text-base">What AI infrastructure projects were announced after LEAP 2025, and by which entities?</p>
+              <p className="text-gray-300 text-sm md:text-base italic">What AI infrastructure projects were announced after LEAP 2025, and by which entities?</p>
             </div>
             <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
-              <p className="text-gray-300 text-sm md:text-base">Which sectors are receiving the fastest increase in early-stage capital?</p>
+              <p className="text-gray-300 text-sm md:text-base italic">Which sectors are receiving the fastest increase in early-stage capital?</p>
             </div>
             <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
-              <p className="text-gray-300 text-sm md:text-base">How have investment patterns shifted following recent policy announcements?</p>
+              <p className="text-gray-300 text-sm md:text-base italic">How have investment patterns shifted following recent policy announcements?</p>
             </div>
           </div>
           
