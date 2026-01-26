@@ -301,6 +301,13 @@ export default function NewIntelligenceHome() {
             <p className="text-lg md:text-xl font-semibold text-white pt-4">
               Decision-makers are left stitching together partial views — often relying on static reports or consultants that are outdated the moment they're published.
             </p>
+            
+            <div className="pt-4">
+              <p className="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-2">The result:</p>
+              <p className="text-lg md:text-xl font-semibold text-white">
+                Missed opportunities, coordination gaps, and slower decisions in a system that's moving at real-time speed.
+              </p>
+            </div>
           </div>
           
           {/* Visual showing the data fragmentation problem */}
