@@ -454,7 +454,7 @@ export default function NewIntelligenceHome() {
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-400/10 border border-blue-400/30 rounded-full text-xs font-semibold text-blue-400">Coming in February</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">AI Investment Observatory</h3>
-            <p className="text-cyan-400 text-lg mb-6">Real-time intelligence revealing where AI policy, capital, and opportunity converge.</p>
+            <p className="text-cyan-400 text-lg mb-6">Real-time intelligence revealing where AI policy, capital, and opportunity converge — before signals become consensus.</p>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
