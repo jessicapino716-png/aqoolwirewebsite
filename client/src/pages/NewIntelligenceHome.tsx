@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { MessageSquare, Link2, Search, BarChart3 } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
+import infrastructureScreenshot from "@assets/Screenshot_2026-01-26_at_11.14.32_AM_1769415278423.png";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -398,6 +399,20 @@ export default function NewIntelligenceHome() {
                 </ul>
               </div>
               <div>
+                <div className="mb-6">
+                  <div className="relative rounded-xl overflow-hidden border border-cyan-500/30 shadow-2xl">
+                    <img 
+                      src={infrastructureScreenshot} 
+                      alt="Live Infrastructure Intelligence - Saudi Data Center Market capacity visualization" 
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 to-transparent p-4">
+                      <p className="text-cyan-400 font-semibold text-sm">Live Infrastructure Intelligence</p>
+                      <p className="text-gray-300 text-xs">Visual mapping of Saudi Arabia's AI compute, cloud regions, and data-center capacity by operator and geography.</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2 text-center">Live data · Updated continuously</p>
+                </div>
                 <h4 className="font-semibold text-white mb-3">What You Get:</h4>
                 <ul className="space-y-2 text-gray-300 mb-6">
                   <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Visual infrastructure mapping by region and operator</li>
