@@ -236,7 +236,7 @@ export default function NewIntelligenceHome() {
                   Become a Partner
                 </a>
                 <a 
-                  href="#the-problem"
+                  href="#contact"
                   className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     border: '2px solid #00D9C8',
