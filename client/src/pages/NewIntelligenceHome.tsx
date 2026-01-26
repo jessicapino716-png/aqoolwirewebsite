@@ -278,7 +278,7 @@ export default function NewIntelligenceHome() {
             </p>
             
             <div>
-              <p className="mb-4 text-blue-400">Key signals are spread across:</p>
+              <p className="mb-4 text-cyan-400">Key signals are spread across:</p>
               <ul className="space-y-2 pl-1">
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1">•</span>
