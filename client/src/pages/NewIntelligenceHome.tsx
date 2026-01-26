@@ -364,12 +364,34 @@ export default function NewIntelligenceHome() {
           <div className="text-center mb-12">
             <span className="text-green-400 text-sm font-semibold tracking-wider uppercase">The Aqool Engine</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">Our Solution</h2>
-            <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
-              The Aqool Wire converts fragmented signals into live, decision-grade intelligence using the <span className="text-cyan-400 font-semibold">Aqool Engine</span> — a proprietary data infrastructure that continuously collects, structures, and connects policy, capital, and infrastructure data shaping Saudi Arabia's AI economy.
+            <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-6" style={{ color: '#E2E8F0' }}>
+              The Aqool Wire converts fragmented signals into live, decision-grade intelligence using the <span className="text-cyan-400 font-semibold">Aqool Engine</span> — a proprietary data infrastructure that continuously ingests, structures, and connects policy, capital, and infrastructure data shaping Saudi Arabia's AI economy.
             </p>
+            <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-6" style={{ color: '#E2E8F0' }}>
+              The platform is updated automatically, keeping the intelligence layer current as new announcements, releases, and datasets emerge.
+            </p>
+            <div className="max-w-3xl mx-auto text-left mb-6">
+              <p className="text-base md:text-lg leading-relaxed mb-4" style={{ color: '#E2E8F0' }}>
+                Every data point is anchored to a built-in provenance layer:
+              </p>
+              <ul className="space-y-2 text-base md:text-lg" style={{ color: '#E2E8F0' }}>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Each insight is traceable back to its original source</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Source links are transparent, clickable, and easy to verify</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Users can validate the underlying evidence without hunting through PDFs or scattered websites</span>
+                </li>
+              </ul>
+            </div>
           </div>
           <p className="text-center text-lg md:text-xl font-semibold text-cyan-400 mb-12">
-            Below are two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine.
+            Below are two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine's continuously updated, source-verified intelligence layer.
           </p>
         </div>
       </section>
