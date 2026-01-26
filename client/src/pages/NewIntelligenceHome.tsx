@@ -390,7 +390,7 @@ export default function NewIntelligenceHome() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h4 className="font-semibold text-white mb-3">What It Does:</h4>
-                <p className="text-gray-300 mb-6">Comprehensive dashboard tracking Saudi Arabia's data center projects, compute capacity, cloud infrastructure, and regional distribution—providing visibility into where AI capacity is being built and when it comes online.</p>
+                <p className="text-gray-300 mb-6">Tracks Saudi Arabia's data center, cloud, and AI infrastructure build-out—providing real-time visibility into where compute capacity is being built and when it comes online.</p>
                 
                 <h4 className="font-semibold text-white mb-3">What It Tracks:</h4>
                 <ul className="space-y-2 text-gray-300">
