@@ -788,7 +788,7 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
       {/* Contact Section */}
-      <section id="contact" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto">
+      <section id="contact" className="relative z-10 py-16 md:py-32 px-4 md:px-8 max-w-6xl mx-auto pt-[50px] pb-[50px]">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-center">Get In Touch</h2>
         
         <p className="text-base md:text-lg lg:text-xl text-center mb-10 md:mb-16 leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
