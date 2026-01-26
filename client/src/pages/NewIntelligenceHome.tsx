@@ -690,6 +690,50 @@ export default function NewIntelligenceHome() {
           
           <div className="mt-6 md:mt-8 text-center text-xs md:text-sm font-semibold tracking-wide text-blue-400">LAUNCHING Q1 2026</div>
         </div>
+
+        {/* How It Works */}
+        <div className="max-w-3xl mx-auto mt-12 md:mt-16">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">How It Works</h3>
+          <p className="text-gray-300 mb-6">The Decision Co-Pilot sits on top of the Aqool Engine and:</p>
+          <div className="space-y-3 mb-6">
+            <div className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">•</span>
+              <p className="text-gray-300">Queries structured datasets across investments, policy, infrastructure, and workforce</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">•</span>
+              <p className="text-gray-300">Cross-references results across products (Investment Observatory, Infrastructure Map, Insight Series)</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">•</span>
+              <p className="text-gray-300">Returns organized answers grounded in verified sources only</p>
+            </div>
+          </div>
+          <p className="text-white font-semibold">No hallucinations. No unsourced claims. No black-box reasoning.</p>
+        </div>
+
+        {/* Planned Capabilities */}
+        <div className="max-w-3xl mx-auto mt-12 md:mt-16 bg-gray-900/50 border border-blue-500/20 rounded-xl p-6 md:p-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Planned Capabilities (Q1 2026)</h3>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">•</span>
+              <p className="text-gray-300">Natural-language querying over Aqool's intelligence graph</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">•</span>
+              <p className="text-gray-300">Cross-product data synthesis with source provenance</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">•</span>
+              <p className="text-gray-300">Advanced filtering by timeframe, sector, deal stage, and entity</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">•</span>
+              <p className="text-gray-300">Exportable tables and summaries for reporting and briefings</p>
+            </div>
+          </div>
+        </div>
       </section>
       {/* The Aqool Engine Section */}
       <section id="engine" className="relative z-10 py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-transparent via-green-500/5 to-transparent">
