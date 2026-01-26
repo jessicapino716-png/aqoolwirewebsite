@@ -655,9 +655,14 @@ export default function NewIntelligenceHome() {
         </h2>
         <p className="text-blue-400 text-sm md:text-base text-center mb-4 md:mb-6">Planned interface layer across Aqool's intelligence products</p>
         
-        <p className="text-base md:text-lg lg:text-xl text-center mb-10 md:mb-16 max-w-3xl mx-auto leading-relaxed" style={{ color: 'hsl(var(--gray-light))' }}>
-          Natural language query interface for instant access to the entire Aqool data lake. Ask questions in plain English, get organized results with source attribution.
-        </p>
+        <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl leading-relaxed mb-4" style={{ color: 'hsl(var(--gray-light))' }}>
+            A natural-language query interface for interrogating Aqool's validated intelligence dataset—designed to answer specific, structured questions with full source attribution.
+          </p>
+          <p className="text-sm md:text-base text-gray-400">
+            Users can ask questions in plain English and receive evidence-backed answers, not generated opinions.
+          </p>
+        </div>
 
         <div className="max-w-3xl mx-auto bg-gray-900/50 border border-cyan-500/20 rounded-xl p-5 md:p-9 backdrop-blur">
           <h3 className="text-lg font-semibold text-white mb-6 text-center">Planned Capabilities:</h3>
