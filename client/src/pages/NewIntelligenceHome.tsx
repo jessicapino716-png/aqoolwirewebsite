@@ -665,24 +665,27 @@ export default function NewIntelligenceHome() {
         </div>
 
         <div className="max-w-3xl mx-auto bg-gray-900/50 border border-cyan-500/20 rounded-xl p-5 md:p-9 backdrop-blur">
-          <h3 className="text-lg font-semibold text-white mb-6 text-center">Planned Capabilities:</h3>
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
-            <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <MessageSquare className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-              <p className="text-gray-300">Ask questions in plain English, get organized results with source attribution</p>
+          <h3 className="text-lg font-semibold text-white mb-6">Examples of supported queries include:</h3>
+          <div className="space-y-3 mb-8">
+            <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
+              <p className="text-gray-300 text-sm md:text-base">Which venture capital firms invested in pre-seed tech companies in Saudi Arabia in Q3 2025?</p>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <Link2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-              <p className="text-gray-300">Cross-reference data across all products and datasets</p>
+            <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
+              <p className="text-gray-300 text-sm md:text-base">What AI infrastructure projects were announced after LEAP 2025, and by which entities?</p>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <Search className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-              <p className="text-gray-300">Custom search and filtering</p>
+            <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
+              <p className="text-gray-300 text-sm md:text-base">Which sectors are receiving the fastest increase in early-stage capital?</p>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-              <BarChart3 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-              <p className="text-gray-300">Export capability for reports</p>
+            <div className="pl-4 border-l-2 border-blue-500/50 py-2 bg-blue-500/5 rounded-r-lg pr-3">
+              <p className="text-gray-300 text-sm md:text-base">How have investment patterns shifted following recent policy announcements?</p>
             </div>
+          </div>
+          
+          <h3 className="text-lg font-semibold text-white mb-4">Each response is returned with:</h3>
+          <div className="flex flex-wrap gap-3 mb-6">
+            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-lg text-sm text-blue-400">Source citations</span>
+            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-lg text-sm text-blue-400">Timestamps</span>
+            <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-lg text-sm text-blue-400">Links to original announcements, filings, or reports</span>
           </div>
           
           <div className="mt-6 md:mt-8 text-center text-xs md:text-sm font-semibold tracking-wide text-blue-400">LAUNCHING Q1 2026</div>
