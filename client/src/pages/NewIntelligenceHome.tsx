@@ -209,7 +209,7 @@ export default function NewIntelligenceHome() {
               <p className="text-lg md:text-xl lg:text-2xl mb-4 md:mb-5 leading-relaxed" style={{
                 color: '#E2E8F0'
               }}>
-                Transforming Fragmented Data Into Unified Intelligence
+                A live, structured view of Saudi Arabia's AI, cloud, data, and digital transformation — built for decision-makers, not PDFs.
               </p>
 
               {/* Description */}
