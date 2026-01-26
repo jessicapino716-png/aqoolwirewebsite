@@ -9,6 +9,7 @@ import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
 import infrastructureScreenshot from "@assets/Screenshot_2026-01-26_at_11.14.32_AM_1769415278423.png";
 import infrastructureMapScreenshot from "@assets/Screenshot_2026-01-26_at_11.17.14_AM_1769415442425.png";
+import insightSeriesVideo from "@assets/insight_series_demo.mp4";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -516,6 +517,19 @@ export default function NewIntelligenceHome() {
                   <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Source attribution is preserved as the report evolves</li>
                   <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Decision-makers always see the current state, not a snapshot in time</li>
                 </ul>
+                
+                <div className="mt-6 rounded-lg overflow-hidden border border-cyan-500/20">
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full h-auto"
+                  >
+                    <source src={insightSeriesVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold text-white mb-4">What You Get:</h4>
