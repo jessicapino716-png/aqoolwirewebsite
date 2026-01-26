@@ -367,11 +367,11 @@ export default function NewIntelligenceHome() {
             <span className="text-green-400 text-sm font-semibold tracking-wider uppercase">The Aqool Engine</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">Our Solution</h2>
             <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
-              The Aqool Wire transforms fragmented data into unified intelligence through the <span className="text-cyan-400 font-semibold">Aqool Engine</span>—our proprietary data infrastructure that continuously monitors, organizes, and synthesizes information on Saudi Arabia's AI economy.
+              The Aqool Wire converts fragmented signals into live, decision-grade intelligence using the <span className="text-cyan-400 font-semibold">Aqool Engine</span> — a proprietary data infrastructure that continuously collects, structures, and connects policy, capital, and infrastructure data shaping Saudi Arabia's AI economy.
             </p>
           </div>
           <p className="text-center text-lg md:text-xl font-semibold text-cyan-400 mb-12">
-            Three operational products plus one in development:
+            Below are two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine.
           </p>
         </div>
       </section>
