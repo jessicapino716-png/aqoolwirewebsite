@@ -429,14 +429,6 @@ export default function NewIntelligenceHome() {
                   </div>
                   <p className="text-xs text-gray-500 mt-2 text-center">Live data · Updated continuously</p>
                 </div>
-                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
-                <ul className="space-y-2 text-gray-300 mb-6">
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Visual infrastructure mapping by region and operator</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Capacity timelines and deployment schedules</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Compute availability analysis for market entry planning</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Sovereignty and ownership structure mapping</li>
-                </ul>
-                
                 <h4 className="font-semibold text-white mb-3">Use It For:</h4>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Infrastructure readiness</span>
