@@ -489,6 +489,7 @@ export default function NewIntelligenceHome() {
                   <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market entry strategy</span>
                   <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Partnership spotting</span>
                 </div>
+                <p className="mt-6 text-sm font-bold text-blue-400">Designed for investors, enterprises, and public-sector stakeholders navigating Saudi Arabia's AI economy.</p>
               </div>
             </div>
           </div>
