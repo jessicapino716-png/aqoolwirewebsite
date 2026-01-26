@@ -502,7 +502,7 @@ export default function NewIntelligenceHome() {
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-400/10 border border-green-400/30 rounded-full text-xs font-semibold text-green-400">Operational</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">The Insight Series</h3>
-            <p className="text-cyan-400 text-lg mb-6">Continuously updated intelligence products built on live data — not static reports.</p>
+            <p className="text-cyan-400 text-lg mb-6">Living intelligence reports that stay current as policy, capital, and infrastructure evolve.</p>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
