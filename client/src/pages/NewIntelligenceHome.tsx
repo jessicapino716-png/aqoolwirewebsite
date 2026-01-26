@@ -718,7 +718,7 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
       {/* The Aqool Engine Section */}
-      <section id="engine" className="relative z-10 py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-transparent via-green-500/5 to-transparent">
+      <section id="engine" className="relative z-10 py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-transparent via-green-500/5 to-transparent pt-[60px] pb-[60px]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-green-400 text-sm font-semibold tracking-wider uppercase">Powering All Products</span>
