@@ -14,7 +14,6 @@ export default function About() {
         <meta name="description" content="Learn about Jessica Pino, founder of The Aqool Wire, with 18 years of US State Department experience and a Masters in Public Policy from LSE." />
       </Helmet>
       <AnimatedBackground />
-      
       {/* Header */}
       <header className="relative z-20 w-full border-b border-cyan-500/20" style={{
         background: 'radial-gradient(145.89% 91.18% at 20% 30%, rgba(100, 255, 180, 0.1) 0%, rgba(100, 255, 180, 0) 40%), radial-gradient(145.89% 91.18% at 80% 70%, rgba(0, 153, 255, 0.1) 0%, rgba(0, 153, 255, 0) 40%)'
@@ -40,7 +39,6 @@ export default function About() {
           </Button>
         </div>
       </header>
-
       {/* About Content */}
       <section className="relative z-10 py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
@@ -70,7 +68,7 @@ export default function About() {
             </p>
             
             <div className="mt-10 p-6 md:p-8 bg-gray-900/50 border border-cyan-500/20 rounded-xl">
-              <h2 className="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Digital Twinning Policy Lab</h2>
+              <h2 className="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Digital Twin Policy Lab</h2>
               <p>
                 The Aqool Wire goes beyond traditional market intelligence by incorporating a Digital Twinning Policy Lab—an interactive simulation environment where decision-makers can model workforce scenarios, policy interventions, and investment outcomes before committing capital. This tool emerged from Ms. Pino's academic work on AI labor market dynamics and years of watching governments implement policies without adequate impact forecasting. Users can test variables like Saudization quotas, training program investments, or sector-specific visa policies against real economic data, seeing projected outcomes across timeframes from quarters to decades. It's policy analysis that matches the sophistication of the investments it informs.
               </p>
@@ -96,7 +94,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="relative z-10 py-8 px-4 md:px-8 border-t border-cyan-500/20 mt-auto">
         <div className="max-w-[1400px] mx-auto text-center">
