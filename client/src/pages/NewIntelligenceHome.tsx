@@ -575,14 +575,29 @@ export default function NewIntelligenceHome() {
                 <p className="text-gray-300 mb-6">The Digital Twinning Policy Lab is a continuously evolving simulation environment that integrates official economic and workforce data with AI-assisted econometric modeling. It enables policymakers, investors, and enterprises to test scenarios, compare outcomes, and stress-test decisions as new data becomes available.</p>
                 
                 <h4 className="font-semibold text-white mb-1">Current Modeling Capabilities</h4>
-                <p className="text-gray-400 text-sm mb-3">(with expansion underway)</p>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Workforce composition under different Saudization requirements (40%, 60%, 80%)</li>
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Training program investment ROI using actual salary data</li>
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Regional workforce availability and hiring timelines</li>
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Compliance cost projections for different business models</li>
-                  <li className="flex items-start gap-2"><span className="text-yellow-400">•</span> Multi-year scenarios (1, 3, 5, 10-year projections)</li>
-                </ul>
+                <p className="text-yellow-400 text-sm mb-4">Tech Workforce Upskilling</p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-white font-medium mb-1">Investment-based scenario testing</p>
+                    <p className="text-gray-400 text-sm">Models how varying levels of public and private investment in tech education affect workforce and economic outcomes</p>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium mb-1">Time-horizon sensitivity analysis</p>
+                    <p className="text-gray-400 text-sm">Allows exploration of short-, medium-, and longer-term impacts (1–10 years), accounting for pipeline and compounding effects</p>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium mb-1">Human capital outcome projections</p>
+                    <p className="text-gray-400 text-sm">Estimates changes in total tech workforce size, AI/ML talent concentration, wage premiums, and aggregate economic contribution</p>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium mb-1">Non-linear growth dynamics</p>
+                    <p className="text-gray-400 text-sm">Incorporates diminishing returns, retention effects, and training efficiency assumptions rather than simple linear extrapolation</p>
+                  </div>
+                  <div>
+                    <p className="text-white font-medium mb-1">Transparent assumptions and limitations</p>
+                    <p className="text-gray-400 text-sm">Model structure, calibration sources, and caveats are explicitly documented for responsible use</p>
+                  </div>
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold text-white mb-3">Why It Matters:</h4>
