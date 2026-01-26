@@ -691,47 +691,29 @@ export default function NewIntelligenceHome() {
           <div className="mt-6 md:mt-8 text-center text-xs md:text-sm font-semibold tracking-wide text-blue-400">LAUNCHING Q1 2026</div>
         </div>
 
-        {/* How It Works */}
-        <div className="max-w-3xl mx-auto mt-12 md:mt-16">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">How It Works</h3>
-          <p className="text-gray-300 mb-6">The Decision Co-Pilot sits on top of the Aqool Engine and:</p>
-          <div className="space-y-3 mb-6">
-            <div className="flex items-start gap-3">
-              <span className="text-blue-400 mt-1">•</span>
-              <p className="text-gray-300">Queries structured datasets across investments, policy, infrastructure, and workforce</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-blue-400 mt-1">•</span>
-              <p className="text-gray-300">Cross-references results across products (Investment Observatory, Infrastructure Map, Insight Series)</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-blue-400 mt-1">•</span>
-              <p className="text-gray-300">Returns organized answers grounded in verified sources only</p>
-            </div>
+        {/* How It Works & Planned Capabilities - Compact Two-Column Layout */}
+        <div className="max-w-4xl mx-auto mt-10 md:mt-12 grid md:grid-cols-2 gap-6">
+          {/* How It Works */}
+          <div className="bg-gray-900/30 border border-blue-500/20 rounded-lg p-5">
+            <h4 className="text-base font-semibold text-white mb-3">How It Works</h4>
+            <p className="text-gray-400 text-sm mb-3">The Decision Co-Pilot sits on top of the Aqool Engine and:</p>
+            <ul className="text-sm text-gray-300 space-y-1.5 mb-3">
+              <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Queries structured datasets across investments, policy, infrastructure, workforce</li>
+              <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Cross-references results across all products</li>
+              <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Returns organized answers grounded in verified sources only</li>
+            </ul>
+            <p className="text-xs text-white font-medium">No hallucinations. No unsourced claims. No black-box reasoning.</p>
           </div>
-          <p className="text-white font-semibold">No hallucinations. No unsourced claims. No black-box reasoning.</p>
-        </div>
 
-        {/* Planned Capabilities */}
-        <div className="max-w-3xl mx-auto mt-12 md:mt-16 bg-gray-900/50 border border-blue-500/20 rounded-xl p-6 md:p-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Planned Capabilities (Q1 2026)</h3>
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <span className="text-blue-400 mt-1">•</span>
-              <p className="text-gray-300">Natural-language querying over Aqool's intelligence graph</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-blue-400 mt-1">•</span>
-              <p className="text-gray-300">Cross-product data synthesis with source provenance</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-blue-400 mt-1">•</span>
-              <p className="text-gray-300">Advanced filtering by timeframe, sector, deal stage, and entity</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-blue-400 mt-1">•</span>
-              <p className="text-gray-300">Exportable tables and summaries for reporting and briefings</p>
-            </div>
+          {/* Planned Capabilities */}
+          <div className="bg-gray-900/30 border border-blue-500/20 rounded-lg p-5">
+            <h4 className="text-base font-semibold text-white mb-3">Planned Capabilities (Q1 2026)</h4>
+            <ul className="text-sm text-gray-300 space-y-1.5">
+              <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Natural-language querying over Aqool's intelligence graph</li>
+              <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Cross-product data synthesis with source provenance</li>
+              <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Advanced filtering by timeframe, sector, deal stage, entity</li>
+              <li className="flex items-start gap-2"><span className="text-blue-400">•</span>Exportable tables and summaries for reporting</li>
+            </ul>
           </div>
         </div>
       </section>
