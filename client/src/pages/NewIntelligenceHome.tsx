@@ -268,7 +268,7 @@ export default function NewIntelligenceHome() {
       <section id="the-problem" className="relative z-10 py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">The Challenge</span>
+            <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Siloed data</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">The Problem</h2>
           </div>
           <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
