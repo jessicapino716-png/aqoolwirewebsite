@@ -200,7 +200,7 @@ export default function NewIntelligenceHome() {
                 color: '#FFFFFF',
                 letterSpacing: '-0.02em'
               }}>
-                Real-Time Intelligence for<br />
+                The Data Intelligence Layer for<br />
                 Saudi Arabia's<br />
                 <span style={{ color: '#07ebd0', whiteSpace: 'nowrap' }}>AI Economy</span>
               </h1>
