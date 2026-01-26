@@ -376,7 +376,7 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
       {/* Products Section */}
-      <section id="products" className="relative z-10 py-8 md:py-16 px-4 md:px-8">
+      <section id="products" className="relative z-10 py-8 md:py-16 px-4 md:px-8 pt-[10px] pb-[10px]">
         <div className="max-w-6xl mx-auto space-y-12">
           
           {/* Product 1 */}
