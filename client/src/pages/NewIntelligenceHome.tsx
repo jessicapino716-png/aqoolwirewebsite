@@ -478,8 +478,8 @@ export default function NewIntelligenceHome() {
                 <ul className="space-y-2 text-gray-300 mb-6">
                   <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Interactive capital flow mapping (Capital Anemone visualization)</li>
                   <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Verified transaction ledger with deal amounts, participants, and sectors</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Early signals of where private solutions can align with Saudi's AI priorities</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Policy and partnership analysis uncovering opportunities</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Early signals of where private solutions align with Saudi AI priorities</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Policy and partnership analysis surfacing actionable opportunities</li>
                 </ul>
                 
                 <h4 className="font-semibold text-white mb-3">Use It For:</h4>
