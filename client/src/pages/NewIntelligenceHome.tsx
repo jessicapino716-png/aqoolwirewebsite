@@ -576,38 +576,38 @@ export default function NewIntelligenceHome() {
                 
                 <h4 className="font-semibold text-white mb-1">Current Modeling Capabilities</h4>
                 <p className="text-yellow-400 text-sm mb-5">Tech Workforce Upskilling</p>
-                <div className="space-y-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
                     <p className="text-white font-medium mb-1 flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4 text-yellow-400" />
+                      <TrendingUp className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                       Investment-based scenario testing
                     </p>
                     <p className="text-gray-400 text-sm">Models how varying levels of public and private investment in tech education affect workforce and economic outcomes</p>
                   </div>
                   <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
                     <p className="text-white font-medium mb-1 flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-yellow-400" />
+                      <Clock className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                       Time-horizon sensitivity analysis
                     </p>
                     <p className="text-gray-400 text-sm">Allows exploration of short-, medium-, and longer-term impacts (1–10 years), accounting for pipeline and compounding effects</p>
                   </div>
                   <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
                     <p className="text-white font-medium mb-1 flex items-center gap-2">
-                      <Users className="w-4 h-4 text-yellow-400" />
+                      <Users className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                       Human capital outcome projections
                     </p>
                     <p className="text-gray-400 text-sm">Estimates changes in total tech workforce size, AI/ML talent concentration, wage premiums, and aggregate economic contribution</p>
                   </div>
                   <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
                     <p className="text-white font-medium mb-1 flex items-center gap-2">
-                      <Activity className="w-4 h-4 text-yellow-400" />
+                      <Activity className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                       Non-linear growth dynamics
                     </p>
                     <p className="text-gray-400 text-sm">Incorporates diminishing returns, retention effects, and training efficiency assumptions rather than simple linear extrapolation</p>
                   </div>
-                  <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3">
+                  <div className="pl-4 border-l-2 border-yellow-500/50 py-2 bg-yellow-500/5 rounded-r-lg pr-3 md:col-span-2">
                     <p className="text-white font-medium mb-1 flex items-center gap-2">
-                      <FileText className="w-4 h-4 text-yellow-400" />
+                      <FileText className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                       Transparent assumptions and limitations
                     </p>
                     <p className="text-gray-400 text-sm">Model structure, calibration sources, and caveats are explicitly documented for responsible use</p>
