@@ -457,11 +457,11 @@ export default function NewIntelligenceHome() {
                 <h4 className="font-semibold text-white mb-3">What It Does:</h4>
                 <p className="text-gray-300 mb-6">Aggregates and analyzes AI-related capital flows, policy signals, and partnership activity across Saudi Arabia's Vision 2030 ecosystem — identifying where funding is accelerating, where gaps remain, and where private solutions can align with national priorities.</p>
                 
-                <h4 className="font-semibold text-white mb-3">Core Features:</h4>
+                <h4 className="font-semibold text-white mb-3">Planned Capabilities:</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Opportunity Radar:</strong> Predictive AI engine spotting emerging opportunity zones</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Investment Intelligence Engine:</strong> Real-time visualization of AI capital flows by sector, region, and investor</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Regulatory Intelligence:</strong> AI policy tracker turning complex regulations into actionable guidance</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Opportunity Radar:</strong> Predictive intelligence highlighting emerging investment and partnership zones before capital concentration peaks</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Investment Intelligence Engine:</strong> Real-time visualization of AI capital flows by sector, region, investor, and strategic theme</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> <strong className="text-white">Regulatory & Policy Intelligence:</strong> Continuous tracking of AI policy developments translated into actionable investment and market-entry guidance</li>
                 </ul>
               </div>
               <div>
