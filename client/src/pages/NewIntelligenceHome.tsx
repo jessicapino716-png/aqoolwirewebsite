@@ -455,7 +455,7 @@ export default function NewIntelligenceHome() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h4 className="font-semibold text-white mb-3">What It Does:</h4>
-                <p className="text-gray-300 mb-6">Tracks and visualizes capital flows, investment patterns, and partnership activity across Vision 2030's AI ecosystem—showing where funding is accelerating, where gaps remain, and where policy momentum meets private investment potential.</p>
+                <p className="text-gray-300 mb-6">Aggregates and analyzes AI-related capital flows, policy signals, and partnership activity across Saudi Arabia's Vision 2030 ecosystem — identifying where funding is accelerating, where gaps remain, and where private solutions can align with national priorities.</p>
                 
                 <h4 className="font-semibold text-white mb-3">Core Features:</h4>
                 <ul className="space-y-2 text-gray-300">
