@@ -897,14 +897,6 @@ export default function NewIntelligenceHome() {
             />
           </div>
 
-          {/* Launch Badge */}
-          <div className="flex justify-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/10 border border-green-400/30 rounded-full">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm md:text-base font-semibold text-green-400">Launching 2026</span>
-            </div>
-          </div>
-
           {/* Social Section */}
           <div className="mb-8 md:mb-10">
             <h3 className="text-base md:text-lg font-semibold mb-4 text-gray-300 uppercase tracking-wider">Connect With Us</h3>
