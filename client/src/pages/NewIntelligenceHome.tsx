@@ -447,58 +447,6 @@ export default function NewIntelligenceHome() {
           {/* Product 2 */}
           <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6 md:p-10">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-400/10 border border-blue-400/30 rounded-full text-xs font-semibold text-blue-400">Coming in February</span>
-            </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">AI Investment Observatory</h3>
-            <p className="text-cyan-400 text-lg mb-6">Real-time intelligence revealing where AI policy, capital, and opportunity converge — before signals become consensus.</p>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-semibold text-white mb-3">What It Does:</h4>
-                <p className="text-gray-300 mb-6">Aggregates and analyzes AI-related capital flows, policy signals, and partnership activity across Saudi Arabia's Vision 2030 ecosystem — identifying where funding is accelerating, where gaps remain, and where private solutions can align with national priorities.</p>
-                
-                <h4 className="font-semibold text-white mb-4">Planned Capabilities:</h4>
-                <div className="grid gap-4">
-                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-                    <h5 className="text-white font-semibold mb-2">Opportunity Radar</h5>
-                    <p className="text-gray-300 text-sm">Predictive intelligence highlighting emerging investment and partnership zones before capital concentration peaks</p>
-                  </div>
-                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-                    <h5 className="text-white font-semibold mb-2">Investment Intelligence Engine</h5>
-                    <p className="text-gray-300 text-sm">Real-time visualization of AI capital flows by sector, region, investor, and strategic theme</p>
-                  </div>
-                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
-                    <h5 className="text-white font-semibold mb-2">Regulatory & Policy Intelligence</h5>
-                    <p className="text-gray-300 text-sm">Continuous tracking of AI policy developments translated into actionable investment and market-entry guidance</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
-                <ul className="space-y-2 text-gray-300 mb-6">
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Interactive capital flow mapping (Capital Anemone visualization)</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Verified transaction ledger with deal amounts, participants, and sectors</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Early signals of where private solutions align with Saudi AI priorities</li>
-                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Policy and partnership analysis surfacing actionable opportunities</li>
-                </ul>
-                
-                <h4 className="font-semibold text-white mb-3">Use It For:</h4>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Investment opportunities</span>
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Competitive intelligence</span>
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market entry strategy</span>
-                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Partnership spotting</span>
-                </div>
-                </div>
-            </div>
-            <div className="mt-8 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg text-center">
-              <p className="text-base font-bold text-blue-400">Designed for investors, enterprises, and public-sector stakeholders navigating Saudi Arabia's AI economy.</p>
-            </div>
-          </div>
-
-          {/* Product 3 */}
-          <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6 md:p-10">
-            <div className="flex items-center gap-3 mb-4">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-400/10 border border-green-400/30 rounded-full text-xs font-semibold text-green-400">Operational</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">The Insight Series</h3>
@@ -637,6 +585,58 @@ export default function NewIntelligenceHome() {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Product 5 - AI Investment Observatory */}
+          <div className="bg-gray-900/50 border border-cyan-500/20 rounded-xl p-6 md:p-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-400/10 border border-blue-400/30 rounded-full text-xs font-semibold text-blue-400">Coming in February</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">AI Investment Observatory</h3>
+            <p className="text-cyan-400 text-lg mb-6">Real-time intelligence revealing where AI policy, capital, and opportunity converge — before signals become consensus.</p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold text-white mb-3">What It Does:</h4>
+                <p className="text-gray-300 mb-6">Aggregates and analyzes AI-related capital flows, policy signals, and partnership activity across Saudi Arabia's Vision 2030 ecosystem — identifying where funding is accelerating, where gaps remain, and where private solutions can align with national priorities.</p>
+                
+                <h4 className="font-semibold text-white mb-4">Planned Capabilities:</h4>
+                <div className="grid gap-4">
+                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
+                    <h5 className="text-white font-semibold mb-2">Opportunity Radar</h5>
+                    <p className="text-gray-300 text-sm">Predictive intelligence highlighting emerging investment and partnership zones before capital concentration peaks</p>
+                  </div>
+                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
+                    <h5 className="text-white font-semibold mb-2">Investment Intelligence Engine</h5>
+                    <p className="text-gray-300 text-sm">Real-time visualization of AI capital flows by sector, region, investor, and strategic theme</p>
+                  </div>
+                  <div className="p-4 bg-gray-900/60 border border-cyan-500/20 rounded-lg">
+                    <h5 className="text-white font-semibold mb-2">Regulatory & Policy Intelligence</h5>
+                    <p className="text-gray-300 text-sm">Continuous tracking of AI policy developments translated into actionable investment and market-entry guidance</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                <ul className="space-y-2 text-gray-300 mb-6">
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Interactive capital flow mapping (Capital Anemone visualization)</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Verified transaction ledger with deal amounts, participants, and sectors</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Early signals of where private solutions align with Saudi AI priorities</li>
+                  <li className="flex items-start gap-2"><span className="text-cyan-400">•</span> Policy and partnership analysis surfacing actionable opportunities</li>
+                </ul>
+                
+                <h4 className="font-semibold text-white mb-3">Use It For:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Investment opportunities</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Competitive intelligence</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Market entry strategy</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-sm text-cyan-400">Partnership spotting</span>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg text-center">
+              <p className="text-base font-bold text-blue-400">Designed for investors, enterprises, and public-sector stakeholders navigating Saudi Arabia's AI economy.</p>
             </div>
           </div>
 
