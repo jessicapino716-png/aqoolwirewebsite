@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { MessageSquare, Link2, Search, BarChart3 } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
+import problemSectionImage from "@assets/problem-section-page2-02.png";
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -299,6 +300,15 @@ export default function NewIntelligenceHome() {
                 Missed opportunities. Poor coordination. Slow decisions in a fast-moving system.
               </p>
             </div>
+          </div>
+          
+          {/* Visual showing the data fragmentation problem */}
+          <div className="mt-12 md:mt-16 max-w-5xl mx-auto">
+            <img 
+              src={problemSectionImage} 
+              alt="Data fragmentation across Saudi Arabia's AI ecosystem - showing how investors miss opportunities when data is scattered" 
+              className="w-full rounded-xl border border-cyan-500/20 shadow-2xl"
+            />
           </div>
         </div>
       </section>
