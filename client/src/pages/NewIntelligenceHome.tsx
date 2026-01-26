@@ -389,16 +389,22 @@ export default function NewIntelligenceHome() {
                 </li>
               </ul>
             </div>
-            <p className="text-center text-lg md:text-xl font-semibold mt-12">
-              <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Below are two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine's continuously updated, source-verified intelligence layer.
-              </span>
-            </p>
           </div>
         </div>
       </section>
       {/* Products Section */}
       <section id="products" className="relative z-10 py-8 md:py-16 px-4 md:px-8 pt-[10px] pb-[10px]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Intelligence Products</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+              <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">What We Deliver</span>
+            </h2>
+            <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
+              Two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine's continuously updated, source-verified intelligence layer.
+            </p>
+          </div>
+        </div>
         <div className="max-w-6xl mx-auto space-y-12">
           
           {/* Product 1 */}
