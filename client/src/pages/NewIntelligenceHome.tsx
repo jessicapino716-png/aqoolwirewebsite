@@ -215,7 +215,7 @@ export default function NewIntelligenceHome() {
               {/* Description */}
               <p className="text-base md:text-lg mb-8 md:mb-12 leading-relaxed" style={{
                 color: '#94A3B8'
-              }}>Saudi Arabia's Vision 2030 generates thousands of data points weekly across government sources, private sector announcements, and international partnerships. We synthesize it all into one platform.</p>
+              }}>The Aqool Wire turns fragmented public announcements, private-sector investments, and policy signals into a continuously updated intelligence platform for government, investors, and enterprises.</p>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-3 md:gap-5">
