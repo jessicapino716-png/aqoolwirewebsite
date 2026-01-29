@@ -87,9 +87,7 @@ export default function About() {
               <p className="mb-4">
                 The Aqool Wire goes beyond visualization through its Digital Twin Policy Lab — a simulation environment that allows users to test policy, workforce, and investment scenarios against real economic data before decisions are locked in.
               </p>
-              <p className="mb-4">
-                The lab enables decision-makers to explore how changes in variables such as workforce localization, training investment, sector-specific visa policy, or capital allocation may shape outcomes over time. This capability emerged from academic research into AI-driven labor market dynamics and years of observing governments implement policies without adequate impact forecasting.
-              </p>
+              <p className="mb-4">The lab enables decision-makers to explore how changes in variables such as workforce localization, training investment, sector-specific visa policy, or capital allocation may shape outcomes over time. This capability emerged from Ms. Pino's academic research into AI-driven labor market dynamics and years of observing governments implement policies without adequate impact forecasting.</p>
               <p className="text-cyan-400 font-medium">
                 It's policy and investment analysis designed for systems where scale, capital intensity, and second-order effects matter.
               </p>
