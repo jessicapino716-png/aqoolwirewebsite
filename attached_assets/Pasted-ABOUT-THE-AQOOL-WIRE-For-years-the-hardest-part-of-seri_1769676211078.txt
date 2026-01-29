@@ -1,0 +1,21 @@
+ABOUT THE AQOOL WIRE
+
+For years, the hardest part of serious economic and policy analysis wasn’t interpretation — it was keeping the underlying information current, coherent, and decision-ready. Data arrived late, conflicted across sources, and often surfaced only after policy or investment windows had already closed.
+
+That problem became impossible to ignore as Saudi Arabia accelerated its Vision 2030 AI transformation. Infrastructure, capital, and policy decisions began moving at a pace traditional analysis tools were never designed to match. Announcements multiplied, capital deployed faster, and execution outpaced visibility. The question was no longer how to analyze — but how to maintain a live, structured view of a system evolving in real time.
+
+The Aqool Wire was built to answer that question.
+
+Founded by Jessica Pino, a former U.S. State Department economic and political analyst with nearly two decades of experience working across the Middle East and South Asia, the platform reflects a practical insight shaped by years inside government and development institutions: analysis fails when data infrastructure can’t keep up with reality. Her work evaluating infrastructure investment, development programs, and policy outcomes repeatedly ran into the same constraint — fragmented information that undermined even the most rigorous frameworks.
+
+Rather than producing slower, more expensive reports, The Aqool Wire applies AI to the least visible but most critical part of intelligence: continuously ingesting, structuring, and reconciling data as conditions change. The result is a live intelligence layer that allows decision-makers to focus on judgment, not information gathering.
+
+⸻
+
+DIGITAL TWIN POLICY LAB
+
+The Aqool Wire goes beyond visualization through its Digital Twin Policy Lab — a simulation environment that allows users to test policy, workforce, and investment scenarios against real economic data before decisions are locked in.
+
+The lab enables decision-makers to explore how changes in variables such as workforce localization, training investment, sector-specific visa policy, or capital allocation may shape outcomes over time. This capability emerged from academic research into AI-driven labor market dynamics and years of observing governments implement policies without adequate impact forecasting.
+
+It’s policy and investment analysis designed for systems where scale, capital intensity, and second-order effects matter.
