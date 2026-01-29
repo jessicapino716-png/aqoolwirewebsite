@@ -411,7 +411,7 @@ export default function NewIntelligenceHome() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
               <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">What We Deliver</span>
             </h2>
-            <p className="max-w-3xl mx-auto md:text-lg text-[20px]" style={{ color: '#E2E8F0' }}>
+            <p className="max-w-3xl mx-auto text-[20px]" style={{ color: '#E2E8F0' }}>
               Two operational intelligence products — plus three advanced capabilities in development — built on the Aqool Engine's continuously updated, source-verified intelligence layer.
             </p>
           </div>
