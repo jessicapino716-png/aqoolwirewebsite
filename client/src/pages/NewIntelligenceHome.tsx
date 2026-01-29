@@ -228,7 +228,7 @@ export default function NewIntelligenceHome() {
               {/* Subheading */}
               <p className="text-lg md:text-xl lg:text-2xl mb-4 md:mb-5 leading-relaxed" style={{
                 color: '#E2E8F0'
-              }}>A live, structured view of Saudi Arabia's AI, infrastructure, investment, and policy transformation — built for decision-makers, not PDFs.</p>
+              }}> A data-driven platform that visualizes AI buildouts, capital deployment, and policy dynamics across the Kingdom — reducing information asymmetry and improving market-entry decisions.</p>
 
               {/* Description */}
               <p className="text-base md:text-lg mb-8 md:mb-12 leading-relaxed" style={{
