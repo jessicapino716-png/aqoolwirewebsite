@@ -226,14 +226,9 @@ export default function NewIntelligenceHome() {
               </h1>
 
               {/* Subheading */}
-              <p className="text-lg md:text-xl lg:text-2xl mb-4 md:mb-5 leading-relaxed" style={{
+              <p className="text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 leading-relaxed" style={{
                 color: '#E2E8F0'
               }}> A data-driven platform that visualizes AI buildouts, capital deployment, and policy dynamics across the Kingdom — reducing information asymmetry and improving market-entry decisions.</p>
-
-              {/* Description */}
-              <p className="text-base md:text-lg mb-8 md:mb-12 leading-relaxed" style={{
-                color: '#94A3B8'
-              }}>The Aqool Wire turns fragmented public announcements, private-sector investments, and policy signals into a continuously updated intelligence platform for government, investors, and enterprises.</p>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-3 md:gap-5">
