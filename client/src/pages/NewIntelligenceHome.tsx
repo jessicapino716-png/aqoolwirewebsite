@@ -378,6 +378,9 @@ export default function NewIntelligenceHome() {
             <p>
               The Aqool Wire converts fragmented signals into live, decision-grade intelligence using the <span className="text-cyan-400 font-semibold">Aqool Engine</span> — an AI-driven data infrastructure that continuously detects, ingests, structures, and connects policy, capital, and infrastructure data shaping Saudi Arabia's AI economy. As new announcements, releases, and datasets emerge, the intelligence layer updates automatically, keeping the view current in near real time.
             </p>
+            <p>
+              The Aqool Wire keeps intelligence current — automatically — so decisions are made on what's happening now, not what was published months ago.
+            </p>
             <div>
               <p className="mb-4">Every data point is anchored to a built-in provenance layer:</p>
               <ul className="space-y-2 pl-1">
