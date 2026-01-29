@@ -212,7 +212,7 @@ export default function NewIntelligenceHome() {
                 }} />
                 <span className="text-xs md:text-sm font-semibold tracking-wide" style={{
                   color: '#07ebd0'
-                }}>Supercharging Vision 2030's AI Momentum</span>
+                }}>Saudi Arabia's AI Buildout in Focus</span>
               </div>
 
               {/* Main Heading */}
