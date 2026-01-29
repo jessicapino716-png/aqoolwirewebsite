@@ -284,7 +284,7 @@ export default function NewIntelligenceHome() {
           </div>
           <div className="max-w-4xl mx-auto space-y-8 text-lg md:text-xl leading-relaxed" style={{ color: '#E2E8F0' }}>
             <p>
-              <span className="text-white font-semibold">Saudi Arabia is executing one of the most ambitious AI and digital infrastructure buildouts in the world.</span> But the speed of execution has created a new challenge: critical intelligence is fragmented across institutions, initiatives, and disclosures that do not connect in real time.
+              <span className="text-white font-semibold">Saudi Arabia is executing one of the most ambitious AI and digital infrastructure buildouts in the world.</span> But the pace of execution has created a new challenge: investors and operators lack a clear, real-time view of where infrastructure is ready, where capital is flowing, and when to enter the market.
             </p>
             
             <div>
