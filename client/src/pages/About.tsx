@@ -51,9 +51,7 @@ export default function About() {
               For years, the hardest part of serious economic and policy analysis wasn't interpretation — it was keeping the underlying information current, coherent, and decision-ready. Data arrived late, conflicted across sources, and often surfaced only after policy or investment windows had already closed.
             </p>
             
-            <p>
-              That problem became impossible to ignore as Saudi Arabia accelerated its Vision 2030 AI transformation. Infrastructure, capital, and policy decisions began moving at a pace traditional analysis tools were never designed to match. Announcements multiplied, capital deployed faster, and execution outpaced visibility. The question was no longer how to analyze — but how to maintain a live, structured view of a system evolving in real time.
-            </p>
+            <p>That problem became increasingly harder to ignore as Saudi Arabia accelerated its Vision 2030 AI transformation. Infrastructure, capital, and policy decisions began moving at a pace traditional analysis tools were never designed to match. Announcements multiplied, capital deployed faster, and execution outpaced visibility. The question was no longer how to analyze — but how to maintain a live, structured view of a system evolving in real time.</p>
 
             <p className="text-xl font-semibold text-cyan-400">
               The Aqool Wire was built to answer that question.
