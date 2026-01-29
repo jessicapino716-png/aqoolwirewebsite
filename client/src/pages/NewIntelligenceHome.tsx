@@ -305,9 +305,7 @@ export default function NewIntelligenceHome() {
               </ul>
             </div>
             
-            <p>
-              Decision-makers are left stitching together partial views, often relying on static reports or consultants that are outdated the moment they're published.
-            </p>
+            <p>Decision-makers are left piecing together partial views, often relying on static reports or consultants that are outdated the moment they're published.</p>
             
             <p className="text-white font-semibold border-l-4 border-cyan-400 pl-6">THE RESULT: missed opportunities, coordination gaps, and slower decisions in a system that's moving at real-time speed.</p>
           </div>
