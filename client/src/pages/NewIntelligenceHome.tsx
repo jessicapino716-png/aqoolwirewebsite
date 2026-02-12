@@ -247,7 +247,9 @@ export default function NewIntelligenceHome() {
                   Become a Partner
                 </a>
                 <a 
-                  href="#contact"
+                  href="https://demo.theaqoolwire.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     border: '2px solid #00D9C8',
