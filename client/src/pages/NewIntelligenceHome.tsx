@@ -257,7 +257,7 @@ export default function NewIntelligenceHome() {
                     background: 'transparent'
                   }}
                   data-testid="button-learn-more"
-                >Request Demo</a>
+                >Demo Platform</a>
               </div>
             </div>
 
