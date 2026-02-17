@@ -233,7 +233,9 @@ export default function NewIntelligenceHome() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-3 md:gap-5">
                 <a 
-                  href="#contact"
+                  href="https://demo.theaqoolwire.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     background: '#00D9C8',
@@ -242,14 +244,12 @@ export default function NewIntelligenceHome() {
                     boxShadow: '0 4px 14px rgba(0, 217, 200, 0.4)',
                     textDecoration: 'none'
                   }}
-                  data-testid="button-become-partner"
+                  data-testid="button-learn-more"
                 >
-                  Become a Partner
+                  Live Platform
                 </a>
                 <a 
-                  href="https://demo.theaqoolwire.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     border: '2px solid #00D9C8',
@@ -258,8 +258,8 @@ export default function NewIntelligenceHome() {
                     textDecoration: 'none',
                     background: 'transparent'
                   }}
-                  data-testid="button-learn-more"
-                >Live Platform</a>
+                  data-testid="button-become-partner"
+                >Become a Partner</a>
               </div>
             </div>
 
