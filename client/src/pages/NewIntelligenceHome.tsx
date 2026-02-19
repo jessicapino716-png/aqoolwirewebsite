@@ -233,7 +233,7 @@ export default function NewIntelligenceHome() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-3 md:gap-5">
                 <a 
-                  href="https://demo.theaqoolwire.com"
+                  href="https://live.theaqoolwire.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
