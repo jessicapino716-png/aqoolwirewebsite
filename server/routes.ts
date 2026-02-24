@@ -1,5 +1,7 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
+import fs from "fs";
+import path from "path";
 import { storage } from "./storage";
 import { insertContentSchema, updateContentSchema, updateContentWithoutTypeSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
 // Note: SendGrid functions are imported dynamically to avoid startup crashes
@@ -965,6 +967,64 @@ Sitemap: https://www.theaqoolwire.com/sitemap.xml`;
         return res.sendStatus(404);
       }
       return res.sendStatus(500);
+    }
+  });
+
+  // Server-side meta tag injection for article pages (for SEO/crawlers)
+  app.get("/article/:slug", async (req, res, next) => {
+    try {
+      const { slug } = req.params;
+      const content = await storage.getContentBySlug(slug);
+      if (!content) {
+        return next(); // Let the SPA handle 404
+      }
+      
+      // Read the built index.html
+      const distPath = path.resolve(process.cwd(), "dist/public");
+      const indexPath = path.resolve(distPath, "index.html");
+      let html = '';
+      try {
+        html = fs.readFileSync(indexPath, 'utf8');
+      } catch {
+        return next(); // Fallback to SPA in dev mode
+      }
+      
+      const title = content.title + ' | The Aqool Wire';
+      const description = (content.excerpt || content.title || '').substring(0, 160);
+      const imageUrl = content.imageUrl || 'https://www.theaqoolwire.com/og-image.jpg';
+      const canonicalUrl = 'https://www.theaqoolwire.com/article/' + slug;
+      const publishedAt = content.publishedAt || '';
+      const author = (content as any).authorName || 'The Aqool Wire';
+      
+      const articleSchema = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": content.title,
+        "description": description,
+        "image": imageUrl ? [imageUrl] : [],
+        "datePublished": publishedAt,
+        "author": { "@type": "Person", "name": author },
+        "publisher": { "@type": "Organization", "name": "The Aqool Wire", "url": "https://www.theaqoolwire.com" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+        "url": canonicalUrl
+      });
+      
+      // Inject article-specific meta tags into the HTML
+      html = html
+        .replace(/<title>[^<]*<\/title>/, '<title>' + title.replace(/&/g, '&amp;') + '</title>')
+        .replace(/<meta name="description" content="[^"]*"\s*\/>/, '<meta name="description" content="' + description.replace(/"/g, '&quot;') + '" />')
+        .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, '<meta property="og:title" content="' + title.replace(/"/g, '&quot;') + '" />')
+        .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, '<meta property="og:description" content="' + description.replace(/"/g, '&quot;') + '" />')
+        .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, '<meta property="og:url" content="' + canonicalUrl + '" />')
+        .replace(/<meta property="og:image" content="[^"]*"\s*\/>/, '<meta property="og:image" content="' + imageUrl + '" />')
+        .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, '<link rel="canonical" href="' + canonicalUrl + '" />')
+        .replace(/<meta property="og:type" content="website"\s*\/>/, '<meta property="og:type" content="article" />')
+        .replace('</head>', '<script type="application/ld+json">' + articleSchema + '</script>\n</head>');
+      
+      res.set('Content-Type', 'text/html').send(html);
+    } catch (error) {
+      console.error('Error serving article SSR:', error);
+      next();
     }
   });
 
