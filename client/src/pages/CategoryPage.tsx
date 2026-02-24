@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle } from "lucide-react";
 import type { Content } from "@shared/schema";
+import { Helmet } from "react-helmet-async";
 
 interface ToolVideo {
   id: string;
@@ -174,7 +175,27 @@ export default function CategoryPage() {
   const articles = content.map(transformContentToArticle);
 
   return (
-    <div className="bg-white min-h-screen">
+    <>
+      <Helmet>
+        <title>{displayCategory} Articles | The Aqool Wire - AI Intelligence from Saudi Arabia</title>
+        <meta name="description" content={getCategoryDescription(categorySlug)} />
+        <meta property="og:title" content={`${displayCategory} | The Aqool Wire`} />
+        <meta property="og:description" content={getCategoryDescription(categorySlug)} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.theaqoolwire.com/${categorySlug}`} />
+        <meta property="og:site_name" content="The Aqool Wire" />
+        <link rel="canonical" href={`https://www.theaqoolwire.com/${categorySlug}`} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": `${displayCategory} - The Aqool Wire`,
+          "description": getCategoryDescription(categorySlug),
+          "url": `https://www.theaqoolwire.com/${categorySlug}`,
+          "isPartOf": { "@type": "WebSite", "name": "The Aqool Wire", "url": "https://www.theaqoolwire.com" },
+          "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theaqoolwire.com" }, { "@type": "ListItem", "position": 2, "name": displayCategory, "item": `https://www.theaqoolwire.com/${categorySlug}` }]}
+        })}</script>
+      </Helmet>
+      <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Category Header */}
         <div className="mb-8">
@@ -310,6 +331,7 @@ export default function CategoryPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
