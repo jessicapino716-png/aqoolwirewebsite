@@ -37,6 +37,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/robots.txt", (req, res) => {
     const robotsTxt = `User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 Sitemap: https://theaqoolwire.com/sitemap.xml`;
     
@@ -56,6 +58,7 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
       // Static pages with priority
       const staticPages = [
         { url: '/', priority: '1.0', changefreq: 'daily' },
+        { url: '/about', priority: '0.8', changefreq: 'monthly' },
         { url: '/policy', priority: '0.9', changefreq: 'daily' },
         { url: '/regulation', priority: '0.9', changefreq: 'daily' },
         { url: '/analysis', priority: '0.9', changefreq: 'daily' },
