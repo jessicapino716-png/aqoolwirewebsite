@@ -40,7 +40,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://theaqoolwire.com/sitemap.xml`;
+Sitemap: https://www.theaqoolwire.com/sitemap.xml`;
     
     res.header('Content-Type', 'text/plain');
     res.send(robotsTxt);
@@ -50,7 +50,7 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
   app.get("/sitemap.xml", async (req, res) => {
     try {
       // Always use the custom domain for SEO purposes
-      const baseUrl = 'https://theaqoolwire.com';
+      const baseUrl = 'https://www.theaqoolwire.com';
 
       // Get all published content
       const allContent = await storage.listContent({ limit: 10000 });
