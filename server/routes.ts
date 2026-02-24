@@ -55,20 +55,22 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
       // Get all published content
       const allContent = await storage.listContent({ limit: 10000 });
       
+      const today = new Date().toISOString().split('T')[0];
+
       // Static pages with priority
       const staticPages = [
-        { url: '/', priority: '1.0', changefreq: 'daily' },
-        { url: '/about', priority: '0.8', changefreq: 'monthly' },
-        { url: '/policy', priority: '0.9', changefreq: 'daily' },
-        { url: '/regulation', priority: '0.9', changefreq: 'daily' },
-        { url: '/analysis', priority: '0.9', changefreq: 'daily' },
-        { url: '/tools', priority: '0.8', changefreq: 'weekly' },
-        { url: '/newsletter', priority: '0.7', changefreq: 'monthly' },
-        { url: '/contact', priority: '0.6', changefreq: 'monthly' },
-        { url: '/privacy', priority: '0.3', changefreq: 'yearly' },
-        { url: '/terms', priority: '0.3', changefreq: 'yearly' },
-        { url: '/cookies', priority: '0.3', changefreq: 'yearly' },
-        { url: '/disclaimers', priority: '0.3', changefreq: 'yearly' },
+        { url: '/', priority: '1.0', changefreq: 'daily', lastmod: today },
+        { url: '/about', priority: '0.8', changefreq: 'monthly', lastmod: today },
+        { url: '/policy', priority: '0.9', changefreq: 'daily', lastmod: today },
+        { url: '/regulation', priority: '0.9', changefreq: 'daily', lastmod: today },
+        { url: '/analysis', priority: '0.9', changefreq: 'daily', lastmod: today },
+        { url: '/tools', priority: '0.8', changefreq: 'weekly', lastmod: today },
+        { url: '/newsletter', priority: '0.7', changefreq: 'monthly', lastmod: today },
+        { url: '/contact', priority: '0.6', changefreq: 'monthly', lastmod: today },
+        { url: '/privacy', priority: '0.3', changefreq: 'yearly', lastmod: '2025-10-01' },
+        { url: '/terms', priority: '0.3', changefreq: 'yearly', lastmod: '2025-10-01' },
+        { url: '/cookies', priority: '0.3', changefreq: 'yearly', lastmod: '2025-10-01' },
+        { url: '/disclaimers', priority: '0.3', changefreq: 'yearly', lastmod: '2025-10-01' },
       ];
 
       // Build XML sitemap
@@ -79,6 +81,7 @@ Sitemap: https://theaqoolwire.com/sitemap.xml`;
       staticPages.forEach(page => {
         xml += '  <url>\n';
         xml += `    <loc>${baseUrl}${page.url}</loc>\n`;
+        xml += `    <lastmod>${page.lastmod}</lastmod>\n`;
         xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
         xml += `    <priority>${page.priority}</priority>\n`;
         xml += '  </url>\n';
