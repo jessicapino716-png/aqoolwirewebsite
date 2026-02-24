@@ -371,6 +371,29 @@ export default function ArticlePage() {
         <meta name="twitter:description" content={article.excerpt} />
         {article.imageUrl && <meta name="twitter:image" content={article.imageUrl} />}
         <link rel="canonical" href={`https://theaqoolwire.com/article/${article.slug}`} />
+          <meta property="og:url" content={`https://www.theaqoolwire.com/article/${article.slug}`} />
+          <meta property="og:site_name" content="The Aqool Wire" />
+          <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": article.title,
+            "description": article.excerpt,
+            "image": article.imageUrl ? [article.imageUrl] : [],
+            "datePublished": article.publishedAt,
+            "dateModified": article.updatedAt || article.publishedAt,
+            "author": { "@type": "Person", "name": article.authorName || "The Aqool Wire" },
+            "publisher": {
+              "@type": "Organization",
+              "name": "The Aqool Wire",
+              "url": "https://www.theaqoolwire.com",
+              "logo": { "@type": "ImageObject", "url": "https://www.theaqoolwire.com/og-image.jpg" }
+            },
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://www.theaqoolwire.com/article/${article.slug}` },
+            "url": `https://www.theaqoolwire.com/article/${article.slug}`,
+            "articleSection": article.category,
+            "keywords": article.tags ? article.tags.join(", ") : ""
+          })}</script>
       </Helmet>
       
       <div className="max-w-4xl mx-auto px-4 py-8">
