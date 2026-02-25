@@ -78,21 +78,21 @@ export default function NewIntelligenceHome() {
     <div className="min-h-screen text-white relative overflow-x-hidden">
       <Helmet>
         <title>The Aqool Wire - Intelligence Platform</title>
-        <meta name="description" content="The Bloomberg Terminal for Saudi Arabia's AI Ecosystem. Track the full stack from infrastructure to business model." />
+        <meta name="description" content="The Aqool Wire is Saudi Arabia's leading AI intelligence platform — tracking AI infrastructure, investment flows, policy developments, and Vision 2030 data across Saudi Arabia and the GCC in real time." />
         
         {/* Favicon - Multiple sizes for optimal display */}
-        <link rel="icon" type="image/png" sizes="16x16" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
-        <link rel="icon" type="image/png" sizes="128x128" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="128x128" href="/favicon.png" />
         
         {/* Apple Touch Icon */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
         
         {/* Android Chrome */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/attached_assets/Screenshot 2025-11-11 at 3.42.56 PM_1762864978978.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
       </Helmet>
       <AnimatedBackground />
       {/* Header + Hero Container with Gradient */}
