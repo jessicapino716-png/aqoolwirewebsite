@@ -249,18 +249,6 @@ export default function NewIntelligenceHome() {
                   Access Live Platform
                   <ExternalLink className="w-4 h-4 flex-shrink-0" />
                 </a>
-                <a 
-                  href="#contact"
-                  className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
-                  style={{
-                    border: '2px solid #00D9C8',
-                    borderRadius: '8px',
-                    color: '#00FFD9',
-                    textDecoration: 'none',
-                    background: 'transparent'
-                  }}
-                  data-testid="button-become-partner"
-                >Become a Partner</a>
               </div>
             </div>
 
@@ -865,6 +853,17 @@ export default function NewIntelligenceHome() {
           >
             {submitting ? "Sending..." : "Send Message"}
           </Button>
+
+          <p className="text-center mt-6 text-sm" style={{ color: 'hsl(var(--gray-medium))' }}>
+            Interested in a formal partnership?{' '}
+            <a
+              href="mailto:jessicapino@theaqoolwire.com?subject=Partnership Inquiry"
+              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
+              data-testid="button-become-partner"
+            >
+              Become a Partner
+            </a>
+          </p>
         </form>
       </section>
       {/* Footer */}
