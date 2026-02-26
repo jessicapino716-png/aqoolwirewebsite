@@ -70,9 +70,7 @@ export default function About() {
                 </div>
               </div>
               <div>
-                <p>
-                  Founded by Jessica Pino, a former U.S. State Department economic and political analyst with nearly two decades of experience working across the Middle East and South Asia, the platform reflects a practical insight shaped by years inside government and development institutions: analysis fails when data infrastructure can't keep up with reality. Her work evaluating infrastructure investment, development programs, and policy outcomes repeatedly ran into the same constraint: fragmented data that couldn't keep pace with the speed of change.
-                </p>
+                <p>Founded by Jessica Pino, a former U.S. State Department economic and political analyst with nearly two decades of experience working across the Middle East and South Asia, the platform reflects a practical insight shaped by years inside government and development institutions: analysis fails when data infrastructure can't keep up with reality. Jessica's work evaluating infrastructure investment, development programs, and policy outcomes repeatedly ran into the same constraint: fragmented data that couldn't keep pace with the speed of change.</p>
               </div>
             </div>
 
