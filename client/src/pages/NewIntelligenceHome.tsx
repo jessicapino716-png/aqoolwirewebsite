@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { MessageSquare, Link2, Search, BarChart3, TrendingUp, Clock, Users, Activity, FileText } from "lucide-react";
+import { MessageSquare, Link2, Search, BarChart3, TrendingUp, Clock, Users, Activity, FileText, ExternalLink } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import mapImage from "@assets/map_1762856003294.png";
 import infrastructureScreenshot from "@assets/Screenshot_2026-01-26_at_11.14.32_AM_1769415278423.png";
@@ -236,7 +236,7 @@ export default function NewIntelligenceHome() {
                   href="https://live.theaqoolwire.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
+                  className="inline-flex items-center gap-2 px-6 md:px-9 py-3 md:py-4 text-sm md:text-base font-semibold"
                   style={{
                     background: '#00D9C8',
                     borderRadius: '8px',
@@ -246,7 +246,8 @@ export default function NewIntelligenceHome() {
                   }}
                   data-testid="button-learn-more"
                 >
-                  Live Platform
+                  Access Live Platform
+                  <ExternalLink className="w-4 h-4 flex-shrink-0" />
                 </a>
                 <a 
                   href="#contact"
