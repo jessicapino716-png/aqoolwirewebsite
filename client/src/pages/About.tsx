@@ -11,7 +11,7 @@ export default function About() {
     <div className="min-h-screen text-white relative overflow-x-hidden">
       <Helmet>
         <title>About The Aqool Wire - Live Intelligence for Saudi Arabia's AI Economy</title>
-        <meta name="description" content="The Aqool Wire applies AI to continuously ingest, structure, and reconcile data as conditions change — delivering live intelligence for Saudi Arabia's Vision 2030 AI transformation." />
+        <meta name="description" content="The Aqool Wire applies AI to continuously ingest, structure, and reconcile data as conditions change, delivering live intelligence for Saudi Arabia's Vision 2030 AI transformation." />
       </Helmet>
       <AnimatedBackground />
       {/* Header */}
@@ -48,10 +48,10 @@ export default function About() {
           
           <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: '#E2E8F0' }}>
             <p>
-              For years, the hardest part of serious economic and policy analysis wasn't interpretation — it was keeping the underlying information current, coherent, and decision-ready. Data arrived late, conflicted across sources, and often surfaced only after policy or investment windows had already closed.
+              For years, the hardest part of serious economic and policy analysis wasn't interpretation. It was keeping the underlying information current, coherent, and decision-ready. Data arrived late, conflicted across sources, and often surfaced only after policy or investment windows had already closed.
             </p>
             
-            <p>That problem became increasingly harder to ignore as Saudi Arabia accelerated its Vision 2030 AI transformation. Infrastructure, capital, and policy decisions began moving at a pace traditional analysis tools were never designed to match. Announcements multiplied, capital deployed faster, and execution outpaced visibility. The question was no longer how to analyze — but how to maintain a live, structured view of a system evolving in real time.</p>
+            <p>That problem became increasingly harder to ignore as Saudi Arabia accelerated its Vision 2030 AI transformation. Infrastructure, capital, and policy decisions began moving at a pace traditional analysis tools were never designed to match. Announcements multiplied, capital deployed faster, and execution outpaced visibility. The question was no longer how to analyze, but how to maintain a live, structured view of a system evolving in real time.</p>
 
             <p className="text-xl font-semibold text-cyan-400">
               The Aqool Wire was built to answer that question.
@@ -71,7 +71,7 @@ export default function About() {
               </div>
               <div>
                 <p>
-                  Founded by Jessica Pino, a former U.S. State Department economic and political analyst with nearly two decades of experience working across the Middle East and South Asia, the platform reflects a practical insight shaped by years inside government and development institutions: analysis fails when data infrastructure can't keep up with reality. Her work evaluating infrastructure investment, development programs, and policy outcomes repeatedly ran into the same constraint — fragmented data that couldn't keep pace with the speed of change.
+                  Founded by Jessica Pino, a former U.S. State Department economic and political analyst with nearly two decades of experience working across the Middle East and South Asia, the platform reflects a practical insight shaped by years inside government and development institutions: analysis fails when data infrastructure can't keep up with reality. Her work evaluating infrastructure investment, development programs, and policy outcomes repeatedly ran into the same constraint: fragmented data that couldn't keep pace with the speed of change.
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function About() {
             <div className="mt-10 p-6 md:p-8 bg-gray-900/50 border border-cyan-500/20 rounded-xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Digital Twin Policy Lab</h2>
               <p className="mb-4">
-                The Aqool Wire goes beyond visualization through its Digital Twin Policy Lab — a simulation environment that allows users to test policy, workforce, and investment scenarios against real economic data before decisions are locked in.
+                The Aqool Wire goes beyond visualization through its Digital Twin Policy Lab, a simulation environment that allows users to test policy, workforce, and investment scenarios against real economic data before decisions are locked in.
               </p>
               <p className="mb-4">The lab enables decision-makers to explore how changes in variables such as workforce localization, training investment, sector-specific visa policy, or capital allocation may shape outcomes over time. This capability emerged from Ms. Pino's academic research into AI-driven labor market dynamics and years of observing governments implement policies without adequate impact forecasting.</p>
               <p className="text-cyan-400 font-medium">
