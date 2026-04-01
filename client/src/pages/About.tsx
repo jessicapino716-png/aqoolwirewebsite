@@ -78,7 +78,7 @@ export default function About() {
             </p>
 
             {/* Digital Twin Policy Lab */}
-            <div style={{ marginTop: "1rem", padding: "2rem 2.5rem", background: "rgba(0,217,200,0.04)", border: "1px solid rgba(0,217,200,0.18)", borderRadius: "12px" }}>
+            <div style={{ marginTop: "1rem", padding: "2rem 2.5rem", background: "#0c1829", border: "1px solid rgba(0,217,200,0.18)", borderRadius: "12px" }}>
               <h2 style={{ fontFamily: "Georgia, serif", fontSize: "1.4rem", fontWeight: 400, color: "#00d9c8", marginBottom: "1rem" }}>Digital Twin Policy Lab</h2>
               <p style={{ marginBottom: "1rem" }}>
                 The Aqool Wire goes beyond visualization through its Digital Twin Policy Lab, a simulation environment that allows users to test policy, workforce, and investment scenarios against real economic data before decisions are locked in.
