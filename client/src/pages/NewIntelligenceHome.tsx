@@ -243,7 +243,7 @@ export default function NewIntelligenceHome() {
             <div key={s.value} style={{ textAlign: "center", padding: "0 1.5rem", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
               <div style={{ fontFamily: "monospace", fontSize: "clamp(2.25rem, 4vw, 3rem)", fontWeight: 700, color: "#00d9c8", lineHeight: 1, marginBottom: "0.5rem", letterSpacing: "-0.02em" }}>{s.value}</div>
               <div style={{ fontSize: "1rem", color: "#ffffff", fontWeight: 600, marginBottom: "0.3rem" }}>{s.label}</div>
-              <div style={{ fontSize: "0.85rem", color: "#94a3b8", fontFamily: "monospace" }}>{s.sub}</div>
+              <div style={{ fontSize: "0.9rem", color: "#e2e8f0", fontFamily: "monospace" }}>{s.sub}</div>
             </div>
           ))}
         </div>
