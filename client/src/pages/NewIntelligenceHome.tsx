@@ -386,7 +386,7 @@ export default function NewIntelligenceHome() {
         <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem", paddingBottom: "2rem", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
             <Link href="/">
-              <img src={logoImage} alt="The Aqool Wire" style={{ height: "64px", width: "auto", opacity: 0.9, filter: "drop-shadow(0 0 8px rgba(0,217,200,0.25))" }} />
+              <img src={logoImage} alt="The Aqool Wire" style={{ height: "120px", width: "auto", opacity: 0.9, filter: "drop-shadow(0 0 12px rgba(0,217,200,0.35)) brightness(1.1)" }} />
             </Link>
             <div style={{ display: "flex", alignItems: "center", gap: "2.5rem", flexWrap: "wrap" }}>
               {[
