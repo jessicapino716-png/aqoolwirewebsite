@@ -164,9 +164,7 @@ export default function NewIntelligenceHome() {
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Helmet>
-
       <MeshBackground />
-
       {/* ── NAV ──────────────────────────────────────────────────── */}
       <nav style={{ position: "relative", zIndex: 20, borderBottom: "1px solid rgba(0,217,200,0.18)", backdropFilter: "blur(12px)", background: "rgba(7,13,24,0.75)" }}>
         <div style={{ maxWidth: "1160px", margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "88px" }}>
@@ -202,7 +200,6 @@ export default function NewIntelligenceHome() {
           </div>
         )}
       </nav>
-
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, minHeight: "92vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "6rem 2rem 4rem" }}>
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-60%)", width: "700px", height: "400px", background: "radial-gradient(ellipse at center, rgba(0,217,200,0.09) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
@@ -231,7 +228,6 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* ── STATS ─────────────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, background: "rgba(255,255,255,0.025)", borderTop: "1px solid rgba(255,255,255,0.08)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "3.5rem 2rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
@@ -248,7 +244,6 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
       </section>
-
       {/* ── PLATFORM CARDS ───────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto", padding: "6rem 2rem" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
@@ -273,7 +268,6 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
       </section>
-
       {/* ── LATEST ───────────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "900px", margin: "0 auto", padding: "0 2rem 6rem" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "2rem", flexWrap: "wrap", gap: "1rem" }}>
@@ -299,7 +293,6 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
       </section>
-
       {/* ── WHAT'S NEXT ──────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "900px", margin: "0 auto", padding: "0 2rem 6rem" }}>
         <span style={SECTION_LABEL}>Roadmap</span>
@@ -317,16 +310,13 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
       </section>
-
       {/* ── PARTNERSHIPS & SPONSORSHIPS ──────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto", padding: "0 2rem 6rem" }}>
         <span style={SECTION_LABEL}>Work with us</span>
         <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff", fontWeight: 400, marginBottom: "1rem" }}>
           Actively seeking partners and sponsors
         </h2>
-        <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.8, maxWidth: "680px", marginBottom: "3rem" }}>
-          The Aqool Wire is growing fast. We're looking for organisations that want to reach the decision-makers, investors, and operators shaping Saudi Arabia's AI economy.
-        </p>
+        <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.8, maxWidth: "680px", marginBottom: "3rem" }}>The Aqool Wire is growing fast. We're looking for organisations that want to reach the decision-makers, investors, and operators shaping the GCC's AI economy.</p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(0,217,200,0.1)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(0,217,200,0.1)" }}>
           {[
@@ -375,7 +365,6 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
       </section>
-
       {/* ── CONTACT ──────────────────────────────────────────────── */}
       <section id="contact" style={{ position: "relative", zIndex: 1, background: "rgba(0,217,200,0.03)", borderTop: "1px solid rgba(0,217,200,0.14)", borderBottom: "1px solid rgba(0,217,200,0.14)", padding: "6rem 2rem" }}>
         <div style={{ maxWidth: "580px", margin: "0 auto" }}>
@@ -434,7 +423,6 @@ export default function NewIntelligenceHome() {
           </form>
         </div>
       </section>
-
       {/* ── FOOTER ───────────────────────────────────────────────── */}
       <footer style={{ position: "relative", zIndex: 1, padding: "3rem 2rem 2.5rem" }}>
         <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
