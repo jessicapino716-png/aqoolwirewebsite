@@ -5,9 +5,16 @@ import { useToast } from "@/hooks/use-toast";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 
-/* ─────────────────────────────────────────────
-   Animated mesh background
-───────────────────────────────────────────── */
+/* ── Colour tokens ──────────────────────────────────────────────────
+   text-primary   : #ffffff
+   text-body      : #e2e8f0   ← all card/section body copy
+   text-secondary : #cbd5e1   ← sub-headings, descriptions
+   text-muted     : #94a3b8   ← dates, metadata, footer links
+   text-dim       : #64748b   ← copyright, lowest-priority text
+   accent         : #00d9c8
+──────────────────────────────────────────────────────────────────── */
+
+/* ── Animated mesh background ─────────────────────────────────────── */
 function MeshBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -20,20 +27,15 @@ function MeshBackground() {
     let raf: number;
     let t = 0;
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
+    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
     resize();
     window.addEventListener("resize", resize);
 
-    const COLS = 90;
-    const ROWS = 38;
+    const COLS = 90, ROWS = 38;
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       t += 0.005;
-
       const sx = canvas.width / (COLS - 1);
       const sy = 16;
       const cy = canvas.height * 0.52;
@@ -46,57 +48,41 @@ function MeshBackground() {
           const x = c * sx;
           const nc = c / (COLS - 1);
           const nr = (r - ROWS / 2) / (ROWS / 2);
-
           const w1 = Math.sin(c * 0.13 + t * 1.0 + r * 0.22) * 60;
           const w2 = Math.sin(c * 0.06 - t * 0.65 + r * 0.16) * 38;
           const w3 = Math.sin(c * 0.19 + t * 0.45 + r * 0.08) * 22;
           const w4 = Math.cos(c * 0.04 + t * 0.8) * 14;
           const y = cy + r * sy - (ROWS * sy) / 2 + w1 + w2 + w3 + w4;
-
           const fadeX = 1 - Math.pow(Math.abs(nc - 0.5) * 2, 1.8);
           const fadeR = 1 - Math.pow(nr, 2) * 0.75;
           const a = fadeX * fadeR * 0.65;
           const sz = fadeX * fadeR * 2.2 + 0.5;
-
           const hue = 178 + Math.sin(c * 0.06 + t * 0.25) * 22;
-
           ctx.beginPath();
           ctx.arc(x, y, Math.max(0.4, sz), 0, Math.PI * 2);
           ctx.fillStyle = `hsla(${hue}, 85%, 60%, ${a})`;
           ctx.fill();
-
           pts[r * COLS + c] = { x, y, a };
         }
       }
 
-      // Horizontal mesh lines
       ctx.lineWidth = 0.5;
       for (let r = 0; r < ROWS; r++) {
         for (let c = 0; c < COLS - 1; c++) {
-          const p1 = pts[r * COLS + c];
-          const p2 = pts[r * COLS + c + 1];
+          const p1 = pts[r * COLS + c]; const p2 = pts[r * COLS + c + 1];
           const la = Math.min(p1.a, p2.a) * 0.5;
           if (la < 0.04) continue;
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(0,217,200,${la})`;
-          ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(0,217,200,${la})`; ctx.stroke();
         }
       }
-
-      // Vertical mesh lines (every 3rd column for subtlety)
       for (let r = 0; r < ROWS - 1; r++) {
         for (let c = 0; c < COLS; c += 3) {
-          const p1 = pts[r * COLS + c];
-          const p2 = pts[(r + 1) * COLS + c];
+          const p1 = pts[r * COLS + c]; const p2 = pts[(r + 1) * COLS + c];
           const la = Math.min(p1.a, p2.a) * 0.25;
           if (la < 0.03) continue;
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(0,153,255,${la})`;
-          ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(0,153,255,${la})`; ctx.stroke();
         }
       }
 
@@ -104,44 +90,18 @@ function MeshBackground() {
     };
 
     draw();
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize);
-    };
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ position: "fixed", inset: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 0 }}
-    />
-  );
+  return <canvas ref={canvasRef} style={{ position: "fixed", inset: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 0 }} />;
 }
 
-/* ─────────────────────────────────────────────
-   Data
-───────────────────────────────────────────── */
+/* ── Data ─────────────────────────────────────────────────────────── */
 const PLATFORM_CARDS = [
-  {
-    tag: "Coverage",
-    title: "Entity profiles",
-    desc: "Deep intelligence profiles for HUMAIN, PIF, SDAIA, Aramco Digital, and 180+ organizations — deals, partnerships, key people, citations.",
-  },
-  {
-    tag: "Deals",
-    title: "Deal intelligence",
-    desc: "Every sovereign JV, VC round, infrastructure deal, MoU, and acquisition tracked in real time with full source attribution.",
-  },
-  {
-    tag: "Briefings",
-    title: "Weekly intelligence report",
-    desc: "AI-synthesized weekly briefing covering deals, policy changes, and announcements. Sourced from 60+ publications.",
-  },
-  {
-    tag: "Capital",
-    title: "VC directory",
-    desc: "71 active investors in Saudi tech. Fund sizes, portfolio companies, investment thesis, and sector focus — all in one place.",
-  },
+  { tag: "Coverage", title: "Entity profiles", desc: "Deep intelligence profiles for HUMAIN, PIF, SDAIA, Aramco Digital, and 180+ organizations — deals, partnerships, key people, and citations." },
+  { tag: "Deals", title: "Deal intelligence", desc: "Every sovereign JV, VC round, infrastructure deal, MoU, and acquisition tracked in real time with full source attribution." },
+  { tag: "Briefings", title: "Weekly intelligence report", desc: "AI-synthesized weekly briefing covering deals, policy changes, and announcements. Sourced from 60+ publications each week." },
+  { tag: "Capital", title: "VC directory", desc: "71 active investors in Saudi tech. Fund sizes, portfolio companies, investment thesis, and sector focus — all in one place." },
 ];
 
 const LATEST_ITEMS = [
@@ -150,9 +110,13 @@ const LATEST_ITEMS = [
   { headline: "SAMA launches open banking license framework under Vision 2030", date: "Mar 27, 2026", tag: "Policy" },
 ];
 
-/* ─────────────────────────────────────────────
-   Main component
-───────────────────────────────────────────── */
+/* shared style fragments */
+const SECTION_LABEL: React.CSSProperties = {
+  fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.14em",
+  textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.5rem", display: "block",
+};
+
+/* ── Main component ───────────────────────────────────────────────── */
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: "", email: "", organisation: "", interest: "", message: "", consent: false });
@@ -161,30 +125,34 @@ export default function NewIntelligenceHome() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.consent) {
-      toast({ title: "Consent Required", description: "Please consent to be contacted", variant: "destructive" });
-      return;
-    }
+    if (!formData.consent) { toast({ title: "Consent Required", description: "Please consent to be contacted", variant: "destructive" }); return; }
     setSubmitting(true);
     try {
       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(formData) });
       if (!res.ok) throw new Error();
       toast({ title: "Message Sent!", description: "We'll get back to you soon." });
       setFormData({ name: "", email: "", organisation: "", interest: "", message: "", consent: false });
-    } catch {
-      toast({ title: "Error", description: "Failed to send message. Please try again.", variant: "destructive" });
-    } finally {
-      setSubmitting(false);
-    }
+    } catch { toast({ title: "Error", description: "Failed to send message. Please try again.", variant: "destructive" }); }
+    finally { setSubmitting(false); }
+  };
+
+  const inputBase: React.CSSProperties = {
+    width: "100%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.15)",
+    borderRadius: "8px", padding: "0.9rem 1.1rem", color: "#ffffff", fontSize: "1rem",
+    outline: "none", boxSizing: "border-box", fontFamily: "inherit",
+  };
+
+  const formLabel: React.CSSProperties = {
+    display: "block", fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.12em",
+    textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.6rem",
   };
 
   const field = (label: string, key: string, type = "text") => (
     <div key={key}>
-      <label style={{ display: "block", fontFamily: "monospace", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#00d9c8", marginBottom: "0.5rem" }}>{label}</label>
+      <label style={formLabel}>{label}</label>
       <input type={type} value={(formData as any)[key]}
         onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
-        required data-testid={`input-${key}`}
-        style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", padding: "0.85rem 1rem", color: "#ffffff", fontSize: "0.95rem", outline: "none", boxSizing: "border-box" as const, fontFamily: "inherit" }} />
+        required data-testid={`input-${key}`} style={inputBase} />
     </div>
   );
 
@@ -199,165 +167,165 @@ export default function NewIntelligenceHome() {
 
       <MeshBackground />
 
-      {/* ── NAV ── */}
-      <nav style={{ position: "relative", zIndex: 20, borderBottom: "1px solid rgba(0,217,200,0.18)", backdropFilter: "blur(12px)", background: "rgba(7,13,24,0.7)" }}>
+      {/* ── NAV ──────────────────────────────────────────────────── */}
+      <nav style={{ position: "relative", zIndex: 20, borderBottom: "1px solid rgba(0,217,200,0.18)", backdropFilter: "blur(12px)", background: "rgba(7,13,24,0.75)" }}>
         <div style={{ maxWidth: "1160px", margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "88px" }}>
           <Link href="/">
-            <img src={logoImage} alt="The Aqool Wire" style={{ height: "120px", width: "auto", cursor: "pointer", filter: "drop-shadow(0 0 14px rgba(0,217,200,0.45)) brightness(1.1)", position: "relative", zIndex: 1 }} />
+            <img src={logoImage} alt="The Aqool Wire"
+              style={{ height: "120px", width: "auto", cursor: "pointer", filter: "drop-shadow(0 0 14px rgba(0,217,200,0.45)) brightness(1.1)", position: "relative", zIndex: 1 }} />
           </Link>
 
           <div className="hidden md:flex" style={{ alignItems: "center", gap: "2.5rem" }}>
             <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer"
-              style={{ fontSize: "0.9rem", color: "#94a3b8", textDecoration: "none", letterSpacing: "0.02em" }}
+              style={{ fontSize: "1rem", color: "#cbd5e1", textDecoration: "none" }}
               className="hover:text-white transition-colors">Platform</a>
             <Link href="/about"
-              style={{ fontSize: "0.9rem", color: "#94a3b8", textDecoration: "none", letterSpacing: "0.02em" }}
+              style={{ fontSize: "1rem", color: "#cbd5e1", textDecoration: "none" }}
               className="hover:text-white transition-colors">About</Link>
             <a href="#contact"
-              style={{ fontSize: "0.9rem", fontWeight: 600, color: "#070d18", background: "#00d9c8", textDecoration: "none", padding: "0.55rem 1.4rem", borderRadius: "6px", letterSpacing: "0.01em", boxShadow: "0 0 20px rgba(0,217,200,0.4)" }}>
+              style={{ fontSize: "1rem", fontWeight: 700, color: "#070d18", background: "#00d9c8", textDecoration: "none", padding: "0.6rem 1.5rem", borderRadius: "6px", letterSpacing: "0.01em", boxShadow: "0 0 20px rgba(0,217,200,0.4)" }}>
               Contact
             </a>
           </div>
 
           <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ background: "none", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "6px", cursor: "pointer", color: "#94a3b8", fontSize: "1.1rem", padding: "0.4rem 0.7rem" }}>
+            style={{ background: "none", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "6px", cursor: "pointer", color: "#e2e8f0", fontSize: "1.2rem", padding: "0.4rem 0.75rem" }}>
             {mobileMenuOpen ? "✕" : "☰"}
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <div style={{ borderTop: "1px solid rgba(0,217,200,0.12)", padding: "1.5rem 2rem", display: "flex", flexDirection: "column", gap: "1.25rem", background: "rgba(7,13,24,0.95)" }}>
-            <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.95rem", color: "#cbd5e1", textDecoration: "none" }}>Platform</a>
-            <Link href="/about" style={{ fontSize: "0.95rem", color: "#cbd5e1", textDecoration: "none" }}>About</Link>
-            <a href="#contact" style={{ fontSize: "0.95rem", color: "#00d9c8", textDecoration: "none", fontWeight: 600 }}>Contact</a>
+          <div style={{ borderTop: "1px solid rgba(0,217,200,0.12)", padding: "1.5rem 2rem", display: "flex", flexDirection: "column", gap: "1.25rem", background: "rgba(7,13,24,0.97)" }}>
+            <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1rem", color: "#e2e8f0", textDecoration: "none" }}>Platform</a>
+            <Link href="/about" style={{ fontSize: "1rem", color: "#e2e8f0", textDecoration: "none" }}>About</Link>
+            <a href="#contact" style={{ fontSize: "1rem", color: "#00d9c8", textDecoration: "none", fontWeight: 700 }}>Contact</a>
           </div>
         )}
       </nav>
 
-      {/* ── HERO ── */}
+      {/* ── HERO ─────────────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, minHeight: "92vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "6rem 2rem 4rem" }}>
-        {/* Glow orb behind headline */}
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-60%)", width: "700px", height: "400px", background: "radial-gradient(ellipse at center, rgba(0,217,200,0.09) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: "860px" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(0,217,200,0.35)", borderRadius: "100px", padding: "0.35rem 1rem 0.35rem 0.6rem", marginBottom: "2.5rem", background: "rgba(0,217,200,0.06)" }}>
-            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#00d9c8", display: "inline-block", boxShadow: "0 0 8px #00d9c8" }} />
-            <span style={{ fontSize: "0.8rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live intelligence platform</span>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(0,217,200,0.35)", borderRadius: "100px", padding: "0.4rem 1.1rem 0.4rem 0.7rem", marginBottom: "2.5rem", background: "rgba(0,217,200,0.07)" }}>
+            <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#00d9c8", display: "inline-block", boxShadow: "0 0 8px #00d9c8", flexShrink: 0 }} />
+            <span style={{ fontSize: "0.85rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live intelligence platform</span>
           </div>
 
           <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontSize: "clamp(2.4rem, 5.5vw, 4rem)", fontWeight: 400, lineHeight: 1.18, color: "#ffffff", marginBottom: "1.75rem", letterSpacing: "-0.015em" }}>
             Real-time intelligence on Saudi Arabia's AI economy.
           </h1>
 
-          <p style={{ fontSize: "clamp(1.05rem, 2vw, 1.25rem)", lineHeight: 1.75, color: "#94a3b8", marginBottom: "3rem", maxWidth: "640px", marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ fontSize: "clamp(1.05rem, 2vw, 1.25rem)", lineHeight: 1.8, color: "#cbd5e1", marginBottom: "3rem", maxWidth: "640px", marginLeft: "auto", marginRight: "auto" }}>
             We track every deal, partnership, and policy shift in the Kingdom's AI ecosystem — so institutional investors, sovereign funds, and foreign operators don't have to.
           </p>
 
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.25rem", flexWrap: "wrap" }}>
             <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer" data-testid="button-learn-more"
-              style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "#00d9c8", color: "#070d18", fontWeight: 700, fontSize: "1rem", padding: "0.9rem 2.25rem", borderRadius: "8px", textDecoration: "none", boxShadow: "0 0 40px rgba(0,217,200,0.4), 0 4px 20px rgba(0,0,0,0.4)", letterSpacing: "0.01em" }}>
+              style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "#00d9c8", color: "#070d18", fontWeight: 700, fontSize: "1.05rem", padding: "0.9rem 2.25rem", borderRadius: "8px", textDecoration: "none", boxShadow: "0 0 40px rgba(0,217,200,0.4), 0 4px 20px rgba(0,0,0,0.4)", letterSpacing: "0.01em" }}>
               Enter the platform
-              <ExternalLink style={{ width: "16px", height: "16px" }} />
+              <ExternalLink style={{ width: "17px", height: "17px" }} />
             </a>
-            <span style={{ fontSize: "0.9rem", color: "#64748b", fontFamily: "monospace" }}>Free access during beta</span>
+            <span style={{ fontSize: "0.95rem", color: "#94a3b8", fontFamily: "monospace" }}>Free access during beta</span>
           </div>
         </div>
       </section>
 
-      {/* ── STATS ── */}
-      <section style={{ position: "relative", zIndex: 1, background: "rgba(255,255,255,0.025)", borderTop: "1px solid rgba(255,255,255,0.07)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+      {/* ── STATS ─────────────────────────────────────────────────── */}
+      <section style={{ position: "relative", zIndex: 1, background: "rgba(255,255,255,0.025)", borderTop: "1px solid rgba(255,255,255,0.08)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "3.5rem 2rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
             { value: "184+", label: "Entities tracked", sub: "government, corporate, VC" },
             { value: "300+", label: "Deals monitored", sub: "JVs, rounds, MoUs, acquisitions" },
             { value: "$21B+", label: "Capital flows tracked", sub: "across the AI stack" },
           ].map((s, i) => (
-            <div key={s.value} style={{ textAlign: "center", padding: "0 1.5rem", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
+            <div key={s.value} style={{ textAlign: "center", padding: "0 1.5rem", borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
               <div style={{ fontFamily: "monospace", fontSize: "clamp(2.25rem, 4vw, 3rem)", fontWeight: 700, color: "#00d9c8", lineHeight: 1, marginBottom: "0.5rem", letterSpacing: "-0.02em" }}>{s.value}</div>
-              <div style={{ fontSize: "0.95rem", color: "#e2e8f0", fontWeight: 600, marginBottom: "0.25rem" }}>{s.label}</div>
-              <div style={{ fontSize: "0.78rem", color: "#475569", fontFamily: "monospace" }}>{s.sub}</div>
+              <div style={{ fontSize: "1rem", color: "#ffffff", fontWeight: 600, marginBottom: "0.3rem" }}>{s.label}</div>
+              <div style={{ fontSize: "0.85rem", color: "#94a3b8", fontFamily: "monospace" }}>{s.sub}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── PLATFORM CARDS ── */}
+      {/* ── PLATFORM CARDS ───────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto", padding: "6rem 2rem" }}>
-        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
           <div>
-            <p style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.5rem" }}>Platform</p>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#ffffff", fontWeight: 400, margin: 0 }}>What's inside</h2>
+            <span style={SECTION_LABEL}>Platform</span>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff", fontWeight: 400, margin: 0 }}>What's inside</h2>
           </div>
           <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer"
-            style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.85rem", color: "#00d9c8", textDecoration: "none", border: "1px solid rgba(0,217,200,0.3)", padding: "0.5rem 1.1rem", borderRadius: "6px" }}>
-            Explore platform <ArrowRight style={{ width: "14px", height: "14px" }} />
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.95rem", color: "#00d9c8", textDecoration: "none", border: "1px solid rgba(0,217,200,0.35)", padding: "0.55rem 1.2rem", borderRadius: "6px", fontWeight: 500 }}>
+            Explore platform <ArrowRight style={{ width: "15px", height: "15px" }} />
           </a>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(0,217,200,0.1)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(0,217,200,0.1)" }}>
           {PLATFORM_CARDS.map((c) => (
             <div key={c.title} style={{ background: "#0c1829", padding: "2.5rem", position: "relative", overflow: "hidden" }}>
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, rgba(0,217,200,0.4), transparent)" }} />
-              <span style={{ fontFamily: "monospace", fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#00d9c8", background: "rgba(0,217,200,0.08)", border: "1px solid rgba(0,217,200,0.2)", padding: "0.2rem 0.6rem", borderRadius: "4px", display: "inline-block", marginBottom: "1.25rem" }}>{c.tag}</span>
-              <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.3rem", fontWeight: 400, color: "#ffffff", marginBottom: "0.85rem", lineHeight: 1.3 }}>{c.title}</h3>
-              <p style={{ fontSize: "0.9rem", color: "#64748b", lineHeight: 1.75, margin: 0 }}>{c.desc}</p>
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, rgba(0,217,200,0.5), transparent)" }} />
+              <span style={{ fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#00d9c8", background: "rgba(0,217,200,0.1)", border: "1px solid rgba(0,217,200,0.25)", padding: "0.25rem 0.7rem", borderRadius: "4px", display: "inline-block", marginBottom: "1.25rem" }}>{c.tag}</span>
+              <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.35rem", fontWeight: 400, color: "#ffffff", marginBottom: "0.85rem", lineHeight: 1.3 }}>{c.title}</h3>
+              <p style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.75, margin: 0 }}>{c.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── LATEST ── */}
+      {/* ── LATEST ───────────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "900px", margin: "0 auto", padding: "0 2rem 6rem" }}>
-        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "2rem", flexWrap: "wrap", gap: "1rem" }}>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "2rem", flexWrap: "wrap", gap: "1rem" }}>
           <div>
-            <p style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.5rem" }}>Signals</p>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#ffffff", fontWeight: 400, margin: 0 }}>Latest from the wire</h2>
+            <span style={SECTION_LABEL}>Signals</span>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff", fontWeight: 400, margin: 0 }}>Latest from the wire</h2>
           </div>
           <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer"
-            style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.85rem", color: "#00d9c8", textDecoration: "none", border: "1px solid rgba(0,217,200,0.3)", padding: "0.5rem 1.1rem", borderRadius: "6px" }}>
-            View all <ArrowRight style={{ width: "14px", height: "14px" }} />
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.95rem", color: "#00d9c8", textDecoration: "none", border: "1px solid rgba(0,217,200,0.35)", padding: "0.55rem 1.2rem", borderRadius: "6px", fontWeight: 500 }}>
+            View all <ArrowRight style={{ width: "15px", height: "15px" }} />
           </a>
         </div>
 
-        <div style={{ borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.07)" }}>
+        <div style={{ borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.09)" }}>
           {LATEST_ITEMS.map((item, i) => (
-            <div key={item.headline} style={{ padding: "1.75rem 2rem", borderTop: i > 0 ? "1px solid rgba(255,255,255,0.07)" : "none", background: "#0c1829", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.5rem", flexWrap: "wrap" }}>
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "#e2e8f0", fontWeight: 400, lineHeight: 1.5, flex: 1, minWidth: "200px", margin: 0 }}>{item.headline}</p>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", flexShrink: 0 }}>
-                <span style={{ fontSize: "0.82rem", color: "#64748b", fontFamily: "monospace", whiteSpace: "nowrap" }}>{item.date}</span>
-                <span style={{ fontFamily: "monospace", fontSize: "0.7rem", color: "#00d9c8", border: "1px solid rgba(0,217,200,0.35)", padding: "0.2rem 0.65rem", borderRadius: "4px", letterSpacing: "0.06em", textTransform: "uppercase", whiteSpace: "nowrap" }}>{item.tag}</span>
+            <div key={item.headline} style={{ padding: "1.75rem 2rem", borderTop: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none", background: "#0c1829", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.5rem", flexWrap: "wrap" }}>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "1.1rem", color: "#e2e8f0", fontWeight: 400, lineHeight: 1.5, flex: 1, minWidth: "200px", margin: 0 }}>{item.headline}</p>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.9rem", flexShrink: 0 }}>
+                <span style={{ fontSize: "0.88rem", color: "#94a3b8", fontFamily: "monospace", whiteSpace: "nowrap" }}>{item.date}</span>
+                <span style={{ fontFamily: "monospace", fontSize: "0.78rem", fontWeight: 600, color: "#00d9c8", border: "1px solid rgba(0,217,200,0.4)", padding: "0.25rem 0.75rem", borderRadius: "4px", letterSpacing: "0.05em", textTransform: "uppercase", whiteSpace: "nowrap" }}>{item.tag}</span>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── WHAT'S NEXT ── */}
+      {/* ── WHAT'S NEXT ──────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "900px", margin: "0 auto", padding: "0 2rem 6rem" }}>
-        <p style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.5rem" }}>Roadmap</p>
-        <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#ffffff", fontWeight: 400, marginBottom: "2rem" }}>What's next</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(255,255,255,0.07)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.07)" }}>
+        <span style={SECTION_LABEL}>Roadmap</span>
+        <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff", fontWeight: 400, marginBottom: "2rem" }}>What's next</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(255,255,255,0.08)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)" }}>
           {[
             { tag: "Q2 2026", title: "GCC expansion", desc: "UAE coverage launching next quarter. Qatar and Bahrain to follow by end of year." },
             { tag: "Coming soon", title: "Original research", desc: "Data-driven analysis and reports on GCC AI infrastructure economics." },
           ].map((item) => (
             <div key={item.title} style={{ background: "#0c1829", padding: "2.5rem" }}>
-              <span style={{ fontFamily: "monospace", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#00d9c8", display: "block", marginBottom: "1rem" }}>{item.tag}</span>
-              <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.25rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.6rem" }}>{item.title}</h3>
-              <p style={{ fontSize: "0.9rem", color: "#64748b", lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+              <span style={{ fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#00d9c8", display: "block", marginBottom: "1rem" }}>{item.tag}</span>
+              <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.3rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.65rem" }}>{item.title}</h3>
+              <p style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
-      <section id="contact" style={{ position: "relative", zIndex: 1, background: "rgba(0,217,200,0.03)", borderTop: "1px solid rgba(0,217,200,0.12)", borderBottom: "1px solid rgba(0,217,200,0.12)", padding: "6rem 2rem" }}>
+      {/* ── CONTACT ──────────────────────────────────────────────── */}
+      <section id="contact" style={{ position: "relative", zIndex: 1, background: "rgba(0,217,200,0.03)", borderTop: "1px solid rgba(0,217,200,0.14)", borderBottom: "1px solid rgba(0,217,200,0.14)", padding: "6rem 2rem" }}>
         <div style={{ maxWidth: "580px", margin: "0 auto" }}>
-          <p style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.5rem" }}>Get in touch</p>
-          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 400, color: "#ffffff", marginBottom: "0.85rem" }}>
+          <span style={SECTION_LABEL}>Get in touch</span>
+          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 400, color: "#ffffff", marginBottom: "1rem" }}>
             Interested in early access?
           </h2>
-          <p style={{ fontSize: "1rem", color: "#94a3b8", marginBottom: "3rem", lineHeight: 1.75 }}>
+          <p style={{ fontSize: "1.05rem", color: "#cbd5e1", marginBottom: "3rem", lineHeight: 1.8 }}>
             Reach out to discuss platform access, partnerships, or custom intelligence requests.
           </p>
 
@@ -367,10 +335,10 @@ export default function NewIntelligenceHome() {
             {field("Organisation", "organisation")}
 
             <div>
-              <label style={{ display: "block", fontFamily: "monospace", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#00d9c8", marginBottom: "0.5rem" }}>Interest</label>
+              <label style={formLabel}>Interest</label>
               <select value={formData.interest} onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                 required data-testid="select-interest"
-                style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", padding: "0.85rem 1rem", color: formData.interest ? "#ffffff" : "#64748b", fontSize: "0.95rem", outline: "none", cursor: "pointer", boxSizing: "border-box" as const }}>
+                style={{ ...inputBase, cursor: "pointer", color: formData.interest ? "#ffffff" : "#94a3b8" }}>
                 <option value="">Select your interest</option>
                 <option value="Platform Access">Platform Access</option>
                 <option value="Request Demo">Request Demo</option>
@@ -381,28 +349,28 @@ export default function NewIntelligenceHome() {
             </div>
 
             <div>
-              <label style={{ display: "block", fontFamily: "monospace", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#00d9c8", marginBottom: "0.5rem" }}>Message</label>
+              <label style={formLabel}>Message</label>
               <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required data-testid="textarea-message"
-                style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", padding: "0.85rem 1rem", color: "#ffffff", fontSize: "0.95rem", outline: "none", minHeight: "130px", resize: "vertical", boxSizing: "border-box" as const, fontFamily: "inherit" }} />
+                style={{ ...inputBase, minHeight: "130px", resize: "vertical" }} />
             </div>
 
-            <div style={{ display: "flex", alignItems: "flex-start", gap: "0.85rem", padding: "1.25rem", background: "rgba(255,255,255,0.03)", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.08)" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "0.85rem", padding: "1.25rem", background: "rgba(255,255,255,0.04)", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.1)" }}>
               <input type="checkbox" id="consent" checked={formData.consent}
                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
                 required data-testid="checkbox-consent"
-                style={{ marginTop: "2px", accentColor: "#00d9c8", width: "16px", height: "16px", flexShrink: 0, cursor: "pointer" }} />
-              <label htmlFor="consent" style={{ fontSize: "0.875rem", color: "#94a3b8", lineHeight: 1.65, cursor: "pointer" }}>
+                style={{ marginTop: "3px", accentColor: "#00d9c8", width: "16px", height: "16px", flexShrink: 0, cursor: "pointer" }} />
+              <label htmlFor="consent" style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.65, cursor: "pointer" }}>
                 I consent to The Aqool Wire contacting me about relevant intelligence and advisory services.
               </label>
             </div>
 
             <button type="submit" disabled={submitting} data-testid="button-submit"
-              style={{ background: "#00d9c8", color: "#070d18", border: "none", borderRadius: "8px", padding: "1rem 1.5rem", fontSize: "1rem", fontWeight: 700, cursor: submitting ? "not-allowed" : "pointer", opacity: submitting ? 0.7 : 1, boxShadow: "0 0 30px rgba(0,217,200,0.35)", letterSpacing: "0.01em", transition: "all 0.2s" }}>
+              style={{ background: "#00d9c8", color: "#070d18", border: "none", borderRadius: "8px", padding: "1rem 1.5rem", fontSize: "1.05rem", fontWeight: 700, cursor: submitting ? "not-allowed" : "pointer", opacity: submitting ? 0.7 : 1, boxShadow: "0 0 30px rgba(0,217,200,0.35)", letterSpacing: "0.01em", transition: "all 0.2s" }}>
               {submitting ? "Sending..." : "Send Message"}
             </button>
 
-            <p style={{ textAlign: "center", fontSize: "0.875rem", color: "#64748b" }}>
+            <p style={{ textAlign: "center", fontSize: "0.95rem", color: "#94a3b8" }}>
               Looking for a formal partnership?{" "}
               <a href="mailto:jessicapino@theaqoolwire.com?subject=Partnership Inquiry" data-testid="button-become-partner"
                 style={{ color: "#00d9c8", textDecoration: "underline", textUnderlineOffset: "3px" }}>
@@ -413,13 +381,12 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* ── FOOTER ───────────────────────────────────────────────── */}
       <footer style={{ position: "relative", zIndex: 1, padding: "3rem 2rem 2.5rem" }}>
         <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
-          {/* Top row */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem", paddingBottom: "2rem", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem", paddingBottom: "2rem", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
             <Link href="/">
-              <img src={logoImage} alt="The Aqool Wire" style={{ height: "64px", width: "auto", opacity: 0.85, filter: "drop-shadow(0 0 8px rgba(0,217,200,0.25))" }} />
+              <img src={logoImage} alt="The Aqool Wire" style={{ height: "64px", width: "auto", opacity: 0.9, filter: "drop-shadow(0 0 8px rgba(0,217,200,0.25))" }} />
             </Link>
             <div style={{ display: "flex", alignItems: "center", gap: "2.5rem", flexWrap: "wrap" }}>
               {[
@@ -430,22 +397,21 @@ export default function NewIntelligenceHome() {
               ].map((item) =>
                 item.external ? (
                   <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
-                    style={{ fontSize: "0.9rem", color: "#94a3b8", textDecoration: "none" }}
+                    style={{ fontSize: "1rem", color: "#cbd5e1", textDecoration: "none" }}
                     className="hover:text-white transition-colors">{item.label}</a>
                 ) : (
                   <Link key={item.label} href={item.href}
-                    style={{ fontSize: "0.9rem", color: "#94a3b8", textDecoration: "none" }}
+                    style={{ fontSize: "1rem", color: "#cbd5e1", textDecoration: "none" }}
                     className="hover:text-white transition-colors">{item.label}</Link>
                 )
               )}
             </div>
           </div>
-          {/* Bottom row */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", paddingTop: "1.5rem" }}>
-            <p style={{ fontSize: "0.85rem", color: "#475569", margin: 0 }}>
+            <p style={{ fontSize: "0.9rem", color: "#94a3b8", margin: 0 }}>
               &copy; {new Date().getFullYear()} The Aqool Wire. All rights reserved.
             </p>
-            <p style={{ fontSize: "0.82rem", color: "#334155", fontFamily: "monospace", margin: 0 }}>
+            <p style={{ fontSize: "0.88rem", color: "#64748b", fontFamily: "monospace", margin: 0 }}>
               Saudi Arabia &middot; GCC &middot; AI Intelligence
             </p>
           </div>
