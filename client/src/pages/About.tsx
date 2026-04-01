@@ -42,7 +42,7 @@ export default function About() {
             About <span style={{ color: "#00d9c8" }}>The Aqool Wire</span>
           </h1>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", fontSize: "1.05rem", lineHeight: 1.85, color: "#e2e8f0" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", fontSize: "1.05rem", lineHeight: 1.85, color: "#e2e8f0", background: "#0c1829", borderRadius: "14px", padding: "2.5rem 3rem", border: "1px solid rgba(255,255,255,0.06)" }}>
             <p>
               For years, the hardest part of serious economic and policy analysis wasn't interpretation. It was keeping the underlying information current, coherent, and decision-ready. Data arrived late, conflicted across sources, and often surfaced only after policy or investment windows had already closed.
             </p>
@@ -78,7 +78,7 @@ export default function About() {
             </p>
 
             {/* Digital Twin Policy Lab */}
-            <div style={{ marginTop: "1rem", padding: "2rem 2.5rem", background: "#0c1829", border: "1px solid rgba(0,217,200,0.18)", borderRadius: "12px" }}>
+            <div style={{ marginTop: "1rem", padding: "2rem 2.5rem", background: "#0f2035", border: "1px solid rgba(0,217,200,0.22)", borderRadius: "12px" }}>
               <h2 style={{ fontFamily: "Georgia, serif", fontSize: "1.4rem", fontWeight: 400, color: "#00d9c8", marginBottom: "1rem" }}>Digital Twin Policy Lab</h2>
               <p style={{ marginBottom: "1rem" }}>
                 The Aqool Wire goes beyond visualization through its Digital Twin Policy Lab, a simulation environment that allows users to test policy, workforce, and investment scenarios against real economic data before decisions are locked in.
