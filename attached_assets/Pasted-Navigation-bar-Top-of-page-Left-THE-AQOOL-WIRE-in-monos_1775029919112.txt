@@ -1,0 +1,20 @@
+Navigation bar: Top of page. Left: "THE AQOOL WIRE" in monospace, letter-spacing 3px. Right: "Platform" | "About" | "Subscribe" (Subscribe in green #0F6E56).
+Hero section: Large serif headline (Georgia or similar): "Real-time intelligence on AI investment, infrastructure, and policy in Saudi Arabia." Below it, a subtitle in muted gray text: "We track every deal, every partnership, and every policy shift in the Kingdom's AI ecosystem — so institutional investors, sovereign funds, and foreign operators don't have to." Below that, a dark button "Enter the platform" linking to live.theaqoolwire.com, with small text next to it: "Free access during beta"
+Stats row: Three numbers in a horizontal row with thin top border separator. "184+" entities tracked, "300+" deals monitored, "$21B+" capital flows tracked. Numbers in monospace font, large. Labels in small muted text below each.
+What's on the platform: Section header "WHAT'S ON THE PLATFORM" in small uppercase monospace letters. Four cards in a 2x2 grid, each with thin border, showing:
+
+"Entity profiles" — Deep intelligence profiles for HUMAIN, PIF, SDAIA, Aramco Digital, and 180+ other organizations. Deals, partnerships, key people, citations.
+"Deal intelligence" — Every sovereign JV, VC round, infrastructure deal, MoU, and acquisition — tracked in real time with source attribution.
+"Weekly briefing" — AI-synthesized weekly intelligence report covering deals, policy changes, and partnership announcements. Sourced from 60+ publications.
+"VC directory" — 71 investors active in Saudi tech — fund sizes, portfolio companies, investment thesis, and sector focus.
+
+Latest from the wire: Section header "LATEST FROM THE WIRE" in small uppercase monospace. Three recent deal headlines stacked vertically with thin dividers between them:
+
+"Aramco awards $371M supercomputing contract to STC Solutions" — Mar 24, 2026 · Partnership
+"HUMAIN + Turing: AI Agent Marketplace on HUMAIN ONE" — Mar 26, 2026 · Partnership
+"SAMA launches open banking licenses under Vision 2030" — Mar 27, 2026 · Policy
+
+What's next: Section header "WHAT'S NEXT" in small uppercase monospace. Two items side by side:
+
+"GCC expansion" — UAE coverage launching Q2 2026. Qatar and Bahrain to follow.
+"Original research" — Data-driven analysis on GCC AI infrastructure economics. Coming soon.
