@@ -299,7 +299,7 @@ export default function NewIntelligenceHome() {
             Enter the platform
             <ExternalLink style={{ width: "15px", height: "15px" }} />
           </a>
-          <span style={{ fontSize: "0.85rem", color: "#64748b", fontFamily: "monospace", letterSpacing: "0.04em" }}>Free access during beta</span>
+          <span style={{ fontSize: "0.95rem", color: "#cbd5e1", fontFamily: "monospace", letterSpacing: "0.04em" }}>Free access during beta</span>
         </div>
       </section>
 
