@@ -307,7 +307,7 @@ export default function NewIntelligenceHome() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(255,255,255,0.08)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)" }}>
           {[
             { tag: "Q2 2026", title: "GCC expansion", desc: "UAE coverage launching next quarter. Qatar and Bahrain to follow by end of year." },
-            { tag: "Coming soon", title: "Original research", desc: "Data-driven analysis and reports on GCC AI infrastructure economics." },
+            { tag: "Coming soon", title: "Original research", desc: "Data-driven analysis on AI policy, infrastructure, investment, and talent development across the GCC." },
           ].map((item) => (
             <div key={item.title} style={{ background: "#0c1829", padding: "2.5rem" }}>
               <span style={{ fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#00d9c8", display: "block", marginBottom: "1rem" }}>{item.tag}</span>
