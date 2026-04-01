@@ -33,10 +33,11 @@ export default function MeshBackground() {
           const x = c * sx;
           const nc = c / (COLS - 1);
           const nr = (r - ROWS / 2) / (ROWS / 2);
-          const w1 = Math.sin(c * 0.13 + t * 1.0 + r * 0.22) * 60;
-          const w2 = Math.sin(c * 0.06 - t * 0.65 + r * 0.16) * 38;
-          const w3 = Math.sin(c * 0.19 + t * 0.45 + r * 0.08) * 22;
-          const w4 = Math.cos(c * 0.04 + t * 0.8) * 14;
+          const edgeFactor = 0.12 + 0.88 * Math.pow(Math.abs(nc - 0.5) * 2, 1.4);
+          const w1 = Math.sin(c * 0.13 + t * 1.0 + r * 0.22) * 60 * edgeFactor;
+          const w2 = Math.sin(c * 0.06 - t * 0.65 + r * 0.16) * 38 * edgeFactor;
+          const w3 = Math.sin(c * 0.19 + t * 0.45 + r * 0.08) * 22 * edgeFactor;
+          const w4 = Math.cos(c * 0.04 + t * 0.8) * 14 * edgeFactor;
           const y = cy + r * sy - (ROWS * sy) / 2 + w1 + w2 + w3 + w4;
           const fadeX = 1 - Math.pow(Math.abs(nc - 0.5) * 2, 1.8);
           const fadeR = 1 - Math.pow(nr, 2) * 0.75;
