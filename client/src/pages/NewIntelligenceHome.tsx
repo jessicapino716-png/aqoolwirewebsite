@@ -318,15 +318,73 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
 
+      {/* ── PARTNERSHIPS & SPONSORSHIPS ──────────────────────────── */}
+      <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto", padding: "0 2rem 6rem" }}>
+        <span style={SECTION_LABEL}>Work with us</span>
+        <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff", fontWeight: 400, marginBottom: "1rem" }}>
+          Actively seeking partners and sponsors
+        </h2>
+        <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.8, maxWidth: "680px", marginBottom: "3rem" }}>
+          The Aqool Wire is growing fast. We're looking for organisations that want to reach the decision-makers, investors, and operators shaping Saudi Arabia's AI economy.
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(0,217,200,0.1)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(0,217,200,0.1)" }}>
+          {[
+            {
+              tag: "Partnership",
+              title: "Strategic partnerships",
+              bullets: [
+                "Co-branded intelligence reports and research",
+                "Joint coverage of events, summits, and deal flow",
+                "Data-sharing arrangements for mutual intelligence",
+                "Distribution to our network of investors and operators",
+              ],
+              cta: "Discuss a partnership",
+              mailto: "jessicapino@theaqoolwire.com?subject=Strategic Partnership Inquiry",
+            },
+            {
+              tag: "Sponsorship",
+              title: "Platform sponsorships",
+              bullets: [
+                "Sponsored sections inside the live intelligence platform",
+                "Newsletter and weekly briefing sponsorships",
+                "Branded intelligence reports distributed to our audience",
+                "Visibility with institutional investors and sovereign funds",
+              ],
+              cta: "Discuss sponsorship",
+              mailto: "jessicapino@theaqoolwire.com?subject=Sponsorship Inquiry",
+            },
+          ].map((item) => (
+            <div key={item.title} style={{ background: "#0c1829", padding: "2.5rem", position: "relative", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, rgba(0,217,200,0.5), transparent)" }} />
+              <span style={{ fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#00d9c8", background: "rgba(0,217,200,0.1)", border: "1px solid rgba(0,217,200,0.25)", padding: "0.25rem 0.7rem", borderRadius: "4px", display: "inline-block", marginBottom: "1.25rem", alignSelf: "flex-start" }}>{item.tag}</span>
+              <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.35rem", fontWeight: 400, color: "#ffffff", marginBottom: "1.25rem", lineHeight: 1.3 }}>{item.title}</h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 2rem", display: "flex", flexDirection: "column", gap: "0.75rem", flex: 1 }}>
+                {item.bullets.map((b) => (
+                  <li key={b} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.65 }}>
+                    <span style={{ color: "#00d9c8", marginTop: "0.3rem", flexShrink: 0, fontSize: "0.7rem" }}>&#9654;</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <a href={`mailto:${item.mailto}`}
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.95rem", fontWeight: 600, color: "#070d18", background: "#00d9c8", textDecoration: "none", padding: "0.7rem 1.4rem", borderRadius: "6px", alignSelf: "flex-start", boxShadow: "0 0 20px rgba(0,217,200,0.25)" }}>
+                {item.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── CONTACT ──────────────────────────────────────────────── */}
       <section id="contact" style={{ position: "relative", zIndex: 1, background: "rgba(0,217,200,0.03)", borderTop: "1px solid rgba(0,217,200,0.14)", borderBottom: "1px solid rgba(0,217,200,0.14)", padding: "6rem 2rem" }}>
         <div style={{ maxWidth: "580px", margin: "0 auto" }}>
           <span style={SECTION_LABEL}>Get in touch</span>
           <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 400, color: "#ffffff", marginBottom: "1rem" }}>
-            Interested in early access?
+            Interested in partnering or sponsoring?
           </h2>
           <p style={{ fontSize: "1.05rem", color: "#cbd5e1", marginBottom: "3rem", lineHeight: 1.8 }}>
-            Reach out to discuss platform access, partnerships, or custom intelligence requests.
+            Tell us about your organisation and what you're looking for. We'll follow up within two business days.
           </p>
 
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -371,11 +429,7 @@ export default function NewIntelligenceHome() {
             </button>
 
             <p style={{ textAlign: "center", fontSize: "0.95rem", color: "#94a3b8" }}>
-              Looking for a formal partnership?{" "}
-              <a href="mailto:jessicapino@theaqoolwire.com?subject=Partnership Inquiry" data-testid="button-become-partner"
-                style={{ color: "#00d9c8", textDecoration: "underline", textUnderlineOffset: "3px" }}>
-                Reach out directly
-              </a>
+              We respond to all enquiries within two business days.
             </p>
           </form>
         </div>
