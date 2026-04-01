@@ -123,7 +123,7 @@ export default function NewIntelligenceHome() {
       <section style={{ position: "relative", zIndex: 1, minHeight: "92vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "6rem 2rem 4rem" }}>
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-60%)", width: "700px", height: "400px", background: "radial-gradient(ellipse at center, rgba(0,217,200,0.09) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: "860px" }}>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "860px", background: "rgba(7,13,24,0.72)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", borderRadius: "16px", padding: "3.5rem 3rem", border: "1px solid rgba(255,255,255,0.07)" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(0,217,200,0.35)", borderRadius: "100px", padding: "0.4rem 1.1rem 0.4rem 0.7rem", marginBottom: "2.5rem", background: "rgba(0,217,200,0.07)" }}>
             <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#00d9c8", display: "inline-block", boxShadow: "0 0 8px #00d9c8", flexShrink: 0 }} />
             <span style={{ fontSize: "0.85rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live intelligence platform</span>
