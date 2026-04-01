@@ -243,9 +243,9 @@ export default function NewIntelligenceHome() {
 
       {/* Nav */}
       <nav style={{ position: "relative", zIndex: 10, borderBottom: "1px solid rgba(0,217,200,0.15)" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "72px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "96px" }}>
           <Link href="/">
-            <img src={logoImage} alt="The Aqool Wire" style={{ height: "56px", width: "auto", cursor: "pointer" }} />
+            <img src={logoImage} alt="The Aqool Wire" style={{ height: "80px", width: "auto", cursor: "pointer" }} />
           </Link>
 
           <div className="hidden md:flex" style={{ alignItems: "center", gap: "2.5rem" }}>
