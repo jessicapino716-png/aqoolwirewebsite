@@ -411,7 +411,7 @@ export default function NewIntelligenceHome() {
             <p style={{ fontSize: "0.9rem", color: "#94a3b8", margin: 0 }}>
               &copy; {new Date().getFullYear()} The Aqool Wire. All rights reserved.
             </p>
-            <p style={{ fontSize: "0.88rem", color: "#64748b", fontFamily: "monospace", margin: 0 }}>
+            <p style={{ fontSize: "0.9rem", color: "#94a3b8", fontFamily: "monospace", margin: 0 }}>
               Saudi Arabia &middot; GCC &middot; AI Intelligence
             </p>
           </div>
