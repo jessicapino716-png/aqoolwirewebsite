@@ -24,35 +24,69 @@ function ParticleWave() {
     resize();
     window.addEventListener("resize", resize);
 
-    const cols = 80;
-    const rows = 30;
-
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      time += 0.008;
+      time += 0.006;
 
+      const cols = 100;
+      const rows = 40;
       const spacingX = canvas.width / (cols - 1);
-      const spacingY = 12;
-      const offsetY = canvas.height * 0.45;
+      const spacingY = 14;
+      const centerY = canvas.height * 0.5;
+
+      // Store particle positions for line drawing
+      const positions: { x: number; y: number; alpha: number }[] = [];
 
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
           const x = col * spacingX;
-          const wave1 = Math.sin(col * 0.15 + time * 1.2 + row * 0.3) * 40;
-          const wave2 = Math.sin(col * 0.08 - time * 0.8 + row * 0.2) * 25;
-          const wave3 = Math.sin(col * 0.22 + time * 0.6) * 15;
-          const y = offsetY + row * spacingY + wave1 + wave2 + wave3;
+          const normRow = (row - rows / 2) / (rows / 2);
+          const normCol = col / (cols - 1);
 
-          const distFromCenter = Math.abs(col - cols / 2) / (cols / 2);
-          const rowFade = 1 - Math.abs(row - rows / 2) / (rows / 2);
-          const alpha = (1 - distFromCenter * 0.6) * rowFade * 0.35;
+          const wave1 = Math.sin(col * 0.12 + time * 1.1 + row * 0.25) * 55;
+          const wave2 = Math.sin(col * 0.07 - time * 0.7 + row * 0.18) * 35;
+          const wave3 = Math.sin(col * 0.2 + time * 0.5 + row * 0.1) * 20;
+          const wave4 = Math.cos(col * 0.05 + time * 0.9) * 15;
 
-          const size = (1 - distFromCenter * 0.5) * rowFade * 1.5;
+          const y = centerY + row * spacingY - (rows * spacingY) / 2 + wave1 + wave2 + wave3 + wave4;
+
+          const edgeFadeX = 1 - Math.pow(Math.abs(normCol - 0.5) * 2, 2);
+          const edgeFadeRow = 1 - Math.pow(normRow, 2) * 0.8;
+          const alpha = edgeFadeX * edgeFadeRow * 0.55;
+
+          const size = edgeFadeX * edgeFadeRow * 1.8 + 0.4;
+
+          // Color varies slightly — cyan to blue tones
+          const hue = 180 + Math.sin(col * 0.05 + time * 0.3) * 20;
+          const sat = 80 + Math.sin(row * 0.15 + time * 0.2) * 15;
 
           ctx.beginPath();
           ctx.arc(x, y, Math.max(0.3, size), 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(0, 217, 200, ${alpha})`;
+          ctx.fillStyle = `hsla(${hue}, ${sat}%, 65%, ${alpha})`;
           ctx.fill();
+
+          positions.push({ x, y, alpha });
+        }
+      }
+
+      // Draw connecting lines between nearby particles in same row
+      ctx.lineWidth = 0.4;
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols - 1; col++) {
+          const i = row * cols + col;
+          const next = row * cols + col + 1;
+          const p1 = positions[i];
+          const p2 = positions[next];
+          if (!p1 || !p2) continue;
+
+          const lineAlpha = Math.min(p1.alpha, p2.alpha) * 0.4;
+          if (lineAlpha < 0.03) continue;
+
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(0, 217, 200, ${lineAlpha})`;
+          ctx.stroke();
         }
       }
 
@@ -77,11 +111,29 @@ function ParticleWave() {
         height: "100%",
         pointerEvents: "none",
         zIndex: 0,
-        opacity: 0.7,
       }}
     />
   );
 }
+
+const PLATFORM_CARDS = [
+  {
+    title: "Entity profiles",
+    desc: "Deep intelligence profiles for HUMAIN, PIF, SDAIA, Aramco Digital, and 180+ other organizations. Deals, partnerships, key people, citations.",
+  },
+  {
+    title: "Deal intelligence",
+    desc: "Every sovereign JV, VC round, infrastructure deal, MoU, and acquisition tracked in real time with full source attribution.",
+  },
+  {
+    title: "Weekly briefing",
+    desc: "AI-synthesized weekly intelligence report covering deals, policy changes, and partnership announcements. Sourced from 60+ publications.",
+  },
+  {
+    title: "VC directory",
+    desc: "71 investors active in Saudi tech. Fund sizes, portfolio companies, investment thesis, and sector focus — all in one place.",
+  },
+];
 
 const LATEST_ITEMS = [
   {
@@ -142,14 +194,7 @@ export default function NewIntelligenceHome() {
         description: "We'll get back to you soon.",
       });
 
-      setFormData({
-        name: "",
-        email: "",
-        organisation: "",
-        interest: "",
-        message: "",
-        consent: false,
-      });
+      setFormData({ name: "", email: "", organisation: "", interest: "", message: "", consent: false });
     } catch {
       toast({
         title: "Error",
@@ -161,253 +206,116 @@ export default function NewIntelligenceHome() {
     }
   };
 
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    background: "rgba(13, 30, 51, 0.8)",
+    border: "1px solid rgba(0, 217, 200, 0.2)",
+    borderRadius: "6px",
+    padding: "0.85rem 1.1rem",
+    color: "#e2e8f0",
+    fontSize: "0.95rem",
+    outline: "none",
+    boxSizing: "border-box",
+    fontFamily: "inherit",
+    transition: "border-color 0.2s",
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: "block",
+    fontFamily: "monospace",
+    fontSize: "0.72rem",
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: "#00d9c8",
+    marginBottom: "0.5rem",
+  };
+
   return (
-    <div
-      style={{
-        background: "#0a1628",
-        minHeight: "100vh",
-        color: "#e2e8f0",
-        fontFamily: "'Inter', sans-serif",
-        position: "relative",
-        overflowX: "hidden",
-      }}
-    >
+    <div style={{ background: "#080f1a", minHeight: "100vh", color: "#e2e8f0", fontFamily: "'Inter', sans-serif", position: "relative", overflowX: "hidden" }}>
       <Helmet>
         <title>The Aqool Wire — Real-time AI Intelligence for Saudi Arabia</title>
-        <meta
-          name="description"
-          content="Real-time intelligence on AI investment, infrastructure, and policy in Saudi Arabia. We track every deal, partnership, and policy shift in the Kingdom's AI ecosystem."
-        />
+        <meta name="description" content="Real-time intelligence on AI investment, infrastructure, and policy in Saudi Arabia. We track every deal, partnership, and policy shift in the Kingdom's AI ecosystem." />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Helmet>
 
       <ParticleWave />
 
-      {/* Navigation */}
-      <nav
-        style={{
-          position: "relative",
-          zIndex: 10,
-          borderBottom: "1px solid rgba(0,217,200,0.12)",
-          padding: "0 2rem",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1100px",
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            height: "64px",
-          }}
-        >
+      {/* Nav */}
+      <nav style={{ position: "relative", zIndex: 10, borderBottom: "1px solid rgba(0,217,200,0.15)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "72px" }}>
           <Link href="/">
-            <img
-              src={logoImage}
-              alt="The Aqool Wire"
-              style={{ height: "48px", width: "auto", cursor: "pointer", opacity: 0.95 }}
-            />
+            <img src={logoImage} alt="The Aqool Wire" style={{ height: "56px", width: "auto", cursor: "pointer" }} />
           </Link>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "2rem",
-            }}
-            className="hidden md:flex"
-          >
-            <a
-              href="https://live.theaqoolwire.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontFamily: "monospace",
-                fontSize: "0.8rem",
-                letterSpacing: "0.08em",
-                color: "#94a3b8",
-                textDecoration: "none",
-                textTransform: "uppercase",
-              }}
-              className="hover:text-white transition-colors"
-            >
-              Platform
-            </a>
-            <Link
-              href="/about"
-              style={{
-                fontFamily: "monospace",
-                fontSize: "0.8rem",
-                letterSpacing: "0.08em",
-                color: "#94a3b8",
-                textDecoration: "none",
-                textTransform: "uppercase",
-              }}
-              className="hover:text-white transition-colors"
-            >
-              About
-            </Link>
-            <a
-              href="#contact"
-              style={{
-                fontFamily: "monospace",
-                fontSize: "0.8rem",
-                letterSpacing: "0.08em",
-                color: "#00d9c8",
-                textDecoration: "none",
-                textTransform: "uppercase",
-                border: "1px solid rgba(0,217,200,0.4)",
-                padding: "0.35rem 0.85rem",
-                borderRadius: "4px",
-              }}
-              className="hover:bg-cyan-500/10 transition-colors"
-            >
+          <div className="hidden md:flex" style={{ alignItems: "center", gap: "2.5rem" }}>
+            {[
+              { label: "Platform", href: "https://live.theaqoolwire.com/", external: true },
+              { label: "About", href: "/about", external: false },
+            ].map((item) =>
+              item.external ? (
+                <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.08em", color: "#94a3b8", textDecoration: "none", textTransform: "uppercase" }}
+                  className="hover:text-white transition-colors">{item.label}</a>
+              ) : (
+                <Link key={item.label} href={item.href}
+                  style={{ fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.08em", color: "#94a3b8", textDecoration: "none", textTransform: "uppercase" }}
+                  className="hover:text-white transition-colors">{item.label}</Link>
+              )
+            )}
+            <a href="#contact"
+              style={{ fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.08em", color: "#00d9c8", textDecoration: "none", textTransform: "uppercase", border: "1px solid rgba(0,217,200,0.5)", padding: "0.4rem 1rem", borderRadius: "4px" }}
+              className="hover:bg-cyan-500/10 transition-colors">
               Contact
             </a>
           </div>
 
-          <button
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ background: "none", border: "none", cursor: "pointer", color: "#94a3b8", fontSize: "1.25rem" }}
-          >
+          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            style={{ background: "none", border: "none", cursor: "pointer", color: "#94a3b8", fontSize: "1.4rem", padding: "0.5rem" }}>
             {mobileMenuOpen ? "✕" : "☰"}
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <div
-            style={{
-              borderTop: "1px solid rgba(0,217,200,0.12)",
-              padding: "1rem 0",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            }}
-          >
-            <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer"
-              style={{ fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.08em", color: "#94a3b8", textDecoration: "none", textTransform: "uppercase" }}>
-              Platform
-            </a>
-            <Link href="/about"
-              style={{ fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.08em", color: "#94a3b8", textDecoration: "none", textTransform: "uppercase" }}>
-              About
-            </Link>
-            <a href="#contact"
-              style={{ fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.08em", color: "#00d9c8", textDecoration: "none", textTransform: "uppercase" }}>
-              Contact
-            </a>
+          <div style={{ borderTop: "1px solid rgba(0,217,200,0.12)", padding: "1.25rem 2rem", display: "flex", flexDirection: "column", gap: "1.25rem", background: "#080f1a" }}>
+            <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "monospace", fontSize: "0.85rem", color: "#94a3b8", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.08em" }}>Platform</a>
+            <Link href="/about" style={{ fontFamily: "monospace", fontSize: "0.85rem", color: "#94a3b8", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.08em" }}>About</Link>
+            <a href="#contact" style={{ fontFamily: "monospace", fontSize: "0.85rem", color: "#00d9c8", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.08em" }}>Contact</a>
           </div>
         )}
       </nav>
 
       {/* Hero */}
-      <section
-        style={{
-          position: "relative",
-          zIndex: 1,
-          maxWidth: "860px",
-          margin: "0 auto",
-          padding: "7rem 2rem 5rem",
-          textAlign: "center",
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "Georgia, 'Times New Roman', serif",
-            fontSize: "clamp(2rem, 4.5vw, 3.25rem)",
-            fontWeight: 400,
-            lineHeight: 1.25,
-            color: "#ffffff",
-            marginBottom: "1.5rem",
-            letterSpacing: "-0.01em",
-          }}
-        >
+      <section style={{ position: "relative", zIndex: 1, maxWidth: "820px", margin: "0 auto", padding: "8rem 2rem 6rem", textAlign: "center" }}>
+        <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontSize: "clamp(2.2rem, 5vw, 3.6rem)", fontWeight: 400, lineHeight: 1.2, color: "#ffffff", marginBottom: "1.75rem", letterSpacing: "-0.01em" }}>
           Real-time intelligence on AI investment, infrastructure, and policy in Saudi Arabia.
         </h1>
-        <p
-          style={{
-            fontSize: "1.05rem",
-            lineHeight: 1.7,
-            color: "#94a3b8",
-            marginBottom: "2.5rem",
-            maxWidth: "680px",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
+        <p style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)", lineHeight: 1.75, color: "#cbd5e1", marginBottom: "3rem", maxWidth: "640px", marginLeft: "auto", marginRight: "auto" }}>
           We track every deal, every partnership, and every policy shift in the Kingdom's AI ecosystem so institutional investors, sovereign funds, and foreign operators don't have to.
         </p>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
-          <a
-            href="https://live.theaqoolwire.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="button-learn-more"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              background: "#00d9c8",
-              color: "#0a1628",
-              fontWeight: 600,
-              fontSize: "0.9rem",
-              padding: "0.75rem 1.75rem",
-              borderRadius: "6px",
-              textDecoration: "none",
-              letterSpacing: "0.01em",
-            }}
-          >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.25rem", flexWrap: "wrap" }}>
+          <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer" data-testid="button-learn-more"
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#00d9c8", color: "#080f1a", fontWeight: 700, fontSize: "0.95rem", padding: "0.85rem 2rem", borderRadius: "6px", textDecoration: "none", letterSpacing: "0.02em", boxShadow: "0 0 30px rgba(0,217,200,0.35)" }}>
             Enter the platform
-            <ExternalLink style={{ width: "14px", height: "14px" }} />
+            <ExternalLink style={{ width: "15px", height: "15px" }} />
           </a>
-          <span style={{ fontSize: "0.82rem", color: "#64748b", fontFamily: "monospace" }}>
-            Free access during beta
-          </span>
+          <span style={{ fontSize: "0.85rem", color: "#64748b", fontFamily: "monospace", letterSpacing: "0.04em" }}>Free access during beta</span>
         </div>
       </section>
 
-      {/* Stats Row */}
-      <section
-        style={{
-          position: "relative",
-          zIndex: 1,
-          borderTop: "1px solid rgba(255,255,255,0.08)",
-          borderBottom: "1px solid rgba(255,255,255,0.08)",
-          padding: "2.5rem 2rem",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "860px",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "2rem",
-            textAlign: "center",
-          }}
-        >
+      {/* Stats */}
+      <section style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,0.08)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+        <div style={{ maxWidth: "820px", margin: "0 auto", padding: "3rem 2rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem", textAlign: "center" }}>
           {[
             { value: "184+", label: "entities tracked" },
             { value: "300+", label: "deals monitored" },
             { value: "$21B+", label: "capital flows tracked" },
           ].map((stat) => (
             <div key={stat.value}>
-              <div
-                style={{
-                  fontFamily: "monospace",
-                  fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-                  fontWeight: 700,
-                  color: "#00d9c8",
-                  lineHeight: 1,
-                  marginBottom: "0.5rem",
-                }}
-              >
+              <div style={{ fontFamily: "monospace", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 700, color: "#00d9c8", lineHeight: 1, marginBottom: "0.6rem" }}>
                 {stat.value}
               </div>
-              <div style={{ fontSize: "0.78rem", color: "#64748b", fontFamily: "monospace", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <div style={{ fontSize: "0.82rem", color: "#94a3b8", fontFamily: "monospace", textTransform: "uppercase", letterSpacing: "0.08em" }}>
                 {stat.label}
               </div>
             </div>
@@ -416,144 +324,37 @@ export default function NewIntelligenceHome() {
       </section>
 
       {/* What's on the platform */}
-      <section
-        style={{
-          position: "relative",
-          zIndex: 1,
-          maxWidth: "1000px",
-          margin: "0 auto",
-          padding: "5rem 2rem",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "monospace",
-            fontSize: "0.72rem",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#64748b",
-            marginBottom: "2.5rem",
-          }}
-        >
+      <section style={{ position: "relative", zIndex: 1, maxWidth: "1000px", margin: "0 auto", padding: "5rem 2rem" }}>
+        <p style={{ fontFamily: "monospace", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "2.5rem" }}>
           What's on the platform
         </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "1px",
-            background: "rgba(255,255,255,0.07)",
-            border: "1px solid rgba(255,255,255,0.07)",
-            borderRadius: "8px",
-            overflow: "hidden",
-          }}
-        >
-          {[
-            {
-              title: "Entity profiles",
-              desc: "Deep intelligence profiles for HUMAIN, PIF, SDAIA, Aramco Digital, and 180+ other organizations. Deals, partnerships, key people, citations.",
-            },
-            {
-              title: "Deal intelligence",
-              desc: "Every sovereign JV, VC round, infrastructure deal, MoU, and acquisition tracked in real time with source attribution.",
-            },
-            {
-              title: "Weekly briefing",
-              desc: "AI-synthesized weekly intelligence report covering deals, policy changes, and partnership announcements. Sourced from 60+ publications.",
-            },
-            {
-              title: "VC directory",
-              desc: "71 investors active in Saudi tech. Fund sizes, portfolio companies, investment thesis, and sector focus.",
-            },
-          ].map((card) => (
-            <div
-              key={card.title}
-              style={{
-                background: "#0d1e33",
-                padding: "2rem",
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "1.05rem",
-                  fontWeight: 400,
-                  color: "#ffffff",
-                  marginBottom: "0.75rem",
-                }}
-              >
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(0,217,200,0.12)", border: "1px solid rgba(0,217,200,0.12)", borderRadius: "10px", overflow: "hidden" }}>
+          {PLATFORM_CARDS.map((card) => (
+            <div key={card.title} style={{ background: "#0d1e33", padding: "2.25rem 2.5rem" }}>
+              <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.2rem", fontWeight: 400, color: "#ffffff", marginBottom: "0.85rem", lineHeight: 1.3 }}>
                 {card.title}
               </h3>
-              <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.65 }}>{card.desc}</p>
+              <p style={{ fontSize: "0.92rem", color: "#94a3b8", lineHeight: 1.7 }}>{card.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Latest from the wire */}
-      <section
-        style={{
-          position: "relative",
-          zIndex: 1,
-          maxWidth: "860px",
-          margin: "0 auto",
-          padding: "0 2rem 5rem",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "monospace",
-            fontSize: "0.72rem",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#64748b",
-            marginBottom: "2rem",
-          }}
-        >
+      <section style={{ position: "relative", zIndex: 1, maxWidth: "820px", margin: "0 auto", padding: "0 2rem 5rem" }}>
+        <p style={{ fontFamily: "monospace", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "2rem" }}>
           Latest from the wire
         </p>
-        <div style={{ border: "1px solid rgba(255,255,255,0.07)", borderRadius: "8px", overflow: "hidden" }}>
+        <div style={{ border: "1px solid rgba(0,217,200,0.12)", borderRadius: "10px", overflow: "hidden" }}>
           {LATEST_ITEMS.map((item, i) => (
-            <div
-              key={item.headline}
-              style={{
-                padding: "1.4rem 1.75rem",
-                borderTop: i > 0 ? "1px solid rgba(255,255,255,0.07)" : "none",
-                background: "#0d1e33",
-                display: "flex",
-                alignItems: "flex-start",
-                justifyContent: "space-between",
-                gap: "1.5rem",
-                flexWrap: "wrap",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "0.95rem",
-                  color: "#e2e8f0",
-                  fontWeight: 400,
-                  lineHeight: 1.5,
-                  flex: 1,
-                  minWidth: "200px",
-                }}
-              >
+            <div key={item.headline}
+              style={{ padding: "1.6rem 2rem", borderTop: i > 0 ? "1px solid rgba(255,255,255,0.07)" : "none", background: "#0d1e33", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "1.5rem", flexWrap: "wrap" }}>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#e2e8f0", fontWeight: 400, lineHeight: 1.55, flex: 1, minWidth: "200px" }}>
                 {item.headline}
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
-                <span style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#64748b" }}>{item.date}</span>
-                <span
-                  style={{
-                    fontFamily: "monospace",
-                    fontSize: "0.68rem",
-                    color: "#00d9c8",
-                    border: "1px solid rgba(0,217,200,0.3)",
-                    padding: "0.15rem 0.5rem",
-                    borderRadius: "3px",
-                    letterSpacing: "0.04em",
-                    textTransform: "uppercase",
-                  }}
-                >
+                <span style={{ fontFamily: "monospace", fontSize: "0.75rem", color: "#64748b" }}>{item.date}</span>
+                <span style={{ fontFamily: "monospace", fontSize: "0.68rem", color: "#00d9c8", border: "1px solid rgba(0,217,200,0.35)", padding: "0.2rem 0.6rem", borderRadius: "3px", letterSpacing: "0.06em", textTransform: "uppercase", whiteSpace: "nowrap" }}>
                   {item.tag}
                 </span>
               </div>
@@ -561,187 +362,60 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
         <div style={{ textAlign: "right", marginTop: "1rem" }}>
-          <a
-            href="https://live.theaqoolwire.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "monospace",
-              fontSize: "0.75rem",
-              color: "#00d9c8",
-              textDecoration: "none",
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-            }}
-          >
+          <a href="https://live.theaqoolwire.com/" target="_blank" rel="noopener noreferrer"
+            style={{ fontFamily: "monospace", fontSize: "0.75rem", color: "#00d9c8", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase" }}>
             View all on platform &rarr;
           </a>
         </div>
       </section>
 
       {/* What's next */}
-      <section
-        style={{
-          position: "relative",
-          zIndex: 1,
-          maxWidth: "860px",
-          margin: "0 auto",
-          padding: "0 2rem 5rem",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "monospace",
-            fontSize: "0.72rem",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#64748b",
-            marginBottom: "2rem",
-          }}
-        >
+      <section style={{ position: "relative", zIndex: 1, maxWidth: "820px", margin: "0 auto", padding: "0 2rem 5rem" }}>
+        <p style={{ fontFamily: "monospace", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "2rem" }}>
           What's next
         </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "1px",
-            background: "rgba(255,255,255,0.07)",
-            border: "1px solid rgba(255,255,255,0.07)",
-            borderRadius: "8px",
-            overflow: "hidden",
-          }}
-        >
-          <div style={{ background: "#0d1e33", padding: "2rem" }}>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.5rem" }}>
-              GCC expansion
-            </h3>
-            <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.65 }}>
-              UAE coverage launching Q2 2026. Qatar and Bahrain to follow.
-            </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(0,217,200,0.12)", border: "1px solid rgba(0,217,200,0.12)", borderRadius: "10px", overflow: "hidden" }}>
+          <div style={{ background: "#0d1e33", padding: "2.25rem 2.5rem" }}>
+            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.15rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.6rem" }}>GCC expansion</h3>
+            <p style={{ fontSize: "0.92rem", color: "#94a3b8", lineHeight: 1.65 }}>UAE coverage launching Q2 2026. Qatar and Bahrain to follow.</p>
           </div>
-          <div style={{ background: "#0d1e33", padding: "2rem" }}>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.5rem" }}>
-              Original research
-            </h3>
-            <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.65 }}>
-              Data-driven analysis on GCC AI infrastructure economics. Coming soon.
-            </p>
+          <div style={{ background: "#0d1e33", padding: "2.25rem 2.5rem" }}>
+            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.15rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.6rem" }}>Original research</h3>
+            <p style={{ fontSize: "0.92rem", color: "#94a3b8", lineHeight: 1.65 }}>Data-driven analysis on GCC AI infrastructure economics. Coming soon.</p>
           </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section
-        id="contact"
-        style={{
-          position: "relative",
-          zIndex: 1,
-          borderTop: "1px solid rgba(255,255,255,0.08)",
-          padding: "5rem 2rem",
-        }}
-      >
+      <section id="contact" style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,0.08)", padding: "5rem 2rem 6rem" }}>
         <div style={{ maxWidth: "560px", margin: "0 auto" }}>
-          <p
-            style={{
-              fontFamily: "monospace",
-              fontSize: "0.72rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "#64748b",
-              marginBottom: "1rem",
-            }}
-          >
-            Get in touch
-          </p>
-          <h2
-            style={{
-              fontFamily: "Georgia, serif",
-              fontSize: "clamp(1.5rem, 3vw, 2rem)",
-              fontWeight: 400,
-              color: "#ffffff",
-              marginBottom: "0.75rem",
-            }}
-          >
+          <p style={labelStyle}>Get in touch</p>
+          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 400, color: "#ffffff", marginBottom: "0.75rem" }}>
             Interested in early access?
           </h2>
-          <p style={{ fontSize: "0.9rem", color: "#64748b", marginBottom: "2.5rem", lineHeight: 1.65 }}>
+          <p style={{ fontSize: "1rem", color: "#94a3b8", marginBottom: "2.5rem", lineHeight: 1.7 }}>
             Reach out to discuss platform access, partnerships, or custom intelligence requests.
           </p>
 
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             {[
               { label: "Name", key: "name", type: "text" },
               { label: "Email", key: "email", type: "email" },
               { label: "Organisation", key: "organisation", type: "text" },
             ].map(({ label, key, type }) => (
               <div key={key}>
-                <label
-                  style={{
-                    display: "block",
-                    fontFamily: "monospace",
-                    fontSize: "0.7rem",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "#64748b",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {label}
-                </label>
-                <input
-                  type={type}
-                  value={(formData as any)[key]}
+                <label style={labelStyle}>{label}</label>
+                <input type={type} value={(formData as any)[key]}
                   onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
-                  required
-                  data-testid={`input-${key}`}
-                  style={{
-                    width: "100%",
-                    background: "#0d1e33",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: "4px",
-                    padding: "0.7rem 1rem",
-                    color: "#ffffff",
-                    fontSize: "0.9rem",
-                    outline: "none",
-                    boxSizing: "border-box",
-                  }}
-                />
+                  required data-testid={`input-${key}`} style={inputStyle} />
               </div>
             ))}
 
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "monospace",
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "#64748b",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                Interest
-              </label>
-              <select
-                value={formData.interest}
-                onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                required
-                data-testid="select-interest"
-                style={{
-                  width: "100%",
-                  background: "#0d1e33",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "4px",
-                  padding: "0.7rem 1rem",
-                  color: formData.interest ? "#ffffff" : "#64748b",
-                  fontSize: "0.9rem",
-                  outline: "none",
-                  cursor: "pointer",
-                  boxSizing: "border-box",
-                }}
-              >
+              <label style={labelStyle}>Interest</label>
+              <select value={formData.interest} onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                required data-testid="select-interest"
+                style={{ ...inputStyle, cursor: "pointer", color: formData.interest ? "#e2e8f0" : "#64748b" }}>
                 <option value="">Select your interest</option>
                 <option value="Platform Access">Platform Access</option>
                 <option value="Request Demo">Request Demo</option>
@@ -752,83 +426,31 @@ export default function NewIntelligenceHome() {
             </div>
 
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "monospace",
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "#64748b",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                Message
-              </label>
-              <textarea
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                data-testid="textarea-message"
-                style={{
-                  width: "100%",
-                  background: "#0d1e33",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "4px",
-                  padding: "0.7rem 1rem",
-                  color: "#ffffff",
-                  fontSize: "0.9rem",
-                  outline: "none",
-                  minHeight: "120px",
-                  resize: "vertical",
-                  boxSizing: "border-box",
-                  fontFamily: "inherit",
-                }}
-              />
+              <label style={labelStyle}>Message</label>
+              <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                required data-testid="textarea-message"
+                style={{ ...inputStyle, minHeight: "130px", resize: "vertical" }} />
             </div>
 
-            <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
-              <input
-                type="checkbox"
-                id="consent"
-                checked={formData.consent}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "0.85rem" }}>
+              <input type="checkbox" id="consent" checked={formData.consent}
                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                required
-                data-testid="checkbox-consent"
-                style={{ marginTop: "3px", accentColor: "#00d9c8", width: "16px", height: "16px", flexShrink: 0 }}
-              />
-              <label htmlFor="consent" style={{ fontSize: "0.8rem", color: "#64748b", lineHeight: 1.55, cursor: "pointer" }}>
+                required data-testid="checkbox-consent"
+                style={{ marginTop: "3px", accentColor: "#00d9c8", width: "16px", height: "16px", flexShrink: 0, cursor: "pointer" }} />
+              <label htmlFor="consent" style={{ fontSize: "0.85rem", color: "#94a3b8", lineHeight: 1.6, cursor: "pointer" }}>
                 I consent to The Aqool Wire contacting me about relevant intelligence and advisory services.
               </label>
             </div>
 
-            <button
-              type="submit"
-              disabled={submitting}
-              data-testid="button-submit"
-              style={{
-                background: "#00d9c8",
-                color: "#0a1628",
-                border: "none",
-                borderRadius: "4px",
-                padding: "0.8rem 1.5rem",
-                fontSize: "0.875rem",
-                fontWeight: 600,
-                cursor: submitting ? "not-allowed" : "pointer",
-                opacity: submitting ? 0.7 : 1,
-                letterSpacing: "0.02em",
-              }}
-            >
+            <button type="submit" disabled={submitting} data-testid="button-submit"
+              style={{ background: "#00d9c8", color: "#080f1a", border: "none", borderRadius: "6px", padding: "0.9rem 1.5rem", fontSize: "0.95rem", fontWeight: 700, cursor: submitting ? "not-allowed" : "pointer", opacity: submitting ? 0.7 : 1, letterSpacing: "0.02em", boxShadow: "0 0 20px rgba(0,217,200,0.3)", transition: "all 0.2s" }}>
               {submitting ? "Sending..." : "Send Message"}
             </button>
 
-            <p style={{ textAlign: "center", fontSize: "0.8rem", color: "#475569" }}>
+            <p style={{ textAlign: "center", fontSize: "0.85rem", color: "#475569" }}>
               Interested in a formal partnership?{" "}
-              <a
-                href="mailto:jessicapino@theaqoolwire.com?subject=Partnership Inquiry"
-                data-testid="button-become-partner"
-                style={{ color: "#00d9c8", textDecoration: "underline", textUnderlineOffset: "3px" }}
-              >
+              <a href="mailto:jessicapino@theaqoolwire.com?subject=Partnership Inquiry" data-testid="button-become-partner"
+                style={{ color: "#00d9c8", textDecoration: "underline", textUnderlineOffset: "3px" }}>
                 Become a Partner
               </a>
             </p>
@@ -837,38 +459,31 @@ export default function NewIntelligenceHome() {
       </section>
 
       {/* Footer */}
-      <footer
-        style={{
-          position: "relative",
-          zIndex: 1,
-          borderTop: "1px solid rgba(255,255,255,0.07)",
-          padding: "2rem",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: "860px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+      <footer style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,0.07)", padding: "2rem" }}>
+        <div style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
           <Link href="/">
-            <img src={logoImage} alt="The Aqool Wire" style={{ height: "32px", width: "auto", opacity: 0.6 }} />
+            <img src={logoImage} alt="The Aqool Wire" style={{ height: "36px", width: "auto", opacity: 0.7 }} />
           </Link>
-          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", flexWrap: "wrap" }}>
-            <a
-              href="https://www.linkedin.com/company/the-aqool-wire"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#475569", textDecoration: "none", letterSpacing: "0.06em", textTransform: "uppercase" }}
-            >
-              LinkedIn
-            </a>
-            <Link href="/about"
-              style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#475569", textDecoration: "none", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              About
-            </Link>
-            <Link href="/privacy"
-              style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#475569", textDecoration: "none", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              Privacy
-            </Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "2rem", flexWrap: "wrap" }}>
+            {[
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/the-aqool-wire", external: true },
+              { label: "About", href: "/about", external: false },
+              { label: "Privacy", href: "/privacy", external: false },
+            ].map((item) =>
+              item.external ? (
+                <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#475569", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.label} href={item.href}
+                  style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#475569", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                  {item.label}
+                </Link>
+              )
+            )}
           </div>
-          <p style={{ fontFamily: "monospace", fontSize: "0.7rem", color: "#334155" }}>
+          <p style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#334155" }}>
             &copy; {new Date().getFullYear()} The Aqool Wire
           </p>
         </div>
