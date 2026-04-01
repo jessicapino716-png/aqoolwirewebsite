@@ -76,20 +76,6 @@ export default function About() {
             <p>
               Rather than producing slower, more expensive reports, The Aqool Wire applies AI to the least visible but most critical part of intelligence: continuously ingesting, structuring, and reconciling data as conditions change. The result is a live intelligence layer that allows decision-makers to focus on judgment, not information gathering.
             </p>
-
-            {/* Digital Twin Policy Lab */}
-            <div style={{ marginTop: "1rem", padding: "2rem 2.5rem", background: "#0f2035", border: "1px solid rgba(0,217,200,0.22)", borderRadius: "12px" }}>
-              <h2 style={{ fontFamily: "Georgia, serif", fontSize: "1.4rem", fontWeight: 400, color: "#00d9c8", marginBottom: "1rem" }}>Digital Twin Policy Lab</h2>
-              <p style={{ marginBottom: "1rem" }}>
-                The Aqool Wire goes beyond visualization through its Digital Twin Policy Lab, a simulation environment that allows users to test policy, workforce, and investment scenarios against real economic data before decisions are locked in.
-              </p>
-              <p style={{ marginBottom: "1rem" }}>
-                The lab enables decision-makers to explore how changes in variables such as workforce localization, training investment, sector-specific visa policy, or capital allocation may shape outcomes over time. This capability emerged from Ms. Pino's academic research into AI-driven labor market dynamics and years of observing governments implement policies without adequate impact forecasting.
-              </p>
-              <p style={{ color: "#00d9c8", fontWeight: 500 }}>
-                It's policy and investment analysis designed for systems where scale, capital intensity, and second-order effects matter.
-              </p>
-            </div>
           </div>
 
           {/* Back to Home */}
