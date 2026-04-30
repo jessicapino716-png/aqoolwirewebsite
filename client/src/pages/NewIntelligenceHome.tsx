@@ -124,11 +124,7 @@ export default function NewIntelligenceHome() {
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
-          <p style={{ lineHeight: 1.8, color: "#94a3b8", marginBottom: "2rem", maxWidth: "640px", marginLeft: "auto", marginRight: "auto", fontSize: "1.05rem" }}>
-            Three compounding pressures. Three active projects tracking the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10" style={{ maxWidth: "860px", marginLeft: "auto", marginRight: "auto" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3" style={{ maxWidth: "860px", marginLeft: "auto", marginRight: "auto" }}>
             {[
               { label: "Fiscal pressure", body: "Declining hydrocarbon revenue and a sovereign balance sheet built around oil." },
               { label: "Workforce dependency", body: "A public payroll that employs two-thirds of working Saudis, funded by that same revenue." },
@@ -143,6 +139,10 @@ export default function NewIntelligenceHome() {
               </div>
             ))}
           </div>
+
+          <p style={{ lineHeight: 1.8, color: "#94a3b8", margin: "1.75rem auto 2.5rem", maxWidth: "640px", fontSize: "1.05rem" }}>
+            Three compounding pressures. Three active projects tracking the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
+          </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/research"
