@@ -190,16 +190,20 @@ export default function NewIntelligenceHome() {
             <span style={{ fontSize: "0.78rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.07em", textTransform: "uppercase" }}>Saudi Arabia &middot; Macroeconomics &middot; AI policy</span>
           </div>
 
-          <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, lineHeight: 1.18, color: "#ffffff", marginBottom: "90px", letterSpacing: "-0.02em" }}
+          <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, lineHeight: 1.18, color: "#ffffff", marginBottom: "2rem", letterSpacing: "-0.02em" }}
             className="text-4xl sm:text-5xl md:text-6xl">
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
+          <p style={{ fontSize: "1.25rem", fontWeight: 500, color: "#94a3b8", marginBottom: "2rem", letterSpacing: "-0.01em" }}>
+            Three compounding pressures define it.
+          </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" style={{ maxWidth: "1080px", marginLeft: "auto", marginRight: "auto" }}>
             {[
-              { label: "Fiscal pressure", body: "Declining hydrocarbon revenue and a sovereign balance sheet built around oil." },
-              { label: "Workforce dependency", body: "A public payroll that employs two-thirds of working Saudis, funded by that same revenue." },
-              { label: "AI compression", body: "AI productivity gains compressing the timeline for private-sector job creation." },
+              { label: "Fiscal pressure", body: "Hydrocarbon revenue funds the sovereign balance sheet. As global demand shifts and capacity disruptions emerge, the fiscal base that underwrites every other pressure is eroding." },
+              { label: "Workforce dependency", body: "That same revenue funds a public sector employing roughly two-thirds of working Saudi nationals. Less revenue means less bandwidth to sustain that payroll, even before any private-sector replacement is in place." },
+              { label: "AI compression", body: "Vision 2030 bets on a growing private sector to absorb the workforce. AI productivity gains in Western economies are automating those exact sectors, compressing the timeline for the math to work." },
             ].map((item, i) => (
               <div key={i} style={{ background: "#0c1829", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", padding: "2rem 2rem", textAlign: "left" }}>
                 <div style={{ fontFamily: "monospace", fontSize: "2rem", color: "rgba(0,217,200,0.6)", letterSpacing: "0.04em", marginBottom: "1rem", lineHeight: 1 }}>
@@ -213,7 +217,7 @@ export default function NewIntelligenceHome() {
 
           <p
             style={{ lineHeight: 1.8, color: "#00d9c8", margin: "1.75rem auto 2.5rem", maxWidth: "640px", fontSize: "1.25rem", fontWeight: 600 }}>
-            Three compounding pressures. Three active projects tracking the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
+            Three pressures, one compound problem. The analysis below traces the mechanisms, the math, and the policy options.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
