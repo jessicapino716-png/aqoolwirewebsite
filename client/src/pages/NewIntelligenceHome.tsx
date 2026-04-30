@@ -235,7 +235,7 @@ export default function NewIntelligenceHome() {
         className="px-4 md:px-8 py-14 md:py-20">
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <span style={SECTION_LABEL}>About this research</span>
-          <div className="flex flex-col md:flex-row gap-10 md:gap-16">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16 text-[19px]">
             <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.9, margin: 0, flex: 1 }}>The Aqool Wire is a macroeconomic policy research lab focused on Saudi Arabia and the Gulf, based in Riyadh. The work examines how sovereign-economic decisions transmit through global capital markets, how oil-funded public sectors adapt to declining hydrocarbon revenue, and how labor markets manage the compound pressure of diversification and AI productivity gains.</p>
             <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.9, margin: 0, flex: 1 }}>
               Three active research projects approach these questions through live data tracking, transmission analysis, and forward-looking policy simulation. The platform uses AI tools to maintain analysis at depth and currency that historically required an institutional research operation.
