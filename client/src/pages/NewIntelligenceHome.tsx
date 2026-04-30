@@ -60,7 +60,6 @@ export default function NewIntelligenceHome() {
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Helmet>
       <MeshBackground />
-
       {/* ── NAV ──────────────────────────────────────────────────── */}
       <nav style={{ position: "relative", zIndex: 20, borderBottom: "1px solid rgba(0,217,200,0.18)", backdropFilter: "blur(12px)", background: "rgba(7,13,24,0.85)" }}>
         <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
@@ -109,7 +108,6 @@ export default function NewIntelligenceHome() {
           </div>
         )}
       </nav>
-
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, minHeight: "85vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}
         className="px-4 py-20 md:py-32">
@@ -146,13 +144,12 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* ── THESIS ESSAY ─────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1 }} className="px-4">
         <div style={{ maxWidth: "740px", margin: "0 auto", paddingTop: "9rem", paddingBottom: "9rem" }}>
 
           {/* Part 1: Essay */}
-          <div style={{ marginBottom: "5rem" }}>
+          <div style={{ marginBottom: "5rem" }} className="mb-[10px]">
             <div style={{ marginBottom: "2.5rem" }}>
               <div className="inline-flex items-center"
                 style={{ border: "1px solid rgba(0,217,200,0.3)", borderRadius: "100px", padding: "0.4rem 1.25rem", background: "rgba(0,217,200,0.06)" }}>
@@ -217,7 +214,6 @@ export default function NewIntelligenceHome() {
 
         </div>
       </section>
-
       {/* ── RESEARCH PROJECTS ────────────────────────────────────── */}
       <section id="research" style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto" }}
         className="px-4 md:px-8 pb-14 md:pb-24">
@@ -302,7 +298,6 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
       </section>
-
       {/* ── RESEARCH QUESTIONS ───────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,0.06)" }}
         className="px-4 py-16 md:py-24">
@@ -370,7 +365,6 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* ── ABOUT TEASER ─────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, background: "rgba(255,255,255,0.02)", borderTop: "1px solid rgba(255,255,255,0.07)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}
         className="px-4 md:px-8 py-14 md:py-20">
@@ -411,7 +405,6 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-
       {/* ── CONTACT ──────────────────────────────────────────────── */}
       <section id="contact" style={{ position: "relative", zIndex: 1 }}
         className="px-4 md:px-8 py-16 md:py-24">
@@ -470,7 +463,6 @@ export default function NewIntelligenceHome() {
           </form>
         </div>
       </section>
-
       {/* ── FOOTER ───────────────────────────────────────────────── */}
       <footer style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,0.07)" }}
         className="px-4 md:px-8 pt-10 pb-8">
