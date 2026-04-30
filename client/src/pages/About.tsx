@@ -60,19 +60,15 @@ export default function About() {
           <div style={{ background: "#0c1829", borderRadius: "12px", padding: "2.5rem", border: "1px solid rgba(255,255,255,0.07)" }}
             className="md:p-12">
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              Throughout her career, Jessica evaluated infrastructure investment, development programs, and policy outcomes across some of the most rapidly changing political economies in the world. The same constraint kept surfacing: fragmented data that could not keep pace with the speed of change on the ground. Analysis stalled not at the interpretation stage, but at the point of assembling a current, coherent picture of what was actually happening.
+              For 18 years before this, I worked as a U.S. Foreign Service Officer doing political and economic analysis. Long enough to watch policy decisions get made, watch them succeed and fail, and develop an instinct for the gap between how policy is written and how it actually works. I completed an MPP at the London School of Economics, focused on AI and governance. I now live in Riyadh.
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              The research here focuses on macroeconomic and AI policy questions for Saudi Arabia and the Gulf. Each project applies AI tools to a different policy question, with methodology, data sources, and limitations documented openly.
-            </p>
-
-            <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              Saudi Arabia became the focus because the questions there are both substantively important and methodologically interesting. The country is running one of the most ambitious technology-led economic programs of the past decade, and the data to analyze it is fragmented across dozens of government agencies, corporate filings, and policy documents in two languages. That combination of important questions and hard-to-assemble data is where this kind of work is most useful.
+              The Aqool Wire is a fully independent research platform built to ask hard questions about Saudi Arabia's transition: the fiscal arithmetic of diversification when oil revenue funds the public payroll, the labor absorption capacity of Vision 2030 against AI productivity pressure, the durability of Aramco's dividend mechanics, and the structural integration of Saudi capital markets with the global financial system. These questions are difficult to raise rigorously inside institutions with Saudi clients, ministries, or employment relationships. They need rigorous public analysis. Most don't have it.
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9 }}>
-              This is not a commercial product. It is a public research portfolio.
+              The work uses AI tools to maintain that analysis at depth and currency that historically required an institutional research operation. Every project on this site is transparent about its methods, sources, and limitations, and updates continuously as conditions change.
             </p>
           </div>
 
