@@ -199,7 +199,7 @@ export default function NewIntelligenceHome() {
             Three compounding pressures define it.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" style={{ maxWidth: "1080px", marginLeft: "auto", marginRight: "auto" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-[40px] mb-[40px]" style={{ maxWidth: "1080px", marginLeft: "auto", marginRight: "auto" }}>
             {[
               { label: "Fiscal pressure", body: "Hydrocarbon revenue funds the sovereign balance sheet. As global demand shifts and capacity disruptions emerge, the fiscal base that underwrites every other pressure is eroding." },
               { label: "Workforce dependency", body: "That same revenue funds a public sector employing roughly two-thirds of working Saudi nationals. Less revenue means less bandwidth to sustain that payroll, even before any private-sector replacement is in place." },
