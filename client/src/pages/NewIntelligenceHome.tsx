@@ -61,13 +61,13 @@ export default function NewIntelligenceHome() {
       </Helmet>
       <MeshBackground />
       {/* ── NAV ──────────────────────────────────────────────────── */}
-      <nav style={{ position: "relative", zIndex: 20, borderBottom: "1px solid rgba(0,217,200,0.18)", backdropFilter: "blur(12px)", background: "rgba(7,13,24,0.85)" }}>
+      <nav style={{ position: "relative", zIndex: 20, borderBottom: "1px solid rgba(0,217,200,0.18)", backdropFilter: "blur(12px)", background: "rgba(7,13,24,0.85)", overflow: "visible" }}>
         <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
-          <div className="flex items-center justify-between w-full px-4 md:px-8" style={{ minHeight: "72px" }}>
-            <Link href="/">
+          <div className="flex items-center justify-between w-full px-4 md:px-8" style={{ height: "72px", overflow: "visible" }}>
+            <Link href="/" style={{ display: "flex", alignItems: "center", overflow: "visible" }}>
               <img src={logoImage} alt="The Aqool Wire"
                 className="cursor-pointer"
-                style={{ height: "80px", width: "auto", filter: "drop-shadow(0 0 14px rgba(0,217,200,0.45)) brightness(1.1)" }} />
+                style={{ height: "140px", width: "auto", filter: "drop-shadow(0 0 14px rgba(0,217,200,0.45)) brightness(1.1)", position: "relative", zIndex: 21 }} />
             </Link>
 
             <div className="hidden md:flex items-center gap-10">
