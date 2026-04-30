@@ -126,7 +126,7 @@ export default function NewIntelligenceHome() {
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
-          <p style={{ lineHeight: 1.9, color: "#a8bdd4", marginBottom: "3rem", maxWidth: "760px", marginLeft: "auto", marginRight: "auto" }}
+          <p style={{ lineHeight: 1.9, color: "#cbd5e1", marginBottom: "3rem", maxWidth: "760px", marginLeft: "auto", marginRight: "auto" }}
             className="text-lg md:text-xl">
             Declining hydrocarbon revenue, a public payroll that employs two-thirds of working Saudis, and AI productivity gains compressing the timeline for private-sector growth. These pressures interact, and their combined effect is the subject of this research. Three active projects track the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
           </p>
@@ -237,7 +237,7 @@ export default function NewIntelligenceHome() {
         className="px-4 py-16 md:py-24">
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
 
-          <p style={{ fontSize: "clamp(1.1rem, 2vw, 1.25rem)", color: "#a8bdd4", lineHeight: 1.85, fontStyle: "italic", borderLeft: "2px solid rgba(0,217,200,0.4)", paddingLeft: "1.5rem", marginBottom: "4rem", maxWidth: "700px" }}>
+          <p style={{ fontSize: "clamp(1.1rem, 2vw, 1.25rem)", color: "#cbd5e1", lineHeight: 1.85, fontStyle: "italic", borderLeft: "2px solid rgba(0,217,200,0.4)", paddingLeft: "1.5rem", marginBottom: "4rem", maxWidth: "700px" }}>
             Three interconnected pressures, studied through three active projects. Each question is difficult on its own. Together, they define the problem.
           </p>
 
@@ -250,7 +250,7 @@ export default function NewIntelligenceHome() {
               </h2>
             </div>
             <div style={{ paddingLeft: "calc(2rem + 1.25rem)" }}>
-              <p style={{ fontSize: "1.05rem", color: "#94a3b8", lineHeight: 1.9, margin: 0 }}>
+              <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.9, margin: 0 }}>
                 The mechanism is structural, not circumstantial. Since MSCI added Saudi Arabia to its Emerging Markets index in 2019, Aramco's dividend policy and PIF deployment decisions have moved the portfolios of teachers, nurses, and firefighters in US public pension funds. The Hormuz Closure Cascade traces this chain in full across six stages, with primary-source citations and no gaps in the transmission logic.
               </p>
             </div>
@@ -267,7 +267,7 @@ export default function NewIntelligenceHome() {
               </h2>
             </div>
             <div style={{ paddingLeft: "calc(2rem + 1.25rem)" }}>
-              <p style={{ fontSize: "1.05rem", color: "#94a3b8", lineHeight: 1.9, margin: 0 }}>
+              <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.9, margin: 0 }}>
                 Saudi Arabia's government oil revenue does not just fund infrastructure. It funds the payroll. Roughly two-thirds of working Saudi nationals hold public-sector jobs financed directly or indirectly by hydrocarbon revenue. Vision 2030 requires building private employment fast enough to absorb a young, growing workforce as that revenue declines. The Live Saudi AI Dashboard tracks whether the capital flows and infrastructure bets currently being made suggest that transition is on track.
               </p>
             </div>
@@ -284,7 +284,7 @@ export default function NewIntelligenceHome() {
               </h2>
             </div>
             <div style={{ paddingLeft: "calc(2rem + 1.25rem)" }}>
-              <p style={{ fontSize: "1.05rem", color: "#94a3b8", lineHeight: 1.9, margin: 0 }}>
+              <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.9, margin: 0 }}>
                 The fiscal problem is hard enough on its own. AI productivity gains in Western economies add a second pressure: the private-sector jobs Vision 2030 is counting on may automate before Saudi workers can grow into them. The Digital Twin Policy Lab models the compound scenario with adjustable assumptions about oil price trajectories, AI adoption rates, and the full range of available policy levers.
               </p>
             </div>
