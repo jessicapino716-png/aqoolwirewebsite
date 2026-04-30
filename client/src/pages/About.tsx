@@ -49,7 +49,7 @@ export default function About() {
               style={{ flexShrink: 0, width: "140px", height: "140px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "2px solid rgba(0,217,200,0.25)" }} />
             <div>
               <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.85, marginBottom: "0.5rem" }}>
-                <strong style={{ color: "#ffffff", fontWeight: 600 }}>Jessica Pino</strong> is a former U.S. Foreign Service Officer with 18 years in economic and political analysis, with tours in Islamabad, Cairo, Dahuk, Paris, and Main State.
+                <strong style={{ color: "#ffffff", fontWeight: 600 }}>Jessica Pino</strong> is a former U.S. Foreign Service Officer with 18 years in economic and political analysis.
               </p>
               <p style={{ fontSize: "0.95rem", color: "#94a3b8", fontFamily: "monospace", lineHeight: 1.6 }}>
                 MPP, LSE, AI and governance &nbsp;&middot;&nbsp; Based in Riyadh
