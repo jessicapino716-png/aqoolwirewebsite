@@ -81,7 +81,7 @@ export default function About() {
               {[
                 { title: "Saudi AI Economy Dashboard", href: "https://live.theaqoolwire.com/", external: true },
                 { title: "The Hormuz Closure Cascade", href: "https://hormuz-cascade-ksa.vercel.app/", external: true },
-                { title: "Digital Twin Policy Lab", href: null, external: false },
+                { title: "Digital Twin Policy Lab", href: "https://live.theaqoolwire.com/policy-lab/tech-upskilling", external: true },
               ].map((item) => (
                 <div key={item.title}
                   style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", padding: "1rem 1.25rem", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "8px" }}>
