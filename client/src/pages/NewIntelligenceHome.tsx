@@ -125,9 +125,7 @@ export default function NewIntelligenceHome() {
           </h1>
 
           <p style={{ lineHeight: 1.9, color: "#cbd5e1", marginBottom: "3rem", maxWidth: "760px", marginLeft: "auto", marginRight: "auto" }}
-            className="text-lg md:text-xl">
-            Declining hydrocarbon revenue, a public payroll that employs two-thirds of working Saudis, and AI productivity gains compressing the timeline for private-sector growth. These pressures interact, and their combined effect is the subject of this research. Three active projects track the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
-          </p>
+            className="text-lg md:text-xl">Declining hydrocarbon revenue, a public payroll that employs two-thirds of working Saudis, and AI productivity gains compressing the timeline for private-sector growth. These pressures interact, and their combined effect is the subject of this research. Three active projects track the transmission mechanisms, the fiscal arithmetic, and the labor market policy options for Saudi Arabia.</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/research"
