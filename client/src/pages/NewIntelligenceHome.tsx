@@ -124,19 +124,24 @@ export default function NewIntelligenceHome() {
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
-          <div style={{ marginBottom: "3rem", maxWidth: "760px", marginLeft: "auto", marginRight: "auto", display: "flex", flexDirection: "column", gap: "1rem" }}>
-            <p style={{ lineHeight: 1.9, color: "#cbd5e1", margin: 0 }}
-              className="text-lg md:text-xl">
-              Declining hydrocarbon revenue, a public payroll that employs two-thirds of working Saudis, and AI productivity gains compressing the timeline for private-sector growth.
-            </p>
-            <p style={{ lineHeight: 1.9, color: "#cbd5e1", margin: 0 }}
-              className="text-lg md:text-xl">
-              These pressures interact, and their combined effect is the subject of this research.
-            </p>
-            <p style={{ lineHeight: 1.9, color: "#cbd5e1", margin: 0 }}
-              className="text-lg md:text-xl">
-              Three active projects track the transmission mechanisms, the fiscal arithmetic, and the labor market policy options for Saudi Arabia.
-            </p>
+          <p style={{ lineHeight: 1.8, color: "#94a3b8", marginBottom: "2rem", maxWidth: "640px", marginLeft: "auto", marginRight: "auto", fontSize: "1.05rem" }}>
+            Three compounding pressures. Three active projects tracking the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10" style={{ maxWidth: "860px", marginLeft: "auto", marginRight: "auto" }}>
+            {[
+              { label: "Fiscal pressure", body: "Declining hydrocarbon revenue and a sovereign balance sheet built around oil." },
+              { label: "Workforce dependency", body: "A public payroll that employs two-thirds of working Saudis, funded by that same revenue." },
+              { label: "AI compression", body: "AI productivity gains compressing the timeline for private-sector job creation." },
+            ].map((item, i) => (
+              <div key={i} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", padding: "1.25rem 1.5rem", textAlign: "left" }}>
+                <div style={{ fontFamily: "monospace", fontSize: "0.7rem", color: "rgba(0,217,200,0.6)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.5rem" }}>{item.label}</div>
+                <div style={{ fontSize: "0.88rem", color: "#94a3b8", lineHeight: 1.65 }}>{item.body}</div>
+              </div>
+            ))}
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
