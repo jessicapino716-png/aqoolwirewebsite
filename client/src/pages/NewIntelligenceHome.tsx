@@ -358,7 +358,6 @@ export default function NewIntelligenceHome() {
               <div style={{ fontFamily: "monospace", fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "1.25rem" }}>Background</div>
               {[
                 "18 years, U.S. Foreign Service",
-                "Tours: Islamabad, Cairo, Dahuk, Paris, Main State",
                 "MPP, LSE, AI and governance",
                 "Based in Riyadh",
               ].map((item) => (
