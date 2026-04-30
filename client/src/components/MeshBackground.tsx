@@ -45,7 +45,7 @@ export default function MeshBackground() {
 
           const x = c * colSpacing;
 
-          // Wave displacement — multiple frequencies
+          // Wave displacement: multiple frequencies
           const wave =
             Math.sin(c * 0.14 + t * 1.1 + r * 0.3) * 28 * (1 - nr * 0.5) +
             Math.sin(c * 0.07 - t * 0.7 + r * 0.18) * 18 * (1 - nr * 0.4) +

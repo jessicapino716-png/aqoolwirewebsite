@@ -2,15 +2,14 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import MeshBackground from "@/components/MeshBackground";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
-import jessicaImage from "@assets/000-eHDrIDseLsY_1769360651903.jpeg";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
     <div style={{ minHeight: "100vh", background: "#070d18", color: "#ffffff", position: "relative", overflowX: "hidden" }}>
       <Helmet>
-        <title>About — The Aqool Wire</title>
-        <meta name="description" content="Jessica Pino is a former U.S. Foreign Service Officer applying AI to policy research questions at the intersection of Saudi Arabia's political-economic systems and AI-augmented analysis." />
+        <title>About: The Aqool Wire</title>
+        <meta name="description" content="Jessica Pino is a former U.S. Foreign Service Officer applying AI tools to macroeconomic and AI policy research questions at the intersection of Saudi Arabia's political-economic systems." />
       </Helmet>
 
       <MeshBackground />
@@ -45,16 +44,15 @@ export default function About() {
 
           {/* Bio */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mb-10">
-            <div style={{ flexShrink: 0 }}>
-              <img src={jessicaImage} alt="Jessica Pino"
-                style={{ width: "140px", height: "140px", borderRadius: "50%", objectFit: "cover", border: "2px solid rgba(0,217,200,0.25)", boxShadow: "0 0 24px rgba(0,217,200,0.15)" }} />
+            <div style={{ flexShrink: 0, width: "140px", height: "140px", borderRadius: "50%", border: "2px solid rgba(0,217,200,0.25)", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,217,200,0.06)", color: "#64748b", fontFamily: "monospace", fontSize: "0.72rem", textAlign: "center", padding: "0.5rem", lineHeight: 1.5 }}>
+              [Insert photo]
             </div>
             <div>
               <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.85, marginBottom: "0.5rem" }}>
                 <strong style={{ color: "#ffffff", fontWeight: 600 }}>Jessica Pino</strong> is a former U.S. Foreign Service Officer with 18 years in economic and political analysis, with tours in Islamabad, Cairo, Dahuk, Paris, and Main State.
               </p>
               <p style={{ fontSize: "0.95rem", color: "#94a3b8", fontFamily: "monospace", lineHeight: 1.6 }}>
-                MPP, LSE — AI and governance &nbsp;&middot;&nbsp; Based in Riyadh
+                MPP, LSE, AI and governance &nbsp;&middot;&nbsp; Based in Riyadh
               </p>
             </div>
           </div>
@@ -62,15 +60,15 @@ export default function About() {
           <div style={{ background: "#0c1829", borderRadius: "12px", padding: "2.5rem", border: "1px solid rgba(255,255,255,0.07)" }}
             className="md:p-12">
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              Throughout her career, Jessica evaluated infrastructure investment, development programs, and policy outcomes across some of the most rapidly changing political economies in the world. The same constraint kept surfacing: fragmented data that couldn't keep pace with the speed of change on the ground. Analysis stalled not at the interpretation stage, but earlier — at the point of assembling a current, coherent picture of what was actually happening.
+              Throughout her career, Jessica evaluated infrastructure investment, development programs, and policy outcomes across some of the most rapidly changing political economies in the world. The same constraint kept surfacing: fragmented data that could not keep pace with the speed of change on the ground. Analysis stalled not at the interpretation stage, but at the point of assembling a current, coherent picture of what was actually happening.
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              The research here focuses on macroeconomic and AI policy questions for Saudi Arabia and the Gulf. The three projects use different methods — live data tracking, chain analysis, and econometric simulation — but they share the same underlying approach: use AI to extend what a single researcher can analyze across multiple data domains, and be transparent about how the analysis was done.
+              The research here focuses on macroeconomic and AI policy questions for Saudi Arabia and the Gulf. Each project applies AI tools to a different policy question, with methodology, data sources, and limitations documented openly.
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              Saudi Arabia became the focus because the questions there are both substantively important and methodologically interesting. The country is running one of the most ambitious technology-led economic programs of the past decade, and the data to analyze it is fragmented across dozens of government agencies, corporate filings, and policy documents in two languages. That combination — important questions, hard-to-assemble data — is where this kind of work is most useful.
+              Saudi Arabia became the focus because the questions there are both substantively important and methodologically interesting. The country is running one of the most ambitious technology-led economic programs of the past decade, and the data to analyze it is fragmented across dozens of government agencies, corporate filings, and policy documents in two languages. That combination of important questions and hard-to-assemble data is where this kind of work is most useful.
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9 }}>

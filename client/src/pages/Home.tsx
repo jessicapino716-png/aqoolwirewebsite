@@ -182,10 +182,10 @@ export default function Home() {
     <div className="bg-background">
       <Helmet>
         <title>The Aqool Wire | AI Policy, Regulation & Innovation from Riyadh</title>
-        <meta name="description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC — covering innovation, ethics, and the future of work." />
+        <meta name="description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC, covering innovation, ethics, and the future of work." />
         <meta name="keywords" content="AI policy, AI regulation, Saudi Arabia, GCC, Riyadh, artificial intelligence, Vision 2030, AI innovation, AI law, data privacy, AI ethics, AI jobs" />
         <meta property="og:title" content="The Aqool Wire | AI Policy, Regulation & Innovation from Riyadh" />
-        <meta property="og:description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC — covering innovation, ethics, and the future of work." />
+        <meta property="og:description" content="The Aqool Wire delivers AI policy news, regulatory insights, and analysis from Saudi Arabia and the GCC, covering innovation, ethics, and the future of work." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://theaqoolwire.com/" />
       </Helmet>

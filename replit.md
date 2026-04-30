@@ -7,11 +7,14 @@ The Aqool Wire is a one-person policy research lab exploring how AI changes the 
 **Repositioning (April 2026):**
 - Site reframed from B2B intelligence platform to personal policy research portfolio
 - All commercial CTAs, product framing, subscription/demo/sales language removed
-- Three research project cards replace platform feature cards: Live Saudi AI Dashboard, Hormuz Closure Cascade, Digital Twin Policy Lab
+- Three research project cards with timestamps replace platform feature cards: Live Saudi AI Dashboard, Hormuz Closure Cascade, Digital Twin Policy Lab
 - Contact form reframed for research collaboration, fellowship discussion, project feedback
-- About page updated to emphasize public-policy research mission
-- Tone: plain English, policy-memo register, no marketing copy or buzzwords
+- About page updated: headshot placeholder ([Insert photo]), em dashes removed, tone phrases rewritten to avoid AI-generated register
+- Dedicated /research page: three numbered questions, lead paragraph, methodology callout, project cards cross-links
+- Hero subhead: three connected research questions on sovereign-economic transmission, fiscal arithmetic, and compound labor market pressure
+- Tone: plain English, policy-memo register, no marketing copy, no buzzwords, no em dashes
 - Visual identity (dark theme, cyan accent #00d9c8, Georgia serif, animated dot background) preserved
+- Shared project data: client/src/data/projects.ts (imported by both homepage and Research page)
 
 ## User Preferences
 

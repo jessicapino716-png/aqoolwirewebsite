@@ -1,0 +1,36 @@
+I have substantive content updates to apply across three places: the hero subhead, the Research page, and the project cards. Implement each change as specified.
+Change 1: Replace the hero subhead.
+Current subhead: "The research focuses on two questions facing Saudi Arabia and the Gulf: how to diversify a hydrocarbon-dependent economy under Vision 2030, and how to upskill and protect labor markets as AI-driven productivity gains reshape Western economies. Three active projects approach these questions through live data tracking, transmission analysis, and policy simulation."
+New subhead:
+"Research on macroeconomic and AI policy in oil-dependent economies in transition. Three connected questions, all updated continuously as conditions change: how sovereign-economic shocks transmit through global capital markets, how oil-funded public sectors adapt to declining hydrocarbon revenue, and how labor markets manage the compound pressure of diversification and AI productivity gains."
+Keep the H1, the topic pill (SAUDI ARABIA · MACROECONOMICS · AI POLICY), and the CTAs unchanged.
+Change 2: Build a Research page (linked from the nav "Research" link) using this full research statement.
+Page title: Research
+Page intro paragraph (set as a lead in larger or italicized type):
+"The research focuses on macroeconomic and AI policy in hydrocarbon-dependent economies in transition, with Saudi Arabia and the Gulf as the primary case. The work addresses three connected questions."
+Three numbered questions in main body text:
+Question 1. How do sovereign-economic decisions in oil-dependent economies transmit through global capital markets, and what does that integration mean for domestic policy autonomy? The Hormuz Closure Cascade traces one such transmission, from a Saudi geopolitical event through Aramco dividend policy, PIF deployment, Tadawul, and MSCI Emerging Markets index products into US public pension portfolios. The deeper finding is that the chain has been structural since MSCI added Saudi to its EM index in 2019. Saudi macroeconomic decisions now move global retail capital in real time.
+Question 2. How do oil-dependent economies manage the fiscal arithmetic of diversification when hydrocarbon revenue funds the majority of public-sector employment? In Saudi Arabia, government oil revenue sustains a public sector that employs roughly two-thirds of working Saudi nationals. Vision 2030 requires shrinking that public payroll as oil revenue declines and growing private-sector employment to absorb a young, expanding workforce. AI productivity gains in Western economies suggest the private-sector jobs Vision 2030 is betting on may automate faster than they grow. The Live Saudi AI Intelligence Dashboard tracks the infrastructure, capital flows, and policy moves shaping that bet in real time.
+Question 3. What labor market and fiscal policies manage the compound pressure of all three forces at once: declining hydrocarbon revenue constraining the public payroll, AI productivity gains automating the private-sector jobs meant to absorb new entrants, and a young Saudi demographic that requires employment growth, not contraction? The Digital Twin Policy Lab models workforce upskilling, sectoral investment, and fiscal scenarios under different assumptions about AI labor displacement and oil revenue trajectories.
+Closing paragraph (after the three questions, set as a separate "Methodology" callout or its own section):
+"The methodology is built to stay current. Each project updates continuously: the Live Saudi AI Intelligence Dashboard ingests new infrastructure announcements, capital flows, and regulatory developments as they emerge; the Hormuz Closure Cascade refreshes its source data, transmission math, and citations as conditions evolve; the Digital Twin Policy Lab updates its scenarios as new economic and workforce data become available. Most policy research goes stale the moment it's published. The site is designed so that analysis remains current as the underlying conditions change."
+Below the research statement, repeat the three project cards from the homepage as cross-links so a reader can move directly into the work.
+Change 3: Add a "Last updated" timestamp to each project card on the homepage and on the Research page.
+Each project card should display a small monospace label in the bottom-right or below the card body, in the format:
+"Last updated: 30 April 2026"
+For now, hardcode the timestamps as follows:
+Live Saudi AI Intelligence Dashboard: Last updated: 30 April 2026
+The Hormuz Closure Cascade: Last updated: 27 April 2026
+Digital Twin Policy Lab: In development, planned launch June 2026
+Style the timestamps in the same monospace typography used for the topic pills, but smaller and dimmer (use a muted text color, around 60% opacity). The intent is to visibly signal that the work is current without making the timestamps loud.
+Change 4: Search the entire site for em dashes and replace them.
+Search the codebase for the em dash character (—) and the en dash character (–). Replace each occurrence with one of the following based on context: a comma, a colon, a semicolon, or a period that starts a new sentence. This is a strict rule. Common patterns to fix:
+"X — Y" becomes "X, Y" or "X. Y" or "X: Y"
+Example: "different approach — live continuous tracking, deep mechanical chain analysis, and forward-looking scenario simulation —" becomes "different approach: live continuous tracking, deep mechanical chain analysis, and forward-looking scenario simulation."
+Change 5: Tone audit on the About page.
+The About page currently includes phrases that read as AI-generated. Specifically rewrite or remove:
+"exploring AI as a methodology" - replace with "applying AI tools to research"
+"what AI-augmented analysis can produce in practice, not in principle" - delete this sentence entirely.
+"a different answer to the same underlying question: what does rigorous policy analysis look like when you have access to tools that can ingest, structure, and reason over information at a scale a single researcher could never manage manually" - replace with: "Each project applies AI tools to a different policy question, with methodology, data sources, and limitations documented openly."
+Change 6: Confirm the placeholder headshot is removed or replaced.
+If the About page still displays the placeholder photo of a woman in a tan blazer, remove it and insert a placeholder note that reads "[Insert photo]" or leave the space empty. Do not generate, pull, or substitute any other photo.

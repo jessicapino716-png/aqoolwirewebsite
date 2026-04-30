@@ -5,47 +5,12 @@ import { Link } from "wouter";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Menu, X, ArrowUpRight } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
+import { RESEARCH_PROJECTS } from "@/data/projects";
 
 const SECTION_LABEL: React.CSSProperties = {
   fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.14em",
   textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.5rem", display: "block",
 };
-
-const RESEARCH_PROJECTS = [
-  {
-    methodology: "Live research",
-    title: "Saudi AI Economy Dashboard",
-    oneliner: "Tracks the data center capacity, capital flows, regulatory developments, and stakeholder map driving Saudi Arabia's AI economy buildout.",
-    description: "Covers SDAIA, MCIT, GASTAT, NCC, and the giga-projects (NEOM, Red Sea, Qiddiya, Diriyah). Built for research, market entry analysis, and FDI decision-making.",
-    methodTags: ["Continuously updated", "Primary-source citations", "Stakeholder mapping"],
-    status: "active" as const,
-    href: "https://live.theaqoolwire.com/",
-    external: true,
-    ctaLabel: "View dashboard",
-  },
-  {
-    methodology: "Transmission analysis",
-    title: "The Hormuz Closure Cascade",
-    oneliner: "Traces a Strait of Hormuz closure through the Saudi sovereign balance sheet, the Tadawul, MSCI Emerging Markets index products, and into US public pension portfolios.",
-    description: "Six stages, primary-source citations throughout. The analysis documents how a Saudi geopolitical event propagates mechanically to a Texas teacher's retirement statement — through oil markets, sovereign finance, sovereign wealth, equity markets, EM index mechanics, and US pension portfolios.",
-    methodTags: ["Six-stage chain analysis", "Primary-source rigor", "Cross-market tracing"],
-    status: "active" as const,
-    href: "https://hormuz-cascade-ksa.vercel.app/",
-    external: true,
-    ctaLabel: "View analysis",
-  },
-  {
-    methodology: "Policy simulation",
-    title: "Digital Twin Policy Lab",
-    oneliner: "Models Saudi policy scenarios with AI-assisted econometric simulation.",
-    description: "Current focus: tech workforce upskilling investment over one-to-ten year time horizons, with non-linear growth dynamics and transparent assumptions. The model uses official economic and workforce data throughout.",
-    methodTags: ["Econometric modeling", "Scenario testing", "Transparent assumptions"],
-    status: "development" as const,
-    href: null,
-    external: false,
-    ctaLabel: "In development",
-  },
-];
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -89,7 +54,7 @@ export default function NewIntelligenceHome() {
   return (
     <div style={{ background: "#070d18", minHeight: "100vh", color: "#e2e8f0", fontFamily: "'Inter', sans-serif", position: "relative", overflowX: "hidden" }}>
       <Helmet>
-        <title>The Aqool Wire — Macroeconomic and AI Policy Research on Saudi Arabia</title>
+        <title>The Aqool Wire: Macroeconomic and AI Policy Research on Saudi Arabia</title>
         <meta name="description" content="Research on Saudi Arabia's AI economy, sovereign-finance transmission, and policy simulation. Projects include a live AI economy dashboard, Hormuz closure cascade analysis, and a policy simulation lab." />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
@@ -107,9 +72,9 @@ export default function NewIntelligenceHome() {
             </Link>
 
             <div className="hidden md:flex items-center gap-10">
-              <a href="#research"
+              <Link href="/research"
                 style={{ fontSize: "1rem", color: "#cbd5e1", textDecoration: "none" }}
-                className="hover:text-white transition-colors">Research</a>
+                className="hover:text-white transition-colors">Research</Link>
               <Link href="/about"
                 style={{ fontSize: "1rem", color: "#cbd5e1", textDecoration: "none" }}
                 className="hover:text-white transition-colors">About</Link>
@@ -129,10 +94,10 @@ export default function NewIntelligenceHome() {
         {mobileMenuOpen && (
           <div style={{ borderTop: "1px solid rgba(0,217,200,0.12)", background: "rgba(7,13,24,0.98)", padding: "1.5rem" }}
             className="flex flex-col gap-5 md:hidden">
-            <a href="#research" onClick={() => setMobileMenuOpen(false)}
+            <Link href="/research" onClick={() => setMobileMenuOpen(false)}
               style={{ fontSize: "1.05rem", color: "#e2e8f0", textDecoration: "none", padding: "0.5rem 0", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
               Research
-            </a>
+            </Link>
             <Link href="/about"
               style={{ fontSize: "1.05rem", color: "#e2e8f0", textDecoration: "none", padding: "0.5rem 0", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
               About
@@ -161,18 +126,18 @@ export default function NewIntelligenceHome() {
             Macroeconomic and AI policy research on Saudi Arabia.
           </h1>
 
-          <p style={{ lineHeight: 1.85, color: "#cbd5e1", marginBottom: "2.75rem", maxWidth: "580px", marginLeft: "auto", marginRight: "auto" }}
+          <p style={{ lineHeight: 1.85, color: "#cbd5e1", marginBottom: "2.75rem", maxWidth: "620px", marginLeft: "auto", marginRight: "auto" }}
             className="text-base md:text-lg">
-            Active projects on the AI economy, sovereign-finance transmission, and policy simulation.
+            Research on macroeconomic and AI policy in oil-dependent economies in transition. Three connected questions, all updated continuously as conditions change: how sovereign-economic shocks transmit through global capital markets, how oil-funded public sectors adapt to declining hydrocarbon revenue, and how labor markets manage the compound pressure of diversification and AI productivity gains.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#research"
+            <Link href="/research"
               className="w-full sm:w-auto flex items-center justify-center gap-2"
               style={{ background: "#00d9c8", color: "#070d18", fontWeight: 700, fontSize: "1rem", padding: "0.9rem 2rem", borderRadius: "8px", textDecoration: "none", boxShadow: "0 0 36px rgba(0,217,200,0.35)", letterSpacing: "0.01em" }}>
               View projects
               <ArrowRight size={16} />
-            </a>
+            </Link>
             <Link href="/about"
               className="w-full sm:w-auto flex items-center justify-center"
               style={{ fontSize: "0.95rem", color: "#94a3b8", textDecoration: "none", padding: "0.9rem 2rem", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px" }}>
@@ -227,13 +192,23 @@ export default function NewIntelligenceHome() {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.methodTags.map((tag) => (
                       <span key={tag} style={{ fontSize: "0.8rem", color: "#94a3b8", fontFamily: "monospace", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.09)", padding: "0.2rem 0.6rem", borderRadius: "4px" }}>
                         {tag}
                       </span>
                     ))}
                   </div>
+
+                  {project.lastUpdated ? (
+                    <p style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#94a3b8", opacity: 0.6, letterSpacing: "0.04em", margin: 0 }}>
+                      Last updated: {project.lastUpdated}
+                    </p>
+                  ) : project.plannedLaunch ? (
+                    <p style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#94a3b8", opacity: 0.6, letterSpacing: "0.04em", margin: 0 }}>
+                      In development, planned launch {project.plannedLaunch}
+                    </p>
+                  ) : null}
                 </div>
 
                 {/* Right: CTA */}
@@ -270,7 +245,7 @@ export default function NewIntelligenceHome() {
               Former U.S. Foreign Service Officer, 18 years in economic and political analysis. Tours in Islamabad, Cairo, Dahuk, Paris, and Main State. MPP from LSE, focused on AI and governance. Based in Riyadh.
             </p>
             <p style={{ fontSize: "1rem", color: "#cbd5e1", lineHeight: 1.85, marginBottom: "1.75rem" }}>
-              The research here focuses on macroeconomic and AI policy questions for Saudi Arabia and the Gulf, using AI to extend what a single researcher can analyze across multiple data domains. The projects grew out of questions that came up repeatedly during fieldwork — about capital flows, infrastructure investment, and how policy decisions in Riyadh transmit outward into global markets.
+              The research here focuses on macroeconomic and AI policy questions for Saudi Arabia and the Gulf, using AI to extend what a single researcher can analyze across multiple data domains. The projects grew out of questions that came up repeatedly during fieldwork: capital flows, infrastructure investment, and how policy decisions in Riyadh transmit outward into global markets.
             </p>
             <Link href="/about"
               className="inline-flex items-center gap-2"
@@ -285,7 +260,7 @@ export default function NewIntelligenceHome() {
               {[
                 "18 years, U.S. Foreign Service",
                 "Tours: Islamabad, Cairo, Dahuk, Paris, Main State",
-                "MPP, LSE — AI and governance",
+                "MPP, LSE, AI and governance",
                 "Based in Riyadh",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2 mb-3">
