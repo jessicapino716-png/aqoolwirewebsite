@@ -281,7 +281,7 @@ export default function NewIntelligenceHome() {
       </section>
       {/* ── THESIS ESSAY ─────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "-2rem auto 0", background: "rgba(12,24,41,0.72)", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.06)" }}
-        className="px-4 md:px-8 py-16 md:py-24">
+        className="px-4 md:px-8 pt-8 md:pt-10 pb-16 md:pb-24">
 
         <div style={{ marginBottom: "2.5rem" }}>
           <div className="inline-flex items-center"
