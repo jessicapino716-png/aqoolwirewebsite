@@ -134,7 +134,7 @@ export default function NewIntelligenceHome() {
               { label: "Workforce dependency", body: "A public payroll that employs two-thirds of working Saudis, funded by that same revenue." },
               { label: "AI compression", body: "AI productivity gains compressing the timeline for private-sector job creation." },
             ].map((item, i) => (
-              <div key={i} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", padding: "1.25rem 1.5rem", textAlign: "left" }}>
+              <div key={i} style={{ background: "#0c1829", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "10px", padding: "1.25rem 1.5rem", textAlign: "left" }}>
                 <div style={{ fontFamily: "monospace", fontSize: "0.7rem", color: "rgba(0,217,200,0.6)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
