@@ -280,7 +280,7 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
       {/* ── THESIS ESSAY ─────────────────────────────────────────── */}
-      <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto", background: "rgba(12,24,41,0.72)", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.06)" }}
+      <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "-2rem auto 0", background: "rgba(12,24,41,0.72)", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.06)" }}
         className="px-4 md:px-8 py-16 md:py-24">
 
         <div style={{ marginBottom: "2.5rem" }}>
@@ -290,25 +290,25 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
 
-        <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+        <p style={{ fontSize: "1.25rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
           Vision 2030 was designed in 2016 with an implicit assumption: growing target sectors (financial services, tourism, technology, logistics, manufacturing) would create roughly proportional employment. Double the size of the financial services sector and you roughly double the number of finance jobs. That assumption was consistent with how knowledge-work sectors had behaved for the previous several decades, and it underlies every Vision 2030 employment target.
         </p>
 
-        <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+        <p style={{ fontSize: "1.25rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
           AI productivity gains break that assumption in the exact sectors Vision 2030 targets. Software development, financial analysis, customer service, legal work, marketing, content creation, translation, and parts of medical diagnostics are all seeing measured productivity gains in the 25 to 50 percent range in Western economies as AI tools get adopted. The mechanism is straightforward: AI is reducing the labor required to deliver a unit of output. Same revenue, fewer workers.
         </p>
 
-        <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+        <p style={{ fontSize: "1.25rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
           Apply that to Saudi Arabia's two parallel timelines. The first is how long it takes target sectors to mature into substantial revenue producers, the headline Vision 2030 metric. The second is the timeline on which the Saudi workforce grows. Saudi adds roughly 200 to 300 thousand new Saudi nationals to working age every year. Vision 2030 has to employ them.
         </p>
 
-        <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+        <p style={{ fontSize: "1.25rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
           Pre-AI, the assumption was that growing the target sectors at Vision 2030's projected pace would create enough jobs to absorb that demographic flow inside a 10 to 15 year window. With AI changing the labor intensity of those sectors, the same revenue growth produces fewer jobs. The sector-revenue timeline stretches. The demographic timeline does not. The two timelines that were supposed to converge now diverge.
         </p>
 
-        <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>Vision 2030's labor-intensive bets (tourism gigaprojects like Red Sea Global, Diriyah, AlUla, and Qiddiya) do generate jobs per dollar, but historically those jobs have been filled by expatriate workers under the kafala system, not Saudi nationals. Second, the capital-intensive bets (HUMAIN, AI infrastructure, hyperscale data centers) generate modest permanent employment relative to the capital invested, and the specialized roles they do create (AI infrastructure engineers, ML operations, network architects) require skills the Saudi workforce hasn't yet built at scale, so those positions go to expat hires. Third, the high-skill jobs Saudization policies have been pushing nationals into (finance, professional services, administration) are exactly the jobs AI is automating fastest. Low-skill jobs flow to expats. AI infrastructure jobs flow to expat specialists. And the high-skill knowledge-work track Saudis are being trained for gets automated before they fully fill it.</p>
+        <p style={{ fontSize: "1.25rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>Vision 2030's labor-intensive bets (tourism gigaprojects like Red Sea Global, Diriyah, AlUla, and Qiddiya) do generate jobs per dollar, but historically those jobs have been filled by expatriate workers under the kafala system, not Saudi nationals. Second, the capital-intensive bets (HUMAIN, AI infrastructure, hyperscale data centers) generate modest permanent employment relative to the capital invested, and the specialized roles they do create (AI infrastructure engineers, ML operations, network architects) require skills the Saudi workforce hasn't yet built at scale, so those positions go to expat hires. Third, the high-skill jobs Saudization policies have been pushing nationals into (finance, professional services, administration) are exactly the jobs AI is automating fastest. Low-skill jobs flow to expats. AI infrastructure jobs flow to expat specialists. And the high-skill knowledge-work track Saudis are being trained for gets automated before they fully fill it.</p>
 
-        <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "#e2e8f0", lineHeight: 1.65, margin: 0 }}>
+        <p style={{ fontSize: "1.3rem", fontWeight: 700, color: "#e2e8f0", lineHeight: 1.65, margin: 0 }}>
           That tension is the subject of this research.
         </p>
 
