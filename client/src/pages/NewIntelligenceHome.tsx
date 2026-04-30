@@ -191,7 +191,7 @@ export default function NewIntelligenceHome() {
           </div>
 
           <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, lineHeight: 1.18, color: "#ffffff", marginBottom: "2rem", letterSpacing: "-0.02em" }}
-            className="text-4xl sm:text-5xl md:text-6xl">
+            className="text-4xl sm:text-5xl md:text-6xl mt-[30px] mb-[50px]">
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
