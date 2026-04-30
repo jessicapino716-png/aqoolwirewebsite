@@ -124,8 +124,24 @@ export default function NewIntelligenceHome() {
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
-          <p style={{ lineHeight: 1.9, color: "#cbd5e1", marginBottom: "3rem", maxWidth: "760px", marginLeft: "auto", marginRight: "auto" }}
-            className="text-lg md:text-xl">Declining hydrocarbon revenue, a public payroll that employs two-thirds of working Saudis, and AI productivity gains compressing the timeline for private-sector growth. These pressures interact, and their combined effect is the subject of this research. Three active projects track the transmission mechanisms, the fiscal arithmetic, and the labor market policy options for Saudi Arabia.</p>
+          <div style={{ marginBottom: "3rem", maxWidth: "720px", marginLeft: "auto", marginRight: "auto" }}>
+            {[
+              "Declining hydrocarbon revenue and a sovereign balance sheet under pressure.",
+              "A public payroll that employs two-thirds of working Saudis.",
+              "AI productivity gains compressing the timeline for private-sector job creation.",
+            ].map((line, i) => (
+              <div key={i} className="flex items-start gap-4"
+                style={{ paddingTop: i === 0 ? 0 : "1rem", paddingBottom: "1rem", borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
+                <span style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "rgba(0,217,200,0.5)", flexShrink: 0, marginTop: "0.35rem", letterSpacing: "0.05em" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p style={{ fontSize: "1.1rem", color: "#cbd5e1", lineHeight: 1.7, margin: 0 }}>{line}</p>
+              </div>
+            ))}
+            <p style={{ fontSize: "0.95rem", color: "#94a3b8", lineHeight: 1.75, marginTop: "1.5rem", fontStyle: "italic" }}>
+              These pressures interact. Three active projects track the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/research"
