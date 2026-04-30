@@ -1,0 +1,28 @@
+I need you to revise the site you just built. Three issues to fix.
+Issue 1: The language reads as AI-written. Phrases like "exploring how AI changes the toolkit available to policy researchers," "active research projects at the intersection of," and "one-person policy research lab" are the kind of generic AI-generated framing that makes the site sound like a chatbot wrote it. Strip all of that out. Use direct, plain English. Lead with subject matter (what the research is about) rather than methodology framing (how the research was done). The voice should be a working researcher describing her own work, not a marketing page describing a company.
+Issue 2: Wrong center of gravity. The lead positioning is wrong. The site needs to lead with macroeconomic and AI policy research focused on Saudi Arabia. The "AI as a research tool" framing belongs in the methodology notes, not the hero. The "one-person research lab" framing belongs in the About section, not the hero. Saudi Arabia and macroeconomic policy are the substantive focus.
+Issue 3: Drop the "Recent Signals" section. Remove it entirely.
+Revised hero. Replace the current hero copy with:
+"Macroeconomic and AI policy research on Saudi Arabia. Active projects on the AI economy, sovereign-finance transmission, and policy simulation."
+That's the new lead. No "research lab," no "exploring how AI changes the toolkit," no "intersection of" framing.
+Revised project descriptions. Lead each project with what it investigates and what it found, not how. Use concrete verbs (tracks, traces, models). Drop methodology buzzwords from the project cards. Keep the technical detail accessible if a reader clicks through.
+Project 1: Saudi AI Economy Dashboard (Live)
+Tracks the data center capacity, capital flows, regulatory developments, and stakeholder map driving Saudi Arabia's AI economy buildout. Covers SDAIA, MCIT, GASTAT, NCC, and the giga-projects (NEOM, Red Sea, Qiddiya, Diriyah). Built for research, market entry analysis, and FDI decision-making.
+Project 2: The Hormuz Closure Cascade
+Traces a Strait of Hormuz closure through the Saudi sovereign balance sheet, the Tadawul, MSCI Emerging Markets index products, and into US public pension portfolios. Six stages, primary-source citations throughout.
+Project 3: Digital Twin Policy Lab
+Models Saudi policy scenarios with AI-assisted econometric simulation. Current focus: tech workforce upskilling investment over one-to-ten year time horizons, with non-linear growth dynamics and transparent assumptions.
+About section. Move all the personal and lab framing here, off the homepage hero. Bio first (18 years U.S. Foreign Service, MPP from LSE focused on AI and governance, based in Riyadh), then a short "why this work" paragraph in plain language: research focused on macroeconomic and AI policy questions for Saudi Arabia and the Gulf, using AI to extend what a single researcher can analyze across multiple data domains. Drop any "research lab" or "one-person" framing from the front of the site. Save it for the About page.
+Words and phrases to delete from the site entirely:
+"exploring how AI changes the toolkit"
+"active research projects at the intersection of"
+"one-person policy research lab"
+"AI-structured intelligence layer"
+"source-verified provenance" (as a buzzword phrase, though primary-source rigor is fine to mention)
+"showcasing" / "demonstrating" / "empowering" / "leveraging"
+"decision-grade intelligence"
+"intelligence platform" / "intelligence products"
+"Recent Signals" (remove the section)
+Tone guardrails:
+Match the voice of a working policy researcher writing for peers. Plain English. Concrete nouns and verbs. No buzzwords. No exclamation points. No hero-section claims that sound like a startup pitch ("transforming," "revolutionizing," "unlocking"). If a sentence could appear in a Brookings working paper or a JEEM article, keep it. If it sounds like a SaaS landing page or a generic AI-generated bio, rewrite it.
+One specific tone test. Read each sentence aloud. If it sounds like something a real human researcher would actually say in a conversation, keep it. If it sounds like a corporate website blurb, rewrite it.

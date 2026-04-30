@@ -66,15 +66,15 @@ export default function About() {
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              After completing an MPP at LSE focused on AI and governance, she began working through a more fundamental question: what does rigorous policy analysis look like when you have access to tools that can ingest, structure, and reason over information at a scale a single researcher could never manage manually? Saudi Arabia, in the middle of one of the most ambitious technology-led economic transformations in recent history, became the starting point.
+              The research here focuses on macroeconomic and AI policy questions for Saudi Arabia and the Gulf. The three projects use different methods — live data tracking, chain analysis, and econometric simulation — but they share the same underlying approach: use AI to extend what a single researcher can analyze across multiple data domains, and be transparent about how the analysis was done.
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              The Aqool Wire is the result: a one-person research lab exploring AI as a methodology, applied to policy questions that matter. Each project demonstrates a different approach — live continuous tracking, deep mechanical chain analysis, and forward-looking scenario simulation — and each is designed to be transparent about its methods, data sources, and limitations.
+              Saudi Arabia became the focus because the questions there are both substantively important and methodologically interesting. The country is running one of the most ambitious technology-led economic programs of the past decade, and the data to analyze it is fragmented across dozens of government agencies, corporate filings, and policy documents in two languages. That combination — important questions, hard-to-assemble data — is where this kind of work is most useful.
             </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9 }}>
-              This is not a commercial product. It is a public research portfolio, built to contribute to the policy research community and to demonstrate what AI-augmented analysis can produce in practice, not in principle.
+              This is not a commercial product. It is a public research portfolio.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export default function About() {
             </p>
             <div className="flex flex-col gap-3">
               {[
-                { title: "Live Saudi AI Intelligence Dashboard", href: "https://live.theaqoolwire.com/", external: true },
+                { title: "Saudi AI Economy Dashboard", href: "https://live.theaqoolwire.com/", external: true },
                 { title: "The Hormuz Closure Cascade", href: "https://hormuz-cascade-ksa.vercel.app/", external: true },
                 { title: "Digital Twin Policy Lab", href: null, external: false },
               ].map((item) => (
