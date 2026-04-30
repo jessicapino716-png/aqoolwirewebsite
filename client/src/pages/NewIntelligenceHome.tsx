@@ -124,18 +124,18 @@ export default function NewIntelligenceHome() {
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3" style={{ maxWidth: "860px", marginLeft: "auto", marginRight: "auto" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" style={{ maxWidth: "1080px", marginLeft: "auto", marginRight: "auto" }}>
             {[
               { label: "Fiscal pressure", body: "Declining hydrocarbon revenue and a sovereign balance sheet built around oil." },
               { label: "Workforce dependency", body: "A public payroll that employs two-thirds of working Saudis, funded by that same revenue." },
               { label: "AI compression", body: "AI productivity gains compressing the timeline for private-sector job creation." },
             ].map((item, i) => (
-              <div key={i} style={{ background: "#0c1829", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "10px", padding: "1.25rem 1.5rem", textAlign: "left" }}>
-                <div style={{ fontFamily: "monospace", fontSize: "1.75rem", color: "rgba(0,217,200,0.6)", letterSpacing: "0.04em", marginBottom: "0.75rem", lineHeight: 1 }}>
+              <div key={i} style={{ background: "#0c1829", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", padding: "2rem 2rem", textAlign: "left" }}>
+                <div style={{ fontFamily: "monospace", fontSize: "2rem", color: "rgba(0,217,200,0.6)", letterSpacing: "0.04em", marginBottom: "1rem", lineHeight: 1 }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <div style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.5rem" }}>{item.label}</div>
-                <div style={{ fontSize: "0.88rem", color: "#94a3b8", lineHeight: 1.65 }}>{item.body}</div>
+                <div style={{ fontFamily: "Georgia, serif", fontSize: "1.2rem", color: "#ffffff", fontWeight: 400, marginBottom: "0.75rem" }}>{item.label}</div>
+                <div style={{ fontSize: "1rem", color: "#94a3b8", lineHeight: 1.7 }}>{item.body}</div>
               </div>
             ))}
           </div>
