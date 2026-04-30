@@ -136,7 +136,7 @@ export default function NewIntelligenceHome() {
             </Link>
             <Link href="/about"
               className="w-full sm:w-auto flex items-center justify-center"
-              style={{ fontSize: "0.95rem", color: "#94a3b8", textDecoration: "none", padding: "0.95rem 2.25rem", border: "1px solid rgba(255,255,255,0.14)", borderRadius: "8px" }}>
+              style={{ fontSize: "0.95rem", color: "#e2e8f0", textDecoration: "none", padding: "0.95rem 2.25rem", border: "1px solid rgba(255,255,255,0.4)", borderRadius: "8px" }}>
               About
             </Link>
           </div>
