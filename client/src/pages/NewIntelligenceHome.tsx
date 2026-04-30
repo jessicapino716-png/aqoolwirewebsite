@@ -245,7 +245,7 @@ export default function NewIntelligenceHome() {
       </section>
       {/* ── POLICY RESEARCH ──────────────────────────────────────── */}
       <section id="research" style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto" }}
-        className="px-4 md:px-8 pb-14 md:pb-20">
+        className="px-4 md:px-8 pb-14 md:pb-20 pt-[30px]">
 
         <div style={{ marginBottom: "3rem" }}>
           <span style={SECTION_LABEL}>Policy research</span>
@@ -261,7 +261,6 @@ export default function NewIntelligenceHome() {
           ))}
         </div>
       </section>
-
       {/* ── TOOLS ────────────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto" }}
         className="px-4 md:px-8 pb-14 md:pb-24">
