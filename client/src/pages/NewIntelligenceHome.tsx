@@ -215,7 +215,7 @@ export default function NewIntelligenceHome() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4" style={{ marginTop: "2rem" }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-[60px]" style={{ marginTop: "2rem" }}>
             <Link href="/research"
               className="w-full sm:w-auto flex items-center justify-center gap-2"
               style={{ background: "#00d9c8", color: "#070d18", fontWeight: 700, fontSize: "1rem", padding: "0.95rem 2.25rem", borderRadius: "8px", textDecoration: "none", boxShadow: "0 0 40px rgba(0,217,200,0.35)", letterSpacing: "0.01em" }}>
