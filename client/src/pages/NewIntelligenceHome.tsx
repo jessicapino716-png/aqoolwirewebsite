@@ -207,8 +207,7 @@ export default function NewIntelligenceHome() {
             ].map((item, i) => (
               <div
                 key={i}
-                style={{ background: "#0c1829", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", padding: "2rem 2rem", textAlign: "left" }}
-                className="mt-[50px] mb-[50px]">
+                style={{ background: "#0c1829", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", padding: "2rem", textAlign: "left" }}>
                 <div style={{ fontFamily: "monospace", fontSize: "2rem", color: "rgba(0,217,200,0.6)", letterSpacing: "0.04em", marginBottom: "1rem", lineHeight: 1 }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
