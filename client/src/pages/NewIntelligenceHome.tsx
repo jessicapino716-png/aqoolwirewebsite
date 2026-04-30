@@ -55,7 +55,7 @@ export default function NewIntelligenceHome() {
     <div style={{ background: "#070d18", minHeight: "100vh", color: "#e2e8f0", fontFamily: "'Inter', sans-serif", position: "relative", overflowX: "hidden" }}>
       <Helmet>
         <title>The Aqool Wire: Macroeconomic and AI Policy Research on Saudi Arabia</title>
-        <meta name="description" content="Research on Saudi Arabia's AI economy, sovereign-finance transmission, and policy simulation. Projects include a live AI economy dashboard, Hormuz closure cascade analysis, and a policy simulation lab." />
+        <meta name="description" content="Research on Saudi Arabia's sovereign economic transition: declining hydrocarbon revenue, public-payroll dependence, and AI-driven labor market pressure. Three active projects tracking transmission mechanisms, fiscal arithmetic, and policy options." />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Helmet>
@@ -111,36 +111,36 @@ export default function NewIntelligenceHome() {
       </nav>
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section style={{ position: "relative", zIndex: 1, minHeight: "80vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}
-        className="px-4 md:px-8 py-20 md:py-28">
-        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-60%)", width: "600px", height: "350px", background: "radial-gradient(ellipse at center, rgba(0,217,200,0.07) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+      <section style={{ position: "relative", zIndex: 1, minHeight: "85vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}
+        className="px-4 py-20 md:py-32">
+        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-60%)", width: "700px", height: "400px", background: "radial-gradient(ellipse at center, rgba(0,217,200,0.07) 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: "760px", width: "100%" }}>
-          <div className="inline-flex items-center gap-2" style={{ border: "1px solid rgba(0,217,200,0.3)", borderRadius: "100px", padding: "0.4rem 1.1rem 0.4rem 0.7rem", marginBottom: "2rem", background: "rgba(0,217,200,0.06)" }}>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "920px", width: "100%" }}>
+          <div className="inline-flex items-center gap-2" style={{ border: "1px solid rgba(0,217,200,0.3)", borderRadius: "100px", padding: "0.4rem 1.1rem 0.4rem 0.7rem", marginBottom: "2.5rem", background: "rgba(0,217,200,0.06)" }}>
             <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#00d9c8", display: "inline-block", boxShadow: "0 0 8px #00d9c8", flexShrink: 0 }} />
             <span style={{ fontSize: "0.78rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.07em", textTransform: "uppercase" }}>Saudi Arabia &middot; Macroeconomics &middot; AI policy</span>
           </div>
 
-          <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, lineHeight: 1.22, color: "#ffffff", marginBottom: "1.5rem", letterSpacing: "-0.01em" }}
-            className="text-3xl sm:text-4xl md:text-5xl">
-            Macroeconomic and AI policy research on Saudi Arabia.
+          <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, lineHeight: 1.18, color: "#ffffff", marginBottom: "2rem", letterSpacing: "-0.02em" }}
+            className="text-4xl sm:text-5xl md:text-6xl">
+            Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
-          <p style={{ lineHeight: 1.85, color: "#cbd5e1", marginBottom: "2.75rem", maxWidth: "620px", marginLeft: "auto", marginRight: "auto" }}
-            className="text-base md:text-lg">
-            Research on macroeconomic and AI policy in oil-dependent economies in transition. Three connected questions, all updated continuously as conditions change: how sovereign-economic shocks transmit through global capital markets, how oil-funded public sectors adapt to declining hydrocarbon revenue, and how labor markets manage the compound pressure of diversification and AI productivity gains.
+          <p style={{ lineHeight: 1.9, color: "#a8bdd4", marginBottom: "3rem", maxWidth: "760px", marginLeft: "auto", marginRight: "auto" }}
+            className="text-lg md:text-xl">
+            Declining hydrocarbon revenue, a public payroll that employs two-thirds of working Saudis, and AI productivity gains compressing the timeline for private-sector growth. These pressures interact, and their combined effect is the subject of this research. Three active projects track the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/research"
               className="w-full sm:w-auto flex items-center justify-center gap-2"
-              style={{ background: "#00d9c8", color: "#070d18", fontWeight: 700, fontSize: "1rem", padding: "0.9rem 2rem", borderRadius: "8px", textDecoration: "none", boxShadow: "0 0 36px rgba(0,217,200,0.35)", letterSpacing: "0.01em" }}>
-              View projects
+              style={{ background: "#00d9c8", color: "#070d18", fontWeight: 700, fontSize: "1rem", padding: "0.95rem 2.25rem", borderRadius: "8px", textDecoration: "none", boxShadow: "0 0 40px rgba(0,217,200,0.35)", letterSpacing: "0.01em" }}>
+              View the research
               <ArrowRight size={16} />
             </Link>
             <Link href="/about"
               className="w-full sm:w-auto flex items-center justify-center"
-              style={{ fontSize: "0.95rem", color: "#94a3b8", textDecoration: "none", padding: "0.9rem 2rem", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px" }}>
+              style={{ fontSize: "0.95rem", color: "#94a3b8", textDecoration: "none", padding: "0.95rem 2.25rem", border: "1px solid rgba(255,255,255,0.14)", borderRadius: "8px" }}>
               About
             </Link>
           </div>
