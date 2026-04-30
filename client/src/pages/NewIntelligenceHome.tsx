@@ -141,8 +141,7 @@ export default function NewIntelligenceHome() {
           </div>
 
           <p
-            style={{ lineHeight: 1.8, color: "#94a3b8", margin: "1.75rem auto 2.5rem", maxWidth: "640px", fontSize: "1.05rem" }}
-            className="text-[#00d9c8]">
+            style={{ lineHeight: 1.8, color: "#00d9c8", margin: "1.75rem auto 2.5rem", maxWidth: "640px", fontSize: "1.05rem" }}>
             Three compounding pressures. Three active projects tracking the transmission mechanisms, the fiscal arithmetic, and the labor market policy options.
           </p>
 
