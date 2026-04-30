@@ -1,89 +1,115 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import MeshBackground from "@/components/MeshBackground";
-import { Button } from "@/components/ui/button";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
 import jessicaImage from "@assets/000-eHDrIDseLsY_1769360651903.jpeg";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
     <div style={{ minHeight: "100vh", background: "#070d18", color: "#ffffff", position: "relative", overflowX: "hidden" }}>
       <Helmet>
-        <title>About The Aqool Wire - Live Intelligence for Saudi Arabia's AI Economy</title>
-        <meta name="description" content="The Aqool Wire applies AI to continuously ingest, structure, and reconcile data as conditions change, delivering live intelligence for Saudi Arabia's Vision 2030 AI transformation." />
+        <title>About — The Aqool Wire</title>
+        <meta name="description" content="Jessica Pino is a former U.S. Foreign Service Officer applying AI to policy research questions at the intersection of Saudi Arabia's political-economic systems and AI-augmented analysis." />
       </Helmet>
 
       <MeshBackground />
 
       {/* Header */}
       <header style={{ position: "relative", zIndex: 20, width: "100%", borderBottom: "1px solid rgba(0,217,200,0.15)", background: "rgba(7,13,24,0.85)", backdropFilter: "blur(12px)" }}>
-        <div style={{ maxWidth: "1160px", margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "88px" }}>
+        <div style={{ maxWidth: "1160px", margin: "0 auto", minHeight: "72px" }}
+          className="flex items-center justify-between px-4 md:px-8">
           <Link href="/">
-            <img
-              src={logoImage}
-              alt="The Aqool Wire"
-              style={{ height: "120px", width: "auto", cursor: "pointer", opacity: 0.95, filter: "drop-shadow(0 0 14px rgba(0,217,200,0.45)) brightness(1.1)" }}
-            />
+            <img src={logoImage} alt="The Aqool Wire"
+              style={{ height: "80px", width: "auto", cursor: "pointer", opacity: 0.95, filter: "drop-shadow(0 0 14px rgba(0,217,200,0.45)) brightness(1.1)" }} />
           </Link>
           <Link href="/">
-            <button style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.9rem", color: "#00d9c8", background: "transparent", border: "1px solid rgba(0,217,200,0.35)", borderRadius: "6px", padding: "0.5rem 1rem", cursor: "pointer" }}>
-              <ArrowLeft size={15} />
-              Back to Home
+            <button style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.88rem", color: "#94a3b8", background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "6px", padding: "0.5rem 1rem", cursor: "pointer" }}>
+              <ArrowLeft size={14} />
+              Back
             </button>
           </Link>
         </div>
       </header>
 
-      {/* About Content */}
-      <section style={{ position: "relative", zIndex: 1, padding: "5rem 2rem 6rem" }}>
+      {/* Content */}
+      <section style={{ position: "relative", zIndex: 1 }} className="px-4 md:px-8 py-14 md:py-20">
         <div style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400, color: "#ffffff", textAlign: "center", marginBottom: "3rem", lineHeight: 1.25 }}>
-            About <span style={{ color: "#00d9c8" }}>The Aqool Wire</span>
+
+          <span style={{ fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#00d9c8", display: "block", marginBottom: "0.75rem" }}>
+            About
+          </span>
+          <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, color: "#ffffff", marginBottom: "3rem", lineHeight: 1.25 }}>
+            The Aqool Wire
           </h1>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", fontSize: "1.05rem", lineHeight: 1.85, color: "#e2e8f0", background: "#0c1829", borderRadius: "14px", padding: "2.5rem 3rem", border: "1px solid rgba(255,255,255,0.06)" }}>
-            <p>
-              For years, the hardest part of serious economic and policy analysis wasn't interpretation. It was keeping the underlying information current, coherent, and decision-ready. Data arrived late, conflicted across sources, and often surfaced only after policy or investment windows had already closed.
-            </p>
-
-            <p>
-              That problem became increasingly harder to ignore as Saudi Arabia accelerated its Vision 2030 AI transformation. Infrastructure, capital, and policy decisions began moving at a pace traditional analysis tools were never designed to match. Announcements multiplied, capital deployed faster, and execution outpaced visibility. The question was no longer how to analyze, but how to maintain a live, structured view of a system evolving in real time.
-            </p>
-
-            <p style={{ fontSize: "1.15rem", fontWeight: 600, color: "#00d9c8", fontFamily: "Georgia, serif" }}>
-              The Aqool Wire was built to answer that question.
-            </p>
-
-            {/* Founder Section */}
-            <div style={{ display: "flex", flexDirection: "row", gap: "2.5rem", alignItems: "flex-start", marginTop: "1rem", flexWrap: "wrap" }}>
-              <div style={{ flexShrink: 0 }}>
-                <div style={{ position: "relative" }}>
-                  <img
-                    src={jessicaImage}
-                    alt="Jessica Pino, Founder of The Aqool Wire"
-                    style={{ width: "160px", height: "160px", borderRadius: "50%", objectFit: "cover", border: "3px solid rgba(0,217,200,0.3)", boxShadow: "0 0 30px rgba(0,217,200,0.2)" }}
-                  />
-                </div>
-              </div>
-              <div style={{ flex: 1, minWidth: "280px" }}>
-                <p>
-                  Founded by Jessica Pino, a former U.S. State Department economic and political analyst with nearly two decades of experience working across the Middle East and South Asia, the platform reflects a practical insight shaped by years inside government and development institutions: analysis fails when data infrastructure can't keep up with reality. Jessica's work evaluating infrastructure investment, development programs, and policy outcomes repeatedly ran into the same constraint: fragmented data that couldn't keep pace with the speed of change.
-                </p>
-              </div>
+          {/* Bio */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mb-10">
+            <div style={{ flexShrink: 0 }}>
+              <img src={jessicaImage} alt="Jessica Pino"
+                style={{ width: "140px", height: "140px", borderRadius: "50%", objectFit: "cover", border: "2px solid rgba(0,217,200,0.25)", boxShadow: "0 0 24px rgba(0,217,200,0.15)" }} />
             </div>
+            <div>
+              <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.85, marginBottom: "0.5rem" }}>
+                <strong style={{ color: "#ffffff", fontWeight: 600 }}>Jessica Pino</strong> is a former U.S. Foreign Service Officer with 18 years in economic and political analysis, with tours in Islamabad, Cairo, Dahuk, Paris, and Main State.
+              </p>
+              <p style={{ fontSize: "0.95rem", color: "#94a3b8", fontFamily: "monospace", lineHeight: 1.6 }}>
+                MPP, LSE — AI and governance &nbsp;&middot;&nbsp; Based in Riyadh
+              </p>
+            </div>
+          </div>
 
-            <p>
-              Rather than producing slower, more expensive reports, The Aqool Wire applies AI to the least visible but most critical part of intelligence: continuously ingesting, structuring, and reconciling data as conditions change. The result is a live intelligence layer that allows decision-makers to focus on judgment, not information gathering.
+          <div style={{ background: "#0c1829", borderRadius: "12px", padding: "2.5rem", border: "1px solid rgba(255,255,255,0.07)" }}
+            className="md:p-12">
+            <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
+              Throughout her career, Jessica evaluated infrastructure investment, development programs, and policy outcomes across some of the most rapidly changing political economies in the world. The same constraint kept surfacing: fragmented data that couldn't keep pace with the speed of change on the ground. Analysis stalled not at the interpretation stage, but earlier — at the point of assembling a current, coherent picture of what was actually happening.
+            </p>
+
+            <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
+              After completing an MPP at LSE focused on AI and governance, she began working through a more fundamental question: what does rigorous policy analysis look like when you have access to tools that can ingest, structure, and reason over information at a scale a single researcher could never manage manually? Saudi Arabia, in the middle of one of the most ambitious technology-led economic transformations in recent history, became the starting point.
+            </p>
+
+            <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
+              The Aqool Wire is the result: a one-person research lab exploring AI as a methodology, applied to policy questions that matter. Each project demonstrates a different approach — live continuous tracking, deep mechanical chain analysis, and forward-looking scenario simulation — and each is designed to be transparent about its methods, data sources, and limitations.
+            </p>
+
+            <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9 }}>
+              This is not a commercial product. It is a public research portfolio, built to contribute to the policy research community and to demonstrate what AI-augmented analysis can produce in practice, not in principle.
             </p>
           </div>
 
-          {/* Back to Home */}
-          <div style={{ marginTop: "3.5rem", textAlign: "center" }}>
-            <Link href="/">
-              <button style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "#00d9c8", color: "#070d18", border: "none", borderRadius: "8px", padding: "0.9rem 2rem", fontSize: "1rem", fontWeight: 700, cursor: "pointer", boxShadow: "0 0 24px rgba(0,217,200,0.35)" }}>
-                <ArrowLeft size={16} />
-                Back to Home
+          {/* Research links */}
+          <div style={{ marginTop: "3rem" }}>
+            <p style={{ fontFamily: "monospace", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#00d9c8", marginBottom: "1.25rem" }}>
+              Research projects
+            </p>
+            <div className="flex flex-col gap-3">
+              {[
+                { title: "Live Saudi AI Intelligence Dashboard", href: "https://live.theaqoolwire.com/", external: true },
+                { title: "The Hormuz Closure Cascade", href: "https://hormuz-cascade-ksa.vercel.app/", external: true },
+                { title: "Digital Twin Policy Lab", href: null, external: false },
+              ].map((item) => (
+                <div key={item.title}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", padding: "1rem 1.25rem", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "8px" }}>
+                  <span style={{ fontSize: "0.95rem", color: "#e2e8f0" }}>{item.title}</span>
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 flex-shrink-0"
+                      style={{ fontSize: "0.85rem", color: "#00d9c8", textDecoration: "none" }}>
+                      View <ArrowUpRight size={13} />
+                    </a>
+                  ) : (
+                    <span style={{ fontSize: "0.8rem", color: "#64748b", fontFamily: "monospace" }}>In development</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.07)", textAlign: "center" }}>
+            <Link href="/#contact">
+              <button style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "#00d9c8", color: "#070d18", border: "none", borderRadius: "8px", padding: "0.9rem 2rem", fontSize: "0.95rem", fontWeight: 700, cursor: "pointer", boxShadow: "0 0 24px rgba(0,217,200,0.28)" }}>
+                Get in touch
               </button>
             </Link>
           </div>
@@ -91,8 +117,8 @@ export default function About() {
       </section>
 
       {/* Footer */}
-      <footer style={{ position: "relative", zIndex: 1, padding: "2rem", borderTop: "1px solid rgba(0,217,200,0.12)", textAlign: "center" }}>
-        <p style={{ fontSize: "0.9rem", color: "#94a3b8", margin: 0 }}>
+      <footer style={{ position: "relative", zIndex: 1, padding: "2rem", borderTop: "1px solid rgba(255,255,255,0.07)", textAlign: "center" }}>
+        <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0 }}>
           &copy; {new Date().getFullYear()} The Aqool Wire. All rights reserved.
         </p>
       </footer>

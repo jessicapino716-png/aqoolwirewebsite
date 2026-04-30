@@ -1,19 +1,17 @@
-# The Aqool Wire - Intelligence Platform
+# The Aqool Wire - Policy Research Portfolio
 
 ## Overview
 
-The Aqool Wire is a tech-forward intelligence platform for AI investment opportunities in Saudi Arabia and the GCC region. The site features a dark, immersive design with animated backgrounds, custom sunburst logo, and cyan/green/blue accent colors. SendGrid integration powers the contact form for lead capture.
+The Aqool Wire is a one-person policy research lab exploring how AI changes the toolkit available to policy researchers, with active research projects at the intersection of Saudi Arabia's political-economic systems and AI-augmented policy analysis. The site is a public research portfolio, not a commercial product. Audience: fellowship reviewers (Anthropic Economic Impact Fellowship), think tank hiring committees, and policy researchers.
 
-**Latest Redesign (November 2025):**
-- Complete visual rebrand to dark intelligence platform aesthetic
-- New color scheme: Dark backgrounds (#0a1628, #0f1e2e, #1a2942) with cyan/green/blue accents (#00d9c8, #00ff41, #0099ff)
-- Typography changed from DM Sans to Inter font family
-- Animated grid background with gradient overlays for dynamic visual effect
-- Custom 24-ray sunburst logo component with gradient rays
-- Single-page homepage (NewIntelligenceHome.tsx) with 6 sections: Hero, About, Co-Pilot, Vision, Contact, Footer
-- Maintained SendGrid contact form integration (verified working)
-- All existing articles preserved in dedicated Insights section
-- Conditional navigation: marketing pages have custom navigation, other routes use global Header/Footer
+**Repositioning (April 2026):**
+- Site reframed from B2B intelligence platform to personal policy research portfolio
+- All commercial CTAs, product framing, subscription/demo/sales language removed
+- Three research project cards replace platform feature cards: Live Saudi AI Dashboard, Hormuz Closure Cascade, Digital Twin Policy Lab
+- Contact form reframed for research collaboration, fellowship discussion, project feedback
+- About page updated to emphasize public-policy research mission
+- Tone: plain English, policy-memo register, no marketing copy or buzzwords
+- Visual identity (dark theme, cyan accent #00d9c8, Georgia serif, animated dot background) preserved
 
 ## User Preferences
 

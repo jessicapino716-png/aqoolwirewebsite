@@ -1,0 +1,52 @@
+I'm repositioning theaqoolwire.com from a B2B intelligence platform to a personal public policy research showcase. This is essentially my personal research portfolio website, designed to demonstrate AI applied to policy research. The audience is fellowship reviewers (Anthropic's Economic Impact Fellowship), think tank hiring committees, and policy researchers, not commercial buyers.
+Positioning thesis. The Aqool Wire is a one-person policy research lab exploring how AI changes the toolkit available to policy researchers. The site showcases three research projects, each demonstrating a different methodology for applying AI to policy questions: live data tracking, deep transmission analysis, and forward-looking simulation. Think Brookings Institution research page, not a SaaS landing page. Match a serious policy-memo register throughout.
+REMOVE the following from the current site:
+All B2B and commercial product framing, including the phrases "intelligence products," "decision-grade intelligence," "operational intelligence products," and the "Aqool Engine" framing as a sellable AI infrastructure layer.
+The entire "Decision Co-Pilot" section (currently labeled Q3 2026).
+The entire "AI Investment Observatory" section (currently labeled Coming February).
+All commercial CTAs: "Access Live Platform," "Request Demo," "Early Access," "Sponsor," "Future Customer," "Become a Partner."
+The contact form interest dropdown options (Request Demo, Sponsor, Future Customer). Replace with research-collaboration framing.
+The "Saudi Arabia Now. Soon the Entire GCC." commercial expansion section.
+The "Use It For:" buyer-targeting lists at the bottom of each product section.
+Any subscription, demo, or sales-funnel language.
+Any "coming soon" product-roadmap framing. The site should read as current research, not a product roadmap.
+KEEP and REFRAME:
+"The Aqool Wire" as the umbrella brand name and visual identity.
+The Saudi Arabia and broader GCC research focus.
+The methodology emphasis on verified sources, primary citations, and AI-augmented analysis (but reframed as research methodology, not a product feature).
+The About section, which now becomes more prominent since the site is functionally a personal research portfolio.
+NEW SITE STRUCTURE:
+Hero section. A clear one-sentence thesis. Suggested copy: "A one-person policy research lab exploring how AI changes the toolkit available to policy researchers, with active research projects at the intersection of Saudi political-economic systems and AI-augmented policy analysis."
+Three project cards, each linking to its own destination:
+Project 1: Live Saudi AI Intelligence Dashboard
+
+One-line: Continuous-data methodology for tracking Saudi Arabia's AI economy in real time.
+Description: Tracks Saudi Arabia's AI buildout, infrastructure, capital flows, regulatory developments, and stakeholder map across SDAIA, MCIT, GASTAT, NCC, the giga-projects (NEOM, Red Sea, Qiddiya, Diriyah), and major international partnerships. Designed for research, market entry analysis, FDI decision-making, and stakeholder mapping. Not a venture capital tracker.
+Methodology framing: Live data ingestion, AI-structured intelligence layer, source-verified provenance.
+Link to: live.theaqoolwire.com
+
+Project 2: The Hormuz Closure Cascade
+
+One-line: Deep transmission analysis tracing a Strait of Hormuz closure through Saudi sovereign finance, the Tadawul, MSCI Emerging Markets index products, and into US public pension portfolios.
+Description: A six-stage analytical site documenting how a Saudi geopolitical event mechanically propagates to a Texas teacher's retirement statement. The methodology stages tracing across oil markets, sovereign finance, sovereign wealth, equity markets, EM index mechanics, and US pension portfolios, with primary-source citations throughout.
+Methodology framing: Deep retrospective analysis, mechanical chain tracing, primary-source rigor.
+Link to: [Insert current Vercel deployment URL, or set up hormuz.theaqoolwire.com as a subdomain pointing to the existing deployment.]
+
+Project 3: Digital Twin Policy Lab
+
+One-line: Forward-looking simulation environment for testing policy scenarios before implementation.
+Description: Combines official economic and workforce data with AI-assisted econometric modeling to test policy, investment, and market-entry scenarios. Current modeling capability: tech workforce upskilling investment scenarios across one-to-ten year time horizons, with non-linear growth dynamics, retention effects, and transparent econometric assumptions.
+Methodology framing: Forward simulation, scenario stress-testing, transparent econometric modeling.
+Link to: To be set up at twin.theaqoolwire.com. For now, this card can display "In development" with a brief description, or link to a placeholder page.
+
+About section. Keep my existing bio (18 years as a U.S. Foreign Service Officer with tours in Islamabad, Cairo, Dahuk, Paris, and Main State; MPP from LSE focused on AI and governance; based in Riyadh). Reframe the "why this work" paragraph to emphasize the public-policy research mission rather than commercial intelligence delivery.
+Contact section. Keep a simple contact form but reframe the messaging from commercial-buyer outreach to research-collaboration outreach. Suggested copy: "Interested in research collaboration, fellowship discussions, or feedback on a project? Get in touch." Drop the interest dropdown options that signal commercial buying intent.
+VISUAL DIRECTION:
+Match the visual aesthetic of the Hormuz Closure Cascade site (currently deployed at [insert current Vercel URL]). That site uses a dark policy-memo aesthetic with the following elements: dark navy or charcoal background, clean sans-serif typography for body text, monospace for technical labels and metadata chips, a muted accent palette (ruby, tan, ocean blue), primary-source citation chips at the bottom of each section, and serious editorial typography. Avoid B2B SaaS visual cues: no gradient hero illustrations, no feature-card grids with stock icons, no demo video embeds, no animated product screenshots, no "transform your business" hero copy.
+The main site should feel like the front matter of the same publication that produced the Hormuz Cascade site, not a separate brand.
+TONE:
+Plain English. No buzzwords. No exclamation points. No "decision-grade intelligence" language. No marketing-copy verbs ("empowering," "unlocking," "transforming"). The voice is that of a policy researcher describing her work to peers, not a salesperson pitching to buyers.
+TECHNICAL NOTES:
+The Hormuz Cascade site is currently deployed separately at [insert URL]. Either set up hormuz.theaqoolwire.com as a subdomain pointing to that deployment, or have the project card link directly to the current Vercel URL.
+The Digital Twin Policy Lab is currently embedded inside the live dashboard. It will be extracted into a standalone site at twin.theaqoolwire.com later. For now, treat the project card as describing a research program in development.
+Remove all timeline references like "Q3 2026" and "Coming February" from the homepage.
