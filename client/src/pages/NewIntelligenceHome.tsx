@@ -119,8 +119,8 @@ export default function NewIntelligenceHome() {
             <span style={{ fontSize: "0.78rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.07em", textTransform: "uppercase" }}>Saudi Arabia &middot; Macroeconomics &middot; AI policy</span>
           </div>
 
-          <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, lineHeight: 1.18, color: "#ffffff", marginBottom: "2rem", letterSpacing: "-0.02em" }}
-            className="text-4xl sm:text-5xl md:text-6xl mb-[90px]">
+          <h1 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400, lineHeight: 1.18, color: "#ffffff", marginBottom: "90px", letterSpacing: "-0.02em" }}
+            className="text-4xl sm:text-5xl md:text-6xl">
             Saudi Arabia is attempting one of the largest sovereign economic transitions on record.
           </h1>
 
