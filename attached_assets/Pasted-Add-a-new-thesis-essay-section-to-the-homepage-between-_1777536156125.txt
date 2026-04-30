@@ -1,0 +1,28 @@
+Add a new "thesis essay" section to the homepage between the hero and the three project cards. The section has two parts: a five-paragraph analytical essay (no heading, with a topic pill above), and a smaller evidence section below it with the empirical anchors.
+Part 1: The thesis essay.
+Topic pill above the essay (set in monospace, same style as the hero pill): "THE COMPOUND TRANSITION"
+Essay body (drop in verbatim):
+Vision 2030 was designed in 2016 with an implicit assumption: growing target sectors (financial services, tourism, technology, logistics, manufacturing) would create roughly proportional employment. Double the size of the financial services sector and you roughly double the number of finance jobs. That assumption was consistent with how knowledge-work sectors had behaved for the previous several decades, and it underlies every Vision 2030 employment target.
+AI productivity gains break that assumption in the exact sectors Vision 2030 targets. Software development, financial analysis, customer service, legal work, marketing, content creation, translation, and parts of medical diagnostics are all seeing measured productivity gains in the 25 to 50 percent range in Western economies as AI tools get adopted. The mechanism is straightforward: AI is reducing the labor required to deliver a unit of output. Same revenue, fewer workers.
+Apply that to Saudi Arabia's two parallel timelines. The first is how long it takes target sectors to mature into substantial revenue producers, the headline Vision 2030 metric. The second is the timeline on which the Saudi workforce grows. Saudi adds roughly 200 to 300 thousand new Saudi nationals to working age every year. Vision 2030 has to employ them.
+Pre-AI, the assumption was that growing the target sectors at Vision 2030's projected pace would create enough jobs to absorb that demographic flow inside a 10 to 15 year window. With AI changing the labor intensity of those sectors, the same revenue growth produces fewer jobs. The sector-revenue timeline stretches. The demographic timeline does not. The two timelines that were supposed to converge now diverge.
+The Saudi-specific complication compounds the problem. Saudi could have leaned more heavily on labor-intensive sectors like tourism, manufacturing, or domestic services as the diversification engine, sectors that historically generate lots of jobs per dollar of revenue. Vision 2030 instead made AI infrastructure a centerpiece, anchored by HUMAIN, PIF's AI investment vehicle. AI infrastructure is capital-intensive. It produces relatively few jobs per dollar of revenue. The diversification engine Saudi picked happens to be one of the lowest-labor-intensity options available.
+That tension is the subject of this research.
+Set the closing line ("That tension is the subject of this research.") in slightly larger or bolder type for emphasis.
+Part 2: Empirical anchors section.
+Directly below the essay, add a smaller subsection. Topic pill: "EMPIRICAL ANCHORS"
+No section heading. Body:
+The mechanism is documented in adjacent contexts.
+Goldman Sachs estimated in March 2023 that approximately 300 million full-time-equivalent jobs globally are exposed to generative AI automation, with white-collar professional services among the most exposed.
+McKinsey Global Institute's automation-potential-by-occupation work shows the highest-exposure roles cluster in knowledge work: finance, legal, customer service, and content production. These are the same sectors Vision 2030 targets for diversification.
+The Indian IT services sector across 2024 and 2025 reported margin pressure and slowed hiring at major employers (Infosys, TCS, Wipro), with company commentary attributing part of the shift to AI-driven productivity gains. India is the closest existing comparable for Saudi Arabia's diversification bet on knowledge-work sectors.
+None of this proves the Saudi case directly. The mechanism is measurable in adjacent contexts. The open question for Saudi is whether the same dynamics translate as Vision 2030's target sectors mature.
+Styling specifications for both parts:
+Layout: Center the column at a max-width of approximately 720-760 pixels so lines don't run too wide.
+Background: Same dark navy as the hero. No card, no border, no box. Just typography on the same canvas.
+Essay body type: Approximately 18-20 pixels, with comfortable line-height around 1.6-1.7. Slightly larger and more readable than standard paragraph copy.
+Empirical anchors body type: Slightly smaller than the essay (approximately 15-16 pixels), with the same line-height treatment. The smaller size signals that this section is supporting evidence rather than the main argument.
+Spacing: Generous vertical padding above the essay (approximately 120-160 pixels separating it from the hero) and below the empirical anchors section (approximately 120-160 pixels separating it from the project cards). Inside the section, allow approximately 60-80 pixels between the essay and the empirical anchors subsection.
+Topic pills: Both pills ("THE COMPOUND TRANSITION" and "EMPIRICAL ANCHORS") in monospace, with the same styling as the hero topic pill (small caps, letter-spacing, muted accent color).
+No em dashes anywhere in the section. If the agent tries to insert any, search and remove.
+Confirm the closing line of the essay reads exactly: "That tension is the subject of this research." Set in bolder or slightly larger weight so it lands as the punchline.

@@ -147,6 +147,77 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
 
+      {/* ── THESIS ESSAY ─────────────────────────────────────────── */}
+      <section style={{ position: "relative", zIndex: 1 }} className="px-4">
+        <div style={{ maxWidth: "740px", margin: "0 auto", paddingTop: "9rem", paddingBottom: "9rem" }}>
+
+          {/* Part 1: Essay */}
+          <div style={{ marginBottom: "5rem" }}>
+            <div style={{ marginBottom: "2.5rem" }}>
+              <div className="inline-flex items-center"
+                style={{ border: "1px solid rgba(0,217,200,0.3)", borderRadius: "100px", padding: "0.4rem 1.25rem", background: "rgba(0,217,200,0.06)" }}>
+                <span style={{ fontSize: "0.78rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.1em", textTransform: "uppercase" as const }}>The Compound Transition</span>
+              </div>
+            </div>
+
+            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, marginBottom: "1.75rem", margin: "0 0 1.75rem 0" }}>
+              Vision 2030 was designed in 2016 with an implicit assumption: growing target sectors (financial services, tourism, technology, logistics, manufacturing) would create roughly proportional employment. Double the size of the financial services sector and you roughly double the number of finance jobs. That assumption was consistent with how knowledge-work sectors had behaved for the previous several decades, and it underlies every Vision 2030 employment target.
+            </p>
+
+            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+              AI productivity gains break that assumption in the exact sectors Vision 2030 targets. Software development, financial analysis, customer service, legal work, marketing, content creation, translation, and parts of medical diagnostics are all seeing measured productivity gains in the 25 to 50 percent range in Western economies as AI tools get adopted. The mechanism is straightforward: AI is reducing the labor required to deliver a unit of output. Same revenue, fewer workers.
+            </p>
+
+            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+              Apply that to Saudi Arabia's two parallel timelines. The first is how long it takes target sectors to mature into substantial revenue producers, the headline Vision 2030 metric. The second is the timeline on which the Saudi workforce grows. Saudi adds roughly 200 to 300 thousand new Saudi nationals to working age every year. Vision 2030 has to employ them.
+            </p>
+
+            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+              Pre-AI, the assumption was that growing the target sectors at Vision 2030's projected pace would create enough jobs to absorb that demographic flow inside a 10 to 15 year window. With AI changing the labor intensity of those sectors, the same revenue growth produces fewer jobs. The sector-revenue timeline stretches. The demographic timeline does not. The two timelines that were supposed to converge now diverge.
+            </p>
+
+            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.75rem 0" }}>
+              The Saudi-specific complication compounds the problem. Saudi could have leaned more heavily on labor-intensive sectors like tourism, manufacturing, or domestic services as the diversification engine, sectors that historically generate lots of jobs per dollar of revenue. Vision 2030 instead made AI infrastructure a centerpiece, anchored by HUMAIN, PIF's AI investment vehicle. AI infrastructure is capital-intensive. It produces relatively few jobs per dollar of revenue. The diversification engine Saudi picked happens to be one of the lowest-labor-intensity options available.
+            </p>
+
+            <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "#e2e8f0", lineHeight: 1.65, margin: 0 }}>
+              That tension is the subject of this research.
+            </p>
+          </div>
+
+          {/* Part 2: Empirical anchors */}
+          <div>
+            <div style={{ marginBottom: "2rem" }}>
+              <div className="inline-flex items-center"
+                style={{ border: "1px solid rgba(0,217,200,0.3)", borderRadius: "100px", padding: "0.4rem 1.25rem", background: "rgba(0,217,200,0.06)" }}>
+                <span style={{ fontSize: "0.78rem", color: "#00d9c8", fontFamily: "monospace", letterSpacing: "0.1em", textTransform: "uppercase" as const }}>Empirical Anchors</span>
+              </div>
+            </div>
+
+            <p style={{ fontSize: "0.97rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.25rem 0" }}>
+              The mechanism is documented in adjacent contexts.
+            </p>
+
+            <p style={{ fontSize: "0.97rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.25rem 0" }}>
+              Goldman Sachs estimated in March 2023 that approximately 300 million full-time-equivalent jobs globally are exposed to generative AI automation, with white-collar professional services among the most exposed.
+            </p>
+
+            <p style={{ fontSize: "0.97rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.25rem 0" }}>
+              McKinsey Global Institute's automation-potential-by-occupation work shows the highest-exposure roles cluster in knowledge work: finance, legal, customer service, and content production. These are the same sectors Vision 2030 targets for diversification.
+            </p>
+
+            <p style={{ fontSize: "0.97rem", color: "#cbd5e1", lineHeight: 1.72, margin: "0 0 1.25rem 0" }}>
+              The Indian IT services sector across 2024 and 2025 reported margin pressure and slowed hiring at major employers (Infosys, TCS, Wipro), with company commentary attributing part of the shift to AI-driven productivity gains. India is the closest existing comparable for Saudi Arabia's diversification bet on knowledge-work sectors.
+            </p>
+
+            <p style={{ fontSize: "0.97rem", color: "#cbd5e1", lineHeight: 1.72, margin: 0 }}>
+              None of this proves the Saudi case directly. The mechanism is measurable in adjacent contexts. The open question for Saudi is whether the same dynamics translate as Vision 2030's target sectors mature.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
       {/* ── RESEARCH PROJECTS ────────────────────────────────────── */}
       <section id="research" style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto" }}
         className="px-4 md:px-8 pb-14 md:pb-24">
