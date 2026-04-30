@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import MeshBackground from "@/components/MeshBackground";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
+import jessicaImage from "@assets/000-eHDrIDseLsY_1769360651903.jpeg";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export default function About() {
@@ -44,9 +45,8 @@ export default function About() {
 
           {/* Bio */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mb-10">
-            <div style={{ flexShrink: 0, width: "140px", height: "140px", borderRadius: "50%", border: "2px solid rgba(0,217,200,0.25)", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,217,200,0.06)", color: "#64748b", fontFamily: "monospace", fontSize: "0.72rem", textAlign: "center", padding: "0.5rem", lineHeight: 1.5 }}>
-              [Insert photo]
-            </div>
+            <img src={jessicaImage} alt="Jessica Pino"
+              style={{ flexShrink: 0, width: "140px", height: "140px", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "2px solid rgba(0,217,200,0.25)" }} />
             <div>
               <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.85, marginBottom: "0.5rem" }}>
                 <strong style={{ color: "#ffffff", fontWeight: 600 }}>Jessica Pino</strong> is a former U.S. Foreign Service Officer with 18 years in economic and political analysis, with tours in Islamabad, Cairo, Dahuk, Paris, and Main State.
