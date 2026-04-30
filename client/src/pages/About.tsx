@@ -12,9 +12,7 @@ export default function About() {
         <title>About: The Aqool Wire</title>
         <meta name="description" content="Jessica Pino is a former U.S. Foreign Service Officer applying AI tools to macroeconomic and AI policy research questions at the intersection of Saudi Arabia's political-economic systems." />
       </Helmet>
-
       <MeshBackground />
-
       {/* Header */}
       <header style={{ position: "relative", zIndex: 20, width: "100%", borderBottom: "1px solid rgba(0,217,200,0.15)", background: "rgba(7,13,24,0.85)", backdropFilter: "blur(12px)" }}>
         <div style={{ maxWidth: "1160px", margin: "0 auto", minHeight: "72px" }}
@@ -31,7 +29,6 @@ export default function About() {
           </Link>
         </div>
       </header>
-
       {/* Content */}
       <section style={{ position: "relative", zIndex: 1 }} className="px-4 md:px-8 py-14 md:py-20">
         <div style={{ maxWidth: "820px", margin: "0 auto" }}>
@@ -63,9 +60,7 @@ export default function About() {
               For 18 years before this, I worked as a U.S. Foreign Service Officer doing political and economic analysis. Long enough to watch policy decisions get made, watch them succeed and fail, and develop an instinct for the gap between how policy is written and how it actually works. I completed an MPP at the London School of Economics, focused on AI and governance. I now live in Riyadh.
             </p>
 
-            <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-              The Aqool Wire is a fully independent research platform built to ask hard questions about Saudi Arabia's transition: the fiscal arithmetic of diversification when oil revenue funds the public payroll, the labor absorption capacity of Vision 2030 against AI productivity pressure, the durability of Aramco's dividend mechanics, and the structural integration of Saudi capital markets with the global financial system. These questions are difficult to raise rigorously inside institutions with Saudi clients, ministries, or employment relationships. They need rigorous public analysis. Most don't have it.
-            </p>
+            <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9, marginBottom: "1.5rem" }}>The Aqool Wire is a fully independent research platform built to ask hard questions about Saudi Arabia's transition: the fiscal arithmetic of diversification when oil revenue funds the public payroll, the labor absorption capacity of Vision 2030 against AI productivity pressure, the durability of Aramco's dividend mechanics, and the structural integration of Saudi capital markets with the global financial system. These questions are difficult to raise rigorously inside institutions with Saudi clients, ministries, or employment relationships. They need rigorous quantitative analysis. </p>
 
             <p style={{ fontSize: "1.05rem", color: "#e2e8f0", lineHeight: 1.9 }}>
               The work uses AI tools to maintain that analysis at depth and currency that historically required an institutional research operation. Every project on this site is transparent about its methods, sources, and limitations, and updates continuously as conditions change.
@@ -109,7 +104,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer style={{ position: "relative", zIndex: 1, padding: "2rem", borderTop: "1px solid rgba(255,255,255,0.07)", textAlign: "center" }}>
         <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0 }}>
