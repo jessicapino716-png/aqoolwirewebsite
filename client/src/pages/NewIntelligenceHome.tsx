@@ -232,6 +232,74 @@ export default function NewIntelligenceHome() {
         </div>
       </section>
 
+      {/* ── RESEARCH QUESTIONS ───────────────────────────────────── */}
+      <section style={{ position: "relative", zIndex: 1, borderTop: "1px solid rgba(255,255,255,0.06)" }}
+        className="px-4 py-16 md:py-24">
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+
+          <p style={{ fontSize: "clamp(1.1rem, 2vw, 1.25rem)", color: "#a8bdd4", lineHeight: 1.85, fontStyle: "italic", borderLeft: "2px solid rgba(0,217,200,0.4)", paddingLeft: "1.5rem", marginBottom: "4rem", maxWidth: "700px" }}>
+            Three interconnected pressures, studied through three active projects. Each question is difficult on its own. Together, they define the problem.
+          </p>
+
+          {/* Q1 */}
+          <div style={{ marginBottom: "3.5rem" }}>
+            <div className="flex items-baseline gap-5 mb-4">
+              <span style={{ fontFamily: "monospace", fontSize: "2rem", color: "rgba(0,217,200,0.25)", fontWeight: 400, flexShrink: 0, lineHeight: 1 }}>01</span>
+              <h2 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontSize: "clamp(1.15rem, 2.5vw, 1.4rem)", color: "#ffffff", fontWeight: 400, lineHeight: 1.45, margin: 0 }}>
+                How do sovereign-wealth decisions in Riyadh move capital in New York, Oslo, and Austin?
+              </h2>
+            </div>
+            <div style={{ paddingLeft: "calc(2rem + 1.25rem)" }}>
+              <p style={{ fontSize: "1.05rem", color: "#94a3b8", lineHeight: 1.9, margin: 0 }}>
+                The mechanism is structural, not circumstantial. Since MSCI added Saudi Arabia to its Emerging Markets index in 2019, Aramco's dividend policy and PIF deployment decisions have moved the portfolios of teachers, nurses, and firefighters in US public pension funds. The Hormuz Closure Cascade traces this chain in full across six stages, with primary-source citations and no gaps in the transmission logic.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ height: "1px", background: "rgba(255,255,255,0.05)", marginBottom: "3.5rem" }} />
+
+          {/* Q2 */}
+          <div style={{ marginBottom: "3.5rem" }}>
+            <div className="flex items-baseline gap-5 mb-4">
+              <span style={{ fontFamily: "monospace", fontSize: "2rem", color: "rgba(0,217,200,0.25)", fontWeight: 400, flexShrink: 0, lineHeight: 1 }}>02</span>
+              <h2 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontSize: "clamp(1.15rem, 2.5vw, 1.4rem)", color: "#ffffff", fontWeight: 400, lineHeight: 1.45, margin: 0 }}>
+                Can a state that employs two-thirds of its workforce afford to diversify?
+              </h2>
+            </div>
+            <div style={{ paddingLeft: "calc(2rem + 1.25rem)" }}>
+              <p style={{ fontSize: "1.05rem", color: "#94a3b8", lineHeight: 1.9, margin: 0 }}>
+                Saudi Arabia's government oil revenue does not just fund infrastructure. It funds the payroll. Roughly two-thirds of working Saudi nationals hold public-sector jobs financed directly or indirectly by hydrocarbon revenue. Vision 2030 requires building private employment fast enough to absorb a young, growing workforce as that revenue declines. The Live Saudi AI Dashboard tracks whether the capital flows and infrastructure bets currently being made suggest that transition is on track.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ height: "1px", background: "rgba(255,255,255,0.05)", marginBottom: "3.5rem" }} />
+
+          {/* Q3 */}
+          <div style={{ marginBottom: "4rem" }}>
+            <div className="flex items-baseline gap-5 mb-4">
+              <span style={{ fontFamily: "monospace", fontSize: "2rem", color: "rgba(0,217,200,0.25)", fontWeight: 400, flexShrink: 0, lineHeight: 1 }}>03</span>
+              <h2 style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontSize: "clamp(1.15rem, 2.5vw, 1.4rem)", color: "#ffffff", fontWeight: 400, lineHeight: 1.45, margin: 0 }}>
+                What happens when AI compresses the timeline?
+              </h2>
+            </div>
+            <div style={{ paddingLeft: "calc(2rem + 1.25rem)" }}>
+              <p style={{ fontSize: "1.05rem", color: "#94a3b8", lineHeight: 1.9, margin: 0 }}>
+                The fiscal problem is hard enough on its own. AI productivity gains in Western economies add a second pressure: the private-sector jobs Vision 2030 is counting on may automate before Saudi workers can grow into them. The Digital Twin Policy Lab models the compound scenario with adjustable assumptions about oil price trajectories, AI adoption rates, and the full range of available policy levers.
+              </p>
+            </div>
+          </div>
+
+          {/* Methodology callout */}
+          <div style={{ background: "rgba(0,217,200,0.04)", border: "1px solid rgba(0,217,200,0.15)", borderRadius: "10px", padding: "2rem 2.5rem" }}>
+            <span style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#00d9c8", display: "block", marginBottom: "0.85rem" }}>Methodology</span>
+            <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.9, margin: 0 }}>
+              Most policy research is obsolete by publication. These projects are built to stay current: the Dashboard ingests new data continuously, the Cascade refreshes its source chain as conditions evolve, and the Lab updates its scenarios as new economic and workforce data become available.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── ABOUT TEASER ─────────────────────────────────────────── */}
       <section style={{ position: "relative", zIndex: 1, background: "rgba(255,255,255,0.02)", borderTop: "1px solid rgba(255,255,255,0.07)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}
         className="px-4 md:px-8 py-14 md:py-20">
