@@ -340,9 +340,7 @@ export default function NewIntelligenceHome() {
             <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#ffffff", fontWeight: 400, marginBottom: "1.25rem" }}>
               Jessica Pino
             </h2>
-            <p style={{ fontSize: "1rem", color: "#cbd5e1", lineHeight: 1.85, marginBottom: "1rem" }}>
-              Former U.S. Foreign Service Officer, 18 years in economic and political analysis. Tours in Islamabad, Cairo, Dahuk, Paris, and Main State. MPP from LSE, focused on AI and governance. Based in Riyadh.
-            </p>
+            <p style={{ fontSize: "1rem", color: "#cbd5e1", lineHeight: 1.85, marginBottom: "1rem" }}>Former U.S. Foreign Service Officer, 18 years in economic and political analysis. Tours in Islamabad, Cairo, Irbil, Paris, and Main State. MPP from LSE, focused on AI and governance. Based in Riyadh.</p>
             <p style={{ fontSize: "1rem", color: "#cbd5e1", lineHeight: 1.85, marginBottom: "1.75rem" }}>
               The research here focuses on macroeconomic and AI policy questions for Saudi Arabia and the Gulf, using AI to extend what a single researcher can analyze across multiple data domains. The projects grew out of questions that came up repeatedly during fieldwork: capital flows, infrastructure investment, and how policy decisions in Riyadh transmit outward into global markets.
             </p>
