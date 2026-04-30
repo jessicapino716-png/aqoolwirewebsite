@@ -5,12 +5,83 @@ import { Link } from "wouter";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Menu, X, ArrowUpRight } from "lucide-react";
 import logoImage from "@assets/The Aqool Wire - Edited_1762849890953.png";
-import { RESEARCH_PROJECTS } from "@/data/projects";
+import { POLICY_RESEARCH, TOOLS, RESEARCH_PROJECTS } from "@/data/projects";
+
+type Project = typeof RESEARCH_PROJECTS[number];
 
 const SECTION_LABEL: React.CSSProperties = {
   fontFamily: "monospace", fontSize: "0.82rem", letterSpacing: "0.14em",
   textTransform: "uppercase", color: "#00d9c8", marginBottom: "0.5rem", display: "block",
 };
+
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <div style={{ background: "#0c1829", position: "relative", overflow: "hidden" }}
+      className="p-6 md:p-10">
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, rgba(0,217,200,0.4), transparent)" }} />
+
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-12">
+        <div style={{ flex: 1 }}>
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span style={{ fontFamily: "monospace", fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#00d9c8", background: "rgba(0,217,200,0.1)", border: "1px solid rgba(0,217,200,0.25)", padding: "0.2rem 0.65rem", borderRadius: "4px" }}>
+              {project.methodology}
+            </span>
+            {project.status === "development" && (
+              <span style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#94a3b8", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", padding: "0.2rem 0.65rem", borderRadius: "4px" }}>
+                In development
+              </span>
+            )}
+          </div>
+
+          <h3 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.15rem, 2.5vw, 1.45rem)", fontWeight: 400, color: "#ffffff", marginBottom: "0.6rem", lineHeight: 1.3 }}>
+            {project.title}
+          </h3>
+
+          <p style={{ fontSize: "1rem", color: "#00d9c8", fontStyle: "italic", marginBottom: "1rem", lineHeight: 1.6, opacity: 0.9 }}>
+            {project.oneliner}
+          </p>
+
+          <p style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.8, marginBottom: "1.25rem", maxWidth: "640px" }}>
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.methodTags.map((tag) => (
+              <span key={tag} style={{ fontSize: "0.8rem", color: "#94a3b8", fontFamily: "monospace", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.09)", padding: "0.2rem 0.6rem", borderRadius: "4px" }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {project.lastUpdated ? (
+            <p style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#94a3b8", opacity: 0.6, letterSpacing: "0.04em", margin: 0 }}>
+              Last updated: {project.lastUpdated}
+            </p>
+          ) : project.plannedLaunch ? (
+            <p style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#94a3b8", opacity: 0.6, letterSpacing: "0.04em", margin: 0 }}>
+              In development, planned launch {project.plannedLaunch}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="flex-shrink-0 flex md:items-start md:pt-16">
+          {project.href ? (
+            <a href={project.href} target={project.external ? "_blank" : undefined} rel={project.external ? "noopener noreferrer" : undefined}
+              className="inline-flex items-center gap-2"
+              style={{ fontSize: "0.9rem", fontWeight: 600, color: "#00d9c8", textDecoration: "none", border: "1px solid rgba(0,217,200,0.4)", padding: "0.65rem 1.25rem", borderRadius: "6px", whiteSpace: "nowrap" }}>
+              {project.ctaLabel}
+              <ArrowUpRight size={15} />
+            </a>
+          ) : (
+            <span style={{ fontSize: "0.9rem", color: "#64748b", fontFamily: "monospace", border: "1px solid rgba(255,255,255,0.08)", padding: "0.65rem 1.25rem", borderRadius: "6px", whiteSpace: "nowrap" }}>
+              In development
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function NewIntelligenceHome() {
   const { toast } = useToast();
@@ -173,87 +244,40 @@ export default function NewIntelligenceHome() {
           </div>
         </div>
       </section>
-      {/* ── RESEARCH PROJECTS ────────────────────────────────────── */}
+      {/* ── POLICY RESEARCH ──────────────────────────────────────── */}
       <section id="research" style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto" }}
-        className="px-4 md:px-8 pb-14 md:pb-24">
+        className="px-4 md:px-8 pb-14 md:pb-20">
 
         <div style={{ marginBottom: "3rem" }}>
-          <span style={SECTION_LABEL}>Research</span>
+          <span style={SECTION_LABEL}>Policy research</span>
           <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#ffffff", fontWeight: 400, margin: 0 }}>
-            Current projects
+            Working policy papers
           </h2>
         </div>
 
         <div className="flex flex-col gap-px"
           style={{ background: "rgba(0,217,200,0.08)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(0,217,200,0.1)" }}>
-          {RESEARCH_PROJECTS.map((project, i) => (
-            <div key={project.title}
-              style={{ background: "#0c1829", position: "relative", overflow: "hidden" }}
-              className="p-6 md:p-10">
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, rgba(0,217,200,0.4), transparent)" }} />
+          {POLICY_RESEARCH.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </section>
 
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-12">
-                {/* Left: content */}
-                <div style={{ flex: 1 }}>
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span style={{ fontFamily: "monospace", fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#00d9c8", background: "rgba(0,217,200,0.1)", border: "1px solid rgba(0,217,200,0.25)", padding: "0.2rem 0.65rem", borderRadius: "4px" }}>
-                      {project.methodology}
-                    </span>
-                    {project.status === "development" && (
-                      <span style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#94a3b8", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", padding: "0.2rem 0.65rem", borderRadius: "4px" }}>
-                        In development
-                      </span>
-                    )}
-                  </div>
+      {/* ── TOOLS ────────────────────────────────────────────────── */}
+      <section style={{ position: "relative", zIndex: 1, maxWidth: "1080px", margin: "0 auto" }}
+        className="px-4 md:px-8 pb-14 md:pb-24">
 
-                  <h3 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.15rem, 2.5vw, 1.45rem)", fontWeight: 400, color: "#ffffff", marginBottom: "0.6rem", lineHeight: 1.3 }}>
-                    {project.title}
-                  </h3>
+        <div style={{ marginBottom: "3rem" }}>
+          <span style={SECTION_LABEL}>Tools</span>
+          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.25rem)", color: "#ffffff", fontWeight: 400, margin: 0 }}>
+            AI tools for economic and market frictions
+          </h2>
+        </div>
 
-                  <p style={{ fontSize: "1rem", color: "#00d9c8", fontStyle: "italic", marginBottom: "1rem", lineHeight: 1.6, opacity: 0.9 }}>
-                    {project.oneliner}
-                  </p>
-
-                  <p style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.8, marginBottom: "1.25rem", maxWidth: "640px" }}>
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.methodTags.map((tag) => (
-                      <span key={tag} style={{ fontSize: "0.8rem", color: "#94a3b8", fontFamily: "monospace", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.09)", padding: "0.2rem 0.6rem", borderRadius: "4px" }}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {project.lastUpdated ? (
-                    <p style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#94a3b8", opacity: 0.6, letterSpacing: "0.04em", margin: 0 }}>
-                      Last updated: {project.lastUpdated}
-                    </p>
-                  ) : project.plannedLaunch ? (
-                    <p style={{ fontFamily: "monospace", fontSize: "0.72rem", color: "#94a3b8", opacity: 0.6, letterSpacing: "0.04em", margin: 0 }}>
-                      In development, planned launch {project.plannedLaunch}
-                    </p>
-                  ) : null}
-                </div>
-
-                {/* Right: CTA */}
-                <div className="flex-shrink-0 flex md:items-start md:pt-16">
-                  {project.href ? (
-                    <a href={project.href} target={project.external ? "_blank" : undefined} rel={project.external ? "noopener noreferrer" : undefined}
-                      className="inline-flex items-center gap-2"
-                      style={{ fontSize: "0.9rem", fontWeight: 600, color: "#00d9c8", textDecoration: "none", border: "1px solid rgba(0,217,200,0.4)", padding: "0.65rem 1.25rem", borderRadius: "6px", whiteSpace: "nowrap" }}>
-                      {project.ctaLabel}
-                      <ArrowUpRight size={15} />
-                    </a>
-                  ) : (
-                    <span style={{ fontSize: "0.9rem", color: "#64748b", fontFamily: "monospace", border: "1px solid rgba(255,255,255,0.08)", padding: "0.65rem 1.25rem", borderRadius: "6px", whiteSpace: "nowrap" }}>
-                      In development
-                    </span>
-                  )}
-                </div>
-              </div>
-            </div>
+        <div className="flex flex-col gap-px"
+          style={{ background: "rgba(0,217,200,0.08)", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(0,217,200,0.1)" }}>
+          {TOOLS.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </section>

@@ -1,0 +1,20 @@
+I'm restructuring the projects section of the homepage. The current "Research Projects" block presents three artifacts as if they're all the same kind of work. They're not. Two are analytical research projects, one is a continuously-updated intelligence tool. Split them into two distinct sections, in the order specified below.
+Remove the existing "Three projects, three methodologies" / "Research Projects" section header and the three project cards underneath it.
+Replace with two new sections, in this order:
+
+Section 1: Policy Research
+Topic pill above the section heading (monospace, same style as existing pills): "POLICY RESEARCH"
+Section heading: "Working policy papers"
+Two project cards in this section:
+Card 1 (keep all current content): The Hormuz Closure Cascade. Topic chip on the card: "DEEP TRANSMISSION ANALYSIS". Italic subhead: "Tracing a Strait of Hormuz closure through Saudi sovereign finance, the Tadawul, MSCI Emerging Markets index products, and into US public pension portfolios." Body and methodology chips as currently exist. CTA button: "View analysis" linking to the existing Hormuz Cascade deployment URL.
+Card 2 (keep all current content): Digital Twin Policy Lab. Topic chip on the card: "FORWARD SIMULATION" with secondary chip "IN DEVELOPMENT". Italic subhead: "Forward-looking simulation environment for testing labor and fiscal policy scenarios under compound transition pressure." Body and methodology chips as currently exist. CTA: "In development" placeholder.
+
+Section 2: Tools
+Topic pill above the section heading (monospace): "TOOLS"
+Section heading: "AI tools for economic and market frictions"
+One project card in this section:
+Card 1 (rewrite the description to reframe as FDI/market entry tool): Saudi AI Economy Dashboard. Topic chip on the card: "FDI & MARKET ENTRY" (replace the current "LIVE DATA TRACKING" chip).
+Italic subhead (replace current): "Continuously-updated intelligence on Saudi Arabia's AI economy, built for foreign investors, market entry teams, and FDI decision-makers."
+Body description (replace current with this): "Tracks Saudi Arabia's AI economy buildout: data center capacity, capital flows, regulatory developments, and the stakeholder map across SDAIA, MCIT, GASTAT, NCC, and the giga-projects (NEOM, Red Sea, Qiddiya, Diriyah). Built to reduce the information asymmetry foreign investors face when assessing Saudi AI infrastructure opportunities, identifying market entry timing, and mapping the public-private stakeholder network across the Kingdom's AI buildout."
+Methodology chips at the bottom of the card (replace current): "FDI intelligence" / "Stakeholder mapping" / "Live data ingestion"
+CTA button: "View dashboard" linking to live.theaqoolwire.com
