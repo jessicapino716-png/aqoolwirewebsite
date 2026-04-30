@@ -32,7 +32,7 @@ export const RESEARCH_PROJECTS = [
     description: "Current focus: tech workforce upskilling investment over one-to-ten year time horizons, with non-linear growth dynamics and transparent assumptions. The model uses official economic and workforce data throughout.",
     methodTags: ["Econometric modeling", "Scenario testing", "Transparent assumptions"],
     status: "active" as const,
-    href: "https://live.theaqoolwire.com/policy-lab/tech-upskilling",
+    href: "https://live.theaqoolwire.com/tech-upskilling",
     external: true,
     ctaLabel: "View lab",
     lastUpdated: "30 April 2026",
